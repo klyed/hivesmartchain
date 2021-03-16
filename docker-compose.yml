@@ -1,0 +1,19 @@
+version: "3"
+services:
+  db:
+    image: postgres:11-alpine
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 5432
+
+  burrow:
+    image: ${CI_IMAGE}
+    environment:
+      DB_URL: "postgres://postgres@db:5432/postgres?sslmode=disable"
+      GO111MODULE: "on"
+    depends_on:
+      - db
+    volumes:
+    - .:/go/src/github.com/hyperledger/burrow
+    working_dir: /go/src/github.com/hyperledger/burrow

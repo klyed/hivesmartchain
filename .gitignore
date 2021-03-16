@@ -1,0 +1,30 @@
+# build target
+target
+bin/
+
+# tests
+test_scratch/
+*.log
+.keys
+.burrow*
+burrow.toml
+burrow???.toml
+
+# Temporary / cached
+*.swp
+.idea
+.vscode
+
+.gopath_bos
+
+commit_hash.txt
+
+tests/keys/
+.output.json
+vendor/
+node_modules
+js/dist
+
+helm/package
+build/
+.pid
