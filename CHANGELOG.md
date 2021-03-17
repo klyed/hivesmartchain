@@ -1,8 +1,8 @@
-# [Hyperledger Burrow](https://github.com/hyperledger/burrow) Changelog
-## [0.31.0]
+# [Hive Smart Chain](https://github.com/klyed/hivesmartchain) Changelog
+## [0.0.1]
 ### Changed
 - [Tendermint] Upgraded to Tendermint 0.34.3
-- [Docker] Image will now start testnet by default
+- [Docker] Image will now start Hive Smart Chain by default
 
 ### Added
 - [Vent] Added support for building Vent SQL tables from Ethereum web3 JSONRPC chains (useful for oracles/state channels with layer 1)
@@ -66,8 +66,8 @@
 
 ## [0.30.0] - 2020-03-05
 ### Changed
-- [JS] Partial rewrite of client API in typescript 
-		
+- [JS] Partial rewrite of client API in typescript
+
 ### Fixed
 - [State] Blockchain now commits initial AppHash to avoid IAVL panic
 
@@ -93,7 +93,7 @@
 ## [0.29.5] - 2019-12-09
 ### Security
 - [Tendermint] Upgraded to v0.32.8, checkTxAsync now includes node ID
-		
+
 ### Changed
 - [Vent] Sync every block height to DB and send height notification from _vent_chain table so downstream can check DB sync without --blocks
 - [RPC/Query] GetName now returns GRPC NotFound status (rather than unknown) when a requested key is not set.
@@ -126,7 +126,7 @@
 ### Changed
 - [Config] Reverted rename of ValidatorAddress to Address in config (each Burrow node has a specific validator key it uses for signing whether or not it is running as a validator right now)
 
-### Fixed 
+### Fixed
 - [EVM] Return integer overflow error code (not stack overflow) for integer overflow errors
 - [Docs] Fix broken examples
 - [Deploy] Set input on QueryContract jobs correctly

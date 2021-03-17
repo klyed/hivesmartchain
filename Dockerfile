@@ -27,7 +27,7 @@ LABEL org.label-schema.description="Hive Smart Chain is a permissioned Ethereum 
 LABEL org.label-schema.license="Apache-2.0"
 LABEL org.label-schema.vcs-url="https://github.com/klyed/HSC-DEV"
 
-# Run burrow as burrow user; not as root user
+# Run hsc as hsc user; not as root user
 ENV HSC_PATH /home/$USER
 RUN addgroup -g 101 -S $USER && adduser -S -D -u 1000 $USER $USER
 WORKDIR $HSC_PATH

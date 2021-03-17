@@ -1,2 +1,0 @@
-{"caller":"blockchain.go:57","database_key":"426C6F636B636861696E5374617465","height":0,"log_channel":"Info","message":"Trying to load blockchain state from database","run_id":"8e56a591-86f0-11eb-83ce-a26e4cd00b85","scope":"LoadOrNewBlockchain","time":"2021-03-17T07:15:30.3828943Z"}
-{"caller":"blockchain.go:78","height":0,"log_channel":"Info","message":"No existing blockchain state found in database, making new blockchain","run_id":"8e56a591-86f0-11eb-83ce-a26e4cd00b85","scope":"LoadOrNewBlockchain","time":"2021-03-17T07:15:30.3841028Z"}
