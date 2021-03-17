@@ -1,3 +1,7 @@
+module github.com/klyed/hivesmartchain
+
+go 1.15
+
 require	github.com/BurntSushi/toml v0.3.1
 require	github.com/OneOfOne/xxhash v1.2.8
 require	github.com/alecthomas/jsonschema v0.0.0-20201129101101-7b852d451add
@@ -46,5 +50,3 @@ require	golang.org/x/net v0.0.0-20210119194325-5f4716e94777
 require	google.golang.org/grpc v1.35.0
 require	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.1.0 // indirect
 require	gopkg.in/yaml.v2 v2.4.0
-
-go 1.15
