@@ -14,8 +14,8 @@ import (
 	golang_proto "github.com/golang/protobuf/proto"
 	_ "github.com/klyed/hivesmartchain/acm"
 	validator "github.com/klyed/hivesmartchain/acm/validator"
-	github_com_klyed_hsc-main_binary "github.com/klyed/hivesmartchain/binary"
-	github_com_klyed_hsc-main_crypto "github.com/klyed/hivesmartchain/crypto"
+	github_com_klyed_hivesmartchain_binary "github.com/klyed/hivesmartchain/binary"
+	github_com_klyed_hivesmartchain_crypto "github.com/klyed/hivesmartchain/crypto"
 	_ "github.com/klyed/hivesmartchain/execution/names"
 	registry "github.com/klyed/hivesmartchain/execution/registry"
 	_ "github.com/klyed/hivesmartchain/rpc"
@@ -91,7 +91,7 @@ func (*StatusParam) XXX_MessageName() string {
 }
 
 type GetAccountParam struct {
-	Address              github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
+	Address              github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
 	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
 	XXX_unrecognized     []byte                                       `json:"-"`
 	XXX_sizecache        int32                                        `json:"-"`
@@ -131,8 +131,8 @@ func (*GetAccountParam) XXX_MessageName() string {
 }
 
 type GetMetadataParam struct {
-	Address              *github_com_klyed_hsc-main_crypto.Address  `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address,omitempty"`
-	MetadataHash         *github_com_klyed_hsc-main_binary.HexBytes `protobuf:"bytes,2,opt,name=MetadataHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"MetadataHash,omitempty"`
+	Address              *github_com_klyed_hivesmartchain_crypto.Address  `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address,omitempty"`
+	MetadataHash         *github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,2,opt,name=MetadataHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"MetadataHash,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
 	XXX_unrecognized     []byte                                         `json:"-"`
 	XXX_sizecache        int32                                          `json:"-"`
@@ -219,8 +219,8 @@ func (*MetadataResult) XXX_MessageName() string {
 }
 
 type GetStorageParam struct {
-	Address              github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
-	Key                  github_com_klyed_hsc-main_binary.Word256 `protobuf:"bytes,2,opt,name=Key,proto3,customtype=github.com/klyed/hivesmartchain/binary.Word256" json:"Key"`
+	Address              github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
+	Key                  github_com_klyed_hivesmartchain_binary.Word256 `protobuf:"bytes,2,opt,name=Key,proto3,customtype=github.com/klyed/hivesmartchain/binary.Word256" json:"Key"`
 	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
 	XXX_unrecognized     []byte                                       `json:"-"`
 	XXX_sizecache        int32                                        `json:"-"`
@@ -260,7 +260,7 @@ func (*GetStorageParam) XXX_MessageName() string {
 }
 
 type StorageValue struct {
-	Value                github_com_klyed_hsc-main_binary.HexBytes `protobuf:"bytes,1,opt,name=Value,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Value"`
+	Value                github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,1,opt,name=Value,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Value"`
 	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
 	XXX_unrecognized     []byte                                        `json:"-"`
 	XXX_sizecache        int32                                         `json:"-"`
@@ -614,7 +614,7 @@ func (*NetworkRegistry) XXX_MessageName() string {
 }
 
 type RegisteredValidator struct {
-	Address              github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
+	Address              github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
 	Node                 *registry.NodeIdentity                       `protobuf:"bytes,2,opt,name=Node,proto3" json:"Node,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
 	XXX_unrecognized     []byte                                       `json:"-"`
@@ -2629,7 +2629,7 @@ func (m *GetMetadataParam) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_klyed_hsc-main_crypto.Address
+			var v github_com_klyed_hivesmartchain_crypto.Address
 			m.Address = &v
 			if err := m.Address.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -2664,7 +2664,7 @@ func (m *GetMetadataParam) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_klyed_hsc-main_binary.HexBytes
+			var v github_com_klyed_hivesmartchain_binary.HexBytes
 			m.MetadataHash = &v
 			if err := m.MetadataHash.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err

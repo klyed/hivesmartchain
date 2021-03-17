@@ -16,8 +16,8 @@ import (
 	golang_proto "github.com/golang/protobuf/proto"
 	_ "github.com/golang/protobuf/ptypes/timestamp"
 	acm "github.com/klyed/hivesmartchain/acm"
-	github_com_klyed_hsc-main_binary "github.com/klyed/hivesmartchain/binary"
-	github_com_klyed_hsc-main_crypto "github.com/klyed/hivesmartchain/crypto"
+	github_com_klyed_hivesmartchain_binary "github.com/klyed/hivesmartchain/binary"
+	github_com_klyed_hivesmartchain_crypto "github.com/klyed/hivesmartchain/crypto"
 	exec "github.com/klyed/hivesmartchain/execution/exec"
 	names "github.com/klyed/hivesmartchain/execution/names"
 )
@@ -36,8 +36,8 @@ var _ = time.Kitchen
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type Storage struct {
-	Key                  github_com_klyed_hsc-main_binary.Word256  `protobuf:"bytes,1,opt,name=Key,proto3,customtype=github.com/klyed/hivesmartchain/binary.Word256" json:"Key"`
-	Value                github_com_klyed_hsc-main_binary.HexBytes `protobuf:"bytes,2,opt,name=Value,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Value"`
+	Key                  github_com_klyed_hivesmartchain_binary.Word256  `protobuf:"bytes,1,opt,name=Key,proto3,customtype=github.com/klyed/hivesmartchain/binary.Word256" json:"Key"`
+	Value                github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,2,opt,name=Value,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Value"`
 	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
 	XXX_unrecognized     []byte                                        `json:"-"`
 	XXX_sizecache        int32                                         `json:"-"`
@@ -77,7 +77,7 @@ func (*Storage) XXX_MessageName() string {
 }
 
 type AccountStorage struct {
-	Address              github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
+	Address              github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
 	Storage              []*Storage                                   `protobuf:"bytes,2,rep,name=Storage,proto3" json:"Storage,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
 	XXX_unrecognized     []byte                                       `json:"-"`
