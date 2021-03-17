@@ -106,7 +106,7 @@ type SQLColumnNames struct {
 	ColumnOrder  string
 	// chain info
 	HscVersion string
-	ChainID       string
+	ChainID    string
 	// context
 	TxIndex     string
 	EventIndex  string
@@ -142,7 +142,7 @@ var DefaultSQLColumnNames = SQLColumnNames{
 	ColumnOrder:  "_columnorder",
 	// chain info,
 	HscVersion: "_HscVersion",
-	ChainID:       "_chainid",
+	ChainID:    "_chainid",
 	// context,
 	TxIndex:     "_txindex",
 	EventIndex:  "_eventindex",

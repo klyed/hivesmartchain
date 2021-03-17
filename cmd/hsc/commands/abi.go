@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/klyed/hivesmartchain/execution/evm/abi"
 	cli "github.com/jawher/mow.cli"
+	"github.com/klyed/hivesmartchain/execution/evm/abi"
 	hex "github.com/tmthrgd/go-hex"
 )
 

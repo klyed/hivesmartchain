@@ -6,8 +6,8 @@ package commands
 import (
 	"fmt"
 
-	"github.com/klyed/hivesmartchain/execution/native"
 	cli "github.com/jawher/mow.cli"
+	"github.com/klyed/hivesmartchain/execution/native"
 
 	"github.com/klyed/hivesmartchain/util/natives/templates"
 )

@@ -9,6 +9,7 @@ import (
 	"syscall"
 	"time"
 
+	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/config/source"
 	"github.com/klyed/hivesmartchain/crypto"
 	"github.com/klyed/hivesmartchain/execution/evm/abi"
@@ -18,7 +19,6 @@ import (
 	"github.com/klyed/hivesmartchain/vent/sqldb"
 	"github.com/klyed/hivesmartchain/vent/sqlsol"
 	"github.com/klyed/hivesmartchain/vent/types"
-	cli "github.com/jawher/mow.cli"
 )
 
 type LogLevel string

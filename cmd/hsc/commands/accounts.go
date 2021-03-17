@@ -7,10 +7,10 @@ import (
 
 	"github.com/klyed/hivesmartchain/encoding"
 
+	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/deploy/compile"
 	"github.com/klyed/hivesmartchain/execution/evm/abi"
 	"github.com/klyed/hivesmartchain/rpc/rpcquery"
-	cli "github.com/jawher/mow.cli"
 )
 
 // Accounts lists all the accounts in a chain, alongside with any metadata like contract name and ABI

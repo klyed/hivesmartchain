@@ -28,11 +28,11 @@ var _ = math.Inf
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type PublicKey struct {
-	CurveType            CurveType                                     `protobuf:"varint,1,opt,name=CurveType,proto3,casttype=CurveType" json:"CurveType,omitempty"`
+	CurveType            CurveType                                       `protobuf:"varint,1,opt,name=CurveType,proto3,casttype=CurveType" json:"CurveType,omitempty"`
 	PublicKey            github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,2,opt,name=PublicKey,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"PublicKey"`
-	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
-	XXX_unrecognized     []byte                                        `json:"-"`
-	XXX_sizecache        int32                                         `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
+	XXX_unrecognized     []byte                                          `json:"-"`
+	XXX_sizecache        int32                                           `json:"-"`
 }
 
 func (m *PublicKey) Reset()      { *m = PublicKey{} }

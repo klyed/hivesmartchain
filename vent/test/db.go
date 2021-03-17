@@ -17,7 +17,7 @@ import (
 )
 
 const (
-	ChainID       = "CHAIN_123"
+	ChainID    = "CHAIN_123"
 	HscVersion = "1.0.0"
 )
 

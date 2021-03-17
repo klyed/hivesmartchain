@@ -7,12 +7,12 @@ import (
 	"os"
 	"time"
 
+	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/config/source"
 	"github.com/klyed/hivesmartchain/deploy/def"
 	"github.com/klyed/hivesmartchain/deploy/jobs"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/txs/payload"
-	cli "github.com/jawher/mow.cli"
 )
 
 // Tx constructs or sends payloads to a burrow daemon

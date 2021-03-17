@@ -32,7 +32,7 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type Account struct {
 	Address   github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
-	PublicKey *crypto.PublicKey                            `protobuf:"bytes,2,opt,name=PublicKey,proto3" json:"PublicKey,omitempty"`
+	PublicKey *crypto.PublicKey                              `protobuf:"bytes,2,opt,name=PublicKey,proto3" json:"PublicKey,omitempty"`
 	// Sequence counts the number of transactions that have been accepted from this account
 	Sequence uint64 `protobuf:"varint,3,opt,name=Sequence,proto3" json:"Sequence,omitempty"`
 	// The account's current native token balance
@@ -55,9 +55,9 @@ type Account struct {
 	// (from Solidity/EVM), they point to the original deployed account where the metadata is stored.
 	// This original account is called the forebear.
 	Forebear             *github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,10,opt,name=Forebear,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Forebear,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
-	XXX_unrecognized     []byte                                        `json:"-"`
-	XXX_sizecache        int32                                         `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
+	XXX_unrecognized     []byte                                          `json:"-"`
+	XXX_sizecache        int32                                           `json:"-"`
 }
 
 func (m *Account) Reset()      { *m = Account{} }

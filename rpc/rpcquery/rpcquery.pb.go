@@ -92,9 +92,9 @@ func (*StatusParam) XXX_MessageName() string {
 
 type GetAccountParam struct {
 	Address              github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
-	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
-	XXX_unrecognized     []byte                                       `json:"-"`
-	XXX_sizecache        int32                                        `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
+	XXX_unrecognized     []byte                                         `json:"-"`
+	XXX_sizecache        int32                                          `json:"-"`
 }
 
 func (m *GetAccountParam) Reset()         { *m = GetAccountParam{} }
@@ -133,9 +133,9 @@ func (*GetAccountParam) XXX_MessageName() string {
 type GetMetadataParam struct {
 	Address              *github_com_klyed_hivesmartchain_crypto.Address  `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address,omitempty"`
 	MetadataHash         *github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,2,opt,name=MetadataHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"MetadataHash,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
-	XXX_unrecognized     []byte                                         `json:"-"`
-	XXX_sizecache        int32                                          `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                         `json:"-"`
+	XXX_unrecognized     []byte                                           `json:"-"`
+	XXX_sizecache        int32                                            `json:"-"`
 }
 
 func (m *GetMetadataParam) Reset()         { *m = GetMetadataParam{} }
@@ -221,9 +221,9 @@ func (*MetadataResult) XXX_MessageName() string {
 type GetStorageParam struct {
 	Address              github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
 	Key                  github_com_klyed_hivesmartchain_binary.Word256 `protobuf:"bytes,2,opt,name=Key,proto3,customtype=github.com/klyed/hivesmartchain/binary.Word256" json:"Key"`
-	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
-	XXX_unrecognized     []byte                                       `json:"-"`
-	XXX_sizecache        int32                                        `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
+	XXX_unrecognized     []byte                                         `json:"-"`
+	XXX_sizecache        int32                                          `json:"-"`
 }
 
 func (m *GetStorageParam) Reset()         { *m = GetStorageParam{} }
@@ -261,9 +261,9 @@ func (*GetStorageParam) XXX_MessageName() string {
 
 type StorageValue struct {
 	Value                github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,1,opt,name=Value,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Value"`
-	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
-	XXX_unrecognized     []byte                                        `json:"-"`
-	XXX_sizecache        int32                                         `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
+	XXX_unrecognized     []byte                                          `json:"-"`
+	XXX_sizecache        int32                                           `json:"-"`
 }
 
 func (m *StorageValue) Reset()         { *m = StorageValue{} }
@@ -615,10 +615,10 @@ func (*NetworkRegistry) XXX_MessageName() string {
 
 type RegisteredValidator struct {
 	Address              github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
-	Node                 *registry.NodeIdentity                       `protobuf:"bytes,2,opt,name=Node,proto3" json:"Node,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
-	XXX_unrecognized     []byte                                       `json:"-"`
-	XXX_sizecache        int32                                        `json:"-"`
+	Node                 *registry.NodeIdentity                         `protobuf:"bytes,2,opt,name=Node,proto3" json:"Node,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
+	XXX_unrecognized     []byte                                         `json:"-"`
+	XXX_sizecache        int32                                          `json:"-"`
 }
 
 func (m *RegisteredValidator) Reset()         { *m = RegisteredValidator{} }

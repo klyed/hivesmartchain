@@ -7,9 +7,9 @@ import (
 	"github.com/lib/pq"
 	"github.com/pkg/errors"
 
+	"github.com/jmoiron/sqlx"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/vent/types"
-	"github.com/jmoiron/sqlx"
 	"github.com/prometheus/common/log"
 )
 

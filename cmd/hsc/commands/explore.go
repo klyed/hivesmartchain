@@ -10,8 +10,8 @@ import (
 
 	"github.com/klyed/hivesmartchain/bcm"
 
-	"github.com/klyed/hivesmartchain/txs"
 	cli "github.com/jawher/mow.cli"
+	"github.com/klyed/hivesmartchain/txs"
 	dbm "github.com/tendermint/tm-db"
 )
 

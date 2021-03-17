@@ -7,12 +7,12 @@ import (
 	"time"
 
 	"github.com/go-kit/kit/log"
+	cli "github.com/jawher/mow.cli"
 	pkgs "github.com/klyed/hivesmartchain/deploy"
 	"github.com/klyed/hivesmartchain/deploy/def"
 	"github.com/klyed/hivesmartchain/deploy/proposals"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/logging/loggers"
-	cli "github.com/jawher/mow.cli"
 )
 
 // 15 seconds is like a long time man

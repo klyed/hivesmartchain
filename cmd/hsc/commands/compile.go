@@ -5,9 +5,9 @@ import (
 	"os"
 	"path"
 
+	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/deploy/compile"
 	"github.com/klyed/hivesmartchain/logging"
-	cli "github.com/jawher/mow.cli"
 )
 
 // Currently this just compiles to Go fixtures - it might make sense to extend it to take a text template for output

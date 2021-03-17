@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/klyed/hivesmartchain/vent/types"
 	"github.com/jmoiron/sqlx"
+	"github.com/klyed/hivesmartchain/vent/types"
 )
 
 // DBAdapter implements database dependent interface

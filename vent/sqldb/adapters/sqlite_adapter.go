@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/jmoiron/sqlx"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/vent/types"
-	"github.com/jmoiron/sqlx"
 	sqlite3 "github.com/mattn/go-sqlite3"
 	"github.com/pkg/errors"
 )

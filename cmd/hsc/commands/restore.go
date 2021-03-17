@@ -1,8 +1,8 @@
 package commands
 
 import (
-	"github.com/klyed/hivesmartchain/core"
 	cli "github.com/jawher/mow.cli"
+	"github.com/klyed/hivesmartchain/core"
 )
 
 // Restore reads a state file and saves into a runnable dir

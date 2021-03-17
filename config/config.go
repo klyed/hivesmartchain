@@ -23,7 +23,7 @@ type BurrowConfig struct {
 	ValidatorAddress *crypto.Address `json:",omitempty" toml:",omitempty"`
 	Passphrase       *string         `json:",omitempty" toml:",omitempty"`
 	// From config file
-	HscDir  string
+	HscDir     string
 	GenesisDoc *genesis.GenesisDoc                `json:",omitempty" toml:",omitempty"`
 	Tendermint *tendermint.BurrowTendermintConfig `json:",omitempty" toml:",omitempty"`
 	Execution  *execution.ExecutionConfig         `json:",omitempty" toml:",omitempty"`
@@ -34,7 +34,7 @@ type BurrowConfig struct {
 
 func DefaultBurrowConfig() *BurrowConfig {
 	return &BurrowConfig{
-		HscDir:  ".hivesmartchain",
+		HscDir:     ".hivesmartchain",
 		Tendermint: tendermint.DefaultBurrowTendermintConfig(),
 		Keys:       keys.DefaultKeysConfig(),
 		RPC:        rpc.DefaultRPCConfig(),

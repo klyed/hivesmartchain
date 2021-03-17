@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
+	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/cmd/hsc/commands"
 	"github.com/klyed/hivesmartchain/project"
-	cli "github.com/jawher/mow.cli"
 )
 
 func main() {

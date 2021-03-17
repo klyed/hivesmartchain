@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"strings"
 
+	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/config/deployment"
 	"github.com/klyed/hivesmartchain/config/source"
 	"github.com/klyed/hivesmartchain/consensus/tendermint"
@@ -19,7 +20,6 @@ import (
 	"github.com/klyed/hivesmartchain/logging/logconfig"
 	"github.com/klyed/hivesmartchain/logging/logconfig/presets"
 	"github.com/klyed/hivesmartchain/rpc"
-	cli "github.com/jawher/mow.cli"
 	tmjson "github.com/tendermint/tendermint/libs/json"
 	dbm "github.com/tendermint/tm-db"
 )

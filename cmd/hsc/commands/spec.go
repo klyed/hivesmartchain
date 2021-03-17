@@ -3,9 +3,9 @@ package commands
 import (
 	"fmt"
 
+	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/config/source"
 	"github.com/klyed/hivesmartchain/genesis/spec"
-	cli "github.com/jawher/mow.cli"
 )
 
 // Spec generates a list of genesis accounts with certain permissions

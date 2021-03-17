@@ -40,9 +40,9 @@ type NodeIdentity struct {
 	// The public key that this node will validate with if it becomes a validator
 	// (use this to create a binding between p2p node ID and validator)
 	ValidatorPublicKey   *github_com_klyed_hivesmartchain_crypto.PublicKey `protobuf:"bytes,4,opt,name=ValidatorPublicKey,proto3,customtype=github.com/klyed/hivesmartchain/crypto.PublicKey" json:"ValidatorPublicKey,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
-	XXX_unrecognized     []byte                                          `json:"-"`
-	XXX_sizecache        int32                                           `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                          `json:"-"`
+	XXX_unrecognized     []byte                                            `json:"-"`
+	XXX_sizecache        int32                                             `json:"-"`
 }
 
 func (m *NodeIdentity) Reset()      { *m = NodeIdentity{} }

@@ -30,16 +30,16 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type NodeInfo struct {
 	ID                   github_com_klyed_hivesmartchain_crypto.Address  `protobuf:"bytes,1,opt,name=ID,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"ID"`
-	ListenAddress        string                                        `protobuf:"bytes,2,opt,name=ListenAddress,proto3" json:"ListenAddress,omitempty"`
-	Network              string                                        `protobuf:"bytes,3,opt,name=Network,proto3" json:"Network,omitempty"`
-	Version              string                                        `protobuf:"bytes,4,opt,name=Version,proto3" json:"Version,omitempty"`
+	ListenAddress        string                                          `protobuf:"bytes,2,opt,name=ListenAddress,proto3" json:"ListenAddress,omitempty"`
+	Network              string                                          `protobuf:"bytes,3,opt,name=Network,proto3" json:"Network,omitempty"`
+	Version              string                                          `protobuf:"bytes,4,opt,name=Version,proto3" json:"Version,omitempty"`
 	Channels             github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,5,opt,name=Channels,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Channels"`
-	Moniker              string                                        `protobuf:"bytes,6,opt,name=Moniker,proto3" json:"Moniker,omitempty"`
-	RPCAddress           string                                        `protobuf:"bytes,7,opt,name=RPCAddress,proto3" json:"RPCAddress,omitempty"`
-	TxIndex              string                                        `protobuf:"bytes,8,opt,name=TxIndex,proto3" json:"TxIndex,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
-	XXX_unrecognized     []byte                                        `json:"-"`
-	XXX_sizecache        int32                                         `json:"-"`
+	Moniker              string                                          `protobuf:"bytes,6,opt,name=Moniker,proto3" json:"Moniker,omitempty"`
+	RPCAddress           string                                          `protobuf:"bytes,7,opt,name=RPCAddress,proto3" json:"RPCAddress,omitempty"`
+	TxIndex              string                                          `protobuf:"bytes,8,opt,name=TxIndex,proto3" json:"TxIndex,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
+	XXX_unrecognized     []byte                                          `json:"-"`
+	XXX_sizecache        int32                                           `json:"-"`
 }
 
 func (m *NodeInfo) Reset()         { *m = NodeInfo{} }

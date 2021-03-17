@@ -382,10 +382,10 @@ func (*CallTx) XXX_MessageName() string {
 
 type ContractMeta struct {
 	CodeHash             github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,1,opt,name=CodeHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"CodeHash"`
-	Meta                 string                                        `protobuf:"bytes,2,opt,name=Meta,proto3" json:"Meta,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
-	XXX_unrecognized     []byte                                        `json:"-"`
-	XXX_sizecache        int32                                         `json:"-"`
+	Meta                 string                                          `protobuf:"bytes,2,opt,name=Meta,proto3" json:"Meta,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
+	XXX_unrecognized     []byte                                          `json:"-"`
+	XXX_sizecache        int32                                           `json:"-"`
 }
 
 func (m *ContractMeta) Reset()         { *m = ContractMeta{} }
@@ -725,13 +725,13 @@ func (*GovTx) XXX_MessageName() string {
 }
 
 type ProposalTx struct {
-	Input                *TxInput                                       `protobuf:"bytes,1,opt,name=Input,proto3" json:"Input,omitempty"`
-	VotingWeight         int64                                          `protobuf:"varint,2,opt,name=VotingWeight,proto3" json:"VotingWeight,omitempty"`
+	Input                *TxInput                                         `protobuf:"bytes,1,opt,name=Input,proto3" json:"Input,omitempty"`
+	VotingWeight         int64                                            `protobuf:"varint,2,opt,name=VotingWeight,proto3" json:"VotingWeight,omitempty"`
 	ProposalHash         *github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,3,opt,name=ProposalHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"ProposalHash,omitempty"`
-	Proposal             *Proposal                                      `protobuf:"bytes,4,opt,name=Proposal,proto3" json:"Proposal,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
-	XXX_unrecognized     []byte                                         `json:"-"`
-	XXX_sizecache        int32                                          `json:"-"`
+	Proposal             *Proposal                                        `protobuf:"bytes,4,opt,name=Proposal,proto3" json:"Proposal,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                         `json:"-"`
+	XXX_unrecognized     []byte                                           `json:"-"`
+	XXX_sizecache        int32                                            `json:"-"`
 }
 
 func (m *ProposalTx) Reset()      { *m = ProposalTx{} }
@@ -850,10 +850,10 @@ func (*BatchTx) XXX_MessageName() string {
 
 type Vote struct {
 	Address              github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
-	VotingWeight         int64                                        `protobuf:"varint,2,opt,name=VotingWeight,proto3" json:"VotingWeight,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
-	XXX_unrecognized     []byte                                       `json:"-"`
-	XXX_sizecache        int32                                        `json:"-"`
+	VotingWeight         int64                                          `protobuf:"varint,2,opt,name=VotingWeight,proto3" json:"VotingWeight,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
+	XXX_unrecognized     []byte                                         `json:"-"`
+	XXX_sizecache        int32                                          `json:"-"`
 }
 
 func (m *Vote) Reset()      { *m = Vote{} }
@@ -930,13 +930,13 @@ func (*Proposal) XXX_MessageName() string {
 }
 
 type Ballot struct {
-	Proposal             *Proposal                                      `protobuf:"bytes,1,opt,name=Proposal,proto3" json:"Proposal,omitempty"`
+	Proposal             *Proposal                                        `protobuf:"bytes,1,opt,name=Proposal,proto3" json:"Proposal,omitempty"`
 	FinalizingTx         *github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,2,opt,name=FinalizingTx,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"FinalizingTx,omitempty"`
-	ProposalState        Ballot_ProposalState                           `protobuf:"varint,4,opt,name=proposalState,proto3,enum=payload.Ballot_ProposalState" json:"proposalState,omitempty"`
-	Votes                []*Vote                                        `protobuf:"bytes,5,rep,name=Votes,proto3" json:"Votes,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
-	XXX_unrecognized     []byte                                         `json:"-"`
-	XXX_sizecache        int32                                          `json:"-"`
+	ProposalState        Ballot_ProposalState                             `protobuf:"varint,4,opt,name=proposalState,proto3,enum=payload.Ballot_ProposalState" json:"proposalState,omitempty"`
+	Votes                []*Vote                                          `protobuf:"bytes,5,rep,name=Votes,proto3" json:"Votes,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                         `json:"-"`
+	XXX_unrecognized     []byte                                           `json:"-"`
+	XXX_sizecache        int32                                            `json:"-"`
 }
 
 func (m *Ballot) Reset()         { *m = Ballot{} }

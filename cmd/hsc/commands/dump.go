@@ -8,12 +8,12 @@ import (
 
 	"github.com/klyed/hivesmartchain/encoding"
 
+	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/core"
 	"github.com/klyed/hivesmartchain/dump"
 	"github.com/klyed/hivesmartchain/logging/logconfig"
 	"github.com/klyed/hivesmartchain/rpc/rpcdump"
 	"github.com/klyed/hivesmartchain/rpc/rpcquery"
-	cli "github.com/jawher/mow.cli"
 )
 
 type dumpOptions struct {

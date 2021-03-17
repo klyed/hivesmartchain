@@ -396,13 +396,13 @@ func (s *Service) GeneratePrivateAccount() (*ResultGeneratePrivateAccount, error
 func Status(blockchain bcm.BlockchainInfo, validators validator.History, nodeView *tendermint.NodeView, blockTimeWithin,
 	blockSeenTimeWithin string) (*ResultStatus, error) {
 	res := &ResultStatus{
-		ChainID:       blockchain.ChainID(),
-		RunID:         nodeView.RunID().String(),
-		HscVersion: project.FullVersion(),
-		GenesisHash:   blockchain.GenesisHash(),
-		NodeInfo:      nodeView.NodeInfo(),
-		SyncInfo:      bcm.GetSyncInfo(blockchain),
-		CatchingUp:    nodeView.IsSyncing(),
+		ChainID:     blockchain.ChainID(),
+		RunID:       nodeView.RunID().String(),
+		HscVersion:  project.FullVersion(),
+		GenesisHash: blockchain.GenesisHash(),
+		NodeInfo:    nodeView.NodeInfo(),
+		SyncInfo:    bcm.GetSyncInfo(blockchain),
+		CatchingUp:  nodeView.IsSyncing(),
 	}
 	if nodeView != nil {
 		address := nodeView.ValidatorAddress()

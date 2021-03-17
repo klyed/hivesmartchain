@@ -9,8 +9,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/klyed/hivesmartchain/execution/native"
 	"github.com/iancoleman/strcase"
+	"github.com/klyed/hivesmartchain/execution/native"
 )
 
 const contractTemplateText = `pragma solidity [[.SolidityPragmaVersion]];

@@ -37,11 +37,11 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type CallCodeParam struct {
 	FromAddress          github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=FromAddress,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"FromAddress"`
-	Code                 []byte                                       `protobuf:"bytes,2,opt,name=Code,proto3" json:"Code,omitempty"`
-	Data                 []byte                                       `protobuf:"bytes,3,opt,name=Data,proto3" json:"Data,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
-	XXX_unrecognized     []byte                                       `json:"-"`
-	XXX_sizecache        int32                                        `json:"-"`
+	Code                 []byte                                         `protobuf:"bytes,2,opt,name=Code,proto3" json:"Code,omitempty"`
+	Data                 []byte                                         `protobuf:"bytes,3,opt,name=Data,proto3" json:"Data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
+	XXX_unrecognized     []byte                                         `json:"-"`
+	XXX_sizecache        int32                                          `json:"-"`
 }
 
 func (m *CallCodeParam) Reset()         { *m = CallCodeParam{} }
@@ -93,9 +93,9 @@ func (*CallCodeParam) XXX_MessageName() string {
 
 type TxEnvelope struct {
 	Envelope             *github_com_klyed_hivesmartchain_txs.Envelope `protobuf:"bytes,1,opt,name=Envelope,proto3,customtype=github.com/klyed/hivesmartchain/txs.Envelope" json:"Envelope,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                    `json:"-"`
-	XXX_unrecognized     []byte                                      `json:"-"`
-	XXX_sizecache        int32                                       `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
+	XXX_unrecognized     []byte                                        `json:"-"`
+	XXX_sizecache        int32                                         `json:"-"`
 }
 
 func (m *TxEnvelope) Reset()         { *m = TxEnvelope{} }

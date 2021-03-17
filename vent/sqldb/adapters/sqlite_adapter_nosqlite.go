@@ -6,9 +6,9 @@ package adapters
 import (
 	"fmt"
 
+	"github.com/jmoiron/sqlx"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/vent/types"
-	"github.com/jmoiron/sqlx"
 )
 
 // This is a no-op version of SQLiteAdapter

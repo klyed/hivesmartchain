@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/jmoiron/sqlx"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/vent/sqldb/adapters"
 	"github.com/klyed/hivesmartchain/vent/types"
-	"github.com/jmoiron/sqlx"
 )
 
 const maxUint64 uint64 = (1 << 64) - 1

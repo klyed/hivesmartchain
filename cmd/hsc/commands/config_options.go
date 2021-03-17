@@ -5,9 +5,9 @@ import (
 	"net"
 	"strings"
 
+	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/config"
 	"github.com/klyed/hivesmartchain/crypto"
-	cli "github.com/jawher/mow.cli"
 )
 
 type configOptions struct {

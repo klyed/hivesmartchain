@@ -89,15 +89,15 @@ func (*StreamEvents) XXX_MessageName() string {
 }
 
 type StreamEvent struct {
-	BeginBlock           *BeginBlock                                 `protobuf:"bytes,1,opt,name=BeginBlock,proto3" json:"BeginBlock,omitempty"`
-	BeginTx              *BeginTx                                    `protobuf:"bytes,2,opt,name=BeginTx,proto3" json:"BeginTx,omitempty"`
+	BeginBlock           *BeginBlock                                   `protobuf:"bytes,1,opt,name=BeginBlock,proto3" json:"BeginBlock,omitempty"`
+	BeginTx              *BeginTx                                      `protobuf:"bytes,2,opt,name=BeginTx,proto3" json:"BeginTx,omitempty"`
 	Envelope             *github_com_klyed_hivesmartchain_txs.Envelope `protobuf:"bytes,3,opt,name=Envelope,proto3,customtype=github.com/klyed/hivesmartchain/txs.Envelope" json:"Envelope,omitempty"`
-	Event                *Event                                      `protobuf:"bytes,4,opt,name=Event,proto3" json:"Event,omitempty"`
-	EndTx                *EndTx                                      `protobuf:"bytes,5,opt,name=EndTx,proto3" json:"EndTx,omitempty"`
-	EndBlock             *EndBlock                                   `protobuf:"bytes,6,opt,name=EndBlock,proto3" json:"EndBlock,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                    `json:"-"`
-	XXX_unrecognized     []byte                                      `json:"-"`
-	XXX_sizecache        int32                                       `json:"-"`
+	Event                *Event                                        `protobuf:"bytes,4,opt,name=Event,proto3" json:"Event,omitempty"`
+	EndTx                *EndTx                                        `protobuf:"bytes,5,opt,name=EndTx,proto3" json:"EndTx,omitempty"`
+	EndBlock             *EndBlock                                     `protobuf:"bytes,6,opt,name=EndBlock,proto3" json:"EndBlock,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
+	XXX_unrecognized     []byte                                        `json:"-"`
+	XXX_sizecache        int32                                         `json:"-"`
 }
 
 func (m *StreamEvent) Reset()         { *m = StreamEvent{} }
@@ -366,9 +366,9 @@ func (*BeginTx) XXX_MessageName() string {
 type EndTx struct {
 	// The hash of the transaction that caused this event to be generated
 	TxHash               github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,3,opt,name=TxHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"TxHash"`
-	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
-	XXX_unrecognized     []byte                                        `json:"-"`
-	XXX_sizecache        int32                                         `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
+	XXX_unrecognized     []byte                                          `json:"-"`
+	XXX_sizecache        int32                                           `json:"-"`
 }
 
 func (m *EndTx) Reset()         { *m = EndTx{} }
@@ -1041,9 +1041,9 @@ type LogEvent struct {
 	Address              github_com_klyed_hivesmartchain_crypto.Address   `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
 	Data                 github_com_klyed_hivesmartchain_binary.HexBytes  `protobuf:"bytes,2,opt,name=Data,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Data"`
 	Topics               []github_com_klyed_hivesmartchain_binary.Word256 `protobuf:"bytes,3,rep,name=Topics,proto3,customtype=github.com/klyed/hivesmartchain/binary.Word256" json:"Topics"`
-	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
-	XXX_unrecognized     []byte                                         `json:"-"`
-	XXX_sizecache        int32                                          `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                         `json:"-"`
+	XXX_unrecognized     []byte                                           `json:"-"`
+	XXX_sizecache        int32                                            `json:"-"`
 }
 
 func (m *LogEvent) Reset()         { *m = LogEvent{} }
@@ -1080,14 +1080,14 @@ func (*LogEvent) XXX_MessageName() string {
 }
 
 type CallEvent struct {
-	CallType             CallType                                      `protobuf:"varint,5,opt,name=CallType,proto3,casttype=CallType" json:"CallType,omitempty"`
-	CallData             *CallData                                     `protobuf:"bytes,1,opt,name=CallData,proto3" json:"CallData,omitempty"`
+	CallType             CallType                                        `protobuf:"varint,5,opt,name=CallType,proto3,casttype=CallType" json:"CallType,omitempty"`
+	CallData             *CallData                                       `protobuf:"bytes,1,opt,name=CallData,proto3" json:"CallData,omitempty"`
 	Origin               github_com_klyed_hivesmartchain_crypto.Address  `protobuf:"bytes,2,opt,name=Origin,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Origin"`
-	StackDepth           uint64                                        `protobuf:"varint,3,opt,name=StackDepth,proto3" json:"StackDepth,omitempty"`
+	StackDepth           uint64                                          `protobuf:"varint,3,opt,name=StackDepth,proto3" json:"StackDepth,omitempty"`
 	Return               github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,4,opt,name=Return,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Return"`
-	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
-	XXX_unrecognized     []byte                                        `json:"-"`
-	XXX_sizecache        int32                                         `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
+	XXX_unrecognized     []byte                                          `json:"-"`
+	XXX_sizecache        int32                                           `json:"-"`
 }
 
 func (m *CallEvent) Reset()         { *m = CallEvent{} }
@@ -1147,9 +1147,9 @@ func (*CallEvent) XXX_MessageName() string {
 type PrintEvent struct {
 	Address              github_com_klyed_hivesmartchain_crypto.Address  `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
 	Data                 github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,2,opt,name=Data,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Data"`
-	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
-	XXX_unrecognized     []byte                                        `json:"-"`
-	XXX_sizecache        int32                                         `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
+	XXX_unrecognized     []byte                                          `json:"-"`
+	XXX_sizecache        int32                                           `json:"-"`
 }
 
 func (m *PrintEvent) Reset()         { *m = PrintEvent{} }
@@ -1234,9 +1234,9 @@ func (*GovernAccountEvent) XXX_MessageName() string {
 
 type InputEvent struct {
 	Address              github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
-	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
-	XXX_unrecognized     []byte                                       `json:"-"`
-	XXX_sizecache        int32                                        `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
+	XXX_unrecognized     []byte                                         `json:"-"`
+	XXX_sizecache        int32                                          `json:"-"`
 }
 
 func (m *InputEvent) Reset()         { *m = InputEvent{} }
@@ -1274,9 +1274,9 @@ func (*InputEvent) XXX_MessageName() string {
 
 type OutputEvent struct {
 	Address              github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
-	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
-	XXX_unrecognized     []byte                                       `json:"-"`
-	XXX_sizecache        int32                                        `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
+	XXX_unrecognized     []byte                                         `json:"-"`
+	XXX_sizecache        int32                                          `json:"-"`
 }
 
 func (m *OutputEvent) Reset()         { *m = OutputEvent{} }

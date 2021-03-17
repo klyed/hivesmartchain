@@ -13,11 +13,11 @@ import (
 	"github.com/klyed/hivesmartchain/encoding"
 
 	"github.com/howeyc/gopass"
+	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/config"
 	"github.com/klyed/hivesmartchain/config/deployment"
 	"github.com/klyed/hivesmartchain/crypto"
 	"github.com/klyed/hivesmartchain/keys"
-	cli "github.com/jawher/mow.cli"
 )
 
 // Keys runs as either client or server
