@@ -1,4 +1,4 @@
-# [Hyperledger Burrow](https://hyperledger.github.io/burrow)
+# [Hive Smart Chain](https://peakd.com/proposals/164)
 
 [![CI](https://github.com/klyed/hivesmartchain/workflows/main/badge.svg)](https://launch-editor.github.com/actions?workflowID=main&event=push&nwo=hyperledger%2Fburrow)
 [![version](https://img.shields.io/github/tag/hyperledger/burrow.svg)](https://github.com/klyed/hivesmartchain/releases/latest)
@@ -7,13 +7,13 @@
 [![LoC](https://tokei.rs/b1/github/hyperledger/burrow?category=lines)](https://github.com/hyperledger/burrow)
 [![codecov](https://codecov.io/gh/hyperledger/burrow/branch/main/graph/badge.svg)](https://codecov.io/gh/hyperledger/burrow)
 
-Hyperledger Burrow is a permissioned Ethereum smart-contract blockchain node. It executes Ethereum EVM and WASM smart contract code (usually written in [Solidity](https://solidity.readthedocs.io)) on a permissioned virtual machine. Burrow provides transaction finality and high transaction throughput on a proof-of-stake [Tendermint](https://tendermint.com) consensus engine.
+Hive Smart Chain is a community focused Ethereum smart-contract capable side chain node allowing HIVE users to run smart contracts while using HIVE as their gas fees. It executes Ethereum EVM and WASM smart contract code (usually written in [Solidity](https://solidity.readthedocs.io)) on a permissioned virtual machine. Hive Smart Chain provides transaction finality and high transaction throughput on a proof-of-stake [Tendermint](https://tendermint.com) consensus engine.
 
-![burrow logo](assets/burrow.png)
+![hsc logo](https://images.hive.blog/0x0/https://files.peakd.com/file/peakd-hive/klye/23uQERcpCeRtQUooESeioNqouBjmc9mDBsT68U4AwRDdraYPzwa4sDsSLpVNt4ohW3uun.png)
 
-## What is Burrow
+## What is Hive Smart Chain
 
-Burrow is a fully fledged blockchain node and smart contract execution engine -- a distributed database that executes code. Burrow runs Ethereum Virtual Machine (EVM) and Web Assembly (WASM) smart contracts. Burrow networks are synchronised using the [Tendermint](https://github.com/tendermint/tendermint) consensus algorithm.
+Hive Smart Chain is a fully fledged blockchain node and smart contract execution engine that runs in tandem to the HIVE DPoS blockchain offering it access to smart contract capabilities for it's native token as well as acting as a gateway to interface with other blockchains in a "DeFi" manner -- in otherwords it's a distributed database and computing platform that executes code. Hive Smart Chain runs Ethereum Virtual Machine (EVM) and Web Assembly (WASM) smart contracts. Hive Smart Chain are Secured and decentralized using the [Tendermint](https://github.com/tendermint/tendermint) consensus algorithm.
 
 Highlights include:
 
@@ -29,42 +29,28 @@ Highlights include:
 - **Keys service** - provides optional delegating signing at the server or via a local proxy
 - **Web3 RPC** - provides compatibility for mainnet Ethereum tooling such as Truffle and Metamask
 
-### What it is not
-
-- An Ethereum mainnet client - we do not speak devp2p and various implementation details are different. We are Ethereum-derived but exploit greater freedom than mainnet compatibility would allow.
-- Just a virtual machine
-- A research project - we run it in production
-
-### Further introductory material
-
-See [Burrow - the Boring Blockchain](https://wiki.hyperledger.org/display/burrow/Burrow+-+The+Boring+Blockchain) for an introduction to Burrow and its motivating vision.
-
-Watch the [Boring into Burrow](https://www.youtube.com/watch?v=OpbjYaGAP4k) talk from the Hyperledger Global Forum 2020
-
 ## JavaScript Client
 
 There is a [JavaScript API](https://github.com/klyed/hivesmartchain/tree/main/js)
 
 ## Project Roadmap
 
-Project information generally updated on a quarterly basis can be found on the [Hyperledger Burrow Wiki](https://wiki.hyperledger.org/display/burrow).
+Project information generally updated on a weekly basis can be found on the [Hive Smart Chain](https://github.com/klyed/hivesmartchain).
 
-## Documentation
-Burrow getting started documentation is available on the [documentation site](https://hyperledger.github.io/burrow) (source markdown files can be found in [docs]()) and programmatic API in [GoDocs](https://godoc.org/github.com/hyperledger/burrow).
 
 ## Releases
 
-- **Burrow binaries**: https://github.com/klyed/hivesmartchain/releases
-- **Burrow.js**: https://www.npmjs.com/package/@hyperledger/burrow
-- **Docker**: https://hub.docker.com/repository/docker/hyperledger/burrow
+- **Hive Smart Chain binaries**: https://github.com/klyed/hivesmartchain/releases
+- **hsc.js   (COMING SOON)**: https://www.npmjs.com/package/@hyperledger/burrow
+- **Docker   (COMING SOON)**: https://hub.docker.com/repository/docker/hyperledger/burrow
 
 ## Contribute
 
 We welcome any and all contributions. Read the [contributing file](../.github/CONTRIBUTING.md) for more information on making your first Pull Request to Burrow!
 
 You can find us on:
-- [Hyperledger Chat](https://chat.hyperledger.org)
-- [Hyperledger Mailing List](https://lists.hyperledger.org/mailman/listinfo)
+- [PeakD](https://peakd.com/@klye)
+- [Discord](https://lists.hyperledger.org/mailman/listinfo)
 - [here on Github](https://github.com/klyed/hivesmartchain/issues)
 
 ## License
