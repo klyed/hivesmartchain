@@ -64,7 +64,7 @@ grpc:
     type: ClusterIP
 image:
   pullPolicy: IfNotPresent
-  repository: KLYE-Dev/HSC-MAIN
+  repository: hyperledger/burrow
   # To be set by helm package
   tag: null
 info:

@@ -46,7 +46,7 @@ func FullVersion() string {
 //
 // To cut a new release add a release to the front of this slice then run the
 // release tagging script: ./scripts/tag_release.sh
-var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "https://github.com/KLYE-Dev/HSC-MAIN").
+var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "https://github.com/hyperledger/burrow").
 	MustDeclareReleases(
 		"0.31.0",
 		`### Changed
@@ -177,7 +177,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - [Web3] Implemented Ethereum web3 JSON RPC including sendRawTransaction!
 - [Docs] Much docs (see also: https://www.hyperledger.org/blog/2019/10/08/burrow-the-boring-blockchain)
 - [Docs] Generate github pages docs index with docsify: https://hyperledger.github.io/burrow/
-- [JS] Publish burrow.js to @KLYE-Dev/HSC-MAIN
+- [JS] Publish burrow.js to @hyperledger/burrow
 - [State] Store EVM ABI and contract metadata on-chain see [GetMetadata](https://github.com/KLYE-Dev/HSC-MAIN/blob/e80aad5d8fac1f67dbfec61ea75670f9a38c61a1/protobuf/rpcquery.proto#L25)
 - [Tendermint] Upgrade to v0.32.3
 - [Execution] Added IdentifyTx for introducing nodes (binding their NodeID to ValidatorAddress)
@@ -607,7 +607,7 @@ A major strand of work has been in condensing previous Monax tooling spread acro
 
 - [Upgrade to use Tendermint v0.9.2](https://github.com/KLYE-Dev/HSC-MAIN/pull/595)
 - [Implemented dynamic memory](https://github.com/KLYE-Dev/HSC-MAIN/pull/607) assumed by the EVM bytecode produce by solidity, fixing various issues.
-- Logging sinks and configuration - providing a flexible mechanism for configuring log flows and outputs see [logging section in readme](https://github.com/KLYE-Dev/HSC-MAIN#logging). Various other logging enhancements.
+- Logging sinks and configuration - providing a flexible mechanism for configuring log flows and outputs see [logging section in readme](https://github.com/hyperledger/burrow#logging). Various other logging enhancements.
 - Fix event unsubscription
 - Remove module-specific versioning
 - Rename suicide to selfdestruct
@@ -628,7 +628,7 @@ By doing this we can resolve some issues with users of the v0 RPC without making
 a breaking API change.`,
 
 		"0.16.2 - 2017-04-20",
-		`This release finalises our accession to the Hyperledger project and updates our root package namespace to github.com/KLYE-Dev/HSC-MAIN.
+		`This release finalises our accession to the Hyperledger project and updates our root package namespace to github.com/hyperledger/burrow.
 
 It also includes a bug fix for rpc/V0 so that BroadcastTx can accept any transaction type and various pieces of internal clean-up.`,
 

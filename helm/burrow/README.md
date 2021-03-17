@@ -1,6 +1,6 @@
 # Burrow
 
-[Burrow](https://github.com/KLYE-Dev/HSC-MAIN) is a permissioned Ethereum smart-contract blockchain node which provides transaction finality and high transaction throughput 
+[Burrow](https://github.com/hyperledger/burrow) is a permissioned Ethereum smart-contract blockchain node which provides transaction finality and high transaction throughput 
 on a proof-of-stake [Tendermint](https://tendermint.com) consensus engine.
 
 ## Introduction
@@ -12,7 +12,7 @@ This chart bootstraps a burrow network on a [Kubernetes](http://kubernetes.io) c
 ### Prerequisites
 
 To deploy a new blockchain network, this chart requires that two objects be present in the same Kubernetes namespace: a configmap should house the genesis file and each node should 
-have a secret to hold any validator keys. The provided script, `addresses.sh` automatically provisions a number of files using the [burrow](https://github.com/KLYE-Dev/HSC-MAIN) toolkit, 
+have a secret to hold any validator keys. The provided script, `addresses.sh` automatically provisions a number of files using the [burrow](https://github.com/hyperledger/burrow) toolkit, 
 so please first ensure that `burrow --version` matches the `image.tag` in the [configuration](#configuration). This sequence also requires that the [jq](https://stedolan.github.io/jq/) binary 
 is installed. Two files will be generated, the first of note is `setup.yaml` which contains the two necessary Kubernetes specifications to be added to the cluster:
 
@@ -71,7 +71,7 @@ The following table lists the configurable parameters of the Burrow chart and it
 | `contracts.deploy` | command to run in post-install hook | `""` |
 | `env` | environment variables to configure burrow | `{}` |
 | `extraArgs` | extra arguments to give to the build in `burrow start` command | `{}` |
-| `image.repository` | image repository | `"KLYE-Dev/HSC-MAIN"` |
+| `image.repository` | image repository | `"hyperledger/burrow"` |
 | `image.tag` | image tag | `"0.29.4"` |
 | `image.pullPolicy` | image pull policy | `"IfNotPresent"` |
 | `livenessProbe.enabled` | enable liveness checks | `true` |
