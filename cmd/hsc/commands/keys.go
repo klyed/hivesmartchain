@@ -27,14 +27,14 @@ func Keys(output Output) func(cmd *cli.Cmd) {
 			Name:   "host",
 			Desc:   "set the host for talking to the key daemon",
 			Value:  keys.DefaultHost,
-			EnvVar: "BURROW_KEYS_HOST",
+			EnvVar: "HSC_KEYS_HOST",
 		})
 
 		keysPort := cmd.String(cli.StringOpt{
 			Name:   "port",
 			Desc:   "set the port for key daemon",
 			Value:  keys.DefaultPort,
-			EnvVar: "BURROW_KEYS_PORT",
+			EnvVar: "HSC_KEYS_PORT",
 		})
 
 		grpcKeysClient := func(output Output) keys.KeysClient {
@@ -47,7 +47,7 @@ func Keys(output Output) func(cmd *cli.Cmd) {
 
 		cmd.Command("server", "run keys server", func(cmd *cli.Cmd) {
 			keysDir := cmd.StringOpt("dir", "", "specify the location of the directory containing key files")
-			badPerm := cmd.BoolOpt("allow-bad-perm", true, "Allow unix key file permissions to be readable other than user")
+			//badPerm := cmd.BoolOpt("allow-bad-perm", true, "Allow unix key file permissions to be readable other than user")
 			configOpt := cmd.StringOpt("c config", "", "Use the specified Hive Smart Chain config file")
 
 			var conf *config.BurrowConfig
