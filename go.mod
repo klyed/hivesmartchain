@@ -2,21 +2,21 @@ module github.com/klyed/hivesmartchain;
 
 go 1.15;
 
-require	github.com/BurntSushi/toml v0.3.1;
-require	github.com/OneOfOne/xxhash v1.2.8;
-require	github.com/alecthomas/jsonschema v0.0.0-20201129101101-7b852d451add;
-require	github.com/asaskevich/govalidator v0.0.0-20200907205600-7a23bdc65eef; // indirect;
-require	github.com/btcsuite/btcd v0.21.0-beta;
-require	github.com/cep21/xdgbasedir v0.0.0-20170329171747-21470bfc93b9;
-require	github.com/cosmos/iavl v0.15.3;
-require	github.com/eapache/channels v1.1.0;
-require	github.com/elgs/gojq v0.0.0-20201120033525-b5293fef2759;
-require	github.com/elgs/gosplitargs v0.0.0-20161028071935-a491c5eeb3c8; // indirect
-require	github.com/fatih/color v1.10.0;
-require	github.com/go-interpreter/wagon v0.6.0;
-require	github.com/go-kit/kit v0.10.0;
-require	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible;
-require	github.com/gogo/protobuf v1.3.2;
+require	github.com/BurntSushi/toml v0.3.1
+require	github.com/OneOfOne/xxhash v1.2.8
+require	github.com/alecthomas/jsonschema v0.0.0-20201129101101-7b852d451add
+require	github.com/asaskevich/govalidator v0.0.0-20200907205600-7a23bdc65eef // indirect;
+require	github.com/btcsuite/btcd v0.21.0-beta
+require	github.com/cep21/xdgbasedir v0.0.0-20170329171747-21470bfc93b9
+require	github.com/cosmos/iavl v0.15.3
+require	github.com/eapache/channels v1.1.0
+require	github.com/elgs/gojq v0.0.0-20201120033525-b5293fef2759
+require	github.com/elgs/gosplitargs v0.0.0-20161028071935-a491c5eeb3c8;// indirect
+require	github.com/fatih/color v1.10.0
+require	github.com/go-interpreter/wagon v0.6.0
+require	github.com/go-kit/kit v0.10.0
+require	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible
+require	github.com/gogo/protobuf v1.3.2
 require	github.com/golang/protobuf v1.4.3
 require	github.com/gorilla/websocket v1.4.2
 require	github.com/hashicorp/golang-lru v0.5.4
