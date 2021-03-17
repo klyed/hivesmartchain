@@ -47,6 +47,4 @@ require	google.golang.org/grpc v1.35.0
 require	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.1.0 // indirect
 require	gopkg.in/yaml.v2 v2.4.0
 
-module github.com/klyed/hivesmartchain
-
 go 1.15
