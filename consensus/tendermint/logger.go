@@ -1,7 +1,7 @@
 package tendermint
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/klye-dev/hsc-main/logging"
 	"github.com/tendermint/tendermint/libs/log"
 )
 

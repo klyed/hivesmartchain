@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/lib/types"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/rpc/lib/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

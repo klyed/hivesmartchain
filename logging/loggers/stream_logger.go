@@ -7,7 +7,7 @@ import (
 
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/term"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/klye-dev/hsc-main/logging/structure"
 )
 
 type Syncable interface {

@@ -1,10 +1,10 @@
 package rpcdump
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/bcm"
-	"github.com/KLYE-Dev/HSC-MAIN/dump"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/state"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/klye-dev/hsc-main/bcm"
+	"github.com/klye-dev/hsc-main/dump"
+	"github.com/klye-dev/hsc-main/execution/state"
+	"github.com/klye-dev/hsc-main/logging"
 )
 
 type dumpServer struct {

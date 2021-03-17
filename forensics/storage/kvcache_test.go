@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/storage"
+	"github.com/klye-dev/hsc-main/storage"
 
 	"github.com/stretchr/testify/assert"
 )

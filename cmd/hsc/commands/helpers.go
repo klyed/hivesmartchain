@@ -8,10 +8,10 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/KLYE-Dev/HSC-MAIN/config"
-	"github.com/KLYE-Dev/HSC-MAIN/config/source"
-	"github.com/KLYE-Dev/HSC-MAIN/genesis"
-	logging_config "github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
+	"github.com/klye-dev/hsc-main/config"
+	"github.com/klye-dev/hsc-main/config/source"
+	"github.com/klye-dev/hsc-main/genesis"
+	logging_config "github.com/klye-dev/hsc-main/logging/logconfig"
 )
 
 type Output interface {

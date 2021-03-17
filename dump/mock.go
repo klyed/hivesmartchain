@@ -6,12 +6,12 @@ import (
 	"io"
 	"math/rand"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/binary"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
-	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/execution/names"
+	"github.com/klye-dev/hsc-main/genesis"
 )
 
 type MockSource struct {

@@ -5,13 +5,13 @@ import (
 
 	"regexp"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/acm/acmstate"
+	"github.com/klye-dev/hsc-main/execution/engine"
+	"github.com/klye-dev/hsc-main/execution/errors"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/execution/names"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/txs/payload"
 )
 
 // Name should be file system like

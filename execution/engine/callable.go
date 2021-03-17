@@ -4,8 +4,8 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/execution/exec"
 )
 
 type Blockchain interface {

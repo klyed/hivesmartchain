@@ -6,11 +6,11 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/chain"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
+	"github.com/klye-dev/hsc-main/execution/evm/abi"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/vent/chain"
+	"github.com/klye-dev/hsc-main/vent/sqlsol"
+	"github.com/klye-dev/hsc-main/vent/types"
 	"github.com/pkg/errors"
 	"github.com/tmthrgd/go-hex"
 )

@@ -5,9 +5,9 @@ import (
 
 	"strconv"
 
-	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/loggers"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/klye-dev/hsc-main/logging/logconfig"
+	"github.com/klye-dev/hsc-main/logging/loggers"
+	"github.com/klye-dev/hsc-main/logging/structure"
 )
 
 // Function to generate part of a tree of Sinks (e.g. append a single child node, or an entire subtree).

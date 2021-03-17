@@ -1,10 +1,10 @@
 package state
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/klye-dev/hsc-main/encoding"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/proposal"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/execution/proposal"
+	"github.com/klye-dev/hsc-main/txs/payload"
 )
 
 var _ proposal.IterableReader = &State{}

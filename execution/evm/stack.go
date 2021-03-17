@@ -8,11 +8,11 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
+	"github.com/klye-dev/hsc-main/execution/engine"
 
-	. "github.com/KLYE-Dev/HSC-MAIN/binary"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	. "github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/execution/errors"
 )
 
 // Not goroutine safe

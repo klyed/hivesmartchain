@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/event/pubsub"
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/klye-dev/hsc-main/event/pubsub"
+	"github.com/klye-dev/hsc-main/event/query"
 	"github.com/stretchr/testify/require"
 )
 

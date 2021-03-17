@@ -3,7 +3,7 @@ package exec
 import (
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/klye-dev/hsc-main/event/query"
 	"github.com/stretchr/testify/require"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )

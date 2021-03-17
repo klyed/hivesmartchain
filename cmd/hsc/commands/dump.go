@@ -6,13 +6,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/klye-dev/hsc-main/encoding"
 
-	"github.com/KLYE-Dev/HSC-MAIN/core"
-	"github.com/KLYE-Dev/HSC-MAIN/dump"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcdump"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
+	"github.com/klye-dev/hsc-main/core"
+	"github.com/klye-dev/hsc-main/dump"
+	"github.com/klye-dev/hsc-main/logging/logconfig"
+	"github.com/klye-dev/hsc-main/rpc/rpcdump"
+	"github.com/klye-dev/hsc-main/rpc/rpcquery"
 	cli "github.com/jawher/mow.cli"
 )
 

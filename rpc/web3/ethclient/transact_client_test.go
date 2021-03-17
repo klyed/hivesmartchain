@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/solidity"
-	"github.com/KLYE-Dev/HSC-MAIN/tests/web3/web3test"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/execution/solidity"
+	"github.com/klye-dev/hsc-main/tests/web3/web3test"
+	"github.com/klye-dev/hsc-main/txs/payload"
 	"github.com/stretchr/testify/require"
 )
 

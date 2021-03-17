@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/crypto"
 )
 
 // Cache helps prevent unnecessary IAVLTree updates and garbage generation.

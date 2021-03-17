@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/lib/types"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/logging/structure"
+	"github.com/klye-dev/hsc-main/rpc/lib/types"
 	"github.com/pkg/errors"
 
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcevents"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/web3/ethclient"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/chain"
+	"github.com/klye-dev/hsc-main/rpc/rpcevents"
+	"github.com/klye-dev/hsc-main/rpc/web3/ethclient"
+	"github.com/klye-dev/hsc-main/vent/chain"
 )
 
 const ConsumerScope = "EthereumConsumer"

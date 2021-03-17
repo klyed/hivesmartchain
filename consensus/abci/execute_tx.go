@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint/codes"
-	"github.com/KLYE-Dev/HSC-MAIN/execution"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
-	"github.com/KLYE-Dev/HSC-MAIN/txs"
+	"github.com/klye-dev/hsc-main/consensus/tendermint/codes"
+	"github.com/klye-dev/hsc-main/execution"
+	"github.com/klye-dev/hsc-main/execution/errors"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/logging/structure"
+	"github.com/klye-dev/hsc-main/txs"
 	"github.com/tendermint/tendermint/abci/types"
 )
 

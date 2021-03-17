@@ -1,7 +1,7 @@
 package bcm
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/txs"
+	"github.com/klye-dev/hsc-main/txs"
 	"github.com/tendermint/tendermint/types"
 )
 

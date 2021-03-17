@@ -3,7 +3,7 @@ package payload
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/crypto"
 )
 
 func NewUnbondTx(address crypto.Address, amount uint64) *UnbondTx {

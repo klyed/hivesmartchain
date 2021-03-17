@@ -1,7 +1,7 @@
 // Needed to proto2 rather than proto3 to get pointer field for PermArg
 syntax = 'proto3';
 
-option go_package = "github.com/KLYE-Dev/HSC-MAIN/rpc";
+option go_package = "github.com/klye-dev/hsc-main/rpc";
 
 import "gogoproto/gogo.proto";
 import "tendermint.proto";
@@ -21,7 +21,7 @@ message ResultStatus {
     string ChainID = 1;
     string RunID = 2;
     string HscVersion = 3;
-    bytes GenesisHash = 4 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes", (gogoproto.nullable) = false];
+    bytes GenesisHash = 4 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/binary.HexBytes", (gogoproto.nullable) = false];
     tendermint.NodeInfo NodeInfo = 5;
     bcm.SyncInfo SyncInfo = 6;
     // When catching up in fast sync

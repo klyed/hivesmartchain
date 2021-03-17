@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/core"
+	"github.com/klye-dev/hsc-main/core"
 	cli "github.com/jawher/mow.cli"
 )
 

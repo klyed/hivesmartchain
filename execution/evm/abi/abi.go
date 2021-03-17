@@ -9,9 +9,9 @@ import (
 	"path/filepath"
 	"reflect"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/compile"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/deploy/compile"
+	"github.com/klye-dev/hsc-main/logging"
 )
 
 // Variable exist to unpack return values into, so have both the return

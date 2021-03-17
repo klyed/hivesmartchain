@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/klye-dev/hsc-main/event/query"
+	"github.com/klye-dev/hsc-main/execution/errors"
 )
 
 type Events []*Event

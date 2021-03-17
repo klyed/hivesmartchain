@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/klye-dev/hsc-main/encoding"
 )
 
 type Source interface {

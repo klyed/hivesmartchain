@@ -6,12 +6,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/klye-dev/hsc-main/encoding"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/crypto"
 
-	"github.com/KLYE-Dev/HSC-MAIN/integration"
-	"github.com/KLYE-Dev/HSC-MAIN/keys"
+	"github.com/klye-dev/hsc-main/integration"
+	"github.com/klye-dev/hsc-main/keys"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

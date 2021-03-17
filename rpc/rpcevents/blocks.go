@@ -1,7 +1,7 @@
 package rpcevents
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/klye-dev/hsc-main/execution/exec"
 )
 
 // Get bounds suitable for events.Provider

@@ -3,13 +3,13 @@ package state
 import (
 	"math/big"
 
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
-	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/klye-dev/hsc-main/encoding"
+	"github.com/klye-dev/hsc-main/genesis"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/validator"
-	"github.com/KLYE-Dev/HSC-MAIN/storage"
+	"github.com/klye-dev/hsc-main/acm/validator"
+	"github.com/klye-dev/hsc-main/storage"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/crypto"
 )
 
 // Initialises the validator Ring from the validator storage in forest

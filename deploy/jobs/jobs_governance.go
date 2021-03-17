@@ -3,13 +3,13 @@ package jobs
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/txs/payload"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/util"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/deploy/def"
+	"github.com/klye-dev/hsc-main/deploy/util"
+	"github.com/klye-dev/hsc-main/execution/evm/abi"
 )
 
 func FormulateUpdateAccountJob(gov *def.UpdateAccount, account string, client *def.Client, logger *logging.Logger) (*payload.GovTx, []*abi.Variable, error) {

@@ -1,6 +1,6 @@
 package logconfig
 
-import "github.com/KLYE-Dev/HSC-MAIN/logging/loggers"
+import "github.com/klye-dev/hsc-main/logging/loggers"
 
 // Keep these in sync
 const (

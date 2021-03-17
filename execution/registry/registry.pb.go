@@ -12,7 +12,7 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_klye-dev_hsc-main_crypto "github.com/KLYE-Dev/HSC-MAIN/crypto"
+	github_com_klye-dev_hsc-main_crypto "github.com/klye-dev/hsc-main/crypto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -36,10 +36,10 @@ type NodeIdentity struct {
 	// Peer network address
 	NetworkAddress string `protobuf:"bytes,2,opt,name=NetworkAddress,proto3" json:"NetworkAddress,omitempty"`
 	// The Tendermint p2p node ID
-	TendermintNodeID github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,3,opt,name=TendermintNodeID,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"TendermintNodeID"`
+	TendermintNodeID github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,3,opt,name=TendermintNodeID,proto3,customtype=github.com/klye-dev/hsc-main/crypto.Address" json:"TendermintNodeID"`
 	// The public key that this node will validate with if it becomes a validator
 	// (use this to create a binding between p2p node ID and validator)
-	ValidatorPublicKey   *github_com_klye-dev_hsc-main_crypto.PublicKey `protobuf:"bytes,4,opt,name=ValidatorPublicKey,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.PublicKey" json:"ValidatorPublicKey,omitempty"`
+	ValidatorPublicKey   *github_com_klye-dev_hsc-main_crypto.PublicKey `protobuf:"bytes,4,opt,name=ValidatorPublicKey,proto3,customtype=github.com/klye-dev/hsc-main/crypto.PublicKey" json:"ValidatorPublicKey,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
 	XXX_unrecognized     []byte                                          `json:"-"`
 	XXX_sizecache        int32                                           `json:"-"`

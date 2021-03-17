@@ -12,10 +12,10 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_klye-dev_hsc-main_acm "github.com/KLYE-Dev/HSC-MAIN/acm"
-	balance "github.com/KLYE-Dev/HSC-MAIN/acm/balance"
-	crypto "github.com/KLYE-Dev/HSC-MAIN/crypto"
-	github_com_klye-dev_hsc-main_crypto "github.com/KLYE-Dev/HSC-MAIN/crypto"
+	github_com_klye-dev_hsc-main_acm "github.com/klye-dev/hsc-main/acm"
+	balance "github.com/klye-dev/hsc-main/acm/balance"
+	crypto "github.com/klye-dev/hsc-main/crypto"
+	github_com_klye-dev_hsc-main_crypto "github.com/klye-dev/hsc-main/crypto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -32,12 +32,12 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type TemplateAccount struct {
 	Name             string                                        `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
-	Address          *github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,2,opt,name=Address,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:",omitempty" toml:",omitempty"`
+	Address          *github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,2,opt,name=Address,proto3,customtype=github.com/klye-dev/hsc-main/crypto.Address" json:",omitempty" toml:",omitempty"`
 	PublicKey        *crypto.PublicKey                             `protobuf:"bytes,3,opt,name=PublicKey,proto3" json:",omitempty" toml:",omitempty"`
 	Amounts          []balance.Balance                             `protobuf:"bytes,4,rep,name=Amounts,proto3" json:",omitempty" toml:",omitempty"`
 	Permissions      []string                                      `protobuf:"bytes,5,rep,name=Permissions,proto3" json:",omitempty" toml:",omitempty"`
 	Roles            []string                                      `protobuf:"bytes,6,rep,name=Roles,proto3" json:",omitempty" toml:",omitempty"`
-	Code             *github_com_klye-dev_hsc-main_acm.Bytecode   `protobuf:"bytes,7,opt,name=Code,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/acm.Bytecode" json:"Code,omitempty"`
+	Code             *github_com_klye-dev_hsc-main_acm.Bytecode   `protobuf:"bytes,7,opt,name=Code,proto3,customtype=github.com/klye-dev/hsc-main/acm.Bytecode" json:"Code,omitempty"`
 	XXX_unrecognized []byte                                        `json:"-"`
 }
 

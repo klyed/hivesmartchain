@@ -5,7 +5,7 @@ package loggers
 
 import (
 	"github.com/go-kit/kit/log"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/errors"
+	"github.com/klye-dev/hsc-main/logging/errors"
 )
 
 // This represents an 'AND' type logger. When logged to it will log to each of

@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/vent/config"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/sqldb"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/sqldb/adapters"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/test"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
+	"github.com/klye-dev/hsc-main/vent/config"
+	"github.com/klye-dev/hsc-main/vent/sqldb"
+	"github.com/klye-dev/hsc-main/vent/sqldb/adapters"
+	"github.com/klye-dev/hsc-main/vent/sqlsol"
+	"github.com/klye-dev/hsc-main/vent/test"
+	"github.com/klye-dev/hsc-main/vent/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

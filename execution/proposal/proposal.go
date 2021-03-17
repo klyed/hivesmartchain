@@ -1,7 +1,7 @@
 package proposal
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/txs/payload"
 )
 
 type Reader interface {

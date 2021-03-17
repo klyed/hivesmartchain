@@ -5,10 +5,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/txs"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/deploy/def"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/txs"
+	"github.com/klye-dev/hsc-main/txs/payload"
 )
 
 type ProposalState int

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint/codes"
+	"github.com/klye-dev/hsc-main/consensus/tendermint/codes"
 	abciTypes "github.com/tendermint/tendermint/abci/types"
 )
 

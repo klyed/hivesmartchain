@@ -3,9 +3,9 @@ package sqlsol_test
 import (
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/test"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
+	"github.com/klye-dev/hsc-main/vent/sqlsol"
+	"github.com/klye-dev/hsc-main/vent/test"
+	"github.com/klye-dev/hsc-main/vent/types"
 	"github.com/stretchr/testify/require"
 )
 

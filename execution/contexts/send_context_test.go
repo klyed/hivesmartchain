@@ -3,9 +3,9 @@ package contexts
 import (
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/acm/acmstate"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/txs/payload"
 	"github.com/stretchr/testify/require"
 )
 

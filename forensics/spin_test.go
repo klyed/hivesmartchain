@@ -11,9 +11,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcevents"
+	"github.com/klye-dev/hsc-main/encoding"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/rpc/rpcevents"
 )
 
 func TestSpin(t *testing.T) {

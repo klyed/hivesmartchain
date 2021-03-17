@@ -4,12 +4,12 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/web3"
-	"github.com/KLYE-Dev/HSC-MAIN/txs"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/rpc/web3"
+	"github.com/klye-dev/hsc-main/txs"
+	"github.com/klye-dev/hsc-main/txs/payload"
 	"google.golang.org/grpc"
 )
 

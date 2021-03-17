@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/klye-dev/hsc-main/genesis"
 )
 
 func TestBurrowConfigSerialise(t *testing.T) {

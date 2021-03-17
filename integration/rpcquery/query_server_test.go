@@ -8,16 +8,16 @@ import (
 	"io"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/integration"
+	"github.com/klye-dev/hsc-main/integration"
 
 	"github.com/tendermint/tendermint/crypto/tmhash"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
-	"github.com/KLYE-Dev/HSC-MAIN/genesis"
-	"github.com/KLYE-Dev/HSC-MAIN/integration/rpctest"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/event/query"
+	"github.com/klye-dev/hsc-main/execution/names"
+	"github.com/klye-dev/hsc-main/genesis"
+	"github.com/klye-dev/hsc-main/integration/rpctest"
+	"github.com/klye-dev/hsc-main/rpc/rpcquery"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

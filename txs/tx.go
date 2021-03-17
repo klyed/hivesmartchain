@@ -9,13 +9,13 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/acm/balance"
-	"github.com/KLYE-Dev/HSC-MAIN/binary"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/acm/balance"
+	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/encoding"
+	"github.com/klye-dev/hsc-main/event/query"
+	"github.com/klye-dev/hsc-main/txs/payload"
 )
 
 const (

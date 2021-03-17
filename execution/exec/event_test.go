@@ -3,10 +3,10 @@ package exec
 import (
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/binary"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/event"
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/event"
+	"github.com/klye-dev/hsc-main/event/query"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/tmthrgd/go-hex"

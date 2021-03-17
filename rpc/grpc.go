@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"runtime/debug"
 
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/klye-dev/hsc-main/encoding"
 
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/logging/structure"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )

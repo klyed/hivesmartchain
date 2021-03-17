@@ -10,13 +10,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/klye-dev/hsc-main/encoding"
 
 	"github.com/howeyc/gopass"
-	"github.com/KLYE-Dev/HSC-MAIN/config"
-	"github.com/KLYE-Dev/HSC-MAIN/config/deployment"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/keys"
+	"github.com/klye-dev/hsc-main/config"
+	"github.com/klye-dev/hsc-main/config/deployment"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/keys"
 	cli "github.com/jawher/mow.cli"
 )
 

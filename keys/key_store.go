@@ -3,7 +3,7 @@ package keys
 import (
 	"context"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/crypto"
 )
 
 const (

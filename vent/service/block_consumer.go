@@ -3,13 +3,13 @@ package service
 import (
 	"io"
 
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/chain"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
+	"github.com/klye-dev/hsc-main/event/query"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/logging/structure"
+	"github.com/klye-dev/hsc-main/vent/chain"
+	"github.com/klye-dev/hsc-main/vent/sqlsol"
+	"github.com/klye-dev/hsc-main/vent/types"
 	"github.com/pkg/errors"
 )
 

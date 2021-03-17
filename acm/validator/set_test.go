@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/crypto"
 	"github.com/stretchr/testify/assert"
 )
 

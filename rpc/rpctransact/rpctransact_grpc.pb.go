@@ -5,9 +5,9 @@ package rpctransact
 import (
 	context "context"
 
-	exec "github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	txs "github.com/KLYE-Dev/HSC-MAIN/txs"
-	payload "github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	exec "github.com/klye-dev/hsc-main/execution/exec"
+	txs "github.com/klye-dev/hsc-main/txs"
+	payload "github.com/klye-dev/hsc-main/txs/payload"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

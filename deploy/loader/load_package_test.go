@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
+	"github.com/klye-dev/hsc-main/deploy/def"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

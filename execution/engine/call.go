@@ -3,9 +3,9 @@ package engine
 import (
 	"math/big"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/klye-dev/hsc-main/execution/errors"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/permission"
 )
 
 var big64 = big.NewInt(64)

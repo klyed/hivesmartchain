@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/solidity"
+	"github.com/klye-dev/hsc-main/event/query"
+	"github.com/klye-dev/hsc-main/execution/solidity"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/permission"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

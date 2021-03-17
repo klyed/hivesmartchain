@@ -7,10 +7,10 @@ import (
 
 	"github.com/eapache/channels"
 	"github.com/go-kit/kit/log"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/klye-dev/hsc-main/logging"
 
 	"github.com/BurntSushi/toml"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/loggers"
+	"github.com/klye-dev/hsc-main/logging/loggers"
 )
 
 type LoggingConfig struct {

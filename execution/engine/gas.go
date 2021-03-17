@@ -6,7 +6,7 @@ package engine
 import (
 	"math/big"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/klye-dev/hsc-main/execution/errors"
 )
 
 const (

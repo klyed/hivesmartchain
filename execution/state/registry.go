@@ -3,10 +3,10 @@ package state
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/registry"
-	"github.com/KLYE-Dev/HSC-MAIN/storage"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/encoding"
+	"github.com/klye-dev/hsc-main/execution/registry"
+	"github.com/klye-dev/hsc-main/storage"
 )
 
 var _ registry.IterableReader = &State{}

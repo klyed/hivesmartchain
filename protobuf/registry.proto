@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 package registry;
 
-option go_package = "github.com/KLYE-Dev/HSC-MAIN/execution/registry";
+option go_package = "github.com/klye-dev/hsc-main/execution/registry";
 
 import "gogoproto/gogo.proto";
 
@@ -28,8 +28,8 @@ message NodeIdentity {
 	// Peer network address
 	string NetworkAddress = 2;
 	// The Tendermint p2p node ID
-	bytes TendermintNodeID = 3 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/crypto.Address", (gogoproto.nullable) = false];
+	bytes TendermintNodeID = 3 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/crypto.Address", (gogoproto.nullable) = false];
 	// The public key that this node will validate with if it becomes a validator
 	// (use this to create a binding between p2p node ID and validator)
-	bytes ValidatorPublicKey = 4 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/crypto.PublicKey"];
+	bytes ValidatorPublicKey = 4 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/crypto.PublicKey"];
 }

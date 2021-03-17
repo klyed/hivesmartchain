@@ -3,7 +3,7 @@ package def
 import (
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/crypto"
 	"github.com/stretchr/testify/require"
 )
 

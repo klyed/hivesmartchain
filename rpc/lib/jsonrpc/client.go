@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/lib/types"
+	"github.com/klye-dev/hsc-main/rpc/lib/types"
 	"github.com/pkg/errors"
 )
 

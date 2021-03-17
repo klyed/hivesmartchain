@@ -3,13 +3,13 @@ package contexts
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/registry"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/permission"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/acm/acmstate"
+	"github.com/klye-dev/hsc-main/execution/errors"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/execution/registry"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/permission"
+	"github.com/klye-dev/hsc-main/txs/payload"
 )
 
 type IdentifyContext struct {

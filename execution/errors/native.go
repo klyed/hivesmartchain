@@ -3,7 +3,7 @@ package errors
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/crypto"
 )
 
 type LacksNativePermission struct {

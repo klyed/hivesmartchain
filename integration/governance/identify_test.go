@@ -6,16 +6,16 @@ import (
 	"context"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/config"
-	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
+	"github.com/klye-dev/hsc-main/config"
+	"github.com/klye-dev/hsc-main/consensus/tendermint"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/rpc/rpcquery"
 
-	"github.com/KLYE-Dev/HSC-MAIN/core"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/registry"
-	"github.com/KLYE-Dev/HSC-MAIN/integration"
-	"github.com/KLYE-Dev/HSC-MAIN/integration/rpctest"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/core"
+	"github.com/klye-dev/hsc-main/execution/registry"
+	"github.com/klye-dev/hsc-main/integration"
+	"github.com/klye-dev/hsc-main/integration/rpctest"
+	"github.com/klye-dev/hsc-main/txs/payload"
 	"github.com/stretchr/testify/require"
 )
 

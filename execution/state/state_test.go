@@ -17,9 +17,9 @@ package state
 import (
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/config/source"
-	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/config/source"
+	"github.com/klye-dev/hsc-main/permission"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	dbm "github.com/tendermint/tm-db"

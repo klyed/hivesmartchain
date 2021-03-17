@@ -6,8 +6,8 @@ import (
 
 	validation "github.com/go-ozzo/ozzo-validation"
 	"github.com/go-ozzo/ozzo-validation/is"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/def/rule"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	"github.com/klye-dev/hsc-main/deploy/def/rule"
+	"github.com/klye-dev/hsc-main/execution/evm/abi"
 )
 
 // ------------------------------------------------------------------------

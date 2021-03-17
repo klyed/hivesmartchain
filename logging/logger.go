@@ -5,8 +5,8 @@ package logging
 
 import (
 	"github.com/go-kit/kit/log"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
-	"github.com/KLYE-Dev/HSC-MAIN/util/slice"
+	"github.com/klye-dev/hsc-main/logging/structure"
+	"github.com/klye-dev/hsc-main/util/slice"
 )
 
 // InfoTraceLogger maintains provides two logging 'channels' that are interlaced

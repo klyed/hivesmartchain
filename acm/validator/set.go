@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/crypto"
 )
 
 var big0 = big.NewInt(0)

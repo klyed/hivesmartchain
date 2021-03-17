@@ -3,10 +3,10 @@ package payload
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/balance"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	spec "github.com/KLYE-Dev/HSC-MAIN/genesis/spec"
-	permission "github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/klye-dev/hsc-main/acm/balance"
+	"github.com/klye-dev/hsc-main/crypto"
+	spec "github.com/klye-dev/hsc-main/genesis/spec"
+	permission "github.com/klye-dev/hsc-main/permission"
 )
 
 // GovernanceTx contains functionality for altering permissions, token distribution, consensus parameters,

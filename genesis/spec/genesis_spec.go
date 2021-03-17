@@ -7,11 +7,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/balance"
-	crypto "github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/genesis"
-	"github.com/KLYE-Dev/HSC-MAIN/keys"
-	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/klye-dev/hsc-main/acm/balance"
+	crypto "github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/genesis"
+	"github.com/klye-dev/hsc-main/keys"
+	"github.com/klye-dev/hsc-main/permission"
 )
 
 const DefaultAmount uint64 = 1000000

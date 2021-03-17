@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/asm"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/asm/bc"
+	"github.com/klye-dev/hsc-main/execution/evm/asm"
+	"github.com/klye-dev/hsc-main/execution/evm/asm/bc"
 	"github.com/stretchr/testify/assert"
 	"github.com/tmthrgd/go-bitset"
 )

@@ -3,10 +3,10 @@ package sqlsol_test
 import (
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/solidity"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
+	"github.com/klye-dev/hsc-main/execution/evm/abi"
+	"github.com/klye-dev/hsc-main/execution/solidity"
+	"github.com/klye-dev/hsc-main/vent/sqlsol"
+	"github.com/klye-dev/hsc-main/vent/types"
 	"github.com/stretchr/testify/require"
 )
 

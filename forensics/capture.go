@@ -3,8 +3,8 @@ package forensics
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/binary"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hsc-main/execution/exec"
 	"github.com/pkg/errors"
 )
 

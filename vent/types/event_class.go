@@ -3,7 +3,7 @@ package types
 import (
 	"github.com/alecthomas/jsonschema"
 	validation "github.com/go-ozzo/ozzo-validation"
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/klye-dev/hsc-main/event/query"
 )
 
 // ProjectionSpec contains all event class specifications

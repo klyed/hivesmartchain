@@ -3,7 +3,7 @@ package abi
 import (
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/solidity"
+	"github.com/klye-dev/hsc-main/execution/solidity"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -1,5 +1,5 @@
 package exec
 
-import "github.com/KLYE-Dev/HSC-MAIN/txs"
+import "github.com/klye-dev/hsc-main/txs"
 
 var cdc = txs.NewProtobufCodec()

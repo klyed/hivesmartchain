@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"runtime/debug"
 
-	"github.com/KLYE-Dev/HSC-MAIN/txs"
+	"github.com/klye-dev/hsc-main/txs"
 	"github.com/tendermint/tendermint/state"
 	"github.com/tendermint/tendermint/store"
 	"github.com/tendermint/tendermint/types"

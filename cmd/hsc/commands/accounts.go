@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/klye-dev/hsc-main/encoding"
 
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/compile"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
+	"github.com/klye-dev/hsc-main/deploy/compile"
+	"github.com/klye-dev/hsc-main/execution/evm/abi"
+	"github.com/klye-dev/hsc-main/rpc/rpcquery"
 	cli "github.com/jawher/mow.cli"
 )
 

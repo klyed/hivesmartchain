@@ -2,7 +2,7 @@ syntax = 'proto2';
 
 package permission;
 
-option go_package = "github.com/KLYE-Dev/HSC-MAIN/permission";
+option go_package = "github.com/klye-dev/hsc-main/permission";
 
 import "gogoproto/gogo.proto";
 
@@ -40,7 +40,7 @@ message PermArgs {
     // The permission function
     optional uint64 Action = 1 [(gogoproto.casttype) = "PermFlag", (gogoproto.nullable) = false];
     // The target of the action
-    optional bytes Target = 2 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/crypto.Address"];
+    optional bytes Target = 2 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/crypto.Address"];
     // Possible arguments
     optional uint64 Permission = 3 [(gogoproto.casttype) = "PermFlag"];
     optional string Role = 4;

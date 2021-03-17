@@ -1,7 +1,7 @@
 package exec
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/klye-dev/hsc-main/execution/errors"
 )
 
 type EventSink interface {

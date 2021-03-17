@@ -1,9 +1,9 @@
 package defaults
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/native"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/klye-dev/hsc-main/execution/engine"
+	"github.com/klye-dev/hsc-main/execution/native"
+	"github.com/klye-dev/hsc-main/logging"
 )
 
 func CompleteOptions(options engine.Options) engine.Options {

@@ -8,8 +8,8 @@ import (
 	"reflect"
 	"text/template"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/genesis"
 	"github.com/pkg/errors"
 	hex "github.com/tmthrgd/go-hex"
 	yaml "gopkg.in/yaml.v2"

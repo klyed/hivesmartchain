@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/project"
+	"github.com/klye-dev/hsc-main/project"
 )
 
 func main() {

@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/keys"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/klye-dev/hsc-main/keys"
+	"github.com/klye-dev/hsc-main/logging"
 )
 
 type LocalKeyClient struct {

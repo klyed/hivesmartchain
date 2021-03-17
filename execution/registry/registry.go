@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/crypto"
 )
 
 type NodeStats struct {

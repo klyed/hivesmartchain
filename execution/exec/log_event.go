@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"strings"
 
-	. "github.com/KLYE-Dev/HSC-MAIN/binary"
-	"github.com/KLYE-Dev/HSC-MAIN/event"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	. "github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hsc-main/event"
+	"github.com/klye-dev/hsc-main/execution/evm/abi"
 	"github.com/tmthrgd/go-hex"
 )
 

@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/web3/ethclient"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/chain"
+	"github.com/klye-dev/hsc-main/rpc/web3/ethclient"
+	"github.com/klye-dev/hsc-main/vent/chain"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -8,20 +8,20 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/event"
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/web3"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/chain"
+	"github.com/klye-dev/hsc-main/event"
+	"github.com/klye-dev/hsc-main/event/query"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/rpc/web3"
+	"github.com/klye-dev/hsc-main/vent/chain"
 
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/web3/ethclient"
+	"github.com/klye-dev/hsc-main/rpc/web3/ethclient"
 
-	"github.com/KLYE-Dev/HSC-MAIN/binary"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcevents"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
+	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/execution/errors"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/rpc/rpcevents"
+	"github.com/klye-dev/hsc-main/vent/types"
 	"google.golang.org/grpc/connectivity"
 )
 

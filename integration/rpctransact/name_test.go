@@ -6,14 +6,14 @@ import (
 	"context"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/integration"
+	"github.com/klye-dev/hsc-main/integration"
 
-	"github.com/KLYE-Dev/HSC-MAIN/event"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
-	"github.com/KLYE-Dev/HSC-MAIN/integration/rpctest"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/event"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/execution/names"
+	"github.com/klye-dev/hsc-main/integration/rpctest"
+	"github.com/klye-dev/hsc-main/rpc/rpcquery"
+	"github.com/klye-dev/hsc-main/txs/payload"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

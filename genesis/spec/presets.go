@@ -3,8 +3,8 @@ package spec
 import (
 	"sort"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/balance"
-	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/klye-dev/hsc-main/acm/balance"
+	"github.com/klye-dev/hsc-main/permission"
 )
 
 // Files here can be used as starting points for building various 'chain types' but are otherwise

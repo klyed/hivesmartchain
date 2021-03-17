@@ -7,8 +7,8 @@ import (
 	"github.com/lib/pq"
 	"github.com/pkg/errors"
 
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/vent/types"
 	"github.com/jmoiron/sqlx"
 	"github.com/prometheus/common/log"
 )

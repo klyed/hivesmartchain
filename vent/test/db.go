@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/config"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/sqldb"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/vent/config"
+	"github.com/klye-dev/hsc-main/vent/sqldb"
+	"github.com/klye-dev/hsc-main/vent/types"
 	"github.com/stretchr/testify/require"
 )
 

@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/config"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/vent/config"
 )
 
 // Server exposes HTTP endpoints for the service

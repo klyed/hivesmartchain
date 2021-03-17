@@ -7,11 +7,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/config/source"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/jobs"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/config/source"
+	"github.com/klye-dev/hsc-main/deploy/def"
+	"github.com/klye-dev/hsc-main/deploy/jobs"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/txs/payload"
 	cli "github.com/jawher/mow.cli"
 )
 

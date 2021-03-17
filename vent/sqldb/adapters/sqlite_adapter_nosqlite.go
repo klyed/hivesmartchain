@@ -6,8 +6,8 @@ package adapters
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/vent/types"
 	"github.com/jmoiron/sqlx"
 )
 

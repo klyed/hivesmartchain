@@ -3,11 +3,11 @@ package spec
 import (
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/balance"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/keys"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/klye-dev/hsc-main/acm/balance"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/keys"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/permission"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

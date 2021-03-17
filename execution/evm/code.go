@@ -1,8 +1,8 @@
 package evm
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/asm"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/execution/evm/asm"
 	"github.com/tmthrgd/go-bitset"
 )
 

@@ -7,22 +7,22 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	"github.com/klye-dev/hsc-main/execution/evm/abi"
 
 	"github.com/btcsuite/btcd/btcec"
-	"github.com/KLYE-Dev/HSC-MAIN/binary"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/native"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/solidity"
+	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hsc-main/execution/native"
+	"github.com/klye-dev/hsc-main/execution/solidity"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/klye-dev/hsc-main/acm/acmstate"
+	"github.com/klye-dev/hsc-main/execution/engine"
+	"github.com/klye-dev/hsc-main/execution/exec"
 	"github.com/stretchr/testify/require"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/crypto"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/asm/bc"
+	"github.com/klye-dev/hsc-main/execution/evm/asm/bc"
 	"github.com/stretchr/testify/assert"
 )
 

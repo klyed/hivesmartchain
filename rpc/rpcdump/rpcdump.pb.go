@@ -12,7 +12,7 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	_ "github.com/KLYE-Dev/HSC-MAIN/dump"
+	_ "github.com/klye-dev/hsc-main/dump"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

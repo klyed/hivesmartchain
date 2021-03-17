@@ -3,9 +3,9 @@ package payload
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/klye-dev/hsc-main/acm/acmstate"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/permission"
 )
 
 func NewPermsTx(st acmstate.AccountGetter, from *crypto.PublicKey, args permission.PermArgs) (*PermsTx, error) {

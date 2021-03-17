@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/klye-dev/hsc-main/encoding"
 	"github.com/tendermint/tendermint/types"
 
-	"github.com/KLYE-Dev/HSC-MAIN/genesis"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/klye-dev/hsc-main/genesis"
+	"github.com/klye-dev/hsc-main/logging"
 	dbm "github.com/tendermint/tm-db"
 )
 

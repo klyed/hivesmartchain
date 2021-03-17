@@ -5,10 +5,10 @@ package rpcquery
 import (
 	context "context"
 
-	acm "github.com/KLYE-Dev/HSC-MAIN/acm"
-	names "github.com/KLYE-Dev/HSC-MAIN/execution/names"
-	rpc "github.com/KLYE-Dev/HSC-MAIN/rpc"
-	payload "github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	acm "github.com/klye-dev/hsc-main/acm"
+	names "github.com/klye-dev/hsc-main/execution/names"
+	rpc "github.com/klye-dev/hsc-main/rpc"
+	payload "github.com/klye-dev/hsc-main/txs/payload"
 	types "github.com/tendermint/tendermint/proto/tendermint/types"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"

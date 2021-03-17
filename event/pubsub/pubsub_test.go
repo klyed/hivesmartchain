@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/event/pubsub"
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/klye-dev/hsc-main/event/pubsub"
+	"github.com/klye-dev/hsc-main/event/query"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

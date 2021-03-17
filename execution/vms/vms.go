@@ -1,10 +1,10 @@
 package vms
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/execution/defaults"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/wasm"
+	"github.com/klye-dev/hsc-main/execution/defaults"
+	"github.com/klye-dev/hsc-main/execution/engine"
+	"github.com/klye-dev/hsc-main/execution/evm"
+	"github.com/klye-dev/hsc-main/execution/wasm"
 )
 
 type VirtualMachines struct {

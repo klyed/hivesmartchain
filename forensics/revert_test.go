@@ -9,7 +9,7 @@ import (
 	"path"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/klye-dev/hsc-main/execution/exec"
 	"github.com/stretchr/testify/require"
 )
 

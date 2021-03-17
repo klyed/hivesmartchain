@@ -7,11 +7,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcinfo"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/execution/names"
+	"github.com/klye-dev/hsc-main/rpc"
+	"github.com/klye-dev/hsc-main/rpc/rpcinfo"
 )
 
 func Status(client rpc.Client) (*rpc.ResultStatus, error) {

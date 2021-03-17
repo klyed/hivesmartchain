@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/klye-dev/hsc-main/acm"
 	"github.com/stretchr/testify/require"
 )
 

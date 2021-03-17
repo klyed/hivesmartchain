@@ -1,8 +1,8 @@
 package jobs
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/klye-dev/hsc-main/deploy/def"
+	"github.com/klye-dev/hsc-main/logging"
 )
 
 func SetAccountJob(account *def.Account, script *def.Playbook, logger *logging.Logger) (string, error) {

@@ -3,14 +3,14 @@ package config
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/config/source"
-	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/execution"
-	"github.com/KLYE-Dev/HSC-MAIN/genesis"
-	"github.com/KLYE-Dev/HSC-MAIN/keys"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc"
+	"github.com/klye-dev/hsc-main/config/source"
+	"github.com/klye-dev/hsc-main/consensus/tendermint"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/execution"
+	"github.com/klye-dev/hsc-main/genesis"
+	"github.com/klye-dev/hsc-main/keys"
+	"github.com/klye-dev/hsc-main/logging/logconfig"
+	"github.com/klye-dev/hsc-main/rpc"
 	tmConfig "github.com/tendermint/tendermint/config"
 )
 

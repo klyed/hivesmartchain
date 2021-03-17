@@ -1,7 +1,7 @@
 // Needed to proto2 rather than proto3 to get pointer field for PermArg
 syntax = 'proto3';
 
-option go_package = "github.com/KLYE-Dev/HSC-MAIN/bcm";
+option go_package = "github.com/klye-dev/hsc-main/bcm";
 
 import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
@@ -18,8 +18,8 @@ option (gogoproto.messagename_all) = true;
 
 message SyncInfo {
     uint64 LatestBlockHeight = 1;
-    bytes LatestBlockHash = 2 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes", (gogoproto.nullable) = false];
-    bytes LatestAppHash = 3 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes", (gogoproto.nullable) = false];
+    bytes LatestBlockHash = 2 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/binary.HexBytes", (gogoproto.nullable) = false];
+    bytes LatestAppHash = 3 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/binary.HexBytes", (gogoproto.nullable) = false];
     // Timestamp of block as set by the block proposer
     google.protobuf.Timestamp LatestBlockTime = 4 [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
     // Time at which we committed the last block
@@ -29,8 +29,8 @@ message SyncInfo {
 }
 
 message PersistedState {
-    bytes AppHashAfterLastBlock = 1 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes", (gogoproto.nullable) = false];
+    bytes AppHashAfterLastBlock = 1 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/binary.HexBytes", (gogoproto.nullable) = false];
     google.protobuf.Timestamp LastBlockTime = 2 [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
     uint64 LastBlockHeight = 3;
-    bytes GenesisHash = 4 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes", (gogoproto.nullable) = false];
+    bytes GenesisHash = 4 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/binary.HexBytes", (gogoproto.nullable) = false];
 }

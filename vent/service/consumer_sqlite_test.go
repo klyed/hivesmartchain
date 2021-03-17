@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/integration"
-	"github.com/KLYE-Dev/HSC-MAIN/integration/rpctest"
+	"github.com/klye-dev/hsc-main/integration"
+	"github.com/klye-dev/hsc-main/integration/rpctest"
 
-	"github.com/KLYE-Dev/HSC-MAIN/vent/test"
+	"github.com/klye-dev/hsc-main/vent/test"
 )
 
 func TestSqliteConsumer(t *testing.T) {

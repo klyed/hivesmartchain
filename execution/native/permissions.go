@@ -3,11 +3,11 @@ package native
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
+	"github.com/klye-dev/hsc-main/execution/engine"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/permission"
 )
 
 var Permissions = New().MustContract("Permissions",

@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/KLYE-Dev/HSC-MAIN/config"
-	"github.com/KLYE-Dev/HSC-MAIN/forensics"
+	"github.com/klye-dev/hsc-main/config"
+	"github.com/klye-dev/hsc-main/forensics"
 
-	"github.com/KLYE-Dev/HSC-MAIN/bcm"
+	"github.com/klye-dev/hsc-main/bcm"
 
-	"github.com/KLYE-Dev/HSC-MAIN/txs"
+	"github.com/klye-dev/hsc-main/txs"
 	cli "github.com/jawher/mow.cli"
 	dbm "github.com/tendermint/tm-db"
 )

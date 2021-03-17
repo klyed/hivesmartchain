@@ -5,7 +5,7 @@ discussions-to: https://chat.hyperledger.org/channel/burrow-contributors
 status: Draft
 type: Meta
 author: The Burrow's marmots and others
-        https://github.com/KLYE-Dev/HSC-MAIN/ADRs/blob/main/ADRs/adr-1.md
+        https://github.com/klye-dev/hsc-main/ADRs/blob/main/ADRs/adr-1.md
 created: 2018-10-09
 ---
 

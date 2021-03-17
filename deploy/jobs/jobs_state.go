@@ -1,7 +1,7 @@
 package jobs
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
+	"github.com/klye-dev/hsc-main/deploy/def"
 )
 
 func DumpStateJob(dump *def.DumpState) (string, error) {

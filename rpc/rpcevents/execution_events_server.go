@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/KLYE-Dev/HSC-MAIN/bcm"
-	"github.com/KLYE-Dev/HSC-MAIN/event"
-	"github.com/KLYE-Dev/HSC-MAIN/event/query"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/storage"
+	"github.com/klye-dev/hsc-main/bcm"
+	"github.com/klye-dev/hsc-main/event"
+	"github.com/klye-dev/hsc-main/event/query"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/storage"
 )
 
 const SubscribeBufferSize = 100

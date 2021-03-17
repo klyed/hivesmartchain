@@ -3,11 +3,11 @@ package execution
 import (
 	"sync"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm"
-	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/keys"
-	burrow_sync "github.com/KLYE-Dev/HSC-MAIN/sync"
+	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hsc-main/acm/acmstate"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/keys"
+	burrow_sync "github.com/klye-dev/hsc-main/sync"
 )
 
 // Accounts pairs an underlying state.Reader with a KeyClient to provide a signing variant of an account

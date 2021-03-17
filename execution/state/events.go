@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/KLYE-Dev/HSC-MAIN/encoding"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/storage"
+	"github.com/klye-dev/hsc-main/encoding"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/storage"
 )
 
 func (ws *writeState) AddBlock(be *exec.BlockExecution) error {

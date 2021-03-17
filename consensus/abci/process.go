@@ -7,10 +7,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/bcm"
+	"github.com/klye-dev/hsc-main/bcm"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution"
-	"github.com/KLYE-Dev/HSC-MAIN/txs"
+	"github.com/klye-dev/hsc-main/execution"
+	"github.com/klye-dev/hsc-main/txs"
 	"github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/mempool"
 	tmTypes "github.com/tendermint/tendermint/types"

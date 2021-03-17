@@ -1,7 +1,7 @@
 package engine
 
 import (
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/klye-dev/hsc-main/execution/exec"
 )
 
 type State struct {

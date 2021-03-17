@@ -3,7 +3,7 @@ package storage
 import (
 	"bytes"
 
-	"github.com/KLYE-Dev/HSC-MAIN/storage"
+	"github.com/klye-dev/hsc-main/storage"
 )
 
 type uniqueIterator struct {

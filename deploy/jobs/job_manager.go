@@ -5,11 +5,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	compilers "github.com/KLYE-Dev/HSC-MAIN/deploy/compile"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/util"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	pbpayload "github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	compilers "github.com/klye-dev/hsc-main/deploy/compile"
+	"github.com/klye-dev/hsc-main/deploy/def"
+	"github.com/klye-dev/hsc-main/deploy/util"
+	"github.com/klye-dev/hsc-main/logging"
+	pbpayload "github.com/klye-dev/hsc-main/txs/payload"
 )
 
 const (

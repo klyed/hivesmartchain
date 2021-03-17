@@ -5,8 +5,8 @@ import (
 	"net"
 	"strings"
 
-	"github.com/KLYE-Dev/HSC-MAIN/config"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/klye-dev/hsc-main/config"
+	"github.com/klye-dev/hsc-main/crypto"
 	cli "github.com/jawher/mow.cli"
 )
 

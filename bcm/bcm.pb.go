@@ -16,7 +16,7 @@ import (
 	golang_proto "github.com/golang/protobuf/proto"
 	_ "github.com/golang/protobuf/ptypes/duration"
 	_ "github.com/golang/protobuf/ptypes/timestamp"
-	github_com_klye-dev_hsc-main_binary "github.com/KLYE-Dev/HSC-MAIN/binary"
+	github_com_klye-dev_hsc-main_binary "github.com/klye-dev/hsc-main/binary"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -34,8 +34,8 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type SyncInfo struct {
 	LatestBlockHeight uint64                                        `protobuf:"varint,1,opt,name=LatestBlockHeight,proto3" json:"LatestBlockHeight,omitempty"`
-	LatestBlockHash   github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,2,opt,name=LatestBlockHash,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"LatestBlockHash"`
-	LatestAppHash     github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,3,opt,name=LatestAppHash,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"LatestAppHash"`
+	LatestBlockHash   github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,2,opt,name=LatestBlockHash,proto3,customtype=github.com/klye-dev/hsc-main/binary.HexBytes" json:"LatestBlockHash"`
+	LatestAppHash     github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,3,opt,name=LatestAppHash,proto3,customtype=github.com/klye-dev/hsc-main/binary.HexBytes" json:"LatestAppHash"`
 	// Timestamp of block as set by the block proposer
 	LatestBlockTime time.Time `protobuf:"bytes,4,opt,name=LatestBlockTime,proto3,stdtime" json:"LatestBlockTime"`
 	// Time at which we committed the last block
@@ -109,10 +109,10 @@ func (*SyncInfo) XXX_MessageName() string {
 }
 
 type PersistedState struct {
-	AppHashAfterLastBlock github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,1,opt,name=AppHashAfterLastBlock,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"AppHashAfterLastBlock"`
+	AppHashAfterLastBlock github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,1,opt,name=AppHashAfterLastBlock,proto3,customtype=github.com/klye-dev/hsc-main/binary.HexBytes" json:"AppHashAfterLastBlock"`
 	LastBlockTime         time.Time                                     `protobuf:"bytes,2,opt,name=LastBlockTime,proto3,stdtime" json:"LastBlockTime"`
 	LastBlockHeight       uint64                                        `protobuf:"varint,3,opt,name=LastBlockHeight,proto3" json:"LastBlockHeight,omitempty"`
-	GenesisHash           github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,4,opt,name=GenesisHash,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"GenesisHash"`
+	GenesisHash           github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,4,opt,name=GenesisHash,proto3,customtype=github.com/klye-dev/hsc-main/binary.HexBytes" json:"GenesisHash"`
 	XXX_NoUnkeyedLiteral  struct{}                                      `json:"-"`
 	XXX_unrecognized      []byte                                        `json:"-"`
 	XXX_sizecache         int32                                         `json:"-"`

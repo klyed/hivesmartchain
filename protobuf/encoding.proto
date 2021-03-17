@@ -1,6 +1,6 @@
 syntax = 'proto3';
 
-option go_package = "github.com/KLYE-Dev/HSC-MAIN/encoding";
+option go_package = "github.com/klye-dev/hsc-main/encoding";
 
 import "gogoproto/gogo.proto";
 

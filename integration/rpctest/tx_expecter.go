@@ -7,10 +7,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/binary"
-	"github.com/KLYE-Dev/HSC-MAIN/event"
-	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
-	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcevents"
+	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hsc-main/event"
+	"github.com/klye-dev/hsc-main/execution/exec"
+	"github.com/klye-dev/hsc-main/rpc/rpcevents"
 )
 
 const (

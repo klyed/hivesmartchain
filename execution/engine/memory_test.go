@@ -3,7 +3,7 @@ package engine
 import (
 	"testing"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/klye-dev/hsc-main/execution/errors"
 	"github.com/stretchr/testify/require"
 
 	"math/big"

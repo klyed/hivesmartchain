@@ -5,7 +5,7 @@ package rpcevents
 import (
 	context "context"
 
-	exec "github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	exec "github.com/klye-dev/hsc-main/execution/exec"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

@@ -6,9 +6,9 @@ import (
 
 	"github.com/eapache/channels"
 	"github.com/go-kit/kit/log"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/loggers"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/logging/loggers"
+	"github.com/klye-dev/hsc-main/logging/structure"
 )
 
 // This file contains definitions for a configurable output graph for the

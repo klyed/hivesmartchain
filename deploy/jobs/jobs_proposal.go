@@ -4,17 +4,17 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/contexts"
+	"github.com/klye-dev/hsc-main/execution/contexts"
 
-	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
-	"github.com/KLYE-Dev/HSC-MAIN/binary"
-	"github.com/KLYE-Dev/HSC-MAIN/crypto"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/proposals"
-	"github.com/KLYE-Dev/HSC-MAIN/deploy/util"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
-	"github.com/KLYE-Dev/HSC-MAIN/txs"
-	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
+	"github.com/klye-dev/hsc-main/acm/acmstate"
+	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hsc-main/deploy/def"
+	"github.com/klye-dev/hsc-main/deploy/proposals"
+	"github.com/klye-dev/hsc-main/deploy/util"
+	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hsc-main/txs"
+	"github.com/klye-dev/hsc-main/txs/payload"
 )
 
 func getAccountSequence(seq string, addressStr string, seqCache *acmstate.Cache, client *def.Client, logger *logging.Logger) (string, error) {

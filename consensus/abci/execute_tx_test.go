@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/go-kit/kit/log"
-	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/klye-dev/hsc-main/logging"
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/abci/types"
 )

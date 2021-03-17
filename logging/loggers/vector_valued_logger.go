@@ -5,7 +5,7 @@ package loggers
 
 import (
 	"github.com/go-kit/kit/log"
-	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/klye-dev/hsc-main/logging/structure"
 )
 
 // Treat duplicate key-values as consecutive entries in a vector-valued lookup

@@ -3,7 +3,7 @@ package bc
 import (
 	"fmt"
 
-	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/asm"
+	"github.com/klye-dev/hsc-main/execution/evm/asm"
 )
 
 type ByteSlicable interface {

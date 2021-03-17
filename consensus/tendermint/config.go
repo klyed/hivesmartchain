@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/KLYE-Dev/HSC-MAIN/consensus/abci"
+	"github.com/klye-dev/hsc-main/consensus/abci"
 	tmConfig "github.com/tendermint/tendermint/config"
 )
 

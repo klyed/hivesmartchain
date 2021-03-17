@@ -8,8 +8,8 @@ builds:
   ldflags:
   - -extldflags "-static"
   - -s -w
-  - -X github.com/KLYE-Dev/HSC-MAIN/project.commit={{.Commit}}
-  - -X github.com/KLYE-Dev/HSC-MAIN/project.date={{.Date}}
+  - -X github.com/klye-dev/hsc-main/project.commit={{.Commit}}
+  - -X github.com/klye-dev/hsc-main/project.date={{.Date}}
   goos:
   - darwin
   - linux
