@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/project"
+	"github.com/klyed/hivesmartchain/project"
 )
 
 func main() {

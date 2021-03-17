@@ -1,7 +1,7 @@
 package rpcevents
 
 import (
-	"github.com/klye-dev/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/execution/exec"
 )
 
 // Get bounds suitable for events.Provider

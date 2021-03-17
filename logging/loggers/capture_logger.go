@@ -5,7 +5,7 @@ import (
 
 	"github.com/eapache/channels"
 	"github.com/go-kit/kit/log"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/logging/structure"
 )
 
 type CaptureLogger struct {

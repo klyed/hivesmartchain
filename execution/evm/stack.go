@@ -8,11 +8,11 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/klye-dev/hivesmartchain/execution/engine"
+	"github.com/klyed/hivesmartchain/execution/engine"
 
-	. "github.com/klye-dev/hivesmartchain/binary"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/execution/errors"
+	. "github.com/klyed/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/execution/errors"
 )
 
 // Not goroutine safe

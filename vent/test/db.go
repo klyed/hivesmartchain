@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/vent/config"
-	"github.com/klye-dev/hivesmartchain/vent/sqldb"
-	"github.com/klye-dev/hivesmartchain/vent/types"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/vent/config"
+	"github.com/klyed/hivesmartchain/vent/sqldb"
+	"github.com/klyed/hivesmartchain/vent/types"
 	"github.com/stretchr/testify/require"
 )
 

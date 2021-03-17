@@ -9,11 +9,11 @@ import (
 
 	io_prometheus_client "github.com/prometheus/client_model/go"
 
-	"github.com/klye-dev/hivesmartchain/bcm"
+	"github.com/klyed/hivesmartchain/bcm"
 
-	"github.com/klye-dev/hivesmartchain/consensus/tendermint"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/rpc"
+	"github.com/klyed/hivesmartchain/consensus/tendermint"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/rpc"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/stretchr/testify/require"
 

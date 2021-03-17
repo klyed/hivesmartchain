@@ -12,7 +12,7 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_klye-dev_hsc-main_crypto "github.com/klye-dev/hivesmartchain/crypto"
+	github_com_klyed_hsc-main_crypto "github.com/klyed/hivesmartchain/crypto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -33,7 +33,7 @@ type Entry struct {
 	// registered name for the entry
 	Name string `protobuf:"bytes,1,opt,name=Name,proto3" json:"Name,omitempty"`
 	// address that created the entry
-	Owner github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,2,opt,name=Owner,proto3,customtype=github.com/klye-dev/hivesmartchain/crypto.Address" json:"Owner"`
+	Owner github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,2,opt,name=Owner,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Owner"`
 	// data to store under this name
 	Data string `protobuf:"bytes,3,opt,name=Data,proto3" json:"Data,omitempty"`
 	// block at which this entry expires

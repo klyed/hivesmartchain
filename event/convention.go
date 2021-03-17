@@ -3,7 +3,7 @@ package event
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/event/query"
+	"github.com/klyed/hivesmartchain/event/query"
 )
 
 const (

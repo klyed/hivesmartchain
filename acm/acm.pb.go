@@ -12,10 +12,10 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_klye-dev_hsc-main_binary "github.com/klye-dev/hivesmartchain/binary"
-	crypto "github.com/klye-dev/hivesmartchain/crypto"
-	github_com_klye-dev_hsc-main_crypto "github.com/klye-dev/hivesmartchain/crypto"
-	permission "github.com/klye-dev/hivesmartchain/permission"
+	github_com_klyed_hsc-main_binary "github.com/klyed/hivesmartchain/binary"
+	crypto "github.com/klyed/hivesmartchain/crypto"
+	github_com_klyed_hsc-main_crypto "github.com/klyed/hivesmartchain/crypto"
+	permission "github.com/klyed/hivesmartchain/permission"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -31,7 +31,7 @@ var _ = math.Inf
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type Account struct {
-	Address   github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klye-dev/hivesmartchain/crypto.Address" json:"Address"`
+	Address   github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address"`
 	PublicKey *crypto.PublicKey                            `protobuf:"bytes,2,opt,name=PublicKey,proto3" json:"PublicKey,omitempty"`
 	// Sequence counts the number of transactions that have been accepted from this account
 	Sequence uint64 `protobuf:"varint,3,opt,name=Sequence,proto3" json:"Sequence,omitempty"`
@@ -48,13 +48,13 @@ type Account struct {
 	// the contract logic in its entirety
 	NativeName string `protobuf:"bytes,11,opt,name=NativeName,proto3" json:",omitempty"`
 	// The sha3 hash of the code associated with the account
-	CodeHash github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,8,opt,name=CodeHash,proto3,customtype=github.com/klye-dev/hivesmartchain/binary.HexBytes" json:"-"`
+	CodeHash github_com_klyed_hsc-main_binary.HexBytes `protobuf:"bytes,8,opt,name=CodeHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"-"`
 	// Pointer to the Metadata associated with this account
 	ContractMeta []*ContractMeta `protobuf:"bytes,9,rep,name=ContractMeta,proto3" json:"ContractMeta,omitempty"`
 	// The metadata is stored in the deployed account. When the deployed account creates new account
 	// (from Solidity/EVM), they point to the original deployed account where the metadata is stored.
 	// This original account is called the forebear.
-	Forebear             *github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,10,opt,name=Forebear,proto3,customtype=github.com/klye-dev/hivesmartchain/crypto.Address" json:"Forebear,omitempty"`
+	Forebear             *github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,10,opt,name=Forebear,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Forebear,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
 	XXX_unrecognized     []byte                                        `json:"-"`
 	XXX_sizecache        int32                                         `json:"-"`
@@ -135,8 +135,8 @@ func (*Account) XXX_MessageName() string {
 }
 
 type ContractMeta struct {
-	CodeHash     github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,1,opt,name=CodeHash,proto3,customtype=github.com/klye-dev/hivesmartchain/binary.HexBytes" json:"CodeHash"`
-	MetadataHash github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,2,opt,name=MetadataHash,proto3,customtype=github.com/klye-dev/hivesmartchain/binary.HexBytes" json:"MetadataHash"`
+	CodeHash     github_com_klyed_hsc-main_binary.HexBytes `protobuf:"bytes,1,opt,name=CodeHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"CodeHash"`
+	MetadataHash github_com_klyed_hsc-main_binary.HexBytes `protobuf:"bytes,2,opt,name=MetadataHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"MetadataHash"`
 	// In the dump format we would like the ABI rather than its hash
 	Metadata             string   `protobuf:"bytes,3,opt,name=Metadata,proto3" json:"Metadata,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -829,7 +829,7 @@ func (m *Account) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_klye-dev_hsc-main_crypto.Address
+			var v github_com_klyed_hsc-main_crypto.Address
 			m.Forebear = &v
 			if err := m.Forebear.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err

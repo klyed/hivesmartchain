@@ -3,7 +3,7 @@ package keys
 import (
 	"context"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/crypto"
 )
 
 const (

@@ -7,10 +7,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/bcm"
+	"github.com/klyed/hivesmartchain/bcm"
 
-	"github.com/klye-dev/hivesmartchain/execution"
-	"github.com/klye-dev/hivesmartchain/txs"
+	"github.com/klyed/hivesmartchain/execution"
+	"github.com/klyed/hivesmartchain/txs"
 	"github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/mempool"
 	tmTypes "github.com/tendermint/tendermint/types"

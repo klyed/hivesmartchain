@@ -1,7 +1,7 @@
 package tendermint
 
 import (
-	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/crypto"
 	tmCrypto "github.com/tendermint/tendermint/crypto"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	"github.com/tendermint/tendermint/types"

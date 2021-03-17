@@ -10,13 +10,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/encoding"
 
 	"github.com/howeyc/gopass"
-	"github.com/klye-dev/hivesmartchain/config"
-	"github.com/klye-dev/hivesmartchain/config/deployment"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/keys"
+	"github.com/klyed/hivesmartchain/config"
+	"github.com/klyed/hivesmartchain/config/deployment"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/keys"
 	cli "github.com/jawher/mow.cli"
 )
 

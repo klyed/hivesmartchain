@@ -1,13 +1,13 @@
 package wasm
 
 import (
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/acm/acmstate"
-	"github.com/klye-dev/hivesmartchain/execution/defaults"
-	"github.com/klye-dev/hivesmartchain/execution/engine"
-	"github.com/klye-dev/hivesmartchain/execution/errors"
-	"github.com/klye-dev/hivesmartchain/execution/exec"
-	"github.com/klye-dev/hivesmartchain/execution/native"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/acm/acmstate"
+	"github.com/klyed/hivesmartchain/execution/defaults"
+	"github.com/klyed/hivesmartchain/execution/engine"
+	"github.com/klyed/hivesmartchain/execution/errors"
+	"github.com/klyed/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/execution/native"
 	lifeExec "github.com/perlin-network/life/exec"
 )
 

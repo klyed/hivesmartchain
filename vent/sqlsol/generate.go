@@ -3,8 +3,8 @@ package sqlsol
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
-	"github.com/klye-dev/hivesmartchain/vent/types"
+	"github.com/klyed/hivesmartchain/execution/evm/abi"
+	"github.com/klyed/hivesmartchain/vent/types"
 )
 
 // GenerateSpecFromAbis creates a simple spec which just logs all events

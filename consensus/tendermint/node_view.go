@@ -3,8 +3,8 @@ package tendermint
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/txs"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/txs"
 	"github.com/streadway/simpleuuid"
 	"github.com/tendermint/tendermint/consensus"
 	ctypes "github.com/tendermint/tendermint/consensus/types"

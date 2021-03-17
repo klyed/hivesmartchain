@@ -1,1 +1,1 @@
-* Test case for issue [#696](https://github.com/klye-dev/hivesmartchain/issues/526)
+* Test case for issue [#696](https://github.com/klyed/hivesmartchain/issues/526)

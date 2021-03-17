@@ -3,8 +3,8 @@ package payload
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/execution/registry"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/execution/registry"
 )
 
 func NewIdentifyTx(address crypto.Address, node *registry.NodeIdentity) *IdentifyTx {

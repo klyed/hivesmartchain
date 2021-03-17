@@ -3,8 +3,8 @@ package commands
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/config/source"
-	"github.com/klye-dev/hivesmartchain/genesis/spec"
+	"github.com/klyed/hivesmartchain/config/source"
+	"github.com/klyed/hivesmartchain/genesis/spec"
 	cli "github.com/jawher/mow.cli"
 )
 

@@ -7,10 +7,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/binary"
-	"github.com/klye-dev/hivesmartchain/event"
-	"github.com/klye-dev/hivesmartchain/execution/exec"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcevents"
+	"github.com/klyed/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/event"
+	"github.com/klyed/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/rpc/rpcevents"
 )
 
 const (

@@ -7,10 +7,10 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
-	"github.com/klye-dev/hivesmartchain/rpc"
-	"github.com/klye-dev/hivesmartchain/rpc/lib/server"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/rpc"
+	"github.com/klyed/hivesmartchain/rpc/lib/server"
 )
 
 func StartServer(service *rpc.Service, pattern string, listener net.Listener, logger *logging.Logger) (*http.Server, error) {

@@ -3,9 +3,9 @@ package txs
 import (
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/txs/payload"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

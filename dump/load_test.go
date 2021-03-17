@@ -6,13 +6,13 @@ import (
 	"path"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/bcm"
-	"github.com/klye-dev/hivesmartchain/storage"
+	"github.com/klyed/hivesmartchain/bcm"
+	"github.com/klyed/hivesmartchain/storage"
 
-	"github.com/klye-dev/hivesmartchain/execution/exec"
-	"github.com/klye-dev/hivesmartchain/execution/state"
-	"github.com/klye-dev/hivesmartchain/genesis"
-	"github.com/klye-dev/hivesmartchain/permission"
+	"github.com/klyed/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/execution/state"
+	"github.com/klyed/hivesmartchain/genesis"
+	"github.com/klyed/hivesmartchain/permission"
 	"github.com/stretchr/testify/require"
 )
 

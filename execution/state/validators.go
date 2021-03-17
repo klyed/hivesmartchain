@@ -3,13 +3,13 @@ package state
 import (
 	"math/big"
 
-	"github.com/klye-dev/hivesmartchain/encoding"
-	"github.com/klye-dev/hivesmartchain/genesis"
+	"github.com/klyed/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/genesis"
 
-	"github.com/klye-dev/hivesmartchain/acm/validator"
-	"github.com/klye-dev/hivesmartchain/storage"
+	"github.com/klyed/hivesmartchain/acm/validator"
+	"github.com/klyed/hivesmartchain/storage"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/crypto"
 )
 
 // Initialises the validator Ring from the validator storage in forest

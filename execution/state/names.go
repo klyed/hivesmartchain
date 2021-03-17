@@ -3,8 +3,8 @@ package state
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/encoding"
-	"github.com/klye-dev/hivesmartchain/execution/names"
+	"github.com/klyed/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/execution/names"
 )
 
 var _ names.IterableReader = &State{}

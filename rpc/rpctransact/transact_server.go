@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/logging"
 
-	"github.com/klye-dev/hivesmartchain/acm/acmstate"
-	"github.com/klye-dev/hivesmartchain/bcm"
+	"github.com/klyed/hivesmartchain/acm/acmstate"
+	"github.com/klyed/hivesmartchain/bcm"
 
-	"github.com/klye-dev/hivesmartchain/execution"
-	"github.com/klye-dev/hivesmartchain/execution/exec"
-	"github.com/klye-dev/hivesmartchain/txs"
-	"github.com/klye-dev/hivesmartchain/txs/payload"
+	"github.com/klyed/hivesmartchain/execution"
+	"github.com/klyed/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/txs"
+	"github.com/klyed/hivesmartchain/txs/payload"
 	"golang.org/x/net/context"
 )
 

@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/rpc/lib/jsonrpc"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/rpc/lib/jsonrpc"
 	"github.com/stretchr/testify/require"
 	"github.com/tmthrgd/go-hex"
 )

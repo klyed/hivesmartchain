@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/vent/sqldb/adapters"
-	"github.com/klye-dev/hivesmartchain/vent/test"
-	"github.com/klye-dev/hivesmartchain/vent/types"
+	"github.com/klyed/hivesmartchain/vent/sqldb/adapters"
+	"github.com/klyed/hivesmartchain/vent/test"
+	"github.com/klyed/hivesmartchain/vent/types"
 	"github.com/lib/pq"
 	"github.com/stretchr/testify/require"
 )

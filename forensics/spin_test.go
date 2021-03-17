@@ -11,9 +11,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/klye-dev/hivesmartchain/encoding"
-	"github.com/klye-dev/hivesmartchain/execution/exec"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcevents"
+	"github.com/klyed/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/rpc/rpcevents"
 )
 
 func TestSpin(t *testing.T) {

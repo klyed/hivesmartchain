@@ -3,10 +3,10 @@ package payload
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/acm/balance"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	spec "github.com/klye-dev/hivesmartchain/genesis/spec"
-	permission "github.com/klye-dev/hivesmartchain/permission"
+	"github.com/klyed/hivesmartchain/acm/balance"
+	"github.com/klyed/hivesmartchain/crypto"
+	spec "github.com/klyed/hivesmartchain/genesis/spec"
+	permission "github.com/klyed/hivesmartchain/permission"
 )
 
 // GovernanceTx contains functionality for altering permissions, token distribution, consensus parameters,

@@ -1,6 +1,6 @@
 syntax = 'proto3';
 
-option go_package = "github.com/klye-dev/hivesmartchain/rpc/rpcevents";
+option go_package = "github.com/klyed/hivesmartchain/rpc/rpcevents";
 
 import "gogoproto/gogo.proto";
 import "exec.proto";
@@ -37,7 +37,7 @@ message GetBlockRequest {
 
 message TxRequest {
     // Height of block required
-    bytes TxHash = 1 [(gogoproto.customtype) = "github.com/klye-dev/hivesmartchain/binary.HexBytes", (gogoproto.nullable) = false];
+    bytes TxHash = 1 [(gogoproto.customtype) = "github.com/klyed/hivesmartchain/binary.HexBytes", (gogoproto.nullable) = false];
     // Whether to wait for the block to become available
     bool Wait = 2;
 }

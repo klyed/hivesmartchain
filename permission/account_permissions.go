@@ -1,6 +1,6 @@
 package permission
 
-import "github.com/klye-dev/hivesmartchain/binary"
+import "github.com/klyed/hivesmartchain/binary"
 
 func NewAccountPermissions(pss ...PermFlag) AccountPermissions {
 	var perms PermFlag

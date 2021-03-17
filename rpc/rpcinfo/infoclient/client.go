@@ -7,11 +7,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/execution/names"
-	"github.com/klye-dev/hivesmartchain/rpc"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcinfo"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/execution/names"
+	"github.com/klyed/hivesmartchain/rpc"
+	"github.com/klyed/hivesmartchain/rpc/rpcinfo"
 )
 
 func Status(client rpc.Client) (*rpc.ResultStatus, error) {

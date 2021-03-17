@@ -1,8 +1,8 @@
 package evm
 
 import (
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/execution/evm/asm"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/execution/evm/asm"
 	"github.com/tmthrgd/go-bitset"
 )
 

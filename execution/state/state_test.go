@@ -17,9 +17,9 @@ package state
 import (
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/config/source"
-	"github.com/klye-dev/hivesmartchain/permission"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/config/source"
+	"github.com/klyed/hivesmartchain/permission"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	dbm "github.com/tendermint/tm-db"

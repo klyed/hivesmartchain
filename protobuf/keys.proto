@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/klye-dev/hivesmartchain/keys";
+option go_package = "github.com/klyed/hivesmartchain/keys";
 
 package keys;
 

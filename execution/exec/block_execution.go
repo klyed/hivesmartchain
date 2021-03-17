@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/klye-dev/hivesmartchain/event"
-	"github.com/klye-dev/hivesmartchain/event/query"
-	"github.com/klye-dev/hivesmartchain/txs"
+	"github.com/klyed/hivesmartchain/event"
+	"github.com/klyed/hivesmartchain/event/query"
+	"github.com/klyed/hivesmartchain/txs"
 )
 
 func EventStringBlockExecution(height uint64) string {

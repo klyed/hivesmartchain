@@ -1,7 +1,7 @@
 package exec
 
 import (
-	"github.com/klye-dev/hivesmartchain/execution/errors"
+	"github.com/klyed/hivesmartchain/execution/errors"
 )
 
 type EventSink interface {

@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/encoding"
 
-	"github.com/klye-dev/hivesmartchain/deploy/compile"
-	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcquery"
+	"github.com/klyed/hivesmartchain/deploy/compile"
+	"github.com/klyed/hivesmartchain/execution/evm/abi"
+	"github.com/klyed/hivesmartchain/rpc/rpcquery"
 	cli "github.com/jawher/mow.cli"
 )
 

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/klye-dev/hivesmartchain/vent/types"
+	"github.com/klyed/hivesmartchain/vent/types"
 	"github.com/jmoiron/sqlx"
 )
 

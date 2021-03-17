@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"strings"
 
-	. "github.com/klye-dev/hivesmartchain/binary"
-	"github.com/klye-dev/hivesmartchain/event"
-	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
+	. "github.com/klyed/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/event"
+	"github.com/klyed/hivesmartchain/execution/evm/abi"
 	"github.com/tmthrgd/go-hex"
 )
 

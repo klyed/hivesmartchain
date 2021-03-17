@@ -3,13 +3,13 @@ package jobs
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/txs/payload"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/txs/payload"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/deploy/def"
-	"github.com/klye-dev/hivesmartchain/deploy/util"
-	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/deploy/def"
+	"github.com/klyed/hivesmartchain/deploy/util"
+	"github.com/klyed/hivesmartchain/execution/evm/abi"
 )
 
 func FormulateUpdateAccountJob(gov *def.UpdateAccount, account string, client *def.Client, logger *logging.Logger) (*payload.GovTx, []*abi.Variable, error) {

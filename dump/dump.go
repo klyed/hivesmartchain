@@ -6,15 +6,15 @@ import (
 	"io"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/acm/acmstate"
-	"github.com/klye-dev/hivesmartchain/binary"
-	"github.com/klye-dev/hivesmartchain/encoding"
-	"github.com/klye-dev/hivesmartchain/execution/exec"
-	"github.com/klye-dev/hivesmartchain/execution/names"
-	"github.com/klye-dev/hivesmartchain/execution/state"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/storage"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/acm/acmstate"
+	"github.com/klyed/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/execution/names"
+	"github.com/klyed/hivesmartchain/execution/state"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/storage"
 )
 
 const (

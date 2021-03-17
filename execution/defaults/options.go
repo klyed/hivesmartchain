@@ -1,9 +1,9 @@
 package defaults
 
 import (
-	"github.com/klye-dev/hivesmartchain/execution/engine"
-	"github.com/klye-dev/hivesmartchain/execution/native"
-	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/execution/engine"
+	"github.com/klyed/hivesmartchain/execution/native"
+	"github.com/klyed/hivesmartchain/logging"
 )
 
 func CompleteOptions(options engine.Options) engine.Options {

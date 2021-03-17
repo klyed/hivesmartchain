@@ -3,8 +3,8 @@ package forensics
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/binary"
-	"github.com/klye-dev/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/execution/exec"
 	"github.com/pkg/errors"
 )
 

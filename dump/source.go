@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/klye-dev/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/encoding"
 )
 
 type Source interface {

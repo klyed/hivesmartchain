@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/execution/evm/asm"
-	"github.com/klye-dev/hivesmartchain/execution/evm/asm/bc"
+	"github.com/klyed/hivesmartchain/execution/evm/asm"
+	"github.com/klyed/hivesmartchain/execution/evm/asm/bc"
 	"github.com/stretchr/testify/assert"
 	"github.com/tmthrgd/go-bitset"
 )

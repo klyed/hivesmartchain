@@ -1,6 +1,6 @@
 package logconfig
 
-import "github.com/klye-dev/hivesmartchain/logging/loggers"
+import "github.com/klyed/hivesmartchain/logging/loggers"
 
 // Keep these in sync
 const (

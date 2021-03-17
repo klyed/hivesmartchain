@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/klye-dev/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/binary"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/event"
-	"github.com/klye-dev/hivesmartchain/event/query"
-	"github.com/klye-dev/hivesmartchain/execution/errors"
-	"github.com/klye-dev/hivesmartchain/execution/names"
-	"github.com/klye-dev/hivesmartchain/permission"
-	"github.com/klye-dev/hivesmartchain/txs"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/event"
+	"github.com/klyed/hivesmartchain/event/query"
+	"github.com/klyed/hivesmartchain/execution/errors"
+	"github.com/klyed/hivesmartchain/execution/names"
+	"github.com/klyed/hivesmartchain/permission"
+	"github.com/klyed/hivesmartchain/txs"
 )
 
 func EventStringAccountInput(addr crypto.Address) string  { return fmt.Sprintf("Acc/%s/Input", addr) }

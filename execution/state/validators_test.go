@@ -5,9 +5,9 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/acm/validator"
-	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/acm/validator"
+	"github.com/klyed/hivesmartchain/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	dbm "github.com/tendermint/tm-db"

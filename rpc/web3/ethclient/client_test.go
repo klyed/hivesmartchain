@@ -7,11 +7,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/execution/solidity"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcevents"
-	"github.com/klye-dev/hivesmartchain/rpc/web3"
-	"github.com/klye-dev/hivesmartchain/tests/web3/web3test"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/execution/solidity"
+	"github.com/klyed/hivesmartchain/rpc/rpcevents"
+	"github.com/klyed/hivesmartchain/rpc/web3"
+	"github.com/klyed/hivesmartchain/tests/web3/web3test"
 	"github.com/stretchr/testify/assert"
 
 	"github.com/stretchr/testify/require"

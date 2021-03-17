@@ -1,10 +1,10 @@
 package ethclient
 
 import (
-	"github.com/klye-dev/hivesmartchain/binary"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcevents"
-	"github.com/klye-dev/hivesmartchain/rpc/web3"
+	"github.com/klyed/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/rpc/rpcevents"
+	"github.com/klyed/hivesmartchain/rpc/web3"
 )
 
 // These types partially duplicate some of those web3/types.go, the should probably be unified at some point but

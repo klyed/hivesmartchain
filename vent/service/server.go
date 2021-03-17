@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/vent/config"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/vent/config"
 )
 
 // Server exposes HTTP endpoints for the service

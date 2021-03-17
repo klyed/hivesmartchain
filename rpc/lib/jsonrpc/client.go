@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/klye-dev/hivesmartchain/rpc/lib/types"
+	"github.com/klyed/hivesmartchain/rpc/lib/types"
 	"github.com/pkg/errors"
 )
 

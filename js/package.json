@@ -12,7 +12,7 @@
     "proto"
   ],
   "bugs": {
-    "url": "https://github.com/klye-dev/hivesmartchain/issues"
+    "url": "https://github.com/klyed/hivesmartchain/issues"
   },
   "scripts": {
     "build": "tsc --build",
@@ -40,7 +40,7 @@
     "exit": true,
     "timeout": 60000
   },
-  "homepage": "https://github.com/klye-dev/hivesmartchain/",
+  "homepage": "https://github.com/klyed/hivesmartchain/",
   "keywords": [
     "HiveSideChain",
     "HIVE",

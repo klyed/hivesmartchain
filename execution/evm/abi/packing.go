@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/klye-dev/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/binary"
 )
 
 func Pack(argSpec []Argument, args ...interface{}) ([]byte, error) {

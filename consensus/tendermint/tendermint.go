@@ -8,12 +8,12 @@ import (
 
 	"github.com/tendermint/tendermint/version"
 
-	"github.com/klye-dev/hivesmartchain/binary"
-	"github.com/klye-dev/hivesmartchain/consensus/abci"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/genesis"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/consensus/abci"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/genesis"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/logging/structure"
 	"github.com/tendermint/tendermint/config"
 	"github.com/tendermint/tendermint/crypto/ed25519"
 	"github.com/tendermint/tendermint/node"

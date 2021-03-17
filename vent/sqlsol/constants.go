@@ -1,6 +1,6 @@
 package sqlsol
 
-import "github.com/klye-dev/hivesmartchain/vent/types"
+import "github.com/klyed/hivesmartchain/vent/types"
 
 var tables = types.DefaultSQLTableNames
 var columns = types.DefaultSQLColumnNames

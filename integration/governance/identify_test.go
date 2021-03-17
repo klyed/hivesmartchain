@@ -6,16 +6,16 @@ import (
 	"context"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/config"
-	"github.com/klye-dev/hivesmartchain/consensus/tendermint"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcquery"
+	"github.com/klyed/hivesmartchain/config"
+	"github.com/klyed/hivesmartchain/consensus/tendermint"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/rpc/rpcquery"
 
-	"github.com/klye-dev/hivesmartchain/core"
-	"github.com/klye-dev/hivesmartchain/execution/registry"
-	"github.com/klye-dev/hivesmartchain/integration"
-	"github.com/klye-dev/hivesmartchain/integration/rpctest"
-	"github.com/klye-dev/hivesmartchain/txs/payload"
+	"github.com/klyed/hivesmartchain/core"
+	"github.com/klyed/hivesmartchain/execution/registry"
+	"github.com/klyed/hivesmartchain/integration"
+	"github.com/klyed/hivesmartchain/integration/rpctest"
+	"github.com/klyed/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/require"
 )
 

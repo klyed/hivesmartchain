@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/event/pubsub"
-	"github.com/klye-dev/hivesmartchain/event/query"
+	"github.com/klyed/hivesmartchain/event/pubsub"
+	"github.com/klyed/hivesmartchain/event/query"
 	"github.com/stretchr/testify/require"
 )
 

@@ -6,12 +6,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/encoding"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/crypto"
 
-	"github.com/klye-dev/hivesmartchain/integration"
-	"github.com/klye-dev/hivesmartchain/keys"
+	"github.com/klyed/hivesmartchain/integration"
+	"github.com/klyed/hivesmartchain/keys"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

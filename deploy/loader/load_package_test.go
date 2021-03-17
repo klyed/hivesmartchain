@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/deploy/def"
+	"github.com/klyed/hivesmartchain/deploy/def"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

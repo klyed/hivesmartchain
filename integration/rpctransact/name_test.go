@@ -6,14 +6,14 @@ import (
 	"context"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/integration"
+	"github.com/klyed/hivesmartchain/integration"
 
-	"github.com/klye-dev/hivesmartchain/event"
-	"github.com/klye-dev/hivesmartchain/execution/exec"
-	"github.com/klye-dev/hivesmartchain/execution/names"
-	"github.com/klye-dev/hivesmartchain/integration/rpctest"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcquery"
-	"github.com/klye-dev/hivesmartchain/txs/payload"
+	"github.com/klyed/hivesmartchain/event"
+	"github.com/klyed/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/execution/names"
+	"github.com/klyed/hivesmartchain/integration/rpctest"
+	"github.com/klyed/hivesmartchain/rpc/rpcquery"
+	"github.com/klyed/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -1,6 +1,6 @@
 syntax = 'proto3';
 
-option go_package = "github.com/klye-dev/hivesmartchain/encoding";
+option go_package = "github.com/klyed/hivesmartchain/encoding";
 
 import "gogoproto/gogo.proto";
 

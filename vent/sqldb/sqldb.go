@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/vent/sqldb/adapters"
-	"github.com/klye-dev/hivesmartchain/vent/types"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/vent/sqldb/adapters"
+	"github.com/klyed/hivesmartchain/vent/types"
 	"github.com/jmoiron/sqlx"
 )
 

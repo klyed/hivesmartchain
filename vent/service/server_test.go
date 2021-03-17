@@ -11,14 +11,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/integration"
-	"github.com/klye-dev/hivesmartchain/integration/rpctest"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/vent/config"
-	"github.com/klye-dev/hivesmartchain/vent/service"
-	"github.com/klye-dev/hivesmartchain/vent/sqlsol"
-	"github.com/klye-dev/hivesmartchain/vent/test"
-	"github.com/klye-dev/hivesmartchain/vent/types"
+	"github.com/klyed/hivesmartchain/integration"
+	"github.com/klyed/hivesmartchain/integration/rpctest"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/vent/config"
+	"github.com/klyed/hivesmartchain/vent/service"
+	"github.com/klyed/hivesmartchain/vent/sqlsol"
+	"github.com/klyed/hivesmartchain/vent/test"
+	"github.com/klyed/hivesmartchain/vent/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -36,8 +36,8 @@ func TestServer(t *testing.T) {
 			_, closeDB := test.NewTestDB(t, cfg)
 			defer closeDB()
 
-			cfg.SpecFileOrDirs = []string{os.Getenv("GOPATH") + "/src/github.com/klye-dev/hivesmartchain/vent/test/sqlsol_view.json"}
-			cfg.AbiFileOrDirs = []string{os.Getenv("GOPATH") + "/src/github.com/klye-dev/hivesmartchain/vent/test/EventsTest.abi"}
+			cfg.SpecFileOrDirs = []string{os.Getenv("GOPATH") + "/src/github.com/klyed/hivesmartchain/vent/test/sqlsol_view.json"}
+			cfg.AbiFileOrDirs = []string{os.Getenv("GOPATH") + "/src/github.com/klyed/hivesmartchain/vent/test/EventsTest.abi"}
 			cfg.ChainAddress = kern.GRPCListenAddress().String()
 
 			log := logging.NewNoopLogger()

@@ -3,8 +3,8 @@ package sqlsol
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/txs"
-	"github.com/klye-dev/hivesmartchain/vent/types"
+	"github.com/klyed/hivesmartchain/txs"
+	"github.com/klyed/hivesmartchain/vent/types"
 )
 
 type SpecOpt uint64

@@ -9,7 +9,7 @@ import (
 	"path"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/execution/exec"
 	"github.com/stretchr/testify/require"
 )
 

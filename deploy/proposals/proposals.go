@@ -5,10 +5,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/deploy/def"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/txs"
-	"github.com/klye-dev/hivesmartchain/txs/payload"
+	"github.com/klyed/hivesmartchain/deploy/def"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/txs"
+	"github.com/klyed/hivesmartchain/txs/payload"
 )
 
 type ProposalState int

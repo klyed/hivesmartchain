@@ -12,7 +12,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/crypto"
 	"github.com/tmthrgd/go-hex"
 	"golang.org/x/crypto/scrypt"
 )

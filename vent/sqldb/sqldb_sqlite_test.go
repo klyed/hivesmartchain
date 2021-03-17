@@ -5,7 +5,7 @@ package sqldb_test
 import (
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/vent/test"
+	"github.com/klyed/hivesmartchain/vent/test"
 )
 
 func TestSqliteSynchronizeDB(t *testing.T) {

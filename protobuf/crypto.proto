@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 package crypto;
 
-option go_package = "github.com/klye-dev/hivesmartchain/crypto";
+option go_package = "github.com/klyed/hivesmartchain/crypto";
 
 import "gogoproto/gogo.proto";
 
@@ -16,7 +16,7 @@ option (gogoproto.messagename_all) = true;
 message PublicKey {
     option (gogoproto.goproto_stringer) = false;
     uint32 CurveType = 1 [(gogoproto.casttype) = "CurveType"];
-    bytes PublicKey = 2[(gogoproto.customtype) = "github.com/klye-dev/hivesmartchain/binary.HexBytes", (gogoproto.nullable) = false];
+    bytes PublicKey = 2[(gogoproto.customtype) = "github.com/klyed/hivesmartchain/binary.HexBytes", (gogoproto.nullable) = false];
 }
 
 message PrivateKey {

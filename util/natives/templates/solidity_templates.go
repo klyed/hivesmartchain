@@ -9,7 +9,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/klye-dev/hivesmartchain/execution/native"
+	"github.com/klyed/hivesmartchain/execution/native"
 	"github.com/iancoleman/strcase"
 )
 

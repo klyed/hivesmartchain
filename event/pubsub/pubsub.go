@@ -18,9 +18,9 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/klye-dev/hivesmartchain/event/query"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/event/query"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/logging/structure"
 	"github.com/tendermint/tendermint/libs/service"
 )
 

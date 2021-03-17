@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/klye-dev/hivesmartchain/consensus/tendermint/codes"
-	"github.com/klye-dev/hivesmartchain/execution"
-	"github.com/klye-dev/hivesmartchain/execution/errors"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
-	"github.com/klye-dev/hivesmartchain/txs"
+	"github.com/klyed/hivesmartchain/consensus/tendermint/codes"
+	"github.com/klyed/hivesmartchain/execution"
+	"github.com/klyed/hivesmartchain/execution/errors"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/txs"
 	"github.com/tendermint/tendermint/abci/types"
 )
 

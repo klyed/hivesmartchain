@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/vent/chain"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/execution/evm/abi"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/vent/chain"
 )
 
 type EventSpecGetter func(abi.EventID, crypto.Address) (*abi.EventSpec, error)

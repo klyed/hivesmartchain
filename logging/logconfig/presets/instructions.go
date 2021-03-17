@@ -5,9 +5,9 @@ import (
 
 	"strconv"
 
-	"github.com/klye-dev/hivesmartchain/logging/logconfig"
-	"github.com/klye-dev/hivesmartchain/logging/loggers"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/logging/logconfig"
+	"github.com/klyed/hivesmartchain/logging/loggers"
+	"github.com/klyed/hivesmartchain/logging/structure"
 )
 
 // Function to generate part of a tree of Sinks (e.g. append a single child node, or an entire subtree).

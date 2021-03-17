@@ -5,9 +5,9 @@ package service_test
 import (
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/rpc/web3/ethclient"
-	"github.com/klye-dev/hivesmartchain/tests/web3/web3test"
-	"github.com/klye-dev/hivesmartchain/vent/test"
+	"github.com/klyed/hivesmartchain/rpc/web3/ethclient"
+	"github.com/klyed/hivesmartchain/tests/web3/web3test"
+	"github.com/klyed/hivesmartchain/vent/test"
 	"github.com/stretchr/testify/require"
 )
 

@@ -7,11 +7,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/config/source"
-	"github.com/klye-dev/hivesmartchain/deploy/def"
-	"github.com/klye-dev/hivesmartchain/deploy/jobs"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/txs/payload"
+	"github.com/klyed/hivesmartchain/config/source"
+	"github.com/klyed/hivesmartchain/deploy/def"
+	"github.com/klyed/hivesmartchain/deploy/jobs"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/txs/payload"
 	cli "github.com/jawher/mow.cli"
 )
 

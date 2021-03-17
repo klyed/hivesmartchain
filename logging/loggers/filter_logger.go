@@ -2,7 +2,7 @@ package loggers
 
 import (
 	"github.com/go-kit/kit/log"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/logging/structure"
 )
 
 // Filter logger allows us to filter lines logged to it before passing on to underlying

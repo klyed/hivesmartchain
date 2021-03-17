@@ -3,10 +3,10 @@ package exec
 import (
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/binary"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/event"
-	"github.com/klye-dev/hivesmartchain/event/query"
+	"github.com/klyed/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/event"
+	"github.com/klyed/hivesmartchain/event/query"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/tmthrgd/go-hex"

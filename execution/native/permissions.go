@@ -3,11 +3,11 @@ package native
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/execution/engine"
+	"github.com/klyed/hivesmartchain/execution/engine"
 
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/permission"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/permission"
 )
 
 var Permissions = New().MustContract("Permissions",

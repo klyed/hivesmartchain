@@ -6,13 +6,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/encoding"
 
-	"github.com/klye-dev/hivesmartchain/core"
-	"github.com/klye-dev/hivesmartchain/dump"
-	"github.com/klye-dev/hivesmartchain/logging/logconfig"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcdump"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcquery"
+	"github.com/klyed/hivesmartchain/core"
+	"github.com/klyed/hivesmartchain/dump"
+	"github.com/klyed/hivesmartchain/logging/logconfig"
+	"github.com/klyed/hivesmartchain/rpc/rpcdump"
+	"github.com/klyed/hivesmartchain/rpc/rpcquery"
 	cli "github.com/jawher/mow.cli"
 )
 

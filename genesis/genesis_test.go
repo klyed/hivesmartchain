@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/acm/validator"
-	"github.com/klye-dev/hivesmartchain/permission"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/acm/validator"
+	"github.com/klyed/hivesmartchain/permission"
 	"github.com/stretchr/testify/assert"
 )
 

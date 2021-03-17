@@ -12,7 +12,7 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_klye-dev_hsc-main_crypto "github.com/klye-dev/hivesmartchain/crypto"
+	github_com_klyed_hsc-main_crypto "github.com/klyed/hivesmartchain/crypto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -36,10 +36,10 @@ type NodeIdentity struct {
 	// Peer network address
 	NetworkAddress string `protobuf:"bytes,2,opt,name=NetworkAddress,proto3" json:"NetworkAddress,omitempty"`
 	// The Tendermint p2p node ID
-	TendermintNodeID github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,3,opt,name=TendermintNodeID,proto3,customtype=github.com/klye-dev/hivesmartchain/crypto.Address" json:"TendermintNodeID"`
+	TendermintNodeID github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,3,opt,name=TendermintNodeID,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"TendermintNodeID"`
 	// The public key that this node will validate with if it becomes a validator
 	// (use this to create a binding between p2p node ID and validator)
-	ValidatorPublicKey   *github_com_klye-dev_hsc-main_crypto.PublicKey `protobuf:"bytes,4,opt,name=ValidatorPublicKey,proto3,customtype=github.com/klye-dev/hivesmartchain/crypto.PublicKey" json:"ValidatorPublicKey,omitempty"`
+	ValidatorPublicKey   *github_com_klyed_hsc-main_crypto.PublicKey `protobuf:"bytes,4,opt,name=ValidatorPublicKey,proto3,customtype=github.com/klyed/hivesmartchain/crypto.PublicKey" json:"ValidatorPublicKey,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
 	XXX_unrecognized     []byte                                          `json:"-"`
 	XXX_sizecache        int32                                           `json:"-"`
@@ -381,7 +381,7 @@ func (m *NodeIdentity) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_klye-dev_hsc-main_crypto.PublicKey
+			var v github_com_klyed_hsc-main_crypto.PublicKey
 			m.ValidatorPublicKey = &v
 			if err := m.ValidatorPublicKey.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err

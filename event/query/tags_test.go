@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/binary"
-	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -6,9 +6,9 @@ import (
 
 	"github.com/eapache/channels"
 	"github.com/go-kit/kit/log"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/logging/loggers"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/logging/loggers"
+	"github.com/klyed/hivesmartchain/logging/structure"
 )
 
 // This file contains definitions for a configurable output graph for the

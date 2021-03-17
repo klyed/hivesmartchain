@@ -3,7 +3,7 @@ package bc
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/execution/evm/asm"
+	"github.com/klyed/hivesmartchain/execution/evm/asm"
 )
 
 type ByteSlicable interface {

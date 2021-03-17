@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/klye-dev/hivesmartchain/bcm"
-	"github.com/klye-dev/hivesmartchain/event"
-	"github.com/klye-dev/hivesmartchain/event/query"
-	"github.com/klye-dev/hivesmartchain/execution/exec"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/storage"
+	"github.com/klyed/hivesmartchain/bcm"
+	"github.com/klyed/hivesmartchain/event"
+	"github.com/klyed/hivesmartchain/event/query"
+	"github.com/klyed/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/storage"
 )
 
 const SubscribeBufferSize = 100

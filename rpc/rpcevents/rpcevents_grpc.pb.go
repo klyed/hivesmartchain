@@ -5,7 +5,7 @@ package rpcevents
 import (
 	context "context"
 
-	exec "github.com/klye-dev/hivesmartchain/execution/exec"
+	exec "github.com/klyed/hivesmartchain/execution/exec"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

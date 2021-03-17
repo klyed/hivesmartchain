@@ -5,7 +5,7 @@ package rpcdump
 import (
 	context "context"
 
-	dump "github.com/klye-dev/hivesmartchain/dump"
+	dump "github.com/klyed/hivesmartchain/dump"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

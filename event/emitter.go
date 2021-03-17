@@ -7,10 +7,10 @@ import (
 	"context"
 	"math/rand"
 
-	"github.com/klye-dev/hivesmartchain/event/pubsub"
-	"github.com/klye-dev/hivesmartchain/event/query"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/event/pubsub"
+	"github.com/klyed/hivesmartchain/event/query"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/logging/structure"
 	"github.com/tendermint/tendermint/libs/service"
 	hex "github.com/tmthrgd/go-hex"
 )

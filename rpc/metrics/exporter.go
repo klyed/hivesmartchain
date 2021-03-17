@@ -9,10 +9,10 @@ import (
 
 	"github.com/tendermint/tendermint/types"
 
-	"github.com/klye-dev/hivesmartchain/acm/acmstate"
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
-	"github.com/klye-dev/hivesmartchain/rpc"
+	"github.com/klyed/hivesmartchain/acm/acmstate"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/rpc"
 	"github.com/prometheus/client_golang/prometheus"
 	core_types "github.com/tendermint/tendermint/rpc/core/types"
 )

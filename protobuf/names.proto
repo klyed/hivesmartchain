@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 package names;
 
-option go_package = "github.com/klye-dev/hivesmartchain/execution/names";
+option go_package = "github.com/klyed/hivesmartchain/execution/names";
 
 import "gogoproto/gogo.proto";
 
@@ -25,7 +25,7 @@ message Entry {
     // registered name for the entry
     string Name = 1;
     // address that created the entry
-    bytes Owner = 2 [(gogoproto.customtype) = "github.com/klye-dev/hivesmartchain/crypto.Address", (gogoproto.nullable) = false];
+    bytes Owner = 2 [(gogoproto.customtype) = "github.com/klyed/hivesmartchain/crypto.Address", (gogoproto.nullable) = false];
     // data to store under this name
     string Data = 3;
     // block at which this entry expires

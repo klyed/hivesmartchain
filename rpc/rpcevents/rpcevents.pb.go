@@ -12,8 +12,8 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_klye-dev_hsc-main_binary "github.com/klye-dev/hivesmartchain/binary"
-	exec "github.com/klye-dev/hivesmartchain/execution/exec"
+	github_com_klyed_hsc-main_binary "github.com/klyed/hivesmartchain/binary"
+	exec "github.com/klyed/hivesmartchain/execution/exec"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -126,7 +126,7 @@ func (*GetBlockRequest) XXX_MessageName() string {
 
 type TxRequest struct {
 	// Height of block required
-	TxHash github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,1,opt,name=TxHash,proto3,customtype=github.com/klye-dev/hivesmartchain/binary.HexBytes" json:"TxHash"`
+	TxHash github_com_klyed_hsc-main_binary.HexBytes `protobuf:"bytes,1,opt,name=TxHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"TxHash"`
 	// Whether to wait for the block to become available
 	Wait                 bool     `protobuf:"varint,2,opt,name=Wait,proto3" json:"Wait,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`

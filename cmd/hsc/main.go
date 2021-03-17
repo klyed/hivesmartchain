@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/klye-dev/hivesmartchain/cmd/hsc/commands"
-	"github.com/klye-dev/hivesmartchain/project"
+	"github.com/klyed/hivesmartchain/cmd/hsc/commands"
+	"github.com/klyed/hivesmartchain/project"
 	cli "github.com/jawher/mow.cli"
 )
 

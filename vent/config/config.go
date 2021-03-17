@@ -3,10 +3,10 @@ package config
 import (
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/vent/chain"
-	"github.com/klye-dev/hivesmartchain/vent/sqlsol"
-	"github.com/klye-dev/hivesmartchain/vent/types"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/vent/chain"
+	"github.com/klyed/hivesmartchain/vent/sqlsol"
+	"github.com/klyed/hivesmartchain/vent/types"
 )
 
 const DefaultPostgresDBURL = "postgres://postgres@localhost:5432/postgres?sslmode=disable"

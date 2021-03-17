@@ -1,1 +1,1 @@
-* Test case for issue [#696](https://github.com/klye-dev/hivesmartchain/issues/696) with SIGNEXTEND causing improper return types for positive integers narrower than 32 bytes
+* Test case for issue [#696](https://github.com/klyed/hivesmartchain/issues/696) with SIGNEXTEND causing improper return types for positive integers narrower than 32 bytes

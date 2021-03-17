@@ -1,7 +1,7 @@
 package bcm
 
 import (
-	"github.com/klye-dev/hivesmartchain/txs"
+	"github.com/klyed/hivesmartchain/txs"
 	"github.com/tendermint/tendermint/types"
 )
 

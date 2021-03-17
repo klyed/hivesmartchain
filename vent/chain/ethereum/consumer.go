@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/logging"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
-	"github.com/klye-dev/hivesmartchain/rpc/lib/types"
+	"github.com/klyed/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/rpc/lib/types"
 	"github.com/pkg/errors"
 
-	"github.com/klye-dev/hivesmartchain/rpc/rpcevents"
-	"github.com/klye-dev/hivesmartchain/rpc/web3/ethclient"
-	"github.com/klye-dev/hivesmartchain/vent/chain"
+	"github.com/klyed/hivesmartchain/rpc/rpcevents"
+	"github.com/klyed/hivesmartchain/rpc/web3/ethclient"
+	"github.com/klyed/hivesmartchain/vent/chain"
 )
 
 const ConsumerScope = "EthereumConsumer"

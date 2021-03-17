@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/vent/config"
-	"github.com/klye-dev/hivesmartchain/vent/sqldb"
-	"github.com/klye-dev/hivesmartchain/vent/sqldb/adapters"
-	"github.com/klye-dev/hivesmartchain/vent/sqlsol"
-	"github.com/klye-dev/hivesmartchain/vent/test"
-	"github.com/klye-dev/hivesmartchain/vent/types"
+	"github.com/klyed/hivesmartchain/vent/config"
+	"github.com/klyed/hivesmartchain/vent/sqldb"
+	"github.com/klyed/hivesmartchain/vent/sqldb/adapters"
+	"github.com/klyed/hivesmartchain/vent/sqlsol"
+	"github.com/klyed/hivesmartchain/vent/test"
+	"github.com/klyed/hivesmartchain/vent/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

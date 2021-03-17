@@ -3,7 +3,7 @@ package abi
 import (
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/execution/solidity"
+	"github.com/klyed/hivesmartchain/execution/solidity"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/logging"
 	"github.com/stretchr/testify/assert"
 	hex "github.com/tmthrgd/go-hex"
 )

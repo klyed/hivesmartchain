@@ -6,7 +6,7 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/crypto"
 	"github.com/tmthrgd/go-hex"
 )
 

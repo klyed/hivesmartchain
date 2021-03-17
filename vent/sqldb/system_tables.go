@@ -1,8 +1,8 @@
 package sqldb
 
 import (
-	"github.com/klye-dev/hivesmartchain/txs"
-	"github.com/klye-dev/hivesmartchain/vent/types"
+	"github.com/klyed/hivesmartchain/txs"
+	"github.com/klyed/hivesmartchain/vent/types"
 )
 
 // getSysTablesDefinition returns log, chain info & dictionary structures

@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 package rpcdump;
 
-option go_package = "github.com/klye-dev/hivesmartchain/rpc/rpcdump";
+option go_package = "github.com/klyed/hivesmartchain/rpc/rpcdump";
 
 import "gogoproto/gogo.proto";
 

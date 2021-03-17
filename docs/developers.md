@@ -7,7 +7,7 @@
 - [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports)
 - [protoc](http://google.github.io/proto-lens/installing-protoc.html) (libprotoc 3.7.1)
 
-Please also refer to our [contributing guidelines](https://github.com/klye-dev/hivesmartchain/blob/main/.github/CONTRIBUTING.md).
+Please also refer to our [contributing guidelines](https://github.com/klyed/hivesmartchain/blob/main/.github/CONTRIBUTING.md).
 
 ## Building
 

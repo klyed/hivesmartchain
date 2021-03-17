@@ -8,10 +8,10 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/klye-dev/hivesmartchain/config"
-	"github.com/klye-dev/hivesmartchain/config/source"
-	"github.com/klye-dev/hivesmartchain/genesis"
-	logging_config "github.com/klye-dev/hivesmartchain/logging/logconfig"
+	"github.com/klyed/hivesmartchain/config"
+	"github.com/klyed/hivesmartchain/config/source"
+	"github.com/klyed/hivesmartchain/genesis"
+	logging_config "github.com/klyed/hivesmartchain/logging/logconfig"
 )
 
 type Output interface {

@@ -7,11 +7,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/acm/balance"
-	crypto "github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/genesis"
-	"github.com/klye-dev/hivesmartchain/keys"
-	"github.com/klye-dev/hivesmartchain/permission"
+	"github.com/klyed/hivesmartchain/acm/balance"
+	crypto "github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/genesis"
+	"github.com/klyed/hivesmartchain/keys"
+	"github.com/klyed/hivesmartchain/permission"
 )
 
 const DefaultAmount uint64 = 1000000

@@ -4,8 +4,8 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/execution/exec"
 )
 
 type Blockchain interface {

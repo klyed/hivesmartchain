@@ -5,7 +5,7 @@ package loggers
 
 import (
 	"github.com/go-kit/kit/log"
-	"github.com/klye-dev/hivesmartchain/logging/errors"
+	"github.com/klyed/hivesmartchain/logging/errors"
 )
 
 // This represents an 'AND' type logger. When logged to it will log to each of

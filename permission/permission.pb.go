@@ -12,7 +12,7 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_klye-dev_hsc-main_crypto "github.com/klye-dev/hivesmartchain/crypto"
+	github_com_klyed_hsc-main_crypto "github.com/klyed/hivesmartchain/crypto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -136,7 +136,7 @@ type PermArgs struct {
 	// The permission function
 	Action PermFlag `protobuf:"varint,1,opt,name=Action,casttype=PermFlag" json:"Action"`
 	// The target of the action
-	Target *github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,2,opt,name=Target,customtype=github.com/klye-dev/hivesmartchain/crypto.Address" json:"Target,omitempty"`
+	Target *github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,2,opt,name=Target,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Target,omitempty"`
 	// Possible arguments
 	Permission           *PermFlag `protobuf:"varint,3,opt,name=Permission,casttype=PermFlag" json:"Permission,omitempty"`
 	Role                 *string   `protobuf:"bytes,4,opt,name=Role" json:"Role,omitempty"`
@@ -739,7 +739,7 @@ func (m *PermArgs) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_klye-dev_hsc-main_crypto.Address
+			var v github_com_klyed_hsc-main_crypto.Address
 			m.Target = &v
 			if err := m.Target.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err

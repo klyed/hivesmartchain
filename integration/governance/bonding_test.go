@@ -6,13 +6,13 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/bcm"
-	"github.com/klye-dev/hivesmartchain/config"
-	"github.com/klye-dev/hivesmartchain/core"
-	"github.com/klye-dev/hivesmartchain/integration"
-	"github.com/klye-dev/hivesmartchain/integration/rpctest"
-	"github.com/klye-dev/hivesmartchain/permission"
-	"github.com/klye-dev/hivesmartchain/txs/payload"
+	"github.com/klyed/hivesmartchain/bcm"
+	"github.com/klyed/hivesmartchain/config"
+	"github.com/klyed/hivesmartchain/core"
+	"github.com/klyed/hivesmartchain/integration"
+	"github.com/klyed/hivesmartchain/integration/rpctest"
+	"github.com/klyed/hivesmartchain/permission"
+	"github.com/klyed/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/require"
 )
 

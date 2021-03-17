@@ -11,7 +11,7 @@ import (
 	"math/bits"
 	"reflect"
 
-	binary2 "github.com/klye-dev/hivesmartchain/binary"
+	binary2 "github.com/klyed/hivesmartchain/binary"
 )
 
 type magicOffset uint8

@@ -1,10 +1,10 @@
 package vms
 
 import (
-	"github.com/klye-dev/hivesmartchain/execution/defaults"
-	"github.com/klye-dev/hivesmartchain/execution/engine"
-	"github.com/klye-dev/hivesmartchain/execution/evm"
-	"github.com/klye-dev/hivesmartchain/execution/wasm"
+	"github.com/klyed/hivesmartchain/execution/defaults"
+	"github.com/klyed/hivesmartchain/execution/engine"
+	"github.com/klyed/hivesmartchain/execution/evm"
+	"github.com/klyed/hivesmartchain/execution/wasm"
 )
 
 type VirtualMachines struct {

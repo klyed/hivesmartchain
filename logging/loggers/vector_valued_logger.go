@@ -5,7 +5,7 @@ package loggers
 
 import (
 	"github.com/go-kit/kit/log"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/logging/structure"
 )
 
 // Treat duplicate key-values as consecutive entries in a vector-valued lookup

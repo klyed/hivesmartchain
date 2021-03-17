@@ -10,14 +10,14 @@ import (
 	lifeExec "github.com/perlin-network/life/exec"
 	hex "github.com/tmthrgd/go-hex"
 
-	bin "github.com/klye-dev/hivesmartchain/binary"
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/execution/engine"
-	"github.com/klye-dev/hivesmartchain/execution/errors"
-	"github.com/klye-dev/hivesmartchain/execution/evm"
-	"github.com/klye-dev/hivesmartchain/execution/exec"
-	"github.com/klye-dev/hivesmartchain/permission"
-	"github.com/klye-dev/hivesmartchain/txs"
+	bin "github.com/klyed/hivesmartchain/binary"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/execution/engine"
+	"github.com/klyed/hivesmartchain/execution/errors"
+	"github.com/klyed/hivesmartchain/execution/evm"
+	"github.com/klyed/hivesmartchain/execution/exec"
+	"github.com/klyed/hivesmartchain/permission"
+	"github.com/klyed/hivesmartchain/txs"
 )
 
 type Contract struct {

@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"github.com/klye-dev/hivesmartchain/core"
+	"github.com/klyed/hivesmartchain/core"
 	cli "github.com/jawher/mow.cli"
 )
 

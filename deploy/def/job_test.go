@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/execution/evm/abi"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

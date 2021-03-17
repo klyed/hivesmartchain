@@ -3,10 +3,10 @@ package state
 import (
 	"fmt"
 
-	"github.com/klye-dev/hivesmartchain/crypto"
-	"github.com/klye-dev/hivesmartchain/encoding"
-	"github.com/klye-dev/hivesmartchain/execution/registry"
-	"github.com/klye-dev/hivesmartchain/storage"
+	"github.com/klyed/hivesmartchain/crypto"
+	"github.com/klyed/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/execution/registry"
+	"github.com/klyed/hivesmartchain/storage"
 )
 
 var _ registry.IterableReader = &State{}

@@ -5,13 +5,13 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/klye-dev/hivesmartchain/deploy/def"
-	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/deploy/def"
+	"github.com/klyed/hivesmartchain/logging"
 
 	"encoding/json"
 
 	"github.com/elgs/gojq"
-	"github.com/klye-dev/hivesmartchain/acm/validator"
+	"github.com/klyed/hivesmartchain/acm/validator"
 )
 
 func GetBlockHeight(client *def.Client, logger *logging.Logger) (latestBlockHeight uint64, err error) {

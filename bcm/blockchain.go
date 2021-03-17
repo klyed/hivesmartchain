@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/klye-dev/hivesmartchain/encoding"
+	"github.com/klyed/hivesmartchain/encoding"
 	"github.com/tendermint/tendermint/types"
 
-	"github.com/klye-dev/hivesmartchain/genesis"
-	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/genesis"
+	"github.com/klyed/hivesmartchain/logging"
 	dbm "github.com/tendermint/tm-db"
 )
 

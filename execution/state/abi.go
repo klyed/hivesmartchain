@@ -1,7 +1,7 @@
 package state
 
 import (
-	"github.com/klye-dev/hivesmartchain/acm/acmstate"
+	"github.com/klyed/hivesmartchain/acm/acmstate"
 )
 
 func (s *ReadState) GetMetadata(metahash acmstate.MetadataHash) (string, error) {

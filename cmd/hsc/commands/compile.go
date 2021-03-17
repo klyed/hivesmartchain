@@ -5,8 +5,8 @@ import (
 	"os"
 	"path"
 
-	"github.com/klye-dev/hivesmartchain/deploy/compile"
-	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klyed/hivesmartchain/deploy/compile"
+	"github.com/klyed/hivesmartchain/logging"
 	cli "github.com/jawher/mow.cli"
 )
 

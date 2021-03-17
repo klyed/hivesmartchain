@@ -8,16 +8,16 @@ import (
 	"io"
 	"testing"
 
-	"github.com/klye-dev/hivesmartchain/integration"
+	"github.com/klyed/hivesmartchain/integration"
 
 	"github.com/tendermint/tendermint/crypto/tmhash"
 
-	"github.com/klye-dev/hivesmartchain/acm"
-	"github.com/klye-dev/hivesmartchain/event/query"
-	"github.com/klye-dev/hivesmartchain/execution/names"
-	"github.com/klye-dev/hivesmartchain/genesis"
-	"github.com/klye-dev/hivesmartchain/integration/rpctest"
-	"github.com/klye-dev/hivesmartchain/rpc/rpcquery"
+	"github.com/klyed/hivesmartchain/acm"
+	"github.com/klyed/hivesmartchain/event/query"
+	"github.com/klyed/hivesmartchain/execution/names"
+	"github.com/klyed/hivesmartchain/genesis"
+	"github.com/klyed/hivesmartchain/integration/rpctest"
+	"github.com/klyed/hivesmartchain/rpc/rpcquery"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

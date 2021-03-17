@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/go-kit/kit/log"
-	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klyed/hivesmartchain/logging/structure"
 )
 
 type FileLogger struct {

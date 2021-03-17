@@ -74,7 +74,7 @@
 
 ## [0.29.8] - 2020-02-11
 ### Fixed
-- [ABI] Fix failure to convert crypto.Address to EVMAddress (https://github.com/klye-dev/hivesmartchain/issues/1326)
+- [ABI] Fix failure to convert crypto.Address to EVMAddress (https://github.com/klyed/hivesmartchain/issues/1326)
 
 
 ## [0.29.7] - 2020-01-27
@@ -141,7 +141,7 @@
 - [Docs] Much docs (see also: https://www.hyperledger.org/blog/2019/10/08/burrow-the-boring-blockchain)
 - [Docs] Generate github pages docs index with docsify: https://hyperledger.github.io/burrow/
 - [JS] Publish burrow.js to @hyperledger/burrow
-- [State] Store EVM ABI and contract metadata on-chain see [GetMetadata](https://github.com/klye-dev/hivesmartchain/blob/e80aad5d8fac1f67dbfec61ea75670f9a38c61a1/protobuf/rpcquery.proto#L25)
+- [State] Store EVM ABI and contract metadata on-chain see [GetMetadata](https://github.com/klyed/hivesmartchain/blob/e80aad5d8fac1f67dbfec61ea75670f9a38c61a1/protobuf/rpcquery.proto#L25)
 - [Tendermint] Upgrade to v0.32.3
 - [Execution] Added IdentifyTx for introducing nodes (binding their NodeID to ValidatorAddress)
 - [Natives] Implement Ethereum precompile number 5 - modular exponentiation
@@ -334,7 +334,7 @@
 
 ## [0.24.0] - 2019-02-26
 ### Changed
-- [EVM] Use TxHash to allow predictable sequence numbers for account creation (allows proposal mechanism to aggregate transactions and execute in a BatchTx) - [pull request](https://github.com/klye-dev/hivesmartchain/pull/969)
+- [EVM] Use TxHash to allow predictable sequence numbers for account creation (allows proposal mechanism to aggregate transactions and execute in a BatchTx) - [pull request](https://github.com/klyed/hivesmartchain/pull/969)
 - [State] Introduced MutableForest and change state layout to a streaming model that amongst other things should not blow the GRPC message size for large transactions
 - [Consensus] Upgraded Tendermint to v0.30.1
 - [State] Upgraded IAVL to v0.12.1
@@ -347,7 +347,7 @@
 ### Fixed
 - [Transactor] Reduce TxExecution subscription overhead
 - [Transactor] Remove excessive debug subscription timeout
-- [State] Fixed issue with check-pointing that could cause divergent AppHash across node restarts- [pull request](https://github.com/klye-dev/hivesmartchain/pull/985)
+- [State] Fixed issue with check-pointing that could cause divergent AppHash across node restarts- [pull request](https://github.com/klyed/hivesmartchain/pull/985)
 - [EVM] Implemented BLOCKHASH opcode
 - [EVM] Used correct callee STATICCALL to fix cross-contract queries
 - [Consensus] Guarded against total validator power overflow (as limited by Tendermint)
@@ -583,9 +583,9 @@ A major strand of work has been in condensing previous Monax tooling spread acro
 
 #### Known issues
 - Documentation rot - some effort has been made to update documentation to represent the current state but in some places it has slipped help can be found (and would be welcomed) on: [Hyperledger Burrow Chat](https://chat.hyperledger.org/channel/burrow)
-- Missing support for: RETURNDATACOPY and RETURNDATASIZE https://github.com/klye-dev/hivesmartchain/issues/705 (coming very soon)
-- Missing support for: INVALID https://github.com/klye-dev/hivesmartchain/issues/705 (coming very soon)
-- Missing support for: REVERT https://github.com/klye-dev/hivesmartchain/issues/600 (coming very soon)
+- Missing support for: RETURNDATACOPY and RETURNDATASIZE https://github.com/klyed/hivesmartchain/issues/705 (coming very soon)
+- Missing support for: INVALID https://github.com/klyed/hivesmartchain/issues/705 (coming very soon)
+- Missing support for: REVERT https://github.com/klyed/hivesmartchain/issues/600 (coming very soon)
 
 
 ## [0.17.1]
@@ -594,8 +594,8 @@ Minor tweaks to docker build file
 ## [0.17.0] - 2017-09-04
 This is a service release with some significant ethereum/solidity compatibility improvements and new logging features. It includes:
 
-- [Upgrade to use Tendermint v0.9.2](https://github.com/klye-dev/hivesmartchain/pull/595)
-- [Implemented dynamic memory](https://github.com/klye-dev/hivesmartchain/pull/607) assumed by the EVM bytecode produce by solidity, fixing various issues.
+- [Upgrade to use Tendermint v0.9.2](https://github.com/klyed/hivesmartchain/pull/595)
+- [Implemented dynamic memory](https://github.com/klyed/hivesmartchain/pull/607) assumed by the EVM bytecode produce by solidity, fixing various issues.
 - Logging sinks and configuration - providing a flexible mechanism for configuring log flows and outputs see [logging section in readme](https://github.com/hyperledger/burrow#logging). Various other logging enhancements.
 - Fix event unsubscription
 - Remove module-specific versioning
@@ -604,7 +604,7 @@ This is a service release with some significant ethereum/solidity compatibility 
 
 Known issues:
 
-- SELFDESTRUCT opcode causes a panic when an account is removed. A [fix](https://github.com/klye-dev/hivesmartchain/pull/605) was produced but was [reverted](https://github.com/klye-dev/hivesmartchain/pull/636) pending investigation of a possible regression.
+- SELFDESTRUCT opcode causes a panic when an account is removed. A [fix](https://github.com/klyed/hivesmartchain/pull/605) was produced but was [reverted](https://github.com/klyed/hivesmartchain/pull/636) pending investigation of a possible regression.
 
 ## [0.16.3] - 2017-04-25
 This release adds an stop-gap fix to the Transact method so that it never
@@ -630,28 +630,28 @@ of the architecture across the Monax Platform to support a quicker release
 cadence.
 
 #### Features and improvements (among others)
-- [pull-510](https://github.com/klye-dev/hivesmartchain/pull/510) upgrade consensus engine to Tendermint v0.8.0
-- [pull-507](https://github.com/klye-dev/hivesmartchain/pull/507) use sha3 for snative addresses for future-proofing
-- [pull-506](https://github.com/klye-dev/hivesmartchain/pull/506) alignment and consolidation for genesis and config between tooling and chains
-- [pull-504](https://github.com/klye-dev/hivesmartchain/pull/504) relicense eris-db to Apache 2.0
-- [pull-500](https://github.com/klye-dev/hivesmartchain/pull/500) introduce more strongly types secure native contracts
-- [pull-499](https://github.com/klye-dev/hivesmartchain/pull/499) introduce word256 and remove dependency on tendermint/go-common
-- [pull-493](https://github.com/klye-dev/hivesmartchain/pull/493) re-introduce GenesisTime in GenesisDoc
+- [pull-510](https://github.com/klyed/hivesmartchain/pull/510) upgrade consensus engine to Tendermint v0.8.0
+- [pull-507](https://github.com/klyed/hivesmartchain/pull/507) use sha3 for snative addresses for future-proofing
+- [pull-506](https://github.com/klyed/hivesmartchain/pull/506) alignment and consolidation for genesis and config between tooling and chains
+- [pull-504](https://github.com/klyed/hivesmartchain/pull/504) relicense eris-db to Apache 2.0
+- [pull-500](https://github.com/klyed/hivesmartchain/pull/500) introduce more strongly types secure native contracts
+- [pull-499](https://github.com/klyed/hivesmartchain/pull/499) introduce word256 and remove dependency on tendermint/go-common
+- [pull-493](https://github.com/klyed/hivesmartchain/pull/493) re-introduce GenesisTime in GenesisDoc
 
 - Logging system overhauled based on the central logging interface of go-kit log. Configuration lacking in this release but should be in 0.16.1. Allows powerful routing, filtering, and output options for better operations and increasing the observability of an eris blockchain. More to follow.
 - Genesis making is improved and moved into eris-db.
 - Config templating is moved into eris-db for better synchronisation of server config between the consumer of it (eris-db) and the producers of it (eris cli and other tools).
 - Some documentation updates in code and in specs.
-- [pull-462](https://github.com/klye-dev/hivesmartchain/pull/499) Makefile added to capture conventions around building and testing and replicate them across different environments such as continuous integration systems.
+- [pull-462](https://github.com/klyed/hivesmartchain/pull/499) Makefile added to capture conventions around building and testing and replicate them across different environments such as continuous integration systems.
 
 #### Bugfixes (among others)
-- [pull-516](https://github.com/klye-dev/hivesmartchain/pull/516) Organize and add unit tests for rpc/v0
-- [pull-453](https://github.com/klye-dev/hivesmartchain/pull/453) Fix deserialisation for BroadcastTx on rpc/v0
-- [pull-476](https://github.com/klye-dev/hivesmartchain/pull/476) patch EXTCODESIZE for native contracts as solc ^v0.4 performs a safety check for non-zero contract code
-- [pull-468](https://github.com/klye-dev/hivesmartchain/pull/468) correct specifications for params on unsubscribe on rpc/tendermint
-- [pull-465](https://github.com/klye-dev/hivesmartchain/pull/465) fix divergence from JSON-RPC spec for Response object
-- [pull-366](https://github.com/klye-dev/hivesmartchain/pull/366) correction to circle ci script
-- [pull-379](https://github.com/klye-dev/hivesmartchain/pull/379) more descriptive error message for eris-client
+- [pull-516](https://github.com/klyed/hivesmartchain/pull/516) Organize and add unit tests for rpc/v0
+- [pull-453](https://github.com/klyed/hivesmartchain/pull/453) Fix deserialisation for BroadcastTx on rpc/v0
+- [pull-476](https://github.com/klyed/hivesmartchain/pull/476) patch EXTCODESIZE for native contracts as solc ^v0.4 performs a safety check for non-zero contract code
+- [pull-468](https://github.com/klyed/hivesmartchain/pull/468) correct specifications for params on unsubscribe on rpc/tendermint
+- [pull-465](https://github.com/klyed/hivesmartchain/pull/465) fix divergence from JSON-RPC spec for Response object
+- [pull-366](https://github.com/klyed/hivesmartchain/pull/366) correction to circle ci script
+- [pull-379](https://github.com/klyed/hivesmartchain/pull/379) more descriptive error message for eris-client
 
 
 ## [0.15.0]
@@ -701,56 +701,56 @@ This release marks the start of Eris-DB as the full permissioned blockchain node
   - [Blockchain] Fix getBlocks to respect block height cap.
 
 
-[0.31.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.30.5...v0.31.0
-[0.30.5]: https://github.com/klye-dev/hivesmartchain/compare/v0.30.4...v0.30.5
-[0.30.4]: https://github.com/klye-dev/hivesmartchain/compare/v0.30.3...v0.30.4
-[0.30.3]: https://github.com/klye-dev/hivesmartchain/compare/v0.30.2...v0.30.3
-[0.30.2]: https://github.com/klye-dev/hivesmartchain/compare/v0.30.1...v0.30.2
-[0.30.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.30.0...v0.30.1
-[0.30.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.29.8...v0.30.0
-[0.29.8]: https://github.com/klye-dev/hivesmartchain/compare/v0.29.7...v0.29.8
-[0.29.7]: https://github.com/klye-dev/hivesmartchain/compare/v0.29.6...v0.29.7
-[0.29.6]: https://github.com/klye-dev/hivesmartchain/compare/v0.29.5...v0.29.6
-[0.29.5]: https://github.com/klye-dev/hivesmartchain/compare/v0.29.4...v0.29.5
-[0.29.4]: https://github.com/klye-dev/hivesmartchain/compare/v0.29.3...v0.29.4
-[0.29.3]: https://github.com/klye-dev/hivesmartchain/compare/v0.29.2...v0.29.3
-[0.29.2]: https://github.com/klye-dev/hivesmartchain/compare/v0.29.1...v0.29.2
-[0.29.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.29.0...v0.29.1
-[0.29.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.28.2...v0.29.0
-[0.28.2]: https://github.com/klye-dev/hivesmartchain/compare/v0.28.1...v0.28.2
-[0.28.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.28.0...v0.28.1
-[0.28.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.27.0...v0.28.0
-[0.27.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.26.2...v0.27.0
-[0.26.2]: https://github.com/klye-dev/hivesmartchain/compare/v0.26.1...v0.26.2
-[0.26.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.26.0...v0.26.1
-[0.26.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.25.1...v0.26.0
-[0.25.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.25.0...v0.25.1
-[0.25.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.24.6...v0.25.0
-[0.24.6]: https://github.com/klye-dev/hivesmartchain/compare/v0.24.5...v0.24.6
-[0.24.5]: https://github.com/klye-dev/hivesmartchain/compare/v0.24.4...v0.24.5
-[0.24.4]: https://github.com/klye-dev/hivesmartchain/compare/v0.24.3...v0.24.4
-[0.24.3]: https://github.com/klye-dev/hivesmartchain/compare/v0.24.2...v0.24.3
-[0.24.2]: https://github.com/klye-dev/hivesmartchain/compare/v0.24.1...v0.24.2
-[0.24.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.24.0...v0.24.1
-[0.24.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.23.3...v0.24.0
-[0.23.3]: https://github.com/klye-dev/hivesmartchain/compare/v0.23.2...v0.23.3
-[0.23.2]: https://github.com/klye-dev/hivesmartchain/compare/v0.23.1...v0.23.2
-[0.23.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.23.0...v0.23.1
-[0.23.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.22.0...v0.23.0
-[0.22.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.21.0...v0.22.0
-[0.21.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.20.1...v0.21.0
-[0.20.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.20.0...v0.20.1
-[0.20.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.19.0...v0.20.0
-[0.19.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.18.1...v0.19.0
-[0.18.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.18.0...v0.18.1
-[0.18.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.17.1...v0.18.0
-[0.17.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.17.0...v0.17.1
-[0.17.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.16.3...v0.17.0
-[0.16.3]: https://github.com/klye-dev/hivesmartchain/compare/v0.16.2...v0.16.3
-[0.16.2]: https://github.com/klye-dev/hivesmartchain/compare/v0.16.1...v0.16.2
-[0.16.1]: https://github.com/klye-dev/hivesmartchain/compare/v0.16.0...v0.16.1
-[0.16.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.15.0...v0.16.0
-[0.15.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.14.0...v0.15.0
-[0.14.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.13.0...v0.14.0
-[0.13.0]: https://github.com/klye-dev/hivesmartchain/compare/v0.12.0...v0.13.0
-[0.12.0]: https://github.com/klye-dev/hivesmartchain/commits/v0.12.0
+[0.31.0]: https://github.com/klyed/hivesmartchain/compare/v0.30.5...v0.31.0
+[0.30.5]: https://github.com/klyed/hivesmartchain/compare/v0.30.4...v0.30.5
+[0.30.4]: https://github.com/klyed/hivesmartchain/compare/v0.30.3...v0.30.4
+[0.30.3]: https://github.com/klyed/hivesmartchain/compare/v0.30.2...v0.30.3
+[0.30.2]: https://github.com/klyed/hivesmartchain/compare/v0.30.1...v0.30.2
+[0.30.1]: https://github.com/klyed/hivesmartchain/compare/v0.30.0...v0.30.1
+[0.30.0]: https://github.com/klyed/hivesmartchain/compare/v0.29.8...v0.30.0
+[0.29.8]: https://github.com/klyed/hivesmartchain/compare/v0.29.7...v0.29.8
+[0.29.7]: https://github.com/klyed/hivesmartchain/compare/v0.29.6...v0.29.7
+[0.29.6]: https://github.com/klyed/hivesmartchain/compare/v0.29.5...v0.29.6
+[0.29.5]: https://github.com/klyed/hivesmartchain/compare/v0.29.4...v0.29.5
+[0.29.4]: https://github.com/klyed/hivesmartchain/compare/v0.29.3...v0.29.4
+[0.29.3]: https://github.com/klyed/hivesmartchain/compare/v0.29.2...v0.29.3
+[0.29.2]: https://github.com/klyed/hivesmartchain/compare/v0.29.1...v0.29.2
+[0.29.1]: https://github.com/klyed/hivesmartchain/compare/v0.29.0...v0.29.1
+[0.29.0]: https://github.com/klyed/hivesmartchain/compare/v0.28.2...v0.29.0
+[0.28.2]: https://github.com/klyed/hivesmartchain/compare/v0.28.1...v0.28.2
+[0.28.1]: https://github.com/klyed/hivesmartchain/compare/v0.28.0...v0.28.1
+[0.28.0]: https://github.com/klyed/hivesmartchain/compare/v0.27.0...v0.28.0
+[0.27.0]: https://github.com/klyed/hivesmartchain/compare/v0.26.2...v0.27.0
+[0.26.2]: https://github.com/klyed/hivesmartchain/compare/v0.26.1...v0.26.2
+[0.26.1]: https://github.com/klyed/hivesmartchain/compare/v0.26.0...v0.26.1
+[0.26.0]: https://github.com/klyed/hivesmartchain/compare/v0.25.1...v0.26.0
+[0.25.1]: https://github.com/klyed/hivesmartchain/compare/v0.25.0...v0.25.1
+[0.25.0]: https://github.com/klyed/hivesmartchain/compare/v0.24.6...v0.25.0
+[0.24.6]: https://github.com/klyed/hivesmartchain/compare/v0.24.5...v0.24.6
+[0.24.5]: https://github.com/klyed/hivesmartchain/compare/v0.24.4...v0.24.5
+[0.24.4]: https://github.com/klyed/hivesmartchain/compare/v0.24.3...v0.24.4
+[0.24.3]: https://github.com/klyed/hivesmartchain/compare/v0.24.2...v0.24.3
+[0.24.2]: https://github.com/klyed/hivesmartchain/compare/v0.24.1...v0.24.2
+[0.24.1]: https://github.com/klyed/hivesmartchain/compare/v0.24.0...v0.24.1
+[0.24.0]: https://github.com/klyed/hivesmartchain/compare/v0.23.3...v0.24.0
+[0.23.3]: https://github.com/klyed/hivesmartchain/compare/v0.23.2...v0.23.3
+[0.23.2]: https://github.com/klyed/hivesmartchain/compare/v0.23.1...v0.23.2
+[0.23.1]: https://github.com/klyed/hivesmartchain/compare/v0.23.0...v0.23.1
+[0.23.0]: https://github.com/klyed/hivesmartchain/compare/v0.22.0...v0.23.0
+[0.22.0]: https://github.com/klyed/hivesmartchain/compare/v0.21.0...v0.22.0
+[0.21.0]: https://github.com/klyed/hivesmartchain/compare/v0.20.1...v0.21.0
+[0.20.1]: https://github.com/klyed/hivesmartchain/compare/v0.20.0...v0.20.1
+[0.20.0]: https://github.com/klyed/hivesmartchain/compare/v0.19.0...v0.20.0
+[0.19.0]: https://github.com/klyed/hivesmartchain/compare/v0.18.1...v0.19.0
+[0.18.1]: https://github.com/klyed/hivesmartchain/compare/v0.18.0...v0.18.1
+[0.18.0]: https://github.com/klyed/hivesmartchain/compare/v0.17.1...v0.18.0
+[0.17.1]: https://github.com/klyed/hivesmartchain/compare/v0.17.0...v0.17.1
+[0.17.0]: https://github.com/klyed/hivesmartchain/compare/v0.16.3...v0.17.0
+[0.16.3]: https://github.com/klyed/hivesmartchain/compare/v0.16.2...v0.16.3
+[0.16.2]: https://github.com/klyed/hivesmartchain/compare/v0.16.1...v0.16.2
+[0.16.1]: https://github.com/klyed/hivesmartchain/compare/v0.16.0...v0.16.1
+[0.16.0]: https://github.com/klyed/hivesmartchain/compare/v0.15.0...v0.16.0
+[0.15.0]: https://github.com/klyed/hivesmartchain/compare/v0.14.0...v0.15.0
+[0.14.0]: https://github.com/klyed/hivesmartchain/compare/v0.13.0...v0.14.0
+[0.13.0]: https://github.com/klyed/hivesmartchain/compare/v0.12.0...v0.13.0
+[0.12.0]: https://github.com/klyed/hivesmartchain/commits/v0.12.0

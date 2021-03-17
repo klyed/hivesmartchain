@@ -1,7 +1,7 @@
 package jobs
 
 import (
-	"github.com/klye-dev/hivesmartchain/deploy/def"
+	"github.com/klyed/hivesmartchain/deploy/def"
 )
 
 func DumpStateJob(dump *def.DumpState) (string, error) {

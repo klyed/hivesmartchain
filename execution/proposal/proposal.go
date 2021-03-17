@@ -1,7 +1,7 @@
 package proposal
 
 import (
-	"github.com/klye-dev/hivesmartchain/txs/payload"
+	"github.com/klyed/hivesmartchain/txs/payload"
 )
 
 type Reader interface {
