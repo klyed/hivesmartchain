@@ -1,4 +1,4 @@
-module github.com/hyperledger/burrow
+module github.com/KLYE-Dev/HSC-MAIN
 
 go 1.15
 
