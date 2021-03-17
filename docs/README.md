@@ -1,11 +1,13 @@
 # [Hive Smart Chain](https://peakd.com/proposals/164)
 
+<!--
 [![CI](https://github.com/klyed/hivesmartchain/workflows/main/badge.svg)](https://launch-editor.github.com/actions?workflowID=main&event=push&nwo=hyperledger%2Fburrow)
 [![version](https://img.shields.io/github/tag/hyperledger/burrow.svg)](https://github.com/klyed/hivesmartchain/releases/latest)
 [![GoDoc](https://godoc.org/github.com/burrow?status.png)](https://godoc.org/github.com/hyperledger/burrow)
 [![license](https://img.shields.io/github/license/hyperledger/burrow.svg)](../LICENSE.md)
 [![LoC](https://tokei.rs/b1/github/hyperledger/burrow?category=lines)](https://github.com/hyperledger/burrow)
 [![codecov](https://codecov.io/gh/hyperledger/burrow/branch/main/graph/badge.svg)](https://codecov.io/gh/hyperledger/burrow)
+-->
 
 Hive Smart Chain is a community focused Ethereum smart-contract capable side chain node allowing HIVE users to run smart contracts while using HIVE as their gas fees. It executes Ethereum EVM and WASM smart contract code (usually written in [Solidity](https://solidity.readthedocs.io)) on a permissioned virtual machine. Hive Smart Chain provides transaction finality and high transaction throughput on a proof-of-stake [Tendermint](https://tendermint.com) consensus engine.
 
