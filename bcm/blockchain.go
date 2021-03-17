@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/hyperledger/burrow/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
 	"github.com/tendermint/tendermint/types"
 
-	"github.com/hyperledger/burrow/genesis"
-	"github.com/hyperledger/burrow/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
 	dbm "github.com/tendermint/tm-db"
 )
 

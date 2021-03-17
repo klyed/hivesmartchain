@@ -10,12 +10,12 @@ import (
 	"sort"
 	"time"
 
-	"github.com/hyperledger/burrow/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/acm/validator"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/validator"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
 )
 
 // How many bytes to take from the front of the GenesisDoc hash to append

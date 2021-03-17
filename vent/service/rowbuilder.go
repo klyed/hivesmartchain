@@ -6,11 +6,11 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/hyperledger/burrow/execution/evm/abi"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/vent/chain"
-	"github.com/hyperledger/burrow/vent/sqlsol"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/chain"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/pkg/errors"
 	"github.com/tmthrgd/go-hex"
 )

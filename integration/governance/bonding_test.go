@@ -6,13 +6,13 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/hyperledger/burrow/bcm"
-	"github.com/hyperledger/burrow/config"
-	"github.com/hyperledger/burrow/core"
-	"github.com/hyperledger/burrow/integration"
-	"github.com/hyperledger/burrow/integration/rpctest"
-	"github.com/hyperledger/burrow/permission"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/bcm"
+	"github.com/KLYE-Dev/HSC-MAIN/config"
+	"github.com/KLYE-Dev/HSC-MAIN/core"
+	"github.com/KLYE-Dev/HSC-MAIN/integration"
+	"github.com/KLYE-Dev/HSC-MAIN/integration/rpctest"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 	"github.com/stretchr/testify/require"
 )
 

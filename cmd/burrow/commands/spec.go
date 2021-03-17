@@ -3,8 +3,8 @@ package commands
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/config/source"
-	"github.com/hyperledger/burrow/genesis/spec"
+	"github.com/KLYE-Dev/HSC-MAIN/config/source"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis/spec"
 	cli "github.com/jawher/mow.cli"
 )
 
@@ -24,7 +24,7 @@ func Spec(output Output) func(cmd *cli.Cmd) {
 		rootOpt := cmd.IntOpt("r root-accounts", 0, "Number of preset Root type accounts")
 		developerOpt := cmd.IntOpt("d developer-accounts", 0, "Number of preset Developer type accounts")
 		participantsOpt := cmd.IntOpt("p participant-accounts", 0, "Number of preset Participant type accounts")
-		chainNameOpt := cmd.StringOpt("n chain-name", "", "Default chain name")
+		chainNameOpt := cmd.StringOpt("n chain-name", "Hive Smart Chain", "Default Side Chain name")
 		proposalThresholdOpt := cmd.IntOpt("param-proposalthreshold", 3, "Number of votes required for a proposal to pass")
 
 		cmd.Spec = "[--name-prefix=<prefix for account names>][--full-accounts] [--validator-accounts] [--root-accounts] " +

@@ -6,8 +6,8 @@ package adapters
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/jmoiron/sqlx"
 )
 

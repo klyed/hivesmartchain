@@ -4,15 +4,15 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hyperledger/burrow/encoding"
-	"github.com/hyperledger/burrow/rpc/web3/ethclient"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/web3/ethclient"
 	"google.golang.org/grpc"
 
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution/evm/abi"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/rpc/rpctransact"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpctransact"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 	"github.com/stretchr/testify/require"
 )
 

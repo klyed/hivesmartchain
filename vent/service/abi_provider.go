@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution/evm/abi"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/vent/chain"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/chain"
 )
 
 type EventSpecGetter func(abi.EventID, crypto.Address) (*abi.EventSpec, error)

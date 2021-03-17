@@ -6,12 +6,12 @@ import (
 	"io"
 	"math/rand"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/execution/names"
-	"github.com/hyperledger/burrow/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
 )
 
 type MockSource struct {

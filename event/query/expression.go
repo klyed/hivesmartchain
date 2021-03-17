@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hyperledger/burrow/logging/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/errors"
 )
 
 const (

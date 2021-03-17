@@ -7,10 +7,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/event"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/rpc/rpcevents"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/event"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcevents"
 )
 
 const (

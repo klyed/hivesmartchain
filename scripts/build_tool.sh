@@ -25,7 +25,7 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Grab date, commit, version
 . "$script_dir/local_version.sh" > /dev/null
 
-DOCKER_REPO=${DOCKER_REPO:-"hyperledger/burrow"}
+DOCKER_REPO=${DOCKER_REPO:-"hivesmartchain/hsc"}
 REPO=${REPO:-"$PWD"}
 
 function log() {
@@ -49,4 +49,3 @@ docker build \
 # Quick smoke test
 echo "Emitting version from docker image as smoke test..."
 docker run ${DOCKER_REPO}:${version} -v
-

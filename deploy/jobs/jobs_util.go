@@ -1,8 +1,8 @@
 package jobs
 
 import (
-	"github.com/hyperledger/burrow/deploy/def"
-	"github.com/hyperledger/burrow/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
 )
 
 func SetAccountJob(account *def.Account, script *def.Playbook, logger *logging.Logger) (string, error) {

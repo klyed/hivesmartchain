@@ -15,11 +15,11 @@ import (
 	github_com_gogo_protobuf_types "github.com/gogo/protobuf/types"
 	golang_proto "github.com/golang/protobuf/proto"
 	_ "github.com/golang/protobuf/ptypes/duration"
-	github_com_hyperledger_burrow_crypto "github.com/hyperledger/burrow/crypto"
-	_ "github.com/hyperledger/burrow/execution/exec"
-	_ "github.com/hyperledger/burrow/txs"
-	github_com_hyperledger_burrow_txs "github.com/hyperledger/burrow/txs"
-	payload "github.com/hyperledger/burrow/txs/payload"
+	github_com_hyperledger_burrow_crypto "github.com/KLYE-Dev/HSC-MAIN/crypto"
+	_ "github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	_ "github.com/KLYE-Dev/HSC-MAIN/txs"
+	github_com_hyperledger_burrow_txs "github.com/KLYE-Dev/HSC-MAIN/txs"
+	payload "github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -36,7 +36,7 @@ var _ = time.Kitchen
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type CallCodeParam struct {
-	FromAddress          github_com_hyperledger_burrow_crypto.Address `protobuf:"bytes,1,opt,name=FromAddress,proto3,customtype=github.com/hyperledger/burrow/crypto.Address" json:"FromAddress"`
+	FromAddress          github_com_hyperledger_burrow_crypto.Address `protobuf:"bytes,1,opt,name=FromAddress,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"FromAddress"`
 	Code                 []byte                                       `protobuf:"bytes,2,opt,name=Code,proto3" json:"Code,omitempty"`
 	Data                 []byte                                       `protobuf:"bytes,3,opt,name=Data,proto3" json:"Data,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
@@ -92,7 +92,7 @@ func (*CallCodeParam) XXX_MessageName() string {
 }
 
 type TxEnvelope struct {
-	Envelope             *github_com_hyperledger_burrow_txs.Envelope `protobuf:"bytes,1,opt,name=Envelope,proto3,customtype=github.com/hyperledger/burrow/txs.Envelope" json:"Envelope,omitempty"`
+	Envelope             *github_com_hyperledger_burrow_txs.Envelope `protobuf:"bytes,1,opt,name=Envelope,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/txs.Envelope" json:"Envelope,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                    `json:"-"`
 	XXX_unrecognized     []byte                                      `json:"-"`
 	XXX_sizecache        int32                                       `json:"-"`
@@ -133,7 +133,7 @@ func (*TxEnvelope) XXX_MessageName() string {
 
 type TxEnvelopeParam struct {
 	// An existing Envelope - either signed or unsigned - if the latter will be signed server-side
-	Envelope *github_com_hyperledger_burrow_txs.Envelope `protobuf:"bytes,1,opt,name=Envelope,proto3,customtype=github.com/hyperledger/burrow/txs.Envelope" json:"Envelope,omitempty"`
+	Envelope *github_com_hyperledger_burrow_txs.Envelope `protobuf:"bytes,1,opt,name=Envelope,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/txs.Envelope" json:"Envelope,omitempty"`
 	// If no Envelope provided then one will be generated from the provided payload and signed server-side
 	Payload *payload.Any `protobuf:"bytes,2,opt,name=Payload,proto3" json:"Payload,omitempty"`
 	// The amount of time to wait for the transaction to be committed and the TxExecution to be returned (server-side).

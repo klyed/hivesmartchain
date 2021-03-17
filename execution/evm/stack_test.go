@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

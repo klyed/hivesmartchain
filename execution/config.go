@@ -3,9 +3,9 @@ package execution
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/execution/engine"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
 
-	"github.com/hyperledger/burrow/execution/evm"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm"
 )
 
 type VMOption string

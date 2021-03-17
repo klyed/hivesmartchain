@@ -3,13 +3,13 @@ package state
 import (
 	"math/big"
 
-	"github.com/hyperledger/burrow/encoding"
-	"github.com/hyperledger/burrow/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
 
-	"github.com/hyperledger/burrow/acm/validator"
-	"github.com/hyperledger/burrow/storage"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/validator"
+	"github.com/KLYE-Dev/HSC-MAIN/storage"
 
-	"github.com/hyperledger/burrow/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
 )
 
 // Initialises the validator Ring from the validator storage in forest

@@ -1,6 +1,6 @@
 syntax = 'proto3';
 
-option go_package = "github.com/hyperledger/burrow/acm/balance";
+option go_package = "github.com/KLYE-Dev/HSC-MAIN/acm/balance";
 
 import "gogoproto/gogo.proto";
 

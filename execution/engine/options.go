@@ -1,8 +1,8 @@
 package engine
 
 import (
-	"github.com/hyperledger/burrow/execution/errors"
-	"github.com/hyperledger/burrow/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
 )
 
 // Options are parameters that are generally stable across a burrow configuration.

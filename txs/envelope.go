@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/acm/acmstate"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/event/query"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 )
 
 type Codec interface {

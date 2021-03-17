@@ -5,9 +5,9 @@ package service_test
 import (
 	"testing"
 
-	"github.com/hyperledger/burrow/rpc/web3/ethclient"
-	"github.com/hyperledger/burrow/tests/web3/web3test"
-	"github.com/hyperledger/burrow/vent/test"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/web3/ethclient"
+	"github.com/KLYE-Dev/HSC-MAIN/tests/web3/web3test"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/test"
 	"github.com/stretchr/testify/require"
 )
 

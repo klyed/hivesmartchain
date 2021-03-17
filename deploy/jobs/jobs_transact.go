@@ -7,12 +7,12 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 	"github.com/tmthrgd/go-hex"
 
-	"github.com/hyperledger/burrow/deploy/def"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
 )
 
 func FormulateSendJob(send *def.Send, account string, client *def.Client, logger *logging.Logger) (*payload.SendTx, error) {

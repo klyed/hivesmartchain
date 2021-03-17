@@ -5,8 +5,8 @@ import (
 	"net"
 	"strings"
 
-	"github.com/hyperledger/burrow/config"
-	"github.com/hyperledger/burrow/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/config"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
 	cli "github.com/jawher/mow.cli"
 )
 
@@ -26,8 +26,8 @@ const configFileSpec = "[--config=<config file>]"
 
 var configFileOption = cli.StringOpt{
 	Name:   "c config",
-	Desc:   "Use the specified burrow config file",
-	EnvVar: "BURROW_CONFIG_FILE",
+	Desc:   "Use the specified Hive Smart Chain config file",
+	EnvVar: "HSC_CONFIG_FILE",
 }
 
 const genesisFileSpec = "[--genesis=<genesis json file>]"
@@ -35,7 +35,7 @@ const genesisFileSpec = "[--genesis=<genesis json file>]"
 var genesisFileOption = cli.StringOpt{
 	Name:   "g genesis",
 	Desc:   "Use the specified genesis JSON file rather than a key in the main config, use - to read from STDIN",
-	EnvVar: "BURROW_GENESIS_FILE",
+	EnvVar: "HSC_GENESIS_FILE",
 }
 
 func addConfigOptions(cmd *cli.Cmd) *configOptions {
@@ -54,44 +54,44 @@ func addConfigOptions(cmd *cli.Cmd) *configOptions {
 			Name:   "i index",
 			Desc:   "Account index (in accounts list - GenesisSpec or GenesisDoc) from which to set Address",
 			Value:  -1,
-			EnvVar: "BURROW_ACCOUNT_INDEX",
+			EnvVar: "HSC_ACCOUNT_INDEX",
 		}),
 
 		validatorIndexOpt: cmd.Int(cli.IntOpt{
 			Name:   "v validator",
 			Desc:   "Validator index (in validators list - GenesisSpec or GenesisDoc) from which to set Address",
 			Value:  -1,
-			EnvVar: "BURROW_VALIDATOR_INDEX",
+			EnvVar: "HSC_VALIDATOR_INDEX",
 		}),
 
 		initAddressOpt: cmd.String(cli.StringOpt{
 			Name:   "a address",
 			Desc:   "The address of the signing key of this node",
-			EnvVar: "BURROW_ADDRESS",
+			EnvVar: "HSC_ADDRESS",
 		}),
 
 		initPassphraseOpt: cmd.String(cli.StringOpt{
 			Name:   "p passphrase",
 			Desc:   "The passphrase of the signing key of this node (currently unimplemented but planned for future version of our KeyClient interface)",
-			EnvVar: "BURROW_PASSPHRASE",
+			EnvVar: "HSC_PASSPHRASE",
 		}),
 
 		initMonikerOpt: cmd.String(cli.StringOpt{
 			Name:   "m moniker",
 			Desc:   "An optional human-readable moniker to identify this node amongst Tendermint peers in logs and status queries",
-			EnvVar: "BURROW_NODE_MONIKER",
+			EnvVar: "HSC_NODE_MONIKER",
 		}),
 
 		externalAddressOpt: cmd.String(cli.StringOpt{
 			Name:   "x external-address",
 			Desc:   "An external address or host name provided with the port that this node will broadcast over gossip in order for other nodes to connect",
-			EnvVar: "BURROW_EXTERNAL_ADDRESS",
+			EnvVar: "HSC_EXTERNAL_ADDRESS",
 		}),
 
 		grpcAddressOpt: cmd.String(cli.StringOpt{
 			Name:   "grpc-address",
 			Desc:   "GRPC listen address",
-			EnvVar: "BURROW_GRPC_ADDRESS",
+			EnvVar: "HSC_GRPC_ADDRESS",
 		}),
 
 		configFileOpt: cmd.String(configFileOption),

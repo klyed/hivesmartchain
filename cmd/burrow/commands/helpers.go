@@ -8,10 +8,10 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/hyperledger/burrow/config"
-	"github.com/hyperledger/burrow/config/source"
-	"github.com/hyperledger/burrow/genesis"
-	logging_config "github.com/hyperledger/burrow/logging/logconfig"
+	"github.com/KLYE-Dev/HSC-MAIN/config"
+	"github.com/KLYE-Dev/HSC-MAIN/config/source"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	logging_config "github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
 )
 
 type Output interface {
@@ -59,7 +59,7 @@ func genesisDocProvider(genesisFile string, skipNonExistent bool) source.ConfigP
 		func(baseConfig interface{}) error {
 			conf, ok := baseConfig.(*config.BurrowConfig)
 			if !ok {
-				return fmt.Errorf("config passed was not BurrowConfig")
+				return fmt.Errorf("config passed was not valid Hive Smart Chain config")
 			}
 			if conf.GenesisDoc != nil {
 				return nil

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/hyperledger/burrow/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
 
-	"github.com/hyperledger/burrow/consensus/tendermint/codes"
+	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint/codes"
 	"github.com/stretchr/testify/assert"
 	"github.com/tendermint/tendermint/abci/types"
 	abciTypes "github.com/tendermint/tendermint/abci/types"

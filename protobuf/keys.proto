@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/hyperledger/burrow/keys";
+option go_package = "github.com/KLYE-Dev/HSC-MAIN/keys";
 
 package keys;
 

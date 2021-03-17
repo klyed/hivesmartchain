@@ -6,10 +6,10 @@ package commands
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/execution/native"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/native"
 	cli "github.com/jawher/mow.cli"
 
-	"github.com/hyperledger/burrow/util/natives/templates"
+	"github.com/KLYE-Dev/HSC-MAIN/util/natives/templates"
 )
 
 // Dump native contracts

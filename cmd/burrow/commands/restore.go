@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"github.com/hyperledger/burrow/core"
+	"github.com/KLYE-Dev/HSC-MAIN/core"
 	cli "github.com/jawher/mow.cli"
 )
 
@@ -25,17 +25,17 @@ func Restore(output Output) func(cmd *cli.Cmd) {
 
 			output.Logf("Using validator address: %s", *conf.ValidatorAddress)
 
-			kern, err := core.NewKernel(conf.BurrowDir)
+			kern, err := core.NewKernel(conf.HscDir)
 			if err != nil {
-				output.Fatalf("could not create Burrow kernel: %v", err)
+				output.Fatalf("could not create Hive Smart Chain kernel: %v", err)
 			}
 
 			if err = kern.LoadLoggerFromConfig(conf.Logging); err != nil {
-				output.Fatalf("could not create Burrow kernel: %v", err)
+				output.Fatalf("could not create Hive Smart Chain kernel: %v", err)
 			}
 
 			if err = kern.LoadDump(conf.GenesisDoc, *filename, *silentOpt); err != nil {
-				output.Fatalf("could not create Burrow kernel: %v", err)
+				output.Fatalf("could not create Hive Smart Chain kernel: %v", err)
 			}
 
 			kern.ShutdownAndExit()

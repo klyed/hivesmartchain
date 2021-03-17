@@ -3,13 +3,13 @@ package jobs
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/deploy/def"
-	"github.com/hyperledger/burrow/deploy/util"
-	"github.com/hyperledger/burrow/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/util"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
 )
 
 func FormulateUpdateAccountJob(gov *def.UpdateAccount, account string, client *def.Client, logger *logging.Logger) (*payload.GovTx, []*abi.Variable, error) {

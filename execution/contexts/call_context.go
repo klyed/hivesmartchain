@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/hyperledger/burrow/execution/vms"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/vms"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/acm/acmstate"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution/engine"
-	"github.com/hyperledger/burrow/execution/errors"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/structure"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 )
 
 // TODO: make configurable

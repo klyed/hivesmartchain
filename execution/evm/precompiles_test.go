@@ -7,22 +7,22 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/hyperledger/burrow/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
 
 	"github.com/btcsuite/btcd/btcec"
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/execution/native"
-	"github.com/hyperledger/burrow/execution/solidity"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/native"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/solidity"
 
-	"github.com/hyperledger/burrow/acm/acmstate"
-	"github.com/hyperledger/burrow/execution/engine"
-	"github.com/hyperledger/burrow/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
 	"github.com/stretchr/testify/require"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
 
-	"github.com/hyperledger/burrow/execution/evm/asm/bc"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/asm/bc"
 	"github.com/stretchr/testify/assert"
 )
 

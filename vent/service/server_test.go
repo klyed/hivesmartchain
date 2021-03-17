@@ -11,14 +11,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/burrow/integration"
-	"github.com/hyperledger/burrow/integration/rpctest"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/vent/config"
-	"github.com/hyperledger/burrow/vent/service"
-	"github.com/hyperledger/burrow/vent/sqlsol"
-	"github.com/hyperledger/burrow/vent/test"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/integration"
+	"github.com/KLYE-Dev/HSC-MAIN/integration/rpctest"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/config"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/service"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/test"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -36,8 +36,8 @@ func TestServer(t *testing.T) {
 			_, closeDB := test.NewTestDB(t, cfg)
 			defer closeDB()
 
-			cfg.SpecFileOrDirs = []string{os.Getenv("GOPATH") + "/src/github.com/hyperledger/burrow/vent/test/sqlsol_view.json"}
-			cfg.AbiFileOrDirs = []string{os.Getenv("GOPATH") + "/src/github.com/hyperledger/burrow/vent/test/EventsTest.abi"}
+			cfg.SpecFileOrDirs = []string{os.Getenv("GOPATH") + "/src/github.com/KLYE-Dev/HSC-MAIN/vent/test/sqlsol_view.json"}
+			cfg.AbiFileOrDirs = []string{os.Getenv("GOPATH") + "/src/github.com/KLYE-Dev/HSC-MAIN/vent/test/EventsTest.abi"}
 			cfg.ChainAddress = kern.GRPCListenAddress().String()
 
 			log := logging.NewNoopLogger()

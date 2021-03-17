@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/hyperledger/burrow/event"
-	"github.com/hyperledger/burrow/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/event"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
 )
 
 var eventMessageType = reflect.TypeOf(&Event{}).String()

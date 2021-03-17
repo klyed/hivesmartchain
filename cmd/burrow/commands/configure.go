@@ -6,19 +6,19 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/hyperledger/burrow/config/deployment"
-	"github.com/hyperledger/burrow/config/source"
-	"github.com/hyperledger/burrow/consensus/tendermint"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/dump"
-	"github.com/hyperledger/burrow/execution"
-	"github.com/hyperledger/burrow/execution/state"
-	"github.com/hyperledger/burrow/genesis/spec"
-	"github.com/hyperledger/burrow/keys"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/logconfig"
-	"github.com/hyperledger/burrow/logging/logconfig/presets"
-	"github.com/hyperledger/burrow/rpc"
+	"github.com/KLYE-Dev/HSC-MAIN/config/deployment"
+	"github.com/KLYE-Dev/HSC-MAIN/config/source"
+	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/dump"
+	"github.com/KLYE-Dev/HSC-MAIN/execution"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/state"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis/spec"
+	"github.com/KLYE-Dev/HSC-MAIN/keys"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig/presets"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc"
 	cli "github.com/jawher/mow.cli"
 	tmjson "github.com/tendermint/tendermint/libs/json"
 	dbm "github.com/tendermint/tm-db"
@@ -51,7 +51,7 @@ func Configure(output Output) func(cmd *cli.Cmd) {
 
 		loggingOpt := cmd.StringOpt("l logging", "",
 			"Comma separated list of logging instructions which form a 'program' which is a depth-first "+
-				"pre-order of instructions that will build the root logging sink. See 'burrow help' for more information.")
+				"pre-order of instructions that will build the root logging sink. See 'hsc help' for more information.")
 
 		describeLoggingOpt := cmd.BoolOpt("describe-logging", false,
 			"Print an exhaustive list of logging instructions available with the --logging option")
@@ -60,7 +60,7 @@ func Configure(output Output) func(cmd *cli.Cmd) {
 			"including logging opcodes and dumping EVM tokens to disk these can be later pruned from the "+
 			"generated config.")
 
-		chainNameOpt := cmd.StringOpt("n chain-name", "", "Default chain name")
+		chainNameOpt := cmd.StringOpt("n chain-name", "Hive Smart Chain", "Default chain name")
 
 		emptyBlocksOpt := cmd.StringOpt("e empty-blocks", "",
 			"Whether to create empty blocks, one of: 'never' (always wait for transactions before proposing a "+
@@ -88,13 +88,13 @@ func Configure(output Output) func(cmd *cli.Cmd) {
 			}
 
 			if *describeLoggingOpt {
-				output.Logf("Usage:\n  burrow configure -l INSTRUCTION[,...]\n\nBuilds a logging " +
+				output.Logf("Usage:\n  hsc configure -l INSTRUCTION[,...]\n\nBuilds a logging " +
 					"configuration by constructing a tree of logging sinks assembled from preset instructions " +
 					"that generate the tree while traversing it.\n\nLogging Instructions:\n")
 				for _, instruction := range presets.Instructons() {
 					output.Logf("  %-15s\t%s\n", instruction.Name(), instruction.Description())
 				}
-				output.Logf("\nExample Usage:\n  burrow configure -l include-any,info,stderr\n")
+				output.Logf("\nExample Usage:\n  hsc configure -l include-any,info,stderr\n")
 				return
 			}
 
@@ -206,7 +206,7 @@ func Configure(output Output) func(cmd *cli.Cmd) {
 				sinkConfig, err := presets.BuildSinkConfig(ops...)
 				if err != nil {
 					output.Fatalf("could not build logging configuration: %v\n\nTo see possible logging "+
-						"instructions run:\n  burrow configure --describe-logging", err)
+						"instructions run:\n  hsc configure --describe-logging", err)
 				}
 				conf.Logging = &logconfig.LoggingConfig{
 					RootSink: sinkConfig,
@@ -271,7 +271,7 @@ func Configure(output Output) func(cmd *cli.Cmd) {
 
 			if *pool {
 				for i, val := range pkg.Validators {
-					tmConf, err := conf.Tendermint.Config(fmt.Sprintf(".burrow%03d", i), conf.Execution.TimeoutFactor)
+					tmConf, err := conf.Tendermint.Config(fmt.Sprintf(".hsc%03d", i), conf.Execution.TimeoutFactor)
 					if err != nil {
 						output.Fatalf("could not obtain config for %03d: %v", i, err)
 					}
@@ -287,7 +287,7 @@ func Configure(output Output) func(cmd *cli.Cmd) {
 					// set stuff
 					conf.ValidatorAddress = &acc.Address
 					conf.Tendermint.PersistentPeers = strings.Join(peers, ",")
-					conf.BurrowDir = fmt.Sprintf(".burrow%03d", i)
+					conf.HscDir = fmt.Sprintf(".hsc%03d", i)
 					conf.Tendermint.ListenHost = rpc.LocalHost
 					conf.Tendermint.ListenPort = fmt.Sprint(26656 + i)
 					conf.RPC.Info.ListenHost = rpc.LocalHost
@@ -299,15 +299,15 @@ func Configure(output Output) func(cmd *cli.Cmd) {
 					conf.RPC.Metrics.ListenHost = rpc.LocalHost
 					conf.RPC.Metrics.ListenPort = fmt.Sprint(9102 + i)
 					conf.Logging.RootSink.Output.OutputType = "file"
-					conf.Logging.RootSink.Output.FileConfig = &logconfig.FileConfig{Path: fmt.Sprintf("burrow%03d.log", i)}
+					conf.Logging.RootSink.Output.FileConfig = &logconfig.FileConfig{Path: fmt.Sprintf("hsc%03d.log", i)}
 
 					if *jsonOutOpt {
-						err = ioutil.WriteFile(fmt.Sprintf("burrow%03d.json", i), []byte(conf.JSONString()), 0644)
+						err = ioutil.WriteFile(fmt.Sprintf("hsc%03d.json", i), []byte(conf.JSONString()), 0644)
 					} else {
-						err = ioutil.WriteFile(fmt.Sprintf("burrow%03d.toml", i), []byte(conf.TOMLString()), 0644)
+						err = ioutil.WriteFile(fmt.Sprintf("hsc%03d.toml", i), []byte(conf.TOMLString()), 0644)
 					}
 					if err != nil {
-						output.Fatalf("Could not write Burrow config file: %v", err)
+						output.Fatalf("Could not write Hive Smart Chain config file: %v", err)
 					}
 				}
 			} else if *jsonOutOpt {

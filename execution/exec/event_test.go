@@ -3,10 +3,10 @@ package exec
 import (
 	"testing"
 
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/event"
-	"github.com/hyperledger/burrow/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/event"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/tmthrgd/go-hex"

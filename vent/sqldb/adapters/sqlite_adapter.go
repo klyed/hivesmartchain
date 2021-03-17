@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/jmoiron/sqlx"
 	sqlite3 "github.com/mattn/go-sqlite3"
 	"github.com/pkg/errors"
@@ -404,7 +404,7 @@ func (sla *SQLiteAdapter) CleanDBQueries() types.SQLCleanDBQuery {
 		COALESCE(MAX(%s),'') CHAINID,
 		COALESCE(MAX(%s),'') BVERSION 
 		FROM %s;`,
-		sla.Columns.ChainID, sla.Columns.BurrowVersion,
+		sla.Columns.ChainID, sla.Columns.HscVersion,
 		sla.Tables.ChainInfo)
 
 	deleteChainIDQry := Cleanf(`
@@ -414,7 +414,7 @@ func (sla *SQLiteAdapter) CleanDBQueries() types.SQLCleanDBQuery {
 	insertChainIDQry := Cleanf(`
 		INSERT INTO %s (%s,%s,%s) VALUES($1,$2,$3)`,
 		sla.Tables.ChainInfo,
-		sla.Columns.ChainID, sla.Columns.BurrowVersion, sla.Columns.Height)
+		sla.Columns.ChainID, sla.Columns.HscVersion, sla.Columns.Height)
 
 	// Dictionary
 	selectDictionaryQry := Cleanf(`

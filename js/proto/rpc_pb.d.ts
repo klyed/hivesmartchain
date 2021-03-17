@@ -17,8 +17,8 @@ export class ResultStatus extends jspb.Message {
     getRunid(): string;
     setRunid(value: string): ResultStatus;
 
-    getBurrowversion(): string;
-    setBurrowversion(value: string): ResultStatus;
+    getHscVersion(): string;
+    setHscVersion(value: string): ResultStatus;
 
     getGenesishash(): Uint8Array | string;
     getGenesishash_asU8(): Uint8Array;
@@ -61,7 +61,7 @@ export namespace ResultStatus {
     export type AsObject = {
         chainid: string,
         runid: string,
-        burrowversion: string,
+        HscVersion: string,
         genesishash: Uint8Array | string,
         nodeinfo?: tendermint_pb.NodeInfo.AsObject,
         syncinfo?: bcm_pb.SyncInfo.AsObject,

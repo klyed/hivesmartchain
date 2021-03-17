@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/pkg/errors"
 	"github.com/xeipuuv/gojsonschema"
 )

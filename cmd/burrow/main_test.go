@@ -17,18 +17,18 @@ func TestBurrow(t *testing.T) {
 			outputCount++
 		},
 		FatalfFunc: func(format string, args ...interface{}) {
-			t.Fatalf("fatalf called by burrow cmd: %s", fmt.Sprintf(format, args...))
+			t.Fatalf("fatalf called by Hive Smart Chain cmd: %s", fmt.Sprintf(format, args...))
 		},
 	}
 	app := burrow(out)
 	// Basic smoke test for cli config
-	err := app.Run([]string{"burrow", "--version"})
+	err := app.Run([]string{"hsc", "--version"})
 	assert.NoError(t, err)
-	err = app.Run([]string{"burrow", "spec", "--name-prefix", "foo", "-f1"})
+	err = app.Run([]string{"hsc", "spec", "--name-prefix", "foo", "-f1"})
 	assert.NoError(t, err)
-	err = app.Run([]string{"burrow", "configure"})
+	err = app.Run([]string{"hsc", "configure"})
 	assert.NoError(t, err)
-	err = app.Run([]string{"burrow", "start", "--help"})
+	err = app.Run([]string{"hsc", "start", "--help"})
 	assert.NoError(t, err)
 	assert.True(t, outputCount > 0)
 }

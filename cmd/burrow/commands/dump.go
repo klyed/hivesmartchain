@@ -6,13 +6,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/hyperledger/burrow/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
 
-	"github.com/hyperledger/burrow/core"
-	"github.com/hyperledger/burrow/dump"
-	"github.com/hyperledger/burrow/logging/logconfig"
-	"github.com/hyperledger/burrow/rpc/rpcdump"
-	"github.com/hyperledger/burrow/rpc/rpcquery"
+	"github.com/KLYE-Dev/HSC-MAIN/core"
+	"github.com/KLYE-Dev/HSC-MAIN/dump"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcdump"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
 	cli "github.com/jawher/mow.cli"
 )
 
@@ -47,8 +47,8 @@ func Dump(output Output) func(cmd *cli.Cmd) {
 		verbose := cmd.BoolOpt("v verbose", false, "Verbose debug information")
 		cmd.Spec += "[--verbose]"
 
-		cmd.Command("local", "create a dump from local Burrow directory", func(cmd *cli.Cmd) {
-			maybeOutput(verbose, output, "dumping from local Burrow dir")
+		cmd.Command("local", "create a dump from local Hive Smart Chain directory", func(cmd *cli.Cmd) {
+			maybeOutput(verbose, output, "dumping from local Hive Smart Chain dir")
 			configFileOpt := cmd.String(configFileOption)
 			genesisFileOpt := cmd.String(genesisFileOption)
 
@@ -60,14 +60,14 @@ func Dump(output Output) func(cmd *cli.Cmd) {
 					output.Fatalf("could not obtain config: %v", err)
 				}
 
-				kern, err := core.NewKernel(conf.BurrowDir)
+				kern, err := core.NewKernel(conf.HscDir)
 				if err != nil {
-					output.Fatalf("could not create burrow kernel: %v", err)
+					output.Fatalf("could not create Hive Smart Chain kernel: %v", err)
 				}
 
 				err = kern.LoadState(conf.GenesisDoc)
 				if err != nil {
-					output.Fatalf("could not load burrow state: %v", err)
+					output.Fatalf("could not load Hive Smart Chain state: %v", err)
 				}
 
 				// Include all logging by default
@@ -87,7 +87,7 @@ func Dump(output Output) func(cmd *cli.Cmd) {
 			}
 		})
 
-		cmd.Command("remote", "pull a dump from a remote Burrow node", func(cmd *cli.Cmd) {
+		cmd.Command("remote", "pull a dump from a remote Hive Smart Chain node", func(cmd *cli.Cmd) {
 			chainURLOpt := cmd.StringOpt("c chain", "127.0.0.1:10997", "chain to be used in IP:PORT format")
 			timeoutOpt := cmd.IntOpt("t timeout", 0, "Timeout in seconds")
 			dumpOpts := addDumpOptions(cmd, "[--chain=<chain GRPC address>]", "[--timeout=<GRPC timeout seconds>]")

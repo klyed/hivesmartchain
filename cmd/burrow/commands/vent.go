@@ -9,15 +9,15 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/hyperledger/burrow/config/source"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution/evm/abi"
-	"github.com/hyperledger/burrow/logging/logconfig"
-	"github.com/hyperledger/burrow/vent/config"
-	"github.com/hyperledger/burrow/vent/service"
-	"github.com/hyperledger/burrow/vent/sqldb"
-	"github.com/hyperledger/burrow/vent/sqlsol"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/config/source"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/config"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/service"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqldb"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	cli "github.com/jawher/mow.cli"
 )
 
@@ -50,7 +50,7 @@ func Vent(output Output) func(cmd *cli.Cmd) {
 				cfg := config.DefaultVentConfig()
 
 				dbOpts := sqlDBOpts(cmd, cfg)
-				grpcAddrOpt := cmd.StringOpt("chain-addr", cfg.ChainAddress, "Address to connect to the Hyperledger Burrow gRPC server")
+				grpcAddrOpt := cmd.StringOpt("chain-addr", cfg.ChainAddress, "Address to connect to the Hive Side Chain gRPC server")
 				httpAddrOpt := cmd.StringOpt("http-addr", cfg.HTTPListenAddress, "Address to bind the HTTP server")
 				logLevelOpt := cmd.StringOpt("log-level", string(LogLevelInfo), "Logging level (none, info, trace)")
 				watchAddressesOpt := cmd.StringsOpt("watch", nil, "Add contract address to global watch filter")

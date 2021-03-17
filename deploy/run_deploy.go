@@ -9,11 +9,11 @@ import (
 	"time"
 
 	"github.com/go-kit/kit/log"
-	"github.com/hyperledger/burrow/deploy/def"
-	"github.com/hyperledger/burrow/deploy/jobs"
-	"github.com/hyperledger/burrow/deploy/loader"
-	"github.com/hyperledger/burrow/execution/evm/abi"
-	"github.com/hyperledger/burrow/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/jobs"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/loader"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
 )
 
 type playbookWork struct {

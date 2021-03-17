@@ -6,12 +6,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/burrow/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
 
-	"github.com/hyperledger/burrow/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
 
-	"github.com/hyperledger/burrow/integration"
-	"github.com/hyperledger/burrow/keys"
+	"github.com/KLYE-Dev/HSC-MAIN/integration"
+	"github.com/KLYE-Dev/HSC-MAIN/keys"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

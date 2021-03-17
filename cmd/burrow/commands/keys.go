@@ -10,13 +10,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/hyperledger/burrow/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
 
 	"github.com/howeyc/gopass"
-	"github.com/hyperledger/burrow/config"
-	"github.com/hyperledger/burrow/config/deployment"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/keys"
+	"github.com/KLYE-Dev/HSC-MAIN/config"
+	"github.com/KLYE-Dev/HSC-MAIN/config/deployment"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/keys"
 	cli "github.com/jawher/mow.cli"
 )
 
@@ -47,8 +47,8 @@ func Keys(output Output) func(cmd *cli.Cmd) {
 
 		cmd.Command("server", "run keys server", func(cmd *cli.Cmd) {
 			keysDir := cmd.StringOpt("dir", "", "specify the location of the directory containing key files")
-			badPerm := cmd.BoolOpt("allow-bad-perm", false, "Allow unix key file permissions to be readable other than user")
-			configOpt := cmd.StringOpt("c config", "", "Use the specified burrow config file")
+			badPerm := cmd.BoolOpt("allow-bad-perm", true, "Allow unix key file permissions to be readable other than user")
+			configOpt := cmd.StringOpt("c config", "", "Use the specified Hive Smart Chain config file")
 
 			var conf *config.BurrowConfig
 
@@ -61,7 +61,8 @@ func Keys(output Output) func(cmd *cli.Cmd) {
 			}
 
 			cmd.Action = func() {
-				conf.Keys.AllowBadFilePermissions = true //Original was: *badPerm   Changed to true to enable windows compiling
+				badPerm := true
+				conf.Keys.AllowBadFilePermissions = badPerm //Original was: *badPerm   Changed to true to enable windows compiling
 
 				if *keysDir != "" {
 					conf.Keys.KeysDirectory = *keysDir

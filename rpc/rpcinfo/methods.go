@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/execution/names"
-	"github.com/hyperledger/burrow/rpc"
-	"github.com/hyperledger/burrow/rpc/lib/server"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/lib/server"
 )
 
 // Method names

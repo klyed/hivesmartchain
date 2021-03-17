@@ -4,17 +4,17 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/hyperledger/burrow/execution/contexts"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/contexts"
 
-	"github.com/hyperledger/burrow/acm/acmstate"
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/deploy/def"
-	"github.com/hyperledger/burrow/deploy/proposals"
-	"github.com/hyperledger/burrow/deploy/util"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/txs"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/proposals"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/util"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/txs"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 )
 
 func getAccountSequence(seq string, addressStr string, seqCache *acmstate.Cache, client *def.Client, logger *logging.Logger) (string, error) {

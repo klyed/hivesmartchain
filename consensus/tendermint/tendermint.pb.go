@@ -12,8 +12,8 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_hyperledger_burrow_binary "github.com/hyperledger/burrow/binary"
-	github_com_hyperledger_burrow_crypto "github.com/hyperledger/burrow/crypto"
+	github_com_hyperledger_burrow_binary "github.com/KLYE-Dev/HSC-MAIN/binary"
+	github_com_hyperledger_burrow_crypto "github.com/KLYE-Dev/HSC-MAIN/crypto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -29,11 +29,11 @@ var _ = math.Inf
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type NodeInfo struct {
-	ID                   github_com_hyperledger_burrow_crypto.Address  `protobuf:"bytes,1,opt,name=ID,proto3,customtype=github.com/hyperledger/burrow/crypto.Address" json:"ID"`
+	ID                   github_com_hyperledger_burrow_crypto.Address  `protobuf:"bytes,1,opt,name=ID,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"ID"`
 	ListenAddress        string                                        `protobuf:"bytes,2,opt,name=ListenAddress,proto3" json:"ListenAddress,omitempty"`
 	Network              string                                        `protobuf:"bytes,3,opt,name=Network,proto3" json:"Network,omitempty"`
 	Version              string                                        `protobuf:"bytes,4,opt,name=Version,proto3" json:"Version,omitempty"`
-	Channels             github_com_hyperledger_burrow_binary.HexBytes `protobuf:"bytes,5,opt,name=Channels,proto3,customtype=github.com/hyperledger/burrow/binary.HexBytes" json:"Channels"`
+	Channels             github_com_hyperledger_burrow_binary.HexBytes `protobuf:"bytes,5,opt,name=Channels,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"Channels"`
 	Moniker              string                                        `protobuf:"bytes,6,opt,name=Moniker,proto3" json:"Moniker,omitempty"`
 	RPCAddress           string                                        `protobuf:"bytes,7,opt,name=RPCAddress,proto3" json:"RPCAddress,omitempty"`
 	TxIndex              string                                        `protobuf:"bytes,8,opt,name=TxIndex,proto3" json:"TxIndex,omitempty"`

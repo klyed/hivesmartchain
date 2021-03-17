@@ -7,7 +7,7 @@
       "Name": "Full_0",
       "Amounts": [
         {
-          "Type": "Native",
+          "Type": "HIVE",
           "Amount": 99999999999999
         },
         {
@@ -23,7 +23,7 @@
       "Name": "Participant_0",
       "Amounts": [
         {
-          "Type": "Native",
+          "Type": "HIVE",
           "Amount": 9999999999
         }
       ],

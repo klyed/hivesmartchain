@@ -4,12 +4,12 @@ import (
 	"bytes"
 	"math/big"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/acm/acmstate"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/deploy/compile"
-	"github.com/hyperledger/burrow/execution/errors"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/compile"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 	"golang.org/x/crypto/sha3"
 )
 

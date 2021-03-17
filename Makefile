@@ -148,8 +148,8 @@ build_race:	check build_race_db
 .PHONY: build_burrow
 build_burrow: commit_hash
 	go build $(BURROW_BUILD_FLAGS) -ldflags "-extldflags '-static' \
-	-X github.com/hyperledger/burrow/project.commit=$(shell cat commit_hash.txt) \
-	-X github.com/hyperledger/burrow/project.date=$(shell date '+%Y-%m-%d')" \
+	-X github.com/KLYE-Dev/HSC-MAIN/project.commit=$(shell cat commit_hash.txt) \
+	-X github.com/KLYE-Dev/HSC-MAIN/project.date=$(shell date '+%Y-%m-%d')" \
 	-o ${REPO}/bin/burrow$(BURROW_BUILD_SUFFIX) ./cmd/burrow
 
 # With the sqlite tag - enabling Vent sqlite adapter support, but building a CGO binary

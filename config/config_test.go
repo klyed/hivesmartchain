@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/hyperledger/burrow/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
 )
 
 func TestBurrowConfigSerialise(t *testing.T) {

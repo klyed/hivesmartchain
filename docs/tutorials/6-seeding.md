@@ -38,7 +38,7 @@ burrow spec -f1 | burrow configure --keys-dir=.keys_seed -s- > /dev/null
 ```
 
 ```toml
-BurrowDir = ".burrow_seed_0"
+HscDir = ".burrow_seed_0"
 
 [Tendermint]
   SeedMode = true
@@ -78,7 +78,7 @@ From the generated `.burrow_init.toml` file, create new files for each node, and
 #### Validator 1
 
 ```toml
-BurrowDir = ".burrow_node0"
+HscDir = ".burrow_node0"
 
 [Tendermint]
   Seeds = "PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS"
@@ -114,7 +114,7 @@ BurrowDir = ".burrow_node0"
 #### Validator 2
 
 ```toml
-BurrowDir = ".burrow_node1"
+HscDir = ".burrow_node1"
 
 [Tendermint]
   Seeds = "PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS"
@@ -150,7 +150,7 @@ BurrowDir = ".burrow_node1"
 #### Validator 3
 
 ```toml
-BurrowDir = ".burrow_node2"
+HscDir = ".burrow_node2"
 
 [Tendermint]
   Seeds = "PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS"

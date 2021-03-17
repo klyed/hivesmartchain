@@ -3,9 +3,9 @@ package engine
 import (
 	"math/big"
 
-	"github.com/hyperledger/burrow/execution/errors"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
 )
 
 var big64 = big.NewInt(64)

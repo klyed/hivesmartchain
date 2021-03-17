@@ -3,14 +3,14 @@ package config
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/config/source"
-	"github.com/hyperledger/burrow/consensus/tendermint"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution"
-	"github.com/hyperledger/burrow/genesis"
-	"github.com/hyperledger/burrow/keys"
-	"github.com/hyperledger/burrow/logging/logconfig"
-	"github.com/hyperledger/burrow/rpc"
+	"github.com/KLYE-Dev/HSC-MAIN/config/source"
+	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/keys"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc"
 	tmConfig "github.com/tendermint/tendermint/config"
 )
 
@@ -23,7 +23,7 @@ type BurrowConfig struct {
 	ValidatorAddress *crypto.Address `json:",omitempty" toml:",omitempty"`
 	Passphrase       *string         `json:",omitempty" toml:",omitempty"`
 	// From config file
-	BurrowDir  string
+	HscDir  string
 	GenesisDoc *genesis.GenesisDoc                `json:",omitempty" toml:",omitempty"`
 	Tendermint *tendermint.BurrowTendermintConfig `json:",omitempty" toml:",omitempty"`
 	Execution  *execution.ExecutionConfig         `json:",omitempty" toml:",omitempty"`
@@ -34,7 +34,7 @@ type BurrowConfig struct {
 
 func DefaultBurrowConfig() *BurrowConfig {
 	return &BurrowConfig{
-		BurrowDir:  ".burrow",
+		HscDir:  ".burrow",
 		Tendermint: tendermint.DefaultBurrowTendermintConfig(),
 		Keys:       keys.DefaultKeysConfig(),
 		RPC:        rpc.DefaultRPCConfig(),
@@ -51,7 +51,7 @@ func (conf *BurrowConfig) Verify() error {
 }
 
 func (conf *BurrowConfig) TendermintConfig() (*tmConfig.Config, error) {
-	return conf.Tendermint.Config(conf.BurrowDir, conf.Execution.TimeoutFactor)
+	return conf.Tendermint.Config(conf.HscDir, conf.Execution.TimeoutFactor)
 }
 
 func (conf *BurrowConfig) JSONString() string {

@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/hyperledger/burrow/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
 )
 
 var MinNameRegistrationPeriod uint64 = 5

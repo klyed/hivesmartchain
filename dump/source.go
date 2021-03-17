@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/hyperledger/burrow/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
 )
 
 type Source interface {

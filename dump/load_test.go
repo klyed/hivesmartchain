@@ -6,13 +6,13 @@ import (
 	"path"
 	"testing"
 
-	"github.com/hyperledger/burrow/bcm"
-	"github.com/hyperledger/burrow/storage"
+	"github.com/KLYE-Dev/HSC-MAIN/bcm"
+	"github.com/KLYE-Dev/HSC-MAIN/storage"
 
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/execution/state"
-	"github.com/hyperledger/burrow/genesis"
-	"github.com/hyperledger/burrow/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/state"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
 	"github.com/stretchr/testify/require"
 )
 

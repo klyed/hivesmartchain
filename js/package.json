@@ -12,7 +12,7 @@
     "proto"
   ],
   "bugs": {
-    "url": "https://github.com/hyperledger/burrow/issues"
+    "url": "https://github.com/KLYE-Dev/HSC-MAIN/issues"
   },
   "scripts": {
     "build": "tsc --build",
@@ -40,10 +40,10 @@
     "exit": true,
     "timeout": 60000
   },
-  "homepage": "https://github.com/hyperledger/burrow/",
+  "homepage": "https://github.com/KLYE-Dev/HSC-MAIN/",
   "keywords": [
-    "Burrow",
-    "Hyperledger",
+    "HiveSideChain",
+    "HIVE",
     "Monax"
   ],
   "license": "Apache-2.0",

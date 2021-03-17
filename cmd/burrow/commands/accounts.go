@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/hyperledger/burrow/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
 
-	"github.com/hyperledger/burrow/deploy/compile"
-	"github.com/hyperledger/burrow/execution/evm/abi"
-	"github.com/hyperledger/burrow/rpc/rpcquery"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/compile"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
 	cli "github.com/jawher/mow.cli"
 )
 

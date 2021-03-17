@@ -6,17 +6,17 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/hyperledger/burrow/event"
-	"github.com/hyperledger/burrow/event/query"
-	"github.com/hyperledger/burrow/vent/chain"
+	"github.com/KLYE-Dev/HSC-MAIN/event"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/chain"
 
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution/errors"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/rpc/rpcevents"
-	"github.com/hyperledger/burrow/rpc/rpcquery"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcevents"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/connectivity"
 )
@@ -54,7 +54,7 @@ func New(conn *grpc.ClientConn, filter *chain.Filter) (*Chain, error) {
 		filter:     filterQuery,
 		exec:       rpcevents.NewExecutionEventsClient(conn),
 		chainID:    status.ChainID,
-		version:    status.BurrowVersion,
+		version:    status.HscVersion,
 		continuity: continuity,
 	}, nil
 }
@@ -71,7 +71,7 @@ func (b *Chain) StatusMessage(ctx context.Context, lastProcessedHeight uint64) [
 	var catchUpRatio float64
 	status, err := b.query.Status(ctx, &rpcquery.StatusParam{})
 	if err != nil {
-		err = fmt.Errorf("could not get Burrow chain status: %w", err)
+		err = fmt.Errorf("could not get Hive Smart Chain chain status: %w", err)
 		return []interface{}{
 			"msg", "status",
 			"error", err.Error(),
@@ -82,17 +82,17 @@ func (b *Chain) StatusMessage(ctx context.Context, lastProcessedHeight uint64) [
 	}
 	return []interface{}{
 		"msg", "status",
-		"chain_type", "Burrow",
+		"chain_type", "HSC",
 		"last_processed_height", lastProcessedHeight,
 		"fraction_caught_up", catchUpRatio,
-		"burrow_latest_block_height", status.SyncInfo.LatestBlockHeight,
-		"burrow_latest_block_duration", status.SyncInfo.LatestBlockDuration,
-		"burrow_latest_block_hash", status.SyncInfo.LatestBlockHash,
-		"burrow_latest_app_hash", status.SyncInfo.LatestAppHash,
-		"burrow_latest_block_time", status.SyncInfo.LatestBlockTime,
-		"burrow_latest_block_seen_time", status.SyncInfo.LatestBlockSeenTime,
-		"burrow_node_info", status.NodeInfo,
-		"burrow_catching_up", status.CatchingUp,
+		"hsc_latest_block_height", status.SyncInfo.LatestBlockHeight,
+		"hsc_latest_block_duration", status.SyncInfo.LatestBlockDuration,
+		"hsc_latest_block_hash", status.SyncInfo.LatestBlockHash,
+		"hsc_latest_app_hash", status.SyncInfo.LatestAppHash,
+		"hsc_latest_block_time", status.SyncInfo.LatestBlockTime,
+		"hsc_latest_block_seen_time", status.SyncInfo.LatestBlockSeenTime,
+		"hsc_node_info", status.NodeInfo,
+		"hsc_catching_up", status.CatchingUp,
 	}
 }
 

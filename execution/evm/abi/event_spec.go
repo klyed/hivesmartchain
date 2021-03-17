@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"github.com/hyperledger/burrow/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
 	"github.com/tmthrgd/go-hex"
 	"golang.org/x/crypto/sha3"
 )

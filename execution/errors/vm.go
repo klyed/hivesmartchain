@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
 )
 
 type PermissionDenied struct {

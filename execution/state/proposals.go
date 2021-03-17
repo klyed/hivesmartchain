@@ -1,10 +1,10 @@
 package state
 
 import (
-	"github.com/hyperledger/burrow/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
 
-	"github.com/hyperledger/burrow/execution/proposal"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/proposal"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 )
 
 var _ proposal.IterableReader = &State{}

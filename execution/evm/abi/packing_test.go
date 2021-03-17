@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/hyperledger/burrow/execution/solidity"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/solidity"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/hyperledger/burrow/encoding"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/storage"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/storage"
 )
 
 func (ws *writeState) AddBlock(be *exec.BlockExecution) error {

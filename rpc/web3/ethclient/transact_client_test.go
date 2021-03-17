@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/hyperledger/burrow/execution/solidity"
-	"github.com/hyperledger/burrow/tests/web3/web3test"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/solidity"
+	"github.com/KLYE-Dev/HSC-MAIN/tests/web3/web3test"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 	"github.com/stretchr/testify/require"
 )
 

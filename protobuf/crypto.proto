@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 package crypto;
 
-option go_package = "github.com/hyperledger/burrow/crypto";
+option go_package = "github.com/KLYE-Dev/HSC-MAIN/crypto";
 
 import "gogoproto/gogo.proto";
 
@@ -16,7 +16,7 @@ option (gogoproto.messagename_all) = true;
 message PublicKey {
     option (gogoproto.goproto_stringer) = false;
     uint32 CurveType = 1 [(gogoproto.casttype) = "CurveType"];
-    bytes PublicKey = 2[(gogoproto.customtype) = "github.com/hyperledger/burrow/binary.HexBytes", (gogoproto.nullable) = false];
+    bytes PublicKey = 2[(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes", (gogoproto.nullable) = false];
 }
 
 message PrivateKey {

@@ -1,7 +1,7 @@
 package tendermint
 
 import (
-	"github.com/hyperledger/burrow/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
 	"github.com/tendermint/tendermint/libs/log"
 )
 

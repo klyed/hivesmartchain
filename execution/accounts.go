@@ -3,11 +3,11 @@ package execution
 import (
 	"sync"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/acm/acmstate"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/keys"
-	burrow_sync "github.com/hyperledger/burrow/sync"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/keys"
+	burrow_sync "github.com/KLYE-Dev/HSC-MAIN/sync"
 )
 
 // Accounts pairs an underlying state.Reader with a KeyClient to provide a signing variant of an account

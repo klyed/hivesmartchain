@@ -3,13 +3,13 @@ package service
 import (
 	"io"
 
-	"github.com/hyperledger/burrow/event/query"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/structure"
-	"github.com/hyperledger/burrow/vent/chain"
-	"github.com/hyperledger/burrow/vent/sqlsol"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/chain"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/pkg/errors"
 )
 

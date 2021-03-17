@@ -3,7 +3,7 @@ package sqlsol
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 )
 
 // BlockData contains EventData definition

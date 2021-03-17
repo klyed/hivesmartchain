@@ -7,10 +7,10 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/structure"
-	"github.com/hyperledger/burrow/rpc"
-	"github.com/hyperledger/burrow/rpc/lib/server"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/lib/server"
 )
 
 func StartServer(service *rpc.Service, pattern string, listener net.Listener, logger *logging.Logger) (*http.Server, error) {

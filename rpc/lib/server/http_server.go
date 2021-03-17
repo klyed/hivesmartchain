@@ -11,9 +11,9 @@ import (
 	"runtime/debug"
 	"time"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/structure"
-	"github.com/hyperledger/burrow/rpc/lib/types"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/lib/types"
 )
 
 func StartHTTPServer(listener net.Listener, handler http.Handler, logger *logging.Logger) (*http.Server, error) {

@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/hyperledger/burrow/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
 )
 
 var big0 = big.NewInt(0)

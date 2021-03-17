@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/hyperledger/burrow/event/query"
-	"github.com/hyperledger/burrow/execution/solidity"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/solidity"
 
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

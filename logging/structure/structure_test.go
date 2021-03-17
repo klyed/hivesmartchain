@@ -6,7 +6,7 @@ package structure
 import (
 	"testing"
 
-	"github.com/hyperledger/burrow/util/slice"
+	"github.com/KLYE-Dev/HSC-MAIN/util/slice"
 
 	"github.com/stretchr/testify/assert"
 )

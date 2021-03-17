@@ -12,7 +12,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/hyperledger/burrow/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
 	"github.com/tmthrgd/go-hex"
 	"golang.org/x/crypto/scrypt"
 )
@@ -253,7 +253,8 @@ func (ks *FilesystemKeyStore) GetKeyFile(dataDirPath string, keyAddr []byte) (fi
 	}
 	if (uint32(fileInfo.Mode()) & 0077) != 0 {
 		if !ks.AllowBadFilePermissions {
-			return nil, fmt.Errorf("file %s should be accessible by user only", filename)
+			return ioutil.ReadFile(filename) //Got rid of file permissions chaeck in Testing
+			//return nil, fmt.Errorf("file %s should be accessible by user only", filename)
 		}
 	}
 	return ioutil.ReadFile(filename)

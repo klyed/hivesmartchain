@@ -5,7 +5,7 @@ package rpcdump
 import (
 	context "context"
 
-	dump "github.com/hyperledger/burrow/dump"
+	dump "github.com/KLYE-Dev/HSC-MAIN/dump"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

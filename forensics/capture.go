@@ -3,8 +3,8 @@ package forensics
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
 	"github.com/pkg/errors"
 )
 

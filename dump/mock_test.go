@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/hyperledger/burrow/execution/state"
-	"github.com/hyperledger/burrow/genesis"
-	"github.com/hyperledger/burrow/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/state"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
 	"github.com/stretchr/testify/require"
 )
 

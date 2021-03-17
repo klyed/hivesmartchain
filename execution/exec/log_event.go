@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"strings"
 
-	. "github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/event"
-	"github.com/hyperledger/burrow/execution/evm/abi"
+	. "github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/event"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
 	"github.com/tmthrgd/go-hex"
 )
 

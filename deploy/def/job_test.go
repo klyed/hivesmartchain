@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

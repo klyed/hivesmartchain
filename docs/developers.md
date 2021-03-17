@@ -7,7 +7,7 @@
 - [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports)
 - [protoc](http://google.github.io/proto-lens/installing-protoc.html) (libprotoc 3.7.1)
 
-Please also refer to our [contributing guidelines](https://github.com/hyperledger/burrow/blob/main/.github/CONTRIBUTING.md).
+Please also refer to our [contributing guidelines](https://github.com/KLYE-Dev/HSC-MAIN/blob/main/.github/CONTRIBUTING.md).
 
 ## Building
 

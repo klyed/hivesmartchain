@@ -7,8 +7,8 @@ import (
 	"github.com/lib/pq"
 	"github.com/pkg/errors"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/jmoiron/sqlx"
 	"github.com/prometheus/common/log"
 )
@@ -431,7 +431,7 @@ func (pa *PostgresAdapter) CleanDBQueries() types.SQLCleanDBQuery {
 		COALESCE(MAX(%s),'') CHAINID,
 		COALESCE(MAX(%s),'') BVERSION 
 		FROM %s.%s;`,
-		pa.Columns.ChainID, pa.Columns.BurrowVersion,
+		pa.Columns.ChainID, pa.Columns.HscVersion,
 		pa.Schema, pa.Tables.ChainInfo)
 
 	deleteChainIDQry := Cleanf(`
@@ -441,7 +441,7 @@ func (pa *PostgresAdapter) CleanDBQueries() types.SQLCleanDBQuery {
 	insertChainIDQry := Cleanf(`
 		INSERT INTO %s (%s,%s,%s) VALUES($1,$2,$3)`,
 		pa.SchemaName(pa.Tables.ChainInfo),
-		pa.Columns.ChainID, pa.Columns.BurrowVersion, pa.Columns.Height)
+		pa.Columns.ChainID, pa.Columns.HscVersion, pa.Columns.Height)
 
 	// Dictionary
 	selectDictionaryQry := Cleanf(`

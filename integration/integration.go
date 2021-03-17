@@ -14,18 +14,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/acm/validator"
-	"github.com/hyperledger/burrow/config"
-	"github.com/hyperledger/burrow/consensus/tendermint"
-	"github.com/hyperledger/burrow/core"
-	"github.com/hyperledger/burrow/execution"
-	"github.com/hyperledger/burrow/genesis"
-	"github.com/hyperledger/burrow/keys"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/logconfig"
-	"github.com/hyperledger/burrow/permission"
-	"github.com/hyperledger/burrow/rpc"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/validator"
+	"github.com/KLYE-Dev/HSC-MAIN/config"
+	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint"
+	"github.com/KLYE-Dev/HSC-MAIN/core"
+	"github.com/KLYE-Dev/HSC-MAIN/execution"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/keys"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc"
 	"github.com/stretchr/testify/require"
 )
 
@@ -78,7 +78,7 @@ func NewTestConfig(genesisDoc *genesis.GenesisDoc,
 	conf = config.DefaultBurrowConfig()
 	conf.Logging = nil
 	testDir, cleanup := EnterTestDirectory()
-	conf.BurrowDir = path.Join(testDir, fmt.Sprintf(".burrow_%s", name))
+	conf.HscDir = path.Join(testDir, fmt.Sprintf(".hsc_%s", name))
 	conf.GenesisDoc = genesisDoc
 	conf.Tendermint.Moniker = name
 	// Make blocks for purposes of tests
@@ -112,7 +112,7 @@ func TestKernel(validatorAccount *acm.PrivateAccount, keysAccounts []*acm.Privat
 
 	fmt.Println("Creating integration test Kernel...")
 
-	kern, err := core.NewKernel(testConfig.BurrowDir)
+	kern, err := core.NewKernel(testConfig.HscDir)
 	if err != nil {
 		return nil, err
 	}

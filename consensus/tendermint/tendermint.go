@@ -8,12 +8,12 @@ import (
 
 	"github.com/tendermint/tendermint/version"
 
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/consensus/abci"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/genesis"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/consensus/abci"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
 	"github.com/tendermint/tendermint/config"
 	"github.com/tendermint/tendermint/crypto/ed25519"
 	"github.com/tendermint/tendermint/node"

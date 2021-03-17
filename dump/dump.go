@@ -6,15 +6,15 @@ import (
 	"io"
 	"time"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/acm/acmstate"
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/encoding"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/execution/names"
-	"github.com/hyperledger/burrow/execution/state"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/storage"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/state"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/storage"
 )
 
 const (

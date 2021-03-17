@@ -10,14 +10,14 @@ import (
 	lifeExec "github.com/perlin-network/life/exec"
 	hex "github.com/tmthrgd/go-hex"
 
-	bin "github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution/engine"
-	"github.com/hyperledger/burrow/execution/errors"
-	"github.com/hyperledger/burrow/execution/evm"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/permission"
-	"github.com/hyperledger/burrow/txs"
+	bin "github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/txs"
 )
 
 type Contract struct {

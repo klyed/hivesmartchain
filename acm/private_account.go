@@ -8,7 +8,7 @@ import (
 
 	"encoding/json"
 
-	"github.com/hyperledger/burrow/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
 )
 
 type AddressableSigner interface {

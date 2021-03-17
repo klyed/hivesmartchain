@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/burrow/vent/config"
-	"github.com/hyperledger/burrow/vent/sqldb"
-	"github.com/hyperledger/burrow/vent/sqldb/adapters"
-	"github.com/hyperledger/burrow/vent/sqlsol"
-	"github.com/hyperledger/burrow/vent/test"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/config"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqldb"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqldb/adapters"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/test"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -54,7 +54,7 @@ func testCleanDB(t *testing.T, cfg *config.VentConfig) {
 			err = db.SynchronizeDB(test.ChainID, tableStructure.Tables)
 			require.NoError(t, err)
 
-			err = db.CleanTables(test.ChainID, test.BurrowVersion)
+			err = db.CleanTables(test.ChainID, test.HscVersion)
 			require.NoError(t, err)
 		})
 }

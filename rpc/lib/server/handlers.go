@@ -11,8 +11,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/rpc/lib/types"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/lib/types"
 	"github.com/pkg/errors"
 )
 

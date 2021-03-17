@@ -4,15 +4,15 @@ import (
 	"fmt"
 
 	"github.com/go-kit/kit/log"
-	"github.com/hyperledger/burrow/config"
-	"github.com/hyperledger/burrow/consensus/abci"
-	"github.com/hyperledger/burrow/consensus/tendermint"
-	"github.com/hyperledger/burrow/execution"
-	"github.com/hyperledger/burrow/execution/registry"
-	"github.com/hyperledger/burrow/keys"
-	"github.com/hyperledger/burrow/logging/logconfig"
-	"github.com/hyperledger/burrow/logging/structure"
-	"github.com/hyperledger/burrow/project"
+	"github.com/KLYE-Dev/HSC-MAIN/config"
+	"github.com/KLYE-Dev/HSC-MAIN/consensus/abci"
+	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint"
+	"github.com/KLYE-Dev/HSC-MAIN/execution"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/registry"
+	"github.com/KLYE-Dev/HSC-MAIN/keys"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/project"
 	tmConfig "github.com/tendermint/tendermint/config"
 	"github.com/tendermint/tendermint/node"
 	tmTypes "github.com/tendermint/tendermint/types"
@@ -69,7 +69,7 @@ func (kern *Kernel) LoadTendermintFromConfig(conf *config.BurrowConfig, privVal 
 	if err != nil {
 		return err
 	}
-	kern.info = fmt.Sprintf("Burrow_%s_%s_ValidatorID:%X", project.History.CurrentVersion().String(),
+	kern.info = fmt.Sprintf("Hsc_%s_%s_ValidatorID:%X", project.History.CurrentVersion().String(),
 		kern.Blockchain.ChainID(), pubKey.Address())
 
 	app := abci.NewApp(kern.info, kern.Blockchain, kern.State, kern.checker, kern.committer, kern.txCodec,
@@ -97,7 +97,7 @@ func (kern *Kernel) LoadTendermintFromConfig(conf *config.BurrowConfig, privVal 
 
 // LoadKernelFromConfig builds and returns a Kernel based solely on the supplied configuration
 func LoadKernelFromConfig(conf *config.BurrowConfig) (*Kernel, error) {
-	kern, err := NewKernel(conf.BurrowDir)
+	kern, err := NewKernel(conf.HscDir)
 	if err != nil {
 		return nil, fmt.Errorf("could not create initial kernel: %v", err)
 	}

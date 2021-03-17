@@ -6,14 +6,14 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hyperledger/burrow/integration"
+	"github.com/KLYE-Dev/HSC-MAIN/integration"
 
-	"github.com/hyperledger/burrow/event"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/execution/names"
-	"github.com/hyperledger/burrow/integration/rpctest"
-	"github.com/hyperledger/burrow/rpc/rpcquery"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/event"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
+	"github.com/KLYE-Dev/HSC-MAIN/integration/rpctest"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

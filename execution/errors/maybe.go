@@ -3,7 +3,7 @@ package errors
 import (
 	"math/big"
 
-	"github.com/hyperledger/burrow/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
 )
 
 type Maybe struct {

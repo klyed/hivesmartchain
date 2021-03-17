@@ -5,8 +5,8 @@ import (
 	"os"
 	"path"
 
-	"github.com/hyperledger/burrow/deploy/compile"
-	"github.com/hyperledger/burrow/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/compile"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
 	cli "github.com/jawher/mow.cli"
 )
 

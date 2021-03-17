@@ -9,20 +9,20 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/acm/acmstate"
-	"github.com/hyperledger/burrow/acm/validator"
-	"github.com/hyperledger/burrow/bcm"
-	"github.com/hyperledger/burrow/binary"
-	"github.com/hyperledger/burrow/consensus/tendermint"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution/names"
-	"github.com/hyperledger/burrow/execution/registry"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/structure"
-	"github.com/hyperledger/burrow/permission"
-	"github.com/hyperledger/burrow/project"
-	"github.com/hyperledger/burrow/txs"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/validator"
+	"github.com/KLYE-Dev/HSC-MAIN/bcm"
+	"github.com/KLYE-Dev/HSC-MAIN/binary"
+	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/registry"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/project"
+	"github.com/KLYE-Dev/HSC-MAIN/txs"
 	"github.com/tendermint/tendermint/consensus"
 	"github.com/tendermint/tendermint/p2p"
 	core_types "github.com/tendermint/tendermint/rpc/core/types"
@@ -398,7 +398,7 @@ func Status(blockchain bcm.BlockchainInfo, validators validator.History, nodeVie
 	res := &ResultStatus{
 		ChainID:       blockchain.ChainID(),
 		RunID:         nodeView.RunID().String(),
-		BurrowVersion: project.FullVersion(),
+		HscVersion: project.FullVersion(),
 		GenesisHash:   blockchain.GenesisHash(),
 		NodeInfo:      nodeView.NodeInfo(),
 		SyncInfo:      bcm.GetSyncInfo(blockchain),

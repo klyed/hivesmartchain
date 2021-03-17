@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hyperledger/burrow/event/pubsub"
-	"github.com/hyperledger/burrow/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/event/pubsub"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
 	"github.com/stretchr/testify/require"
 )
 

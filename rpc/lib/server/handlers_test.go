@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/rpc/lib/types"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/lib/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

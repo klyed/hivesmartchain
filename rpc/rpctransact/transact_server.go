@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hyperledger/burrow/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
 
-	"github.com/hyperledger/burrow/acm/acmstate"
-	"github.com/hyperledger/burrow/bcm"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
+	"github.com/KLYE-Dev/HSC-MAIN/bcm"
 
-	"github.com/hyperledger/burrow/execution"
-	"github.com/hyperledger/burrow/execution/exec"
-	"github.com/hyperledger/burrow/txs"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/execution"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/exec"
+	"github.com/KLYE-Dev/HSC-MAIN/txs"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 	"golang.org/x/net/context"
 )
 

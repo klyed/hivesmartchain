@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"time"
 
-	"github.com/hyperledger/burrow/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
 )
 
 type TestBlockchain struct {

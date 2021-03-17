@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/structure"
-	"github.com/hyperledger/burrow/rpc/lib/types"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/lib/types"
 	"github.com/pkg/errors"
 
-	"github.com/hyperledger/burrow/rpc/rpcevents"
-	"github.com/hyperledger/burrow/rpc/web3/ethclient"
-	"github.com/hyperledger/burrow/vent/chain"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcevents"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/web3/ethclient"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/chain"
 )
 
 const ConsumerScope = "EthereumConsumer"

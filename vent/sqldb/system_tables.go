@@ -1,8 +1,8 @@
 package sqldb
 
 import (
-	"github.com/hyperledger/burrow/txs"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/txs"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 )
 
 // getSysTablesDefinition returns log, chain info & dictionary structures
@@ -106,7 +106,7 @@ func (db *SQLDB) systemTablesDefinition() types.EventTables {
 					Primary: true,
 				},
 				{
-					Name: columns.BurrowVersion,
+					Name: columns.HscVersion,
 					Type: types.SQLColumnTypeVarchar,
 				},
 				{

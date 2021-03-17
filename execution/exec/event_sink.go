@@ -1,7 +1,7 @@
 package exec
 
 import (
-	"github.com/hyperledger/burrow/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
 )
 
 type EventSink interface {

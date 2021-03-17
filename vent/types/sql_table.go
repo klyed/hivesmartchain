@@ -105,7 +105,7 @@ type SQLColumnNames struct {
 	PrimaryKey   string
 	ColumnOrder  string
 	// chain info
-	BurrowVersion string
+	HscVersion string
 	ChainID       string
 	// context
 	TxIndex     string
@@ -141,7 +141,7 @@ var DefaultSQLColumnNames = SQLColumnNames{
 	PrimaryKey:   "_primarykey",
 	ColumnOrder:  "_columnorder",
 	// chain info,
-	BurrowVersion: "_burrowversion",
+	HscVersion: "_HscVersion",
 	ChainID:       "_chainid",
 	// context,
 	TxIndex:     "_txindex",

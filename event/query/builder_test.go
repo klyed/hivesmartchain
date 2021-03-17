@@ -3,7 +3,7 @@ package query
 import (
 	"testing"
 
-	"github.com/hyperledger/burrow/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -28,7 +28,7 @@ func TestQueryBuilder(t *testing.T) {
 	assert.False(t, qry.Matches(makeTagMap("foo.size", 8, "bar.name", "marmot")))
 	assert.False(t, qry.Matches(makeTagMap("foo.size", 80, "bar.name", "marot")))
 
-	qb = qb.AndContains("bar.desc", "burrow")
+	qb = qb.AndContains("bar.desc", "hsc")
 	qry, err = qb.Query()
 	require.NoError(t, err)
 	assert.Equal(t, "foo.size >= 45 AND bar.name = 'marmot' AND bar.desc CONTAINS 'burrow'", qry.String())

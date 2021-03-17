@@ -2,7 +2,7 @@ package loggers
 
 import (
 	"github.com/go-kit/kit/log"
-	"github.com/hyperledger/burrow/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
 )
 
 // Filter logger allows us to filter lines logged to it before passing on to underlying

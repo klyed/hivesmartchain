@@ -5,9 +5,9 @@ import (
 
 	"strconv"
 
-	"github.com/hyperledger/burrow/logging/logconfig"
-	"github.com/hyperledger/burrow/logging/loggers"
-	"github.com/hyperledger/burrow/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/logconfig"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/loggers"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

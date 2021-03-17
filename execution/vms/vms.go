@@ -1,10 +1,10 @@
 package vms
 
 import (
-	"github.com/hyperledger/burrow/execution/defaults"
-	"github.com/hyperledger/burrow/execution/engine"
-	"github.com/hyperledger/burrow/execution/evm"
-	"github.com/hyperledger/burrow/execution/wasm"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/defaults"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/wasm"
 )
 
 type VirtualMachines struct {

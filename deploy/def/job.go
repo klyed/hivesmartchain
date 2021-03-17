@@ -8,8 +8,8 @@ import (
 	"fmt"
 
 	validation "github.com/go-ozzo/ozzo-validation"
-	"github.com/hyperledger/burrow/deploy/def/rule"
-	"github.com/hyperledger/burrow/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def/rule"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
 )
 
 // TODO: Interface all the jobs, determine if they should remain in definitions or get their own package

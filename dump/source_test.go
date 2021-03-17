@@ -3,9 +3,9 @@ package dump
 import (
 	"testing"
 
-	"github.com/hyperledger/burrow/bcm"
-	"github.com/hyperledger/burrow/execution/state"
-	"github.com/hyperledger/burrow/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/bcm"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/state"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
 	"github.com/stretchr/testify/require"
 )
 

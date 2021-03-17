@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hyperledger/burrow/event/query"
-	"github.com/hyperledger/burrow/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
 )
 
 type Events []*Event

@@ -7,11 +7,11 @@ import (
 	"time"
 
 	"github.com/go-kit/kit/log"
-	pkgs "github.com/hyperledger/burrow/deploy"
-	"github.com/hyperledger/burrow/deploy/def"
-	"github.com/hyperledger/burrow/deploy/proposals"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/loggers"
+	pkgs "github.com/KLYE-Dev/HSC-MAIN/deploy"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/proposals"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/loggers"
 	cli "github.com/jawher/mow.cli"
 )
 
@@ -24,10 +24,10 @@ func Deploy(output Output) func(cmd *cli.Cmd) {
 		chainOpt := cmd.StringOpt("c chain", "127.0.0.1:10997", "chain to be used in IP:PORT format")
 
 		signerOpt := cmd.StringOpt("s keys", "",
-			"IP:PORT of Burrow GRPC service which jobs should or otherwise transaction submitted unsigned for mempool signing in Burrow")
+			"IP:PORT of Hive Smart Chain GRPC service which jobs should or otherwise transaction submitted unsigned for mempool signing in Hive Smart Chain")
 
 		mempoolSigningOpt := cmd.BoolOpt("p mempool-signing", false,
-			"Use Burrow's own keys connection to sign transactions - means that Burrow instance must have access to input account keys. "+
+			"Use Hive Smart Chain's own keys connection to sign transactions - means that Hive Smart Chain instance must have access to input account keys. "+
 				"Sequence numbers are set as transactions enter the mempool so concurrent transactions can be sent from same inputs.")
 
 		pathOpt := cmd.StringOpt("i dir", "", "root directory of app (will use pwd by default)")
@@ -57,7 +57,7 @@ func Deploy(output Output) func(cmd *cli.Cmd) {
 
 		verboseOpt := cmd.BoolOpt("v verbose", false, "verbose output")
 
-		localAbiOpt := cmd.BoolOpt("local-abi", false, "use local ABIs rather than fetching them from burrow")
+		localAbiOpt := cmd.BoolOpt("local-abi", false, "use local ABIs rather than fetching them from Hive Smart Chain")
 
 		wasmOpt := cmd.BoolOpt("wasm", false, "Compile to WASM using solang (experimental)")
 

@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/vent/config"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/config"
 )
 
 // Server exposes HTTP endpoints for the service

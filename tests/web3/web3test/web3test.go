@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/rpc/lib/jsonrpc"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/lib/jsonrpc"
 	"github.com/stretchr/testify/require"
 	"github.com/tmthrgd/go-hex"
 )

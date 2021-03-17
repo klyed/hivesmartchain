@@ -6,8 +6,8 @@ import (
 
 	validation "github.com/go-ozzo/ozzo-validation"
 	"github.com/go-ozzo/ozzo-validation/is"
-	"github.com/hyperledger/burrow/deploy/def/rule"
-	"github.com/hyperledger/burrow/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def/rule"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
 )
 
 // ------------------------------------------------------------------------
@@ -98,7 +98,7 @@ type UpdateAccount struct {
 	// (Optional) the Tendermint validator power to set for this account
 	Power string `mapstructure:"power" json:"power" yaml:"power" toml:"power"`
 	// (Optional) The Burrow native token balance to set for this account
-	Native string `mapstructure:"native" json:"native" yaml:"native" toml:"native"`
+	Native string `mapstructure:"HIVE" json:"HIVE" yaml:"HIVE" toml:"HIVE"`
 	// (Optional) the permissions to set for this account
 	Permissions []PermissionString `mapstructure:"permissions" json:"permissions" yaml:"permissions" toml:"permissions"`
 	// (Optional) the account permission roles to set for this account

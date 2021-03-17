@@ -8,8 +8,8 @@ builds:
   ldflags:
   - -extldflags "-static"
   - -s -w
-  - -X github.com/hyperledger/burrow/project.commit={{.Commit}}
-  - -X github.com/hyperledger/burrow/project.date={{.Date}}
+  - -X github.com/KLYE-Dev/HSC-MAIN/project.commit={{.Commit}}
+  - -X github.com/KLYE-Dev/HSC-MAIN/project.date={{.Date}}
   goos:
   - darwin
   - linux

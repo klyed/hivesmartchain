@@ -9,10 +9,10 @@ import (
 
 	"github.com/tendermint/tendermint/types"
 
-	"github.com/hyperledger/burrow/acm/acmstate"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/structure"
-	"github.com/hyperledger/burrow/rpc"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/acmstate"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc"
 	"github.com/prometheus/client_golang/prometheus"
 	core_types "github.com/tendermint/tendermint/rpc/core/types"
 )

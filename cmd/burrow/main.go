@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hyperledger/burrow/cmd/burrow/commands"
-	"github.com/hyperledger/burrow/project"
+	"github.com/KLYE-Dev/HSC-MAIN/cmd/burrow/commands"
+	"github.com/KLYE-Dev/HSC-MAIN/project"
 	cli "github.com/jawher/mow.cli"
 )
 
@@ -19,11 +19,11 @@ func main() {
 }
 
 func burrow(output commands.Output) *cli.Cli {
-	app := cli.App("burrow", "The EVM smart contract machine with Tendermint consensus")
+	app := cli.App("hsc", "The EVM smart contract machine with Tendermint consensus")
 	// We'll handle any errors
 	app.ErrorHandling = flag.ContinueOnError
 
-	versionOpt := app.BoolOpt("v version", false, "Print the Burrow version")
+	versionOpt := app.BoolOpt("v version", false, "Print Hive Smart Chain executable version")
 	chDirOpt := app.StringOpt("C directory", "", "Change directory before running")
 	app.Spec = "[--version] [--directory=<working directory>]"
 
@@ -44,26 +44,26 @@ func burrow(output commands.Output) *cli.Cli {
 		}
 	}
 
-	app.Command("start", "Start a Burrow node",
+	app.Command("start", "Start a Hive Smart Chain node",
 		commands.Start(output))
 
 	app.Command("spec", "Build a GenesisSpec that acts as a template for a GenesisDoc and the configure command",
 		commands.Spec(output))
 
 	app.Command("configure",
-		"Create Burrow configuration by consuming a GenesisDoc or GenesisSpec, creating keys, and emitting the config",
+		"Create Hive Smart Chain configuration by consuming a GenesisDoc or GenesisSpec, creating keys, and emitting the config",
 		commands.Configure(output))
 
 	app.Command("keys", "A tool for doing a bunch of cool stuff with keys",
 		commands.Keys(output))
 
-	app.Command("explore", "Dump objects from an offline Burrow .burrow directory",
+	app.Command("explore", "Dump objects from an offline Hive Smart Chain .hsc directory",
 		commands.Explore(output))
 
 	app.Command("deploy", "Deploy and test contracts",
 		commands.Deploy(output))
 
-	app.Command("natives", "Dump Solidity interface contracts for Burrow native contracts",
+	app.Command("natives", "Dump Solidity interface contracts for Hive Smart Chain native contracts",
 		commands.Natives(output))
 
 	app.Command("vent", "Start the Vent EVM event and blocks consumer service to populated databases from smart contracts",
@@ -72,7 +72,7 @@ func burrow(output commands.Output) *cli.Cli {
 	app.Command("dump", "Dump chain state to backup",
 		commands.Dump(output))
 
-	app.Command("tx", "Submit a transaction to a burrow node",
+	app.Command("tx", "Submit a transaction to a Hive Smart Chain node",
 		commands.Tx(output))
 
 	app.Command("restore", "Restore new chain from backup",

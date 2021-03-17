@@ -8,7 +8,7 @@ const (
 )
 
 var nameFromType = map[Type]string{
-	TypeNative: "Native",
+	TypeNative: "HIVE",
 	TypePower:  "Power",
 }
 

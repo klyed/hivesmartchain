@@ -1,9 +1,9 @@
 package defaults
 
 import (
-	"github.com/hyperledger/burrow/execution/engine"
-	"github.com/hyperledger/burrow/execution/native"
-	"github.com/hyperledger/burrow/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/engine"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/native"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
 )
 
 func CompleteOptions(options engine.Options) engine.Options {

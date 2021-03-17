@@ -78,7 +78,7 @@ proto.rpc.ResultStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     chainid: jspb.Message.getFieldWithDefault(msg, 1, ""),
     runid: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    burrowversion: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    HscVersion: jspb.Message.getFieldWithDefault(msg, 3, ""),
     genesishash: msg.getGenesishash_asB64(),
     nodeinfo: (f = msg.getNodeinfo()) && tendermint_pb.NodeInfo.toObject(includeInstance, f),
     syncinfo: (f = msg.getSyncinfo()) && bcm_pb.SyncInfo.toObject(includeInstance, f),
@@ -130,7 +130,7 @@ proto.rpc.ResultStatus.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBurrowversion(value);
+      msg.setHscVersion(value);
       break;
     case 4:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
@@ -198,7 +198,7 @@ proto.rpc.ResultStatus.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getBurrowversion();
+  f = message.getHscVersion();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -283,10 +283,10 @@ proto.rpc.ResultStatus.prototype.setRunid = function(value) {
 
 
 /**
- * optional string BurrowVersion = 3;
+ * optional string HscVersion = 3;
  * @return {string}
  */
-proto.rpc.ResultStatus.prototype.getBurrowversion = function() {
+proto.rpc.ResultStatus.prototype.getHscVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -295,7 +295,7 @@ proto.rpc.ResultStatus.prototype.getBurrowversion = function() {
  * @param {string} value
  * @return {!proto.rpc.ResultStatus} returns this
  */
-proto.rpc.ResultStatus.prototype.setBurrowversion = function(value) {
+proto.rpc.ResultStatus.prototype.setHscVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 

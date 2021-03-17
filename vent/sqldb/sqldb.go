@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/vent/sqldb/adapters"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqldb/adapters"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/jmoiron/sqlx"
 )
 
@@ -67,7 +67,7 @@ func NewSQLDB(connection types.SQLConnection) (*SQLDB, error) {
 
 // Initialise the system and chain tables in case this is the first run - is idempotent though will drop tables
 // if ChainID has changed
-func (db *SQLDB) Init(chainID, burrowVersion string) error {
+func (db *SQLDB) Init(chainID, HscVersion string) error {
 	db.Log.InfoMsg("Initializing DB")
 
 	// Create dictionary and log tables
@@ -97,14 +97,14 @@ func (db *SQLDB) Init(chainID, burrowVersion string) error {
 		}
 	}
 
-	chainIDChanged, err := db.InitChain(chainID, burrowVersion)
+	chainIDChanged, err := db.InitChain(chainID, HscVersion)
 	if err != nil {
 		return fmt.Errorf("could not initialise chain in database: %v", err)
 	}
 
 	if chainIDChanged {
 		// If the chain has changed - drop existing data
-		err = db.CleanTables(chainID, burrowVersion)
+		err = db.CleanTables(chainID, HscVersion)
 		if err != nil {
 			return fmt.Errorf("could not clean tables after ChainID change: %v", err)
 		}
@@ -136,15 +136,15 @@ func (db *SQLDB) prepareQueries() (Queries, error) {
 	}, *err
 }
 
-func (db *SQLDB) InitChain(chainID, burrowVersion string) (chainIDChanged bool, _ error) {
+func (db *SQLDB) InitChain(chainID, HscVersion string) (chainIDChanged bool, _ error) {
 	cleanQueries := db.DBAdapter.CleanDBQueries()
 
-	var savedChainID, savedBurrowVersion, query string
+	var savedChainID, savedHscVersion, query string
 	savedRows := 0
 
 	// Read chainID
 	query = cleanQueries.SelectChainIDQry
-	if err := db.DB.QueryRow(query).Scan(&savedRows, &savedChainID, &savedBurrowVersion); err != nil {
+	if err := db.DB.QueryRow(query).Scan(&savedRows, &savedChainID, &savedHscVersion); err != nil {
 		db.Log.InfoMsg("Error selecting CHAIN ID", "err", err, "query", query)
 		return false, err
 	}
@@ -160,7 +160,7 @@ func (db *SQLDB) InitChain(chainID, burrowVersion string) (chainIDChanged bool, 
 	// First database access
 	// Save new values and exit
 	query = cleanQueries.InsertChainIDQry
-	_, err := db.DB.Exec(query, chainID, burrowVersion, 0)
+	_, err := db.DB.Exec(query, chainID, HscVersion, 0)
 
 	if err != nil {
 		db.Log.InfoMsg("Error inserting CHAIN ID", "err", err, "query", query)
@@ -171,7 +171,7 @@ func (db *SQLDB) InitChain(chainID, burrowVersion string) (chainIDChanged bool, 
 
 // CleanTables drop tables if stored chainID is different from the given one & store new chainID
 // if the chainID is the same, do nothing
-func (db *SQLDB) CleanTables(chainID, burrowVersion string) error {
+func (db *SQLDB) CleanTables(chainID, HscVersion string) error {
 	var tx *sql.Tx
 	var err error
 	var tableName string
@@ -194,7 +194,7 @@ func (db *SQLDB) CleanTables(chainID, burrowVersion string) error {
 
 	// Insert chainID
 	query = cleanQueries.InsertChainIDQry
-	if _, err := tx.Exec(query, chainID, burrowVersion, 0); err != nil {
+	if _, err := tx.Exec(query, chainID, HscVersion, 0); err != nil {
 		db.Log.InfoMsg("Error inserting CHAIN ID", "err", err, "query", query)
 		return err
 	}

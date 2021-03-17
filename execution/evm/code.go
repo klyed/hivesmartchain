@@ -1,8 +1,8 @@
 package evm
 
 import (
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/execution/evm/asm"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/asm"
 	"github.com/tmthrgd/go-bitset"
 )
 

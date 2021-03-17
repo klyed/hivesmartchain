@@ -1,7 +1,7 @@
 package txs
 
 import (
-	"github.com/hyperledger/burrow/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
 )
 
 type protobufCodec struct {

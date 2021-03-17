@@ -3,7 +3,7 @@ chain:
   extraSeeds: []
   testing: false
 config:
-  BurrowDir: .burrow
+  HscDir: .burrow
   Keys:
     AllowBadFilePermissions: true
     GRPCServiceEnabled: true

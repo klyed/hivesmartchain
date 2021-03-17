@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/burrow/vent/sqldb/adapters"
-	"github.com/hyperledger/burrow/vent/test"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqldb/adapters"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/test"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/lib/pq"
 	"github.com/stretchr/testify/require"
 )

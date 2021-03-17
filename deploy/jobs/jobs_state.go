@@ -1,7 +1,7 @@
 package jobs
 
 import (
-	"github.com/hyperledger/burrow/deploy/def"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
 )
 
 func DumpStateJob(dump *def.DumpState) (string, error) {

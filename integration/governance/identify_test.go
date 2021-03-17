@@ -6,16 +6,16 @@ import (
 	"context"
 	"testing"
 
-	"github.com/hyperledger/burrow/config"
-	"github.com/hyperledger/burrow/consensus/tendermint"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/rpc/rpcquery"
+	"github.com/KLYE-Dev/HSC-MAIN/config"
+	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
 
-	"github.com/hyperledger/burrow/core"
-	"github.com/hyperledger/burrow/execution/registry"
-	"github.com/hyperledger/burrow/integration"
-	"github.com/hyperledger/burrow/integration/rpctest"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/core"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/registry"
+	"github.com/KLYE-Dev/HSC-MAIN/integration"
+	"github.com/KLYE-Dev/HSC-MAIN/integration/rpctest"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 	"github.com/stretchr/testify/require"
 )
 

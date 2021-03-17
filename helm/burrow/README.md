@@ -63,7 +63,7 @@ The following table lists the configurable parameters of the Burrow chart and it
 | `chain.extraSeeds` | network seeds to dial in addition to the cluster booted by the chart; each entry in the array should be in the form `ip:port` (note: because P2P connects over tcp, the port is absolutely required) | `[]` |
 | `restore.enabled` | toggle chain restore mechanism | `false` |
 | `chain.testing` | toggle pre-generated keys & genesis for ci testing | `false` |
-| `config` | the [burrow configuration file](https://github.com/hyperledger/burrow/blob/develop/tests/chain/burrow.toml) | `{}` |
+| `config` | the [burrow configuration file](https://github.com/KLYE-Dev/HSC-MAIN/blob/develop/tests/chain/burrow.toml) | `{}` |
 | `config.Tendermint.ListenPort` | peer port | `26656` |
 | `contracts.enabled` | toggle post-install contract deployment | `false` |
 | `contracts.image` | contract deployer image | `""` |

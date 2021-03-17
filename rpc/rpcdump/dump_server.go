@@ -1,10 +1,10 @@
 package rpcdump
 
 import (
-	"github.com/hyperledger/burrow/bcm"
-	"github.com/hyperledger/burrow/dump"
-	"github.com/hyperledger/burrow/execution/state"
-	"github.com/hyperledger/burrow/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/bcm"
+	"github.com/KLYE-Dev/HSC-MAIN/dump"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/state"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
 )
 
 type dumpServer struct {

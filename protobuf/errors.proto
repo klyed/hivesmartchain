@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package errors;
 
-option go_package = "github.com/hyperledger/burrow/execution/errors";
+option go_package = "github.com/KLYE-Dev/HSC-MAIN/execution/errors";
 
 import "gogoproto/gogo.proto";
 

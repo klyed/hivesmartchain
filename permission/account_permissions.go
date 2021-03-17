@@ -1,6 +1,6 @@
 package permission
 
-import "github.com/hyperledger/burrow/binary"
+import "github.com/KLYE-Dev/HSC-MAIN/binary"
 
 func NewAccountPermissions(pss ...PermFlag) AccountPermissions {
 	var perms PermFlag

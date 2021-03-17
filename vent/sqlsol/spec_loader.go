@@ -3,8 +3,8 @@ package sqlsol
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/txs"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/txs"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 )
 
 type SpecOpt uint64

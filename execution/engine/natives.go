@@ -1,8 +1,8 @@
 package engine
 
 import (
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
 )
 
 type Native interface {

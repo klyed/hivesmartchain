@@ -3,11 +3,11 @@ package spec
 import (
 	"testing"
 
-	"github.com/hyperledger/burrow/acm/balance"
-	crypto "github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/keys"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/balance"
+	crypto "github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/keys"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

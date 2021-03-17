@@ -3,10 +3,10 @@ package payload
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/acm/balance"
-	"github.com/hyperledger/burrow/crypto"
-	spec "github.com/hyperledger/burrow/genesis/spec"
-	permission "github.com/hyperledger/burrow/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/balance"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	spec "github.com/KLYE-Dev/HSC-MAIN/genesis/spec"
+	permission "github.com/KLYE-Dev/HSC-MAIN/permission"
 )
 
 // GovernanceTx contains functionality for altering permissions, token distribution, consensus parameters,

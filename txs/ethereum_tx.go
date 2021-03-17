@@ -5,8 +5,8 @@ import (
 	"math/big"
 
 	"github.com/btcsuite/btcd/btcec"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/encoding/rlp"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding/rlp"
 	"github.com/tmthrgd/go-hex"
 )
 

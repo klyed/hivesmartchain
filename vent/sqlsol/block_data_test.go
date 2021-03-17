@@ -3,8 +3,8 @@ package sqlsol_test
 import (
 	"testing"
 
-	"github.com/hyperledger/burrow/vent/sqlsol"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqlsol"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/stretchr/testify/require"
 )
 

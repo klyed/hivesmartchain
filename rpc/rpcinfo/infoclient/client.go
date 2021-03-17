@@ -7,11 +7,11 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution/names"
-	"github.com/hyperledger/burrow/rpc"
-	"github.com/hyperledger/burrow/rpc/rpcinfo"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcinfo"
 )
 
 func Status(client rpc.Client) (*rpc.ResultStatus, error) {

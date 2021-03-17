@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/hyperledger/burrow/deploy/def"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

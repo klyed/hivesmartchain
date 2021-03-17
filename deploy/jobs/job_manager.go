@@ -5,11 +5,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	compilers "github.com/hyperledger/burrow/deploy/compile"
-	"github.com/hyperledger/burrow/deploy/def"
-	"github.com/hyperledger/burrow/deploy/util"
-	"github.com/hyperledger/burrow/logging"
-	pbpayload "github.com/hyperledger/burrow/txs/payload"
+	compilers "github.com/KLYE-Dev/HSC-MAIN/deploy/compile"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/util"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	pbpayload "github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 )
 
 const (

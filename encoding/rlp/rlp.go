@@ -11,7 +11,7 @@ import (
 	"math/bits"
 	"reflect"
 
-	binary2 "github.com/hyperledger/burrow/binary"
+	binary2 "github.com/KLYE-Dev/HSC-MAIN/binary"
 )
 
 type magicOffset uint8

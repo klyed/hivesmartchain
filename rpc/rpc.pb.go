@@ -12,10 +12,10 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	validator "github.com/hyperledger/burrow/acm/validator"
-	bcm "github.com/hyperledger/burrow/bcm"
-	github_com_hyperledger_burrow_binary "github.com/hyperledger/burrow/binary"
-	tendermint "github.com/hyperledger/burrow/consensus/tendermint"
+	validator "github.com/KLYE-Dev/HSC-MAIN/acm/validator"
+	bcm "github.com/KLYE-Dev/HSC-MAIN/bcm"
+	github_com_hyperledger_burrow_binary "github.com/KLYE-Dev/HSC-MAIN/binary"
+	tendermint "github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -33,8 +33,8 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 type ResultStatus struct {
 	ChainID       string                                        `protobuf:"bytes,1,opt,name=ChainID,proto3" json:"ChainID,omitempty"`
 	RunID         string                                        `protobuf:"bytes,2,opt,name=RunID,proto3" json:"RunID,omitempty"`
-	BurrowVersion string                                        `protobuf:"bytes,3,opt,name=BurrowVersion,proto3" json:"BurrowVersion,omitempty"`
-	GenesisHash   github_com_hyperledger_burrow_binary.HexBytes `protobuf:"bytes,4,opt,name=GenesisHash,proto3,customtype=github.com/hyperledger/burrow/binary.HexBytes" json:"GenesisHash"`
+	HscVersion string                                        `protobuf:"bytes,3,opt,name=HscVersion,proto3" json:"HscVersion,omitempty"`
+	GenesisHash   github_com_hyperledger_burrow_binary.HexBytes `protobuf:"bytes,4,opt,name=GenesisHash,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"GenesisHash"`
 	NodeInfo      *tendermint.NodeInfo                          `protobuf:"bytes,5,opt,name=NodeInfo,proto3" json:"NodeInfo,omitempty"`
 	SyncInfo      *bcm.SyncInfo                                 `protobuf:"bytes,6,opt,name=SyncInfo,proto3" json:"SyncInfo,omitempty"`
 	// When catching up in fast sync
@@ -88,9 +88,9 @@ func (m *ResultStatus) GetRunID() string {
 	return ""
 }
 
-func (m *ResultStatus) GetBurrowVersion() string {
+func (m *ResultStatus) GetHscVersion() string {
 	if m != nil {
-		return m.BurrowVersion
+		return m.HscVersion
 	}
 	return ""
 }
@@ -241,10 +241,10 @@ func (m *ResultStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	}
 	i--
 	dAtA[i] = 0x22
-	if len(m.BurrowVersion) > 0 {
-		i -= len(m.BurrowVersion)
-		copy(dAtA[i:], m.BurrowVersion)
-		i = encodeVarintRpc(dAtA, i, uint64(len(m.BurrowVersion)))
+	if len(m.HscVersion) > 0 {
+		i -= len(m.HscVersion)
+		copy(dAtA[i:], m.HscVersion)
+		i = encodeVarintRpc(dAtA, i, uint64(len(m.HscVersion)))
 		i--
 		dAtA[i] = 0x1a
 	}
@@ -290,7 +290,7 @@ func (m *ResultStatus) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovRpc(uint64(l))
 	}
-	l = len(m.BurrowVersion)
+	l = len(m.HscVersion)
 	if l > 0 {
 		n += 1 + l + sovRpc(uint64(l))
 	}
@@ -418,7 +418,7 @@ func (m *ResultStatus) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field BurrowVersion", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field HscVersion", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -446,7 +446,7 @@ func (m *ResultStatus) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.BurrowVersion = string(dAtA[iNdEx:postIndex])
+			m.HscVersion = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {

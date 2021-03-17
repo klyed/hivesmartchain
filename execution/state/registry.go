@@ -3,10 +3,10 @@ package state
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/encoding"
-	"github.com/hyperledger/burrow/execution/registry"
-	"github.com/hyperledger/burrow/storage"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/encoding"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/registry"
+	"github.com/KLYE-Dev/HSC-MAIN/storage"
 )
 
 var _ registry.IterableReader = &State{}

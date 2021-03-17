@@ -1,2 +1,2 @@
 # Cannot reset an int/uint to zero
-* https://github.com/hyperledger/burrow/issues/847
+* https://github.com/KLYE-Dev/HSC-MAIN/issues/847

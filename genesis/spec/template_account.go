@@ -3,11 +3,11 @@ package spec
 import (
 	"fmt"
 
-	"github.com/hyperledger/burrow/acm/balance"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/genesis"
-	"github.com/hyperledger/burrow/keys"
-	"github.com/hyperledger/burrow/permission"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/balance"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/keys"
+	"github.com/KLYE-Dev/HSC-MAIN/permission"
 )
 
 func (ta TemplateAccount) Validator(keyClient keys.KeyClient, index int, curve crypto.CurveType) (*genesis.Validator, error) {

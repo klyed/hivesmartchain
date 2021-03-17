@@ -1,6 +1,6 @@
 syntax = 'proto3';
 
-option go_package = "github.com/hyperledger/burrow/dump";
+option go_package = "github.com/KLYE-Dev/HSC-MAIN/dump";
 
 import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
@@ -24,12 +24,12 @@ option (gogoproto.goproto_registration) = true;
 option (gogoproto.messagename_all) = true;
 
 message Storage {
-    bytes Key = 1 [(gogoproto.customtype) = "github.com/hyperledger/burrow/binary.Word256", (gogoproto.nullable) = false];
-    bytes Value = 2 [(gogoproto.customtype) = "github.com/hyperledger/burrow/binary.HexBytes", (gogoproto.nullable) = false];
+    bytes Key = 1 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.Word256", (gogoproto.nullable) = false];
+    bytes Value = 2 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes", (gogoproto.nullable) = false];
 }
 
 message AccountStorage {
-    bytes Address = 1 [(gogoproto.customtype) = "github.com/hyperledger/burrow/crypto.Address", (gogoproto.nullable) = false];
+    bytes Address = 1 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/crypto.Address", (gogoproto.nullable) = false];
     repeated Storage Storage = 2;
 }
 

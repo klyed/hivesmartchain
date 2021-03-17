@@ -18,9 +18,9 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/hyperledger/burrow/event/query"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
 	"github.com/tendermint/tendermint/libs/service"
 )
 

@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 package rpcquery;
 
-option go_package = "github.com/hyperledger/burrow/rpc/rpcquery";
+option go_package = "github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery";
 
 import "gogoproto/gogo.proto";
 import "tendermint/types/types.proto";
@@ -51,12 +51,12 @@ message StatusParam {
 }
 
 message GetAccountParam {
-    bytes Address = 1 [(gogoproto.customtype) = "github.com/hyperledger/burrow/crypto.Address", (gogoproto.nullable) = false];
+    bytes Address = 1 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/crypto.Address", (gogoproto.nullable) = false];
 }
 
 message GetMetadataParam {
-    bytes Address = 1 [(gogoproto.customtype) = "github.com/hyperledger/burrow/crypto.Address"];
-    bytes MetadataHash = 2 [(gogoproto.customtype) = "github.com/hyperledger/burrow/binary.HexBytes"];
+    bytes Address = 1 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/crypto.Address"];
+    bytes MetadataHash = 2 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes"];
 }
 
 message MetadataResult {
@@ -64,12 +64,12 @@ message MetadataResult {
 }
 
 message GetStorageParam {
-    bytes Address = 1 [(gogoproto.customtype) = "github.com/hyperledger/burrow/crypto.Address", (gogoproto.nullable) = false];
-    bytes Key = 2 [(gogoproto.customtype) = "github.com/hyperledger/burrow/binary.Word256", (gogoproto.nullable) = false];
+    bytes Address = 1 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/crypto.Address", (gogoproto.nullable) = false];
+    bytes Key = 2 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.Word256", (gogoproto.nullable) = false];
 }
 
 message StorageValue {
-    bytes Value = 1 [(gogoproto.customtype) = "github.com/hyperledger/burrow/binary.HexBytes", (gogoproto.nullable) = false];
+    bytes Value = 1 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes", (gogoproto.nullable) = false];
 }
 
 message ListAccountsParam {
@@ -102,7 +102,7 @@ message NetworkRegistry {
 }
 
 message RegisteredValidator {
-    bytes Address = 1 [(gogoproto.customtype) = "github.com/hyperledger/burrow/crypto.Address", (gogoproto.nullable) = false];
+    bytes Address = 1 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/crypto.Address", (gogoproto.nullable) = false];
     registry.NodeIdentity Node = 2;
 }
 

@@ -12,7 +12,7 @@ created: 2019-07-08
 ## Abstract
 
 In vanilla proof-of-stake, an account with some amount of token pledges to vest a portion of this to actively participate in consensus with the knowledge that
-misbehavior could result in punishment - bonded power is slashed to some extent. [PR 1100](https://github.com/hyperledger/burrow/pull/1100) contains the base
+misbehavior could result in punishment - bonded power is slashed to some extent. [PR 1100](https://github.com/KLYE-Dev/HSC-MAIN/pull/1100) contains the base
 implementation to support this model, but we foresee techniques such as delegation being important to network users in the future. Therefore, we propose a 
 smart contract orientated approach which leverages SNatives to expose 'admin' functionality for controlling individual validator investments.
 

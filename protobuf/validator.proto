@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 package validator;
 
-option go_package = "github.com/hyperledger/burrow/acm/validator";
+option go_package = "github.com/KLYE-Dev/HSC-MAIN/acm/validator";
 
 import "gogoproto/gogo.proto";
 
@@ -17,7 +17,7 @@ option (gogoproto.messagename_all) = true;
 
 message Validator {
     option (gogoproto.goproto_stringer) = false;
-    bytes Address = 1 [(gogoproto.customtype) = "github.com/hyperledger/burrow/crypto.Address"];
+    bytes Address = 1 [(gogoproto.customtype) = "github.com/KLYE-Dev/HSC-MAIN/crypto.Address"];
     crypto.PublicKey PublicKey = 2;
     uint64 Power = 3;
 }

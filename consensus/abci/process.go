@@ -7,10 +7,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/hyperledger/burrow/bcm"
+	"github.com/KLYE-Dev/HSC-MAIN/bcm"
 
-	"github.com/hyperledger/burrow/execution"
-	"github.com/hyperledger/burrow/txs"
+	"github.com/KLYE-Dev/HSC-MAIN/execution"
+	"github.com/KLYE-Dev/HSC-MAIN/txs"
 	"github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/mempool"
 	tmTypes "github.com/tendermint/tendermint/types"

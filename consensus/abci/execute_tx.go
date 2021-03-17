@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hyperledger/burrow/consensus/tendermint/codes"
-	"github.com/hyperledger/burrow/execution"
-	"github.com/hyperledger/burrow/execution/errors"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/logging/structure"
-	"github.com/hyperledger/burrow/txs"
+	"github.com/KLYE-Dev/HSC-MAIN/consensus/tendermint/codes"
+	"github.com/KLYE-Dev/HSC-MAIN/execution"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/errors"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/logging/structure"
+	"github.com/KLYE-Dev/HSC-MAIN/txs"
 	"github.com/tendermint/tendermint/abci/types"
 )
 

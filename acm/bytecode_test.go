@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/hyperledger/burrow/execution/evm/asm"
-	"github.com/hyperledger/burrow/execution/evm/asm/bc"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/asm"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/asm/bc"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -7,11 +7,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/hyperledger/burrow/config/source"
-	"github.com/hyperledger/burrow/deploy/def"
-	"github.com/hyperledger/burrow/deploy/jobs"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/config/source"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/def"
+	"github.com/KLYE-Dev/HSC-MAIN/deploy/jobs"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 	cli "github.com/jawher/mow.cli"
 )
 
@@ -40,7 +40,7 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 			logger := logging.NewNoopLogger()
 			address := conf.ValidatorAddress.String()
 
-			cmd.Command("send", "send value to another account", func(cmd *cli.Cmd) {
+			cmd.Command("send", "send HIVE to another account", func(cmd *cli.Cmd) {
 				sourceOpt := cmd.StringOpt("s source", "", "Address to send from, if not set config is used")
 				targetOpt := cmd.StringOpt("t target", "", "Address to receive transfer, required")
 				amountOpt := cmd.StringOpt("a amount", "", "Amount of value to send, required")

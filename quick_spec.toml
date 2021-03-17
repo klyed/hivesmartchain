@@ -6,7 +6,7 @@
   Permissions = ["all"]
 
   [[Accounts.Amounts]]
-    Type = "Native"
+    Type = "HIVE"
     Amount = 99999999999999
 
   [[Accounts.Amounts]]

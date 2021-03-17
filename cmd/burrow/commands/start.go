@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"github.com/hyperledger/burrow/core"
+	"github.com/KLYE-Dev/HSC-MAIN/core"
 	cli "github.com/jawher/mow.cli"
 )
 
@@ -24,11 +24,11 @@ func Start(output Output) func(cmd *cli.Cmd) {
 
 			kern, err := core.LoadKernelFromConfig(conf)
 			if err != nil {
-				output.Fatalf("could not configure Burrow kernel: %v", err)
+				output.Fatalf("could not configure Hive Smart Chain kernel: %v", err)
 			}
 
 			if err = kern.Boot(); err != nil {
-				output.Fatalf("could not boot Burrow kernel: %v", err)
+				output.Fatalf("could not boot Hive Smart Chain kernel: %v", err)
 			}
 
 			kern.WaitForShutdown()

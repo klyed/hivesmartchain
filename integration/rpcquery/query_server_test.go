@@ -8,16 +8,16 @@ import (
 	"io"
 	"testing"
 
-	"github.com/hyperledger/burrow/integration"
+	"github.com/KLYE-Dev/HSC-MAIN/integration"
 
 	"github.com/tendermint/tendermint/crypto/tmhash"
 
-	"github.com/hyperledger/burrow/acm"
-	"github.com/hyperledger/burrow/event/query"
-	"github.com/hyperledger/burrow/execution/names"
-	"github.com/hyperledger/burrow/genesis"
-	"github.com/hyperledger/burrow/integration/rpctest"
-	"github.com/hyperledger/burrow/rpc/rpcquery"
+	"github.com/KLYE-Dev/HSC-MAIN/acm"
+	"github.com/KLYE-Dev/HSC-MAIN/event/query"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/names"
+	"github.com/KLYE-Dev/HSC-MAIN/genesis"
+	"github.com/KLYE-Dev/HSC-MAIN/integration/rpctest"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/rpcquery"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

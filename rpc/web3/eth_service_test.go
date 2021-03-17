@@ -8,18 +8,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/burrow/rpc/web3"
-	"github.com/hyperledger/burrow/txs"
-	"github.com/hyperledger/burrow/txs/payload"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc/web3"
+	"github.com/KLYE-Dev/HSC-MAIN/txs"
+	"github.com/KLYE-Dev/HSC-MAIN/txs/payload"
 
-	"github.com/hyperledger/burrow/acm/balance"
-	"github.com/hyperledger/burrow/crypto"
-	"github.com/hyperledger/burrow/execution/evm/abi"
-	"github.com/hyperledger/burrow/integration"
-	"github.com/hyperledger/burrow/keys"
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/project"
-	"github.com/hyperledger/burrow/rpc"
+	"github.com/KLYE-Dev/HSC-MAIN/acm/balance"
+	"github.com/KLYE-Dev/HSC-MAIN/crypto"
+	"github.com/KLYE-Dev/HSC-MAIN/execution/evm/abi"
+	"github.com/KLYE-Dev/HSC-MAIN/integration"
+	"github.com/KLYE-Dev/HSC-MAIN/keys"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/project"
+	"github.com/KLYE-Dev/HSC-MAIN/rpc"
 	"github.com/stretchr/testify/require"
 )
 
@@ -27,7 +27,7 @@ var d = new(web3.HexDecoder).Must()
 
 func TestWeb3Service(t *testing.T) {
 	ctx := context.Background()
-	genesisAccounts := integration.MakePrivateAccounts("burrow", 1)
+	genesisAccounts := integration.MakePrivateAccounts("hsc", 1)
 	genesisAccounts = append(genesisAccounts, integration.MakeEthereumAccounts("ethereum", 3)...)
 	genesisDoc := integration.TestGenesisDoc(genesisAccounts, 0)
 

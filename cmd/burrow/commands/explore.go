@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hyperledger/burrow/config"
-	"github.com/hyperledger/burrow/forensics"
+	"github.com/KLYE-Dev/HSC-MAIN/config"
+	"github.com/KLYE-Dev/HSC-MAIN/forensics"
 
-	"github.com/hyperledger/burrow/bcm"
+	"github.com/KLYE-Dev/HSC-MAIN/bcm"
 
-	"github.com/hyperledger/burrow/txs"
+	"github.com/KLYE-Dev/HSC-MAIN/txs"
 	cli "github.com/jawher/mow.cli"
 	dbm "github.com/tendermint/tm-db"
 )
@@ -30,7 +30,7 @@ func Explore(output Output) func(cmd *cli.Cmd) {
 			}
 			tmConf, err := conf.TendermintConfig()
 			if err != nil {
-				output.Fatalf("could not build Tendermint config:", err)
+				output.Fatalf("could not build Hive Smart Chain config:", err)
 			}
 
 			if conf.GenesisDoc == nil {
@@ -45,7 +45,7 @@ func Explore(output Output) func(cmd *cli.Cmd) {
 
 		cmd.Command("dump", "pretty print the state tree at the given height", func(cmd *cli.Cmd) {
 			heightOpt := cmd.IntOpt("height", 0, "The height to read, defaults to latest")
-			stateDir := cmd.StringArg("STATE", "", "Directory containing burrow state")
+			stateDir := cmd.StringArg("STATE", "", "Directory containing Hive Smart Chain state")
 			cmd.Spec = "[--height] [STATE]"
 
 			cmd.Before = func() {
@@ -72,7 +72,7 @@ func Explore(output Output) func(cmd *cli.Cmd) {
 			}
 		})
 
-		cmd.Command("compare", "diff the state of two .burrow directories", func(cmd *cli.Cmd) {
+		cmd.Command("compare", "diff the state of two .hsc directories", func(cmd *cli.Cmd) {
 			goodDir := cmd.StringArg("GOOD", "", "Directory containing expected state")
 			badDir := cmd.StringArg("BAD", "", "Directory containing invalid state")
 			heightOpt := cmd.IntOpt("height", 0, "The height to read, defaults to latest")

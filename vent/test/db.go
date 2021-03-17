@@ -9,16 +9,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/burrow/logging"
-	"github.com/hyperledger/burrow/vent/config"
-	"github.com/hyperledger/burrow/vent/sqldb"
-	"github.com/hyperledger/burrow/vent/types"
+	"github.com/KLYE-Dev/HSC-MAIN/logging"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/config"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/sqldb"
+	"github.com/KLYE-Dev/HSC-MAIN/vent/types"
 	"github.com/stretchr/testify/require"
 )
 
 const (
 	ChainID       = "CHAIN_123"
-	BurrowVersion = "1.0.0"
+	HscVersion = "1.0.0"
 )
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyz")
@@ -49,7 +49,7 @@ func NewTestDB(t *testing.T, cfg *config.VentConfig) (*sqldb.SQLDB, func()) {
 	db, err := sqldb.NewSQLDB(connection)
 	require.NoError(t, err)
 
-	err = db.Init(ChainID, BurrowVersion)
+	err = db.Init(ChainID, HscVersion)
 	require.NoError(t, err)
 
 	return db, func() {
