@@ -190,7 +190,7 @@ func consumeBlock(blockConsumer func(block chain.Block) error, eventCh <-chan ty
 		}
 		block.AppendTxs(txe)
 	}
-	err := blockConsumer(hsc.NewBurrowBlock(block))
+	err := blockConsumer(hsc.NewHiveSmartChainBlock(block))
 	if err != nil {
 		return nil, err
 	}

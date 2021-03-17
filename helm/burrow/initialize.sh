@@ -8,7 +8,7 @@ then
 fi
 if [[ "$(which hsc)" == "" ]]
 then
-  echo "Please install Hyperledger Burrow and then rerun me. Exiting."
+  echo "Please install Hyperledger HiveSmartChain and then rerun me. Exiting."
   exit 1
 fi
 

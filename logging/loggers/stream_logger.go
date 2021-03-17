@@ -46,7 +46,7 @@ func NewTerminalLogger(writer io.Writer) log.Logger {
 			return term.FgBgColor{Fg: term.Yellow}
 		}
 	})
-	return interceptSync(writer, NewBurrowFormatLogger(logger, StringifyValues))
+	return interceptSync(writer, NewHiveSmartChainFormatLogger(logger, StringifyValues))
 }
 
 func NewTemplateLogger(writer io.Writer, textTemplate string, recordSeparator []byte) (log.Logger, error) {

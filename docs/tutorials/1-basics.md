@@ -40,7 +40,7 @@ In the context of a multi-node chain it will resync with peers, otherwise it wil
 
 ## Keys
 
-Burrow consumes its keys through our key signing interface that can be run as a standalone service with:
+HiveSmartChain consumes its keys through our key signing interface that can be run as a standalone service with:
 
 ```shell
 hsc keys server

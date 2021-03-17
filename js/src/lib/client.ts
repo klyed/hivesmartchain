@@ -1,4 +1,4 @@
-import { Burrow } from './hsc'
+import { HiveSmartChain } from './hsc'
 import * as convert from './utils/convert';
 import * as coder from 'ethereumjs-abi';
 import { Readable } from 'stream';
@@ -7,7 +7,7 @@ import { TxExecution } from '../../proto/exec_pb';
 
 export type Interceptor = (result: TxExecution) => Promise<TxExecution>;
 
-export class Client extends Burrow {
+export class Client extends HiveSmartChain {
     interceptor: Interceptor;
     
     constructor(url: string, account: string) {
@@ -65,6 +65,6 @@ export class Client extends Burrow {
     }
 
     decode(data: Uint8Array, outputs: string[]): any {
-        return convert.abiToBurrow(outputs, coder.rawDecode(outputs, Buffer.from(data)));
+        return convert.abiToHiveSmartChain(outputs, coder.rawDecode(outputs, Buffer.from(data)));
     }
 }

@@ -35,7 +35,7 @@ type txChecker func(tx tmTypes.Tx, callback func(*abciTypes.Response), txInfo me
 // The BroadcastTx* methods are able to work against the mempool Accounts (pending) state rather than the
 // committed (final) Accounts state and can assign a sequence number based on all of the txs
 // seen since the last block - provided these transactions are successfully committed (via DeliverTx) then
-// subsequent transactions will have valid sequence numbers. This allows Burrow to coordinate sequencing and signing
+// subsequent transactions will have valid sequence numbers. This allows HiveSmartChain to coordinate sequencing and signing
 // for a key it holds or is provided - it is down to the key-holder to manage the mutual information between transactions
 // concurrent within a new block window.
 type Transactor struct {

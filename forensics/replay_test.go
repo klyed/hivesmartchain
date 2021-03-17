@@ -56,9 +56,9 @@ func TestStateComp(t *testing.T) {
 
 func TestReplay(t *testing.T) {
 	var height uint64 = 10
-	genesisDoc, tmDB, burrowDB := makeChain(t, height)
+	genesisDoc, tmDB, hscDB := makeChain(t, height)
 
-	src := NewSource(burrowDB, tmDB, genesisDoc)
+	src := NewSource(hscDB, tmDB, genesisDoc)
 	dst := NewSourceFromGenesis(genesisDoc)
 	re := NewReplay(src, dst)
 
@@ -80,11 +80,11 @@ func makeChain(t *testing.T, max uint64) (*genesis.GenesisDoc, dbm.DB, dbm.DB) {
 	})
 	require.NoError(t, err)
 
-	burrowDB, burrowState, burrowChain, err := initBurrow(genesisDoc)
+	hscDB, hscState, hscChain, err := initHiveSmartChain(genesisDoc)
 	require.NoError(t, err)
 
-	committer, err := execution.NewBatchCommitter(burrowState, execution.ParamsFromGenesis(genesisDoc),
-		burrowChain, event.NewEmitter(), logging.NewNoopLogger())
+	committer, err := execution.NewBatchCommitter(hscState, execution.ParamsFromGenesis(genesisDoc),
+		hscChain, event.NewEmitter(), logging.NewNoopLogger())
 	require.NoError(t, err)
 
 	var stateHash []byte
@@ -107,7 +107,7 @@ func makeChain(t *testing.T, max uint64) (*genesis.GenesisDoc, dbm.DB, dbm.DB) {
 		}, validators[0])
 		require.Equal(t, int64(i), bs.Height())
 	}
-	return genesisDoc, tmDB, burrowDB
+	return genesisDoc, tmDB, hscDB
 }
 
 func makeBlock(t *testing.T, st sm.State, bs *store.BlockStore, commit func(*types.Block), val *acm.PrivateAccount) {

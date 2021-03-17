@@ -1,7 +1,7 @@
 # Vent - SQL mapping layer
 
 Vent reads specification files called 'projections', parses their contents, and maps EVM LOG event fields to corresponding SQL columns to create or alter database structures. 
-It listens for a stream of block events from Burrow's GRPC service then parses, unpacks, decodes event data, and builds rows to be upserted in matching event tables, rows are 
+It listens for a stream of block events from HiveSmartChain's GRPC service then parses, unpacks, decodes event data, and builds rows to be upserted in matching event tables, rows are 
 upserted atomically in a single database transaction per block.
 
 There are two modes of operation: view mode and log mode. In view mode a primary key is used to locate the row in a table which should be updated (if exists) or inserted 
@@ -10,7 +10,7 @@ stream of EVM LOG events to a CRUD-style table - a view over entities as defined
 Vent operates in log mode where all matched events are inserted - and so log mode operates as an append-only log. Note there is no explicit setting for mode - it depends on 
 the presence or absence of a `"Primary": true` entry in one of the `FieldMappings` of a projection (see below for an example).
 
-Vent writes each block of updates atomically and is guaranteed to be crash tolerant. If the Vent process is killed it will resume at the last written height. Burrow stores all 
+Vent writes each block of updates atomically and is guaranteed to be crash tolerant. If the Vent process is killed it will resume at the last written height. HiveSmartChain stores all 
 previous events in its state so even if you delete the Vent database it can be regenerated deterministically. This feature being a core feature of Vent.
 
 ## Projections
@@ -85,7 +85,7 @@ contract EventEmitter {
 
 We can maintain a view-mode table that feels like that of a ordinary CRUD app though it is backed by a stream of events coming from our Solidity contracts.
 
-Burrow can also emit a JSONSchema for the projection file format with `hsc vent schema`. You can use this to validate your projections using any of the 
+HiveSmartChain can also emit a JSONSchema for the projection file format with `hsc vent schema`. You can use this to validate your projections using any of the 
 [JSONSchema](https://json-schema.org/) tooling.
 
 ### Projection specification
@@ -197,7 +197,7 @@ Configuration Flags:
 + `db-url`: (string) PostgreSQL database URL or SQLite db file path
 + `db-schema`: (string) PostgreSQL database schema or empty for SQLite
 + `http-addr`: (string) Address to bind the HTTP server
-+ `grpc-addr`: (string) Address to listen to gRPC Hyperledger Burrow server
++ `grpc-addr`: (string) Address to listen to gRPC Hyperledger HiveSmartChain server
 + `log-level`: (string) Logging level (error, warn, info, debug)
 + `spec-file`: (string) SQLSol specification json file (full path)
 + `spec-dir`: (string) Path of a folder to look for SQLSol json specification files

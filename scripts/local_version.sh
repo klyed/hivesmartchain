@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Script that outputs a version identifier based on the in-code version of
-# Burrow combined with date and git commit or the git tag if tag is a version.
+# HiveSmartChain combined with date and git commit or the git tag if tag is a version.
 #
 # If working directory is checked out at a version tag then checks that the tag
 # matches the in-code version and fails if it does not.

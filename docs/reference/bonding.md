@@ -1,6 +1,6 @@
 # Bond / Unbond
 
-Burrow adopts the notion of Bonded Proof-of-Stake (BPoS). This means that in order to 
+HiveSmartChain adopts the notion of Bonded Proof-of-Stake (BPoS). This means that in order to 
 participate in consensus, a node must give some value of its token as collateral. 
 The more token that is bonded, the higher the chance of 'mining' a block.
 

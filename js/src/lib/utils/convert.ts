@@ -46,7 +46,7 @@ export const numberTB = function (arg: BN) {
   return res;
 }
 
-export const abiToBurrow = function (puts: string[], args: Array<any>) {
+export const abiToHiveSmartChain = function (puts: string[], args: Array<any>) {
   let out: any[] = [];
   for (let i = 0; i < puts.length; i++) {
     if (/address/i.test(puts[i])) {
@@ -62,7 +62,7 @@ export const abiToBurrow = function (puts: string[], args: Array<any>) {
   return out
 }
 
-export const burrowToAbi = function (puts: string[], args: Array<any>) {
+export const hscToAbi = function (puts: string[], args: Array<any>) {
   let out = [];
   for (let i = 0; i < puts.length; i++) {
     if (/address/i.test(puts[i])) {

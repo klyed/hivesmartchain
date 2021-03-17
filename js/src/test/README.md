@@ -1,6 +1,6 @@
 # Test Framework
 
-Specialized functions are available in `lib/test.js` to make testing  interactions with the Burrow server easier.  The general idea is that the JavaScript library interacting with the Burrow server is very complex so we reduce the complexity by decoupling their interactions with each other.  The decoupling is achieved by replacing either the client or the server (at different times) with a _test vector_ that simulates its behavior.  The test vector is an automatic recording of the conversation between the two.
+Specialized functions are available in `lib/test.js` to make testing  interactions with the HiveSmartChain server easier.  The general idea is that the JavaScript library interacting with the HiveSmartChain server is very complex so we reduce the complexity by decoupling their interactions with each other.  The decoupling is achieved by replacing either the client or the server (at different times) with a _test vector_ that simulates its behavior.  The test vector is an automatic recording of the conversation between the two.
 
 We replace this:
 
@@ -110,13 +110,13 @@ To test the library against pre-recorded vectors:
 yarn test
 ```
 
-To test the library against Burrow while automatically recording vectors:
+To test the library against HiveSmartChain while automatically recording vectors:
 
 ```
 TEST=record yarn test
 ```
 
-To test Burrow against pre-recorded vectors without exercising the client:
+To test HiveSmartChain against pre-recorded vectors without exercising the client:
 
 ```
 TEST=server yarn test

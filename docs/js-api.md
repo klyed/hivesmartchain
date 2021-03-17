@@ -1,10 +1,10 @@
 # JS API
 
-Burrow has a JavaScript API for communicating with a [Hyperledger Burrow](https://github.com/hyperledger/hsc) server, which implements the GRPC spec.
+HiveSmartChain has a JavaScript API for communicating with a [Hyperledger HiveSmartChain](https://github.com/hyperledger/hsc) server, which implements the GRPC spec.
 
 ## Prerequisites
 
-- Burrow version 0.20 or higher
+- HiveSmartChain version 0.20 or higher
 - Node.js version 7 or higher
 
 You can check the installed version of Node.js with the command:
@@ -25,14 +25,14 @@ $ yarn install @hyperledger/hsc
 
 You will need to know the <IP Address>:<PORT> of the hsc instance you wish to connect to. If running locally this will be 'localhost' and the default port, which is '10997'. DO NOT INCLUDE A PROTOCOL.
 
-The main class is `Burrow`. A standard `Burrow` instance is created like this:
+The main class is `HiveSmartChain`. A standard `HiveSmartChain` instance is created like this:
 
 ```JavaScript
 const monax = require('@monax/hsc');
-var burrowURL = "<IP address>:<PORT>"; // localhost:10997 if running locally on default port
+var hscURL = "<IP address>:<PORT>"; // localhost:10997 if running locally on default port
 var account = 'ABCDEF01234567890123'; // address of the account to use for signing, hex string representation 
 var options = {objectReturn: true};
-var hsc = monax.createInstance(burrowURL, account, options);
+var hsc = monax.createInstance(hscURL, account, options);
 ```
 
 The parameters for `createInstance` is the server URL as a string or as an object `{host:<IP Address>, port:<PORT>}`. An account in the form of a hex-encoded address must be provided. 
@@ -50,27 +50,27 @@ There are bindings for all the GRPC methods. All functions are on the form `func
 
 The structure of the library is such that there are lower-level access to the GRPC services and higher level wrappers of these services. The structure of the library is outlined below
 
-### Burrow
+### HiveSmartChain
 
 The table below links to the reference schema for either the protobuf files governing the component or the Javascript interface.
 
 | Component Name | Accessor |
 | :----------- | :--------------- |
-| Transactions | [Burrow.transact](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpctransact.proto) |
-| Queries | [Burrow.query](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcquery.proto) |
-| EventStream | [Burrow.eventStream](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto) |
-| Events | [Burrow.events](https://github.com/klyed/hivesmartchain/blob/main/lib/events.js) |
-| NameReg | [Burrow.namereg](https://github.com/klyed/hivesmartchain/blob/main/lib/namereg.js) |
+| Transactions | [HiveSmartChain.transact](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpctransact.proto) |
+| Queries | [HiveSmartChain.query](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcquery.proto) |
+| EventStream | [HiveSmartChain.eventStream](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto) |
+| Events | [HiveSmartChain.events](https://github.com/klyed/hivesmartchain/blob/main/lib/events.js) |
+| NameReg | [HiveSmartChain.namereg](https://github.com/klyed/hivesmartchain/blob/main/lib/namereg.js) |
 
-| Contracts | [Burrow.contracts](https://github.com/klyed/hivesmartchain/blob/main/lib/contractManager.js) |
+| Contracts | [HiveSmartChain.contracts](https://github.com/klyed/hivesmartchain/blob/main/lib/contractManager.js) |
 
 ### GRPC Access Components
 
-Burrow provides access to three GRPC services; Transactions, Queries, and ExecutionEvents in the form of automatically generated code endpoints. Below details how to access these methods and links to the request and return objects defined in the protobuf specs. The format for all calls is `function(object[, callback])` The callback is optional for non-streaming endpoints in which case a promise will be returned. 
+HiveSmartChain provides access to three GRPC services; Transactions, Queries, and ExecutionEvents in the form of automatically generated code endpoints. Below details how to access these methods and links to the request and return objects defined in the protobuf specs. The format for all calls is `function(object[, callback])` The callback is optional for non-streaming endpoints in which case a promise will be returned. 
 
 #### Sending Funds and Creating Accounts
 
-In Burrow an account must already exist in order to be used as a input account (the sender of a transaction). An account can be created once the chain is running (accounts at genesis can be described in the genesis document in the accounts section) in the following ways:
+In HiveSmartChain an account must already exist in order to be used as a input account (the sender of a transaction). An account can be created once the chain is running (accounts at genesis can be described in the genesis document in the accounts section) in the following ways:
 
 1. Issuing a `SendTx` to the address to be created (see below) - where the input account must have both the `Send` and `CreateAccount` permission.
 2. Sending value to the address to created from a smart contract using the CALL opcode - where the caller contract must have the `CreateAccount` permission.
@@ -81,7 +81,7 @@ The conventional way to create an new account to use as an input for transaction
 First create a key - you will want to create an account for which you have access to the private key controlling that account (as defined by the address of the public key):
 
 ```shell
-# Create a new key against the key store of a locally running Burrow (or hsc keys standalone server):
+# Create a new key against the key store of a locally running HiveSmartChain (or hsc keys standalone server):
 $ address=$(hsc keys gen -n --name NewKey)
 
 # The address will be printed to stdout so the above captures it in $address, you can also list named keys:
@@ -170,7 +170,7 @@ hsc.transact.NameTxSync(setPayload, function(error, data){
 
 #### Queries
 
-`Burrow.query` provides access to the hsc GRPC service `rpcquery`. As a GRPC wrapper all the endpoints take a data argument and an optional callback. The format of the data object is specified in the [protobuf files](https://github.com/klyed/hivesmartchain/tree/main/js/protobuf). Note that "STREAM" functions take a callback `function(error, data)` which is mandatory and is called any time data is returned. For list Accounts the queryable tags are Address, PublicKey, Sequence, Balance, Code, Permissions (Case sensitive). As an example you can get all accounts with a balance greater than 1000 by `hsc.query.ListAccounts('Balance > 1000', callback)`. Multiple tag criteria can be combined using 'AND' and 'OR' for an example of a combined query see [here](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpcevents.proto#L87). Similarly for ListNames, the avaible tags are Name, Data, Owner and Exires (once again case sensitive) use is identical to List accounts.
+`HiveSmartChain.query` provides access to the hsc GRPC service `rpcquery`. As a GRPC wrapper all the endpoints take a data argument and an optional callback. The format of the data object is specified in the [protobuf files](https://github.com/klyed/hivesmartchain/tree/main/js/protobuf). Note that "STREAM" functions take a callback `function(error, data)` which is mandatory and is called any time data is returned. For list Accounts the queryable tags are Address, PublicKey, Sequence, Balance, Code, Permissions (Case sensitive). As an example you can get all accounts with a balance greater than 1000 by `hsc.query.ListAccounts('Balance > 1000', callback)`. Multiple tag criteria can be combined using 'AND' and 'OR' for an example of a combined query see [here](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpcevents.proto#L87). Similarly for ListNames, the avaible tags are Name, Data, Owner and Exires (once again case sensitive) use is identical to List accounts.
 
 | Method | Passed | Returns | Notes |
 | :----- | :--------- | :---- | :------- |
@@ -183,7 +183,7 @@ hsc.transact.NameTxSync(setPayload, function(error, data){
 
 NB: When listening to contract events it is easier to use the contract interface (described below)
 
-`Burrow.executionEvents` provides access to the hsc GRPC service `ExecutionEvents`. As a GRPC wrapper all the endpoints take a data argument and an optional callback. The format of the data object is specified in the [protobuf files](https://github.com/klyed/hivesmartchain/tree/main/js/protobuf). Note that "STREAM" functions take a callback `function(error, data)` which is mandatory and is called any time data is returned.
+`HiveSmartChain.executionEvents` provides access to the hsc GRPC service `ExecutionEvents`. As a GRPC wrapper all the endpoints take a data argument and an optional callback. The format of the data object is specified in the [protobuf files](https://github.com/klyed/hivesmartchain/tree/main/js/protobuf). Note that "STREAM" functions take a callback `function(error, data)` which is mandatory and is called any time data is returned.
 
 | Method | Passed | Returns | Notes |
 | :----- | :--------- | :---- | :------- |
@@ -456,10 +456,10 @@ Here I provide an example of communicating to the contract above from start to f
 const monax = require('@monax/hsc');
 const assert = require('assert');
 
-var burrowURL = "<IP address>:<PORT>"; // localhost:10997 if running locally on default port
+var hscURL = "<IP address>:<PORT>"; // localhost:10997 if running locally on default port
 var account = 'ABCDEF01234567890123'; // address of the account to use for signing, hex string representation 
 var options = {objectReturn: false};
-var hsc = monax.createInstance(burrowURL, account, options);
+var hsc = monax.createInstance(hscURL, account, options);
 
 // Get the contractABIJSON from somewhere such as solc
 var abi = json.parse(contractABIJSON) // Get the contractABIJSON from somewhere such as solc
@@ -505,13 +505,13 @@ To test the library against pre-recorded vectors:
 yarn test
 ```
 
-To test the library against Burrow while recording vectors:
+To test the library against HiveSmartChain while recording vectors:
 
 ```
 TEST=record yarn test
 ```
 
-To test Burrow against pre-recorded vectors without exercising the library:
+To test HiveSmartChain against pre-recorded vectors without exercising the library:
 
 ```
 TEST=server yarn test

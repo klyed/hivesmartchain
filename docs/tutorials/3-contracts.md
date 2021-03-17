@@ -1,7 +1,7 @@
 # Contracts
 
-Burrow supports both [Solidity](https://solidity.readthedocs.io/) and [WASM](reference/wasm.md) smart contracts. You may be familiar with this former language
-if you have worked previously with Ethereum. If so, you will be pleased to know that Burrow can be used with [Remix](http://remix.ethereum.org/).
+HiveSmartChain supports both [Solidity](https://solidity.readthedocs.io/) and [WASM](reference/wasm.md) smart contracts. You may be familiar with this former language
+if you have worked previously with Ethereum. If so, you will be pleased to know that HiveSmartChain can be used with [Remix](http://remix.ethereum.org/).
 
 ## Getting Started
 
@@ -27,4 +27,4 @@ hsc deploy --address $ADDRESS deploy.yaml
 
 Replace `$ADDRESS` with the address at the top of your `hsc.toml`.
 
-That's it! You've successfully deployed (and tested) a Solidity contract to a Burrow node.
+That's it! You've successfully deployed (and tested) a Solidity contract to a HiveSmartChain node.

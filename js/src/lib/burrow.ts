@@ -10,7 +10,7 @@ import {Pipe} from './pipe';
 
 export type Error = grpc.ServiceError;
 
-export class Burrow {
+export class HiveSmartChain {
   URL: string;
   account: string;
 

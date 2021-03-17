@@ -69,7 +69,7 @@ func TestLoadAndDump(t *testing.T) {
 		if se.BeginTx != nil {
 			require.Equal(t, se.BeginTx.TxHeader.Origin.Height, uint64(5))
 			require.Equal(t, se.BeginTx.TxHeader.Origin.Index, uint64(2))
-			require.Equal(t, se.BeginTx.TxHeader.Origin.ChainID, "BurrowChain_7DB5BD-5BCE58")
+			require.Equal(t, se.BeginTx.TxHeader.Origin.ChainID, "HiveSmartChainChain_7DB5BD-5BCE58")
 		}
 		if se.Event != nil {
 			require.Equal(t, se.Event.Header.Height, uint64(5))

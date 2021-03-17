@@ -4,7 +4,7 @@ title: ADR Purpose and Guidelines
 discussions-to: https://chat.hyperledger.org/channel/hsc-contributors
 status: Draft
 type: Meta
-author: The Burrow's marmots and others
+author: The HiveSmartChain's marmots and others
         https://github.com/klyed/hivesmartchain/ADRs/blob/main/ADRs/adr-1.md
 created: 2018-10-09
 ---
@@ -12,7 +12,7 @@ created: 2018-10-09
 ## What is an ADR?
 
 ADR stands for Architecture Decision Record.
-An ADR is a design document providing information to the Burrow community, or describing a new feature for Burrow or its processes or environment.
+An ADR is a design document providing information to the HiveSmartChain community, or describing a new feature for HiveSmartChain or its processes or environment.
 The ADR should provide a concise technical specification of the feature and a rationale for the feature.
 The ADR author is responsible for building consensus within the community and documenting dissenting opinions.
 
@@ -20,7 +20,7 @@ The ADR author is responsible for building consensus within the community and do
 
 ## ADR Rationale
 
-We intend ADRs to be the primary mechanisms for proposing new features, for collecting community technical input on an issue, and for documenting the design decisions that have gone into Burrow. Because the ADRs are maintained as text files in a versioned repository, their revision history is the historical record of the feature proposal.
+We intend ADRs to be the primary mechanisms for proposing new features, for collecting community technical input on an issue, and for documenting the design decisions that have gone into HiveSmartChain. Because the ADRs are maintained as text files in a versioned repository, their revision history is the historical record of the feature proposal.
 
 ## ADR Formats and Templates
 
@@ -93,6 +93,6 @@ Headers that permit lists must separate elements with commas.
 
 ## History
 
-This document was derived heavily from [Ethereum's EIP1] written by Martin Becze and Hudson Jameson which in turn was derived from [Bitcoin's ADR-0001] written by Amir Taaki which in turn was derived from [Python's PEP-0001]. In many places text was simply copied and modified. Although the PEP-0001 text was written by Barry Warsaw, Jeremy Hylton, and David Goodger, they are not responsible for its use in the Burrow Improvement Process, and should not be bothered with technical questions specific to Burrow or the ADR. Please direct all comments to the ADR editors.
+This document was derived heavily from [Ethereum's EIP1] written by Martin Becze and Hudson Jameson which in turn was derived from [Bitcoin's ADR-0001] written by Amir Taaki which in turn was derived from [Python's PEP-0001]. In many places text was simply copied and modified. Although the PEP-0001 text was written by Barry Warsaw, Jeremy Hylton, and David Goodger, they are not responsible for its use in the HiveSmartChain Improvement Process, and should not be bothered with technical questions specific to HiveSmartChain or the ADR. Please direct all comments to the ADR editors.
 
 This document was inspired from [ADR GitHub Organization](https://adr.github.io/) and [ADR Examples](https://github.com/joelparkerhenderson/architecture_decision_record).

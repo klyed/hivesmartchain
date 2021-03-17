@@ -28,7 +28,7 @@ Here is an example `genesis.json`:
 ```json
 {
   "GenesisTime": "2019-05-17T10:33:23.476788642Z",
-  "ChainName": "BurrowChain_8B1683",
+  "ChainName": "HiveSmartChainChain_8B1683",
   "Params": {
     "ProposalThreshold": 3
   },

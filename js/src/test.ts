@@ -1,4 +1,4 @@
-import {Burrow} from './index';
+import {HiveSmartChain} from './index';
 import * as solc from 'solc';
 
 // convenience function to compile solidity in tests
@@ -16,6 +16,5 @@ export const compile = (source: string, name: string) => {
 
 const url = process.env.HSC_URL || 'localhost:20997';
 const addr = process.env.SIGNING_ADDRESS || 'C9F239591C593CB8EE192B0009C6A0F2C9F8D768';
-console.log(`Connecting to Burrow at ${url}...`)
-export const hsc = new Burrow(url, addr);
-
+console.log(`Connecting to Hive Smart Chain at ${url}...`)
+export const hsc = new HiveSmartChain(url, addr);

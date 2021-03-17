@@ -46,7 +46,7 @@ func (gs *GenesisSpec) GenesisDoc(keyClient keys.KeyClient, curve crypto.CurveTy
 	}
 
 	if gs.ChainName == "" {
-		genesisDoc.ChainName = fmt.Sprintf("BurrowChain_%X", gs.ShortHash())
+		genesisDoc.ChainName = fmt.Sprintf("HiveSmartChainChain_%X", gs.ShortHash())
 	} else {
 		genesisDoc.ChainName = gs.ChainName
 	}

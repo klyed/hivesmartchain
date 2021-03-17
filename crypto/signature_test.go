@@ -7,7 +7,7 @@ import (
 )
 
 func TestGetEthChainID(t *testing.T) {
-	chainIDString := "BurrowChain_FAB3C1-AB0FD1"
+	chainIDString := "HiveSmartChainChain_FAB3C1-AB0FD1"
 	chainID := GetEthChainID(chainIDString)
 	b := new(big.Int).SetBytes([]byte(chainIDString))
 	fmt.Println(b)

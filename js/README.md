@@ -1,6 +1,6 @@
 # @hyperledger/hsc
 
-This is a TypeScript API for communicating with a [Hyperledger Burrow](https://github.com/hyperledger/hsc) server, which implements the GRPC spec.
+This is a TypeScript API for communicating with a [Hyperledger HiveSmartChain](https://github.com/hyperledger/hsc) server, which implements the GRPC spec.
 
 ## Version compatibility
 

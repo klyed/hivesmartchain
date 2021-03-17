@@ -97,7 +97,7 @@ func NewContract(name string, comment string, logger *logging.Logger, fs ...Func
 func (c *Contract) Call(state engine.State, params engine.CallParams) (output []byte, err error) {
 	if len(params.Input) < abi.FunctionIDSize {
 		return nil, errors.Errorf(errors.Codes.NativeFunction,
-			"Burrow Native dispatch requires a 4-byte function identifier but arguments are only %v bytes long",
+			"HiveSmartChain Native dispatch requires a 4-byte function identifier but arguments are only %v bytes long",
 			len(params.Input))
 	}
 

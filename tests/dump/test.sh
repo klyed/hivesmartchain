@@ -25,7 +25,7 @@ hsc_bin=${hsc_bin:-hsc}
 title="Creating new chain..."
 echo -e "\n${title//?/-}\n${title}\n${title//?/-}\n"
 
-$hsc_bin spec -n "Fresh Chain" -v1 | $hsc_bin configure -n BurrowTestDumpNode -e "always" -s- --separate-genesis-doc genesis.json > hsc.toml
+$hsc_bin spec -n "Fresh Chain" -v1 | $hsc_bin configure -n HscTestDumpNode -e "always" -s- --separate-genesis-doc genesis.json > hsc.toml
 
 $hsc_bin start 2>> hsc.log &
 
@@ -60,7 +60,7 @@ rm -rf .hsc hsc.toml
 title="Create new chain based of dump with new name..."
 echo -e "\n${title//?/-}\n${title}\n${title//?/-}\n"
 
-$hsc_bin configure -m BurrowTestRestoreNode -e "always" -n "Restored Chain" --genesis genesis-original.json --separate-genesis-doc genesis.json --restore-dump dump.json > hsc.toml
+$hsc_bin configure -m HiveSmartChainTestRestoreNode -e "always" -n "Restored Chain" --genesis genesis-original.json --separate-genesis-doc genesis.json --restore-dump dump.json > hsc.toml
 
 $hsc_bin restore dump.json
 $hsc_bin start 2>> hsc.log &

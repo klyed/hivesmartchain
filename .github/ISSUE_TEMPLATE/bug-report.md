@@ -17,7 +17,7 @@ Steps to reproduce the behavior.
 A clear and concise description of what you expected to happen.
 
 **Technical Details**
-- [ ] Burrow Version (docker image tag or branch if built from source)
+- [ ] HiveSmartChain Version (docker image tag or branch if built from source)
 - [ ] Go Version (if applicable)
 - [ ] Docker Version (if applicable)
 - [ ] Operating System (osx/windows/linux)

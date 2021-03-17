@@ -1,8 +1,8 @@
-- Burrow
+- HiveSmartChain
     - [Introduction](README.md)
     - [Developers](developers.md)
-    - [Burrow Deploy](deploy.md)
-    - [Burrow.js API](js-api.md)
+    - [HiveSmartChain Deploy](deploy.md)
+    - [HiveSmartChain.js API](js-api.md)
 
 - Examples
     - [Basic JS API](example/basic-app/README.md)

@@ -38,16 +38,16 @@ const (
 
 var node uint64 = 0
 
-func NoConsensus(conf *config.BurrowConfig) {
+func NoConsensus(conf *config.HiveSmartChainConfig) {
 	conf.Tendermint.Enabled = false
 }
 
-func CommitImmediately(conf *config.BurrowConfig) {
+func CommitImmediately(conf *config.HiveSmartChainConfig) {
 	conf.Execution.TimeoutFactor = 0
 }
 
 func RunNode(t testing.TB, genesisDoc *genesis.GenesisDoc, privateAccounts []*acm.PrivateAccount,
-	options ...func(*config.BurrowConfig)) (kern *core.Kernel, shutdown func()) {
+	options ...func(*config.HiveSmartChainConfig)) (kern *core.Kernel, shutdown func()) {
 
 	var err error
 	testConfig, cleanup := NewTestConfig(genesisDoc, options...)
@@ -71,11 +71,11 @@ func RunNode(t testing.TB, genesisDoc *genesis.GenesisDoc, privateAccounts []*ac
 }
 
 func NewTestConfig(genesisDoc *genesis.GenesisDoc,
-	options ...func(*config.BurrowConfig)) (conf *config.BurrowConfig, cleanup func()) {
+	options ...func(*config.HiveSmartChainConfig)) (conf *config.HiveSmartChainConfig, cleanup func()) {
 
 	nodeNumber := atomic.AddUint64(&node, 1)
 	name := fmt.Sprintf("node_%03d", nodeNumber)
-	conf = config.DefaultBurrowConfig()
+	conf = config.DefaultHiveSmartChainConfig()
 	conf.Logging = nil
 	testDir, cleanup := EnterTestDirectory()
 	conf.HscDir = path.Join(testDir, fmt.Sprintf(".hsc_%s", name))
@@ -108,7 +108,7 @@ func NewTestConfig(genesisDoc *genesis.GenesisDoc,
 
 // We use this to wrap tests
 func TestKernel(validatorAccount *acm.PrivateAccount, keysAccounts []*acm.PrivateAccount,
-	testConfig *config.BurrowConfig) (*core.Kernel, error) {
+	testConfig *config.HiveSmartChainConfig) (*core.Kernel, error) {
 
 	fmt.Println("Creating integration test Kernel...")
 

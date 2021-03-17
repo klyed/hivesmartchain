@@ -28,7 +28,7 @@ type LoggingConfigWrapper struct {
 }
 
 func DefaultNodeLoggingConfig() *LoggingConfig {
-	// Output only Burrow messages on stdout
+	// Output only HiveSmartChain messages on stdout
 	return &LoggingConfig{
 		RootSink: Sink().
 			SetOutput(StdoutOutput().SetFormat(loggers.JSONFormat)),
@@ -119,7 +119,7 @@ func newLogger(loggingConfig *LoggingConfig) (log.Logger, channels.Channel, erro
 		return nil, nil, err
 	}
 	var errCh channels.Channel = channels.NewDeadChannel()
-	var logger log.Logger = loggers.NewBurrowFormatLogger(outputLogger)
+	var logger log.Logger = loggers.NewHiveSmartChainFormatLogger(outputLogger)
 	if loggingConfig.NonBlocking {
 		logger, errCh = loggers.NonBlockingLogger(logger)
 		return logger, errCh, nil

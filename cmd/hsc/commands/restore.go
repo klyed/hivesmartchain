@@ -14,7 +14,7 @@ func Restore(output Output) func(cmd *cli.Cmd) {
 		cmd.Spec += "[--silent] [FILE]"
 
 		cmd.Action = func() {
-			conf, err := configOpts.obtainBurrowConfig()
+			conf, err := configOpts.obtainHiveSmartChainConfig()
 			if err != nil {
 				output.Fatalf("could not set up config: %v", err)
 			}

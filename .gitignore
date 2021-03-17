@@ -6,9 +6,6 @@ bin/
 test_scratch/
 *.log
 .keys
-.hsc*
-hsc.toml
-hsc???.toml
 
 # Temporary / cached
 *.swp

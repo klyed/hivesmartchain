@@ -68,7 +68,7 @@ func Configure(output Output) func(cmd *cli.Cmd) {
 
 		restoreDumpOpt := cmd.StringOpt("restore-dump", "", "Including AppHash for restored file")
 
-		pool := cmd.BoolOpt("pool", false, "Write config files for all the validators called burrowNNN.toml")
+		pool := cmd.BoolOpt("pool", false, "Write config files for all the validators called hscNNN.toml")
 
 		cmd.Spec = "[--keys-url=<keys URL> | --keys-dir=<keys directory>] [--curve-type=<name>]" +
 			"[ --config-template-in=<text template> --config-out=<output file>]... " +
@@ -82,7 +82,7 @@ func Configure(output Output) func(cmd *cli.Cmd) {
 		configOpts := addConfigOptions(cmd)
 
 		cmd.Action = func() {
-			conf, err := configOpts.obtainBurrowConfig()
+			conf, err := configOpts.obtainHiveSmartChainConfig()
 			if err != nil {
 				output.Fatalf("could not obtain config: %v", err)
 			}

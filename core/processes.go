@@ -176,7 +176,7 @@ func StartupLauncher(kern *Kernel) process.Launcher {
 			start := time.Now()
 			shutdown := process.ShutdownFunc(func(ctx context.Context) error {
 				stop := time.Now()
-				return kern.Logger.InfoMsg("Burrow is shutting down. Prepare for re-entrancy.",
+				return kern.Logger.InfoMsg("HiveSmartChain is shutting down. Prepare for re-entrancy.",
 					"announce", "shutdown",
 					"shutdown_time", stop,
 					"elapsed_run_time", stop.Sub(start).String())
@@ -208,7 +208,7 @@ func StartupLauncher(kern *Kernel) process.Launcher {
 				"genesis_hash", hex.EncodeUpperToString(genesisDoc.Hash()),
 			)
 
-			err = logger.InfoMsg("Burrow is launching. We have marmot-off.", "announce", "startup")
+			err = logger.InfoMsg("HiveSmartChain is launching. We have marmot-off.", "announce", "startup")
 			return shutdown, err
 		},
 	}

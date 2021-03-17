@@ -17,7 +17,7 @@ func ProjectionSpecSchema() *jsonschema.Schema {
 type EventClass struct {
 	// Destination table in DB
 	TableName string
-	// Burrow event filter query in query peg grammar
+	// HiveSmartChain event filter query in query peg grammar
 	Filter string
 	// The name of a solidity event field that when present indicates that the rest of the event should be interpreted
 	// as requesting a row deletion (rather than upsert) in the projection table.

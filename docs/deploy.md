@@ -1,6 +1,6 @@
-# Burrow Deploy (Playbooks)
+# HiveSmartChain Deploy (Playbooks)
 
-The Burrow deploy toolkit can do a number of things:
+The HiveSmartChain deploy toolkit can do a number of things:
 
 * compile Solidity source files (using solc) and deploy to chain
 * call function on existing contract

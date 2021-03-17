@@ -22,7 +22,7 @@ ARG INSTALL_BASE=/usr/local/bin
 # Fixed labels according to container label-schema
 LABEL org.label-schema.schema-version="1.0"
 LABEL org.label-schema.name = "Hive Smart Chain"
-LABEL org.label-schema.vendor="Hyperledger Burrow Authors"
+LABEL org.label-schema.vendor="Hyperledger HiveSmartChain Authors"
 LABEL org.label-schema.description="Hive Smart Chain is a permissioned Ethereum smart-contract side chain node for HIVE."
 LABEL org.label-schema.license="Apache-2.0"
 LABEL org.label-schema.vcs-url="https://github.com/klyed/HSC-DEV"

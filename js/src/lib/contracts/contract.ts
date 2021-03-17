@@ -1,6 +1,6 @@
 import {SolidityEvent} from './event';
 import {SolidityFunction, Handler} from './function';
-import {Burrow} from '../hsc';
+import {HiveSmartChain} from '../hsc';
 import {Function, Event} from 'solc';
 
 
@@ -29,12 +29,12 @@ export class Contract {
   abi: ABI;
   address: string;
   code: Bytecode;
-  hsc: Burrow;
+  hsc: HiveSmartChain;
   handlers: Handlers;
 
   _constructor: any;
 
-  constructor(abi: Array<FunctionOrEvent>, code: string | Bytecode, address: string, hsc: Burrow, handlers?: Handlers) {
+  constructor(abi: Array<FunctionOrEvent>, code: string | Bytecode, address: string, hsc: HiveSmartChain, handlers?: Handlers) {
     handlers = Object.assign({}, defaultHandlers, handlers);
 
     this.address = address;

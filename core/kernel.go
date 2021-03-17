@@ -45,10 +45,10 @@ const (
 	ServerShutdownTimeout  = 5000 * time.Millisecond
 	LoggingCallerDepth     = 5
 	AccountsRingMutexCount = 100
-	BurrowDBName           = "hsc_state"
+	HiveSmartChainDBName           = "hsc_state"
 )
 
-// Kernel is the root structure of Burrow
+// Kernel is the root structure of HiveSmartChain
 type Kernel struct {
 	// Expose these public-facing interfaces to allow programmatic extension of the Kernel by other projects
 	Emitter        *event.Emitter
@@ -59,7 +59,7 @@ type Kernel struct {
 	Blockchain     *bcm.Blockchain
 	Node           *tendermint.Node
 	Transactor     *execution.Transactor
-	RunID          simpleuuid.UUID // Time-based UUID randomly generated each time Burrow is started
+	RunID          simpleuuid.UUID // Time-based UUID randomly generated each time HiveSmartChain is started
 	Logger         *logging.Logger
 	database       dbm.DB
 	txCodec        txs.Codec
@@ -79,13 +79,13 @@ type Kernel struct {
 // NewKernel initializes an empty kernel
 func NewKernel(dbDir string) (*Kernel, error) {
 	if dbDir == "" {
-		return nil, fmt.Errorf("Burrow requires a database directory")
+		return nil, fmt.Errorf("HiveSmartChain requires a database directory")
 	}
 	runID, err := simpleuuid.NewTime(time.Now()) // Create a random ID based on start time
 	if err != nil {
 		return nil, fmt.Errorf("could not create runID UUID: %w", err)
 	}
-	db, err := dbm.NewDB(BurrowDBName, dbm.GoLevelDBBackend, dbDir)
+	db, err := dbm.NewDB(HiveSmartChainDBName, dbm.GoLevelDBBackend, dbDir)
 	if err != nil {
 		return nil, fmt.Errorf("could not create DB for Kernel: %w", err)
 	}

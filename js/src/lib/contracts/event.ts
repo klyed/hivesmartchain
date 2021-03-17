@@ -3,7 +3,7 @@ import * as utils from '../utils/utils';
 import * as coder from 'ethereumjs-abi';
 import * as convert from '../utils/convert';
 import sha3 from '../utils/sha3';
-import { Burrow, Error } from '../hsc';
+import { HiveSmartChain, Error } from '../hsc';
 import { LogEvent } from '../../../proto/exec_pb'
 import { Event, EventInput } from 'solc';
 
@@ -23,8 +23,8 @@ const decode = function (abi: Event, data: LogEvent): EventResult {
   const indexedParamsABI = types(abi.inputs, true)
   const nonIndexedParamsABI = types(abi.inputs, false)
   const indexedData = Buffer.concat(argTopics)
-  const indexedParams = convert.abiToBurrow(indexedParamsABI, coder.rawDecode(indexedParamsABI, indexedData))
-  const nonIndexedParams = convert.abiToBurrow(nonIndexedParamsABI, coder.rawDecode(nonIndexedParamsABI, Buffer.from(data.getData_asU8())))
+  const indexedParams = convert.abiToHiveSmartChain(indexedParamsABI, coder.rawDecode(indexedParamsABI, indexedData))
+  const nonIndexedParams = convert.abiToHiveSmartChain(nonIndexedParamsABI, coder.rawDecode(nonIndexedParamsABI, Buffer.from(data.getData_asU8())))
 
   return {
     event: utils.transformToFullName(abi),
@@ -36,7 +36,7 @@ const decode = function (abi: Event, data: LogEvent): EventResult {
   };
 }
 
-export const SolidityEvent = function (abi: Event, hsc: Burrow) {
+export const SolidityEvent = function (abi: Event, hsc: HiveSmartChain) {
   const name = utils.transformToFullName(abi);
   const displayName = utils.extractDisplayName(name);
   const typeName = utils.extractTypeName(name);

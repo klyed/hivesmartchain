@@ -97,7 +97,7 @@ type UpdateAccount struct {
 	Target string `mapstructure:"target" json:"target" yaml:"target" toml:"target"`
 	// (Optional) the Tendermint validator power to set for this account
 	Power string `mapstructure:"power" json:"power" yaml:"power" toml:"power"`
-	// (Optional) The Burrow native token balance to set for this account
+	// (Optional) The HiveSmartChain native token balance to set for this account
 	Native string `mapstructure:"HIVE" json:"HIVE" yaml:"HIVE" toml:"HIVE"`
 	// (Optional) the permissions to set for this account
 	Permissions []PermissionString `mapstructure:"permissions" json:"permissions" yaml:"permissions" toml:"permissions"`

@@ -1,7 +1,7 @@
 # Transactions
 
-Burrow implements a number of transaction types. Transactions will be ordered by our consensus mechanism (Tendermint) and applied to our application state machine - 
-replicated across all Burrow nodes. Each transaction is applied atomically and runs deterministically. The transactions contain the arguments for an 
+HiveSmartChain implements a number of transaction types. Transactions will be ordered by our consensus mechanism (Tendermint) and applied to our application state machine - 
+replicated across all HiveSmartChain nodes. Each transaction is applied atomically and runs deterministically. The transactions contain the arguments for an 
 [execution context](https://github.com/klyed/hivesmartchain/tree/main/execution/contexts).
 
 Our transactions are defined in Protobuf [here](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto).
@@ -72,7 +72,7 @@ When running a closed or permissioned network, it is desirable to restrict the p
 For example, a consortium may wish to run a shared instance over a wide-area network without
 sharing the state to unknown parties. 
 
-As Tendermint handles P2P connectivity for Burrow, it extends a concept known as the 'peer filter'.
+As Tendermint handles P2P connectivity for HiveSmartChain, it extends a concept known as the 'peer filter'.
 This means that on every connection request to a particular node, our app will receive a request to 
 check a whitelist (if enabled, otherwise allowed by default) - if the source IP address or node key is 
 unknown then the connection will be rejected. The easiest way to manage this whitelist is to hard code

@@ -1,14 +1,14 @@
 import {Event, Function} from 'solc';
 import {GetMetadataParam} from '../../../proto/rpcquery_pb';
-import {Burrow} from '../hsc';
+import {HiveSmartChain} from '../hsc';
 import {Contract, Handlers} from './contract';
 
 type FunctionOrEvent = Function | Event;
 
 export class ContractManager {
-  hsc: Burrow;
+  hsc: HiveSmartChain;
 
-  constructor(hsc: Burrow) {
+  constructor(hsc: HiveSmartChain) {
     this.hsc = hsc;
   }
 
@@ -20,7 +20,7 @@ export class ContractManager {
   }
 
   /**
-   * Looks up the ABI for a deployed contract from Burrow's contract metadata store.
+   * Looks up the ABI for a deployed contract from HiveSmartChain's contract metadata store.
    * Contract metadata is only stored when provided by the contract deployer so is not guaranteed to exist.
    *
    * @method address

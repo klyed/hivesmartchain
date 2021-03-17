@@ -1,4 +1,4 @@
-You have successfully provisioned a Burrow chain!
+You have successfully provisioned a HiveSmartChain chain!
 
 ** Please be patient while the chart is being deployed. **
 

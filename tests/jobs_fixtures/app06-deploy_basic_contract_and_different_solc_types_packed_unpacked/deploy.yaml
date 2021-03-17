@@ -11,7 +11,7 @@ jobs:
 - name: setStorageBool
   call:
       destination: $deployStorageK
-      function: setBool 
+      function: setBool
       data:
         - $setStorageBaseBool
 
@@ -30,7 +30,7 @@ jobs:
 - name: setStorageBool2
   call:
       destination: $deployStorageK
-      function: setBool2 
+      function: setBool2
       data:
         - true
 
@@ -52,7 +52,7 @@ jobs:
 - name: setStorageInt
   call:
       destination: $deployStorageK
-      function: setInt 
+      function: setInt
       data:
         - $setStorageBaseInt
 
@@ -74,7 +74,7 @@ jobs:
 - name: setStorageUint
   call:
       destination: $deployStorageK
-      function: setUint 
+      function: setUint
       data:
         - $setStorageBaseUint
 
@@ -96,7 +96,7 @@ jobs:
 - name: setStorageAddress
   call:
       destination: $deployStorageK
-      function: setAddress 
+      function: setAddress
       data:
         - $setStorageBaseAddress
 
@@ -118,7 +118,7 @@ jobs:
 - name: setStorageBytes
   call:
       destination: $deployStorageK
-      function: setBytes 
+      function: setBytes
       data:
         - $setStorageBaseBytes
 
@@ -135,12 +135,12 @@ jobs:
 
 - name: setStorageBaseString
   set:
-      val: nakaburrow
+      val: nakahsc
 
 - name: setStorageString
   call:
       destination: $deployStorageK
-      function: setString 
+      function: setString
       data:
         - $setStorageBaseString
 
@@ -154,4 +154,3 @@ jobs:
       key: $queryStorageString
       relation: eq
       val: $setStorageBaseString
-

@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestDefaultBurrowTendermintConfig(t *testing.T) {
-	btc := DefaultBurrowTendermintConfig()
+func TestDefaultHiveSmartChainTendermintConfig(t *testing.T) {
+	btc := DefaultHiveSmartChainTendermintConfig()
 	btc.AuthorizedPeers = "127.0.0.1:26656,836AB8674A33416718E5A19557A25ED826B2BDD3"
 	authorizedPeers := btc.DefaultAuthorizedPeersProvider()
 	assert.True(t, authorizedPeers.QueryPeerByAddress("127.0.0.1:26656"))

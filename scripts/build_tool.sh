@@ -38,7 +38,7 @@ if [[ "$1" ]] ; then
     version="$1"
 fi
 
-# Expiry is intended for dev images, if we want more persistent Burrow images on quay.io we should remove this...
+# Expiry is intended for dev images, if we want more persistent HiveSmartChain images on quay.io we should remove this...
 docker build \
   --label quay.expires-after=24w\
   --label org.label-schema.version=${version}\

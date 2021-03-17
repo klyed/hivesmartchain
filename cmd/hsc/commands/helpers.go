@@ -20,14 +20,14 @@ type Output interface {
 	Fatalf(format string, args ...interface{})
 }
 
-func obtainDefaultConfig(configFile, genesisDocFile string) (*config.BurrowConfig, error) {
+func obtainDefaultConfig(configFile, genesisDocFile string) (*config.HiveSmartChainConfig, error) {
 	// We need to reflect on whether this obscures where values are coming from
-	conf := config.DefaultBurrowConfig()
+	conf := config.DefaultHiveSmartChainConfig()
 	// We treat logging a little differently in that if anything is set for logging we will not
 	// set default outputs
 	conf.Logging = nil
 	err := source.EachOf(
-		burrowConfigProvider(configFile),
+		hscConfigProvider(configFile),
 		source.FirstOf(
 			genesisDocProvider(genesisDocFile, false),
 			// Try working directory
@@ -43,21 +43,21 @@ func obtainDefaultConfig(configFile, genesisDocFile string) (*config.BurrowConfi
 	return conf, nil
 }
 
-func burrowConfigProvider(configFile string) source.ConfigProvider {
+func hscConfigProvider(configFile string) source.ConfigProvider {
 	return source.FirstOf(
 		// Will fail if file doesn't exist, but still skipped it configFile == ""
 		source.File(configFile, false),
-		source.Environment(config.DefaultBurrowConfigEnvironmentVariable),
+		source.Environment(config.DefaultHiveSmartChainConfigEnvironmentVariable),
 		// Try working directory
-		source.File(config.DefaultBurrowConfigTOMLFileName, true),
-		source.Default(config.DefaultBurrowConfig()))
+		source.File(config.DefaultHiveSmartChainConfigTOMLFileName, true),
+		source.Default(config.DefaultHiveSmartChainConfig()))
 }
 
 func genesisDocProvider(genesisFile string, skipNonExistent bool) source.ConfigProvider {
 	return source.NewConfigProvider(fmt.Sprintf("genesis file at %s", genesisFile),
 		source.ShouldSkipFile(genesisFile, skipNonExistent),
 		func(baseConfig interface{}) error {
-			conf, ok := baseConfig.(*config.BurrowConfig)
+			conf, ok := baseConfig.(*config.HiveSmartChainConfig)
 			if !ok {
 				return fmt.Errorf("config passed was not valid Hive Smart Chain config")
 			}

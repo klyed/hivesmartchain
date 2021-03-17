@@ -19,7 +19,7 @@ const (
 	// permission in addition.
 	Send // 2
 	// Call permits and account to issue a CallTx, which can be used to call (run) the code of an existing
-	// account/contract (these are synonymous in Burrow/EVM). A CallTx can be used to create an account if it points to
+	// account/contract (these are synonymous in HiveSmartChain/EVM). A CallTx can be used to create an account if it points to
 	// a nil address - in order for an account to be permitted to do this the input (calling) account needs the
 	// CreateContract permission in addition.
 	Call // 4

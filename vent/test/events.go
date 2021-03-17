@@ -22,7 +22,7 @@ type TransactClient interface {
 	CallTxSync(ctx context.Context, in *payload.CallTx, opts ...grpc.CallOption) (*exec.TxExecution, error)
 }
 
-func NewBurrowTransactClient(t testing.TB, listenAddress string) rpctransact.TransactClient {
+func NewHiveSmartChainTransactClient(t testing.TB, listenAddress string) rpctransact.TransactClient {
 	t.Helper()
 
 	conn, err := encoding.GRPCDial(listenAddress)

@@ -1,6 +1,6 @@
 # Web3 JSON RPC
 
-Burrow now ships with a web3 compliant RPC server to integrate with your favorite Ethereum tooling!
+HiveSmartChain now ships with a web3 compliant RPC server to integrate with your favorite Ethereum tooling!
 We've already tried a few tools to ensure they work correctly, but if you have any problems please 
 consider submitting a pull request.
 
@@ -8,7 +8,7 @@ consider submitting a pull request.
 
 [Blockscout](https://github.com/poanetwork/blockscout) is a graphical blockchain explorer for 
 Ethereum based networks. Before deploying the application, ensure to set the following environment 
-variables so it can locate your local Burrow node.
+variables so it can locate your local HiveSmartChain node.
 
 ```bash
 export ETHEREUM_JSONRPC_VARIANT=ganache
@@ -19,7 +19,7 @@ export ETHEREUM_JSONRPC_HTTP_URL=http://localhost:26660
 
 [Metamask](https://metamask.io/) is an open-source identity management application for Ethereum, 
 typically used as a browser extension. After creating or importing a supported `secp256k1` key pair, 
-you can simply add Burrow to the list of networks.
+you can simply add HiveSmartChain to the list of networks.
 
 ## Remix
 

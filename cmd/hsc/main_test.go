@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestBurrow(t *testing.T) {
+func TestHiveSmartChain(t *testing.T) {
 	var outputCount int
 	out := &output{
 		PrintfFunc: func(format string, args ...interface{}) {

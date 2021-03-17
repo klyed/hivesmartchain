@@ -20,7 +20,7 @@ import (
 // we should avoid prematurely formatting values here if it is useful to let the output logger
 // decide how it wants to display values. Ideal candidates for 'early' formatting here are types that
 // we control and generic output loggers are unlikely to know about.
-type burrowFormatLogger struct {
+type hscFormatLogger struct {
 	sync.Mutex
 	logger  log.Logger
 	options opt
@@ -37,17 +37,17 @@ const (
 	StringifyValues
 )
 
-func NewBurrowFormatLogger(logger log.Logger, options ...opt) *burrowFormatLogger {
-	bfl := &burrowFormatLogger{logger: logger}
+func NewHiveSmartChainFormatLogger(logger log.Logger, options ...opt) *hscFormatLogger {
+	bfl := &hscFormatLogger{logger: logger}
 	for _, option := range options {
 		bfl.options |= option
 	}
 	return bfl
 }
 
-var _ log.Logger = &burrowFormatLogger{}
+var _ log.Logger = &hscFormatLogger{}
 
-func (bfl *burrowFormatLogger) Log(keyvals ...interface{}) error {
+func (bfl *hscFormatLogger) Log(keyvals ...interface{}) error {
 	if bfl.logger == nil {
 		return nil
 	}

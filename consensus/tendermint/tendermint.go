@@ -85,9 +85,9 @@ func NewNode(conf *config.Config, privValidator tmTypes.PrivValidator, genesisDo
 	return nde, nil
 }
 
-func DeriveGenesisDoc(burrowGenesisDoc *genesis.GenesisDoc, appHash []byte) *tmTypes.GenesisDoc {
-	validators := make([]tmTypes.GenesisValidator, len(burrowGenesisDoc.Validators))
-	for i, validator := range burrowGenesisDoc.Validators {
+func DeriveGenesisDoc(hscGenesisDoc *genesis.GenesisDoc, appHash []byte) *tmTypes.GenesisDoc {
+	validators := make([]tmTypes.GenesisValidator, len(hscGenesisDoc.Validators))
+	for i, validator := range hscGenesisDoc.Validators {
 		validators[i] = tmTypes.GenesisValidator{
 			Address: validator.PublicKey.TendermintAddress(),
 			PubKey:  validator.PublicKey.TendermintPubKey(),
@@ -102,8 +102,8 @@ func DeriveGenesisDoc(burrowGenesisDoc *genesis.GenesisDoc, appHash []byte) *tmT
 	consensusParams.Block.TimeIotaMs = 1
 
 	return &tmTypes.GenesisDoc{
-		ChainID:         burrowGenesisDoc.ChainID(),
-		GenesisTime:     burrowGenesisDoc.GenesisTime,
+		ChainID:         hscGenesisDoc.ChainID(),
+		GenesisTime:     hscGenesisDoc.GenesisTime,
 		Validators:      validators,
 		AppHash:         appHash,
 		ConsensusParams: consensusParams,

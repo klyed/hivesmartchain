@@ -8,7 +8,7 @@ import * as grpc from '@grpc/grpc-js';
 import sha3 from '../utils/sha3';
 import { TxInput, CallTx, ContractMeta } from '../../../proto/payload_pb';
 import { TxExecution, Result } from '../../../proto/exec_pb';
-import { Burrow, Error } from '../hsc';
+import { HiveSmartChain, Error } from '../hsc';
 import { Envelope } from '../../../proto/txs_pb';
 import { Function, FunctionInput, FunctionOutput } from 'solc';
 import { ABI, Contract } from "./contract";
@@ -98,7 +98,7 @@ const decodeF = function (abi: Function, output: Uint8Array): DecodedResult {
   let outputTypes = types(outputs);
 
   // Decode raw bytes to arguments
-  let raw = convert.abiToBurrow(outputTypes, coder.rawDecode(outputTypes, Buffer.from(output)));
+  let raw = convert.abiToHiveSmartChain(outputTypes, coder.rawDecode(outputTypes, Buffer.from(output)));
   let result: DecodedResult = { raw: raw.slice() }
 
   result.values = outputs.reduce(function (acc, current) {
@@ -112,7 +112,7 @@ const decodeF = function (abi: Function, output: Uint8Array): DecodedResult {
   return result;
 }
 
-export const SolidityFunction = function (abi: Function, hsc: Burrow) {
+export const SolidityFunction = function (abi: Function, hsc: HiveSmartChain) {
   let isConstructor = (abi == null || abi.type === 'constructor');
   let name: string;
   let displayName: string;
@@ -207,7 +207,7 @@ export const SolidityFunction = function (abi: Function, hsc: Burrow) {
       }
 
       // Decide if to make a "call" or a "transaction"
-      // For the moment we need to use the burrowtoweb3 function to prefix bytes with 0x
+      // For the moment we need to use the hsctoweb3 function to prefix bytes with 0x
       // otherwise the coder will give an error with bignumber not a number
       // TODO investigate if other libs or an updated lib will fix this
       // let data = encodeF(abi, utils.hscToWeb3(args), isCon ? self.code : null)

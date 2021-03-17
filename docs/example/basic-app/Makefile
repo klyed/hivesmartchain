@@ -15,7 +15,7 @@ HSC_BIN := bin/hsc
 #
 # Make a simple single node chain
 .PHONY: chain
-chain: bin/hscburrow.toml
+chain: bin/hschsc.toml
 
 # Get the hsc binary
 bin/hsc:

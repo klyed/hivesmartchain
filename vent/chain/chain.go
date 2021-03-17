@@ -1,4 +1,4 @@
-// Abstracts over a Burrow GRPC connection and Ethereum json-rpc web3 connection for the purposes of vent
+// Abstracts over a HiveSmartChain GRPC connection and Ethereum json-rpc web3 connection for the purposes of vent
 
 package chain
 

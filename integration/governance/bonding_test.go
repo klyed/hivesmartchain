@@ -18,7 +18,7 @@ import (
 
 func TestBonding(t *testing.T) {
 	genesisAccounts := integration.MakePrivateAccounts("accounts", 6)
-	genesisConfigs := make([]*config.BurrowConfig, len(genesisAccounts))
+	genesisConfigs := make([]*config.HiveSmartChainConfig, len(genesisAccounts))
 	genesisKernels := make([]*core.Kernel, len(genesisAccounts))
 	genesisDoc := integration.TestGenesisDoc(genesisAccounts, 0, 1, 2, 3)
 	genesisDoc.GlobalPermissions = permission.NewAccountPermissions(permission.Input)

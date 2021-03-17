@@ -1,6 +1,6 @@
-# Burrow
+# HiveSmartChain
 
-[Burrow](https://github.com/hyperledger/hsc) is a permissioned Ethereum smart-contract blockchain node which provides transaction finality and high transaction throughput 
+[HiveSmartChain](https://github.com/hyperledger/hsc) is a permissioned Ethereum smart-contract blockchain node which provides transaction finality and high transaction throughput 
 on a proof-of-stake [Tendermint](https://tendermint.com) consensus engine.
 
 ## Introduction
@@ -53,7 +53,7 @@ kubectl delete configmap ${CHAIN_NAME}-genesis
 
 ## Configuration
 
-The following table lists the configurable parameters of the Burrow chart and its default values.
+The following table lists the configurable parameters of the HiveSmartChain chart and its default values.
 
 | Parameter | Description | Default |
 | --------- | ----------- | ------- |
@@ -141,11 +141,11 @@ Each of these considerations will be dealt with in more detail below.
 
 ### Port Configuration
 
-Burrow utilizes three different ports by default:
+HiveSmartChain utilizes three different ports by default:
 
-* `Peer`: Burrow's peer port is used for P2P communication within the blockchain network as part of the consensus engine ([Tendermint](https://github.com/tendermint/tendermint)) to perform bilateral gossiping communication.
-* `Info`: Burrow's info port is used for conducting remote procedures.
-* `GRPC`: Burrow's grpc port can be used by JavaScript libraries to interact with the chain over websockets.
+* `Peer`: HiveSmartChain's peer port is used for P2P communication within the blockchain network as part of the consensus engine ([Tendermint](https://github.com/tendermint/tendermint)) to perform bilateral gossiping communication.
+* `Info`: HiveSmartChain's info port is used for conducting remote procedures.
+* `GRPC`: HiveSmartChain's grpc port can be used by JavaScript libraries to interact with the chain over websockets.
 
 The default configuration for the chart sets up the port access rights in the following manner:
 
@@ -161,10 +161,10 @@ To disable load balancing on the grpc service, change the `rpcGRPC.service.loadB
 
 ### Genesis
 
-Burrow initializes any single blockchain via use of a `genesis.json` which defines what validators and accounts are given access to the permissioned blockchain when it is booted. The chart imports the `genesis.json` file as a Kubernetes configmap and then mounts it in each node deployment.
+HiveSmartChain initializes any single blockchain via use of a `genesis.json` which defines what validators and accounts are given access to the permissioned blockchain when it is booted. The chart imports the `genesis.json` file as a Kubernetes configmap and then mounts it in each node deployment.
 
 ### Validator Keys
 
 **NOTE: The chart has not been security audited and as such one should use the validator keys functionality of the chart at one's own risk.**
 
-Burrow blockchain nodes need to have a key available to them which has been properly registered within the `genesis.json` initial state. The registered key is what enables a blockchain node to participate in the P2P validation of the network. The chart imports the validator key files as Kubernetes secrets, so the security of the blockchain is only as strong as the cluster's integrity.
+HiveSmartChain blockchain nodes need to have a key available to them which has been properly registered within the `genesis.json` initial state. The registered key is what enables a blockchain node to participate in the P2P validation of the network. The chart imports the validator key files as Kubernetes secrets, so the security of the blockchain is only as strong as the cluster's integrity.

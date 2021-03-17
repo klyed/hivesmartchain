@@ -18,7 +18,7 @@ func TestSqliteConsumer(t *testing.T) {
 	defer shutdown()
 	inputAddress := privateAccounts[0].GetAddress()
 	grpcAddress := kern.GRPCListenAddress().String()
-	tcli := test.NewBurrowTransactClient(t, grpcAddress)
+	tcli := test.NewHiveSmartChainTransactClient(t, grpcAddress)
 
 	t.Parallel()
 	time.Sleep(2 * time.Second)

@@ -7,8 +7,8 @@ import (
 	"github.com/klyed/hivesmartchain/genesis"
 )
 
-func TestBurrowConfigSerialise(t *testing.T) {
-	conf := &BurrowConfig{
+func TestHiveSmartChainConfigSerialise(t *testing.T) {
+	conf := &HiveSmartChainConfig{
 		GenesisDoc: &genesis.GenesisDoc{
 			ChainName: "Foo",
 		},

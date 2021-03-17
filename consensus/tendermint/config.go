@@ -17,10 +17,10 @@ const (
 	AlwaysCreateEmptyBlocks = "always"
 )
 
-// Burrow's view on Tendermint's config. Since we operate as a Tendermint harness not all configuration values
+// HiveSmartChain's view on Tendermint's config. Since we operate as a Tendermint harness not all configuration values
 // are applicable, we may not allow some values to specified, or we may not allow some to be set independently.
 // So this serves as a layer of indirection over Tendermint's real config that we derive from ours.
-type BurrowTendermintConfig struct {
+type HiveSmartChainTendermintConfig struct {
 	Enabled bool
 	// Initial peers we connect to for peer exchange
 	Seeds string
@@ -46,13 +46,13 @@ type BurrowTendermintConfig struct {
 	CreateEmptyBlocks string
 }
 
-func DefaultBurrowTendermintConfig() *BurrowTendermintConfig {
+func DefaultHiveSmartChainTendermintConfig() *HiveSmartChainTendermintConfig {
 	tmDefaultConfig := tmConfig.DefaultConfig()
 	url, err := url.ParseRequestURI(tmDefaultConfig.P2P.ListenAddress)
 	if err != nil {
 		return nil
 	}
-	return &BurrowTendermintConfig{
+	return &HiveSmartChainTendermintConfig{
 		Enabled:           true,
 		ListenHost:        url.Hostname(),
 		ListenPort:        url.Port(),
@@ -61,7 +61,7 @@ func DefaultBurrowTendermintConfig() *BurrowTendermintConfig {
 	}
 }
 
-func (btc *BurrowTendermintConfig) Config(rootDir string, timeoutFactor float64) (*tmConfig.Config, error) {
+func (btc *HiveSmartChainTendermintConfig) Config(rootDir string, timeoutFactor float64) (*tmConfig.Config, error) {
 	conf := tmConfig.DefaultConfig()
 	// We expose Tendermint config as required, but try to give fewer levers to pull where possible
 	if btc != nil {
@@ -122,7 +122,7 @@ func (btc *BurrowTendermintConfig) Config(rootDir string, timeoutFactor float64)
 	return conf, nil
 }
 
-func (btc *BurrowTendermintConfig) DefaultAuthorizedPeersProvider() abci.AuthorizedPeers {
+func (btc *HiveSmartChainTendermintConfig) DefaultAuthorizedPeersProvider() abci.AuthorizedPeers {
 	authorizedPeers := abci.NewPeerLists()
 
 	authorizedPeersAddrOrID := strings.Split(btc.AuthorizedPeers, ",")
@@ -146,6 +146,6 @@ func scaleTimeout(factor float64, timeout time.Duration) time.Duration {
 	return time.Duration(math.Round(factor * float64(timeout)))
 }
 
-func (btc *BurrowTendermintConfig) ListenAddress() string {
+func (btc *HiveSmartChainTendermintConfig) ListenAddress() string {
 	return net.JoinHostPort(btc.ListenHost, btc.ListenPort)
 }

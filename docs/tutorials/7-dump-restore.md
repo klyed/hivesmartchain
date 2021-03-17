@@ -22,7 +22,7 @@ You will need the `.keys` directory of the old chain, the `genesis.json` (called
 from the old chain and the dump file (called `dump.json` here).
 
 ```shell
-hsc configure -m BurrowTestRestoreNode -n "Restored Chain" -g genesis-original.json -w genesis.json --restore-dump dump.json > hsc.toml
+hsc configure -m HiveSmartChainTestRestoreNode -n "Restored Chain" -g genesis-original.json -w genesis.json --restore-dump dump.json > hsc.toml
 ```
 
 Note that the chain genesis will contain an `AppHash` specific to this restore file.

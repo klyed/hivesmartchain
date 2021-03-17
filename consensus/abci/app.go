@@ -26,7 +26,7 @@ type Validators interface {
 
 const (
 	TendermintValidatorDelayInBlocks = 2
-	BurrowValidatorDelayInBlocks     = 1
+	HiveSmartChainValidatorDelayInBlocks     = 1
 )
 
 type App struct {
@@ -118,7 +118,7 @@ func (app *App) InitChain(chain types.RequestInitChain) types.ResponseInitChain 
 		panic(fmt.Errorf("could not build current validator set: %v", err))
 	}
 	if len(chain.Validators) != currentSet.Size() {
-		panic(fmt.Errorf("Tendermint passes %d validators to InitChain but Burrow's Blockchain has %d",
+		panic(fmt.Errorf("Tendermint passes %d validators to InitChain but HiveSmartChain's Blockchain has %d",
 			len(chain.Validators), currentSet.Size()))
 	}
 	for _, v := range chain.Validators {
@@ -149,12 +149,12 @@ func (app *App) BeginBlock(block types.RequestBeginBlock) (respBeginBlock types.
 		previousValidators := validator.NewTrimSet()
 		// Tendermint runs two blocks behind plus we are updating in end block validators updated last round
 		err = validator.Write(previousValidators,
-			app.validators.Validators(BurrowValidatorDelayInBlocks+TendermintValidatorDelayInBlocks))
+			app.validators.Validators(HiveSmartChainValidatorDelayInBlocks+TendermintValidatorDelayInBlocks))
 		if err != nil {
 			panic(fmt.Errorf("could not build current validator set: %v", err))
 		}
 		if len(block.LastCommitInfo.Votes) != previousValidators.Size() {
-			err = fmt.Errorf("Tendermint passes %d validators to BeginBlock but Burrow's has %d:\n %v",
+			err = fmt.Errorf("Tendermint passes %d validators to BeginBlock but HiveSmartChain's has %d:\n %v",
 				len(block.LastCommitInfo.Votes), previousValidators.Size(), previousValidators.String())
 			panic(err)
 		}
@@ -178,7 +178,7 @@ func (app *App) checkValidatorMatches(ours validator.Reader, v types.Validator) 
 		return err
 	}
 	if power.Cmp(big.NewInt(v.Power)) != 0 {
-		return fmt.Errorf("validator %v has power %d from Tendermint but power %d from Burrow",
+		return fmt.Errorf("validator %v has power %d from Tendermint but power %d from HiveSmartChain",
 			address, v.Power, power)
 	}
 	return nil
@@ -237,7 +237,7 @@ func (app *App) EndBlock(reqEndBlock types.RequestEndBlock) types.ResponseEndBlo
 			app.panicFunc(fmt.Errorf("panic occurred in abci.App/EndBlock: %v\n%s", r, debug.Stack()))
 		}
 	}()
-	err := app.validators.ValidatorChanges(BurrowValidatorDelayInBlocks).IterateValidators(func(id crypto.Addressable, power *big.Int) error {
+	err := app.validators.ValidatorChanges(HiveSmartChainValidatorDelayInBlocks).IterateValidators(func(id crypto.Addressable, power *big.Int) error {
 		app.logger.InfoMsg("Updating validator power", "validator_address", id.GetAddress(),
 			"new_power", power)
 		pk, err := encoding.PubKeyToProto(id.GetPublicKey().TendermintPubKey())

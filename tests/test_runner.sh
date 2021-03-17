@@ -21,7 +21,7 @@ export hsc_bin=${hsc_bin:-hsc}
 export solc_bin=${solc_bin:-solc}
 export solang_bin=${solang_bin:-solang}
 
-# If false we will not try to start Burrow and expect them to be running
+# If false we will not try to start HiveSmartChain and expect them to be running
 export boot=${boot:-true}
 export debug=${debug:-false}
 export clean=${clean:-true}
@@ -74,7 +74,7 @@ test_setup(){
   # start test chain
   HSC_ADDRESS="$HSC_HOST:$HSC_GRPC_PORT"
   if [[ "$boot" = true ]]; then
-    echo "Starting Burrow using GRPC address: $HSC_ADDRESS..."
+    echo "Starting HiveSmartChain using GRPC address: $HSC_ADDRESS..."
     echo
     rm -rf ${hsc_root}
     pushd "$chain_dir"
@@ -82,7 +82,7 @@ test_setup(){
     hsc_pid=$!
     popd
   else
-    echo "Not booting Burrow, but expecting Burrow to be running with tm RPC on port $HSC_GRPC_PORT"
+    echo "Not booting HiveSmartChain, but expecting HiveSmartChain to be running with tm RPC on port $HSC_GRPC_PORT"
   fi
 
   export key1_addr=$(address_of "Full_0")

@@ -1,7 +1,7 @@
 {
   "name": "basic-app",
   "version": "1.0.0",
-  "description": "Simple end-to-end Burrow app",
+  "description": "Simple end-to-end HiveSmartChain app",
   "main": "app.js",
   "scripts": {
     "test": "node app.js"

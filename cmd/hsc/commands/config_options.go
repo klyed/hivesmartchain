@@ -100,7 +100,7 @@ func addConfigOptions(cmd *cli.Cmd) *configOptions {
 	}
 }
 
-func (opts *configOptions) obtainBurrowConfig() (*config.BurrowConfig, error) {
+func (opts *configOptions) obtainHiveSmartChainConfig() (*config.HiveSmartChainConfig, error) {
 	conf, err := obtainDefaultConfig(*opts.configFileOpt, *opts.genesisFileOpt)
 	if err != nil {
 		return nil, err
@@ -145,7 +145,7 @@ func (opts *configOptions) obtainBurrowConfig() (*config.BurrowConfig, error) {
 // 	3. genesis validators (by index)
 // 	4. config
 // 	5. genesis validator (if only one)
-func accountAddress(conf *config.BurrowConfig, addressIn string, accIndex, valIndex int) (*crypto.Address, error) {
+func accountAddress(conf *config.HiveSmartChainConfig, addressIn string, accIndex, valIndex int) (*crypto.Address, error) {
 	if addressIn != "" {
 		address, err := crypto.AddressFromHexString(addressIn)
 		if err != nil {

@@ -62,7 +62,7 @@ type Datum struct {
 }
 
 // Exporter uses the InfoService to provide pre-aggregated metrics of various types that are then passed to prometheus
-// as Const metrics rather than being accumulated by individual operations throughout the rest of the Burrow code.
+// as Const metrics rather than being accumulated by individual operations throughout the rest of the HiveSmartChain code.
 func NewExporter(service InfoService, blockSampleSize int, logger *logging.Logger) (*Exporter, error) {
 	chainStatus, err := service.Status()
 	if err != nil {

@@ -4,7 +4,7 @@ Logging is highly configurable through the `hsc.toml` `[logging]` section. Each 
 Each sink can have an output, a transform, and sinks that it outputs to. Below is a more involved example than the one appearing in the default generated config of what you can configure:
 
 ```toml
-# This is a top level config section within the main Burrow config
+# This is a top level config section within the main HiveSmartChain config
 [logging]
   # All log lines are sent to the root sink from all sources
   [logging.root_sink]
@@ -33,7 +33,7 @@ Each sink can have an output, a transform, and sinks that it outputs to. Below i
         [logging.root_sink.sinks.sinks.output]
           output_type = "syslog"
           url = ""
-          tag = "Burrow-network"
+          tag = "HiveSmartChain-network"
 
       [[logging.root_sink.sinks.sinks]]
         [logging.root_sink.sinks.sinks.output]

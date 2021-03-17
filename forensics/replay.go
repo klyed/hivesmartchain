@@ -1,4 +1,4 @@
-// This package contains tools for examining, replaying, and debugging Tendermint-side and Burrow-side blockchain state.
+// This package contains tools for examining, replaying, and debugging Tendermint-side and HiveSmartChain-side blockchain state.
 // Some code is quick and dirty from particular investigations and some is better extracted, encapsulated and generalised.
 // The sketchy code is included so that useful tools can be progressively put together as the generality of the types of
 // forensic debugging needed in the wild are determined.
@@ -43,12 +43,12 @@ type Source struct {
 	logger     *logging.Logger
 }
 
-func NewSource(burrowDB, tmDB dbm.DB, genesisDoc *genesis.GenesisDoc) *Source {
+func NewSource(hscDB, tmDB dbm.DB, genesisDoc *genesis.GenesisDoc) *Source {
 	// Avoid writing through to underlying DB
-	cacheDB := storage.NewCacheDB(burrowDB)
+	cacheDB := storage.NewCacheDB(hscDB)
 	return &Source{
 		Explorer:   bcm.NewBlockStore(store.NewBlockStore(tmDB)),
-		db:         burrowDB,
+		db:         hscDB,
 		cacheDB:    cacheDB,
 		blockchain: bcm.NewBlockchain(cacheDB, genesisDoc),
 		genesisDoc: genesisDoc,
@@ -57,7 +57,7 @@ func NewSource(burrowDB, tmDB dbm.DB, genesisDoc *genesis.GenesisDoc) *Source {
 }
 
 func NewSourceFromDir(genesisDoc *genesis.GenesisDoc, dbDir string) *Source {
-	burrowDB, err := dbm.NewDB(core.BurrowDBName, dbm.GoLevelDBBackend, dbDir)
+	hscDB, err := dbm.NewDB(core.HiveSmartChainDBName, dbm.GoLevelDBBackend, dbDir)
 	if err != nil {
 		panic(fmt.Errorf("could not create core DB for replay source: %w", err))
 	}
@@ -65,7 +65,7 @@ func NewSourceFromDir(genesisDoc *genesis.GenesisDoc, dbDir string) *Source {
 	if err != nil {
 		panic(fmt.Errorf("could not create blockstore DB for replay source: %w", err))
 	}
-	return NewSource(burrowDB, tmDB, genesisDoc)
+	return NewSource(hscDB, tmDB, genesisDoc)
 }
 
 func NewSourceFromGenesis(genesisDoc *genesis.GenesisDoc) *Source {
@@ -84,21 +84,21 @@ func NewSourceFromGenesis(genesisDoc *genesis.GenesisDoc) *Source {
 	if err != nil {
 		panic(err)
 	}
-	burrowDB, burrowState, burrowChain, err := initBurrow(genesisDoc)
+	hscDB, hscState, hscChain, err := initHiveSmartChain(genesisDoc)
 	if err != nil {
 		panic(err)
 	}
-	src := NewSource(burrowDB, tmDB, genesisDoc)
-	src.State = burrowState
-	src.committer, err = execution.NewBatchCommitter(burrowState, execution.ParamsFromGenesis(genesisDoc),
-		burrowChain, event.NewEmitter(), logging.NewNoopLogger())
+	src := NewSource(hscDB, tmDB, genesisDoc)
+	src.State = hscState
+	src.committer, err = execution.NewBatchCommitter(hscState, execution.ParamsFromGenesis(genesisDoc),
+		hscChain, event.NewEmitter(), logging.NewNoopLogger())
 	if err != nil {
 		panic(err)
 	}
 	return src
 }
 
-func initBurrow(gd *genesis.GenesisDoc) (dbm.DB, *state.State, *bcm.Blockchain, error) {
+func initHiveSmartChain(gd *genesis.GenesisDoc) (dbm.DB, *state.State, *bcm.Blockchain, error) {
 	db := dbm.NewMemDB()
 	st, err := state.MakeGenesisState(db, gd)
 	if err != nil {

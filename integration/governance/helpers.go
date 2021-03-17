@@ -28,7 +28,7 @@ import (
 )
 
 func newConfig(genesisDoc *genesis.GenesisDoc, account *acm.PrivateAccount,
-	keysAccounts ...*acm.PrivateAccount) (conf *config.BurrowConfig, err error) {
+	keysAccounts ...*acm.PrivateAccount) (conf *config.HiveSmartChainConfig, err error) {
 
 	// FIXME: some combination of cleanup and shutdown seems to make tests fail on CI
 	// testConfig, cleanup := integration.NewTestConfig(genesisDoc)
@@ -62,7 +62,7 @@ func newConfig(genesisDoc *genesis.GenesisDoc, account *acm.PrivateAccount,
 	return testConfig, nil
 }
 
-func newKernelAndBoot(conf *config.BurrowConfig, account *acm.PrivateAccount,
+func newKernelAndBoot(conf *config.HiveSmartChainConfig, account *acm.PrivateAccount,
 	keysAccounts ...*acm.PrivateAccount) (kernel *core.Kernel, err error) {
 
 	kernel, err = integration.TestKernel(account, keysAccounts, conf)

@@ -37,7 +37,7 @@ func New(conn *grpc.ClientConn, filter *chain.Filter) (*Chain, error) {
 	client := rpcquery.NewQueryClient(conn)
 	status, err := client.Status(context.Background(), &rpcquery.StatusParam{})
 	if err != nil {
-		return nil, fmt.Errorf("could not get initial status from Burrow: %w", err)
+		return nil, fmt.Errorf("could not get initial status from HiveSmartChain: %w", err)
 	}
 	filterQuery, err := queryFromFilter(filter)
 	if err != nil {
@@ -130,7 +130,7 @@ func (b *Chain) Close() error {
 
 type Block exec.BlockExecution
 
-func NewBurrowBlock(block *exec.BlockExecution) *Block {
+func NewHiveSmartChainBlock(block *exec.BlockExecution) *Block {
 	return (*Block)(block)
 }
 

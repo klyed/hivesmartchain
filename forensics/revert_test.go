@@ -13,7 +13,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-const devStudioPath = "/home/silas/burrows/t7-dev-studio-hsc-000/t7-dev-studio-hsc-000"
+const devStudioPath = "/home/silas/hscs/t7-dev-studio-hsc-000/t7-dev-studio-hsc-000"
 
 func testLoadStudio(t *testing.T, i int) {
 	re := newReplay(t, studioDir(i))
@@ -56,8 +56,8 @@ func TestStudioTx0(t *testing.T) {
 
 func TestStudioTx(t *testing.T) {
 	for i := 0; i < 4; i++ {
-		burrowDir := studioDir(i)
-		fmt.Println(burrowDir)
+		hscDir := studioDir(i)
+		fmt.Println(hscDir)
 		testLoadStudio(t, i)
 	}
 }

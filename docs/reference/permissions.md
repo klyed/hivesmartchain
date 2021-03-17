@@ -1,6 +1,6 @@
 # Permissions
 
-Burrow supports permissions via permission flags and string tags called 'roles'. The flag permissions are:
+HiveSmartChain supports permissions via permission flags and string tags called 'roles'. The flag permissions are:
 
 | Permission Flag | Capability | Purpose |
 |-----------------|------------|---------|

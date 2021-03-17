@@ -1,8 +1,8 @@
 # WASM Contracts
 
-Burrow supports experimental [ewasm](https://github.com/ewasm/design) contracts.
+HiveSmartChain supports experimental [ewasm](https://github.com/ewasm/design) contracts.
 Any contract which can be compiled using [Solang](https://github.com/hyperledger-labs/solang)
-can run on Burrow.
+can run on HiveSmartChain.
 
 ## How to use
 

@@ -56,11 +56,11 @@ func NewConsumer(cfg *config.VentConfig, log *logging.Logger, eventChannel chan 
 func (c *Consumer) Run(projection *sqlsol.Projection, stream bool) error {
 	var err error
 
-	c.Logger.InfoMsg("Connecting to Burrow gRPC server")
+	c.Logger.InfoMsg("Connecting to HiveSmartChain gRPC server")
 
 	c.Chain, err = c.connectToChain()
 	if err != nil {
-		return errors.Wrapf(err, "Error connecting to Burrow gRPC server at %s", c.Config.ChainAddress)
+		return errors.Wrapf(err, "Error connecting to HiveSmartChain gRPC server at %s", c.Config.ChainAddress)
 	}
 	defer c.Chain.Close()
 	defer close(c.EventsChannel)
@@ -282,19 +282,19 @@ func (c *Consumer) connectToChain() (chain.Chain, error) {
 		Addresses: c.Config.WatchAddresses,
 	}
 	c.Logger.InfoMsg("Attempting to detect chain type", "chain_address", c.Config.ChainAddress)
-	burrowChain, burrowErr := dialBurrow(c.Config.ChainAddress, filter)
-	if burrowErr == nil {
-		return burrowChain, nil
+	hscChain, hscErr := dialHiveSmartChain(c.Config.ChainAddress, filter)
+	if hscErr == nil {
+		return hscChain, nil
 	}
 	ethChain, ethErr := dialEthereum(c.Config.ChainAddress, filter, &c.Config.BlockConsumerConfig, c.Logger)
 	if ethErr != nil {
-		return nil, fmt.Errorf("could not connect to either Burrow or Ethereum chain, "+
-			"Burrow error: %v, Ethereum error: %v", burrowErr, ethErr)
+		return nil, fmt.Errorf("could not connect to either HiveSmartChain or Ethereum chain, "+
+			"HiveSmartChain error: %v, Ethereum error: %v", hscErr, ethErr)
 	}
 	return ethChain, nil
 }
 
-func dialBurrow(chainAddress string, filter *chain.Filter) (*hsc.Chain, error) {
+func dialHiveSmartChain(chainAddress string, filter *chain.Filter) (*hsc.Chain, error) {
 	conn, err := encoding.GRPCDial(chainAddress)
 	if err != nil {
 		return nil, err

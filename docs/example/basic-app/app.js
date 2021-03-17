@@ -3,7 +3,7 @@ const hsc = require('@monax/hsc')
 const express = require('express')
 const bodyParser = require('body-parser')
 
-// Burrow address
+// HiveSmartChain address
 let chainURL = '127.0.0.1:10997'
 const abiFile = 'bin/simplestorage.bin'
 const deployFile = 'deploy.output.json'

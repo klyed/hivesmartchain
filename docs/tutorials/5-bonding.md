@@ -15,8 +15,8 @@ hsc spec -v1 -r1 | hsc configure -s- --pool
 Let's start both nodes:
 
 ```shell
-hsc start --config burrow000.toml &
-hsc start --config burrow001.toml &
+hsc start --config hsc000.toml &
+hsc start --config hsc001.toml &
 ```
 
 Query the JSON RPC for all validators in the active set:
@@ -32,14 +32,14 @@ This will return the pre-bonded validator, defined in our pool.
 To have the second node bond on and produce blocks:
 
 ```shell
-hsc tx --config burrow001.toml formulate bond --amount 10000 | hsc tx commit
+hsc tx --config hsc001.toml formulate bond --amount 10000 | hsc tx commit
 ```
 
 Note that this will bond the current account, to bond an alternate account (which is created if it doesn't exist)
 simply specific the `--source=<address>` flag in formulation:
 
 ```shell
-hsc tx --config burrow001.toml formulate bond --source 8A468CC3A28A6E84ED52E433DA21D6E9ED7C1577 --amount 10000
+hsc tx --config hsc001.toml formulate bond --source 8A468CC3A28A6E84ED52E433DA21D6E9ED7C1577 --amount 10000
 ```
 
 It should now be in the validator set:

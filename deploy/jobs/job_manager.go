@@ -309,7 +309,7 @@ func ExecutePlaybook(args *def.DeployArgs, playbook *def.Playbook, client *def.C
 
 	err := args.Validate()
 	if err != nil {
-		return fmt.Errorf("error validating Burrow deploy file at %s: %v", playbook.Filename, err)
+		return fmt.Errorf("error validating HiveSmartChain deploy file at %s: %v", playbook.Filename, err)
 	}
 
 	jobs := make(chan *compilerJob, concurrentSolcWorkQueue)

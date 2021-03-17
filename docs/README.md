@@ -2,7 +2,7 @@
 ## Bringing Truly Decentralized Smart Contracts to HIVE
 
 <!--
-[![CI](https://github.com/klyed/hivesmartchain/workflows/main/badge.svg)](https://launch-editor.github.com/actions?workflowID=main&event=push&nwo=hyperledger%2Fburrow)
+[![CI](https://github.com/klyed/hivesmartchain/workflows/main/badge.svg)](https://launch-editor.github.com/actions?workflowID=main&event=push&nwo=hyperledger%2Fhsc)
 [![version](https://img.shields.io/github/tag/hyperledger/hsc.svg)](https://github.com/klyed/hivesmartchain/releases/latest)
 [![GoDoc](https://godoc.org/github.com/hsc?status.png)](https://godoc.org/github.com/hyperledger/hsc)
 [![license](https://img.shields.io/github/license/hyperledger/hsc.svg)](../LICENSE.md)
@@ -54,7 +54,7 @@ Project information generally updated on a weekly basis can be found on the [Hiv
 
 ## Contribute
 
-We welcome any and all contributions. Read the [contributing file](../.github/CONTRIBUTING.md) for more information on making your first Pull Request to Burrow!
+We welcome any and all contributions. Read the [contributing file](../.github/CONTRIBUTING.md) for more information on making your first Pull Request to HiveSmartChain!
 
 You can find us on:
 - [PeakD](https://peakd.com/@klye)

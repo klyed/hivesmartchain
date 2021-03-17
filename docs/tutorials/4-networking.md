@@ -11,13 +11,13 @@ Let's configure a local chain with two full accounts:
 hsc spec -f2 | hsc configure -s- --pool
 ```
 
-You'll notice that Burrow has generated two config files instead of one, hold on to these.
+You'll notice that HiveSmartChain has generated two config files instead of one, hold on to these.
 
 
 ## First Node
 
 ```shell
-hsc start --config=burrow000.toml
+hsc start --config=hsc000.toml
 ```
 
 You will see `blockpool has no peers` in the logs, this means that the node has not got enough validator power in order to have 
@@ -26,7 +26,7 @@ quorum (2/3) on the network, so it is blocked waiting for the second validator t
 ## Second Node
 
 ```shell
-hsc start --config=burrow001.toml
+hsc start --config=hsc001.toml
 ```
 
 If the connection succeeds, you will see empty blocks automatically created.

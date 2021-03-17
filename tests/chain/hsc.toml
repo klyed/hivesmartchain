@@ -1,4 +1,4 @@
-BurrowDir = ".hsc"
+HiveSmartChainDir = ".hsc"
 
 [Tendermint]
   Enabled = true

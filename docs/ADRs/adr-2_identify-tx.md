@@ -14,7 +14,7 @@ This ADR introduces Identify Transaction to register and track node key related 
 
 ## Motivation
 
-There is 2 different kind of keys in a running Burrow node:
+There is 2 different kind of keys in a running HiveSmartChain node:
 - ABCI validator key (even if not a block validator)
 - P2P node key
 
@@ -42,7 +42,7 @@ The node broadcasts a transaction of a new type `IdentifyTx` signed by the valid
 
 It also allows to register and notify a replacement node key identity.
 
-Burrow verifies a multisig of this tx of two inputs: validator key, node key.
+HiveSmartChain verifies a multisig of this tx of two inputs: validator key, node key.
 
 If they mutually sign then that key mapping gets added to network-wide registry, a simple store.
 

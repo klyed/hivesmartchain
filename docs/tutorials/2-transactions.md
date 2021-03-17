@@ -1,6 +1,6 @@
 # Transactions
 
-Burrow supports a number of [transactions](reference/transactions.md) which denote a unit of computation.
+HiveSmartChain supports a number of [transactions](reference/transactions.md) which denote a unit of computation.
 The easiest way to experiment is with our `hsc tx` command, but please checkout the [deployment guide](deploy.md)
 for more advanced usage.
 

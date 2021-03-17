@@ -1,7 +1,7 @@
 {{- $workDir := printf "/work" }}
 {{- $refDir := printf "/ref" }}
 {{- $keysDir := printf "/keys" }}
-{{- $burrowImage := include "hsc.image" . }}
+{{- $hscImage := include "hsc.image" . }}
 {{- $restoreImage := include "restore.image" . }}
 {{- range $index, $val := $.Values.validators }}
 {{- $nodeNumber := printf "%03d" $index }}
@@ -74,7 +74,7 @@ spec:
             - name: work-dir
               mountPath: {{ $workDir }}
         - name: restore
-          image: {{ $burrowImage | quote }}
+          image: {{ $hscImage | quote }}
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
           workingDir: {{ $workDir }}
           command:
@@ -99,7 +99,7 @@ spec:
 {{- end }}
       containers:
         - name: node
-          image: {{ $burrowImage | quote }}
+          image: {{ $hscImage | quote }}
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
           workingDir: {{ $workDir }}
           command:
