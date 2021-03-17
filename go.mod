@@ -1,4 +1,4 @@
-module
+module github.com/KLYE-Dev/HSC_MAIN
 
 go 1.15
 
