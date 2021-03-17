@@ -1,4 +1,4 @@
-module github.com/klye-dev/hivesmartchain
+module github.com/klye_dev/hivesmartchain
 
 go 1.15
 
