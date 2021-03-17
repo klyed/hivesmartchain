@@ -1,4 +1,4 @@
-module github.com/klyed/hivesmartchain
+module klyed/hivesmartchain
 
 go 1.15
 
