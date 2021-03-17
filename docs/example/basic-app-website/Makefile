@@ -15,7 +15,7 @@ BURROW_BIN := bin/burrow
 #
 # Make a simple single node chain
 .PHONY: chain
-chain: bin/burrow burrow.toml
+chain: bin/hscburrow.toml
 
 # Get the burrow binary
 bin/burrow:

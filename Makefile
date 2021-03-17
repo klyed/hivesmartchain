@@ -169,12 +169,12 @@ build_hsc_debug:
 .PHONY: install
 install: build_hsc
 	mkdir -p ${BIN_PATH}
-	install ${REPO}/bin/burrow ${BIN_PATH}/burrow
+	install ${REPO}/bin/hsc${BIN_PATH}/burrow
 
 # build burrow with checks for race conditions
 .PHONY: build_race_db
 build_race_db:
-	go build -race -o ${REPO}/bin/burrow ./cmd/burrow
+	go build -race -o ${REPO}/bin/hsc./cmd/burrow
 
 ### Build docker images for github.com/hyperledger/burrow
 
