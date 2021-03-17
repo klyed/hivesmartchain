@@ -12,8 +12,8 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_hyperledger_burrow_binary "github.com/KLYE-Dev/HSC-MAIN/binary"
-	github_com_hyperledger_burrow_crypto "github.com/KLYE-Dev/HSC-MAIN/crypto"
+	github_com_klye-dev_hsc-main_binary "github.com/KLYE-Dev/HSC-MAIN/binary"
+	github_com_klye-dev_hsc-main_crypto "github.com/KLYE-Dev/HSC-MAIN/crypto"
 	registry "github.com/KLYE-Dev/HSC-MAIN/execution/registry"
 	spec "github.com/KLYE-Dev/HSC-MAIN/genesis/spec"
 	permission "github.com/KLYE-Dev/HSC-MAIN/permission"
@@ -184,7 +184,7 @@ func (*Any) XXX_MessageName() string {
 // that associated with the account at Address at the time of being received
 type TxInput struct {
 	// The address from which this input flows
-	Address github_com_hyperledger_burrow_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"Address"`
+	Address github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"Address"`
 	// The amount of native token to transfer from the input address
 	Amount uint64 `protobuf:"varint,2,opt,name=Amount,proto3" json:"Amount,omitempty"`
 	// The sequence number that this transaction will induce (i.e. one greater than the input account's current sequence)
@@ -243,7 +243,7 @@ func (*TxInput) XXX_MessageName() string {
 // An output from a transaction that may carry an amount as a charge
 type TxOutput struct {
 	// The address to which this output flows
-	Address github_com_hyperledger_burrow_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"Address"`
+	Address github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"Address"`
 	// The amount of native token to transfer to the output address
 	Amount               uint64   `protobuf:"varint,2,opt,name=Amount,proto3" json:"Amount,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -295,15 +295,15 @@ type CallTx struct {
 	// The caller's input
 	Input *TxInput `protobuf:"bytes,1,opt,name=Input,proto3" json:"Input,omitempty"`
 	// The contract address to call or nil if we are creating a contract
-	Address *github_com_hyperledger_burrow_crypto.Address `protobuf:"bytes,2,opt,name=Address,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"Address,omitempty"`
+	Address *github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,2,opt,name=Address,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"Address,omitempty"`
 	// The upper bound on the amount of gas (and therefore EVM execution steps) this CallTx may generate
 	GasLimit uint64 `protobuf:"varint,3,opt,name=GasLimit,proto3" json:"GasLimit,omitempty"`
 	// Fee to offer validators for processing transaction
 	Fee uint64 `protobuf:"varint,4,opt,name=Fee,proto3" json:"Fee,omitempty"`
 	// EVM bytecode
-	Data github_com_hyperledger_burrow_binary.HexBytes `protobuf:"bytes,5,opt,name=Data,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"Data"`
+	Data github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,5,opt,name=Data,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"Data"`
 	// WASM bytecode
-	WASM github_com_hyperledger_burrow_binary.HexBytes `protobuf:"bytes,6,opt,name=WASM,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"tags,omitempty"`
+	WASM github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,6,opt,name=WASM,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"tags,omitempty"`
 	// Set of contracts this code will deploy
 	ContractMeta []*ContractMeta `protobuf:"bytes,7,rep,name=ContractMeta,proto3" json:"ContractMeta,omitempty"`
 	// The upper bound on the price per unit of gas
@@ -381,7 +381,7 @@ func (*CallTx) XXX_MessageName() string {
 }
 
 type ContractMeta struct {
-	CodeHash             github_com_hyperledger_burrow_binary.HexBytes `protobuf:"bytes,1,opt,name=CodeHash,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"CodeHash"`
+	CodeHash             github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,1,opt,name=CodeHash,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"CodeHash"`
 	Meta                 string                                        `protobuf:"bytes,2,opt,name=Meta,proto3" json:"Meta,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
 	XXX_unrecognized     []byte                                        `json:"-"`
@@ -727,7 +727,7 @@ func (*GovTx) XXX_MessageName() string {
 type ProposalTx struct {
 	Input                *TxInput                                       `protobuf:"bytes,1,opt,name=Input,proto3" json:"Input,omitempty"`
 	VotingWeight         int64                                          `protobuf:"varint,2,opt,name=VotingWeight,proto3" json:"VotingWeight,omitempty"`
-	ProposalHash         *github_com_hyperledger_burrow_binary.HexBytes `protobuf:"bytes,3,opt,name=ProposalHash,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"ProposalHash,omitempty"`
+	ProposalHash         *github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,3,opt,name=ProposalHash,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"ProposalHash,omitempty"`
 	Proposal             *Proposal                                      `protobuf:"bytes,4,opt,name=Proposal,proto3" json:"Proposal,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
 	XXX_unrecognized     []byte                                         `json:"-"`
@@ -849,7 +849,7 @@ func (*BatchTx) XXX_MessageName() string {
 }
 
 type Vote struct {
-	Address              github_com_hyperledger_burrow_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"Address"`
+	Address              github_com_klye-dev_hsc-main_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/crypto.Address" json:"Address"`
 	VotingWeight         int64                                        `protobuf:"varint,2,opt,name=VotingWeight,proto3" json:"VotingWeight,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
 	XXX_unrecognized     []byte                                       `json:"-"`
@@ -931,7 +931,7 @@ func (*Proposal) XXX_MessageName() string {
 
 type Ballot struct {
 	Proposal             *Proposal                                      `protobuf:"bytes,1,opt,name=Proposal,proto3" json:"Proposal,omitempty"`
-	FinalizingTx         *github_com_hyperledger_burrow_binary.HexBytes `protobuf:"bytes,2,opt,name=FinalizingTx,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"FinalizingTx,omitempty"`
+	FinalizingTx         *github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,2,opt,name=FinalizingTx,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"FinalizingTx,omitempty"`
 	ProposalState        Ballot_ProposalState                           `protobuf:"varint,4,opt,name=proposalState,proto3,enum=payload.Ballot_ProposalState" json:"proposalState,omitempty"`
 	Votes                []*Vote                                        `protobuf:"bytes,5,rep,name=Votes,proto3" json:"Votes,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
@@ -3361,7 +3361,7 @@ func (m *CallTx) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_hyperledger_burrow_crypto.Address
+			var v github_com_klye-dev_hsc-main_crypto.Address
 			m.Address = &v
 			if err := m.Address.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -4513,7 +4513,7 @@ func (m *ProposalTx) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_hyperledger_burrow_binary.HexBytes
+			var v github_com_klye-dev_hsc-main_binary.HexBytes
 			m.ProposalHash = &v
 			if err := m.ProposalHash.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -5165,7 +5165,7 @@ func (m *Ballot) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_hyperledger_burrow_binary.HexBytes
+			var v github_com_klye-dev_hsc-main_binary.HexBytes
 			m.FinalizingTx = &v
 			if err := m.FinalizingTx.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err

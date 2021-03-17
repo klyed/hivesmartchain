@@ -12,7 +12,7 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_hyperledger_burrow_binary "github.com/KLYE-Dev/HSC-MAIN/binary"
+	github_com_klye-dev_hsc-main_binary "github.com/KLYE-Dev/HSC-MAIN/binary"
 	exec "github.com/KLYE-Dev/HSC-MAIN/execution/exec"
 )
 
@@ -126,7 +126,7 @@ func (*GetBlockRequest) XXX_MessageName() string {
 
 type TxRequest struct {
 	// Height of block required
-	TxHash github_com_hyperledger_burrow_binary.HexBytes `protobuf:"bytes,1,opt,name=TxHash,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"TxHash"`
+	TxHash github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,1,opt,name=TxHash,proto3,customtype=github.com/KLYE-Dev/HSC-MAIN/binary.HexBytes" json:"TxHash"`
 	// Whether to wait for the block to become available
 	Wait                 bool     `protobuf:"varint,2,opt,name=Wait,proto3" json:"Wait,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`

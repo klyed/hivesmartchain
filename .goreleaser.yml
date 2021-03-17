@@ -2,9 +2,9 @@ before:
   hooks:
   - go mod tidy
 builds:
-- main: ./cmd/burrow
+- main: ./cmd/hsc
   env:
-  - CGO_ENABLED=0
+  - CGO_ENABLED=1
   ldflags:
   - -extldflags "-static"
   - -s -w
