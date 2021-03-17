@@ -1,6 +1,6 @@
 module github.com/klyed/hivesmartchain;
 
-go 1.15;
+go v1.15
 
 require	github.com/BurntSushi/toml v0.3.1
 require	github.com/OneOfOne/xxhash v1.2.8
@@ -11,7 +11,7 @@ require	github.com/cep21/xdgbasedir v0.0.0-20170329171747-21470bfc93b9
 require	github.com/cosmos/iavl v0.15.3
 require	github.com/eapache/channels v1.1.0
 require	github.com/elgs/gojq v0.0.0-20201120033525-b5293fef2759
-require	github.com/elgs/gosplitargs v0.0.0-20161028071935-a491c5eeb3c8;// indirect
+require	github.com/elgs/gosplitargs v0.0.0-20161028071935-a491c5eeb3c8 // indirect
 require	github.com/fatih/color v1.10.0
 require	github.com/go-interpreter/wagon v0.6.0
 require	github.com/go-kit/kit v0.10.0
