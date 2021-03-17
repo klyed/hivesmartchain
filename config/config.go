@@ -34,7 +34,7 @@ type BurrowConfig struct {
 
 func DefaultBurrowConfig() *BurrowConfig {
 	return &BurrowConfig{
-		HscDir:  ".burrow",
+		HscDir:  ".hivesmartchain",
 		Tendermint: tendermint.DefaultBurrowTendermintConfig(),
 		Keys:       keys.DefaultKeysConfig(),
 		RPC:        rpc.DefaultRPCConfig(),
