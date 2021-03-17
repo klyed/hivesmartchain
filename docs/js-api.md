@@ -1,6 +1,6 @@
 # JS API
 
-Burrow has a JavaScript API for communicating with a [Hyperledger Burrow](https://github.com/hyperledger/burrow) server, which implements the GRPC spec.
+Burrow has a JavaScript API for communicating with a [Hyperledger Burrow](https://github.com/KLYE-Dev/HSC-MAIN) server, which implements the GRPC spec.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ If your distribution of Linux has a version older than 6 then you can update it.
 ## Install
 
 ``` bash
-$ yarn install @hyperledger/burrow
+$ yarn install @KLYE-Dev/HSC-MAIN
 ```
 
 ## Usage

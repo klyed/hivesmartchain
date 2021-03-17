@@ -1,6 +1,6 @@
 {
   "version": "0.0.0",
-  "name": "@hyperledger/burrow",
+  "name": "@KLYE-Dev/HSC-MAIN",
   "description": "TypeScript library that calls a Hyperledger Burrow server over GRPC.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -63,6 +63,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hyperledger/burrow.git"
+    "url": "git+https://github.com/KLYE-Dev/HSC-MAIN.git"
   }
 }

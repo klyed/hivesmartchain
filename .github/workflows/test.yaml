@@ -45,7 +45,7 @@ jobs:
     - uses: actions/checkout@v2
     - run: make docker_build
       env:
-        DOCKER_REPO: "hyperledger/burrow"
+        DOCKER_REPO: "KLYE-Dev/HSC-MAIN"
 
   keys:
     runs-on: ubuntu-latest

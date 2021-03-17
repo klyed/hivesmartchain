@@ -15,7 +15,7 @@ REPO := $(shell pwd)
 
 # Our own Go files containing the compiled bytecode of solidity files as a constant
 
-export CI_IMAGE=hyperledger/burrow:ci-2
+export CI_IMAGE=KLYE-Dev/HSC-MAIN:ci-2
 
 VERSION := $(shell scripts/version.sh)
 # Gets implicit default GOPATH if not set
@@ -129,18 +129,18 @@ peg_deps:
 peg:
 	peg event/query/query.peg
 
-### Building github.com/hyperledger/burrow
+### Building github.com/KLYE-Dev/HSC-MAIN
 
 # Output commit_hash but only if we have the git repo (e.g. not in docker build
 .PHONY: commit_hash
 commit_hash:
 	@git status &> /dev/null && scripts/commit_hash.sh > commit_hash.txt || true
 
-# build all targets in github.com/hyperledger/burrow
+# build all targets in github.com/KLYE-Dev/HSC-MAIN
 .PHONY: build
 build:	check build_burrow build_burrow_debug
 
-# build all targets in github.com/hyperledger/burrow with checks for race conditions
+# build all targets in github.com/KLYE-Dev/HSC-MAIN with checks for race conditions
 .PHONY: build_race
 build_race:	check build_race_db
 
@@ -176,14 +176,14 @@ install: build_burrow
 build_race_db:
 	go build -race -o ${REPO}/bin/burrow ./cmd/burrow
 
-### Build docker images for github.com/hyperledger/burrow
+### Build docker images for github.com/KLYE-Dev/HSC-MAIN
 
 # build docker image for burrow
 .PHONY: docker_build
 docker_build: check commit_hash
 	@scripts/build_tool.sh
 
-### Testing github.com/hyperledger/burrow
+### Testing github.com/KLYE-Dev/HSC-MAIN
 
 # Solidity fixtures
 .PHONY: solidity

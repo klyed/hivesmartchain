@@ -15,5 +15,5 @@ services:
     depends_on:
       - db
     volumes:
-    - .:/go/src/github.com/hyperledger/burrow
-    working_dir: /go/src/github.com/hyperledger/burrow
+    - .:/go/src/github.com/KLYE-Dev/HSC-MAIN
+    working_dir: /go/src/github.com/KLYE-Dev/HSC-MAIN
