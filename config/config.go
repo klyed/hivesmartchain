@@ -24,12 +24,12 @@ type HiveSmartChainConfig struct {
 	Passphrase       *string         `json:",omitempty" toml:",omitempty"`
 	// From config file
 	HscDir     string
-	GenesisDoc *genesis.GenesisDoc                `json:",omitempty" toml:",omitempty"`
+	GenesisDoc *genesis.GenesisDoc                        `json:",omitempty" toml:",omitempty"`
 	Tendermint *tendermint.HiveSmartChainTendermintConfig `json:",omitempty" toml:",omitempty"`
-	Execution  *execution.ExecutionConfig         `json:",omitempty" toml:",omitempty"`
-	Keys       *keys.KeysConfig                   `json:",omitempty" toml:",omitempty"`
-	RPC        *rpc.RPCConfig                     `json:",omitempty" toml:",omitempty"`
-	Logging    *logconfig.LoggingConfig           `json:",omitempty" toml:",omitempty"`
+	Execution  *execution.ExecutionConfig                 `json:",omitempty" toml:",omitempty"`
+	Keys       *keys.KeysConfig                           `json:",omitempty" toml:",omitempty"`
+	RPC        *rpc.RPCConfig                             `json:",omitempty" toml:",omitempty"`
+	Logging    *logconfig.LoggingConfig                   `json:",omitempty" toml:",omitempty"`
 }
 
 func DefaultHiveSmartChainConfig() *HiveSmartChainConfig {

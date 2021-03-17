@@ -45,7 +45,7 @@ const (
 	ServerShutdownTimeout  = 5000 * time.Millisecond
 	LoggingCallerDepth     = 5
 	AccountsRingMutexCount = 100
-	HiveSmartChainDBName           = "hsc_state"
+	HiveSmartChainDBName   = "hsc_state"
 )
 
 // Kernel is the root structure of HiveSmartChain
