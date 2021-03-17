@@ -12,10 +12,10 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	github_com_klyed_hivesmartchain_binary "github.com/klyed/hivesmartchain/binary"
+	github_com_klyed_hsc-main_binary "github.com/klyed/hivesmartchain/binary"
 	crypto "github.com/klyed/hivesmartchain/crypto"
-	github_com_klyed_hivesmartchain_crypto "github.com/klyed/hivesmartchain/crypto"
-	github_com_klyed_hivesmartchain_txs_payload "github.com/klyed/hivesmartchain/txs/payload"
+	github_com_klyed_hsc-main_crypto "github.com/klyed/hivesmartchain/crypto"
+	github_com_klyed_hsc-main_txs_payload "github.com/klyed/hivesmartchain/txs/payload"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -114,7 +114,7 @@ func (*Envelope) XXX_MessageName() string {
 
 // Signatory contains signature and one or both of Address and PublicKey to identify the signer
 type Signatory struct {
-	Address              *github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address,omitempty"`
+	Address              *github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address,omitempty"`
 	PublicKey            *crypto.PublicKey                             `protobuf:"bytes,2,opt,name=PublicKey,proto3" json:"PublicKey,omitempty"`
 	Signature            *crypto.Signature                             `protobuf:"bytes,4,opt,name=Signature,proto3" json:"Signature,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                      `json:"-"`
@@ -172,13 +172,13 @@ func (*Signatory) XXX_MessageName() string {
 // BroadcastTx or Transaction receipt
 type Receipt struct {
 	// Transaction type
-	TxType github_com_klyed_hivesmartchain_txs_payload.Type `protobuf:"varint,1,opt,name=TxType,proto3,casttype=github.com/klyed/hivesmartchain/txs/payload.Type" json:"TxType,omitempty"`
+	TxType github_com_klyed_hsc-main_txs_payload.Type `protobuf:"varint,1,opt,name=TxType,proto3,casttype=github.com/klyed/hivesmartchain/txs/payload.Type" json:"TxType,omitempty"`
 	// The hash of the transaction that caused this event to be generated
-	TxHash github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,2,opt,name=TxHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"TxHash"`
+	TxHash github_com_klyed_hsc-main_binary.HexBytes `protobuf:"bytes,2,opt,name=TxHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"TxHash"`
 	// Whether the transaction creates a contract
 	CreatesContract bool `protobuf:"varint,3,opt,name=CreatesContract,proto3" json:"CreatesContract,omitempty"`
 	// The address of the contract being called
-	ContractAddress      github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,4,opt,name=ContractAddress,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"ContractAddress"`
+	ContractAddress      github_com_klyed_hsc-main_crypto.Address `protobuf:"bytes,4,opt,name=ContractAddress,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"ContractAddress"`
 	XXX_NoUnkeyedLiteral struct{}                                     `json:"-"`
 	XXX_unrecognized     []byte                                       `json:"-"`
 	XXX_sizecache        int32                                        `json:"-"`
@@ -213,7 +213,7 @@ func (m *Receipt) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Receipt proto.InternalMessageInfo
 
-func (m *Receipt) GetTxType() github_com_klyed_hivesmartchain_txs_payload.Type {
+func (m *Receipt) GetTxType() github_com_klyed_hsc-main_txs_payload.Type {
 	if m != nil {
 		return m.TxType
 	}
@@ -746,7 +746,7 @@ func (m *Signatory) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_klyed_hivesmartchain_crypto.Address
+			var v github_com_klyed_hsc-main_crypto.Address
 			m.Address = &v
 			if err := m.Address.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -889,7 +889,7 @@ func (m *Receipt) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.TxType |= github_com_klyed_hivesmartchain_txs_payload.Type(b&0x7F) << shift
+				m.TxType |= github_com_klyed_hsc-main_txs_payload.Type(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}

@@ -14,7 +14,7 @@ import (
 	golang_proto "github.com/golang/protobuf/proto"
 	validator "github.com/klyed/hivesmartchain/acm/validator"
 	bcm "github.com/klyed/hivesmartchain/bcm"
-	github_com_klyed_hivesmartchain_binary "github.com/klyed/hivesmartchain/binary"
+	github_com_klyed_hsc-main_binary "github.com/klyed/hivesmartchain/binary"
 	tendermint "github.com/klyed/hivesmartchain/consensus/tendermint"
 )
 
@@ -34,7 +34,7 @@ type ResultStatus struct {
 	ChainID       string                                        `protobuf:"bytes,1,opt,name=ChainID,proto3" json:"ChainID,omitempty"`
 	RunID         string                                        `protobuf:"bytes,2,opt,name=RunID,proto3" json:"RunID,omitempty"`
 	HscVersion string                                        `protobuf:"bytes,3,opt,name=HscVersion,proto3" json:"HscVersion,omitempty"`
-	GenesisHash   github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,4,opt,name=GenesisHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"GenesisHash"`
+	GenesisHash   github_com_klyed_hsc-main_binary.HexBytes `protobuf:"bytes,4,opt,name=GenesisHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"GenesisHash"`
 	NodeInfo      *tendermint.NodeInfo                          `protobuf:"bytes,5,opt,name=NodeInfo,proto3" json:"NodeInfo,omitempty"`
 	SyncInfo      *bcm.SyncInfo                                 `protobuf:"bytes,6,opt,name=SyncInfo,proto3" json:"SyncInfo,omitempty"`
 	// When catching up in fast sync
