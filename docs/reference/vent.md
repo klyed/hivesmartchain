@@ -85,7 +85,7 @@ contract EventEmitter {
 
 We can maintain a view-mode table that feels like that of a ordinary CRUD app though it is backed by a stream of events coming from our Solidity contracts.
 
-Burrow can also emit a JSONSchema for the projection file format with `burrow vent schema`. You can use this to validate your projections using any of the 
+Burrow can also emit a JSONSchema for the projection file format with `hsc vent schema`. You can use this to validate your projections using any of the 
 [JSONSchema](https://json-schema.org/) tooling.
 
 ### Projection specification
@@ -178,17 +178,17 @@ make test_integration_vent
 ## Run Vent Command:
 
 ```bash
-# Install burrow (from root of repo):
+# Install hsc (from root of repo):
 make install
 
 # Print command help:
-burrow vent --help
+hsc vent --help
 
 # Run vent command with postgres adapter, spec & abi files path, also stores block & tx data:
-burrow vent start --db-adapter="postgres" --db-url="postgres://user:pass@localhost:5432/vent?sslmode=disable" --db-schema="vent" --grpc-addr="localhost:10997" --http-addr="0.0.0.0:8080" --log-level="debug" --spec="<sqlsol specification file path>" --abi="<abi file path>" --db-block=true
+hsc vent start --db-adapter="postgres" --db-url="postgres://user:pass@localhost:5432/vent?sslmode=disable" --db-schema="vent" --grpc-addr="localhost:10997" --http-addr="0.0.0.0:8080" --log-level="debug" --spec="<sqlsol specification file path>" --abi="<abi file path>" --db-block=true
 
 # Run vent command with sqlite adapter, spec & abi directories path, does not store block & tx data:
-burrow vent start --db-adapter="sqlite" --db-url="./vent.sqlite" --grpc-addr="localhost:10997" --http-addr="0.0.0.0:8080" --log-level="debug" --spec="<sqlsol specification directory path>" --abi="<abi files directory path>"
+hsc vent start --db-adapter="sqlite" --db-url="./vent.sqlite" --grpc-addr="localhost:10997" --http-addr="0.0.0.0:8080" --log-level="debug" --spec="<sqlsol specification directory path>" --abi="<abi files directory path>"
 ```
 
 Configuration Flags:

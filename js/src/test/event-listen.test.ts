@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from '../test';
+import {hsc, compile} from '../test';
 
 describe('Event listening', function () {
 
@@ -32,7 +32,7 @@ describe('Event listening', function () {
     `
 
     const {abi, code} = compile(source, 'Contract')
-    const contract: any = await burrow.contracts.deploy(abi, code)
+    const contract: any = await hsc.contracts.deploy(abi, code)
     const promise = new Promise<void>((resolve, reject) => {
       const stream = contract.Pay((error, result) => {
         if (error) {

@@ -25,7 +25,7 @@ Ethereum precompile contracts.
 ## Extensions
 
 We have a notion similar to precompiled contracts that we call 'natives' whereby we mount pseudo-contracts at a particular address with functions that can be called that expose
-certain native functionality of Burrow. Most prominent is access to our permissioning system. SNatives can be displayed with `burrow snatives`.
+certain native functionality of Burrow. Most prominent is access to our permissioning system. SNatives can be displayed with `hsc snatives`.
 
 Much of the innovation that Burrow intends to offer at the smart contract level will be provided through our 'native contracts' including access to:
 

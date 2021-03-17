@@ -1,7 +1,7 @@
 {{- $workDir := printf "/work" }}
 {{- $refDir := printf "/ref" }}
 {{- $keysDir := printf "/keys" }}
-{{- $burrowImage := include "burrow.image" . }}
+{{- $burrowImage := include "hsc.image" . }}
 {{- $restoreImage := include "restore.image" . }}
 {{- range $index, $val := $.Values.validators }}
 {{- $nodeNumber := printf "%03d" $index }}
@@ -10,17 +10,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: {{ template "burrow.name" $ }}
-    chart: {{ template "burrow.chart" $ }}
+    app: {{ template "hsc.name" $ }}
+    chart: {{ template "hsc.chart" $ }}
     heritage: {{ $.Release.Service }}
     release: {{ $.Release.Name }}
     nodeNumber: {{ $nodeNumber | quote }}
-  name: {{ template "burrow.fullname" $ }}-{{ $nodeNumber }}
+  name: {{ template "hsc.fullname" $ }}-{{ $nodeNumber }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ template "burrow.name" $ }}
+      app: {{ template "hsc.name" $ }}
       release: {{ $.Release.Name }}
       nodeNumber: {{ $nodeNumber | quote }}
   template:
@@ -37,7 +37,7 @@ spec:
 {{- end }}
 {{- end }}
       labels:
-        app: {{ template "burrow.name" $ }}
+        app: {{ template "hsc.name" $ }}
         release: {{ $.Release.Name }}
         nodeNumber: {{ $nodeNumber | quote }}
 {{- if $.Values.podLabels }}
@@ -58,9 +58,9 @@ spec:
             - 'sh'
             - '-xc'
             - |-
-              mkdir -p {{ $workDir }}/.burrow/config && \
-              cp node_key.json {{ $workDir }}/.burrow/config/node_key.json && \
-              chmod 600 {{ $workDir }}/.burrow/config/node_key.json
+              mkdir -p {{ $workDir }}/.hsc/config && \
+              cp node_key.json {{ $workDir }}/.hsc/config/node_key.json && \
+              chmod 600 {{ $workDir }}/.hsc/config/node_key.json
 {{- if $.Values.restore.enabled }}
         - name: retrieve
           image: {{ $restoreImage | quote }}
@@ -78,11 +78,11 @@ spec:
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
           workingDir: {{ $workDir }}
           command:
-          - burrow
+          - hsc
           args:
           - restore
           - --config
-          - "{{ $refDir }}/burrow.json"
+          - "{{ $refDir }}/hsc.json"
           - --genesis
           - "{{ $refDir }}/genesis.json"
           - --silent
@@ -103,11 +103,11 @@ spec:
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
           workingDir: {{ $workDir }}
           command:
-          - burrow
+          - hsc
           args:
           - start
           - --config
-          - "{{ $refDir }}/burrow.json"
+          - "{{ $refDir }}/hsc.json"
           - --genesis
           - "{{ $refDir }}/genesis.json"
           - --address
@@ -181,20 +181,20 @@ spec:
           projected:
             sources:
               - configMap:
-                  name: {{ template "burrow.fullname" $ }}-config
+                  name: {{ template "hsc.fullname" $ }}-config
               - configMap:
-                  name: {{ template "burrow.fullname" $ }}-genesis
+                  name: {{ template "hsc.fullname" $ }}-genesis
         - name: keys-dir
           projected:
             sources:
               - secret:
-                  name: {{ template "burrow.fullname" $ }}-keys-{{ $nodeNumber }}
+                  name: {{ template "hsc.fullname" $ }}-keys-{{ $nodeNumber }}
         - name: keys-dir-names
           emptyDir: {}
         - name: work-dir
 {{- if $.Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ template "burrow.fullname" $ }}-{{ $nodeNumber }}
+            claimName: {{ template "hsc.fullname" $ }}-{{ $nodeNumber }}
 {{- else }}
           emptyDir: {}
 {{- end }}

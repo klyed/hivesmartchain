@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from '../test';
+import {hsc, compile} from '../test';
 import { Contract } from '..';
 
 describe('Functional Contract Usage', function () {it('#Constructor usage', async () => {
@@ -30,7 +30,7 @@ describe('Functional Contract Usage', function () {it('#Constructor usage', asyn
       }
     `
     const {abi, code} = compile(source, 'Test')
-    const contract: any = new Contract(abi, code, null, burrow)
+    const contract: any = new Contract(abi, code, null, hsc)
 
     let A1
     let A2

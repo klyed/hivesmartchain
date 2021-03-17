@@ -15,14 +15,14 @@ REPO := $(shell pwd)
 
 # Our own Go files containing the compiled bytecode of solidity files as a constant
 
-export CI_IMAGE=hyperledger/burrow:ci-2
+export CI_IMAGE=hyperledger/hsc:ci-2
 
 VERSION := $(shell scripts/version.sh)
 # Gets implicit default GOPATH if not set
 GOPATH?=$(shell go env GOPATH)
 BIN_PATH?=$(GOPATH)/bin
 HELM_PATH?=helm/package
-HELM_PACKAGE=$(HELM_PATH)/burrow-$(VERSION).tgz
+HELM_PACKAGE=$(HELM_PATH)/hsc-$(VERSION).tgz
 ARCH?=linux-amd64
 PID_DIR=.pid
 
@@ -74,9 +74,9 @@ megacheck:
 
 # Protobuffing
 
-BURROW_TS_PATH = ./js
-PROTO_GEN_TS_PATH = ${BURROW_TS_PATH}/proto
-NODE_BIN = ${BURROW_TS_PATH}/node_modules/.bin
+HSC_TS_PATH = ./js
+PROTO_GEN_TS_PATH = ${HSC_TS_PATH}/proto
+NODE_BIN = ${HSC_TS_PATH}/node_modules/.bin
 
 # To access Tendermint bundled protobuf files from go module cache
 TENDERMINT_MOD?=github.com/tendermint/tendermint
@@ -84,7 +84,7 @@ TENDERMINT_VERSION?=$(shell go list -m -f '{{ .Version }}' $(TENDERMINT_MOD))
 TENDERMINT_SRC?=$(shell go env GOMODCACHE)/$(TENDERMINT_MOD)@$(TENDERMINT_VERSION)
 TENDERMINT_PROTO?=$(TENDERMINT_SRC)/proto
 
-PROTO_FILES = $(shell find . $(TENDERMINT_PROTO) -path $(BURROW_TS_PATH) -prune -o -path ./node_modules -prune -o -type f -name '*.proto' -print)
+PROTO_FILES = $(shell find . $(TENDERMINT_PROTO) -path $(HSC_TS_PATH) -prune -o -path ./node_modules -prune -o -type f -name '*.proto' -print)
 PROTO_GO_FILES = $(patsubst %.proto, %.pb.go, $(PROTO_FILES))
 PROTO_GO_FILES_REAL = $(shell find . -type f -name '*.pb.go' -print)
 PROTO_TS_FILES = $(patsubst %.proto, %.pb.ts, $(PROTO_FILES))
@@ -110,7 +110,7 @@ protobuf: $(PROTO_GO_FILES) $(PROTO_TS_FILES) fix
 .PHONY: protobuf_deps
 protobuf_deps:
 	@go get -u github.com/gogo/protobuf/protoc-gen-gogo
-	@cd ${BURROW_TS_PATH} && yarn install --only=dev
+	@cd ${HSC_TS_PATH} && yarn install --only=dev
 
 .PHONY: clean_protobuf
 clean_protobuf:
@@ -129,86 +129,86 @@ peg_deps:
 peg:
 	peg event/query/query.peg
 
-### Building github.com/hyperledger/burrow
+### Building github.com/hyperledger/hsc
 
 # Output commit_hash but only if we have the git repo (e.g. not in docker build
 .PHONY: commit_hash
 commit_hash:
 	@git status &> /dev/null && scripts/commit_hash.sh > commit_hash.txt || true
 
-# build all targets in github.com/hyperledger/burrow
+# build all targets in github.com/hyperledger/hsc
 .PHONY: build
 build:	check build_hsc build_hsc_debug
 
-# build all targets in github.com/hyperledger/burrow with checks for race conditions
+# build all targets in github.com/hyperledger/hsc with checks for race conditions
 .PHONY: build_race
 build_race:	check build_race_db
 
-# build burrow and vent
+# build hsc and vent
 .PHONY: build_hsc
 build_hsc: commit_hash
-	go build $(BURROW_BUILD_FLAGS) -ldflags "-extldflags '-static' \
+	go build $(HSC_BUILD_FLAGS) -ldflags "-extldflags '-static' \
 	-X github.com/klyed/hivesmartchain/project.commit=$(shell cat commit_hash.txt) \
 	-X github.com/klyed/hivesmartchain/project.date=$(shell date '+%Y-%m-%d')" \
-	-o ${REPO}/bin/hsc$(BURROW_BUILD_SUFFIX) ./cmd/hsc
+	-o ${REPO}/bin/hsc$(HSC_BUILD_SUFFIX) ./cmd/hsc
 
 # With the sqlite tag - enabling Vent sqlite adapter support, but building a CGO binary
 .PHONY: build_hsc_sqlite
-build_hsc_sqlite: export BURROW_BUILD_SUFFIX=-vent-sqlite
-build_hsc_sqlite: export BURROW_BUILD_FLAGS=-tags sqlite
+build_hsc_sqlite: export HSC_BUILD_SUFFIX=-vent-sqlite
+build_hsc_sqlite: export HSC_BUILD_FLAGS=-tags sqlite
 build_hsc_sqlite:
 	$(MAKE) build_hsc
 
 # Builds a binary suitable for delve line-by-line debugging through CGO with optimisations (-N) and inling (-l) disabled
 .PHONY: build_hsc_debug
-build_hsc_debug: export BURROW_BUILD_SUFFIX=-debug
-build_hsc_debug: export BURROW_BUILD_FLAGS=-gcflags "all=-N -l"
+build_hsc_debug: export HSC_BUILD_SUFFIX=-debug
+build_hsc_debug: export HSC_BUILD_FLAGS=-gcflags "all=-N -l"
 build_hsc_debug:
 	$(MAKE) build_hsc
 
 .PHONY: install
 install: build_hsc
 	mkdir -p ${BIN_PATH}
-	install ${REPO}/bin/hsc${BIN_PATH}/burrow
+	install ${REPO}/bin/hsc${BIN_PATH}/hsc
 
-# build burrow with checks for race conditions
+# build hsc with checks for race conditions
 .PHONY: build_race_db
 build_race_db:
 	go build -race -o ${REPO}/bin/hsc./cmd/hsc
 
-### Build docker images for github.com/hyperledger/burrow
+### Build docker images for github.com/hyperledger/hsc
 
-# build docker image for burrow
+# build docker image for hsc
 .PHONY: docker_build
 docker_build: check commit_hash
 	@scripts/build_tool.sh
 
-### Testing github.com/hyperledger/burrow
+### Testing github.com/hyperledger/hsc
 
 # Solidity fixtures
 .PHONY: solidity
 solidity: $(patsubst %.sol, %.sol.go, $(wildcard ./execution/solidity/*.sol)) build_hsc
 
 %.sol.go: %.sol
-	@burrow compile $^
+	@hsc compile $^
 
 # Solang fixtures
 .PHONY: solang
 solang: $(patsubst %.solang, %.solang.go, $(wildcard ./execution/solidity/*.solang) $(wildcard ./execution/wasm/*.solang)) build_hsc
 
 %.solang.go: %.solang
-	@burrow compile --wasm $^
+	@hsc compile --wasm $^
 
 # node/js
 .PHONY: yarn_install
 yarn_install:
-	@cd ${BURROW_TS_PATH} && yarn install
+	@cd ${HSC_TS_PATH} && yarn install
 
 # Test
 
 .PHONY: test_js
 test_js:
-	@cd ${BURROW_TS_PATH} && yarn test
+	@cd ${HSC_TS_PATH} && yarn test
 
 .PHONY: publish_js
 publish_js:
@@ -222,11 +222,11 @@ test: check bin/solc bin/solang
 
 .PHONY: test_keys
 test_keys:
-	burrow_bin="${REPO}/bin/hsc" tests/keys_server/test.sh
+	hsc_bin="${REPO}/bin/hsc" tests/keys_server/test.sh
 
 .PHONY:	test_truffle
 test_truffle:
-	burrow_bin="${REPO}/bin/hsc" tests/web3/truffle.sh
+	hsc_bin="${REPO}/bin/hsc" tests/web3/truffle.sh
 
 .PHONY:	test_integration_vent
 test_integration_vent:
@@ -235,7 +235,7 @@ test_integration_vent:
 
 .PHONY:	test_integration_vent_complete
 test_integration_vent_complete:
-	docker-compose run burrow make test_integration_vent test_integration_vent_ethereum
+	docker-compose run hsc make test_integration_vent test_integration_vent_ethereum
 
 .PHONY:	test_integration_vent_ethereum
 test_integration_vent_ethereum: start_ganache
@@ -297,7 +297,7 @@ bin/solang: ./tests/scripts/deps/solang.sh
 	@tests/scripts/deps/solang.sh bin/solang
 	@touch bin/solang
 
-# test burrow with checks for race conditions
+# test hsc with checks for race conditions
 .PHONY: test_race
 test_race: build_race
 	@go test -race $(shell go list ./... )
@@ -364,13 +364,13 @@ helm_deps: bin/helm
 
 .PHONY: helm_test
 helm_test: bin/helm
-	bin/helm dep up helm/burrow
-	bin/helm lint helm/burrow
+	bin/helm dep up helm/hsc
+	bin/helm lint helm/hsc
 
 helm_package: $(HELM_PACKAGE)
 
 $(HELM_PACKAGE): helm_test bin/helm
-	bin/helm package helm/burrow \
+	bin/helm package helm/hsc \
 		--version "$(VERSION)" \
 		--app-version "$(VERSION)" \
 		--set "image.tag=$(VERSION)" \

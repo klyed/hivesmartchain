@@ -6,9 +6,9 @@ bin/
 test_scratch/
 *.log
 .keys
-.burrow*
-burrow.toml
-burrow???.toml
+.hsc*
+hsc.toml
+hsc???.toml
 
 # Temporary / cached
 *.swp

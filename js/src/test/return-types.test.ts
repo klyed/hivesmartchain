@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from "../test";
+import {hsc, compile} from "../test";
 
 describe('Multiple return types', function () {
   it('#42', async () => {
@@ -25,7 +25,7 @@ describe('Multiple return types', function () {
       }
     `
     const {abi, code} = compile(source, 'Test')
-    const contract: any = await burrow.contracts.deploy(abi, code, {
+    const contract: any = await hsc.contracts.deploy(abi, code, {
       call: function (result) {
         return {values: result.values, raw: result.raw}
       }

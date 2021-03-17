@@ -34,11 +34,11 @@ A seed node will crawl the network and relay addresses.
 ### Seed Node
 
 ```shell
-burrow spec -f1 | burrow configure --keys-dir=.keys_seed -s- > /dev/null
+hsc spec -f1 | hsc configure --keys-dir=.keys_seed -s- > /dev/null
 ```
 
 ```toml
-HscDir = ".burrow_seed_0"
+HscDir = ".hsc_seed_0"
 
 [Tendermint]
   SeedMode = true
@@ -70,15 +70,15 @@ HscDir = ".burrow_seed_0"
 ### Validators
 
 ```shell
-burrow spec --full-accounts=3 | burrow configure -s- > .burrow_init.toml
+hsc spec --full-accounts=3 | hsc configure -s- > .hsc_init.toml
 ```
 
-From the generated `.burrow_init.toml` file, create new files for each node, and change the content.
+From the generated `.hsc_init.toml` file, create new files for each node, and change the content.
 
 #### Validator 1
 
 ```toml
-HscDir = ".burrow_node0"
+HscDir = ".hsc_node0"
 
 [Tendermint]
   Seeds = "PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS"
@@ -114,7 +114,7 @@ HscDir = ".burrow_node0"
 #### Validator 2
 
 ```toml
-HscDir = ".burrow_node1"
+HscDir = ".hsc_node1"
 
 [Tendermint]
   Seeds = "PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS"
@@ -150,7 +150,7 @@ HscDir = ".burrow_node1"
 #### Validator 3
 
 ```toml
-HscDir = ".burrow_node2"
+HscDir = ".hsc_node2"
 
 [Tendermint]
   Seeds = "PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS"
@@ -188,7 +188,7 @@ HscDir = ".burrow_node2"
 ### Seed Node
 
 ```shell
-burrow start --address=`basename .keys_seed/data/* .json` --config=.burrow_seed.toml  > .burrow_seed.log 2>&1 &
+hsc start --address=`basename .keys_seed/data/* .json` --config=.hsc_seed.toml  > .hsc_seed.log 2>&1 &
 ```
 
 #### Validators
@@ -203,17 +203,17 @@ echo $SEED_URL
 Configure the validator nodes to connect to the seed node:
 
 ```shell
-sed -i s%PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS%${SEED_URL}% .burrow_val0.toml
-sed -i s%PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS%${SEED_URL}% .burrow_val1.toml
-sed -i s%PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS%${SEED_URL}% .burrow_val2.toml
+sed -i s%PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS%${SEED_URL}% .hsc_val0.toml
+sed -i s%PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS%${SEED_URL}% .hsc_val1.toml
+sed -i s%PUT_HERE_SEED_NODE_ID@LISTEN_EXTERNAL_ADDRESS%${SEED_URL}% .hsc_val2.toml
 ```
 
 Start the network:
 
 ```shell
-burrow start -v=0 --config=.burrow_val0.toml  > .burrow_val0.log 2>&1 &
-burrow start -v=1 --config=.burrow_val1.toml  > .burrow_val1.log 2>&1 &
-burrow start -v=2 --config=.burrow_val2.toml  > .burrow_val2.log 2>&1 &
+hsc start -v=0 --config=.hsc_val0.toml  > .hsc_val0.log 2>&1 &
+hsc start -v=1 --config=.hsc_val1.toml  > .hsc_val1.log 2>&1 &
+hsc start -v=2 --config=.hsc_val2.toml  > .hsc_val2.log 2>&1 &
 ```
 
 The nodes should connect to our seed node and request addresses, then they will connect to each other and start submitting and voting on blocks.
@@ -243,8 +243,8 @@ Disable seed mode on the seed node and see how it affects the peers network:
 Clear nodes folder (it will restart the chain from the genesis block):
 
 ```shell
-killall burrow
-rm -rf .burrow_node0 .burrow_node1 .burrow_node2 .burrow_seed_0
+killall hsc
+rm -rf .hsc_node0 .hsc_node1 .hsc_node2 .hsc_seed_0
 ```
 
 Restart all nodes, then check network status (Validator 3 is now connected to all peers, included seed node):

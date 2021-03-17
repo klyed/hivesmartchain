@@ -12,13 +12,13 @@ import (
 
 func main() {
 	output := defaultOutput()
-	err := burrow(output).Run(os.Args)
+	err := hsc(output).Run(os.Args)
 	if err != nil {
 		output.Fatalf("%v", err)
 	}
 }
 
-func burrow(output commands.Output) *cli.Cli {
+func hsc(output commands.Output) *cli.Cli {
 	app := cli.App("hsc", "The EVM smart contract machine with Tendermint consensus")
 	// We'll handle any errors
 	app.ErrorHandling = flag.ContinueOnError

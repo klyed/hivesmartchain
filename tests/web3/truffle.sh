@@ -2,15 +2,15 @@
 
 chain=$(mktemp -d)
 cd $chain
-$burrow_bin spec -v1 -d2 | $burrow_bin configure -s- --curve-type secp256k1 > burrow.toml
-$burrow_bin start &> /dev/null &
-burrow_pid=$!
+$hsc_bin spec -v1 -d2 | $hsc_bin configure -s- --curve-type secp256k1 > hsc.toml
+$hsc_bin start &> /dev/null &
+hsc_pid=$!
 
 contracts=$(mktemp -d)
 cd $contracts
 
 function finish {
-    kill -TERM $burrow_pid
+    kill -TERM $hsc_pid
     rm -rf "$chain"
     rm -rf "$contracts"
 }
@@ -22,7 +22,7 @@ truffle unbox metacoin
 cat << EOF > truffle-config.js
 module.exports = {
   networks: {
-   burrow: {
+   hsc: {
      host: "127.0.0.1",
      port: 26660,
      network_id: "*",
@@ -30,4 +30,4 @@ module.exports = {
   }
 };
 EOF
-truffle test --network burrow
+truffle test --network hsc

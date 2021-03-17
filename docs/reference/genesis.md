@@ -10,7 +10,7 @@ event performed by a single party. It cannot occur under consensus because it de
 
 ## GenesisDoc
 
-In burrow we define the genesis facts in a canonical JSON document called the `GenesisDoc`. The sha256 of this document (with whitespace, as it happens) forms the `GenesisHash` 
+In hsc we define the genesis facts in a canonical JSON document called the `GenesisDoc`. The sha256 of this document (with whitespace, as it happens) forms the `GenesisHash` 
 which acts as if it were the hash of a virtual zeroth block.
 
 

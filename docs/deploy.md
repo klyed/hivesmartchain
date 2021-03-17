@@ -10,20 +10,20 @@ The Burrow deploy toolkit can do a number of things:
 * bond and unbond validators
 * create proposals or vote for a proposal
 
-burrow deploy needs a script to its commands. This script format bares some similarity to [ansible](https://www.ansible.com/). It
+hsc deploy needs a script to its commands. This script format bares some similarity to [ansible](https://www.ansible.com/). It
 is in yaml format. The top level structure is an array of [jobs](https://github.com/klyed/hivesmartchain/blob/main/deploy/def/job.go).
 The different job types are [defined here](https://github.com/klyed/hivesmartchain/blob/main/deploy/def/jobs.go).
 
-You can invoke burrow from the command line:
+You can invoke hsc from the command line:
 
 ```shell
-burrow deploy -a CF8F9480252B70D59CF5B5F3CAAA75FEAF6A4B33 deploy.yaml
+hsc deploy -a CF8F9480252B70D59CF5B5F3CAAA75FEAF6A4B33 deploy.yaml
 ```
 
 Each job in the playbook has a name. This name can be used in later jobs to refer to the result of a previous job (e.g. the address of a contract
 which was deployed). The jobs are executed in-order.
 
-Whenever an account needs to be specified, the key name in the burrow keys server can also be used.
+Whenever an account needs to be specified, the key name in the hsc keys server can also be used.
 
 ## Deploy
 
@@ -39,7 +39,7 @@ parameters:
 * _data:_ the arguments to the contract's constructor
 
 The solidity source file is compiled using the [solidity compiler](https://github.com/ethereum/solidity) unless the `--wasm` argument was given
-on the burrow deploy command line, in which case the [solang compiler](https://github.com/hyperledger-labs/solang) is used.
+on the hsc deploy command line, in which case the [solang compiler](https://github.com/hyperledger-labs/solang) is used.
 
 The contract is deployed with its metadata, so that we can retrieve the ABI when we need to call a function of this contract. For this
 reason, the bin file is a modified version of the [solidity output json](https://solidity.readthedocs.io/en/v0.5.11/using-the-compiler.html#output-description).
@@ -69,9 +69,9 @@ write access. This type of job has the following parameters:
 * _bin:_ the path to the abi or bin file
 
 The _destination_ field can either be a hex encoding adress, the name of a key name (e.g. Root\_0 or Participant\_1), or the result
-of previous burrow deploy job. In the latter case the name of the job must be specified, prefixed with $.
+of previous hsc deploy job. In the latter case the name of the job must be specified, prefixed with $.
 
-If the contract was deployed without metadata (e.g. using the burrow js module or with an earlier version of burrow deploy) the abi must be
+If the contract was deployed without metadata (e.g. using the hsc js module or with an earlier version of hsc deploy) the abi must be
 specified. This must be the path to the contract bin file or abi file.
 
 ## Proposal

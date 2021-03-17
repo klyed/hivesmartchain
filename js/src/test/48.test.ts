@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from '../test';
+import {hsc, compile} from '../test';
 
 describe('#48', function () {it('#48', async () => {
     const source = `
@@ -22,7 +22,7 @@ describe('#48', function () {it('#48', async () => {
       }
     `
     const {abi, code} = compile(source, 'Test')
-    return burrow.contracts.deploy(abi, code)
+    return hsc.contracts.deploy(abi, code)
       .then((contract: any) => contract.getCombination())
       .then(([number, address]) => {
         assert.strictEqual(number, 100)

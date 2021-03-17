@@ -35,7 +35,7 @@ contract permSNative {
 
 /**
 * Interface for managing Secure Native authorizations.
-* @dev This interface describes the functions exposed by the native permissions layer in burrow.
+* @dev This interface describes the functions exposed by the native permissions layer in hsc.
 * @dev These functions can be accessed as if this contract were deployed at a special address (0x0A758FEB535243577C1A79AE55BED8CA03E226EC).
 * @dev This special address is defined as the last 20 bytes of the sha3 hash of the the contract name.
 * @dev To instantiate the contract use:

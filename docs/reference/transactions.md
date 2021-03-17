@@ -6,7 +6,7 @@ replicated across all Burrow nodes. Each transaction is applied atomically and r
 
 Our transactions are defined in Protobuf [here](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto).
 
-Transactions can be built using our GRPC client libraries programmatically, via [burrow.js](js-api.md), or with `burrow deploy` - see our [deployment guide](deploy.md).
+Transactions can be built using our GRPC client libraries programmatically, via [hsc.js](js-api.md), or with `hsc deploy` - see our [deployment guide](deploy.md).
 
 ## TxInput
 

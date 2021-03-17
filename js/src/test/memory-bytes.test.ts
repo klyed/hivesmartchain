@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from "../test";
+import {hsc, compile} from "../test";
 
 
 describe('issue #21', function () {
@@ -28,7 +28,7 @@ describe('issue #21', function () {
     `
 
     const {abi, code} = compile(source, 'c')
-    return burrow.contracts.deploy(abi, code).then((c) => {
+    return hsc.contracts.deploy(abi, code).then((c) => {
       contract = c
     })
   })

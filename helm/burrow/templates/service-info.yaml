@@ -2,11 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: {{ template "burrow.name" . }}
-    chart: {{ template "burrow.chart" . }}
+    app: {{ template "hsc.name" . }}
+    chart: {{ template "hsc.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-  name:  {{ template "burrow.fullname" . }}-info
+  name:  {{ template "hsc.fullname" . }}-info
 spec:
   type: {{ .Values.info.service.type }}
 {{- if .Values.info.service.loadBalance }}
@@ -18,7 +18,7 @@ spec:
       targetPort: info
       protocol: TCP
   selector:
-    app: {{ template "burrow.name" . }}
+    app: {{ template "hsc.name" . }}
     release: {{ .Release.Name }}
 {{- if not .Values.info.service.loadBalance }}
     nodeNumber: {{ .Values.info.service.node | quote }}

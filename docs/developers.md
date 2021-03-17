@@ -11,7 +11,7 @@ Please also refer to our [contributing guidelines](https://github.com/klyed/hive
 
 ## Building
 
-Statically build the burrow binary with `make build` (output in `./bin`) or install to `${GOPATH}/bin` with `make install`.
+Statically build the hsc binary with `make build` (output in `./bin`) or install to `${GOPATH}/bin` with `make install`.
 
 ## Testing
 
@@ -28,7 +28,7 @@ Install protoc and run `make protobuf_deps`. If you make any changes to the prot
 * Update project/history.go with the latest releases notes and version. Run `make CHANGELOG.md NOTES.md` and make sure this is merged to main.
 * On the main branch, run `make ready_for_pull_request`. Check for any modified files.
 * Once main is update to date, switch to main locally run `make tag_release`. This will push the tag which kicks of the release build.
-* Optionally send out email on hyperledger burrow mailinglist. Agreements network email should be sent out automatically.
+* Optionally send out email on hyperledger hsc mailinglist. Agreements network email should be sent out automatically.
 
 ## Proposals
 

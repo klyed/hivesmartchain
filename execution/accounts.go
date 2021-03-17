@@ -7,13 +7,13 @@ import (
 	"github.com/klyed/hivesmartchain/acm/acmstate"
 	"github.com/klyed/hivesmartchain/crypto"
 	"github.com/klyed/hivesmartchain/keys"
-	burrow_sync "github.com/klyed/hivesmartchain/sync"
+	hsc_sync "github.com/klyed/hivesmartchain/sync"
 )
 
 // Accounts pairs an underlying state.Reader with a KeyClient to provide a signing variant of an account
 // it also maintains a lock over addresses to provide a linearisation of signing events using SequentialSigningAccount
 type Accounts struct {
-	burrow_sync.RingMutex
+	hsc_sync.RingMutex
 	acmstate.Reader
 	keyClient keys.KeyClient
 }
@@ -31,7 +31,7 @@ type SequentialSigningAccount struct {
 
 func NewAccounts(reader acmstate.Reader, keyClient keys.KeyClient, mutexCount int) *Accounts {
 	return &Accounts{
-		RingMutex: *burrow_sync.NewRingMutexNoHash(mutexCount),
+		RingMutex: *hsc_sync.NewRingMutexNoHash(mutexCount),
 		Reader:    reader,
 		keyClient: keyClient,
 	}

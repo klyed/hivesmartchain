@@ -5,9 +5,9 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ template "burrow.fullname" $ }}-{{ $nodeNumber }}
+  name: {{ template "hsc.fullname" $ }}-{{ $nodeNumber }}
   labels:
-    app: {{ template "burrow.name" $ }}
+    app: {{ template "hsc.name" $ }}
     release: {{ $.Release.Name }}
     nodeNumber: {{ $nodeNumber | quote }}
   annotations:

@@ -1,6 +1,6 @@
 # Logging
 
-Logging is highly configurable through the `burrow.toml` `[logging]` section. Each log line is a list of key-value pairs that flows from the root sink through possible child sinks. 
+Logging is highly configurable through the `hsc.toml` `[logging]` section. Each log line is a list of key-value pairs that flows from the root sink through possible child sinks. 
 Each sink can have an output, a transform, and sinks that it outputs to. Below is a more involved example than the one appearing in the default generated config of what you can configure:
 
 ```toml
@@ -38,5 +38,5 @@ Each sink can have an output, a transform, and sinks that it outputs to. Below i
       [[logging.root_sink.sinks.sinks]]
         [logging.root_sink.sinks.sinks.output]
           output_type = "file"
-          path = "/var/log/burrow-network.log"
+          path = "/var/log/hsc-network.log"
 ```

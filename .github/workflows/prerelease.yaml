@@ -35,8 +35,8 @@ jobs:
       - run: make docker_build
       - name: publish monax
         env:
-          DOCKER_REPO: "hyperledger/burrow"
-          DOCKER_REPO_DEV: "quay.io/monax/burrow"
+          DOCKER_REPO: "hyperledger/hsc"
+          DOCKER_REPO_DEV: "quay.io/monax/hsc"
           DOCKER_PASS_DEV: ${{ secrets.DOCKER_PASS_DEV }}
           DOCKER_USER_DEV: ${{ secrets.DOCKER_USER_DEV }}
         run: |
@@ -46,7 +46,7 @@ jobs:
           docker push --all-tags ${DOCKER_REPO_DEV}
       - name: publish hyperledger
         env:
-          DOCKER_REPO: "hyperledger/burrow"
+          DOCKER_REPO: "hyperledger/hsc"
           DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
         run: |

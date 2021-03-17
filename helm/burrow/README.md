@@ -1,28 +1,28 @@
 # Burrow
 
-[Burrow](https://github.com/hyperledger/burrow) is a permissioned Ethereum smart-contract blockchain node which provides transaction finality and high transaction throughput 
+[Burrow](https://github.com/hyperledger/hsc) is a permissioned Ethereum smart-contract blockchain node which provides transaction finality and high transaction throughput 
 on a proof-of-stake [Tendermint](https://tendermint.com) consensus engine.
 
 ## Introduction
 
-This chart bootstraps a burrow network on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+This chart bootstraps a hsc network on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
 ## Installation
 
 ### Prerequisites
 
 To deploy a new blockchain network, this chart requires that two objects be present in the same Kubernetes namespace: a configmap should house the genesis file and each node should 
-have a secret to hold any validator keys. The provided script, `addresses.sh` automatically provisions a number of files using the [burrow](https://github.com/hyperledger/burrow) toolkit, 
-so please first ensure that `burrow --version` matches the `image.tag` in the [configuration](#configuration). This sequence also requires that the [jq](https://stedolan.github.io/jq/) binary 
+have a secret to hold any validator keys. The provided script, `addresses.sh` automatically provisions a number of files using the [hsc](https://github.com/hyperledger/hsc) toolkit, 
+so please first ensure that `hsc --version` matches the `image.tag` in the [configuration](#configuration). This sequence also requires that the [jq](https://stedolan.github.io/jq/) binary 
 is installed. Two files will be generated, the first of note is `setup.yaml` which contains the two necessary Kubernetes specifications to be added to the cluster:
 
 ```bash
-curl -LO https://raw.githubusercontent.com/helm/charts/master/stable/burrow/initialize.sh
-CHAIN_NODES=4 CHAIN_NAME="my-release-burrow" ./initialize.sh
+curl -LO https://raw.githubusercontent.com/helm/charts/master/stable/hsc/initialize.sh
+CHAIN_NODES=4 CHAIN_NAME="my-release-hsc" ./initialize.sh
 kubectl apply --filename setup.yaml
 ```
 
-Please note that the variable `$CHAIN_NAME` should be the same as the helm release name specified below with the `-burrow` suffix. 
+Please note that the variable `$CHAIN_NAME` should be the same as the helm release name specified below with the `-hsc` suffix. 
 Another file, `addresses.yaml` contains the the equivalent validator addresses to set in the charts.
 
 ### Deployment
@@ -30,7 +30,7 @@ Another file, `addresses.yaml` contains the the equivalent validator addresses t
 To install the chart with the release name `my-release` with the set of custom validator addresses:
 
 ```bash
-helm install stable/burrow --name my-release --values addresses.yaml
+helm install stable/hsc --name my-release --values addresses.yaml
 ```
 
 The [configuration](#configuration) section below lists all possible parameters that can be configured during installation. Please also see the [runtime configuration](#runtime) 
@@ -63,15 +63,15 @@ The following table lists the configurable parameters of the Burrow chart and it
 | `chain.extraSeeds` | network seeds to dial in addition to the cluster booted by the chart; each entry in the array should be in the form `ip:port` (note: because P2P connects over tcp, the port is absolutely required) | `[]` |
 | `restore.enabled` | toggle chain restore mechanism | `false` |
 | `chain.testing` | toggle pre-generated keys & genesis for ci testing | `false` |
-| `config` | the [burrow configuration file](https://github.com/klyed/hivesmartchain/blob/develop/tests/chain/burrow.toml) | `{}` |
+| `config` | the [hsc configuration file](https://github.com/klyed/hivesmartchain/blob/develop/tests/chain/hsc.toml) | `{}` |
 | `config.Tendermint.ListenPort` | peer port | `26656` |
 | `contracts.enabled` | toggle post-install contract deployment | `false` |
 | `contracts.image` | contract deployer image | `""` |
 | `contracts.tag` | contract deployer tag | `""` |
 | `contracts.deploy` | command to run in post-install hook | `""` |
-| `env` | environment variables to configure burrow | `{}` |
-| `extraArgs` | extra arguments to give to the build in `burrow start` command | `{}` |
-| `image.repository` | image repository | `"hyperledger/burrow"` |
+| `env` | environment variables to configure hsc | `{}` |
+| `extraArgs` | extra arguments to give to the build in `hsc start` command | `{}` |
+| `image.repository` | image repository | `"hyperledger/hsc"` |
 | `image.tag` | image tag | `"0.29.4"` |
 | `image.pullPolicy` | image pull policy | `"IfNotPresent"` |
 | `livenessProbe.enabled` | enable liveness checks | `true` |
@@ -119,14 +119,14 @@ The following table lists the configurable parameters of the Burrow chart and it
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```bash
-helm install stable/burrow --name my-release \
+helm install stable/hsc --name my-release \
   --set=image.tag=0.23.2,resources.limits.cpu=200m -f addresses.yaml
 ```
 
 Alternatively, append additional values to the YAML file generated in the [prerequisites](#prerequisites). For example,
 
 ```bash
-helm install stable/burrow --name my-release -f addresses.yaml
+helm install stable/hsc --name my-release -f addresses.yaml
 ```
 
 ## Runtime

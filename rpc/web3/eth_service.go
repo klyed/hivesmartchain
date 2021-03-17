@@ -85,7 +85,7 @@ type EventsReader interface {
 
 var _ EventsReader = &state.State{}
 
-// Web3ClientVersion returns the version of burrow
+// Web3ClientVersion returns the version of hsc
 func (srv *EthService) Web3ClientVersion() (*Web3ClientVersionResult, error) {
 	return &Web3ClientVersionResult{
 		ClientVersion: project.FullVersion(),

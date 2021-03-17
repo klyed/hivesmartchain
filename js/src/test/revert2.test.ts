@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from '../test';
+import {hsc, compile} from '../test';
 import * as grpc from '@grpc/grpc-js';
 
 describe('REVERT non-constant', function () {
@@ -23,7 +23,7 @@ describe('REVERT non-constant', function () {
     `
 
     const {abi, code} = compile(source, 'c')
-    return burrow.contracts.deploy(abi, code).then((c) => {
+    return hsc.contracts.deploy(abi, code).then((c) => {
       contract = c
     })
   })

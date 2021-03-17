@@ -14,7 +14,7 @@ import (
 	"github.com/klyed/hivesmartchain/rpc/rpcevents"
 	"github.com/klyed/hivesmartchain/rpc/web3/ethclient"
 	"github.com/klyed/hivesmartchain/vent/chain"
-	"github.com/klyed/hivesmartchain/vent/chain/burrow"
+	"github.com/klyed/hivesmartchain/vent/chain/hsc"
 	"github.com/klyed/hivesmartchain/vent/chain/ethereum"
 	"github.com/klyed/hivesmartchain/vent/config"
 	"github.com/klyed/hivesmartchain/vent/sqldb"
@@ -294,12 +294,12 @@ func (c *Consumer) connectToChain() (chain.Chain, error) {
 	return ethChain, nil
 }
 
-func dialBurrow(chainAddress string, filter *chain.Filter) (*burrow.Chain, error) {
+func dialBurrow(chainAddress string, filter *chain.Filter) (*hsc.Chain, error) {
 	conn, err := encoding.GRPCDial(chainAddress)
 	if err != nil {
 		return nil, err
 	}
-	return burrow.New(conn, filter)
+	return hsc.New(conn, filter)
 }
 
 func dialEthereum(chainAddress string, filter *chain.Filter, consumerConfig *chain.BlockConsumerConfig,

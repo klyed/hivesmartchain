@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from '../test';
+import {hsc, compile} from '../test';
 
 describe.skip('Really Long Loop', function () {
   let contract
@@ -27,7 +27,7 @@ describe.skip('Really Long Loop', function () {
     `
 
     const {abi, code} = compile(source, 'main')
-    const c = await burrow.contracts.deploy(abi, code.bytecode);
+    const c = await hsc.contracts.deploy(abi, code.bytecode);
     contract = c;
   })
 

@@ -2,8 +2,8 @@
 # ----------------------------------------------------------
 # PURPOSE
 
-# This is the test runner for burrow integration tests.
-# It is responsible for starting up a single node burrow test chain and tearing it down afterwards.
+# This is the test runner for hsc integration tests.
+# It is responsible for starting up a single node hsc test chain and tearing it down afterwards.
 
 # ----------------------------------------------------------
 # REQUIREMENTS
@@ -17,7 +17,7 @@
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-export burrow_bin=${burrow_bin:-burrow}
+export hsc_bin=${hsc_bin:-hsc}
 export solc_bin=${solc_bin:-solc}
 export solang_bin=${solang_bin:-solang}
 
@@ -37,16 +37,16 @@ fi
 # ----------------------------------------------------------
 # Constants
 
-# Ports etc must match those in burrow.toml
-export BURROW_HOST=127.0.0.1
-export BURROW_GRPC_PORT=20123
+# Ports etc must match those in hsc.toml
+export HSC_HOST=127.0.0.1
+export HSC_GRPC_PORT=20123
 
 
 export chain_dir="$script_dir/chain"
-export burrow_root="$chain_dir/.burrow"
+export hsc_root="$chain_dir/.hsc"
 
 # Temporary logs
-export burrow_log="$chain_dir/burrow.log"
+export hsc_log="$chain_dir/hsc.log"
 #
 # ----------------------------------------------------------
 
@@ -69,20 +69,20 @@ test_setup(){
   echo "Using binaries:"
   echo "  $(type ${solc_bin}) (version: $(${solc_bin} --version))"
   echo "  $(type ${solang_bin}) (version: $(${solang_bin} --version))"
-  echo "  $(type ${burrow_bin}) (version: $(${burrow_bin} --version))"
+  echo "  $(type ${hsc_bin}) (version: $(${hsc_bin} --version))"
   echo
   # start test chain
-  BURROW_ADDRESS="$BURROW_HOST:$BURROW_GRPC_PORT"
+  HSC_ADDRESS="$HSC_HOST:$HSC_GRPC_PORT"
   if [[ "$boot" = true ]]; then
-    echo "Starting Burrow using GRPC address: $BURROW_ADDRESS..."
+    echo "Starting Burrow using GRPC address: $HSC_ADDRESS..."
     echo
-    rm -rf ${burrow_root}
+    rm -rf ${hsc_root}
     pushd "$chain_dir"
-    ${burrow_bin} start --index 0 --grpc-address $BURROW_ADDRESS 2> "$burrow_log"&
-    burrow_pid=$!
+    ${hsc_bin} start --index 0 --grpc-address $HSC_ADDRESS 2> "$hsc_log"&
+    hsc_pid=$!
     popd
   else
-    echo "Not booting Burrow, but expecting Burrow to be running with tm RPC on port $BURROW_GRPC_PORT"
+    echo "Not booting Burrow, but expecting Burrow to be running with tm RPC on port $HSC_GRPC_PORT"
   fi
 
   export key1_addr=$(address_of "Full_0")
@@ -102,16 +102,16 @@ test_setup(){
 test_teardown(){
   echo "Cleaning up..."
   if [[ "$boot" = true ]]; then
-    echo "Killing burrow with PID $burrow_pid"
-    kill ${burrow_pid} 2> /dev/null
-    echo "Waiting for burrow to shutdown..."
-    wait ${burrow_pid} 2> /dev/null
-    rm -rf "$burrow_root"
+    echo "Killing hsc with PID $hsc_pid"
+    kill ${hsc_pid} 2> /dev/null
+    echo "Waiting for hsc to shutdown..."
+    wait ${hsc_pid} 2> /dev/null
+    rm -rf "$hsc_root"
   fi
   echo ""
   if [[ "$test_exit" -eq 0 ]]
   then
-    [[ "$boot" = true ]] && rm -f "$burrow_log"
+    [[ "$boot" = true ]] && rm -f "$hsc_log"
     echo "Tests complete! Tests are Green. :)"
   else
     echo "Tests complete. Tests are Red. :("

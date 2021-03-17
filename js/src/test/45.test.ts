@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from '../test';
+import {hsc, compile} from '../test';
 
 describe('#45', function () {
 
@@ -23,7 +23,7 @@ describe('#45', function () {
       }
     `
     const {abi, code} = compile(source, 'Test')
-    return burrow.contracts.deploy(abi, code).then((contract: any) =>
+    return hsc.contracts.deploy(abi, code).then((contract: any) =>
       contract.setName('Batman')
         .then(() => contract.getName())
     ).then((value) => {
@@ -48,7 +48,7 @@ describe('#45', function () {
     `
 
     const {abi, code} = compile(source, 'Test')
-    return burrow.contracts.deploy(abi, code).then((contract: any) =>
+    return hsc.contracts.deploy(abi, code).then((contract: any) =>
       Promise.all([contract.getAddress(), contract.getNumber()])
         .then(([address, number]) => {
           assert.strictEqual(address[0].length, 40)

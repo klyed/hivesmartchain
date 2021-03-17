@@ -1,4 +1,4 @@
-import { Burrow } from './burrow'
+import { Burrow } from './hsc'
 import * as convert from './utils/convert';
 import * as coder from 'ethereumjs-abi';
 import { Readable } from 'stream';
@@ -60,7 +60,7 @@ export class Client extends Burrow {
     }
 
     encode(name: string, inputs: string[], ...args: any[]): string {
-        args = convert.burrowToAbi(inputs, args);
+        args = convert.hscToAbi(inputs, args);
         return name + convert.bytesTB(coder.rawEncode(inputs, args));
     }
 

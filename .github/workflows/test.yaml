@@ -19,7 +19,7 @@ jobs:
     - run: make build
     - uses: actions/upload-artifact@main
       with:
-        name: burrow
+        name: hsc
         path: bin
 
   integration:
@@ -45,7 +45,7 @@ jobs:
     - uses: actions/checkout@v2
     - run: make docker_build
       env:
-        DOCKER_REPO: "hyperledger/burrow"
+        DOCKER_REPO: "hyperledger/hsc"
 
   keys:
     runs-on: ubuntu-latest
@@ -54,7 +54,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/download-artifact@main
       with:
-        name: burrow
+        name: hsc
         path: bin
     - run: chmod +x $(pwd)/bin/*
     - name: test
@@ -72,7 +72,7 @@ jobs:
         node-version: '14'
     - uses: actions/download-artifact@main
       with:
-        name: burrow
+        name: hsc
         path: bin
     - run: chmod +x $(pwd)/bin/*
     - name: test
@@ -87,7 +87,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/download-artifact@main
       with:
-        name: burrow
+        name: hsc
         path: bin
     - run: chmod +x $(pwd)/bin/*
     - name: test
@@ -102,7 +102,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/download-artifact@main
       with:
-        name: burrow
+        name: hsc
         path: bin
     - run: chmod +x $(pwd)/bin/*
     - name: test
@@ -120,7 +120,7 @@ jobs:
         node-version: '14'
     - uses: actions/download-artifact@main
       with:
-        name: burrow
+        name: hsc
         path: bin
     - run: chmod +x $(pwd)/bin/*
     - name: test

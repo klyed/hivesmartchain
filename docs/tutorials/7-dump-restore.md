@@ -1,11 +1,11 @@
 # Dump / Restore
 
-Sometimes there are breaking changes in burrow. This provides a method for dumping an old chain, and restoring a new chain
+Sometimes there are breaking changes in hsc. This provides a method for dumping an old chain, and restoring a new chain
 with that state.
 
 ## Dumping Existing State
 
-The `burrow dump` command connects to burrow node and retrieves the following:
+The `hsc dump` command connects to hsc node and retrieves the following:
 
 1. The accounts (the addresses)
 2. Contracts and contract storage
@@ -22,27 +22,27 @@ You will need the `.keys` directory of the old chain, the `genesis.json` (called
 from the old chain and the dump file (called `dump.json` here).
 
 ```shell
-burrow configure -m BurrowTestRestoreNode -n "Restored Chain" -g genesis-original.json -w genesis.json --restore-dump dump.json > burrow.toml
+hsc configure -m BurrowTestRestoreNode -n "Restored Chain" -g genesis-original.json -w genesis.json --restore-dump dump.json > hsc.toml
 ```
 
 Note that the chain genesis will contain an `AppHash` specific to this restore file.
 
 ## Restore Chain
 
-This will populate the `.burrow` directory with the state.
+This will populate the `.hsc` directory with the state.
 
 ```shell
-burrow restore dump.json
+hsc restore dump.json
 ```
 
-This will create a block 0 with the restored state. Normally burrow chains start a height 1.
+This will create a block 0 with the restored state. Normally hsc chains start a height 1.
 
 ## Start Chain
 
-Simply start `burrow` as you would normally.
+Simply start `hsc` as you would normally.
 
 ```shell
-burrow start
+hsc start
 ```
 
-Now burrow should start making blocks at 1 as usual.
+Now hsc should start making blocks at 1 as usual.

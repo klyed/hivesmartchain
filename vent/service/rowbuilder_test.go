@@ -39,7 +39,7 @@ func BadStringToHexFunction(goodString string) string {
 	// real life example from an asciiToHex function intended to generate hex of a utf8 string
 	buf := new(bytes.Buffer)
 	for _, r := range goodString {
-		// This is effectively the algorithm used by asciiToHex from burrow.js - this is broken!
+		// This is effectively the algorithm used by asciiToHex from hsc.js - this is broken!
 		// will always create incorrect bytes for multi-byte utf8 code points and sometimes invalid utf8
 		buf.WriteString(fmt.Sprintf("%2X", r))
 	}

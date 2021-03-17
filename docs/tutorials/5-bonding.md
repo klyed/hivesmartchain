@@ -9,14 +9,14 @@ We need at least one validator to start the chain, so run the following to const
 a genesis of two accounts with the `Bond` permission, one of which is pre-bonded:
 
 ```shell
-burrow spec -v1 -r1 | burrow configure -s- --pool
+hsc spec -v1 -r1 | hsc configure -s- --pool
 ```
 
 Let's start both nodes:
 
 ```shell
-burrow start --config burrow000.toml &
-burrow start --config burrow001.toml &
+hsc start --config burrow000.toml &
+hsc start --config burrow001.toml &
 ```
 
 Query the JSON RPC for all validators in the active set:
@@ -32,14 +32,14 @@ This will return the pre-bonded validator, defined in our pool.
 To have the second node bond on and produce blocks:
 
 ```shell
-burrow tx --config burrow001.toml formulate bond --amount 10000 | burrow tx commit
+hsc tx --config burrow001.toml formulate bond --amount 10000 | hsc tx commit
 ```
 
 Note that this will bond the current account, to bond an alternate account (which is created if it doesn't exist)
 simply specific the `--source=<address>` flag in formulation:
 
 ```shell
-burrow tx --config burrow001.toml formulate bond --source 8A468CC3A28A6E84ED52E433DA21D6E9ED7C1577 --amount 10000
+hsc tx --config burrow001.toml formulate bond --source 8A468CC3A28A6E84ED52E433DA21D6E9ED7C1577 --amount 10000
 ```
 
 It should now be in the validator set:
@@ -53,5 +53,5 @@ curl -s "localhost:26759/validators"
 To unbond this validator:
 
 ```shell
-burrow tx formulate unbond | burrow tx commit
+hsc tx formulate unbond | hsc tx commit
 ```

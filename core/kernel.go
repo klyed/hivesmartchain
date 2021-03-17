@@ -45,7 +45,7 @@ const (
 	ServerShutdownTimeout  = 5000 * time.Millisecond
 	LoggingCallerDepth     = 5
 	AccountsRingMutexCount = 100
-	BurrowDBName           = "burrow_state"
+	BurrowDBName           = "hsc_state"
 )
 
 // Kernel is the root structure of Burrow

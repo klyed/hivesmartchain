@@ -3,7 +3,7 @@ import * as utils from '../utils/utils';
 import * as coder from 'ethereumjs-abi';
 import * as convert from '../utils/convert';
 import sha3 from '../utils/sha3';
-import { Burrow, Error } from '../burrow';
+import { Burrow, Error } from '../hsc';
 import { LogEvent } from '../../../proto/exec_pb'
 import { Event, EventInput } from 'solc';
 
@@ -36,7 +36,7 @@ const decode = function (abi: Event, data: LogEvent): EventResult {
   };
 }
 
-export const SolidityEvent = function (abi: Event, burrow: Burrow) {
+export const SolidityEvent = function (abi: Event, hsc: Burrow) {
   const name = utils.transformToFullName(abi);
   const displayName = utils.extractDisplayName(name);
   const typeName = utils.extractTypeName(name);
@@ -46,7 +46,7 @@ export const SolidityEvent = function (abi: Event, burrow: Burrow) {
     address = address || this.address;
     if (!callback) throw new Error('Can not subscribe to an event without a callback.');
 
-    return burrow.pipe.eventSub(address, signature, (err, event) => {
+    return hsc.pipe.eventSub(address, signature, (err, event) => {
       if (err) callback(err, null);
       let decoded: EventResult;
       try {

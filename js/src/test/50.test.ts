@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from '../test';
+import {hsc, compile} from '../test';
 
 describe('#50', function () {it('#50', async () => {
     const source = `
@@ -17,7 +17,7 @@ describe('#50', function () {it('#50', async () => {
       }
     `
     const {abi, code} = compile(source, 'SimpleStorage')
-    return burrow.contracts.deploy(abi, code)
+    return hsc.contracts.deploy(abi, code)
       .then((contract: any) => contract.set(42)
         .then(() => contract.get.call())
       ).then((value) => {

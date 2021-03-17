@@ -14,8 +14,8 @@ import (
 	tmConfig "github.com/tendermint/tendermint/config"
 )
 
-const DefaultBurrowConfigTOMLFileName = "burrow.toml"
-const DefaultBurrowConfigEnvironmentVariable = "BURROW_CONFIG_JSON"
+const DefaultBurrowConfigTOMLFileName = "hsc.toml"
+const DefaultBurrowConfigEnvironmentVariable = "HSC_CONFIG_JSON"
 const DefaultGenesisDocJSONFileName = "genesis.json"
 
 type BurrowConfig struct {

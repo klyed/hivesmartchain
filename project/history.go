@@ -46,7 +46,7 @@ func FullVersion() string {
 //
 // To cut a new release add a release to the front of this slice then run the
 // release tagging script: ./scripts/tag_release.sh
-var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "https://github.com/hyperledger/burrow").
+var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "https://github.com/hyperledger/hsc").
 	MustDeclareReleases(
 		"0.31.0",
 		`### Changed
@@ -96,7 +96,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 `,
 		"0.30.3 - 2020-04-05",
 		`### Added
-- [CLI] Made previously internal Solidity Go fixtures compilation available through 'burrow compile'
+- [CLI] Made previously internal Solidity Go fixtures compilation available through 'hsc compile'
 - [TS] Default ts client interface implementation
 `,
 		"0.30.2 - 2020-03-13",
@@ -175,9 +175,9 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 
 ### Added
 - [Web3] Implemented Ethereum web3 JSON RPC including sendRawTransaction!
-- [Docs] Much docs (see also: https://www.hyperledger.org/blog/2019/10/08/burrow-the-boring-blockchain)
-- [Docs] Generate github pages docs index with docsify: https://hyperledger.github.io/burrow/
-- [JS] Publish burrow.js to @hyperledger/burrow
+- [Docs] Much docs (see also: https://www.hyperledger.org/blog/2019/10/08/hsc-the-boring-blockchain)
+- [Docs] Generate github pages docs index with docsify: https://hyperledger.github.io/hsc/
+- [JS] Publish hsc.js to @hyperledger/hsc
 - [State] Store EVM ABI and contract metadata on-chain see [GetMetadata](https://github.com/klyed/hivesmartchain/blob/e80aad5d8fac1f67dbfec61ea75670f9a38c61a1/protobuf/rpcquery.proto#L25)
 - [Tendermint] Upgrade to v0.32.3
 - [Execution] Added IdentifyTx for introducing nodes (binding their NodeID to ValidatorAddress)
@@ -194,7 +194,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - [Vent] Remove arbitrary 100 character limits on system table text fields
 
 ### Added
-- [JS] Burrow.js now included in Burrow repo and tested with Burrow CI! Future burrow.js releases will now match version of Burrow.
+- [JS] Burrow.js now included in Burrow repo and tested with Burrow CI! Future hsc.js releases will now match version of Burrow.
 `,
 		"0.28.0 - 2019-08-14",
 		`### Changed
@@ -204,12 +204,12 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 
 ### Fixed
 - [Dump] Fix dump missing events emitted at end height provided
-- [Dump] EVM events were not dumped if no height was provided to burrow dump remote commandline
+- [Dump] EVM events were not dumped if no height was provided to hsc dump remote commandline
 - [RPC/Info] Fix panic in /names and implement properly - now accepts a 'regex' parameter which is a regular expression to match names. Empty for all names.
-- [Configure] burrow configure flags --separate-genesis-doc and --pool now work together
+- [Configure] hsc configure flags --separate-genesis-doc and --pool now work together
 
 ### Added
-- [State] Burrow now remembers contact ABIs (which describe how to pack bits when calling contracts) - burrow deploy and vent will both use chain-hosted ABI if they are available
+- [State] Burrow now remembers contact ABIs (which describe how to pack bits when calling contracts) - hsc deploy and vent will both use chain-hosted ABI if they are available
 - [State] Bond and unbond transactions are now implement to allow validators to transfer native token into validator power.
 - [Dump] Better tests, mock, and benchmarks - suitable for profiling IAVL
 - [Events] Filters now support OR connective
@@ -234,7 +234,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 `,
 		"0.26.1 - 2019-06-16",
 		`### Changed
-- [CLI] 'burrow dump' renamed 'burrow dump remote'
+- [CLI] 'hsc dump' renamed 'hsc dump remote'
 - [Consensus] By default Burrow no longer creates empty blocks at the end of a round - though does make on every 5 minutes by default. Set CreateEmptyBlocks to "never" or omit to create no blocks unless there are transactions, or "always" to generate blocks even when there are no transactions.
 - [State] Burrow state does not store empty blocks in the execution event store even when Tendermint creates them.
 - [Build] 'make install_hsc' is now just 'make install'
@@ -246,7 +246,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - [Consensus] Tendermint config CreateEmptyBlocks, CreateEmptyBlocksInterval now work as intended and prevent empty blocks being produced (except when needed for proof purposes) or when the interval expires (when set)
 
 ### Added
-- [Dump] burrow dump now has local variant that produces a dump directly from a compatible burrow directory rather than over GRPC. If dumping/restoring between state-incompatible versions use burrow dump remote.
+- [Dump] hsc dump now has local variant that produces a dump directly from a compatible hsc directory rather than over GRPC. If dumping/restoring between state-incompatible versions use hsc dump remote.
 `,
 		"0.26.0 - 2019-06-14",
 		`### Changed
@@ -282,8 +282,8 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - [Kernel] Refactored and various exported methods changed
 
 ### Added
-- [CLI] Introduced burrow configure --pool for generation of multiple validator configs suitable for running on a single (or many) machines
-- [CLI] Burrow deploy can now run multiple burrow deploy files (aka playbooks) and run them in parallel
+- [CLI] Introduced hsc configure --pool for generation of multiple validator configs suitable for running on a single (or many) machines
+- [CLI] Burrow deploy can now run multiple hsc deploy files (aka playbooks) and run them in parallel
 - [Consensus] Now possible to run Burrow without Tendermint in 'NoConsensus' mode by setting Tendermint.Enabled = false  for faster local testing. Execution.TimeoutFactor can be used to control how regularly Burrow commits (and is used
 
 ### Fixed
@@ -296,7 +296,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - [RPC] 'blocks' on info RPC now lists blocks in ascending rather than descending height order
 
 ### Added
-- [CLI] Introduced burrow configure --pool for generation of multiple validator configs suitable for running on a single (or many) machines
+- [CLI] Introduced hsc configure --pool for generation of multiple validator configs suitable for running on a single (or many) machines
 
 ### Fixed
 - [Metrics] Fix histogram statistics by making counts cumulative
@@ -335,7 +335,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 ### Fixed
 - [Vent] Stop Vent from swallowing errors (e.g. GRPC streaming errors)
 - [Consensus] Updated to patched version of Tendermint that does not pull in go-ethereum dependency
-- [CLI] Removed duplicate -t flag from burrow configure
+- [CLI] Removed duplicate -t flag from hsc configure
 
 
 ### Added
@@ -379,11 +379,11 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - [EVM] Implemented [EXTCODEHASH opcode](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1052.md)
 - [Accounts] Add account GetStats to query endpoint
 - [Config] Expose AddrBookStrict from Tendermint
-- [Deploy] burrow deploy now prints events generated during transactions
-- [Deploy] burrow deploy can use key names where addresses are used
+- [Deploy] hsc deploy now prints events generated during transactions
+- [Deploy] hsc deploy can use key names where addresses are used
 - [Governance] Added threshold-based governance via Proposal mechanism which allows entities with Root permission to propose and vote on batches of transactions to be executed on a running network with no single entity being able to do so.
-- [Governance] Added command line and query introspection of proposals as well as burrow deploy support
-- [Vent] Merged Vent our SQL projection and mapping layer into the Burrow repository and binary via 'burrow vent'. See [Vent Readme](./vent/vent.md)
+- [Governance] Added command line and query introspection of proposals as well as hsc deploy support
+- [Vent] Merged Vent our SQL projection and mapping layer into the Burrow repository and binary via 'hsc vent'. See [Vent Readme](./vent/vent.md)
 - [State] Improved read-write separation with RWTree and ImmutableForest data structures
 - [State] Implemented dump/restore to port state between different version of Burrow or to compress the execution of a chain (with a proof) onto a fresh chain
 
@@ -404,7 +404,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - [GRPC] GetAccount on unknown account no longer causes a panic
 
 ### Added
-- [Docker] Added solc 0.4.25 binary to docker container so that burrow deploy has what it needs to function
+- [Docker] Added solc 0.4.25 binary to docker container so that hsc deploy has what it needs to function
 - [Execution] panics from executors are captured and pushed to error sink of TxExecution
 `,
 		"0.23.0 - 2018-11-09",
@@ -448,8 +448,8 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - Fixed various abi issues
 
 ### Added
-- burrow deploy displays revert reason when available
-- burrow deploy compiles contracts concurrently`,
+- hsc deploy displays revert reason when available
+- hsc deploy compiles contracts concurrently`,
 		"0.21.0 - 2018-08-21",
 		`### Changed
 - Upgraded to Tendermint 0.23.0
@@ -467,7 +467,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 		"0.20.1 - 2018-08-17",
 		`### Changed
 - The snatives functions have new signatures; string arguments are now string, not byte32.
-- The Solidity interface contracts can be generated using the "burrow snatives" command, and the make snatives target is gone.
+- The Solidity interface contracts can be generated using the "hsc snatives" command, and the make snatives target is gone.
 
 ### Fixed
 - TxExecutions that were exceptions (for example those that were REVERTed) will no longer have their events emitted from ExecutionEventsServer.GetEvents. They remain stored in state for the time being.
@@ -479,8 +479,8 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - Support mempool signing for BroadcastTxAsync.
 - Reload log file (e.g. for logrotate) on SIGHUP and dump capture logs on SIGUSR1 and on shutdown (e.g. for debug).
 - File logger accepts {{.Timestamp}} in file names to generate a log file per run.
-- Ability to set --external-address on burrow configure and burrow start
-- Ability to set various command line options on burrow configure and burrow start and by HSC_ prefixed environment variables
+- Ability to set --external-address on hsc configure and hsc start
+- Ability to set various command line options on hsc configure and hsc start and by HSC_ prefixed environment variables
 - Exposed Tendermint SeedMode option
 `,
 		"0.20.0 - 2018-07-24",
@@ -489,7 +489,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 #### Breaking changes
 - Address format has been changed (by Tendermint and we have followed suite) - conversion is possible but simpler to regenerated keys
 - JSON-RPC interface has been removed
-- burrow-client has been removed
+- hsc-client has been removed
 - rpc/TM methods for events and broadcast have been removed
 
 #### Features
@@ -500,7 +500,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - Transaction Service can set value transferred
 
 #### Improvements
-- The output of "burrow keys export" can be templated
+- The output of "hsc keys export" can be templated
 
 #### Bug fixes
 - Fixed panic on nil bounds for blocks service
@@ -513,13 +513,13 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 In addition to breaking changes associated with Tendermint (see their changelog):
 - State checkpointing logic has changed which has we load based on blockchain
 - Event format has changed over rpc/V0 see execution/events/ package
-- On-disk keys format has change from monax-keys to be more standard burrow keys
+- On-disk keys format has change from monax-keys to be more standard hsc keys
 - Address format has been changed (by Tendermint and we have followed suite) - conversion is possible but simpler to regenerated keys
 
 #### Features
 - Tendermint 0.21.0
 - Implemented EVM opcodes: REVERT, INVALID, SHL, SAR, SHR, RETURNDATACOPY, RETURNDATASIZE
-- Add config templating with burrow configure --config-template-in --config-out
+- Add config templating with hsc configure --config-template-in --config-out
 - Add config templates for kubernetes
 - Integrate monax-keys as internal (default) or standalone keys service, key gen exposed over CLI
 - Use GRPC for keys
@@ -533,7 +533,7 @@ In addition to breaking changes associated with Tendermint (see their changelog)
 - Add last_block_info healthcheck endpoint to rpc/TM
 -
 #### Improvements
-- Implement checkpointing when saving application and blockchain state in commit - interrupted commit rolls burrow back to last block whereon it can catch up using Tendermint
+- Implement checkpointing when saving application and blockchain state in commit - interrupted commit rolls hsc back to last block whereon it can catch up using Tendermint
 - Maintain separate read-only tree in state so that long-running RPC request cannot block writes
 - Improve state safety
 - Improved input account server-side-signing
@@ -553,7 +553,7 @@ In addition to breaking changes associated with Tendermint (see their changelog)
 		"0.18.0 - 2018-05-09",
 		`This is an extremely large release in terms of lines of code changed addressing several years of technical debt. Despite this efforts were made to maintain external interfaces as much as possible and an extended period of stabilisation has taken place on develop.
 
-A major strand of work has been in condensing previous Monax tooling spread across multiple repos into just two. The Hyperledger Burrow repo and [Bosmarmot](http://github.com/monax/bosmarmot). Burrow is now able to generate chains (replacing 'monax chains make') with 'burrow spec' and 'burrow configure'. Our 'EPM' contract deployment and testing tool, our javascript libraries, compilers, and monax-keys are avaiable in Bosmarmot (the former in the 'bos' tool). Work is underway to pull monax-keys into the Burrow project, and we will continue to make Burrow as self-contained as possible.
+A major strand of work has been in condensing previous Monax tooling spread across multiple repos into just two. The Hyperledger Burrow repo and [Bosmarmot](http://github.com/monax/bosmarmot). Burrow is now able to generate chains (replacing 'monax chains make') with 'hsc spec' and 'hsc configure'. Our 'EPM' contract deployment and testing tool, our javascript libraries, compilers, and monax-keys are avaiable in Bosmarmot (the former in the 'bos' tool). Work is underway to pull monax-keys into the Burrow project, and we will continue to make Burrow as self-contained as possible.
 
 #### Features
 - Substantial support for latest EVM and solidity 0.4.21+ (missing some opcodes that will be added shortly - see known issues)
@@ -561,7 +561,7 @@ A major strand of work has been in condensing previous Monax tooling spread acro
 - All signing through monax-keys KeyClient connection (preparation for HSM and GPG based signing daemon)
 - Address-based signing (Burrow acts as delegate when you send transact, transactAndHold, send, sendAndHold, and transactNameReg a parameter including input_account (hex address) instead of priv_key.
 - Provide sequential signing when using transact family methods (above) - allowing 100s Tx per second with the same input account
-- Genesis making, config making, and key generation through 'burrow spec' and 'burrow configure'
+- Genesis making, config making, and key generation through 'hsc spec' and 'hsc configure'
 - Logging configuration language and text/template for output
 - Improved CLI UX and framework (mow.cli)
 - Improved configuration
@@ -593,7 +593,7 @@ A major strand of work has been in condensing previous Monax tooling spread acro
 - Make Transactor work during tendermint recheck
 
 #### Known issues
-- Documentation rot - some effort has been made to update documentation to represent the current state but in some places it has slipped help can be found (and would be welcomed) on: [Hyperledger Burrow Chat](https://chat.hyperledger.org/channel/burrow)
+- Documentation rot - some effort has been made to update documentation to represent the current state but in some places it has slipped help can be found (and would be welcomed) on: [Hyperledger Burrow Chat](https://chat.hyperledger.org/channel/hsc)
 - Missing support for: RETURNDATACOPY and RETURNDATASIZE https://github.com/klyed/hivesmartchain/issues/705 (coming very soon)
 - Missing support for: INVALID https://github.com/klyed/hivesmartchain/issues/705 (coming very soon)
 - Missing support for: REVERT https://github.com/klyed/hivesmartchain/issues/600 (coming very soon)
@@ -607,7 +607,7 @@ A major strand of work has been in condensing previous Monax tooling spread acro
 
 - [Upgrade to use Tendermint v0.9.2](https://github.com/klyed/hivesmartchain/pull/595)
 - [Implemented dynamic memory](https://github.com/klyed/hivesmartchain/pull/607) assumed by the EVM bytecode produce by solidity, fixing various issues.
-- Logging sinks and configuration - providing a flexible mechanism for configuring log flows and outputs see [logging section in readme](https://github.com/hyperledger/burrow#logging). Various other logging enhancements.
+- Logging sinks and configuration - providing a flexible mechanism for configuring log flows and outputs see [logging section in readme](https://github.com/hyperledger/hsc#logging). Various other logging enhancements.
 - Fix event unsubscription
 - Remove module-specific versioning
 - Rename suicide to selfdestruct
@@ -628,7 +628,7 @@ By doing this we can resolve some issues with users of the v0 RPC without making
 a breaking API change.`,
 
 		"0.16.2 - 2017-04-20",
-		`This release finalises our accession to the Hyperledger project and updates our root package namespace to github.com/hyperledger/burrow.
+		`This release finalises our accession to the Hyperledger project and updates our root package namespace to github.com/hyperledger/hsc.
 
 It also includes a bug fix for rpc/V0 so that BroadcastTx can accept any transaction type and various pieces of internal clean-up.`,
 

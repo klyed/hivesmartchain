@@ -8,7 +8,7 @@ if you have worked previously with Ethereum. If so, you will be pleased to know 
 Let's start a chain with a single validator:
 
 ```shell
-burrow spec -v1 | burrow configure -s- | burrow start -c-
+hsc spec -v1 | hsc configure -s- | hsc start -c-
 ```
 
 ## Deploy Artifacts
@@ -22,9 +22,9 @@ We need `deploy.yaml` and `storage.sol` in the same directory with **no other ya
 From inside that directory, we are ready to deploy.
 
 ```bash
-burrow deploy --address $ADDRESS deploy.yaml
+hsc deploy --address $ADDRESS deploy.yaml
 ```
 
-Replace `$ADDRESS` with the address at the top of your `burrow.toml`.
+Replace `$ADDRESS` with the address at the top of your `hsc.toml`.
 
 That's it! You've successfully deployed (and tested) a Solidity contract to a Burrow node.

@@ -9,20 +9,20 @@ import * as grpc from '@grpc/grpc-js';
 export type TxCallback = grpc.requestCallback<TxExecution>;
 
 export class Pipe {
-  burrow: ITransactClient;
+  hsc: ITransactClient;
   events: Events;
 
-  constructor(burrow: ITransactClient, events: Events) {
-    this.burrow = burrow;
+  constructor(hsc: ITransactClient, events: Events) {
+    this.hsc = hsc;
     this.events = events;
   }
 
   transact(payload: CallTx, callback: TxCallback) {
-    return this.burrow.callTxSync(payload, callback)
+    return this.hsc.callTxSync(payload, callback)
   }
 
   call(payload: CallTx, callback: TxCallback) {
-    this.burrow.callTxSim(payload, callback)
+    this.hsc.callTxSim(payload, callback)
   }
 
   eventSub(accountAddress: string, signature: string, callback: (err: ServiceError, log: LogEvent) => void) {

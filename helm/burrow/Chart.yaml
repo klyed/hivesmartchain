@@ -1,8 +1,8 @@
 apiVersion: v1
 appVersion: 0.30.2
 description: Burrow is a permissionable smart contract machine
-home: https://github.com/hyperledger/burrow
-icon: https://raw.githubusercontent.com/hyperledger/burrow/develop/docs/assets/images/burrow.png
+home: https://github.com/hyperledger/hsc
+icon: https://raw.githubusercontent.com/hyperledger/hsc/develop/docs/assets/images/hsc.png
 keywords:
 - blockchain
 - smart contracts
@@ -15,7 +15,7 @@ maintainers:
   name: compleatang
 - email: gregorydhill@outlook.com
   name: gregdhill
-name: burrow
+name: hsc
 sources:
-- https://github.com/hyperledger/burrow
+- https://github.com/hyperledger/hsc
 version: 0.30.2

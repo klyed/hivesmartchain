@@ -1,20 +1,20 @@
 import {Event, Function} from 'solc';
 import {GetMetadataParam} from '../../../proto/rpcquery_pb';
-import {Burrow} from '../burrow';
+import {Burrow} from '../hsc';
 import {Contract, Handlers} from './contract';
 
 type FunctionOrEvent = Function | Event;
 
 export class ContractManager {
-  burrow: Burrow;
+  hsc: Burrow;
 
-  constructor(burrow: Burrow) {
-    this.burrow = burrow;
+  constructor(hsc: Burrow) {
+    this.hsc = hsc;
   }
 
   async deploy(abi: Array<FunctionOrEvent>, byteCode: string | { bytecode: string, deployedBytecode: string },
                handlers?: Handlers, ...args: any[]): Promise<Contract> {
-    const contract = new Contract(abi, byteCode, null, this.burrow, handlers)
+    const contract = new Contract(abi, byteCode, null, this.hsc, handlers)
     contract.address = await contract._constructor.apply(contract, args);
     return contract;
   }
@@ -33,14 +33,14 @@ export class ContractManager {
     msg.setAddress(Buffer.from(address, 'hex'));
 
     return new Promise((resolve, reject) =>
-      this.burrow.qc.getMetadata(msg, (err, res) => {
+      this.hsc.qc.getMetadata(msg, (err, res) => {
         if (err) reject(err);
         const metadata = res.getMetadata();
         if (!metadata) {
           throw new Error(`could not find any metadata for account ${address}`)
         }
         const abi = JSON.parse(metadata).Abi;
-        resolve(new Contract(abi, null, address, this.burrow, handlers));
+        resolve(new Contract(abi, null, address, this.hsc, handlers));
       }))
   }
 }

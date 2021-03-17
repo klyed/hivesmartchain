@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from "../test";
+import {hsc, compile} from "../test";
 
 
 describe('Testing Per-contract handler overwriting', function () {
@@ -29,7 +29,7 @@ describe('Testing Per-contract handler overwriting', function () {
     `
 
     const {abi, code} = compile(source, 'Test')
-    const contract: any = await burrow.contracts.deploy(abi, code, {
+    const contract: any = await hsc.contracts.deploy(abi, code, {
       call: function (result_1) {
         return {values: result_1.values, raw: result_1.raw};
       }

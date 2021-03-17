@@ -1,4 +1,4 @@
-# Contributing to `burrow`:
+# Contributing to `hsc`:
 Forked from Docker's [contributing guidelines](https://github.com/docker/docker/blob/main/CONTRIBUTING.md)
 
 ## Developer Certificate of Origin
@@ -9,7 +9,7 @@ Please always include "signed-off-by" in your commit message and note this const
 
 All development happens on 'main'. Any other branches should be considered temporary and should have a corresponding pull request where they are the source to help keep track of them. Such branches can be marked WIP/draft.
 
-There is a special branch called 'prereleae' that is solely used to trigger a build of the JS library and docker images with a special prerelease tag based on the commit hash. This can be triggered by force pushing to 'prerelease'. If you would like a prerelease build please ask a maintainer (via an issue or on https://chat.hyperledger.org/channel/burrow) to force push for you. Since this branch may be overwritten at any time it should never be the only home for durable changes.
+There is a special branch called 'prereleae' that is solely used to trigger a build of the JS library and docker images with a special prerelease tag based on the commit hash. This can be triggered by force pushing to 'prerelease'. If you would like a prerelease build please ask a maintainer (via an issue or on https://chat.hyperledger.org/channel/hsc) to force push for you. Since this branch may be overwritten at any time it should never be the only home for durable changes.
 
 Commits tagged with a 'v'-prefixed semver tag like `v0.11.1` are official releases and will trigger builds of binaries, JS library, and docker images in CI. We will try to make these regularly but will sometimes batch up a few changes and dependency upgrades (particularly Tendermint).
 

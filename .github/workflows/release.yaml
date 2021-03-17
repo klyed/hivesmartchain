@@ -50,7 +50,7 @@ jobs:
     - run: make docker_build
     - name: publish
       env:
-        DOCKER_REPO: "hyperledger/burrow"
+        DOCKER_REPO: "hyperledger/hsc"
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
         DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
       run: |

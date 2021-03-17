@@ -8,7 +8,7 @@ import * as grpc from '@grpc/grpc-js';
 import sha3 from '../utils/sha3';
 import { TxInput, CallTx, ContractMeta } from '../../../proto/payload_pb';
 import { TxExecution, Result } from '../../../proto/exec_pb';
-import { Burrow, Error } from '../burrow';
+import { Burrow, Error } from '../hsc';
 import { Envelope } from '../../../proto/txs_pb';
 import { Function, FunctionInput, FunctionOutput } from 'solc';
 import { ABI, Contract } from "./contract";
@@ -78,7 +78,7 @@ const encodeF = function (abi: Function, args: Array<any>, bytecode: string): st
   let abiInputs: string[];
   if (abi) {
     abiInputs = types(abi.inputs)
-    args = convert.burrowToAbi(abiInputs, args) // If abi is passed, convert values accordingly
+    args = convert.hscToAbi(abiInputs, args) // If abi is passed, convert values accordingly
   }
 
   // If bytecode provided then this is a creation call, bytecode goes first
@@ -112,7 +112,7 @@ const decodeF = function (abi: Function, output: Uint8Array): DecodedResult {
   return result;
 }
 
-export const SolidityFunction = function (abi: Function, burrow: Burrow) {
+export const SolidityFunction = function (abi: Function, hsc: Burrow) {
   let isConstructor = (abi == null || abi.type === 'constructor');
   let name: string;
   let displayName: string;
@@ -210,14 +210,14 @@ export const SolidityFunction = function (abi: Function, burrow: Burrow) {
       // For the moment we need to use the burrowtoweb3 function to prefix bytes with 0x
       // otherwise the coder will give an error with bignumber not a number
       // TODO investigate if other libs or an updated lib will fix this
-      // let data = encodeF(abi, utils.burrowToWeb3(args), isCon ? self.code : null)
+      // let data = encodeF(abi, utils.hscToWeb3(args), isCon ? self.code : null)
       let data = encodeF(abi, args, isConstructor ? contract.code.bytecode : null)
-      let payload = txPayload(data, burrow.account, address, contract)
+      let payload = txPayload(data, hsc.account, address, contract)
 
       if (isSim) {
-        burrow.pipe.call(payload, post)
+        hsc.pipe.call(payload, post)
       } else {
-        burrow.pipe.transact(payload, post)
+        hsc.pipe.transact(payload, post)
       }
     })
 

@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import {burrow, compile} from "../test";
+import {hsc, compile} from "../test";
 
 describe('Setting and Getting Values:', function () {
   const source = `
@@ -67,7 +67,7 @@ contract GetSet {
 
   before(async () => {
     const {abi, code} = compile(source, 'GetSet')
-    TestContract = await burrow.contracts.deploy(abi, code)
+    TestContract = await hsc.contracts.deploy(abi, code)
   })
 
   it('Uint', async () => {

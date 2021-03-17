@@ -33,12 +33,12 @@ address when prompted.
 with automatic compilation, linking and deployment. For a quick introduction, follow the official 
 [tutorial](https://www.trufflesuite.com/docs/truffle/quickstart) and edit the config `truffle-config.js` 
 to point to your local node. To ensure Truffle uses this configuration, simply suffix all commands with 
-the flag `--network burrow`. 
+the flag `--network hsc`. 
 
 ```js
 module.exports = {
   networks: {
-   burrow: {
+   hsc: {
      host: "127.0.0.1",
      port: 26660,
      network_id: "*"

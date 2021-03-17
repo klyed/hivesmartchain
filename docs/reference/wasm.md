@@ -46,5 +46,5 @@ jobs:
 Now run this script using:
 
 ```
-burrow deploy --wasm -a Participant_0 deploy.yaml
+hsc deploy --wasm -a Participant_0 deploy.yaml
 ```

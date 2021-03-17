@@ -10,7 +10,7 @@ proposal receives enough votes, it is instantly and atomically executed.
 We want a chain with three participants and a root account for executing proposals. So, creates this with:
 
 ```shell
-burrow spec -v1 -r1 -p3  | burrow configure -s- -w genesis.json > burrow.toml
+hsc spec -v1 -r1 -p3  | hsc configure -s- -w genesis.json > hsc.toml
 ```
 
 Note that in the genesis doc there is a ProposalThreshold which is set to 3. This can be modified to suit your
@@ -50,7 +50,7 @@ jobs:
 And it would be deployed like so:
 
 ```shell
-burrow deploy -a Participant_0 random.yaml 
+hsc deploy -a Participant_0 random.yaml 
 ```
 
 Now we would like this to be a proposal. So, it needs to go into a proposal job and have it's source address
@@ -72,7 +72,7 @@ jobs:
 Now, to create this proposal:
 
 ```shell
-burrow deploy --proposal-create -a Participant_0 propose-random.yaml 
+hsc deploy --proposal-create -a Participant_0 propose-random.yaml 
 ```
 
 The output should end with:
@@ -87,7 +87,7 @@ So Participant_0 created a proposal. Now you are Participant_1, and Participant_
 he would like you to vote for. So first of all you want to list the current proposals:
 
 ```shell
-burrow deploy --list-proposals=PROPOSED
+hsc deploy --list-proposals=PROPOSED
 ```
 
 ```shell
@@ -98,7 +98,7 @@ Now all we have is a hash. We want to know if this is really the change we are l
 solidity compiler version for this to work.
 
 ```shell
-burrow deploy -a Participant_1 --proposal-verify propose-random.yaml 
+hsc deploy -a Participant_1 --proposal-verify propose-random.yaml 
 ```
 
 ```shell
@@ -109,7 +109,7 @@ log_channel=Info message=Vote no=0 address=0F73E4EF45EC20BDC7CF5A12EC2F32701C642
 So the proposal is current, and matches the solidity and deployment files we have. We can now review those changes, and once we're happy with it, we can vote on it using:
 
 ```shell
-burrow deploy -a Participant_1 --proposal-vote propose-random.yaml 
+hsc deploy -a Participant_1 --proposal-vote propose-random.yaml 
 ```
 
 # Ratification and Execution
@@ -117,7 +117,7 @@ burrow deploy -a Participant_1 --proposal-vote propose-random.yaml
 Once Participant_2 has run:
 
 ```shell
-burrow deploy -a Participant_2 --proposal-vote propose-random.yaml 
+hsc deploy -a Participant_2 --proposal-vote propose-random.yaml 
 ```
 
 The contained transactions are executed. This happens in the same block as where the this vote is registered. 
@@ -125,7 +125,7 @@ The contained transactions are executed. This happens in the same block as where
 # Executed and Expired Proposals
 
 ```shell
-burrow deploy --list-proposals=ALL
+hsc deploy --list-proposals=ALL
 ```
 
 ```shell

@@ -15,7 +15,7 @@ import (
 	"github.com/tmthrgd/go-hex"
 )
 
-// Logger that implements some formatting conventions for burrow and burrow-client
+// Logger that implements some formatting conventions for hsc and hsc-client
 // This is intended for applying consistent value formatting before the final 'output' logger;
 // we should avoid prematurely formatting values here if it is useful to let the output logger
 // decide how it wants to display values. Ideal candidates for 'early' formatting here are types that

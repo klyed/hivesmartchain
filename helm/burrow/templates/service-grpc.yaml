@@ -2,11 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: {{ template "burrow.name" . }}
-    chart: {{ template "burrow.chart" . }}
+    app: {{ template "hsc.name" . }}
+    chart: {{ template "hsc.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-  name:  {{ template "burrow.fullname" . }}-grpc
+  name:  {{ template "hsc.fullname" . }}-grpc
 spec:
   type: {{ .Values.grpc.service.type }}
 {{- if .Values.grpc.service.loadBalance }}
@@ -21,7 +21,7 @@ spec:
       targetPort: grpc
       protocol: TCP
   selector:
-    app: {{ template "burrow.name" . }}
+    app: {{ template "hsc.name" . }}
     release: {{ .Release.Name }}
 {{- if not .Values.grpc.service.loadBalance }}
     nodeNumber: {{ .Values.grpc.service.node | quote }}

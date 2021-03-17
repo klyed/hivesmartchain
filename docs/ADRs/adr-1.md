@@ -1,7 +1,7 @@
 ---
 adr: 1
 title: ADR Purpose and Guidelines
-discussions-to: https://chat.hyperledger.org/channel/burrow-contributors
+discussions-to: https://chat.hyperledger.org/channel/hsc-contributors
 status: Draft
 type: Meta
 author: The Burrow's marmots and others
@@ -16,7 +16,7 @@ An ADR is a design document providing information to the Burrow community, or de
 The ADR should provide a concise technical specification of the feature and a rationale for the feature.
 The ADR author is responsible for building consensus within the community and documenting dissenting opinions.
 
-![burrow logo](../assets/adr-1/burrow-logo.png)
+![hsc logo](../assets/adr-1/hsc-logo.png)
 
 ## ADR Rationale
 

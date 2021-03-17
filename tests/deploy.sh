@@ -33,7 +33,7 @@ perform_tests(){
   apps=$1*/deploy.yaml
 
   # Run all jobs in parallel with mempool signing
-  deploy_cmd="${burrow_bin} deploy --jobs=100 --chain=$BURROW_HOST:$BURROW_GRPC_PORT --keys=$BURROW_HOST:$BURROW_GRPC_PORT \
+  deploy_cmd="${hsc_bin} deploy --jobs=100 --chain=$HSC_HOST:$HSC_GRPC_PORT --keys=$HSC_HOST:$HSC_GRPC_PORT \
    --address $key1 --mempool-signing --set key2_addr=$key2_addr --set addr2_pub=$key2_pub --set key1=$key1 --set key2=$key2 --proposal-create $apps"
   [[ "$debug" == true ]] && deploy_cmd="$deploy_cmd --debug"
   echo "executing deploy with command line:"
@@ -62,9 +62,9 @@ perform_tests_that_should_fail(){
 export -f goto_base
 
 deploy_tests(){
-  echo "Hello! I'm the marmot that tests the $burrow_bin tooling."
+  echo "Hello! I'm the marmot that tests the $hsc_bin tooling."
   echo
-  echo "testing with target $burrow_bin"
+  echo "testing with target $hsc_bin"
   echo
   test_setup
   # Cleanup

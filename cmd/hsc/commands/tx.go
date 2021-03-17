@@ -15,7 +15,7 @@ import (
 	"github.com/klyed/hivesmartchain/txs/payload"
 )
 
-// Tx constructs or sends payloads to a burrow daemon
+// Tx constructs or sends payloads to a hsc daemon
 func Tx(output Output) func(cmd *cli.Cmd) {
 	return func(cmd *cli.Cmd) {
 		configOpts := addConfigOptions(cmd)

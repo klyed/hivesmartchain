@@ -11,12 +11,12 @@ metadata:
     external-dns.alpha.kubernetes.io/ttl: "120"
 {{- end }}
   labels:
-    app: {{ template "burrow.name" $ }}
-    chart: {{ template "burrow.chart" $ }}
+    app: {{ template "hsc.name" $ }}
+    chart: {{ template "hsc.chart" $ }}
     release: {{ $.Release.Name }}
     heritage: {{ $.Release.Service }}
     nodeNumber: {{ $nodeNumber | quote }}
-  name: {{ template "burrow.fullname" $ }}-peer-{{ $nodeNumber }}
+  name: {{ template "hsc.fullname" $ }}-peer-{{ $nodeNumber }}
 spec:
 {{- if $peerIngress }}
   type: LoadBalancer
@@ -30,7 +30,7 @@ spec:
       targetPort: peer
       protocol: TCP
   selector:
-    app: {{ template "burrow.name" $ }}
+    app: {{ template "hsc.name" $ }}
     release: {{ $.Release.Name }}
     nodeNumber: {{ $nodeNumber | quote }}
 {{- end }}

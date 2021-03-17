@@ -2,7 +2,7 @@
 adr: 2
 title: Identify Transaction
 author: Casey Kuhlman (@compleatang), Silas Davis (@silasdavis), Pierrick Hymbert (@phymbert)
-discussions-to: https://chat.hyperledger.org/channel/burrow-contributors
+discussions-to: https://chat.hyperledger.org/channel/hsc-contributors
 status: Draft
 type: Standards Track
 category: State, Consensus, Governance, Gateway

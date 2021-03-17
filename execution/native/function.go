@@ -43,7 +43,7 @@ type Function struct {
 var _ engine.Native = &Function{}
 
 // Context is the first argument to any native function. This struct carries
-// all the context an native needs to access e.g. state in burrow.
+// all the context an native needs to access e.g. state in hsc.
 type Context struct {
 	State engine.State
 	engine.CallParams

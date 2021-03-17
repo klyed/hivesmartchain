@@ -31,4 +31,4 @@ RUN curl -sS -L https://github.com/goreleaser/goreleaser/releases/download/$GORE
 ENV CI=true
 # Protobuf builds require being in GOPATH (more or less) but this disables module support by default
 ENV GO111MODULE=on
-WORKDIR /go/src/github.com/hyperledger/burrow
+WORKDIR /go/src/github.com/hyperledger/hsc

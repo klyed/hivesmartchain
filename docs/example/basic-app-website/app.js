@@ -1,5 +1,5 @@
 const fs = require('fs')
-const burrow = require('@monax/burrow')
+const hsc = require('@monax/hsc')
 const express = require('express')
 const bodyParser = require('body-parser')
 
@@ -18,12 +18,12 @@ function slurp (file) {
 
 // Grab the account file that is expected to have 'Address' field
 let account = slurp(accountFile)
-// Connect to running burrow chain using the account address to identify our input account and return values as an object
+// Connect to running hsc chain using the account address to identify our input account and return values as an object
 // using named returns where provided
-let chain = burrow.createInstance(chainURL, account.Address, {objectReturn: true})
-// The ABI file produced by the solidity compiler (through burrow deploy) that acts as a manifest for our deployed contract
+let chain = hsc.createInstance(chainURL, account.Address, {objectReturn: true})
+// The ABI file produced by the solidity compiler (through hsc deploy) that acts as a manifest for our deployed contract
 let abi = slurp(abiFile).Abi
-// The deployment receipt written to disk by burrow deploy that contains the deployed address of the contract amongst other things
+// The deployment receipt written to disk by hsc deploy that contains the deployed address of the contract amongst other things
 let deploy = slurp(deployFile)
 // The contract we will call
 let contractAddress = deploy.simplestorage

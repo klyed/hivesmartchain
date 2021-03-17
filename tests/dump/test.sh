@@ -13,25 +13,25 @@
 set -e
 set -x
 
-burrow_dump="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+hsc_dump="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 tmp_dir=$(mktemp -d 2>/dev/null || mktemp -d -t 'tmpdumpXXX')
 trap "rm -rf $tmp_dir" EXIT
 
 cd $tmp_dir
-rm -rf .burrow genesis.json burrow.toml burrow.log
+rm -rf .hsc genesis.json hsc.toml hsc.log
 
-burrow_bin=${burrow_bin:-burrow}
+hsc_bin=${hsc_bin:-hsc}
 
 title="Creating new chain..."
 echo -e "\n${title//?/-}\n${title}\n${title//?/-}\n"
 
-$burrow_bin spec -n "Fresh Chain" -v1 | $burrow_bin configure -n BurrowTestDumpNode -e "always" -s- --separate-genesis-doc genesis.json > burrow.toml
+$hsc_bin spec -n "Fresh Chain" -v1 | $hsc_bin configure -n BurrowTestDumpNode -e "always" -s- --separate-genesis-doc genesis.json > hsc.toml
 
-$burrow_bin start 2>> burrow.log &
+$hsc_bin start 2>> hsc.log &
 
-burrow_pid=$!
+hsc_pid=$!
 function kill_hsc {
-	kill -KILL $burrow_pid
+	kill -KILL $hsc_pid
 	rm -rf $tmp_dir
 }
 trap kill_hsc EXIT
@@ -41,38 +41,38 @@ sleep 1
 title="Creating code, events and names..."
 echo -e "\n${title//?/-}\n${title}\n${title//?/-}\n"
 
-$burrow_bin deploy -o '' -a Validator_0 --dir $burrow_dump deploy.yaml
+$hsc_bin deploy -o '' -a Validator_0 --dir $hsc_dump deploy.yaml
 
 title="Dumping chain..."
 echo -e "${title//?/-}\n${title}\n${title//?/-}\n"
 
-$burrow_bin dump remote -b dump.bin
-$burrow_bin dump remote dump.json
+$hsc_bin dump remote -b dump.bin
+$hsc_bin dump remote dump.json
 height=$(head -n 1  dump.json | jq .Height)
 
-kill $burrow_pid
+kill $hsc_pid
 
 # Now we have a dump with out stuff in it. Delete everything apart from
 # the dump and the keys
 mv genesis.json genesis-original.json
-rm -rf .burrow burrow.toml
+rm -rf .hsc hsc.toml
 
 title="Create new chain based of dump with new name..."
 echo -e "\n${title//?/-}\n${title}\n${title//?/-}\n"
 
-$burrow_bin configure -m BurrowTestRestoreNode -e "always" -n "Restored Chain" --genesis genesis-original.json --separate-genesis-doc genesis.json --restore-dump dump.json > burrow.toml
+$hsc_bin configure -m BurrowTestRestoreNode -e "always" -n "Restored Chain" --genesis genesis-original.json --separate-genesis-doc genesis.json --restore-dump dump.json > hsc.toml
 
-$burrow_bin restore dump.json
-$burrow_bin start 2>> burrow.log &
-burrow_pid=$!
+$hsc_bin restore dump.json
+$hsc_bin start 2>> hsc.log &
+hsc_pid=$!
 sleep 13
 
 title="Dumping restored chain for comparison..."
 echo -e "\n${title//?/-}\n${title}\n${title//?/-}\n"
 
-$burrow_bin dump remote --height $height dump-after-restore.json
+$hsc_bin dump remote --height $height dump-after-restore.json
 
-kill $burrow_pid
+kill $hsc_pid
 
 #
 # The contract emits an event which contains the hex string DEADCAFE. So,

@@ -1,12 +1,13 @@
-# [Hive Smart Chain](https://peakd.com/proposals/164)
+# [Hive Smart Chain (HSC)](https://peakd.com/proposals/164)
+## Bringing Truly Decentralized Smart Contracts to HIVE
 
 <!--
 [![CI](https://github.com/klyed/hivesmartchain/workflows/main/badge.svg)](https://launch-editor.github.com/actions?workflowID=main&event=push&nwo=hyperledger%2Fburrow)
-[![version](https://img.shields.io/github/tag/hyperledger/burrow.svg)](https://github.com/klyed/hivesmartchain/releases/latest)
-[![GoDoc](https://godoc.org/github.com/burrow?status.png)](https://godoc.org/github.com/hyperledger/burrow)
-[![license](https://img.shields.io/github/license/hyperledger/burrow.svg)](../LICENSE.md)
-[![LoC](https://tokei.rs/b1/github/hyperledger/burrow?category=lines)](https://github.com/hyperledger/burrow)
-[![codecov](https://codecov.io/gh/hyperledger/burrow/branch/main/graph/badge.svg)](https://codecov.io/gh/hyperledger/burrow)
+[![version](https://img.shields.io/github/tag/hyperledger/hsc.svg)](https://github.com/klyed/hivesmartchain/releases/latest)
+[![GoDoc](https://godoc.org/github.com/hsc?status.png)](https://godoc.org/github.com/hyperledger/hsc)
+[![license](https://img.shields.io/github/license/hyperledger/hsc.svg)](../LICENSE.md)
+[![LoC](https://tokei.rs/b1/github/hyperledger/hsc?category=lines)](https://github.com/hyperledger/hsc)
+[![codecov](https://codecov.io/gh/hyperledger/hsc/branch/main/graph/badge.svg)](https://codecov.io/gh/hyperledger/hsc)
 -->
 
 Hive Smart Chain is a community focused Ethereum smart-contract capable side chain node allowing HIVE users to run smart contracts while using HIVE as their gas fees. It executes Ethereum EVM and WASM smart contract code (usually written in [Solidity](https://solidity.readthedocs.io)) on a permissioned virtual machine. Hive Smart Chain provides transaction finality and high transaction throughput on a proof-of-stake [Tendermint](https://tendermint.com) consensus engine.
@@ -35,6 +36,11 @@ Highlights include:
 
 There is a [JavaScript API](https://github.com/klyed/hivesmartchain/tree/main/js)
 
+## Useful commands
+
+###start node / single user / test mode
+./hsc spec -f1 | ./hsc configure -s- | ./hsc start -v0 -c-
+
 ## Project Roadmap
 
 Project information generally updated on a weekly basis can be found on the [Hive Smart Chain](https://github.com/klyed/hivesmartchain).
@@ -43,8 +49,8 @@ Project information generally updated on a weekly basis can be found on the [Hiv
 ## Releases
 
 - **Hive Smart Chain binaries**: https://github.com/klyed/hivesmartchain/releases
-- **hsc.js   (COMING SOON)**: https://www.npmjs.com/package/@hyperledger/burrow
-- **Docker   (COMING SOON)**: https://hub.docker.com/repository/docker/hyperledger/burrow
+- **hsc.js   (COMING SOON)**: https://www.npmjs.com/package/@hyperledger/hsc
+- **Docker   (COMING SOON)**: https://hub.docker.com/repository/docker/hyperledger/hsc
 
 ## Contribute
 

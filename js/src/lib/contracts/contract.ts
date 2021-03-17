@@ -1,6 +1,6 @@
 import {SolidityEvent} from './event';
 import {SolidityFunction, Handler} from './function';
-import {Burrow} from '../burrow';
+import {Burrow} from '../hsc';
 import {Function, Event} from 'solc';
 
 
@@ -29,18 +29,18 @@ export class Contract {
   abi: ABI;
   address: string;
   code: Bytecode;
-  burrow: Burrow;
+  hsc: Burrow;
   handlers: Handlers;
 
   _constructor: any;
 
-  constructor(abi: Array<FunctionOrEvent>, code: string | Bytecode, address: string, burrow: Burrow, handlers?: Handlers) {
+  constructor(abi: Array<FunctionOrEvent>, code: string | Bytecode, address: string, hsc: Burrow, handlers?: Handlers) {
     handlers = Object.assign({}, defaultHandlers, handlers);
 
     this.address = address;
     this.abi = abi;
     this.code = typeof (code) === 'string' ? {bytecode: code} : code;
-    this.burrow = burrow;
+    this.hsc = hsc;
     this.handlers = handlers;
     addFunctionsToContract(this);
     addEventsToContract(this);
@@ -52,7 +52,7 @@ const addFunctionsToContract = function (contract: Contract) {
   (contract.abi.filter(json => {
     return (json.type === 'function' || json.type === 'constructor');
   }) as Function[]).forEach(function (json) {
-    let {displayName, typeName, call, encode, decode} = SolidityFunction(json, contract.burrow);
+    let {displayName, typeName, call, encode, decode} = SolidityFunction(json, contract.hsc);
 
     if (json.type === 'constructor') {
       contract._constructor = call.bind(contract, false, contract.handlers.deploy, '');
@@ -78,7 +78,7 @@ const addFunctionsToContract = function (contract: Contract) {
   // Not every abi has a constructor specification.
   // If it doesn't we force a _constructor with null abi
   if (!contract._constructor) {
-    const {call} = SolidityFunction(null, contract.burrow);
+    const {call} = SolidityFunction(null, contract.hsc);
     contract._constructor = call.bind(contract, false, contract.handlers.deploy, '');
   }
 }
@@ -87,7 +87,7 @@ const addEventsToContract = function (contract: Contract) {
   (contract.abi.filter(json => {
     return json.type === 'event'
   }) as Event[]).forEach(json => {
-    const {displayName, typeName, call} = SolidityEvent(json, contract.burrow);
+    const {displayName, typeName, call} = SolidityEvent(json, contract.hsc);
 
     const execute = call.bind(contract, null);
     execute.once = call.bind(contract, null);

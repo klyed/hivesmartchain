@@ -20,7 +20,7 @@ func TestBurrow(t *testing.T) {
 			t.Fatalf("fatalf called by Hive Smart Chain cmd: %s", fmt.Sprintf(format, args...))
 		},
 	}
-	app := burrow(out)
+	app := hsc(out)
 	// Basic smoke test for cli config
 	err := app.Run([]string{"hsc", "--version"})
 	assert.NoError(t, err)

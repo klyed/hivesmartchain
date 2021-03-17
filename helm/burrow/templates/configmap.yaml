@@ -1,14 +1,14 @@
 {{- $config := .Values.config }}
-{{- $pp := dict "Tendermint" (dict "PersistentPeers" (include "burrow.seeds" .)) }}
+{{- $pp := dict "Tendermint" (dict "PersistentPeers" (include "hsc.seeds" .)) }}
 kind: ConfigMap
 apiVersion: v1
 metadata:
   labels:
-    app: {{ template "burrow.name" . }}
-    chart: {{ template "burrow.chart" $ }}
+    app: {{ template "hsc.name" . }}
+    chart: {{ template "hsc.chart" $ }}
     heritage: {{ $.Release.Service }}
     release: {{ $.Release.Name }}
-  name: {{ template "burrow.fullname" . }}-config
+  name: {{ template "hsc.fullname" . }}-config
 data:
-  burrow.json: |-
+  hsc.json: |-
 {{ toJson (mergeOverwrite $config $pp) | indent 4 }}

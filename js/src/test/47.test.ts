@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from '../test';
+import {hsc, compile} from '../test';
 
 describe('#47', function () {it('#47', async () => {
     const source = `
@@ -18,7 +18,7 @@ describe('#47', function () {it('#47', async () => {
       }
     `
     const {abi, code} = compile(source, 'Test')
-    return burrow.contracts.deploy(abi, code)
+    return hsc.contracts.deploy(abi, code)
       .then((contract: any) => Promise.all([contract.getWithSpaceConstant(), contract.getWithoutSpaceConstant()]))
       .then(([withSpace, withoutSpace]) => {
         assert.deepStrictEqual(withSpace, ['  Pieter'])

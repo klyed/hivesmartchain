@@ -1,4 +1,4 @@
-package burrow
+package hsc
 
 import (
 	"context"

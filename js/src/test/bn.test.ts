@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { burrow, compile } from '../test';
+import { hsc, compile } from '../test';
 import BN from 'bn.js';
 
 describe('BN', function () {
@@ -17,7 +17,7 @@ describe('BN', function () {
       }
     `
         const { abi, code } = compile(source, 'Test')
-        let contract: any = await burrow.contracts.deploy(abi, code);
+        let contract: any = await hsc.contracts.deploy(abi, code);
 
         await contract.getNumber()
             .then(([number]) => {

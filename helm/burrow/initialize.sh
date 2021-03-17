@@ -6,14 +6,14 @@ then
   echo "Please install mktemp and then rerun me. Exiting."
   exit 1
 fi
-if [[ "$(which burrow)" == "" ]]
+if [[ "$(which hsc)" == "" ]]
 then
   echo "Please install Hyperledger Burrow and then rerun me. Exiting."
   exit 1
 fi
 
 export CHAIN_NODES=${CHAIN_NODES:-4}
-export CHAIN_NAME=${CHAIN_NAME:-"my-release-burrow"}
+export CHAIN_NAME=${CHAIN_NAME:-"my-release-hsc"}
 if [ -z $CHAIN_OUTPUT_DIRECTORY ]; then
   export CHAIN_OUTPUT_DIRECTORY=`pwd`
 fi
@@ -75,14 +75,14 @@ validators:
   {{- end }}
 EOF
 
-echo "Building the genesis spec with burrow ($(burrow --version))."
-burrow spec \
+echo "Building the genesis spec with hsc ($(hsc --version))."
+hsc spec \
   --toml \
   --validator-accounts=$CHAIN_NODES \
   $CHAIN_SPEC_FILES > $genSpec
 
 echo "Creating keys and necessary deploy files..."
-burrow configure \
+hsc configure \
   --chain-name=$CHAIN_NAME \
   --keys-dir=$keys \
   --genesis-spec=$genSpec \

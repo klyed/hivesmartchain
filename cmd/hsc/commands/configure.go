@@ -24,7 +24,7 @@ import (
 	dbm "github.com/tendermint/tm-db"
 )
 
-// Configure generates burrow configuration(s)
+// Configure generates hsc configuration(s)
 func Configure(output Output) func(cmd *cli.Cmd) {
 	return func(cmd *cli.Cmd) {
 

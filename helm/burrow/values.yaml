@@ -3,7 +3,7 @@ chain:
   extraSeeds: []
   testing: false
 config:
-  HscDir: .burrow
+  HscDir: .hsc
   Keys:
     AllowBadFilePermissions: true
     GRPCServiceEnabled: true
@@ -64,7 +64,7 @@ grpc:
     type: ClusterIP
 image:
   pullPolicy: IfNotPresent
-  repository: hyperledger/burrow
+  repository: hyperledger/hsc
   # To be set by helm package
   tag: null
 info:

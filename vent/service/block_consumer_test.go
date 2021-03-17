@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klyed/hivesmartchain/vent/chain/burrow"
+	"github.com/klyed/hivesmartchain/vent/chain/hsc"
 
 	"github.com/klyed/hivesmartchain/crypto"
 	"github.com/klyed/hivesmartchain/execution/evm/abi"
@@ -190,7 +190,7 @@ func consumeBlock(blockConsumer func(block chain.Block) error, eventCh <-chan ty
 		}
 		block.AppendTxs(txe)
 	}
-	err := blockConsumer(burrow.NewBurrowBlock(block))
+	err := blockConsumer(hsc.NewBurrowBlock(block))
 	if err != nil {
 		return nil, err
 	}

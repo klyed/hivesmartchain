@@ -1,5 +1,5 @@
 .keys
-burrow.toml
+hsc.toml
 genesis.json
 account.json
 deploy.output.json

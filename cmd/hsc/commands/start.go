@@ -5,7 +5,7 @@ import (
 	"github.com/klyed/hivesmartchain/core"
 )
 
-// Start launches the burrow daemon
+// Start launches the hsc daemon
 func Start(output Output) func(cmd *cli.Cmd) {
 	return func(cmd *cli.Cmd) {
 		configOpts := addConfigOptions(cmd)

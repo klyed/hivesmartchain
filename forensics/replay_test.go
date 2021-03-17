@@ -25,8 +25,8 @@ import (
 	dbm "github.com/tendermint/tm-db"
 )
 
-// This serves as a testbed for looking at non-deterministic burrow instances capture from the wild
-// Put the path to 'good' and 'bad' burrow directories here (containing the config files and .burrow dir)
+// This serves as a testbed for looking at non-deterministic hsc instances capture from the wild
+// Put the path to 'good' and 'bad' hsc directories here (containing the config files and .hsc dir)
 
 func TestStateComp(t *testing.T) {
 	st1 := state.NewState(dbm.NewMemDB())

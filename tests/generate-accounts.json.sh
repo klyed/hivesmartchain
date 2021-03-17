@@ -8,4 +8,4 @@ address_of() {
 
 full_addr=$(address_of "Full_0")
 
-burrow keys export --addr ${full_addr} '--template={address: "<< .Address >>", pubKey: "<< hex .PublicKey  >>", privKey: "<< hex .PrivateKey >>" }'
+hsc keys export --addr ${full_addr} '--template={address: "<< .Address >>", pubKey: "<< hex .PublicKey  >>", privKey: "<< hex .PrivateKey >>" }'

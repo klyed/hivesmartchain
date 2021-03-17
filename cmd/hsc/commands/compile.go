@@ -11,7 +11,7 @@ import (
 )
 
 // Currently this just compiles to Go fixtures - it might make sense to extend it to take a text template for output
-// if it is convenient to expose our compiler wrappers outside of burrow deploy
+// if it is convenient to expose our compiler wrappers outside of hsc deploy
 func Compile(output Output) func(cmd *cli.Cmd) {
 	return func(cmd *cli.Cmd) {
 		wasmOpt := cmd.BoolOpt("w wasm", false, "Use solang rather than solc")

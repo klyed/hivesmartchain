@@ -19,7 +19,7 @@ Burrow supports permissions via permission flags and string tags called 'roles'.
 
 ### Set in GenesisDoc
 
-Either in the `GenesisDoc` field of burrow.toml or the customary separate `genesis.json` file
+Either in the `GenesisDoc` field of hsc.toml or the customary separate `genesis.json` file
 
 An example `genesis.json`:
 ```json

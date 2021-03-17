@@ -1,6 +1,6 @@
 # JS API
 
-Burrow has a JavaScript API for communicating with a [Hyperledger Burrow](https://github.com/hyperledger/burrow) server, which implements the GRPC spec.
+Burrow has a JavaScript API for communicating with a [Hyperledger Burrow](https://github.com/hyperledger/hsc) server, which implements the GRPC spec.
 
 ## Prerequisites
 
@@ -18,26 +18,26 @@ If your distribution of Linux has a version older than 6 then you can update it.
 ## Install
 
 ``` bash
-$ yarn install @hyperledger/burrow
+$ yarn install @hyperledger/hsc
 ```
 
 ## Usage
 
-You will need to know the <IP Address>:<PORT> of the burrow instance you wish to connect to. If running locally this will be 'localhost' and the default port, which is '10997'. DO NOT INCLUDE A PROTOCOL.
+You will need to know the <IP Address>:<PORT> of the hsc instance you wish to connect to. If running locally this will be 'localhost' and the default port, which is '10997'. DO NOT INCLUDE A PROTOCOL.
 
 The main class is `Burrow`. A standard `Burrow` instance is created like this:
 
 ```JavaScript
-const monax = require('@monax/burrow');
+const monax = require('@monax/hsc');
 var burrowURL = "<IP address>:<PORT>"; // localhost:10997 if running locally on default port
 var account = 'ABCDEF01234567890123'; // address of the account to use for signing, hex string representation 
 var options = {objectReturn: true};
-var burrow = monax.createInstance(burrowURL, account, options);
+var hsc = monax.createInstance(burrowURL, account, options);
 ```
 
 The parameters for `createInstance` is the server URL as a string or as an object `{host:<IP Address>, port:<PORT>}`. An account in the form of a hex-encoded address must be provided. 
 
-> Note: the instance of burrow you are connecting to must have the associated key (if you want local signing you should be running a local node of burrow. Other local signing options might be made available at a later point). 
+> Note: the instance of hsc you are connecting to must have the associated key (if you want local signing you should be running a local node of hsc. Other local signing options might be made available at a later point). 
 
 And finally an optional options object. Allowed options are:
 
@@ -81,11 +81,11 @@ The conventional way to create an new account to use as an input for transaction
 First create a key - you will want to create an account for which you have access to the private key controlling that account (as defined by the address of the public key):
 
 ```shell
-# Create a new key against the key store of a locally running Burrow (or burrow keys standalone server):
-$ address=$(burrow keys gen -n --name NewKey)
+# Create a new key against the key store of a locally running Burrow (or hsc keys standalone server):
+$ address=$(hsc keys gen -n --name NewKey)
 
 # The address will be printed to stdout so the above captures it in $address, you can also list named keys:
-$ burrow keys list
+$ hsc keys list
 Address:"6075EADD0C7A33EE6153F3FA1B21E4D80045FCE2" KeyName:"NewKey"
 ```
 
@@ -94,7 +94,7 @@ Note creating the key _does not_ create the account - it just generates a key pa
 Now we would like to use a `SendTx` to create the address, here's how to do that in Javscript:
 
 ```javascript
-// Using account and burrow defined in snippet from [Usage](#usage)
+// Using account and hsc defined in snippet from [Usage](#usage)
 
 // Address we want to create
 var addressToCreate = "6075EADD0C7A33EE6153F3FA1B21E4D80045FCE2"
@@ -102,7 +102,7 @@ var addressToCreate = "6075EADD0C7A33EE6153F3FA1B21E4D80045FCE2"
 // The amount we send is arbitrary
 var amount = 20
 
-burrow.transact.SendTxSync(
+hsc.transact.SendTxSync(
     {
         Inputs: [{
             Address: Buffer.from(account, 'hex'),
@@ -137,12 +137,12 @@ var setPayload = {
 var getPayload = {Name: "DOUG"}
 
 // Using a callback
-burrow.transact.NameTxSync(setPayload, function(error, data){
+hsc.transact.NameTxSync(setPayload, function(error, data){
 	if (error) throw error; // or something more sensible
 	// data object contains detailed information of the transaction execution.
 
 	// Get a name this time using a promise
-	burrow.query.GetName(getPayload)
+	hsc.query.GetName(getPayload)
 		.then((data) => {console.log(data);}) // should print "Marmot"
 		.catch((error)=> {throw error;})
 })
@@ -151,62 +151,62 @@ burrow.transact.NameTxSync(setPayload, function(error, data){
 
 #### Transactions
 
-`burrow.transact` provides access to the burrow GRPC service `rpctransact`. As a GRPC wrapper all the endpoints take a data argument and an optional callback. The format of the data object is specified in the [rpctransact protobuf file](./protobuf/rpctransact.proto).  A note on RPC naming, any method which ends in `Sync` will wait until the transaction generated is included in a block. Any `Async` method will return a receipt of the transaction immediately but does not guarantee it has been included. `Sim` methods request that the transaction be simulated and the result returned as if it had been executed. SIMULATED CALLS DO NOT GET COMMITTED AND DO NOT CHANGE STATE.
+`hsc.transact` provides access to the hsc GRPC service `rpctransact`. As a GRPC wrapper all the endpoints take a data argument and an optional callback. The format of the data object is specified in the [rpctransact protobuf file](./protobuf/rpctransact.proto).  A note on RPC naming, any method which ends in `Sync` will wait until the transaction generated is included in a block. Any `Async` method will return a receipt of the transaction immediately but does not guarantee it has been included. `Sim` methods request that the transaction be simulated and the result returned as if it had been executed. SIMULATED CALLS DO NOT GET COMMITTED AND DO NOT CHANGE STATE.
 
 | Method | Passed | Returns |
 | :----- | :--------- | :---- |
-| burrow.transact.BroadcastTxSync | [TxEnvelopeParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpctransact.proto#L74-L79) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) |
-| burrow.transact.BroadcastTxASync | [TxEnvelopeParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpctransact.proto#L74-L79) | [Receipt](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/txs.proto#L38-L47) |
-| burrow.transact.SignTx | [TxEnvelopeParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpctransact.proto#L74-L79) | [TxEnvelope](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpctransact.proto#L70-L72) |
-| burrow.transact.FormulateTx | [PayloadParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpctransact.proto#L64-L68) | [TxEnvelope](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpctransact.proto#L70-L72) |
-| burrow.transact.CallTxSync | [CallTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L53-L66) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) |
-| burrow.transact.CallTxAsync | [CallTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L53-L66) | [Receipt](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/txs.proto#L38-L47) |
-| burrow.transact.CallTxSim | [CallTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L53-L66) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) |
-| burrow.transact.SendTxSync | [SendTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L69-L76) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) |
-| burrow.transact.SendTxAsync | [SendTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L69-L76) | [Receipt](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/txs.proto#L38-L47) |
-| burrow.transact.NameTxSync | [NameTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L88-L98) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) |
-| burrow.transact.NameTxAsync | [NameTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L88-L98) | [Receipt](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/txs.proto#L38-L47) |
+| hsc.transact.BroadcastTxSync | [TxEnvelopeParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpctransact.proto#L74-L79) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) |
+| hsc.transact.BroadcastTxASync | [TxEnvelopeParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpctransact.proto#L74-L79) | [Receipt](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/txs.proto#L38-L47) |
+| hsc.transact.SignTx | [TxEnvelopeParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpctransact.proto#L74-L79) | [TxEnvelope](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpctransact.proto#L70-L72) |
+| hsc.transact.FormulateTx | [PayloadParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpctransact.proto#L64-L68) | [TxEnvelope](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpctransact.proto#L70-L72) |
+| hsc.transact.CallTxSync | [CallTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L53-L66) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) |
+| hsc.transact.CallTxAsync | [CallTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L53-L66) | [Receipt](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/txs.proto#L38-L47) |
+| hsc.transact.CallTxSim | [CallTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L53-L66) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) |
+| hsc.transact.SendTxSync | [SendTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L69-L76) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) |
+| hsc.transact.SendTxAsync | [SendTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L69-L76) | [Receipt](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/txs.proto#L38-L47) |
+| hsc.transact.NameTxSync | [NameTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L88-L98) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) |
+| hsc.transact.NameTxAsync | [NameTx](https://github.com/klyed/hivesmartchain/blob/main/protobuf/payload.proto#L88-L98) | [Receipt](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/txs.proto#L38-L47) |
 
 
 #### Queries
 
-`Burrow.query` provides access to the burrow GRPC service `rpcquery`. As a GRPC wrapper all the endpoints take a data argument and an optional callback. The format of the data object is specified in the [protobuf files](https://github.com/klyed/hivesmartchain/tree/main/js/protobuf). Note that "STREAM" functions take a callback `function(error, data)` which is mandatory and is called any time data is returned. For list Accounts the queryable tags are Address, PublicKey, Sequence, Balance, Code, Permissions (Case sensitive). As an example you can get all accounts with a balance greater than 1000 by `burrow.query.ListAccounts('Balance > 1000', callback)`. Multiple tag criteria can be combined using 'AND' and 'OR' for an example of a combined query see [here](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpcevents.proto#L87). Similarly for ListNames, the avaible tags are Name, Data, Owner and Exires (once again case sensitive) use is identical to List accounts.
+`Burrow.query` provides access to the hsc GRPC service `rpcquery`. As a GRPC wrapper all the endpoints take a data argument and an optional callback. The format of the data object is specified in the [protobuf files](https://github.com/klyed/hivesmartchain/tree/main/js/protobuf). Note that "STREAM" functions take a callback `function(error, data)` which is mandatory and is called any time data is returned. For list Accounts the queryable tags are Address, PublicKey, Sequence, Balance, Code, Permissions (Case sensitive). As an example you can get all accounts with a balance greater than 1000 by `hsc.query.ListAccounts('Balance > 1000', callback)`. Multiple tag criteria can be combined using 'AND' and 'OR' for an example of a combined query see [here](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpcevents.proto#L87). Similarly for ListNames, the avaible tags are Name, Data, Owner and Exires (once again case sensitive) use is identical to List accounts.
 
 | Method | Passed | Returns | Notes |
 | :----- | :--------- | :---- | :------- |
-| burrow.query.GetAccount | [GetAccountParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcquery.proto#L25-L27) | [ConcreteAccount](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/acm.proto#L23-L31) | |
-| burrow.query.ListAccounts | [ListAccountsParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcquery.proto#L29-L31) | [ConcreteAccount](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/acm.proto#L23-L31) | STREAM |
-| burrow.query.GetNameParam | [GetNameParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcquery.proto#L33-L35) | [Entry](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/names.proto#L22-L32) | |
-| burrow.query.ListNames | [ListNamesParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcquery.proto#L37-L39) | [Entry](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/names.proto#L22-L32) | STREAM|
+| hsc.query.GetAccount | [GetAccountParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcquery.proto#L25-L27) | [ConcreteAccount](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/acm.proto#L23-L31) | |
+| hsc.query.ListAccounts | [ListAccountsParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcquery.proto#L29-L31) | [ConcreteAccount](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/acm.proto#L23-L31) | STREAM |
+| hsc.query.GetNameParam | [GetNameParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcquery.proto#L33-L35) | [Entry](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/names.proto#L22-L32) | |
+| hsc.query.ListNames | [ListNamesParam](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcquery.proto#L37-L39) | [Entry](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/names.proto#L22-L32) | STREAM|
 
 #### EventStream
 
 NB: When listening to contract events it is easier to use the contract interface (described below)
 
-`Burrow.executionEvents` provides access to the burrow GRPC service `ExecutionEvents`. As a GRPC wrapper all the endpoints take a data argument and an optional callback. The format of the data object is specified in the [protobuf files](https://github.com/klyed/hivesmartchain/tree/main/js/protobuf). Note that "STREAM" functions take a callback `function(error, data)` which is mandatory and is called any time data is returned.
+`Burrow.executionEvents` provides access to the hsc GRPC service `ExecutionEvents`. As a GRPC wrapper all the endpoints take a data argument and an optional callback. The format of the data object is specified in the [protobuf files](https://github.com/klyed/hivesmartchain/tree/main/js/protobuf). Note that "STREAM" functions take a callback `function(error, data)` which is mandatory and is called any time data is returned.
 
 | Method | Passed | Returns | Notes |
 | :----- | :--------- | :---- | :------- |
-| burrow.executionEvents.GetBlock | [GetBlockRequest](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto#L37-L42) | [BlockExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L20-L27) | |
-| burrow.executionEvents.GetBlocks | [BlocksRequest](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto#L51-L89) | [BlockExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L20-L27) | STREAM |
-| burrow.executionEvents.GetTx | [GetTxRequest](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto#L44-L49) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) | |
-| burrow.executionEvents.GetTxs | [BlocksRequest](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto#L51-L89) | [GetTxsResponse](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpcevents.proto#L96-L99) | STREAM |
-| burrow.executionEvents.GetEvents | [BlocksRequest](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto#L51-L89) | [GetEventsResponse](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpcevents.proto#L91-L94) | STREAM |
+| hsc.executionEvents.GetBlock | [GetBlockRequest](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto#L37-L42) | [BlockExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L20-L27) | |
+| hsc.executionEvents.GetBlocks | [BlocksRequest](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto#L51-L89) | [BlockExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L20-L27) | STREAM |
+| hsc.executionEvents.GetTx | [GetTxRequest](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto#L44-L49) | [TxExecution](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/exec.proto#L34-L56) | |
+| hsc.executionEvents.GetTxs | [BlocksRequest](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto#L51-L89) | [GetTxsResponse](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpcevents.proto#L96-L99) | STREAM |
+| hsc.executionEvents.GetEvents | [BlocksRequest](https://github.com/klyed/hivesmartchain/blob/main/protobuf/rpcevents.proto#L51-L89) | [GetEventsResponse](https://github.com/klyed/hivesmartchain/blob/develop/protobuf/rpcevents.proto#L91-L94) | STREAM |
 
 
 ***
 
 ### High-Level Components
 
-In addition to direct access to the grpc services, the burrow object also provides access to *three* higher level components which wrap the low level access for convenience. These are ```.namereg```, ```.events```, and ```.contracts```. All high level components use the account provided during creation of the burrow instance for constructing transactions. Component ```contracts``` is the most important of the three, as events and namereg are really just helpful wrappers.
+In addition to direct access to the grpc services, the hsc object also provides access to *three* higher level components which wrap the low level access for convenience. These are ```.namereg```, ```.events```, and ```.contracts```. All high level components use the account provided during creation of the hsc instance for constructing transactions. Component ```contracts``` is the most important of the three, as events and namereg are really just helpful wrappers.
 
 
 #### 1. Namereg
 
-`burrow.namereg` is a convenience wrapper for setting and getting entries from the name registry. 
+`hsc.namereg` is a convenience wrapper for setting and getting entries from the name registry. 
  
-##### burrow.namereg.get
-```burrow.namereg.get(name[,callback])```
+##### hsc.namereg.get
+```hsc.namereg.get(name[,callback])```
 
 Gets an entry stored at the name. It returns a promise if callback not provided.
 ###### Parameters
@@ -224,8 +224,8 @@ Gets an entry stored at the name. It returns a promise if callback not provided.
 } 
 ```
 
-##### burrow.namereg.set
-```burrow.namereg.set(name, data, lease[, callback])```
+##### hsc.namereg.set
+```hsc.namereg.set(name, data, lease[, callback])```
 
 Sets an entry in the namereg. It returns a promise if callback not provided.
 ###### Parameters
@@ -239,12 +239,12 @@ Sets an entry in the namereg. It returns a promise if callback not provided.
 
 ```javascript
 // Using a callback
-burrow.namereg.set("DOUG", "Marmot", 5000, function(error, data){
+hsc.namereg.set("DOUG", "Marmot", 5000, function(error, data){
 	if (error) throw error; // or something more sensible
 	// data object contains detailed information of the transaction execution.
 
 	// Get a name this time using a promise
-	burrow.namereg.get("DOUG")
+	hsc.namereg.get("DOUG")
 		.then((data) => {console.log(data);}) // Should print "Marmot"
 		.catch((error)=> {throw error;})
 })
@@ -256,10 +256,10 @@ burrow.namereg.set("DOUG", "Marmot", 5000, function(error, data){
 
 #### 2. Events
 
-`burrow.events` contains convenience wrappers for streaming executionEvents.
+`hsc.events` contains convenience wrappers for streaming executionEvents.
 
-##### burrow.events.listen
-```burrow.events.listen(query, options, callback)```
+##### hsc.events.listen
+```hsc.events.listen(query, options, callback)```
 
 Listens to execution events which satisfy the filter query.
 ###### Parameters
@@ -271,8 +271,8 @@ Listens to execution events which satisfy the filter query.
 
 
 
-##### burrow.events.subContractEvents
-```burrow.events.subContractEvents(address, signature, options, callback)```
+##### hsc.events.subContractEvents
+```hsc.events.subContractEvents(address, signature, options, callback)```
 
 Listens to EVM event executions from specific contract.
 ###### Parameters
@@ -287,11 +287,11 @@ Listens to EVM event executions from specific contract.
 
 #### 3. Contracts
 
-`burrow.contracts` is arguably the most important component of the burrow it exposes two functions, `.deploy` and `.new` both of which return a Contract interface object (sometimes refered to as contract object). The difference between them is that `new` simply creates an interface to a contract and `deploy` will first create an instance and then deploy a copy of it to the blockchain.
+`hsc.contracts` is arguably the most important component of the hsc it exposes two functions, `.deploy` and `.new` both of which return a Contract interface object (sometimes refered to as contract object). The difference between them is that `new` simply creates an interface to a contract and `deploy` will first create an instance and then deploy a copy of it to the blockchain.
 
 
-##### burrow.contracts.deploy
-```burrow.contracts.deploy(abi, bytecode, params... [, callback])```
+##### hsc.contracts.deploy
+```hsc.contracts.deploy(abi, bytecode, params... [, callback])```
 
 Deploys a contract and returns a contract interface either to the callback or a promise once deploy is successful. It returns a promise if callback not provided.
 
@@ -305,18 +305,18 @@ When the contract interface object is created via deploy, the default address is
 ###### Returns
 `Object` - The return data object is a contract interface, which refers to the contract which is deployed at `contract.address`. (This functionality used to be called `new`.)
 
-##### burrow.contracts.new
-```burrow.contracts.address(address)```
+##### hsc.contracts.new
+```hsc.contracts.address(address)```
 
-Returns a new contract interface object, without having to pass in the ABI. The ABI is retrieved from burrow; the contract must have been deployed with burrow deploy 0.28.0 or later.
+Returns a new contract interface object, without having to pass in the ABI. The ABI is retrieved from hsc; the contract must have been deployed with hsc deploy 0.28.0 or later.
 
 ###### Parameters
 3. `String` - Hex encoded address of the default contract you want the interface to access
 ###### Returns
 `Object` - The return data object is a contract interface.
 
-##### burrow.contracts.new
-```burrow.contracts.new(abi, [bytecode[, address]])```
+##### hsc.contracts.new
+```hsc.contracts.new(abi, [bytecode[, address]])```
 
 Returns a new contract interface object. All you really need to create an interface is the abi, however you can also include the bytecode of the contract. If you do so you can create new contracts of this type by calling `contract._constructor(...)` which will deploy a new contract and return its address. If you provide an address, then this will be the default contract address used however you can also omit this at be sure to use the `.at()` and `.atSim()` versions of functions. Also note you must provide bytecode is you wish to provide address, though bytecode argument can be null.
 
@@ -332,7 +332,7 @@ Returns a new contract interface object. All you really need to create an interf
 
 The contract interface object allows for easy access of solidity contract function calls and subscription to events. When created, javascript functions for all functions specified in the abi are generated. All of these functions have the same form `Contract.functionname(params...[, callback])`, where `params` are the arguments to the contract constructor. Arguments of the "bytes" type should be properly hex encoded before passing, to avoid improper encoding. If a callback is not provided a promise is returned.
 
-> Note: if the burrow object was created with ```{objectReturn: True}``` the return from these function calls is formatted as `{values:{...}, raw:[]}` otherwise an array of decoded values is provided. The values object names the decoded values according to the abi spec, if a return value has no name it won't be included in the values object and must be retrieved from its position on the raw array.
+> Note: if the hsc object was created with ```{objectReturn: True}``` the return from these function calls is formatted as `{values:{...}, raw:[]}` otherwise an array of decoded values is provided. The values object names the decoded values according to the abi spec, if a return value has no name it won't be included in the values object and must be retrieved from its position on the raw array.
 
 
 In the case of a REVERT op-code being called in the contract function call, an error will be passed with the revert string as the `.message` field. These errors can be distinguished from other errors as the `.code` field will be `ERR_EXECUTION_REVERT`.
@@ -453,13 +453,13 @@ contract SimpleContract {
 Here I provide an example of communicating to the contract above from start to finish:
 
 ```javascript
-const monax = require('@monax/burrow');
+const monax = require('@monax/hsc');
 const assert = require('assert');
 
 var burrowURL = "<IP address>:<PORT>"; // localhost:10997 if running locally on default port
 var account = 'ABCDEF01234567890123'; // address of the account to use for signing, hex string representation 
 var options = {objectReturn: false};
-var burrow = monax.createInstance(burrowURL, account, options);
+var hsc = monax.createInstance(burrowURL, account, options);
 
 // Get the contractABIJSON from somewhere such as solc
 var abi = json.parse(contractABIJSON) // Get the contractABIJSON from somewhere such as solc
@@ -468,7 +468,7 @@ var bytecode = contractBytecode // Get this from somewhere such as solc
 
 
 // I'm going to use new to create a contract interface followed by a double direct call to the _constructor to deploy two contracts
-const contract = burrow.contracts.new(abi, bytecode);
+const contract = hsc.contracts.new(abi, bytecode);
 return Promise.all(								// Deployment of two contracts
 	[
 		contract._constructor('contract1'),

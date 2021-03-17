@@ -1,6 +1,6 @@
 # Kubernetes
 
-Burrow ships a docker image suitable for use in Kubernetes on [Docker Hub](https://hub.docker.com/r/hyperledger/burrow). This image is use by the chart below.
+Burrow ships a docker image suitable for use in Kubernetes on [Docker Hub](https://hub.docker.com/r/hyperledger/hsc). This image is use by the chart below.
 
 ## Helm chart
 

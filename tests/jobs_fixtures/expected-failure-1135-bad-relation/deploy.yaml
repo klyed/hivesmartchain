@@ -16,7 +16,7 @@ jobs:
 
 - name: queryReg1
     query-name:
-      name: burrow
+      name: hsc
       field: data
 
 - name: nameRegAssert1

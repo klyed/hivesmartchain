@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import {burrow, compile} from "../test";
+import {hsc, compile} from "../test";
 
 describe('Abi', function () {
 
@@ -13,14 +13,14 @@ contract random {
 }
   `
   // TODO: understand why abi storage isn't working
-  it('Call contract via burrow side Abi', async () => {
+  it('Call contract via hsc side Abi', async () => {
     const {abi, code} = compile(source, 'random')
-    const contractIn: any = await burrow.contracts.deploy(abi, code)
-    await burrow.namereg.set('random', contractIn.address)
-    const entry = await burrow.namereg.get('random')
+    const contractIn: any = await hsc.contracts.deploy(abi, code)
+    await hsc.namereg.set('random', contractIn.address)
+    const entry = await hsc.namereg.get('random')
     const address = entry.getData();
     console.log(address)
-    const contractOut: any = await burrow.contracts.fromAddress(address)
+    const contractOut: any = await hsc.contracts.fromAddress(address)
     const number = await contractOut.getRandomNumber()
     assert.strictEqual(number[0], 55)
   })

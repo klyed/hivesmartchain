@@ -14,8 +14,8 @@ export const compile = (source: string, name: string) => {
   return {abi: contract.abi, code: {bytecode: contract.evm.bytecode.object, deployedBytecode: contract.evm.deployedBytecode.object} };
 }
 
-const url = process.env.BURROW_URL || 'localhost:20997';
+const url = process.env.HSC_URL || 'localhost:20997';
 const addr = process.env.SIGNING_ADDRESS || 'C9F239591C593CB8EE192B0009C6A0F2C9F8D768';
 console.log(`Connecting to Burrow at ${url}...`)
-export const burrow = new Burrow(url, addr);
+export const hsc = new Burrow(url, addr);
 

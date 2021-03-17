@@ -1,5 +1,5 @@
 # This uses a bin file without any metadata to test deployment.
-# This means uses local ABIs rather than burrow-side ABIs.
+# This means uses local ABIs rather than hsc-side ABIs.
 
 jobs:
 

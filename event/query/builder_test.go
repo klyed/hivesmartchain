@@ -31,9 +31,9 @@ func TestQueryBuilder(t *testing.T) {
 	qb = qb.AndContains("bar.desc", "hsc")
 	qry, err = qb.Query()
 	require.NoError(t, err)
-	assert.Equal(t, "foo.size >= 45 AND bar.name = 'marmot' AND bar.desc CONTAINS 'burrow'", qry.String())
+	assert.Equal(t, "foo.size >= 45 AND bar.name = 'marmot' AND bar.desc CONTAINS 'hsc'", qry.String())
 
-	assert.True(t, qry.Matches(makeTagMap("foo.size", 80, "bar.name", "marmot", "bar.desc", "lives in a burrow")))
+	assert.True(t, qry.Matches(makeTagMap("foo.size", 80, "bar.name", "marmot", "bar.desc", "lives in a hsc")))
 	assert.False(t, qry.Matches(makeTagMap("foo.size", 80, "bar.name", "marmot", "bar.desc", "lives in a shoe")))
 
 	qb = NewBuilder().AndEquals("foo", "bar")

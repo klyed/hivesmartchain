@@ -2,7 +2,7 @@
 adr: 3
 title: Smart Contract Bonding Natives
 author: Silas Davis (@silasdavis), Gregory Hill (@gregdhill)
-discussions-to: https://chat.hyperledger.org/channel/burrow-contributors
+discussions-to: https://chat.hyperledger.org/channel/hsc-contributors
 status: Draft
 type: Standards Track
 category: State, Consensus, Governance

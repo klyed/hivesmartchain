@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import { burrow } from "../test";
+import { hsc } from "../test";
 import fs from 'fs';
 
 describe('Wasm flipper:', function () {
@@ -8,7 +8,7 @@ describe('Wasm flipper:', function () {
     before(async () => {
         const abi: any[] = JSON.parse(fs.readFileSync('src/test/flipper.abi', 'utf-8'))
         const wasm: string = fs.readFileSync('src/test/flipper.wasm').toString('hex')
-        TestContract = await burrow.contracts.deploy(abi, wasm, null, true)
+        TestContract = await hsc.contracts.deploy(abi, wasm, null, true)
     })
 
     it('Flip', async () => {

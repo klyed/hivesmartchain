@@ -1,7 +1,7 @@
 # Transactions
 
 Burrow supports a number of [transactions](reference/transactions.md) which denote a unit of computation.
-The easiest way to experiment is with our `burrow tx` command, but please checkout the [deployment guide](deploy.md)
+The easiest way to experiment is with our `hsc tx` command, but please checkout the [deployment guide](deploy.md)
 for more advanced usage.
 
 ## Getting Started
@@ -9,11 +9,11 @@ for more advanced usage.
 Let's start a chain with one validator to process blocks and two participant accounts:
 
 ```shell
-burrow spec -v1 -p2 | burrow configure -s- > burrow.toml
-burrow start -v0 &
+hsc spec -v1 -p2 | hsc configure -s- > hsc.toml
+hsc start -v0 &
 ```
 
-Make a note of the two participant addresses generated in the `burrow.toml`.
+Make a note of the two participant addresses generated in the `hsc.toml`.
 
 ## Send Token
 
@@ -22,12 +22,12 @@ Given our two addresses created above, set `$SENDER` and `$RECIPIENT` respective
 We'll also need to designate an amount of native token available from our sender.
 
 ```shell
-burrow tx formulate send -s $SENDER -t $RECIPIENT -a $AMOUNT > tx.json
+hsc tx formulate send -s $SENDER -t $RECIPIENT -a $AMOUNT > tx.json
 ```
 
 To send this transaction to your local node and subsequently the chain (if running more than one validator),
 pipe the output above through the following command:
 
 ```shell
-burrow tx commit --file tx.json
+hsc tx commit --file tx.json
 ```

@@ -8,7 +8,7 @@ trap test_teardown EXIT
 
 cd $this
 export SIGNING_ADDRESS="$key1_addr"
-export BURROW_URL="$BURROW_HOST:$BURROW_GRPC_PORT"
+export HSC_URL="$HSC_HOST:$HSC_GRPC_PORT"
 
 mocha --bail --exit -r ts-node/register "$1"
 test_exit=$?

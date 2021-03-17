@@ -13,7 +13,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-const devStudioPath = "/home/silas/burrows/t7-dev-studio-burrow-000/t7-dev-studio-burrow-000"
+const devStudioPath = "/home/silas/burrows/t7-dev-studio-hsc-000/t7-dev-studio-hsc-000"
 
 func testLoadStudio(t *testing.T, i int) {
 	re := newReplay(t, studioDir(i))

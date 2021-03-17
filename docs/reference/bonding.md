@@ -6,12 +6,12 @@ The more token that is bonded, the higher the chance of 'mining' a block.
 
 ## How it Works
 
-When starting a burrow node, we provide an address which links to an owned key-pair.
+When starting a hsc node, we provide an address which links to an owned key-pair.
 Each running node thus has an identity which may active in the validator set. Assuming we have
 connected to a network, our node will replay state downloaded from its peers - from which we will
 be able to discern any native token stored at our address. If this amount is non-negligible
 we can submit a signed BondTx to be gossiped amongst the current validators who should include it
-in a block. When executing this transaction against our global state, burrow will first check that the 
+in a block. When executing this transaction against our global state, hsc will first check that the 
 input address has correctly signed the payload, that the respective account exists with the bonding
 permission and has enough token to stake. If successful, then this will subtract the token from the
 account and raise the new validators power - enabling it to vote and propose new blocks. The procedure 

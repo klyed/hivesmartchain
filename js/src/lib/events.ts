@@ -1,14 +1,14 @@
 import {IExecutionEventsClient} from '../../proto/rpcevents_grpc_pb';
 import {BlocksRequest, BlockRange, Bound, EventsResponse} from '../../proto/rpcevents_pb';
 import {LogEvent} from '../../proto/exec_pb';
-import {Error} from './burrow';
+import {Error} from './hsc';
 import * as grpc from '@grpc/grpc-js';
 
 export type EventStream = grpc.ClientReadableStream<EventsResponse>;
 
 export class Events {
 
-  constructor(private burrow: IExecutionEventsClient) {
+  constructor(private hsc: IExecutionEventsClient) {
   }
 
   listen(query: string, callback: (err: Error, log: LogEvent) => void): EventStream {
@@ -27,7 +27,7 @@ export class Events {
     arg.setBlockrange(range);
     arg.setQuery(query);
 
-    let stream = this.burrow.events(arg);
+    let stream = this.hsc.events(arg);
     stream.on('data', (data: EventsResponse) => {
       data.getEventsList().map(event => {
         callback(null, event.getLog());
