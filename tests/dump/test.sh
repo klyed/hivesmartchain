@@ -30,11 +30,11 @@ $burrow_bin spec -n "Fresh Chain" -v1 | $burrow_bin configure -n BurrowTestDumpN
 $burrow_bin start 2>> burrow.log &
 
 burrow_pid=$!
-function kill_burrow {
+function kill_hsc {
 	kill -KILL $burrow_pid
 	rm -rf $tmp_dir
 }
-trap kill_burrow EXIT
+trap kill_hsc EXIT
 
 sleep 1
 

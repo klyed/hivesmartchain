@@ -138,36 +138,36 @@ commit_hash:
 
 # build all targets in github.com/hyperledger/burrow
 .PHONY: build
-build:	check build_burrow build_burrow_debug
+build:	check build_hsc build_hsc_debug
 
 # build all targets in github.com/hyperledger/burrow with checks for race conditions
 .PHONY: build_race
 build_race:	check build_race_db
 
 # build burrow and vent
-.PHONY: build_burrow
-build_burrow: commit_hash
+.PHONY: build_hsc
+build_hsc: commit_hash
 	go build $(BURROW_BUILD_FLAGS) -ldflags "-extldflags '-static' \
 	-X github.com/KLYE-Dev/HSC-MAIN/project.commit=$(shell cat commit_hash.txt) \
 	-X github.com/KLYE-Dev/HSC-MAIN/project.date=$(shell date '+%Y-%m-%d')" \
 	-o ${REPO}/bin/burrow$(BURROW_BUILD_SUFFIX) ./cmd/burrow
 
 # With the sqlite tag - enabling Vent sqlite adapter support, but building a CGO binary
-.PHONY: build_burrow_sqlite
-build_burrow_sqlite: export BURROW_BUILD_SUFFIX=-vent-sqlite
-build_burrow_sqlite: export BURROW_BUILD_FLAGS=-tags sqlite
-build_burrow_sqlite:
-	$(MAKE) build_burrow
+.PHONY: build_hsc_sqlite
+build_hsc_sqlite: export BURROW_BUILD_SUFFIX=-vent-sqlite
+build_hsc_sqlite: export BURROW_BUILD_FLAGS=-tags sqlite
+build_hsc_sqlite:
+	$(MAKE) build_hsc
 
 # Builds a binary suitable for delve line-by-line debugging through CGO with optimisations (-N) and inling (-l) disabled
-.PHONY: build_burrow_debug
-build_burrow_debug: export BURROW_BUILD_SUFFIX=-debug
-build_burrow_debug: export BURROW_BUILD_FLAGS=-gcflags "all=-N -l"
-build_burrow_debug:
-	$(MAKE) build_burrow
+.PHONY: build_hsc_debug
+build_hsc_debug: export BURROW_BUILD_SUFFIX=-debug
+build_hsc_debug: export BURROW_BUILD_FLAGS=-gcflags "all=-N -l"
+build_hsc_debug:
+	$(MAKE) build_hsc
 
 .PHONY: install
-install: build_burrow
+install: build_hsc
 	mkdir -p ${BIN_PATH}
 	install ${REPO}/bin/burrow ${BIN_PATH}/burrow
 
@@ -187,14 +187,14 @@ docker_build: check commit_hash
 
 # Solidity fixtures
 .PHONY: solidity
-solidity: $(patsubst %.sol, %.sol.go, $(wildcard ./execution/solidity/*.sol)) build_burrow
+solidity: $(patsubst %.sol, %.sol.go, $(wildcard ./execution/solidity/*.sol)) build_hsc
 
 %.sol.go: %.sol
 	@burrow compile $^
 
 # Solang fixtures
 .PHONY: solang
-solang: $(patsubst %.solang, %.solang.go, $(wildcard ./execution/solidity/*.solang) $(wildcard ./execution/wasm/*.solang)) build_burrow
+solang: $(patsubst %.solang, %.solang.go, $(wildcard ./execution/solidity/*.solang) $(wildcard ./execution/wasm/*.solang)) build_hsc
 
 %.solang.go: %.solang
 	@burrow compile --wasm $^

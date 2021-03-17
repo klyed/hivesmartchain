@@ -206,7 +206,7 @@
 - [CLI] 'burrow dump' renamed 'burrow dump remote'
 - [Consensus] By default Burrow no longer creates empty blocks at the end of a round - though does make on every 5 minutes by default. Set CreateEmptyBlocks to "never" or omit to create no blocks unless there are transactions, or "always" to generate blocks even when there are no transactions.
 - [State] Burrow state does not store empty blocks in the execution event store even when Tendermint creates them.
-- [Build] 'make install_burrow' is now just 'make install'
+- [Build] 'make install_hsc' is now just 'make install'
 
 ### Fixed
 - [Deploy] Always read TxExecution exception in Burrow deploy to avoid panics later on

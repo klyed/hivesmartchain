@@ -31,11 +31,11 @@ fi
 echo "starting the server"
 $burrow_bin keys server --dir $keys_dir &
 keys_pid=$!
-function kill_burrow_keys {
+function kill_hsc_keys {
     kill -TERM $keys_pid
 }
 
-trap kill_burrow_keys EXIT
+trap kill_hsc_keys EXIT
 sleep 1
 echo "-----------------------------"
 echo "testing the cli"
