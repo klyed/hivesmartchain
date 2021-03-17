@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/encoding"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/encoding"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

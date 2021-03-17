@@ -8,16 +8,16 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/klye-dev/hsc-main/acm"
-	. "github.com/klye-dev/hsc-main/binary"
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/execution/engine"
-	"github.com/klye-dev/hsc-main/execution/errors"
-	"github.com/klye-dev/hsc-main/execution/evm/abi"
-	. "github.com/klye-dev/hsc-main/execution/evm/asm"
-	"github.com/klye-dev/hsc-main/execution/exec"
-	"github.com/klye-dev/hsc-main/permission"
-	"github.com/klye-dev/hsc-main/txs"
+	"github.com/klye-dev/hivesmartchain/acm"
+	. "github.com/klye-dev/hivesmartchain/binary"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/execution/engine"
+	"github.com/klye-dev/hivesmartchain/execution/errors"
+	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
+	. "github.com/klye-dev/hivesmartchain/execution/evm/asm"
+	"github.com/klye-dev/hivesmartchain/execution/exec"
+	"github.com/klye-dev/hivesmartchain/permission"
+	"github.com/klye-dev/hivesmartchain/txs"
 )
 
 type Contract struct {

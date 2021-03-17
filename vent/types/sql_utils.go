@@ -1,6 +1,6 @@
 package types
 
-import "github.com/klye-dev/hsc-main/logging"
+import "github.com/klye-dev/hivesmartchain/logging"
 
 // SQLConnection stores parameters to build a new db connection & initialize the database
 type SQLConnection struct {

@@ -8,7 +8,7 @@ import (
 
 	"encoding/json"
 
-	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hivesmartchain/crypto"
 )
 
 type AddressableSigner interface {

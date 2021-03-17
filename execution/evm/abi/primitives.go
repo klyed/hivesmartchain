@@ -8,7 +8,7 @@ import (
 	"strings"
 	"unsafe" // just for Sizeof
 
-	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hivesmartchain/crypto"
 )
 
 // EVM Solidity calls and return values are packed into

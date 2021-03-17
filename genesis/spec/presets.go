@@ -3,8 +3,8 @@ package spec
 import (
 	"sort"
 
-	"github.com/klye-dev/hsc-main/acm/balance"
-	"github.com/klye-dev/hsc-main/permission"
+	"github.com/klye-dev/hivesmartchain/acm/balance"
+	"github.com/klye-dev/hivesmartchain/permission"
 )
 
 // Files here can be used as starting points for building various 'chain types' but are otherwise

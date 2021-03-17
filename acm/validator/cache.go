@@ -3,7 +3,7 @@ package validator
 import (
 	"math/big"
 
-	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hivesmartchain/crypto"
 )
 
 // Cache is just a Ring with no memory

@@ -8,10 +8,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/klye-dev/hsc-main/encoding"
+	"github.com/klye-dev/hivesmartchain/encoding"
 
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/logging"
 )
 
 type KeyClient interface {

@@ -3,9 +3,9 @@ package execution
 import (
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/execution/engine"
+	"github.com/klye-dev/hivesmartchain/execution/engine"
 
-	"github.com/klye-dev/hsc-main/execution/evm"
+	"github.com/klye-dev/hivesmartchain/execution/evm"
 )
 
 type VMOption string

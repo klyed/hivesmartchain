@@ -7,11 +7,11 @@ import (
 	"time"
 
 	"github.com/go-kit/kit/log"
-	pkgs "github.com/klye-dev/hsc-main/deploy"
-	"github.com/klye-dev/hsc-main/deploy/def"
-	"github.com/klye-dev/hsc-main/deploy/proposals"
-	"github.com/klye-dev/hsc-main/logging"
-	"github.com/klye-dev/hsc-main/logging/loggers"
+	pkgs "github.com/klye-dev/hivesmartchain/deploy"
+	"github.com/klye-dev/hivesmartchain/deploy/def"
+	"github.com/klye-dev/hivesmartchain/deploy/proposals"
+	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klye-dev/hivesmartchain/logging/loggers"
 	cli "github.com/jawher/mow.cli"
 )
 

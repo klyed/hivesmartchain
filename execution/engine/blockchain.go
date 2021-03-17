@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"time"
 
-	"github.com/klye-dev/hsc-main/execution/errors"
+	"github.com/klye-dev/hivesmartchain/execution/errors"
 )
 
 type TestBlockchain struct {

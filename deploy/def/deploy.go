@@ -2,7 +2,7 @@ package def
 
 import (
 	validation "github.com/go-ozzo/ozzo-validation"
-	"github.com/klye-dev/hsc-main/deploy/def/rule"
+	"github.com/klye-dev/hivesmartchain/deploy/def/rule"
 )
 
 const DefaultOutputFile = "deploy.output.json"

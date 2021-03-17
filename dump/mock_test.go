@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/execution/state"
-	"github.com/klye-dev/hsc-main/genesis"
-	"github.com/klye-dev/hsc-main/permission"
+	"github.com/klye-dev/hivesmartchain/execution/state"
+	"github.com/klye-dev/hivesmartchain/genesis"
+	"github.com/klye-dev/hivesmartchain/permission"
 	"github.com/stretchr/testify/require"
 )
 

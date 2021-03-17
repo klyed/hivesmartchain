@@ -10,12 +10,12 @@ import (
 	"sort"
 	"time"
 
-	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hivesmartchain/binary"
 
-	"github.com/klye-dev/hsc-main/acm"
-	"github.com/klye-dev/hsc-main/acm/validator"
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/permission"
+	"github.com/klye-dev/hivesmartchain/acm"
+	"github.com/klye-dev/hivesmartchain/acm/validator"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/permission"
 )
 
 // How many bytes to take from the front of the GenesisDoc hash to append

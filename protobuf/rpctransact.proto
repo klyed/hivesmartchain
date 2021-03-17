@@ -2,7 +2,7 @@ syntax = 'proto3';
 
 package rpctransact;
 
-option go_package = "github.com/klye-dev/hsc-main/rpc/rpctransact";
+option go_package = "github.com/klye-dev/hivesmartchain/rpc/rpctransact";
 
 import "gogoproto/gogo.proto";
 import "google/protobuf/duration.proto";
@@ -56,18 +56,18 @@ service Transact {
 }
 
 message CallCodeParam {
-    bytes FromAddress = 1 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/crypto.Address", (gogoproto.nullable) = false];
+    bytes FromAddress = 1 [(gogoproto.customtype) = "github.com/klye-dev/hivesmartchain/crypto.Address", (gogoproto.nullable) = false];
     bytes Code = 2;
     bytes Data = 3;
 }
 
 message TxEnvelope {
-    txs.Envelope Envelope = 1 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/txs.Envelope"];
+    txs.Envelope Envelope = 1 [(gogoproto.customtype) = "github.com/klye-dev/hivesmartchain/txs.Envelope"];
 }
 
 message TxEnvelopeParam {
     // An existing Envelope - either signed or unsigned - if the latter will be signed server-side
-    txs.Envelope Envelope = 1 [(gogoproto.customtype) = "github.com/klye-dev/hsc-main/txs.Envelope"];
+    txs.Envelope Envelope = 1 [(gogoproto.customtype) = "github.com/klye-dev/hivesmartchain/txs.Envelope"];
     // If no Envelope provided then one will be generated from the provided payload and signed server-side
     payload.Any Payload = 2;
     // The amount of time to wait for the transaction to be committed and the TxExecution to be returned (server-side).

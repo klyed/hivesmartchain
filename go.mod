@@ -1,4 +1,4 @@
-module github.com/klye_dev/hsc_main
+module github.com/klye-dev/hivesmartchain
 
 go 1.15
 

@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/klye-dev/hsc-main/acm/acmstate"
-	"github.com/klye-dev/hsc-main/acm/validator"
-	"github.com/klye-dev/hsc-main/execution/exec"
-	"github.com/klye-dev/hsc-main/logging"
-	"github.com/klye-dev/hsc-main/txs/payload"
+	"github.com/klye-dev/hivesmartchain/acm/acmstate"
+	"github.com/klye-dev/hivesmartchain/acm/validator"
+	"github.com/klye-dev/hivesmartchain/execution/exec"
+	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klye-dev/hivesmartchain/txs/payload"
 )
 
 type UnbondContext struct {

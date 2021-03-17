@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hivesmartchain/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

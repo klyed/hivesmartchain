@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/execution/solidity"
+	"github.com/klye-dev/hivesmartchain/execution/solidity"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

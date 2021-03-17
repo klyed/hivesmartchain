@@ -6,10 +6,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/integration"
+	"github.com/klye-dev/hivesmartchain/integration"
 
-	"github.com/klye-dev/hsc-main/integration/rpctest"
-	"github.com/klye-dev/hsc-main/txs/payload"
+	"github.com/klye-dev/hivesmartchain/integration/rpctest"
+	"github.com/klye-dev/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -10,9 +10,9 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/klye-dev/hsc-main/logging"
-	"github.com/klye-dev/hsc-main/rpc"
-	"github.com/klye-dev/hsc-main/rpc/lib/server"
+	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klye-dev/hivesmartchain/rpc"
+	"github.com/klye-dev/hivesmartchain/rpc/lib/server"
 )
 
 func StartServer(service *rpc.Service, pattern string, listener net.Listener, blockSampleSize int,

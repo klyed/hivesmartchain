@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/genesis"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/genesis"
+	"github.com/klye-dev/hivesmartchain/logging"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	dbm "github.com/tendermint/tm-db"

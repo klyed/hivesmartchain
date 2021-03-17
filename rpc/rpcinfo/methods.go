@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/klye-dev/hsc-main/acm"
-	"github.com/klye-dev/hsc-main/execution/names"
-	"github.com/klye-dev/hsc-main/rpc"
-	"github.com/klye-dev/hsc-main/rpc/lib/server"
+	"github.com/klye-dev/hivesmartchain/acm"
+	"github.com/klye-dev/hivesmartchain/execution/names"
+	"github.com/klye-dev/hivesmartchain/rpc"
+	"github.com/klye-dev/hivesmartchain/rpc/lib/server"
 )
 
 // Method names

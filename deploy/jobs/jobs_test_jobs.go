@@ -6,10 +6,10 @@ import (
 
 	hex "github.com/tmthrgd/go-hex"
 
-	"github.com/klye-dev/hsc-main/deploy/def"
-	"github.com/klye-dev/hsc-main/deploy/util"
-	"github.com/klye-dev/hsc-main/execution/evm/abi"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/deploy/def"
+	"github.com/klye-dev/hivesmartchain/deploy/util"
+	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
+	"github.com/klye-dev/hivesmartchain/logging"
 )
 
 func QueryContractJob(query *def.QueryContract, do *def.DeployArgs, script *def.Playbook, client *def.Client, logger *logging.Logger) (string, []*abi.Variable, error) {

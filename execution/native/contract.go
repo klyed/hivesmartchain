@@ -6,13 +6,13 @@ package native
 import (
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/acm"
-	"github.com/klye-dev/hsc-main/acm/acmstate"
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/execution/engine"
-	"github.com/klye-dev/hsc-main/execution/errors"
-	"github.com/klye-dev/hsc-main/execution/evm/abi"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/acm"
+	"github.com/klye-dev/hivesmartchain/acm/acmstate"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/execution/engine"
+	"github.com/klye-dev/hivesmartchain/execution/errors"
+	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
+	"github.com/klye-dev/hivesmartchain/logging"
 )
 
 //

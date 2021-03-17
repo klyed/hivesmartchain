@@ -11,9 +11,9 @@ import (
 	"reflect"
 
 	validation "github.com/go-ozzo/ozzo-validation"
-	"github.com/klye-dev/hsc-main/acm"
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/permission"
+	"github.com/klye-dev/hivesmartchain/acm"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/permission"
 )
 
 var PlaceholderRegex = regexp.MustCompile(`\$(?P<bracket>{?)(?P<job>[[:word:]]+)(\.(?P<variable>[[:word:]]+))?}?`)

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package errors;
 
-option go_package = "github.com/klye-dev/hsc-main/execution/errors";
+option go_package = "github.com/klye-dev/hivesmartchain/execution/errors";
 
 import "gogoproto/gogo.proto";
 

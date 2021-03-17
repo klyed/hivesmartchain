@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/execution/evm/asm"
-	"github.com/klye-dev/hsc-main/execution/evm/asm/bc"
+	"github.com/klye-dev/hivesmartchain/execution/evm/asm"
+	"github.com/klye-dev/hivesmartchain/execution/evm/asm/bc"
 	hex "github.com/tmthrgd/go-hex"
 )
 

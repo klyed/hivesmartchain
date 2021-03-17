@@ -11,9 +11,9 @@ import (
 	"runtime/debug"
 	"time"
 
-	"github.com/klye-dev/hsc-main/logging"
-	"github.com/klye-dev/hsc-main/logging/structure"
-	"github.com/klye-dev/hsc-main/rpc/lib/types"
+	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klye-dev/hivesmartchain/rpc/lib/types"
 )
 
 func StartHTTPServer(listener net.Listener, handler http.Handler, logger *logging.Logger) (*http.Server, error) {

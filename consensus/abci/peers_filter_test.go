@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/logging"
 
-	"github.com/klye-dev/hsc-main/consensus/tendermint/codes"
+	"github.com/klye-dev/hivesmartchain/consensus/tendermint/codes"
 	"github.com/stretchr/testify/assert"
 	"github.com/tendermint/tendermint/abci/types"
 	abciTypes "github.com/tendermint/tendermint/abci/types"

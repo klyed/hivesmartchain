@@ -9,11 +9,11 @@ import (
 	"reflect"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/klye-dev/hsc-main/binary"
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/event/query"
-	"github.com/klye-dev/hsc-main/execution/errors"
-	"github.com/klye-dev/hsc-main/permission"
+	"github.com/klye-dev/hivesmartchain/binary"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/event/query"
+	"github.com/klye-dev/hivesmartchain/execution/errors"
+	"github.com/klye-dev/hivesmartchain/permission"
 )
 
 var GlobalPermissionsAddress = crypto.Address(binary.Zero160)

@@ -13,8 +13,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/bcm"
-	"github.com/klye-dev/hsc-main/execution/state"
+	"github.com/klye-dev/hivesmartchain/bcm"
+	"github.com/klye-dev/hivesmartchain/execution/state"
 	"github.com/stretchr/testify/require"
 	"github.com/syndtr/goleveldb/leveldb/opt"
 	dbm "github.com/tendermint/tm-db"

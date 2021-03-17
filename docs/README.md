@@ -1,7 +1,7 @@
 # [Hyperledger Burrow](https://hyperledger.github.io/burrow)
 
-[![CI](https://github.com/klye-dev/hsc-main/workflows/main/badge.svg)](https://launch-editor.github.com/actions?workflowID=main&event=push&nwo=hyperledger%2Fburrow)
-[![version](https://img.shields.io/github/tag/hyperledger/burrow.svg)](https://github.com/klye-dev/hsc-main/releases/latest)
+[![CI](https://github.com/klye-dev/hivesmartchain/workflows/main/badge.svg)](https://launch-editor.github.com/actions?workflowID=main&event=push&nwo=hyperledger%2Fburrow)
+[![version](https://img.shields.io/github/tag/hyperledger/burrow.svg)](https://github.com/klye-dev/hivesmartchain/releases/latest)
 [![GoDoc](https://godoc.org/github.com/burrow?status.png)](https://godoc.org/github.com/hyperledger/burrow)
 [![license](https://img.shields.io/github/license/hyperledger/burrow.svg)](../LICENSE.md)
 [![LoC](https://tokei.rs/b1/github/hyperledger/burrow?category=lines)](https://github.com/hyperledger/burrow)
@@ -43,7 +43,7 @@ Watch the [Boring into Burrow](https://www.youtube.com/watch?v=OpbjYaGAP4k) talk
 
 ## JavaScript Client
 
-There is a [JavaScript API](https://github.com/klye-dev/hsc-main/tree/main/js)
+There is a [JavaScript API](https://github.com/klye-dev/hivesmartchain/tree/main/js)
 
 ## Project Roadmap
 
@@ -54,7 +54,7 @@ Burrow getting started documentation is available on the [documentation site](ht
 
 ## Releases
 
-- **Burrow binaries**: https://github.com/klye-dev/hsc-main/releases
+- **Burrow binaries**: https://github.com/klye-dev/hivesmartchain/releases
 - **Burrow.js**: https://www.npmjs.com/package/@hyperledger/burrow
 - **Docker**: https://hub.docker.com/repository/docker/hyperledger/burrow
 
@@ -65,7 +65,7 @@ We welcome any and all contributions. Read the [contributing file](../.github/CO
 You can find us on:
 - [Hyperledger Chat](https://chat.hyperledger.org)
 - [Hyperledger Mailing List](https://lists.hyperledger.org/mailman/listinfo)
-- [here on Github](https://github.com/klye-dev/hsc-main/issues)
+- [here on Github](https://github.com/klye-dev/hivesmartchain/issues)
 
 ## License
 

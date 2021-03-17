@@ -7,12 +7,12 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/klye-dev/hsc-main/execution/exec"
-	"github.com/klye-dev/hsc-main/logging"
-	"github.com/klye-dev/hsc-main/txs/payload"
+	"github.com/klye-dev/hivesmartchain/execution/exec"
+	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klye-dev/hivesmartchain/txs/payload"
 	"github.com/tmthrgd/go-hex"
 
-	"github.com/klye-dev/hsc-main/deploy/def"
+	"github.com/klye-dev/hivesmartchain/deploy/def"
 )
 
 func FormulateSendJob(send *def.Send, account string, client *def.Client, logger *logging.Logger) (*payload.SendTx, error) {

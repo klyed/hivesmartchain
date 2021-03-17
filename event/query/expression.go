@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/klye-dev/hsc-main/logging/errors"
+	"github.com/klye-dev/hivesmartchain/logging/errors"
 )
 
 const (

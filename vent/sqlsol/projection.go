@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/klye-dev/hsc-main/vent/types"
+	"github.com/klye-dev/hivesmartchain/vent/types"
 	"github.com/pkg/errors"
 	"github.com/xeipuuv/gojsonschema"
 )

@@ -1,8 +1,8 @@
 package engine
 
 import (
-	"github.com/klye-dev/hsc-main/execution/errors"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/execution/errors"
+	"github.com/klye-dev/hivesmartchain/logging"
 )
 
 // Options are parameters that are generally stable across a burrow configuration.

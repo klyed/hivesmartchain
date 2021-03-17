@@ -5,9 +5,9 @@ import (
 
 	"strconv"
 
-	"github.com/klye-dev/hsc-main/logging/logconfig"
-	"github.com/klye-dev/hsc-main/logging/loggers"
-	"github.com/klye-dev/hsc-main/logging/structure"
+	"github.com/klye-dev/hivesmartchain/logging/logconfig"
+	"github.com/klye-dev/hivesmartchain/logging/loggers"
+	"github.com/klye-dev/hivesmartchain/logging/structure"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

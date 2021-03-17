@@ -1,12 +1,12 @@
 package native
 
 import (
-	"github.com/klye-dev/hsc-main/acm"
-	"github.com/klye-dev/hsc-main/acm/acmstate"
-	"github.com/klye-dev/hsc-main/binary"
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/execution/engine"
-	"github.com/klye-dev/hsc-main/execution/errors"
+	"github.com/klye-dev/hivesmartchain/acm"
+	"github.com/klye-dev/hivesmartchain/acm/acmstate"
+	"github.com/klye-dev/hivesmartchain/binary"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/execution/engine"
+	"github.com/klye-dev/hivesmartchain/execution/errors"
 )
 
 // This wrapper provides a state that behaves 'as if' the natives were stored directly in state.

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/config/source"
+	"github.com/klye-dev/hivesmartchain/config/source"
 )
 
 func TestEventTablesSchema(t *testing.T) {

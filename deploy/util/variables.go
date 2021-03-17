@@ -11,10 +11,10 @@ import (
 
 	"unicode"
 
-	"github.com/klye-dev/hsc-main/deploy/def"
-	"github.com/klye-dev/hsc-main/deploy/def/rule"
-	"github.com/klye-dev/hsc-main/execution/evm/abi"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/deploy/def"
+	"github.com/klye-dev/hivesmartchain/deploy/def/rule"
+	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
+	"github.com/klye-dev/hivesmartchain/logging"
 )
 
 func Variables(value interface{}) []*abi.Variable {

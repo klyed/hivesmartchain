@@ -12,10 +12,10 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	validator "github.com/klye-dev/hsc-main/acm/validator"
-	bcm "github.com/klye-dev/hsc-main/bcm"
-	github_com_klye-dev_hsc-main_binary "github.com/klye-dev/hsc-main/binary"
-	tendermint "github.com/klye-dev/hsc-main/consensus/tendermint"
+	validator "github.com/klye-dev/hivesmartchain/acm/validator"
+	bcm "github.com/klye-dev/hivesmartchain/bcm"
+	github_com_klye-dev_hsc-main_binary "github.com/klye-dev/hivesmartchain/binary"
+	tendermint "github.com/klye-dev/hivesmartchain/consensus/tendermint"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -34,7 +34,7 @@ type ResultStatus struct {
 	ChainID       string                                        `protobuf:"bytes,1,opt,name=ChainID,proto3" json:"ChainID,omitempty"`
 	RunID         string                                        `protobuf:"bytes,2,opt,name=RunID,proto3" json:"RunID,omitempty"`
 	HscVersion string                                        `protobuf:"bytes,3,opt,name=HscVersion,proto3" json:"HscVersion,omitempty"`
-	GenesisHash   github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,4,opt,name=GenesisHash,proto3,customtype=github.com/klye-dev/hsc-main/binary.HexBytes" json:"GenesisHash"`
+	GenesisHash   github_com_klye-dev_hsc-main_binary.HexBytes `protobuf:"bytes,4,opt,name=GenesisHash,proto3,customtype=github.com/klye-dev/hivesmartchain/binary.HexBytes" json:"GenesisHash"`
 	NodeInfo      *tendermint.NodeInfo                          `protobuf:"bytes,5,opt,name=NodeInfo,proto3" json:"NodeInfo,omitempty"`
 	SyncInfo      *bcm.SyncInfo                                 `protobuf:"bytes,6,opt,name=SyncInfo,proto3" json:"SyncInfo,omitempty"`
 	// When catching up in fast sync

@@ -3,8 +3,8 @@ package payload
 import (
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/acm/acmstate"
-	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hivesmartchain/acm/acmstate"
+	"github.com/klye-dev/hivesmartchain/crypto"
 )
 
 func NewNameTx(st acmstate.AccountGetter, from *crypto.PublicKey, name, data string, amt, fee uint64) (*NameTx, error) {

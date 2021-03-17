@@ -6,13 +6,13 @@ package evm
 import (
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/acm"
-	"github.com/klye-dev/hsc-main/acm/acmstate"
-	"github.com/klye-dev/hsc-main/execution/defaults"
-	"github.com/klye-dev/hsc-main/execution/engine"
-	"github.com/klye-dev/hsc-main/execution/exec"
-	"github.com/klye-dev/hsc-main/execution/native"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/acm"
+	"github.com/klye-dev/hivesmartchain/acm/acmstate"
+	"github.com/klye-dev/hivesmartchain/execution/defaults"
+	"github.com/klye-dev/hivesmartchain/execution/engine"
+	"github.com/klye-dev/hivesmartchain/execution/exec"
+	"github.com/klye-dev/hivesmartchain/execution/native"
+	"github.com/klye-dev/hivesmartchain/logging"
 )
 
 const (

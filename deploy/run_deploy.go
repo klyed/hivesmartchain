@@ -9,11 +9,11 @@ import (
 	"time"
 
 	"github.com/go-kit/kit/log"
-	"github.com/klye-dev/hsc-main/deploy/def"
-	"github.com/klye-dev/hsc-main/deploy/jobs"
-	"github.com/klye-dev/hsc-main/deploy/loader"
-	"github.com/klye-dev/hsc-main/execution/evm/abi"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/deploy/def"
+	"github.com/klye-dev/hivesmartchain/deploy/jobs"
+	"github.com/klye-dev/hivesmartchain/deploy/loader"
+	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
+	"github.com/klye-dev/hivesmartchain/logging"
 )
 
 type playbookWork struct {

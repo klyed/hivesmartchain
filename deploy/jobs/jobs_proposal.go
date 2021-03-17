@@ -4,17 +4,17 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/execution/contexts"
+	"github.com/klye-dev/hivesmartchain/execution/contexts"
 
-	"github.com/klye-dev/hsc-main/acm/acmstate"
-	"github.com/klye-dev/hsc-main/binary"
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/deploy/def"
-	"github.com/klye-dev/hsc-main/deploy/proposals"
-	"github.com/klye-dev/hsc-main/deploy/util"
-	"github.com/klye-dev/hsc-main/logging"
-	"github.com/klye-dev/hsc-main/txs"
-	"github.com/klye-dev/hsc-main/txs/payload"
+	"github.com/klye-dev/hivesmartchain/acm/acmstate"
+	"github.com/klye-dev/hivesmartchain/binary"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/deploy/def"
+	"github.com/klye-dev/hivesmartchain/deploy/proposals"
+	"github.com/klye-dev/hivesmartchain/deploy/util"
+	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klye-dev/hivesmartchain/txs"
+	"github.com/klye-dev/hivesmartchain/txs/payload"
 )
 
 func getAccountSequence(seq string, addressStr string, seqCache *acmstate.Cache, client *def.Client, logger *logging.Logger) (string, error) {

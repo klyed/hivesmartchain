@@ -3,13 +3,13 @@ package service
 import (
 	"io"
 
-	"github.com/klye-dev/hsc-main/event/query"
-	"github.com/klye-dev/hsc-main/execution/exec"
-	"github.com/klye-dev/hsc-main/logging"
-	"github.com/klye-dev/hsc-main/logging/structure"
-	"github.com/klye-dev/hsc-main/vent/chain"
-	"github.com/klye-dev/hsc-main/vent/sqlsol"
-	"github.com/klye-dev/hsc-main/vent/types"
+	"github.com/klye-dev/hivesmartchain/event/query"
+	"github.com/klye-dev/hivesmartchain/execution/exec"
+	"github.com/klye-dev/hivesmartchain/logging"
+	"github.com/klye-dev/hivesmartchain/logging/structure"
+	"github.com/klye-dev/hivesmartchain/vent/chain"
+	"github.com/klye-dev/hivesmartchain/vent/sqlsol"
+	"github.com/klye-dev/hivesmartchain/vent/types"
 	"github.com/pkg/errors"
 )
 

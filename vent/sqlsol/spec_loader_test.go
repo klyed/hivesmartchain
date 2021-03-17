@@ -5,8 +5,8 @@ import (
 	"path"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/vent/sqlsol"
-	"github.com/klye-dev/hsc-main/vent/types"
+	"github.com/klye-dev/hivesmartchain/vent/sqlsol"
+	"github.com/klye-dev/hivesmartchain/vent/types"
 	"github.com/stretchr/testify/require"
 )
 

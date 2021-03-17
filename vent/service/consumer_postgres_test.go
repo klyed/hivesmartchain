@@ -7,16 +7,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klye-dev/hsc-main/integration"
-	"github.com/klye-dev/hsc-main/integration/rpctest"
+	"github.com/klye-dev/hivesmartchain/integration"
+	"github.com/klye-dev/hivesmartchain/integration/rpctest"
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/klye-dev/hsc-main/vent/types"
+	"github.com/klye-dev/hivesmartchain/vent/types"
 	"github.com/lib/pq"
 	"github.com/stretchr/testify/require"
 
-	"github.com/klye-dev/hsc-main/vent/test"
+	"github.com/klye-dev/hivesmartchain/vent/test"
 )
 
 func TestPostgresConsumer(t *testing.T) {

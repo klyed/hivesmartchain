@@ -10,12 +10,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/klye-dev/hsc-main/acm/acmstate"
-	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hivesmartchain/acm/acmstate"
+	"github.com/klye-dev/hivesmartchain/crypto"
 	"golang.org/x/crypto/sha3"
 
-	"github.com/klye-dev/hsc-main/execution/evm/asm"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/execution/evm/asm"
+	"github.com/klye-dev/hivesmartchain/logging"
 	hex "github.com/tmthrgd/go-hex"
 )
 

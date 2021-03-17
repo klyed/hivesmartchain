@@ -6,7 +6,7 @@ package structure
 import (
 	"testing"
 
-	"github.com/klye-dev/hsc-main/util/slice"
+	"github.com/klye-dev/hivesmartchain/util/slice"
 
 	"github.com/stretchr/testify/assert"
 )

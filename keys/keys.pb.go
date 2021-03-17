@@ -12,7 +12,7 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
-	crypto "github.com/klye-dev/hsc-main/crypto"
+	crypto "github.com/klye-dev/hivesmartchain/crypto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

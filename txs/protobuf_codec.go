@@ -1,7 +1,7 @@
 package txs
 
 import (
-	"github.com/klye-dev/hsc-main/encoding"
+	"github.com/klye-dev/hivesmartchain/encoding"
 )
 
 type protobufCodec struct {

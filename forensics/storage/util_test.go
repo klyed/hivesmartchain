@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/storage"
+	"github.com/klye-dev/hivesmartchain/storage"
 	"github.com/stretchr/testify/assert"
 	dbm "github.com/tendermint/tm-db"
 )

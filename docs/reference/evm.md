@@ -19,7 +19,7 @@ We use the following heuristic to guide the compatibility of our implementation:
 - All Solidity code compiled with the latest `solc` should run on Burrow
 - All opcodes defined for the EVM should be implemented in Burrow (where the opcodes assume certain consensus or network protocol fact we try to find an analogous interpretation in Burrow)
 
-As new EIPs are released we incorporate them into Burrow. There is [current work](https://github.com/klye-dev/hsc-main/issues/1240) to close the gap on some of the newer 
+As new EIPs are released we incorporate them into Burrow. There is [current work](https://github.com/klye-dev/hivesmartchain/issues/1240) to close the gap on some of the newer 
 Ethereum precompile contracts.
 
 ## Extensions

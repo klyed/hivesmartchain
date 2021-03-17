@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/klye-dev/hsc-main/event"
-	"github.com/klye-dev/hsc-main/event/query"
+	"github.com/klye-dev/hivesmartchain/event"
+	"github.com/klye-dev/hivesmartchain/event/query"
 )
 
 type EventStream interface {

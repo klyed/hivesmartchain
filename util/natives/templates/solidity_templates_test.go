@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/execution/native"
+	"github.com/klye-dev/hivesmartchain/execution/native"
 	"github.com/stretchr/testify/assert"
 )
 

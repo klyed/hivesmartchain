@@ -3,7 +3,7 @@ package query
 import (
 	"testing"
 
-	"github.com/klye-dev/hsc-main/logging/structure"
+	"github.com/klye-dev/hivesmartchain/logging/structure"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

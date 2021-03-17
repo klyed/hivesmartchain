@@ -6,7 +6,7 @@ package loggers
 import (
 	"testing"
 
-	"github.com/klye-dev/hsc-main/logging/errors"
+	"github.com/klye-dev/hivesmartchain/logging/errors"
 	"github.com/stretchr/testify/assert"
 )
 

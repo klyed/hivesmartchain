@@ -3,9 +3,9 @@ package dump
 import (
 	"testing"
 
-	"github.com/klye-dev/hsc-main/bcm"
-	"github.com/klye-dev/hsc-main/execution/state"
-	"github.com/klye-dev/hsc-main/genesis"
+	"github.com/klye-dev/hivesmartchain/bcm"
+	"github.com/klye-dev/hivesmartchain/execution/state"
+	"github.com/klye-dev/hivesmartchain/genesis"
 	"github.com/stretchr/testify/require"
 )
 

@@ -5,7 +5,7 @@ import (
 )
 
 // Can be used to set the commit hash version of the binary at build time with:
-// `go build -ldflags "-X github.com/klye-dev/hsc-main/project.commit=$(git rev-parse --short HEAD)" ./cmd/hsc`
+// `go build -ldflags "-X github.com/klye-dev/hivesmartchain/project.commit=$(git rev-parse --short HEAD)" ./cmd/hsc`
 
 var commit = ""
 var date = ""
@@ -117,7 +117,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 `,
 		"0.29.8 - 2020-02-11",
 		`### Fixed
-- [ABI] Fix failure to convert crypto.Address to EVMAddress (https://github.com/klye-dev/hsc-main/issues/1326)
+- [ABI] Fix failure to convert crypto.Address to EVMAddress (https://github.com/klye-dev/hivesmartchain/issues/1326)
 `,
 		"0.29.7 - 2020-01-27",
 		`### Fixed
@@ -178,7 +178,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 - [Docs] Much docs (see also: https://www.hyperledger.org/blog/2019/10/08/burrow-the-boring-blockchain)
 - [Docs] Generate github pages docs index with docsify: https://hyperledger.github.io/burrow/
 - [JS] Publish burrow.js to @hyperledger/burrow
-- [State] Store EVM ABI and contract metadata on-chain see [GetMetadata](https://github.com/klye-dev/hsc-main/blob/e80aad5d8fac1f67dbfec61ea75670f9a38c61a1/protobuf/rpcquery.proto#L25)
+- [State] Store EVM ABI and contract metadata on-chain see [GetMetadata](https://github.com/klye-dev/hivesmartchain/blob/e80aad5d8fac1f67dbfec61ea75670f9a38c61a1/protobuf/rpcquery.proto#L25)
 - [Tendermint] Upgrade to v0.32.3
 - [Execution] Added IdentifyTx for introducing nodes (binding their NodeID to ValidatorAddress)
 - [Natives] Implement Ethereum precompile number 5 - modular exponentiation
@@ -356,7 +356,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 
 		"0.24.0 - 2019-02-26",
 		`### Changed
-- [EVM] Use TxHash to allow predictable sequence numbers for account creation (allows proposal mechanism to aggregate transactions and execute in a BatchTx) - [pull request](https://github.com/klye-dev/hsc-main/pull/969)
+- [EVM] Use TxHash to allow predictable sequence numbers for account creation (allows proposal mechanism to aggregate transactions and execute in a BatchTx) - [pull request](https://github.com/klye-dev/hivesmartchain/pull/969)
 - [State] Introduced MutableForest and change state layout to a streaming model that amongst other things should not blow the GRPC message size for large transactions
 - [Consensus] Upgraded Tendermint to v0.30.1
 - [State] Upgraded IAVL to v0.12.1
@@ -369,7 +369,7 @@ var History relic.ImmutableHistory = relic.NewHistory("Hyperledger Burrow", "htt
 ### Fixed
 - [Transactor] Reduce TxExecution subscription overhead
 - [Transactor] Remove excessive debug subscription timeout
-- [State] Fixed issue with check-pointing that could cause divergent AppHash across node restarts- [pull request](https://github.com/klye-dev/hsc-main/pull/985)
+- [State] Fixed issue with check-pointing that could cause divergent AppHash across node restarts- [pull request](https://github.com/klye-dev/hivesmartchain/pull/985)
 - [EVM] Implemented BLOCKHASH opcode
 - [EVM] Used correct callee STATICCALL to fix cross-contract queries
 - [Consensus] Guarded against total validator power overflow (as limited by Tendermint)
@@ -594,9 +594,9 @@ A major strand of work has been in condensing previous Monax tooling spread acro
 
 #### Known issues
 - Documentation rot - some effort has been made to update documentation to represent the current state but in some places it has slipped help can be found (and would be welcomed) on: [Hyperledger Burrow Chat](https://chat.hyperledger.org/channel/burrow)
-- Missing support for: RETURNDATACOPY and RETURNDATASIZE https://github.com/klye-dev/hsc-main/issues/705 (coming very soon)
-- Missing support for: INVALID https://github.com/klye-dev/hsc-main/issues/705 (coming very soon)
-- Missing support for: REVERT https://github.com/klye-dev/hsc-main/issues/600 (coming very soon)
+- Missing support for: RETURNDATACOPY and RETURNDATASIZE https://github.com/klye-dev/hivesmartchain/issues/705 (coming very soon)
+- Missing support for: INVALID https://github.com/klye-dev/hivesmartchain/issues/705 (coming very soon)
+- Missing support for: REVERT https://github.com/klye-dev/hivesmartchain/issues/600 (coming very soon)
 `,
 
 		"0.17.1",
@@ -605,8 +605,8 @@ A major strand of work has been in condensing previous Monax tooling spread acro
 		"0.17.0 - 2017-09-04",
 		`This is a service release with some significant ethereum/solidity compatibility improvements and new logging features. It includes:
 
-- [Upgrade to use Tendermint v0.9.2](https://github.com/klye-dev/hsc-main/pull/595)
-- [Implemented dynamic memory](https://github.com/klye-dev/hsc-main/pull/607) assumed by the EVM bytecode produce by solidity, fixing various issues.
+- [Upgrade to use Tendermint v0.9.2](https://github.com/klye-dev/hivesmartchain/pull/595)
+- [Implemented dynamic memory](https://github.com/klye-dev/hivesmartchain/pull/607) assumed by the EVM bytecode produce by solidity, fixing various issues.
 - Logging sinks and configuration - providing a flexible mechanism for configuring log flows and outputs see [logging section in readme](https://github.com/hyperledger/burrow#logging). Various other logging enhancements.
 - Fix event unsubscription
 - Remove module-specific versioning
@@ -615,7 +615,7 @@ A major strand of work has been in condensing previous Monax tooling spread acro
 
 Known issues:
 
-- SELFDESTRUCT opcode causes a panic when an account is removed. A [fix](https://github.com/klye-dev/hsc-main/pull/605) was produced but was [reverted](https://github.com/klye-dev/hsc-main/pull/636) pending investigation of a possible regression.`,
+- SELFDESTRUCT opcode causes a panic when an account is removed. A [fix](https://github.com/klye-dev/hivesmartchain/pull/605) was produced but was [reverted](https://github.com/klye-dev/hivesmartchain/pull/636) pending investigation of a possible regression.`,
 
 		"0.16.3 - 2017-04-25",
 		`This release adds an stop-gap fix to the Transact method so that it never
@@ -641,28 +641,28 @@ of the architecture across the Monax Platform to support a quicker release
 cadence.
 
 #### Features and improvements (among others)
-- [pull-510](https://github.com/klye-dev/hsc-main/pull/510) upgrade consensus engine to Tendermint v0.8.0
-- [pull-507](https://github.com/klye-dev/hsc-main/pull/507) use sha3 for snative addresses for future-proofing
-- [pull-506](https://github.com/klye-dev/hsc-main/pull/506) alignment and consolidation for genesis and config between tooling and chains
-- [pull-504](https://github.com/klye-dev/hsc-main/pull/504) relicense eris-db to Apache 2.0
-- [pull-500](https://github.com/klye-dev/hsc-main/pull/500) introduce more strongly types secure native contracts
-- [pull-499](https://github.com/klye-dev/hsc-main/pull/499) introduce word256 and remove dependency on tendermint/go-common
-- [pull-493](https://github.com/klye-dev/hsc-main/pull/493) re-introduce GenesisTime in GenesisDoc
+- [pull-510](https://github.com/klye-dev/hivesmartchain/pull/510) upgrade consensus engine to Tendermint v0.8.0
+- [pull-507](https://github.com/klye-dev/hivesmartchain/pull/507) use sha3 for snative addresses for future-proofing
+- [pull-506](https://github.com/klye-dev/hivesmartchain/pull/506) alignment and consolidation for genesis and config between tooling and chains
+- [pull-504](https://github.com/klye-dev/hivesmartchain/pull/504) relicense eris-db to Apache 2.0
+- [pull-500](https://github.com/klye-dev/hivesmartchain/pull/500) introduce more strongly types secure native contracts
+- [pull-499](https://github.com/klye-dev/hivesmartchain/pull/499) introduce word256 and remove dependency on tendermint/go-common
+- [pull-493](https://github.com/klye-dev/hivesmartchain/pull/493) re-introduce GenesisTime in GenesisDoc
 
 - Logging system overhauled based on the central logging interface of go-kit log. Configuration lacking in this release but should be in 0.16.1. Allows powerful routing, filtering, and output options for better operations and increasing the observability of an eris blockchain. More to follow.
 - Genesis making is improved and moved into eris-db.
 - Config templating is moved into eris-db for better synchronisation of server config between the consumer of it (eris-db) and the producers of it (eris cli and other tools).
 - Some documentation updates in code and in specs.
-- [pull-462](https://github.com/klye-dev/hsc-main/pull/499) Makefile added to capture conventions around building and testing and replicate them across different environments such as continuous integration systems.
+- [pull-462](https://github.com/klye-dev/hivesmartchain/pull/499) Makefile added to capture conventions around building and testing and replicate them across different environments such as continuous integration systems.
 
 #### Bugfixes (among others)
-- [pull-516](https://github.com/klye-dev/hsc-main/pull/516) Organize and add unit tests for rpc/v0
-- [pull-453](https://github.com/klye-dev/hsc-main/pull/453) Fix deserialisation for BroadcastTx on rpc/v0
-- [pull-476](https://github.com/klye-dev/hsc-main/pull/476) patch EXTCODESIZE for native contracts as solc ^v0.4 performs a safety check for non-zero contract code
-- [pull-468](https://github.com/klye-dev/hsc-main/pull/468) correct specifications for params on unsubscribe on rpc/tendermint
-- [pull-465](https://github.com/klye-dev/hsc-main/pull/465) fix divergence from JSON-RPC spec for Response object
-- [pull-366](https://github.com/klye-dev/hsc-main/pull/366) correction to circle ci script
-- [pull-379](https://github.com/klye-dev/hsc-main/pull/379) more descriptive error message for eris-client
+- [pull-516](https://github.com/klye-dev/hivesmartchain/pull/516) Organize and add unit tests for rpc/v0
+- [pull-453](https://github.com/klye-dev/hivesmartchain/pull/453) Fix deserialisation for BroadcastTx on rpc/v0
+- [pull-476](https://github.com/klye-dev/hivesmartchain/pull/476) patch EXTCODESIZE for native contracts as solc ^v0.4 performs a safety check for non-zero contract code
+- [pull-468](https://github.com/klye-dev/hivesmartchain/pull/468) correct specifications for params on unsubscribe on rpc/tendermint
+- [pull-465](https://github.com/klye-dev/hivesmartchain/pull/465) fix divergence from JSON-RPC spec for Response object
+- [pull-366](https://github.com/klye-dev/hivesmartchain/pull/366) correction to circle ci script
+- [pull-379](https://github.com/klye-dev/hivesmartchain/pull/379) more descriptive error message for eris-client
 `,
 
 		"0.15.0",

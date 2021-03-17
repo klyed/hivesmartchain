@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/klye-dev/hsc-main/event/query"
+	"github.com/klye-dev/hivesmartchain/event/query"
 )
 
 var MinNameRegistrationPeriod uint64 = 5

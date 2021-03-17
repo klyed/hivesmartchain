@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hivesmartchain/binary"
 )
 
 func TestCompareCapture(t *testing.T) {

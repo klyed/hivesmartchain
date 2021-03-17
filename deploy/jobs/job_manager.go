@@ -5,11 +5,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	compilers "github.com/klye-dev/hsc-main/deploy/compile"
-	"github.com/klye-dev/hsc-main/deploy/def"
-	"github.com/klye-dev/hsc-main/deploy/util"
-	"github.com/klye-dev/hsc-main/logging"
-	pbpayload "github.com/klye-dev/hsc-main/txs/payload"
+	compilers "github.com/klye-dev/hivesmartchain/deploy/compile"
+	"github.com/klye-dev/hivesmartchain/deploy/def"
+	"github.com/klye-dev/hivesmartchain/deploy/util"
+	"github.com/klye-dev/hivesmartchain/logging"
+	pbpayload "github.com/klye-dev/hivesmartchain/txs/payload"
 )
 
 const (

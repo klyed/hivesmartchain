@@ -4,12 +4,12 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/acm"
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/execution/exec"
-	"github.com/klye-dev/hsc-main/rpc/web3"
-	"github.com/klye-dev/hsc-main/txs"
-	"github.com/klye-dev/hsc-main/txs/payload"
+	"github.com/klye-dev/hivesmartchain/acm"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/execution/exec"
+	"github.com/klye-dev/hivesmartchain/rpc/web3"
+	"github.com/klye-dev/hivesmartchain/txs"
+	"github.com/klye-dev/hivesmartchain/txs/payload"
 	"google.golang.org/grpc"
 )
 

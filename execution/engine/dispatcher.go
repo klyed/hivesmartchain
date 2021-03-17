@@ -1,7 +1,7 @@
 package engine
 
 import (
-	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hivesmartchain/acm"
 )
 
 type Dispatcher interface {

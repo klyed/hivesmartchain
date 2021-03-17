@@ -8,8 +8,8 @@ import (
 
 	"github.com/tmthrgd/go-hex"
 
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/logging"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -33,7 +33,7 @@ func TestPacker(t *testing.T) {
 			"sendToAFriend",
 			pad([]byte{196, 45, 238, 216, 75, 223, 44, 166, 149, 242, 233, 31, 78, 99, 149, 209, 145, 207, 53, 252}, 32, true),
 		},
-		// From: https://github.com/klye-dev/hsc-main/issues/1326
+		// From: https://github.com/klye-dev/hivesmartchain/issues/1326
 		{
 			`[{"constant":false,"inputs":[{"internalType":"address payable","name":"friend","type":"address"}],"name":"sendToAFriend","outputs":[],"payable":true,"stateMutability":"payable","type":"function"}]`,
 			[]interface{}{crypto.Address{1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4}},

@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hivesmartchain/crypto"
 )
 
 // Token to use in deploy yaml in order to indicate call to the fallback function.

@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/keys"
+	"github.com/klye-dev/hivesmartchain/keys"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

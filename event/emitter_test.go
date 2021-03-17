@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/klye-dev/hsc-main/event/query"
-	"github.com/klye-dev/hsc-main/logging"
+	"github.com/klye-dev/hivesmartchain/event/query"
+	"github.com/klye-dev/hivesmartchain/logging"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

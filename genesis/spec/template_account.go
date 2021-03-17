@@ -3,11 +3,11 @@ package spec
 import (
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/acm/balance"
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/genesis"
-	"github.com/klye-dev/hsc-main/keys"
-	"github.com/klye-dev/hsc-main/permission"
+	"github.com/klye-dev/hivesmartchain/acm/balance"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/genesis"
+	"github.com/klye-dev/hivesmartchain/keys"
+	"github.com/klye-dev/hivesmartchain/permission"
 )
 
 func (ta TemplateAccount) Validator(keyClient keys.KeyClient, index int, curve crypto.CurveType) (*genesis.Validator, error) {

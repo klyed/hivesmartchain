@@ -10,7 +10,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/klye-dev/hsc-main/txs/payload"
+	"github.com/klye-dev/hivesmartchain/txs/payload"
 )
 
 // Cache helps prevent unnecessary IAVLTree updates and garbage generation.

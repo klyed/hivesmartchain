@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/binary"
+	"github.com/klye-dev/hivesmartchain/binary"
 
 	hex "github.com/tmthrgd/go-hex"
 )

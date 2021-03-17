@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/rpc"
-	"github.com/klye-dev/hsc-main/rpc/rpcevents"
-	"github.com/klye-dev/hsc-main/rpc/web3"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/rpc"
+	"github.com/klye-dev/hivesmartchain/rpc/rpcevents"
+	"github.com/klye-dev/hivesmartchain/rpc/web3"
 )
 
 const (

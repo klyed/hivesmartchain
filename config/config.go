@@ -3,14 +3,14 @@ package config
 import (
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/config/source"
-	"github.com/klye-dev/hsc-main/consensus/tendermint"
-	"github.com/klye-dev/hsc-main/crypto"
-	"github.com/klye-dev/hsc-main/execution"
-	"github.com/klye-dev/hsc-main/genesis"
-	"github.com/klye-dev/hsc-main/keys"
-	"github.com/klye-dev/hsc-main/logging/logconfig"
-	"github.com/klye-dev/hsc-main/rpc"
+	"github.com/klye-dev/hivesmartchain/config/source"
+	"github.com/klye-dev/hivesmartchain/consensus/tendermint"
+	"github.com/klye-dev/hivesmartchain/crypto"
+	"github.com/klye-dev/hivesmartchain/execution"
+	"github.com/klye-dev/hivesmartchain/genesis"
+	"github.com/klye-dev/hivesmartchain/keys"
+	"github.com/klye-dev/hivesmartchain/logging/logconfig"
+	"github.com/klye-dev/hivesmartchain/rpc"
 	tmConfig "github.com/tendermint/tendermint/config"
 )
 

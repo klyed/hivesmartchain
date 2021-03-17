@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/klye-dev/hsc-main/binary"
-	"github.com/klye-dev/hsc-main/execution/errors"
+	"github.com/klye-dev/hivesmartchain/binary"
+	"github.com/klye-dev/hivesmartchain/execution/errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

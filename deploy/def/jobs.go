@@ -6,8 +6,8 @@ import (
 
 	validation "github.com/go-ozzo/ozzo-validation"
 	"github.com/go-ozzo/ozzo-validation/is"
-	"github.com/klye-dev/hsc-main/deploy/def/rule"
-	"github.com/klye-dev/hsc-main/execution/evm/abi"
+	"github.com/klye-dev/hivesmartchain/deploy/def/rule"
+	"github.com/klye-dev/hivesmartchain/execution/evm/abi"
 )
 
 // ------------------------------------------------------------------------

@@ -6,10 +6,10 @@ package commands
 import (
 	"fmt"
 
-	"github.com/klye-dev/hsc-main/execution/native"
+	"github.com/klye-dev/hivesmartchain/execution/native"
 	cli "github.com/jawher/mow.cli"
 
-	"github.com/klye-dev/hsc-main/util/natives/templates"
+	"github.com/klye-dev/hivesmartchain/util/natives/templates"
 )
 
 // Dump native contracts

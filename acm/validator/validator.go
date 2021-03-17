@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hivesmartchain/crypto"
 
-	"github.com/klye-dev/hsc-main/acm"
+	"github.com/klye-dev/hivesmartchain/acm"
 )
 
 func New(publicKey *crypto.PublicKey, power *big.Int) *Validator {

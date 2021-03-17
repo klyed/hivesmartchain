@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"github.com/klye-dev/hsc-main/storage"
+	"github.com/klye-dev/hivesmartchain/storage"
 	dbm "github.com/tendermint/tm-db"
 )
 

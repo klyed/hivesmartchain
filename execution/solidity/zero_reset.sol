@@ -1,6 +1,6 @@
 pragma solidity ^0.5;
 
-// Originally taken from: https://github.com/klye-dev/hsc-main/issues/847
+// Originally taken from: https://github.com/klye-dev/hivesmartchain/issues/847
 contract ZeroReset {
     int private storedInt;
     uint private storedUint;

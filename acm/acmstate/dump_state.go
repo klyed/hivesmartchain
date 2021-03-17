@@ -5,8 +5,8 @@ import (
 	"encoding/hex"
 	"encoding/json"
 
-	"github.com/klye-dev/hsc-main/acm"
-	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hivesmartchain/acm"
+	"github.com/klye-dev/hivesmartchain/crypto"
 )
 
 type DumpState struct {

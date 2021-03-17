@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/klye-dev/hsc-main/event"
-	"github.com/klye-dev/hsc-main/event/query"
+	"github.com/klye-dev/hivesmartchain/event"
+	"github.com/klye-dev/hivesmartchain/event/query"
 )
 
 var eventMessageType = reflect.TypeOf(&Event{}).String()

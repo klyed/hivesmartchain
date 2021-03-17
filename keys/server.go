@@ -8,7 +8,7 @@ import (
 	"hash"
 	"strings"
 
-	"github.com/klye-dev/hsc-main/crypto"
+	"github.com/klye-dev/hivesmartchain/crypto"
 	hex "github.com/tmthrgd/go-hex"
 	"golang.org/x/crypto/ripemd160"
 	"google.golang.org/grpc"
