@@ -1,6 +1,6 @@
 module github.com/klyed/hivesmartchain;
 
-go v1.15
+go 1.15
 
 require	github.com/BurntSushi/toml v0.3.1
 require	github.com/OneOfOne/xxhash v1.2.8
