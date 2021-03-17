@@ -150,7 +150,7 @@ build_hsc: commit_hash
 	go build $(BURROW_BUILD_FLAGS) -ldflags "-extldflags '-static' \
 	-X github.com/KLYE-Dev/HSC-MAIN/project.commit=$(shell cat commit_hash.txt) \
 	-X github.com/KLYE-Dev/HSC-MAIN/project.date=$(shell date '+%Y-%m-%d')" \
-	-o ${REPO}/bin/burrow$(BURROW_BUILD_SUFFIX) ./cmd/burrow
+	-o ${REPO}/bin/hsc$(BURROW_BUILD_SUFFIX) ./cmd/hsc
 
 # With the sqlite tag - enabling Vent sqlite adapter support, but building a CGO binary
 .PHONY: build_hsc_sqlite
@@ -174,7 +174,7 @@ install: build_hsc
 # build burrow with checks for race conditions
 .PHONY: build_race_db
 build_race_db:
-	go build -race -o ${REPO}/bin/hsc./cmd/burrow
+	go build -race -o ${REPO}/bin/hsc./cmd/hsc
 
 ### Build docker images for github.com/hyperledger/burrow
 
@@ -222,11 +222,11 @@ test: check bin/solc bin/solang
 
 .PHONY: test_keys
 test_keys:
-	burrow_bin="${REPO}/bin/burrow" tests/keys_server/test.sh
+	burrow_bin="${REPO}/bin/hsc" tests/keys_server/test.sh
 
 .PHONY:	test_truffle
 test_truffle:
-	burrow_bin="${REPO}/bin/burrow" tests/web3/truffle.sh
+	burrow_bin="${REPO}/bin/hsc" tests/web3/truffle.sh
 
 .PHONY:	test_integration_vent
 test_integration_vent:

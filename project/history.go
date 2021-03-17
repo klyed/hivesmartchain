@@ -5,7 +5,7 @@ import (
 )
 
 // Can be used to set the commit hash version of the binary at build time with:
-// `go build -ldflags "-X github.com/KLYE-Dev/HSC-MAIN/project.commit=$(git rev-parse --short HEAD)" ./cmd/burrow`
+// `go build -ldflags "-X github.com/KLYE-Dev/HSC-MAIN/project.commit=$(git rev-parse --short HEAD)" ./cmd/hsc`
 
 var commit = ""
 var date = ""

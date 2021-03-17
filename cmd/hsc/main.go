@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/KLYE-Dev/HSC-MAIN/cmd/burrow/commands"
+	"github.com/KLYE-Dev/HSC-MAIN/cmd/hsc/commands"
 	"github.com/KLYE-Dev/HSC-MAIN/project"
 	cli "github.com/jawher/mow.cli"
 )
