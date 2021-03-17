@@ -1,7 +1,5 @@
-module klyed/hivesmartchain
-
+module github.com/klyed/hivesmartchain
 go 1.15
-
 require (
 	github.com/BurntSushi/toml v0.3.1
 	github.com/OneOfOne/xxhash v1.2.8
