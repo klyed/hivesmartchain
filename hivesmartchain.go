@@ -1,4 +1,4 @@
-package burrow
+package hivesmartchain
 
 // This file exists to prevent go get from saying:
 // $ go get -d github.com/hyperledger/burrow
