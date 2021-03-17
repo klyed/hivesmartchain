@@ -1,0 +1,15 @@
+[Params]
+  ProposalThreshold = 3
+
+[[Accounts]]
+  Name = "Full_0"
+  Permissions = ["all"]
+
+  [[Accounts.Amounts]]
+    Type = "Native"
+    Amount = 99999999999999
+
+  [[Accounts.Amounts]]
+    Type = "Power"
+    Amount = 9999999999
+

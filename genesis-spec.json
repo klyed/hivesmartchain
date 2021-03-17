@@ -1,0 +1,40 @@
+{
+  "Params": {
+    "ProposalThreshold": 3
+  },
+  "Accounts": [
+    {
+      "Name": "Full_0",
+      "Amounts": [
+        {
+          "Type": "Native",
+          "Amount": 99999999999999
+        },
+        {
+          "Type": "Power",
+          "Amount": 9999999999
+        }
+      ],
+      "Permissions": [
+        "all"
+      ]
+    },
+    {
+      "Name": "Participant_0",
+      "Amounts": [
+        {
+          "Type": "Native",
+          "Amount": 9999999999
+        }
+      ],
+      "Permissions": [
+        "send",
+        "call",
+        "name",
+        "hasRole",
+        "proposal",
+        "input"
+      ]
+    }
+  ]
+}
