@@ -8,11 +8,11 @@
       "Amounts": [
         {
           "Type": "HIVE",
-          "Amount": 99999999999999
+          "Amount": 0
         },
         {
           "Type": "Power",
-          "Amount": 9999999999
+          "Amount": 999999
         }
       ],
       "Permissions": [
@@ -24,7 +24,7 @@
       "Amounts": [
         {
           "Type": "HIVE",
-          "Amount": 9999999999
+          "Amount": 0
         }
       ],
       "Permissions": [
