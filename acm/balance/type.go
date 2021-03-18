@@ -4,7 +4,7 @@ type Type uint32
 
 const (
 	TypeNative Type = 1
-	TypePower Type = 2
+	TypePower  Type = 2
 	TypePegged Type = 3
 )
 

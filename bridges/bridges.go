@@ -1,4 +1,4 @@
-package hivebridge
+package bridges
 
 import (
 	"flag"
@@ -22,6 +22,9 @@ func main() {
 
 func run() (err error) {
 	// Process flags.
+
+	log.Printf("STARTING HIVE BRIDGE", url)
+
 	flagAddress := flag.String("http_endpoint", "https://api.hive-roller.com", "hived RPC endpoint address")
 	flagReconnect := flag.Bool("reconnect", false, "enable auto-reconnect mode")
 	flag.Parse()

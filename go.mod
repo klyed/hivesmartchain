@@ -34,6 +34,7 @@ require (
 	github.com/prometheus/client_golang v1.9.0
 	github.com/prometheus/client_model v0.2.0
 	github.com/prometheus/common v0.19.0
+	github.com/sirupsen/logrus v1.6.0 // indirect
 	github.com/spf13/viper v1.7.1
 	github.com/streadway/simpleuuid v0.0.0-20130420165545-6617b501e485
 	github.com/stretchr/testify v1.7.0

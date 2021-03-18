@@ -44,6 +44,7 @@ func DefaultHiveSmartChainConfig() *HiveSmartChainConfig {
 }
 
 func (conf *HiveSmartChainConfig) Verify() error {
+	conf.P2P.AddrBookStrict = false
 	if conf.ValidatorAddress == nil {
 		return fmt.Errorf("could not finalise address - please provide one in config or via --account-address")
 	}
