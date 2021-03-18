@@ -4,12 +4,14 @@ type Type uint32
 
 const (
 	TypeNative Type = 1
-	TypePower  Type = 2
+	TypePower Type = 2
+	TypePegged Type = 3
 )
 
 var nameFromType = map[Type]string{
 	TypeNative: "HIVE",
 	TypePower:  "Power",
+	TypePegged: "HBD"
 }
 
 var typeFromName = make(map[string]Type)

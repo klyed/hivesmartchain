@@ -55,6 +55,10 @@ func (bs Balances) Power(amount uint64) Balances {
 	return bs.Add(TypePower, amount)
 }
 
+func (bs Balances) Pegged(amount uint64) Balances {
+	return bs.Add(TypePegged, amount)
+}
+
 func (bs Balances) Sum(bss ...Balances) Balances {
 	return Sum(append(bss, bs)...)
 }
@@ -85,6 +89,13 @@ func Power(power uint64) Balance {
 	return Balance{
 		Type:   TypePower,
 		Amount: power,
+	}
+}
+
+func Pegged(pegged uint64) Balance {
+	return Balance{
+		Type:   TypePegged,
+		Amount: pegged,
 	}
 }
 
@@ -123,12 +134,20 @@ func (bs Balances) GetPower(fallback uint64) uint64 {
 	return bs.GetFallback(TypePower, fallback)
 }
 
+func (bs Balances) GetPegged(fallback uint64) uint64 {
+	return bs.GetFallback(TypePegged, fallback)
+}
+
 func (bs Balances) HasNative() bool {
 	return bs.Has(TypeNative)
 }
 
 func (bs Balances) HasPower() bool {
 	return bs.Has(TypePower)
+}
+
+func (bs Balances) HasPegged() bool {
+	return bs.Has(TypePegged)
 }
 
 func NativeToWei(n uint64) *big.Int {

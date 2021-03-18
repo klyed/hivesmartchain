@@ -12,7 +12,7 @@ import (
 
 func FullAccount(name string) GenesisSpec {
 	// Inheriting from the arbitrary figures used by monax tool for now
-	amount := uint64(99999999999999)
+	amount := uint64(0)
 	Power := uint64(9999999999)
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
@@ -26,7 +26,7 @@ func FullAccount(name string) GenesisSpec {
 
 func RootAccount(name string) GenesisSpec {
 	// Inheriting from the arbitrary figures used by monax tool for now
-	amount := uint64(99999999999999)
+	amount := uint64(0)
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
 			Name:        name,
@@ -39,7 +39,7 @@ func RootAccount(name string) GenesisSpec {
 
 func ParticipantAccount(name string) GenesisSpec {
 	// Inheriting from the arbitrary figures used by monax tool for now
-	amount := uint64(9999999999)
+	amount := uint64(0)
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
 			Name:    name,
@@ -66,8 +66,8 @@ func DeveloperAccount(name string) GenesisSpec {
 
 func ValidatorAccount(name string) GenesisSpec {
 	// Inheriting from the arbitrary figures used by monax tool for now
-	amount := uint64(9999999999)
-	Power := amount - 1
+	amount := uint64(0)
+	Power := uint64(500)
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
 			Name:        name,
