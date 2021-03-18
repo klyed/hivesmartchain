@@ -17,7 +17,7 @@ type configOptions struct {
 	accountIndexOpt    *int
 	initAddressOpt     *string
 	initPassphraseOpt  *string
-	initMonikerOpt     *string
+	initNodeNameOpt     *string
 	externalAddressOpt *string
 	grpcAddressOpt     *string
 }
@@ -39,7 +39,7 @@ var genesisFileOption = cli.StringOpt{
 }
 
 func addConfigOptions(cmd *cli.Cmd) *configOptions {
-	spec := "[--moniker=<human readable moniker>] " +
+	spec := "[--nodename=<human readable nodename>] " +
 		"[--index=<index of account in GenesisDoc> " +
 		"|--validator=<index of validator in GenesisDoc> " +
 		"|--address=<address of signing key>] " +
@@ -76,9 +76,9 @@ func addConfigOptions(cmd *cli.Cmd) *configOptions {
 			EnvVar: "HSC_PASSPHRASE",
 		}),
 
-		initMonikerOpt: cmd.String(cli.StringOpt{
-			Name:   "m moniker",
-			Desc:   "An optional human-readable moniker to identify this node amongst Tendermint peers in logs and status queries",
+		initNodeNameOpt: cmd.String(cli.StringOpt{
+			Name:   "m nodename",
+			Desc:   "An optional human-readable nodename to identify this node amongst Tendermint peers in logs and status queries",
 			EnvVar: "HSC_NODE_MONIKER",
 		}),
 
@@ -113,17 +113,17 @@ func (opts *configOptions) obtainHiveSmartChainConfig() (*config.HiveSmartChainC
 	if *opts.initPassphraseOpt != "" {
 		conf.Passphrase = opts.initPassphraseOpt
 	}
-	if *opts.initMonikerOpt == "" {
+	if *opts.initNodeNameOpt == "" {
 		chainIDHeader := ""
 		if conf.GenesisDoc != nil && conf.GenesisDoc.ChainID() != "" {
 			chainIDHeader = conf.GenesisDoc.ChainID() + "_"
 		}
 		if conf.ValidatorAddress != nil {
-			// Set a default moniker... since we can at this stage of config completion and it is required for start
-			conf.Tendermint.Moniker = fmt.Sprintf("%sNode_%s", chainIDHeader, conf.ValidatorAddress)
+			// Set a default nodename... since we can at this stage of config completion and it is required for start
+			conf.Tendermint.NodeName = fmt.Sprintf("%sNode_%s", chainIDHeader, conf.ValidatorAddress)
 		}
 	} else {
-		conf.Tendermint.Moniker = *opts.initMonikerOpt
+		conf.Tendermint.NodeName = *opts.initNodeNameOpt
 	}
 	if *opts.externalAddressOpt != "" {
 		conf.Tendermint.ExternalAddress = *opts.externalAddressOpt

@@ -20,7 +20,7 @@ message NodeInfo {
     string Network = 3;
     string Version = 4;
     bytes Channels = 5 [(gogoproto.customtype) = "github.com/klyed/hivesmartchain/binary.HexBytes", (gogoproto.nullable) = false];
-    string Moniker = 6;
+    string NodeName = 6;
     string RPCAddress = 7;
     string TxIndex = 8;
 }

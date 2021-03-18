@@ -8,8 +8,8 @@ import * as jspb from "google-protobuf";
 import * as gogoproto_gogo_pb from "./gogoproto/gogo_pb";
 
 export class NodeIdentity extends jspb.Message { 
-    getMoniker(): string;
-    setMoniker(value: string): NodeIdentity;
+    getNodeName(): string;
+    setNodeName(value: string): NodeIdentity;
 
     getNetworkaddress(): string;
     setNetworkaddress(value: string): NodeIdentity;
@@ -37,7 +37,7 @@ export class NodeIdentity extends jspb.Message {
 
 export namespace NodeIdentity {
     export type AsObject = {
-        moniker: string,
+        nodename: string,
         networkaddress: string,
         tendermintnodeid: Uint8Array | string,
         validatorpublickey: Uint8Array | string,

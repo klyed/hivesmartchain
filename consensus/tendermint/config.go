@@ -35,7 +35,7 @@ type HiveSmartChainTendermintConfig struct {
 	// Set true for strict address routability rules
 	// Set false for private or local networks
 	AddrBookStrict bool
-	Moniker        string
+	NodeName        string
 	// Only accept connections from registered peers
 	IdentifyPeers bool
 	// Peers ID or address this node is authorize to sync with
@@ -57,7 +57,7 @@ func DefaultHiveSmartChainTendermintConfig() *HiveSmartChainTendermintConfig {
 		ListenHost:        url.Hostname(),
 		ListenPort:        url.Port(),
 		ExternalAddress:   tmDefaultConfig.P2P.ExternalAddress,
-		CreateEmptyBlocks: "5m",
+		CreateEmptyBlocks: "1s",
 	}
 }
 
@@ -101,7 +101,7 @@ func (btc *HiveSmartChainTendermintConfig) Config(rootDir string, timeoutFactor 
 		conf.Consensus.TimeoutCommit = scaleTimeout(timeoutFactor, conf.Consensus.TimeoutCommit)
 
 		// P2P
-		conf.Moniker = btc.Moniker
+		conf.NodeName = btc.NodeName
 		conf.P2P.RootDir = rootDir
 		conf.P2P.Seeds = btc.Seeds
 		conf.P2P.SeedMode = btc.SeedMode

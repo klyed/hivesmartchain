@@ -15,8 +15,8 @@ import (
 	"github.com/klyed/hivesmartchain/acm/validator"
 )
 
-func getHiveBlock() {
-	return bridges, err
+func GetHiveBlock() {
+	return Bridges()
 }
 
 func GetBlockHeight(client *def.Client, logger *logging.Logger) (latestBlockHeight uint64, err error) {

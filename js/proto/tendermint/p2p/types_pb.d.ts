@@ -89,8 +89,8 @@ export class DefaultNodeInfo extends jspb.Message {
     getChannels_asB64(): string;
     setChannels(value: Uint8Array | string): DefaultNodeInfo;
 
-    getMoniker(): string;
-    setMoniker(value: string): DefaultNodeInfo;
+    getNodeName(): string;
+    setNodeName(value: string): DefaultNodeInfo;
 
 
     hasOther(): boolean;
@@ -117,7 +117,7 @@ export namespace DefaultNodeInfo {
         network: string,
         version: string,
         channels: Uint8Array | string,
-        moniker: string,
+        nodename: string,
         other?: DefaultNodeInfoOther.AsObject,
     }
 }

@@ -12,7 +12,7 @@ The quick-and-dirty one-liner looks like:
 
 ```shell
 # Read spec on stdin
-hsc spec -r1 -p10 -f1 | hsc configure -s- > hsc.toml
+./hsc spec -r1 -p10 -v2 | ./hsc configure -s- > hsc.toml
 ```
 
 Which translates into:

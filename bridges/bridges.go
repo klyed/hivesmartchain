@@ -15,12 +15,12 @@ import (
 )
 
 func main() {
-	if err := run(); err != nil {
+	if err := Bridges(); err != nil {
 		log.Fatalln("Error:", err)
 	}
 }
 
-func run() (err error) {
+func Bridges() (err error) {
 	// Process flags.
 
 	log.Printf("STARTING HIVE BRIDGE", url)

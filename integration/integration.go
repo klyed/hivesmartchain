@@ -80,7 +80,7 @@ func NewTestConfig(genesisDoc *genesis.GenesisDoc,
 	testDir, cleanup := EnterTestDirectory()
 	conf.HscDir = path.Join(testDir, fmt.Sprintf(".hsc_%s", name))
 	conf.GenesisDoc = genesisDoc
-	conf.Tendermint.Moniker = name
+	conf.Tendermint.NodeName = name
 	// Make blocks for purposes of tests
 	conf.Tendermint.CreateEmptyBlocks = tendermint.AlwaysCreateEmptyBlocks
 	conf.Keys.RemoteAddress = ""

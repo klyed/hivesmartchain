@@ -62,8 +62,8 @@ type IdentifyTx struct {
 }
 
 type RegisteredNode {
-    // Peer moniker name
-	Moniker string
+    // Peer nodename name
+	NodeName string
 	// Node key id (crypto address)
 	ID p2p.ID
 	// Node key public key
@@ -90,7 +90,7 @@ Which returns:
     {
         "address": "$VALIDATOR_ADDRESS",
         "pubKey":  "$VALIDATOR_PUB_KEY",
-        "moniker": "$VALIDATOR_MONIKER",
+        "nodename": "$VALIDATOR_MONIKER",
         "nodeKey": "$VALIDATOR_NODE_KEY_ID",
         "netAddress": "$VALIDATOR_NODE_ADDRESS"
     }

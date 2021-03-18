@@ -88,7 +88,7 @@ spec:
           - --silent
           - --address
           - {{ $val.address | quote }}
-          - --moniker
+          - --nodename
           - {{ printf "%s-validator-%s" $.Values.organization $nodeNumber | quote }}
           - dumpFile
           volumeMounts:
@@ -112,7 +112,7 @@ spec:
           - "{{ $refDir }}/genesis.json"
           - --address
           - {{ $val.address | quote }}
-          - --moniker
+          - --nodename
           - {{ printf "%s-validator-%s" $.Values.organization $nodeNumber | quote }}
 {{- if (and $.Values.peer.ingress.enabled (not (eq (len $.Values.peer.ingress.hosts) 0))) }}
           - --external-address

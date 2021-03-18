@@ -124,8 +124,8 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 				sourceOpt := cmd.StringOpt("source", "", "Address to send from, if not set config is used")
 				nodeKeyOpt := cmd.StringOpt("node-key", "", "File containing the nodeKey to use, default config")
 				networkOpt := cmd.StringOpt("network", "", "Publically reachable host IP")
-				monikerOpt := cmd.StringOpt("moniker", "", "Human readable node ID")
-				cmd.Spec += "[--source=<address>] [--node-key=<file>] [--network=<address>] [--moniker=<name>]"
+				nodenameOpt := cmd.StringOpt("nodename", "", "Human readable node ID")
+				cmd.Spec += "[--source=<address>] [--node-key=<file>] [--network=<address>] [--nodename=<name>]"
 
 				cmd.Action = func() {
 
@@ -137,7 +137,7 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 					id := &def.Identify{
 						Source:     jobs.FirstOf(*sourceOpt, address),
 						NodeKey:    jobs.FirstOf(*nodeKeyOpt, tmConf.NodeKeyFile()),
-						Moniker:    *monikerOpt,
+						NodeName:    *nodenameOpt,
 						NetAddress: jobs.FirstOf(*networkOpt, conf.Tendermint.ListenHost),
 					}
 

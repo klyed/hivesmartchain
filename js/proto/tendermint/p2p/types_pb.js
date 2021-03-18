@@ -522,7 +522,7 @@ proto.tendermint.p2p.DefaultNodeInfo.toObject = function(includeInstance, msg) {
     network: jspb.Message.getFieldWithDefault(msg, 4, ""),
     version: jspb.Message.getFieldWithDefault(msg, 5, ""),
     channels: msg.getChannels_asB64(),
-    moniker: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    nodename: jspb.Message.getFieldWithDefault(msg, 7, ""),
     other: (f = msg.getOther()) && proto.tendermint.p2p.DefaultNodeInfoOther.toObject(includeInstance, f)
   };
 
@@ -587,7 +587,7 @@ proto.tendermint.p2p.DefaultNodeInfo.deserializeBinaryFromReader = function(msg,
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMoniker(value);
+      msg.setNodeName(value);
       break;
     case 8:
       var value = new proto.tendermint.p2p.DefaultNodeInfoOther;
@@ -666,7 +666,7 @@ proto.tendermint.p2p.DefaultNodeInfo.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getMoniker();
+  f = message.getNodeName();
   if (f.length > 0) {
     writer.writeString(
       7,
@@ -836,10 +836,10 @@ proto.tendermint.p2p.DefaultNodeInfo.prototype.setChannels = function(value) {
 
 
 /**
- * optional string moniker = 7;
+ * optional string nodename = 7;
  * @return {string}
  */
-proto.tendermint.p2p.DefaultNodeInfo.prototype.getMoniker = function() {
+proto.tendermint.p2p.DefaultNodeInfo.prototype.getNodeName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -848,7 +848,7 @@ proto.tendermint.p2p.DefaultNodeInfo.prototype.getMoniker = function() {
  * @param {string} value
  * @return {!proto.tendermint.p2p.DefaultNodeInfo} returns this
  */
-proto.tendermint.p2p.DefaultNodeInfo.prototype.setMoniker = function(value) {
+proto.tendermint.p2p.DefaultNodeInfo.prototype.setNodeName = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 

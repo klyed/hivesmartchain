@@ -86,7 +86,7 @@ the respective participants in the config:
 
 This can become difficult to manage over time, and any change would require a restart of the node. A more
 scalable solution is `IdentifyTx`, which allows select participants to be associated with a particular 
-'node identity' - network address, node key and moniker. Once enabled in the config, a node will only allow
+'node identity' - network address, node key and nodename. Once enabled in the config, a node will only allow
 connection requests from entries in its registry.
 
 ```toml

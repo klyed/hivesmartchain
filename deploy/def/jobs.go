@@ -274,8 +274,8 @@ type Identify struct {
 	NodeKey string `mapstructure:"nodekey" json:"nodekey" yaml:"nodekey" toml:"nodekey"`
 	// (Required) publically available network address
 	NetAddress string `mapstructure:"netaddress" json:"netaddress" yaml:"netaddress" toml:"netaddress"`
-	// (Optional) publically available network moniker
-	Moniker string `mapstructure:"moniker" json:"moniker" yaml:"moniker" toml:"moniker"`
+	// (Optional) publically available network nodename
+	NodeName string `mapstructure:"nodename" json:"nodename" yaml:"nodename" toml:"nodename"`
 
 	// (Optional, advanced only) sequence to use when hsc keys signs the transaction (do not use unless you
 	// know what you're doing)

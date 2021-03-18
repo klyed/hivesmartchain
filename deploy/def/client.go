@@ -678,7 +678,7 @@ func (c *Client) Permissions(arg *PermArg, logger *logging.Logger) (*payload.Per
 type IdentifyArg struct {
 	Input      string
 	NodeKey    string
-	Moniker    string
+	NodeName    string
 	NetAddress string
 	Amount     string
 	Sequence   string
@@ -712,7 +712,7 @@ func (c *Client) Identify(arg *IdentifyArg, logger *logging.Logger) (*payload.Id
 	}
 
 	node := &registry.NodeIdentity{
-		Moniker:            arg.Moniker,
+		NodeName:            arg.NodeName,
 		NetworkAddress:     arg.NetAddress,
 		TendermintNodeID:   id,
 		ValidatorPublicKey: signer.GetPublicKey(),

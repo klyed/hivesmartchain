@@ -19,7 +19,7 @@ func main() {
 }
 
 func hsc(output commands.Output) *cli.Cli {
-	app := cli.App("hsc", "The EVM smart contract machine with Tendermint consensus")
+	app := cli.App("hsc", "A Hive Based EVM Smart Contract Side Chain Utilizing BYZT/BPoS")
 	// We'll handle any errors
 	app.ErrorHandling = flag.ContinueOnError
 
@@ -57,7 +57,7 @@ func hsc(output commands.Output) *cli.Cli {
 	app.Command("keys", "A tool for doing a bunch of cool stuff with keys",
 		commands.Keys(output))
 
-	app.Command("explore", "Dump objects from an offline Hive Smart Chain .hsc directory",
+	app.Command("explore", "Dump objects from an offline Hive Smart Chain .hivesmartchain directory",
 		commands.Explore(output))
 
 	app.Command("deploy", "Deploy and test contracts",

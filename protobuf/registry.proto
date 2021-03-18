@@ -23,8 +23,8 @@ option (gogoproto.messagename_all) = true;
 // by the node key and the validator key to prove the update is consensual.
 message NodeIdentity {
     option (gogoproto.goproto_stringer) = false;
-    // Peer moniker name
-	string Moniker = 1;
+    // Peer nodename name
+	string NodeName = 1;
 	// Peer network address
 	string NetworkAddress = 2;
 	// The Tendermint p2p node ID

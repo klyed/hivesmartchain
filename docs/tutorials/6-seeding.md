@@ -44,7 +44,7 @@ HscDir = ".hsc_seed_0"
   SeedMode = true
   ListenHost = "0.0.0.0"
   ListenPort = "10000"
-  Moniker = "seed_node_0"
+  NodeName = "seed_node_0"
 
 [Execution]
 
@@ -86,7 +86,7 @@ HscDir = ".hsc_node0"
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "20000"
-  Moniker = "val_node_0"
+  NodeName = "val_node_0"
 
 [Execution]
 
@@ -122,7 +122,7 @@ HscDir = ".hsc_node1"
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "30000"
-  Moniker = "val_node_1"
+  NodeName = "val_node_1"
 
 [Execution]
 
@@ -158,7 +158,7 @@ HscDir = ".hsc_node2"
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "40000"
-  Moniker = "val_node_2"
+  NodeName = "val_node_2"
 
 [Execution]
 
@@ -222,7 +222,7 @@ The nodes should connect to our seed node and request addresses, then they will 
 To check the network status, and that the validator nodes are connected to each other run:
 
 ```shell
-curl -s 127.0.0.1:40001/network | jq -r '.result.peers[].node_info.moniker'
+curl -s 127.0.0.1:40001/network | jq -r '.result.peers[].node_info.nodename'
 val_node_0
 val_node_1
 ```
@@ -250,7 +250,7 @@ rm -rf .hsc_node0 .hsc_node1 .hsc_node2 .hsc_seed_0
 Restart all nodes, then check network status (Validator 3 is now connected to all peers, included seed node):
 
 ```shell
-curl -s 127.0.0.1:40001/network | jq -r '.result.peers[].node_info.moniker'
+curl -s 127.0.0.1:40001/network | jq -r '.result.peers[].node_info.nodename'
 seed_node_0
 val_node_0
 val_node_1
