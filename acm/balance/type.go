@@ -11,7 +11,7 @@ const (
 var nameFromType = map[Type]string{
 	TypeNative: "HIVE",
 	TypePower:  "Power",
-	TypePegged: "HBD"
+	TypePegged: "HBD",
 }
 
 var typeFromName = make(map[string]Type)

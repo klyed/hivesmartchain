@@ -7,7 +7,7 @@ HiveSmartChainDir = ".hsc"
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "26656"
-  ExternalAddress = ""
+  ExternalAddress = "185.130.44.72"
   AddrBookStrict = false
   Moniker = "Hive Smart Chain"
   IdentifyPeers = true
@@ -16,9 +16,9 @@ HiveSmartChainDir = ".hsc"
 
 [Execution]
   TimeoutFactor = 0.33
-  CallStackMaxDepth = 0
+  CallStackMaxDepth = 128
   DataStackInitialCapacity = 1024
-  DataStackMaxDepth = 0
+  DataStackMaxDepth = 128
 
 [Keys]
   GRPCServiceEnabled = true

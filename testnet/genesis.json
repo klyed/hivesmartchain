@@ -17,7 +17,7 @@
 				"CurveType": "ed25519",
 				"PublicKey": "94E1542E21C9DDF6796F21B5B29A136FB7553123F9C9960DD8DFB2610FD7D02C"
 			},
-			"Amount": 9999999999,
+			"Amount": 0,
 			"Name": "Validator_0",
 			"Permissions": {
 				"Base": {
@@ -32,7 +32,7 @@
 				"CurveType": "ed25519",
 				"PublicKey": "F3E03123373B4089022A9E94D9D5628795F6F59BDD87DD1940A68E539DD602C1"
 			},
-			"Amount": 99999999999999,
+			"Amount": 0,
 			"Name": "Root_0",
 			"Permissions": {
 				"Base": {
@@ -47,7 +47,7 @@
 				"CurveType": "ed25519",
 				"PublicKey": "49BDE104BD224137D39FE8CE7BB1DCEF7F72A9387CDEC9E3749597B234032730"
 			},
-			"Amount": 99999999999999,
+			"Amount": 0,
 			"Name": "Root_1",
 			"Permissions": {
 				"Base": {
@@ -62,7 +62,7 @@
 				"CurveType": "ed25519",
 				"PublicKey": "9348C950DD9986E3347455BC82EA796C1B9AF6062A2A4E13B9D706C38A7757F4"
 			},
-			"Amount": 9999999999,
+			"Amount": 0,
 			"Name": "Participant_0",
 			"Permissions": {
 				"Base": {
@@ -77,7 +77,7 @@
 				"CurveType": "ed25519",
 				"PublicKey": "85D4EF470CA14D3C1490EFF2DBC21B97D97D6D2BC2D6C3FE21E4289AECC2E0B1"
 			},
-			"Amount": 9999999999,
+			"Amount": 0,
 			"Name": "Participant_1",
 			"Permissions": {
 				"Base": {
@@ -94,7 +94,7 @@
 				"CurveType": "ed25519",
 				"PublicKey": "94E1542E21C9DDF6796F21B5B29A136FB7553123F9C9960DD8DFB2610FD7D02C"
 			},
-			"Amount": 9999999998,
+			"Amount": 0,
 			"Name": "Validator_0",
 			"UnbondTo": [
 				{
@@ -103,7 +103,7 @@
 						"CurveType": "ed25519",
 						"PublicKey": "94E1542E21C9DDF6796F21B5B29A136FB7553123F9C9960DD8DFB2610FD7D02C"
 					},
-					"Amount": 9999999998
+					"Amount": 0
 				}
 			]
 		}
