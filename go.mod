@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	github.com/BurntSushi/toml v0.3.1
+	github.com/KLYE-Dev/hiverpc-go v0.0.0-20210318012017-f1492f47a6cd // indirect
 	github.com/OneOfOne/xxhash v1.2.8
 	github.com/alecthomas/jsonschema v0.0.0-20210301060011-54c507b6f074
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
@@ -25,6 +26,7 @@ require (
 	github.com/imdario/mergo v0.3.12
 	github.com/jawher/mow.cli v1.2.0
 	github.com/jmoiron/sqlx v1.3.1
+	github.com/klyed/hiverpc-go v0.0.0-20210318012017-f1492f47a6cd
 	github.com/lib/pq v1.10.0
 	github.com/monax/relic v2.0.0+incompatible
 	github.com/perlin-network/life v0.0.0-20191203030451-05c0e0f7eaea

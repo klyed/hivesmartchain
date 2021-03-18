@@ -14,8 +14,8 @@ import (
 	"github.com/klyed/hivesmartchain/permission"
 )
 
-const DefaultAmount uint64 = 1000000
-const DefaultPower uint64 = 10000
+const DefaultAmount uint64 = 0
+const DefaultPower uint64 = 0
 
 // A GenesisSpec is schematic representation of a genesis state, that is it is a template
 // for a GenesisDoc excluding that which needs to be instantiated at the point of genesis
