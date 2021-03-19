@@ -175,8 +175,7 @@ HscDir = ".testnet"
   Moniker =  "HIVE SMART CHAIN TEST SERVER"
   IdentifyPeers = true
   AuthorizedPeers = "0.0.0.0"
-  CreateEmptyBlocks = "3s"
-  TxIndex = true
+  CreateEmptyBlocks = "5s"
   MaxNumPeers = 50
 
   [Execution]

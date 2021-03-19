@@ -175,12 +175,11 @@ HscDir = ".testnet"
   Moniker =  "HIVE SMART CHAIN SEED SERVER"
   IdentifyPeers = true
   AuthorizedPeers = "0.0.0.0"
-  CreateEmptyBlocks = "3s"
-  TxIndex = true
+  CreateEmptyBlocks = "5s"
   MaxNumPeers = 50
 
   [Execution]
-    TimeoutFactor = 0.1
+    TimeoutFactor = 0.33
     CallStackMaxDepth = 0
     DataStackInitialCapacity = 1024
     DataStackMaxDepth = 0
