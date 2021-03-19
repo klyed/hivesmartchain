@@ -170,14 +170,14 @@ HscDir = ".testnet"
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "26656"
-  ExternalAddress = "localhost:26656"
+  ExternalAddress = "0.0.0.0:26656"
   AddrBookStrict = false
   Moniker =  "HIVE SMART CHAIN WITNESS SERVER"
   IdentifyPeers = true
   AuthorizedPeers = ""
   CreateEmptyBlocks = "3s"
   TxIndex = true
-  
+
 [Execution]
   TimeoutFactor = 0.33
   CallStackMaxDepth = 0
@@ -185,9 +185,9 @@ HscDir = ".testnet"
   DataStackMaxDepth = 0
 
 [Keys]
-  GRPCServiceEnabled = false
+  GRPCServiceEnabled = true
   AllowBadFilePermissions = true
-  RemoteAddress = ""
+  RemoteAddress = "185.130.44.72:10997"
   KeysDirectory = ".keys"
 
 [RPC]
@@ -202,7 +202,7 @@ HscDir = ".testnet"
   [RPC.GRPC]
     Enabled = true
     ListenHost = "0.0.0.0"
-    ListenPort = "10997"
+    ListenPort = "14441"
   [RPC.Metrics]
     Enabled = true
     ListenHost = "0.0.0.0"
