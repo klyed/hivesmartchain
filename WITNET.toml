@@ -165,7 +165,7 @@ HscDir = ".testnet"
 
 [Tendermint]
   Enabled = true
-  Seeds = "185.130.44.72"
+  Seeds = ""
   SeedMode = false
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
@@ -178,15 +178,15 @@ HscDir = ".testnet"
   CreateEmptyBlocks = "1s"
 
 [Execution]
-  TimeoutFactor = 0.33
+  TimeoutFactor = 0.1
   CallStackMaxDepth = 0
   DataStackInitialCapacity = 1024
   DataStackMaxDepth = 0
 
 [Keys]
-  GRPCServiceEnabled = true
+  GRPCServiceEnabled = false
   AllowBadFilePermissions = true
-  RemoteAddress = "185.130.44.72:10997"
+  RemoteAddress = ""
   KeysDirectory = ".keys"
 
 [RPC]

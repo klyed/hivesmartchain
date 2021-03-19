@@ -166,7 +166,7 @@ HscDir = ".testnet"
 [Tendermint]
   Enabled = true
   Seeds = ""
-  SeedMode = true
+  SeedMode = false
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "26656"
@@ -178,7 +178,7 @@ HscDir = ".testnet"
   CreateEmptyBlocks = "1s"
 
   [Execution]
-    TimeoutFactor = 0.33
+    TimeoutFactor = 0.1
     CallStackMaxDepth = 0
     DataStackInitialCapacity = 1024
     DataStackMaxDepth = 0
@@ -186,7 +186,7 @@ HscDir = ".testnet"
   [Keys]
     GRPCServiceEnabled = true
     AllowBadFilePermissions = true
-    RemoteAddress = "185.130.44.72:10997"
+    RemoteAddress = "localhost:10997"
     KeysDirectory = ".keys"
 
   [RPC]
@@ -199,7 +199,7 @@ HscDir = ".testnet"
       ListenHost = "0.0.0.0"
       ListenPort = "6060"
     [RPC.GRPC]
-      Enabled = true
+      Enabled = false
       ListenHost = "0.0.0.0"
       ListenPort = "10997"
     [RPC.Metrics]
