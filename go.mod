@@ -57,3 +57,5 @@ require (
 	google.golang.org/grpc v1.36.0
 	gopkg.in/yaml.v2 v2.4.0
 )
+
+replace /tendermint/tendermint => /klyed/tendermint@v0.34.7

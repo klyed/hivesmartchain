@@ -167,7 +167,7 @@ HscDir = ".testnet"
   Enabled = true
   Seeds = ""
   SeedMode = false
-  PersistentPeers = "03c0e0e292bcb0fbef9b7f7df8405d5e4de7c6cd@18:26656"
+  PersistentPeers = "03c0e0e292bcb0fbef9b7f7df8405d5e4de7c6cd@185.130.44.72:26656"
   ListenHost = "0.0.0.0"
   ListenPort = "26656"
   ExternalAddress = "localhost:26656"
@@ -186,9 +186,9 @@ HscDir = ".testnet"
     DataStackMaxDepth = 0
 
   [Keys]
-    GRPCServiceEnabled = true
+    GRPCServiceEnabled = false
     AllowBadFilePermissions = true
-    RemoteAddress = "185.130.44.72:10997"
+    RemoteAddress = ""
     KeysDirectory = ".keys"
 
   [RPC]
@@ -221,4 +221,4 @@ HscDir = ".testnet"
     [Logging.RootSink]
       [Logging.RootSink.Output]
         OutputType = "stdout"
-        Format = "plain"
+        Format = "json"
