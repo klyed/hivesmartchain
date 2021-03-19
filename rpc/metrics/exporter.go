@@ -29,7 +29,7 @@ type Exporter struct {
 	service                      InfoService
 	datum                        *Datum
 	chainID                      string
-	validatorMoniker            string
+	validatorNodeName            string
 	blockSampleSize              uint64
 	txPerBlockHistogramBuilder   HistogramBuilder
 	timePerBlockHistogramBuilder HistogramBuilder
@@ -101,35 +101,35 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 		prometheus.CounterValue,
 		e.datum.LatestBlockHeight,
 		e.chainID,
-		e.validatorMoniker,
+		e.validatorNodeName,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		UnconfirmedTransactions,
 		prometheus.GaugeValue,
 		e.datum.UnconfirmedTxs,
 		e.chainID,
-		e.validatorMoniker,
+		e.validatorNodeName,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		TotalPeers,
 		prometheus.GaugeValue,
 		e.datum.TotalPeers,
 		e.chainID,
-		e.validatorMoniker,
+		e.validatorNodeName,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		InboundPeers,
 		prometheus.GaugeValue,
 		e.datum.InboundPeers,
 		e.chainID,
-		e.validatorMoniker,
+		e.validatorNodeName,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		OutboundPeers,
 		prometheus.GaugeValue,
 		e.datum.OutboundPeers,
 		e.chainID,
-		e.validatorMoniker,
+		e.validatorNodeName,
 	)
 	ch <- prometheus.MustNewConstHistogram(
 		TxPerBlock,
@@ -137,7 +137,7 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 		e.datum.TotalTxs,
 		e.datum.TxPerBlockBuckets,
 		e.chainID,
-		e.validatorMoniker,
+		e.validatorNodeName,
 	)
 	ch <- prometheus.MustNewConstHistogram(
 		TimePerBlock,
@@ -146,21 +146,21 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 		e.datum.TotalTime,
 		e.datum.TimePerBlockBuckets,
 		e.chainID,
-		e.validatorMoniker,
+		e.validatorNodeName,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		Contracts,
 		prometheus.GaugeValue,
 		e.datum.AccountsWithCode,
 		e.chainID,
-		e.validatorMoniker,
+		e.validatorNodeName,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		Users,
 		prometheus.GaugeValue,
 		e.datum.AccountsWithoutCode,
 		e.chainID,
-		e.validatorMoniker,
+		e.validatorNodeName,
 	)
 
 	e.logger.InfoMsg("All Metrics successfully collected")

@@ -83,7 +83,7 @@ func TestIdentify(t *testing.T) {
 	require.Contains(t, addrs, accounts[1].GetAddress())
 
 	// re-register node with different nodename
-	configs[1].Tendermint.Moniker = "foobar"
+	configs[1].Tendermint.Moniker =  "foobar"
 	node = nodeFromConf(t,
 		configs[1],
 		configs[1].Tendermint.ListenHost,

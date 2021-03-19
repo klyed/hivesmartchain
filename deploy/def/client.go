@@ -678,7 +678,7 @@ func (c *Client) Permissions(arg *PermArg, logger *logging.Logger) (*payload.Per
 type IdentifyArg struct {
 	Input      string
 	NodeKey    string
-	Moniker   string
+	NodeName   string
 	NetAddress string
 	Amount     string
 	Sequence   string

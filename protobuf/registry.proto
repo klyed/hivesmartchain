@@ -24,7 +24,7 @@ option (gogoproto.messagename_all) = true;
 message NodeIdentity {
     option (gogoproto.goproto_stringer) = false;
     // Peer nodename name
-	string Moniker = 1;
+	string Moniker =  1;
 	// Peer network address
 	string NetworkAddress = 2;
 	// The Tendermint p2p node ID

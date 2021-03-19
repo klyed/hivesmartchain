@@ -17,7 +17,7 @@ type configOptions struct {
 	accountIndexOpt    *int
 	initAddressOpt     *string
 	initPassphraseOpt  *string
-	initMonikerOpt    *string
+	initNodeNameOpt    *string
 	externalAddressOpt *string
 	grpcAddressOpt     *string
 }
@@ -76,7 +76,7 @@ func addConfigOptions(cmd *cli.Cmd) *configOptions {
 			EnvVar: "HSC_PASSPHRASE",
 		}),
 
-		initMonikerOpt: cmd.String(cli.StringOpt{
+		initNodeNameOpt: cmd.String(cli.StringOpt{
 			Name:   "m nodename",
 			Desc:   "An optional human-readable nodename to identify this node amongst Tendermint peers in logs and status queries",
 			EnvVar: "HSC_NODE_MONIKER",
@@ -113,7 +113,7 @@ func (opts *configOptions) obtainHiveSmartChainConfig() (*config.HiveSmartChainC
 	if *opts.initPassphraseOpt != "" {
 		conf.Passphrase = opts.initPassphraseOpt
 	}
-	if *opts.initMonikerOpt == "" {
+	if *opts.initNodeNameOpt == "" {
 		chainIDHeader := ""
 		if conf.GenesisDoc != nil && conf.GenesisDoc.ChainID() != "" {
 			chainIDHeader = conf.GenesisDoc.ChainID() + "_"
@@ -123,7 +123,7 @@ func (opts *configOptions) obtainHiveSmartChainConfig() (*config.HiveSmartChainC
 			conf.Tendermint.Moniker = fmt.Sprintf("%sNode_%s", chainIDHeader, conf.ValidatorAddress)
 		}
 	} else {
-		conf.Tendermint.Moniker = *opts.initMonikerOpt
+		conf.Tendermint.Moniker = *opts.initNodeNameOpt
 	}
 	if *opts.externalAddressOpt != "" {
 		conf.Tendermint.ExternalAddress = *opts.externalAddressOpt

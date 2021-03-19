@@ -32,7 +32,7 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 // by the node key and the validator key to prove the update is consensual.
 type NodeIdentity struct {
 	// Peer nodename name
-	Moniker string `protobuf:"bytes,1,opt,name=Moniker,proto3" json:"Moniker,omitempty"`
+	NodeName string `protobuf:"bytes,1,opt,name=NodeName,proto3" json:"NodeName,omitempty"`
 	// Peer network address
 	NetworkAddress string `protobuf:"bytes,2,opt,name=NetworkAddress,proto3" json:"NetworkAddress,omitempty"`
 	// The Tendermint p2p node ID
@@ -73,7 +73,7 @@ func (m *NodeIdentity) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_NodeIdentity proto.InternalMessageInfo
 
-func (m *NodeIdentity) GetMoniker() string {
+func (m *NodeIdentity) GetNodeName() string {
 	if m != nil {
 		return m.Moniker
 	}
@@ -257,7 +257,7 @@ func (m *NodeIdentity) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Moniker", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field NodeName", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
