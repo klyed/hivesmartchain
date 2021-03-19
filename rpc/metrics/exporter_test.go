@@ -123,7 +123,7 @@ func infoService() *constInfo {
 		ResultStatus: &rpc.ResultStatus{
 			NodeInfo: &tendermint.NodeInfo{
 				Network:  "TestChain",
-				NodeName: "TestNode",
+				Moniker: "TestNode",
 			},
 			SyncInfo: &bcm.SyncInfo{
 				LatestBlockHeight: uint64(numBlocks),

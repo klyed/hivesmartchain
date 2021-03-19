@@ -32,7 +32,7 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 // by the node key and the validator key to prove the update is consensual.
 type NodeIdentity struct {
 	// Peer nodename name
-	NodeName string `protobuf:"bytes,1,opt,name=NodeName,proto3" json:"NodeName,omitempty"`
+	Moniker string `protobuf:"bytes,1,opt,name=Moniker,proto3" json:"Moniker,omitempty"`
 	// Peer network address
 	NetworkAddress string `protobuf:"bytes,2,opt,name=NetworkAddress,proto3" json:"NetworkAddress,omitempty"`
 	// The Tendermint p2p node ID
@@ -73,9 +73,9 @@ func (m *NodeIdentity) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_NodeIdentity proto.InternalMessageInfo
 
-func (m *NodeIdentity) GetNodeName() string {
+func (m *NodeIdentity) GetMoniker() string {
 	if m != nil {
-		return m.NodeName
+		return m.Moniker
 	}
 	return ""
 }
@@ -173,10 +173,10 @@ func (m *NodeIdentity) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x12
 	}
-	if len(m.NodeName) > 0 {
-		i -= len(m.NodeName)
-		copy(dAtA[i:], m.NodeName)
-		i = encodeVarintRegistry(dAtA, i, uint64(len(m.NodeName)))
+	if len(m.Moniker) > 0 {
+		i -= len(m.Moniker)
+		copy(dAtA[i:], m.Moniker)
+		i = encodeVarintRegistry(dAtA, i, uint64(len(m.Moniker)))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -200,7 +200,7 @@ func (m *NodeIdentity) Size() (n int) {
 	}
 	var l int
 	_ = l
-	l = len(m.NodeName)
+	l = len(m.Moniker)
 	if l > 0 {
 		n += 1 + l + sovRegistry(uint64(l))
 	}
@@ -257,7 +257,7 @@ func (m *NodeIdentity) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeName", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Moniker", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -285,7 +285,7 @@ func (m *NodeIdentity) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.NodeName = string(dAtA[iNdEx:postIndex])
+			m.Moniker = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {

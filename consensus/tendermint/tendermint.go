@@ -115,7 +115,7 @@ func NewNodeInfo(ni p2p.DefaultNodeInfo) *NodeInfo {
 	address, _ := crypto.AddressFromHexString(string(ni.ID()))
 	return &NodeInfo{
 		ID:            address,
-		NodeName:      ni.NodeName,
+		Moniker:      ni.Moniker,
 		ListenAddress: ni.ListenAddr,
 		Version:       ni.Version,
 		Channels:      binary.HexBytes(ni.Channels),

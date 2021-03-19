@@ -27,8 +27,8 @@ export class NodeInfo extends jspb.Message {
     getChannels_asB64(): string;
     setChannels(value: Uint8Array | string): NodeInfo;
 
-    getNodeName(): string;
-    setNodeName(value: string): NodeInfo;
+    getMoniker(): string;
+    setMoniker(value: string): NodeInfo;
 
     getRpcaddress(): string;
     setRpcaddress(value: string): NodeInfo;

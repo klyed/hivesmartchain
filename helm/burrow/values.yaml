@@ -39,7 +39,7 @@ config:
     ExternalAddress: ""
     ListenHost: 0.0.0.0
     ListenPort: "26656"
-    NodeName: ""
+    Moniker: ""
     SeedMode: false
     Seeds: ""
 contracts:

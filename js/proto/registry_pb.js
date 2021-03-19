@@ -112,7 +112,7 @@ proto.registry.NodeIdentity.deserializeBinaryFromReader = function(msg, reader) 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNodeName(value);
+      msg.setMoniker(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -155,7 +155,7 @@ proto.registry.NodeIdentity.prototype.serializeBinary = function() {
  */
 proto.registry.NodeIdentity.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNodeName();
+  f = message.getMoniker();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -187,10 +187,10 @@ proto.registry.NodeIdentity.serializeBinaryToWriter = function(message, writer) 
 
 
 /**
- * optional string NodeName = 1;
+ * optional string Moniker = 1;
  * @return {string}
  */
-proto.registry.NodeIdentity.prototype.getNodeName = function() {
+proto.registry.NodeIdentity.prototype.getMoniker = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -199,7 +199,7 @@ proto.registry.NodeIdentity.prototype.getNodeName = function() {
  * @param {string} value
  * @return {!proto.registry.NodeIdentity} returns this
  */
-proto.registry.NodeIdentity.prototype.setNodeName = function(value) {
+proto.registry.NodeIdentity.prototype.setMoniker = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

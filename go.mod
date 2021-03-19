@@ -25,7 +25,7 @@ require (
 	github.com/imdario/mergo v0.3.12
 	github.com/jawher/mow.cli v1.2.0
 	github.com/jmoiron/sqlx v1.3.1
-	github.com/klyed/hiverpc-go v0.0.0-20210319083746-3a42b9522bb5
+	github.com/klyed/hiverpc-go v0.0.0-20210319103224-bd3a666c4025
 	github.com/lib/pq v1.10.0
 	github.com/mattn/go-sqlite3 v1.14.6
 	github.com/monax/relic v2.0.0+incompatible

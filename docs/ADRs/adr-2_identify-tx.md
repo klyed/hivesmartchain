@@ -63,7 +63,7 @@ type IdentifyTx struct {
 
 type RegisteredNode {
     // Peer nodename name
-	NodeName string
+	Moniker string
 	// Node key id (crypto address)
 	ID p2p.ID
 	// Node key public key

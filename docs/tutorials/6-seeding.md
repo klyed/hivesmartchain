@@ -44,7 +44,7 @@ HscDir = ".hsc_seed_0"
   SeedMode = true
   ListenHost = "0.0.0.0"
   ListenPort = "10000"
-  NodeName = "seed_node_0"
+  Moniker = "seed_node_0"
 
 [Execution]
 
@@ -86,7 +86,7 @@ HscDir = ".hsc_node0"
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "20000"
-  NodeName = "val_node_0"
+  Moniker = "val_node_0"
 
 [Execution]
 
@@ -122,7 +122,7 @@ HscDir = ".hsc_node1"
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "30000"
-  NodeName = "val_node_1"
+  Moniker = "val_node_1"
 
 [Execution]
 
@@ -158,7 +158,7 @@ HscDir = ".hsc_node2"
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "40000"
-  NodeName = "val_node_2"
+  Moniker = "val_node_2"
 
 [Execution]
 

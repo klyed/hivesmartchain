@@ -34,7 +34,7 @@ type NodeInfo struct {
 	Network              string                                          `protobuf:"bytes,3,opt,name=Network,proto3" json:"Network,omitempty"`
 	Version              string                                          `protobuf:"bytes,4,opt,name=Version,proto3" json:"Version,omitempty"`
 	Channels             github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,5,opt,name=Channels,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Channels"`
-	NodeName             string                                          `protobuf:"bytes,6,opt,name=NodeName,proto3" json:"NodeName,omitempty"`
+	Moniker             string                                          `protobuf:"bytes,6,opt,name=Moniker,proto3" json:"Moniker,omitempty"`
 	RPCAddress           string                                          `protobuf:"bytes,7,opt,name=RPCAddress,proto3" json:"RPCAddress,omitempty"`
 	TxIndex              string                                          `protobuf:"bytes,8,opt,name=TxIndex,proto3" json:"TxIndex,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
@@ -92,9 +92,9 @@ func (m *NodeInfo) GetVersion() string {
 	return ""
 }
 
-func (m *NodeInfo) GetNodeName() string {
+func (m *NodeInfo) GetMoniker() string {
 	if m != nil {
-		return m.NodeName
+		return m.Moniker
 	}
 	return ""
 }
@@ -187,10 +187,10 @@ func (m *NodeInfo) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x3a
 	}
-	if len(m.NodeName) > 0 {
-		i -= len(m.NodeName)
-		copy(dAtA[i:], m.NodeName)
-		i = encodeVarintTendermint(dAtA, i, uint64(len(m.NodeName)))
+	if len(m.Moniker) > 0 {
+		i -= len(m.Moniker)
+		copy(dAtA[i:], m.Moniker)
+		i = encodeVarintTendermint(dAtA, i, uint64(len(m.Moniker)))
 		i--
 		dAtA[i] = 0x32
 	}
@@ -271,7 +271,7 @@ func (m *NodeInfo) Size() (n int) {
 	}
 	l = m.Channels.Size()
 	n += 1 + l + sovTendermint(uint64(l))
-	l = len(m.NodeName)
+	l = len(m.Moniker)
 	if l > 0 {
 		n += 1 + l + sovTendermint(uint64(l))
 	}
@@ -488,7 +488,7 @@ func (m *NodeInfo) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 6:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeName", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Moniker", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -516,7 +516,7 @@ func (m *NodeInfo) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.NodeName = string(dAtA[iNdEx:postIndex])
+			m.Moniker = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 7:
 			if wireType != 2 {

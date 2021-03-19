@@ -89,8 +89,8 @@ export class DefaultNodeInfo extends jspb.Message {
     getChannels_asB64(): string;
     setChannels(value: Uint8Array | string): DefaultNodeInfo;
 
-    getNodeName(): string;
-    setNodeName(value: string): DefaultNodeInfo;
+    getMoniker(): string;
+    setMoniker(value: string): DefaultNodeInfo;
 
 
     hasOther(): boolean;

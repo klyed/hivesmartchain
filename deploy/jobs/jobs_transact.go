@@ -227,7 +227,7 @@ func FormulateIdentifyJob(id *def.Identify, account string, client *def.Client, 
 
 	return client.Identify(&def.IdentifyArg{
 		Input:      id.Source,
-		NodeName:   id.NodeName,
+		Moniker:   id.Moniker,
 		NodeKey:    id.NodeKey,
 		NetAddress: id.NetAddress,
 		Sequence:   id.Sequence,

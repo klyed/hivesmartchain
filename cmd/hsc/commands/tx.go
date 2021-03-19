@@ -137,7 +137,7 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 					id := &def.Identify{
 						Source:     jobs.FirstOf(*sourceOpt, address),
 						NodeKey:    jobs.FirstOf(*nodeKeyOpt, tmConf.NodeKeyFile()),
-						NodeName:   *nodenameOpt,
+						Moniker:   *nodenameOpt,
 						NetAddress: jobs.FirstOf(*networkOpt, conf.Tendermint.ListenHost),
 					}
 

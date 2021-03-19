@@ -83,7 +83,7 @@ func TestIdentify(t *testing.T) {
 	require.Contains(t, addrs, accounts[1].GetAddress())
 
 	// re-register node with different nodename
-	configs[1].Tendermint.NodeName = "foobar"
+	configs[1].Tendermint.Moniker = "foobar"
 	node = nodeFromConf(t,
 		configs[1],
 		configs[1].Tendermint.ListenHost,
@@ -99,9 +99,9 @@ func TestIdentify(t *testing.T) {
 	require.Len(t, netset, 2)
 	names := make([]string, len(netset))
 	for _, node := range netset {
-		names = append(names, node.Node.NodeName)
+		names = append(names, node.Node.Moniker)
 	}
-	require.Contains(t, names, configs[1].Tendermint.NodeName)
+	require.Contains(t, names, configs[1].Tendermint.Moniker)
 }
 
 func nodeFromConf(t *testing.T, conf *config.HiveSmartChainConfig, host string, val crypto.PrivateKey) *registry.NodeIdentity {
@@ -112,7 +112,7 @@ func nodeFromConf(t *testing.T, conf *config.HiveSmartChainConfig, host string, 
 	addr, err := crypto.AddressFromHexString(string(nodeKey.ID()))
 	require.NoError(t, err)
 	return &registry.NodeIdentity{
-		NodeName:           conf.Tendermint.NodeName,
+		Moniker:           conf.Tendermint.Moniker,
 		NetworkAddress:     host,
 		TendermintNodeID:   addr,
 		ValidatorPublicKey: val.GetPublicKey(),
