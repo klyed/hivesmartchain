@@ -5,7 +5,7 @@ HscDir = ".testnet"
   ChainName = "HSC - Hive Smart Chain v0.0.2"
   ChainID = "69"
   [GenesisDoc.Params]
-    ProposalThreshold = 2
+    ProposalThreshold = 1
   [GenesisDoc.GlobalPermissions]
     [GenesisDoc.GlobalPermissions.Base]
       Perms = "send | call | createContract | createAccount | bond | name | proposal | input | batch | hasBase | hasRole"

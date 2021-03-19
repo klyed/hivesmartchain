@@ -5,7 +5,7 @@ HscDir = ".testnet"
   ChainName = "HSC - Hive Smart Chain v0.0.2"
   ChainID = "69"
   [GenesisDoc.Params]
-    ProposalThreshold = 2
+    ProposalThreshold = 1
   [GenesisDoc.GlobalPermissions]
     [GenesisDoc.GlobalPermissions.Base]
       Perms = "send | call | createContract | createAccount | bond | name | proposal | input | batch | hasBase | hasRole"
@@ -184,7 +184,7 @@ HscDir = ".testnet"
   DataStackMaxDepth = 0
 
 [Keys]
-  GRPCServiceEnabled = true
+  GRPCServiceEnabled = false
   AllowBadFilePermissions = true
   RemoteAddress = ""
   KeysDirectory = ".keys"
@@ -195,7 +195,7 @@ HscDir = ".testnet"
     ListenHost = "0.0.0.0"
     ListenPort = "26658"
   [RPC.Profiler]
-    Enabled = false
+    Enabled = true
     ListenHost = "0.0.0.0"
     ListenPort = "6060"
   [RPC.GRPC]
@@ -203,7 +203,7 @@ HscDir = ".testnet"
     ListenHost = "0.0.0.0"
     ListenPort = "10997"
   [RPC.Metrics]
-    Enabled = false
+    Enabled = true
     ListenHost = "0.0.0.0"
     ListenPort = "9102"
     MetricsPath = "/metrics"

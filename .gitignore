@@ -1,6 +1,5 @@
 # build target
 target
-bin/
 
 # tests
 test_scratch/
@@ -11,6 +10,9 @@ test_scratch/
 *.swp
 .idea
 .vscode
+
+# blockchain * tesnet folders
+/bin
 
 .gopath_bos
 
