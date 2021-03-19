@@ -112,7 +112,7 @@ func nodeFromConf(t *testing.T, conf *config.HiveSmartChainConfig, host string, 
 	addr, err := crypto.AddressFromHexString(string(nodeKey.ID()))
 	require.NoError(t, err)
 	return &registry.NodeIdentity{
-		NodeName:            conf.Tendermint.NodeName,
+		NodeName:           conf.Tendermint.NodeName,
 		NetworkAddress:     host,
 		TendermintNodeID:   addr,
 		ValidatorPublicKey: val.GetPublicKey(),

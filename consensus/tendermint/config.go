@@ -35,7 +35,7 @@ type HiveSmartChainTendermintConfig struct {
 	// Set true for strict address routability rules
 	// Set false for private or local networks
 	AddrBookStrict bool
-	NodeName        string
+	NodeName       string
 	// Only accept connections from registered peers
 	IdentifyPeers bool
 	// Peers ID or address this node is authorize to sync with

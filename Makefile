@@ -129,18 +129,18 @@ peg_deps:
 peg:
 	peg event/query/query.peg
 
-### Building github.com/hyperledger/hsc
+### Building github.com/klyed/hivesmartchain
 
 # Output commit_hash but only if we have the git repo (e.g. not in docker build
 .PHONY: commit_hash
 commit_hash:
 	@git status &> /dev/null && scripts/commit_hash.sh > commit_hash.txt || true
 
-# build all targets in github.com/hyperledger/hsc
+# build all targets in github.com/klyed/hivesmartchain
 .PHONY: build
 build:	check build_hsc build_hsc_debug
 
-# build all targets in github.com/hyperledger/hsc with checks for race conditions
+# build all targets in github.com/klyed/hivesmartchain with checks for race conditions
 .PHONY: build_race
 build_race:	check build_race_db
 
@@ -176,14 +176,14 @@ install: build_hsc
 build_race_db:
 	go build -race -o ${REPO}/bin/hsc./cmd/hsc
 
-### Build docker images for github.com/hyperledger/hsc
+### Build docker images for github.com/klyed/hivesmartchain
 
 # build docker image for hsc
 .PHONY: docker_build
 docker_build: check commit_hash
 	@scripts/build_tool.sh
 
-### Testing github.com/hyperledger/hsc
+### Testing github.com/klyed/hivesmartchain
 
 # Solidity fixtures
 .PHONY: solidity

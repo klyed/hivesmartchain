@@ -4,17 +4,20 @@ import (
 	"context"
 	"crypto/sha256"
 	"fmt"
-	"sync"
-	"time"
-
 	"github.com/klyed/hivesmartchain/bcm"
-
+	//"github.com/klyed/hivesmartchain/bridges"
 	"github.com/klyed/hivesmartchain/execution"
 	"github.com/klyed/hivesmartchain/txs"
 	"github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/mempool"
 	tmTypes "github.com/tendermint/tendermint/types"
+	"sync"
+	"time"
 )
+
+//func Start() {
+//	return run()
+//}
 
 type Process struct {
 	ticker       *time.Ticker

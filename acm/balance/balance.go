@@ -92,7 +92,7 @@ func Power(power uint64) Balance {
 	}
 }
 
-func Pegged(power uint64) Balance {
+func Pegged(pegged uint64) Balance {
 	return Balance{
 		Type:   TypePegged,
 		Amount: pegged,

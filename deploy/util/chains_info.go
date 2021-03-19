@@ -2,22 +2,16 @@ package util
 
 import (
 	"fmt"
-	"strconv"
-	"strings"
-	"bridges"
-
 	"github.com/klyed/hivesmartchain/deploy/def"
 	"github.com/klyed/hivesmartchain/logging"
+	"strconv"
+	"strings"
 
 	"encoding/json"
 
 	"github.com/elgs/gojq"
 	"github.com/klyed/hivesmartchain/acm/validator"
 )
-
-func GetHiveBlock() {
-	return Bridges()
-}
 
 func GetBlockHeight(client *def.Client, logger *logging.Logger) (latestBlockHeight uint64, err error) {
 	stat, err := client.Status(logger)

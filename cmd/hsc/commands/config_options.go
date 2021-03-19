@@ -17,7 +17,7 @@ type configOptions struct {
 	accountIndexOpt    *int
 	initAddressOpt     *string
 	initPassphraseOpt  *string
-	initNodeNameOpt     *string
+	initNodeNameOpt    *string
 	externalAddressOpt *string
 	grpcAddressOpt     *string
 }

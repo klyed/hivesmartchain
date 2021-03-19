@@ -29,7 +29,7 @@ type Exporter struct {
 	service                      InfoService
 	datum                        *Datum
 	chainID                      string
-	validatorNodeName             string
+	validatorNodeName            string
 	blockSampleSize              uint64
 	txPerBlockHistogramBuilder   HistogramBuilder
 	timePerBlockHistogramBuilder HistogramBuilder
@@ -72,7 +72,7 @@ func NewExporter(service InfoService, blockSampleSize int, logger *logging.Logge
 		datum:                        &Datum{},
 		service:                      service,
 		chainID:                      chainStatus.NodeInfo.Network,
-		validatorNodeName:             chainStatus.NodeInfo.NodeName,
+		validatorNodeName:            chainStatus.NodeInfo.NodeName,
 		blockSampleSize:              uint64(blockSampleSize),
 		txPerBlockHistogramBuilder:   makeHistogramBuilder(identity),
 		timePerBlockHistogramBuilder: makeHistogramBuilder(significantFiguresRounder(significantFiguresForSeconds)),

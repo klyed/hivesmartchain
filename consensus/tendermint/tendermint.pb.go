@@ -34,7 +34,7 @@ type NodeInfo struct {
 	Network              string                                          `protobuf:"bytes,3,opt,name=Network,proto3" json:"Network,omitempty"`
 	Version              string                                          `protobuf:"bytes,4,opt,name=Version,proto3" json:"Version,omitempty"`
 	Channels             github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,5,opt,name=Channels,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Channels"`
-	NodeName              string                                          `protobuf:"bytes,6,opt,name=NodeName,proto3" json:"NodeName,omitempty"`
+	NodeName             string                                          `protobuf:"bytes,6,opt,name=NodeName,proto3" json:"NodeName,omitempty"`
 	RPCAddress           string                                          `protobuf:"bytes,7,opt,name=RPCAddress,proto3" json:"RPCAddress,omitempty"`
 	TxIndex              string                                          `protobuf:"bytes,8,opt,name=TxIndex,proto3" json:"TxIndex,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`

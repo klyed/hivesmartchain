@@ -10,17 +10,15 @@ import (
 	"time"
 
 	"github.com/klyed/hiverpc-go"
-	"github.com/klyed/hiverpc-go/transports/websocket"
-	"github.com/klyed/hiverpc-go/types"
 )
 
 func main() {
-	if err := Bridges(); err != nil {
+	if err := run(); err != nil {
 		log.Fatalln("Error:", err)
 	}
 }
 
-func Bridges() (err error) {
+func run() (err error) {
 	// Process flags.
 
 	log.Printf("STARTING HIVE BRIDGE", url)

@@ -20,7 +20,7 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 	return func(cmd *cli.Cmd) {
 		configOpts := addConfigOptions(cmd)
 		chainOpt := cmd.StringOpt("chain", "", "chain to be used in IP:PORT format")
-		timeoutOpt := cmd.IntOpt("t timeout", 5, "Timeout in seconds")
+		timeoutOpt := cmd.IntOpt("t timeout", 1, "Timeout in seconds")
 		cmd.Spec += "[--chain=<ip>] [--timeout=<seconds>]"
 		// we don't want config sourcing logs
 		source.LogWriter = ioutil.Discard
@@ -137,7 +137,7 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 					id := &def.Identify{
 						Source:     jobs.FirstOf(*sourceOpt, address),
 						NodeKey:    jobs.FirstOf(*nodeKeyOpt, tmConf.NodeKeyFile()),
-						NodeName:    *nodenameOpt,
+						NodeName:   *nodenameOpt,
 						NetAddress: jobs.FirstOf(*networkOpt, conf.Tendermint.ListenHost),
 					}
 
