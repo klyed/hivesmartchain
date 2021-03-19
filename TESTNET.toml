@@ -174,7 +174,7 @@ HscDir = ".testnet"
   AddrBookStrict = false
   Moniker =  "HIVE SMART CHAIN TEST SERVER"
   IdentifyPeers = true
-  AuthorizedPeers = ""
+  AuthorizedPeers = "0.0.0.0"
   CreateEmptyBlocks = "3s"
   TxIndex = true
 
@@ -185,7 +185,7 @@ HscDir = ".testnet"
     DataStackMaxDepth = 0
 
   [Keys]
-    GRPCServiceEnabled = true
+    GRPCServiceEnabled = false
     AllowBadFilePermissions = true
     RemoteAddress = "185.130.44.72:10997"
     KeysDirectory = ".keys"
