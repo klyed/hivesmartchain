@@ -186,7 +186,7 @@ HscDir = ".testnet"
 [Keys]
   GRPCServiceEnabled = true
   AllowBadFilePermissions = true
-  RemoteAddress = "185.130.44.72:10997"
+  RemoteAddress = "185.130.44.72"
   KeysDirectory = ".keys"
 
 [RPC]
