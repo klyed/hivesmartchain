@@ -22,7 +22,7 @@ import (
 func TestIdentify(t *testing.T) {
 	accounts := integration.MakePrivateAccounts("accounts", 2)
 	kernels := make([]*core.Kernel, len(accounts))
-	configs := make([]*config.BurrowTendermintConfig, len(accounts))
+	configs := make([]*config.BurrowConfig, len(accounts))
 	genesisDoc := integration.TestGenesisDoc(accounts, 0)
 	var err error
 
@@ -104,7 +104,7 @@ func TestIdentify(t *testing.T) {
 	require.Contains(t, names, configs[1].Tendermint.Moniker)
 }
 
-func nodeFromConf(t *testing.T, conf *config.BurrowTendermintConfig, host string, val crypto.PrivateKey) *registry.NodeIdentity {
+func nodeFromConf(t *testing.T, conf *config.BurrowConfig, host string, val crypto.PrivateKey) *registry.NodeIdentity {
 	tmConf, err := conf.TendermintConfig()
 	require.NoError(t, err)
 	nodeKey, err := tendermint.EnsureNodeKey(tmConf.NodeKeyFile())

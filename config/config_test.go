@@ -7,8 +7,8 @@ import (
 	"github.com/klyed/hivesmartchain/genesis"
 )
 
-func TestBurrowTendermintConfigSerialise(t *testing.T) {
-	conf := &BurrowTendermintConfig{
+func TestBurrowConfigSerialise(t *testing.T) {
+	conf := &BurrowConfig{
 		GenesisDoc: &genesis.GenesisDoc{
 			ChainName: "Foo",
 		},

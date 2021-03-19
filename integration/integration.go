@@ -38,16 +38,16 @@ const (
 
 var node uint64 = 0
 
-func NoConsensus(conf *config.BurrowTendermintConfig) {
+func NoConsensus(conf *config.BurrowConfig) {
 	conf.Tendermint.Enabled = false
 }
 
-func CommitImmediately(conf *config.BurrowTendermintConfig) {
+func CommitImmediately(conf *config.BurrowConfig) {
 	conf.Execution.TimeoutFactor = 0
 }
 
 func RunNode(t testing.TB, genesisDoc *genesis.GenesisDoc, privateAccounts []*acm.PrivateAccount,
-	options ...func(*config.BurrowTendermintConfig)) (kern *core.Kernel, shutdown func()) {
+	options ...func(*config.BurrowConfig)) (kern *core.Kernel, shutdown func()) {
 
 	var err error
 	testConfig, cleanup := NewTestConfig(genesisDoc, options...)
@@ -71,11 +71,11 @@ func RunNode(t testing.TB, genesisDoc *genesis.GenesisDoc, privateAccounts []*ac
 }
 
 func NewTestConfig(genesisDoc *genesis.GenesisDoc,
-	options ...func(*config.BurrowTendermintConfig)) (conf *config.BurrowTendermintConfig, cleanup func()) {
+	options ...func(*config.BurrowConfig)) (conf *config.BurrowConfig, cleanup func()) {
 
 	nodeNumber := atomic.AddUint64(&node, 1)
 	name := fmt.Sprintf("node_%03d", nodeNumber)
-	conf = config.DefaultBurrowTendermintConfig()
+	conf = config.DefaultBurrowConfig()
 	conf.Logging = nil
 	testDir, cleanup := EnterTestDirectory()
 	conf.HscDir = path.Join(testDir, fmt.Sprintf(".hsc_%s", name))
@@ -108,7 +108,7 @@ func NewTestConfig(genesisDoc *genesis.GenesisDoc,
 
 // We use this to wrap tests
 func TestKernel(validatorAccount *acm.PrivateAccount, keysAccounts []*acm.PrivateAccount,
-	testConfig *config.BurrowTendermintConfig) (*core.Kernel, error) {
+	testConfig *config.BurrowConfig) (*core.Kernel, error) {
 
 	fmt.Println("Creating integration test Kernel...")
 

@@ -1,9 +1,9 @@
-HscDir = ".hivesmartchain"
+HscDir = ".testnet"
 
 [GenesisDoc]
   GenesisTime = 2021-03-18T09:32:42Z
-  ChainName = "HSC - Hive Smart Chain (CLOSED ALPHA v0.0.1)"
-  ChainID = "12321312312"
+  ChainName = "HSC - Hive Smart Chain v0.0.2"
+  ChainID = "69"
   [GenesisDoc.Params]
     ProposalThreshold = 2
   [GenesisDoc.GlobalPermissions]

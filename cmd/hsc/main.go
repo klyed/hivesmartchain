@@ -18,8 +18,14 @@ func main() {
 	}
 }
 
+const welcome = `
+========================================================================================
+Hive Side Chain (HSC) - Decentralized EVM Smart Contract Side Chain Utilizing BYZT/BPoS
+========================================================================================
+`
+
 func hsc(output commands.Output) *cli.Cli {
-	app := cli.App("hsc", "Hive Side Chain (HSC) - A Hive Based EVM Smart Contract Side Chain Utilizing BYZT/BPoS")
+	app := cli.App("hsc", welcome)
 	// We'll handle any errors
 	app.ErrorHandling = flag.ContinueOnError
 

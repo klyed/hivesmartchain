@@ -39,7 +39,7 @@ func TestKernelNoConsensus(t *testing.T) {
 	testKernel(t, integration.NoConsensus)
 }
 
-func testKernel(t *testing.T, opts ...func(*config.BurrowTendermintConfig)) {
+func testKernel(t *testing.T, opts ...func(*config.BurrowConfig)) {
 	t.Run(fmt.Sprintf("Group"), func(t *testing.T) {
 		t.Parallel()
 		genesisDoc, privateAccounts, privateValidators := genesis.NewDeterministicGenesis(123).GenesisDoc(1, 1)
@@ -128,7 +128,7 @@ func testKernel(t *testing.T, opts ...func(*config.BurrowTendermintConfig)) {
 }
 
 func bootWaitBlocksShutdown(t testing.TB, validator *acm.PrivateAccount, privateAccounts []*acm.PrivateAccount,
-	testConfig *config.BurrowTendermintConfig, blockChecker func(block *exec.BlockExecution) (cont bool)) error {
+	testConfig *config.BurrowConfig, blockChecker func(block *exec.BlockExecution) (cont bool)) error {
 
 	kern, err := integration.TestKernel(validator, rpctest.PrivateAccounts, testConfig)
 	if err != nil {

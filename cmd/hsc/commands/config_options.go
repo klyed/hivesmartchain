@@ -100,7 +100,7 @@ func addConfigOptions(cmd *cli.Cmd) *configOptions {
 	}
 }
 
-func (opts *configOptions) obtainBurrowTendermintConfig() (*config.BurrowTendermintConfig, error) {
+func (opts *configOptions) obtainBurrowConfig() (*config.BurrowConfig, error) {
 	conf, err := obtainDefaultConfig(*opts.configFileOpt, *opts.genesisFileOpt)
 	if err != nil {
 		return nil, err
@@ -146,7 +146,7 @@ func (opts *configOptions) obtainBurrowTendermintConfig() (*config.BurrowTenderm
 // 	4. config
 // 	5. genesis validator (if only one)
 
-func accountAddress(conf *config.BurrowTendermintConfig, addressIn string, accIndex, valIndex int) (*crypto.Address, error) {
+func accountAddress(conf *config.BurrowConfig, addressIn string, accIndex, valIndex int) (*crypto.Address, error) {
 	if addressIn != "" {
 		address, err := crypto.AddressFromHexString(addressIn)
 		if err != nil {

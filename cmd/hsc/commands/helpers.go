@@ -20,9 +20,9 @@ type Output interface {
 	Fatalf(format string, args ...interface{})
 }
 
-func obtainDefaultConfig(configFile, genesisDocFile string) (*config.BurrowTendermintConfig, error) {
+func obtainDefaultConfig(configFile, genesisDocFile string) (*config.BurrowConfig, error) {
 	// We need to reflect on whether this obscures where values are coming from
-	conf := config.DefaultBurrowTendermintConfig()
+	conf := config.DefaultBurrowConfig()
 	// We treat logging a little differently in that if anything is set for logging we will not
 	// set default outputs
 	conf.Logging = nil
@@ -47,17 +47,17 @@ func hscConfigProvider(configFile string) source.ConfigProvider {
 	return source.FirstOf(
 		// Will fail if file doesn't exist, but still skipped it configFile == ""
 		source.File(configFile, false),
-		source.Environment(config.DefaultBurrowTendermintConfigEnvironmentVariable),
+		source.Environment(config.DefaultBurrowConfigEnvironmentVariable),
 		// Try working directory
-		source.File(config.DefaultBurrowTendermintConfigTOMLFileName, true),
-		source.Default(config.DefaultBurrowTendermintConfig()))
+		source.File(config.DefaultBurrowConfigTOMLFileName, true),
+		source.Default(config.DefaultBurrowConfig()))
 }
 
 func genesisDocProvider(genesisFile string, skipNonExistent bool) source.ConfigProvider {
 	return source.NewConfigProvider(fmt.Sprintf("genesis file at %s", genesisFile),
 		source.ShouldSkipFile(genesisFile, skipNonExistent),
 		func(baseConfig interface{}) error {
-			conf, ok := baseConfig.(*config.BurrowTendermintConfig)
+			conf, ok := baseConfig.(*config.BurrowConfig)
 			if !ok {
 				return fmt.Errorf("config passed was not valid Hive Smart Chain config")
 			}

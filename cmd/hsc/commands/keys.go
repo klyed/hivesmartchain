@@ -50,7 +50,7 @@ func Keys(output Output) func(cmd *cli.Cmd) {
 			//badPerm := cmd.BoolOpt("allow-bad-perm", true, "Allow unix key file permissions to be readable other than user")
 			configOpt := cmd.StringOpt("c config", "", "Use the specified Hive Smart Chain config file")
 
-			var conf *config.BurrowTendermintConfig
+			var conf *config.BurrowConfig
 
 			cmd.Before = func() {
 				var err error

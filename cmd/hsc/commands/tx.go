@@ -27,7 +27,7 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 
 		// formulate first to enable better visibility for the tx input
 		cmd.Command("formulate", "formulate a tx", func(cmd *cli.Cmd) {
-			conf, err := configOpts.obtainBurrowTendermintConfig()
+			conf, err := configOpts.obtainBurrowConfig()
 			if err != nil {
 				output.Fatalf("could not set up config: %v", err)
 			}
@@ -158,7 +158,7 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 		})
 
 		cmd.Command("commit", "read and send a tx to mempool", func(cmd *cli.Cmd) {
-			conf, err := configOpts.obtainBurrowTendermintConfig()
+			conf, err := configOpts.obtainBurrowConfig()
 			if err != nil {
 				output.Fatalf("could not set up config: %v", err)
 			}
