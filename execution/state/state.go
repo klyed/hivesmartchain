@@ -22,7 +22,7 @@ import (
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/storage"
 	"github.com/klyed/hivesmartchain/txs"
-	dbm "github.com/tendermint/tm-db"
+	dbm "github.com/klyed/tm-db"
 )
 
 const (

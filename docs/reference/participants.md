@@ -37,4 +37,4 @@ Both Bitcoin and Ethereum adopt Secp256k1 elliptic curves for verification of co
 
 We adopt the Ethereum style addressing system which takes the last 20 bytes of the `KECCAK256` hash of the public key.
 Tendermint adopts Bitcoin's usage pattern meaning that it is not currently possible to use this signature scheme for validators,
-though there are [discussions](https://github.com/tendermint/tendermint/issues/2358) to extend this interface.
+though there are [discussions](https://github.com/klyed/tendermint/issues/2358) to extend this interface.

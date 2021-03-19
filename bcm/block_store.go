@@ -5,10 +5,10 @@ import (
 	"runtime/debug"
 
 	"github.com/klyed/hivesmartchain/txs"
-	"github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/store"
-	"github.com/tendermint/tendermint/types"
-	dbm "github.com/tendermint/tm-db"
+	"github.com/klyed/tendermint/state"
+	"github.com/klyed/tendermint/store"
+	"github.com/klyed/tendermint/types"
+	dbm "github.com/klyed/tm-db"
 )
 
 type BlockStore struct {

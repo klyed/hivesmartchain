@@ -460,7 +460,7 @@ Hotfix release for 0.23.1
 - Release our mempool signing lock once transactions have been CheckTx'd' to massively increase throughput.
 
 ### Added
-- Upgraded to Tendermint [0.22.8](https://github.com/tendermint/tendermint/compare/v0.22.4...v0.22.8) (from 0.22.4).
+- Upgraded to Tendermint [0.22.8](https://github.com/klyed/tendermint/compare/v0.22.4...v0.22.8) (from 0.22.4).
 - Support mempool signing for BroadcastTxAsync.
 - Reload log file (e.g. for logrotate) on SIGHUP and dump capture logs on SIGUSR1 and on shutdown (e.g. for debug).
 - File logger accepts {{.Timestamp}} in file names to generate a log file per run.

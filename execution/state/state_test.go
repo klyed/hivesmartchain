@@ -22,7 +22,7 @@ import (
 	"github.com/klyed/hivesmartchain/permission"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	dbm "github.com/tendermint/tm-db"
+	dbm "github.com/klyed/tm-db"
 )
 
 func TestState_UpdateAccount(t *testing.T) {

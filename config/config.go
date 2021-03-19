@@ -11,7 +11,7 @@ import (
 	"github.com/klyed/hivesmartchain/keys"
 	"github.com/klyed/hivesmartchain/logging/logconfig"
 	"github.com/klyed/hivesmartchain/rpc"
-	tmConfig "github.com/tendermint/tendermint/config"
+	tmConfig "github.com/klyed/tendermint/config"
 )
 
 const DefaultBurrowConfigTOMLFileName = "hsc.toml"

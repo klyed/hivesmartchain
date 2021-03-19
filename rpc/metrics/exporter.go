@@ -7,14 +7,14 @@ import (
 	"math"
 	"sort"
 
-	"github.com/tendermint/tendermint/types"
+	"github.com/klyed/tendermint/types"
 
 	"github.com/klyed/hivesmartchain/acm/acmstate"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/logging/structure"
 	"github.com/klyed/hivesmartchain/rpc"
 	"github.com/prometheus/client_golang/prometheus"
-	core_types "github.com/tendermint/tendermint/rpc/core/types"
+	core_types "github.com/klyed/tendermint/rpc/core/types"
 )
 
 const maxUnconfirmedTxsToFetch = 10000000000

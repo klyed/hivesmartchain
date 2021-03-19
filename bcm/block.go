@@ -2,7 +2,7 @@ package bcm
 
 import (
 	"github.com/klyed/hivesmartchain/txs"
-	"github.com/tendermint/tendermint/types"
+	"github.com/klyed/tendermint/types"
 )
 
 type Block struct {

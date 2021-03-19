@@ -17,7 +17,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/stretchr/testify/require"
 
-	"github.com/tendermint/tendermint/types"
+	"github.com/klyed/tendermint/types"
 )
 
 func TestExporter_Collect_Histogram(t *testing.T) {

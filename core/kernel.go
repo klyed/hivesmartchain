@@ -35,9 +35,9 @@ import (
 	"github.com/klyed/hivesmartchain/rpc"
 	"github.com/klyed/hivesmartchain/txs"
 	"github.com/streadway/simpleuuid"
-	"github.com/tendermint/tendermint/store"
-	tmTypes "github.com/tendermint/tendermint/types"
-	dbm "github.com/tendermint/tm-db"
+	"github.com/klyed/tendermint/store"
+	tmTypes "github.com/klyed/tendermint/types"
+	dbm "github.com/klyed/tm-db"
 )
 
 const (

@@ -9,7 +9,7 @@ import (
 	names "github.com/klyed/hivesmartchain/execution/names"
 	rpc "github.com/klyed/hivesmartchain/rpc"
 	payload "github.com/klyed/hivesmartchain/txs/payload"
-	types "github.com/tendermint/tendermint/proto/tendermint/types"
+	types "github.com/klyed/tendermint/proto/tendermint/types"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

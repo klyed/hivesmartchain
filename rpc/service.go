@@ -23,10 +23,10 @@ import (
 	"github.com/klyed/hivesmartchain/permission"
 	"github.com/klyed/hivesmartchain/project"
 	"github.com/klyed/hivesmartchain/txs"
-	"github.com/tendermint/tendermint/consensus"
-	"github.com/tendermint/tendermint/p2p"
-	core_types "github.com/tendermint/tendermint/rpc/core/types"
-	tmTypes "github.com/tendermint/tendermint/types"
+	"github.com/klyed/tendermint/consensus"
+	"github.com/klyed/tendermint/p2p"
+	core_types "github.com/klyed/tendermint/rpc/core/types"
+	tmTypes "github.com/klyed/tendermint/types"
 )
 
 // Magic! Should probably be configurable, but not shouldn't be so huge we

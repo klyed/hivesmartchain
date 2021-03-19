@@ -24,7 +24,7 @@ import (
 	"github.com/klyed/hivesmartchain/txs"
 	"github.com/klyed/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/require"
-	"github.com/tendermint/tendermint/p2p"
+	"github.com/klyed/tendermint/p2p"
 )
 
 func newConfig(genesisDoc *genesis.GenesisDoc, account *acm.PrivateAccount,

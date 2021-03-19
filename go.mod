@@ -40,8 +40,8 @@ require (
 	github.com/streadway/simpleuuid v0.0.0-20130420165545-6617b501e485
 	github.com/stretchr/testify v1.7.0
 	github.com/syndtr/goleveldb v1.0.1-0.20200815110645-5c35d600f0ca
-	github.com/tendermint/tendermint v0.34.8
-	github.com/tendermint/tm-db v0.6.4
+	github.com/klyed/tendermint v0.34.8
+	github.com/klyed/tm-db v0.6.4
 	github.com/test-go/testify v1.1.4
 	github.com/tmthrgd/atomics v0.0.0-20190904060638-dc7a5fcc7e0d // indirect
 	github.com/tmthrgd/go-bitset v0.0.0-20190904054048-394d9a556c05

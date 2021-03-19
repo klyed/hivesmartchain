@@ -31,7 +31,7 @@ import (
 	"github.com/klyed/hivesmartchain/permission"
 	"github.com/klyed/hivesmartchain/txs"
 	"github.com/klyed/hivesmartchain/txs/payload"
-	"github.com/tendermint/tendermint/proto/tendermint/types"
+	"github.com/klyed/tendermint/proto/tendermint/types"
 )
 
 type Executor interface {

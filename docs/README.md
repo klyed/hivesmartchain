@@ -19,7 +19,7 @@ The Hive Smart Chain will not only serve as a great addition of industry standar
 
 ## What is Hive Smart Chain
 
-Hive Smart Chain is a fully fledged blockchain node and smart contract execution engine that runs in tandem to the HIVE DPoS blockchain offering it access to smart contract capabilities for it's native token as well as acting as a gateway to interface with other blockchains in a "DeFi" manner -- in otherwords it's a distributed database and computing platform that executes code. Hive Smart Chain runs Ethereum Virtual Machine (EVM) and Web Assembly (WASM) smart contracts. Hive Smart Chain are Secured and decentralized using the [Tendermint](https://github.com/tendermint/tendermint) consensus algorithm.
+Hive Smart Chain is a fully fledged blockchain node and smart contract execution engine that runs in tandem to the HIVE DPoS blockchain offering it access to smart contract capabilities for it's native token as well as acting as a gateway to interface with other blockchains in a "DeFi" manner -- in otherwords it's a distributed database and computing platform that executes code. Hive Smart Chain runs Ethereum Virtual Machine (EVM) and Web Assembly (WASM) smart contracts. Hive Smart Chain are Secured and decentralized using the [Tendermint](https://github.com/klyed/tendermint) consensus algorithm.
 
 Highlights include:
 

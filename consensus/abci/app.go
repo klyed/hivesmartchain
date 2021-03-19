@@ -16,8 +16,8 @@ import (
 	"github.com/klyed/hivesmartchain/logging/structure"
 	"github.com/klyed/hivesmartchain/project"
 	"github.com/klyed/hivesmartchain/txs"
-	"github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/crypto/encoding"
+	"github.com/klyed/tendermint/abci/types"
+	"github.com/klyed/tendermint/crypto/encoding"
 )
 
 type Validators interface {

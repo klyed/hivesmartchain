@@ -79,7 +79,7 @@ PROTO_GEN_TS_PATH = ${HSC_TS_PATH}/proto
 NODE_BIN = ${HSC_TS_PATH}/node_modules/.bin
 
 # To access Tendermint bundled protobuf files from go module cache
-TENDERMINT_MOD?=github.com/tendermint/tendermint
+TENDERMINT_MOD?=github.com/klyed/tendermint
 TENDERMINT_VERSION?=$(shell go list -m -f '{{ .Version }}' $(TENDERMINT_MOD))
 TENDERMINT_SRC?=$(shell go env GOMODCACHE)/$(TENDERMINT_MOD)@$(TENDERMINT_VERSION)
 TENDERMINT_PROTO?=$(TENDERMINT_SRC)/proto

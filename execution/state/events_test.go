@@ -13,7 +13,7 @@ import (
 	"github.com/klyed/hivesmartchain/txs"
 	"github.com/klyed/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/require"
-	dbm "github.com/tendermint/tm-db"
+	dbm "github.com/klyed/tm-db"
 )
 
 func TestWriteState_AddBlock(t *testing.T) {

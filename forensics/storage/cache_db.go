@@ -2,7 +2,7 @@ package storage
 
 import (
 	"github.com/klyed/hivesmartchain/storage"
-	dbm "github.com/tendermint/tm-db"
+	dbm "github.com/klyed/tm-db"
 )
 
 type CacheDB struct {

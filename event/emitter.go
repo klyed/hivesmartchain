@@ -11,7 +11,7 @@ import (
 	"github.com/klyed/hivesmartchain/event/query"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/logging/structure"
-	"github.com/tendermint/tendermint/libs/service"
+	"github.com/klyed/tendermint/libs/service"
 	hex "github.com/tmthrgd/go-hex"
 )
 

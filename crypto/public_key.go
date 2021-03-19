@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/btcsuite/btcd/btcec"
-	"github.com/tendermint/tendermint/crypto/tmhash"
+	"github.com/klyed/tendermint/crypto/tmhash"
 	hex "github.com/tmthrgd/go-hex"
 	"golang.org/x/crypto/ed25519"
 )

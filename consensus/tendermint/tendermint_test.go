@@ -7,9 +7,9 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"github.com/tendermint/tendermint/crypto/ed25519"
-	tmjson "github.com/tendermint/tendermint/libs/json"
-	"github.com/tendermint/tendermint/p2p"
+	"github.com/klyed/tendermint/crypto/ed25519"
+	tmjson "github.com/klyed/tendermint/libs/json"
+	"github.com/klyed/tendermint/p2p"
 )
 
 func TestMarshalNodeKey(t *testing.T) {

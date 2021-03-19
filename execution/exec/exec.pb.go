@@ -24,7 +24,7 @@ import (
 	github_com_klyed_hivesmartchain_txs "github.com/klyed/hivesmartchain/txs"
 	txs "github.com/klyed/hivesmartchain/txs"
 	github_com_klyed_hivesmartchain_txs_payload "github.com/klyed/hivesmartchain/txs/payload"
-	types "github.com/tendermint/tendermint/proto/tendermint/types"
+	types "github.com/klyed/tendermint/proto/tendermint/types"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

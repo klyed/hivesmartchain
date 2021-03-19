@@ -23,8 +23,8 @@ import (
 	"github.com/klyed/hivesmartchain/rpc/rpctransact"
 	"github.com/klyed/hivesmartchain/rpc/web3"
 	"github.com/klyed/hivesmartchain/txs"
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/version"
+	"github.com/klyed/tendermint/p2p"
+	"github.com/klyed/tendermint/version"
 	hex "github.com/tmthrgd/go-hex"
 )
 

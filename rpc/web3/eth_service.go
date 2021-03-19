@@ -23,8 +23,8 @@ import (
 	"github.com/klyed/hivesmartchain/project"
 	"github.com/klyed/hivesmartchain/txs"
 	"github.com/klyed/hivesmartchain/txs/payload"
-	tmConfig "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/types"
+	tmConfig "github.com/klyed/tendermint/config"
+	"github.com/klyed/tendermint/types"
 )
 
 const (

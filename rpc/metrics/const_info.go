@@ -3,8 +3,8 @@ package metrics
 import (
 	"github.com/klyed/hivesmartchain/acm/acmstate"
 	"github.com/klyed/hivesmartchain/rpc"
-	core_types "github.com/tendermint/tendermint/rpc/core/types"
-	"github.com/tendermint/tendermint/types"
+	core_types "github.com/klyed/tendermint/rpc/core/types"
+	"github.com/klyed/tendermint/types"
 )
 
 // For mocking purposes

@@ -2,9 +2,9 @@ package tendermint
 
 import (
 	"github.com/klyed/hivesmartchain/crypto"
-	tmCrypto "github.com/tendermint/tendermint/crypto"
-	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
-	"github.com/tendermint/tendermint/types"
+	tmCrypto "github.com/klyed/tendermint/crypto"
+	tmproto "github.com/klyed/tendermint/proto/tendermint/types"
+	"github.com/klyed/tendermint/types"
 )
 
 type privValidatorMemory struct {

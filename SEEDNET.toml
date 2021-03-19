@@ -170,13 +170,14 @@ HscDir = ".testnet"
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "26656"
-  ExternalAddress = "0.0.0.0:26656"
+  ExternalAddress = "localhost:26656"
   AddrBookStrict = false
   Moniker =  "HIVE SMART CHAIN SEED SERVER"
   IdentifyPeers = true
-  AuthorizedPeers = ""
+  AuthorizedPeers = "0.0.0.0"
   CreateEmptyBlocks = "3s"
   TxIndex = true
+  MaxNumPeers = 50
 
   [Execution]
     TimeoutFactor = 0.1
@@ -187,7 +188,7 @@ HscDir = ".testnet"
   [Keys]
     GRPCServiceEnabled = true
     AllowBadFilePermissions = true
-    RemoteAddress = "localhost:10997"
+    RemoteAddress = "0.0.0.0:10997"
     KeysDirectory = ".keys"
 
   [RPC]
@@ -220,4 +221,4 @@ HscDir = ".testnet"
     [Logging.RootSink]
       [Logging.RootSink.Output]
         OutputType = "stdout"
-        Format = "json"
+        Format = "plain"

@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/klyed/hivesmartchain/binary"
-	"github.com/tendermint/tendermint/types"
-	tmtime "github.com/tendermint/tendermint/types/time"
+	"github.com/klyed/tendermint/types"
+	tmtime "github.com/klyed/tendermint/types/time"
 )
 
 // TODO: type ?

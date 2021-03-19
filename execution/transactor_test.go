@@ -20,9 +20,9 @@ import (
 	"github.com/klyed/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	abciTypes "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/mempool"
-	tmTypes "github.com/tendermint/tendermint/types"
+	abciTypes "github.com/klyed/tendermint/abci/types"
+	"github.com/klyed/tendermint/mempool"
+	tmTypes "github.com/klyed/tendermint/types"
 )
 
 func TestTransactor_BroadcastTxSync(t *testing.T) {

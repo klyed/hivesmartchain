@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/klyed/hivesmartchain/consensus/abci"
-	tmConfig "github.com/tendermint/tendermint/config"
+	tmConfig "github.com/klyed/tendermint/config"
 )
 
 const (
@@ -57,7 +57,7 @@ func DefaultBurrowConfig() *BurrowConfig {
 		ListenHost:        url.Hostname(),
 		ListenPort:        url.Port(),
 		ExternalAddress:   tmDefaultConfig.P2P.ExternalAddress,
-		CreateEmptyBlocks: "1s",
+		CreateEmptyBlocks: "2s",
 	}
 }
 

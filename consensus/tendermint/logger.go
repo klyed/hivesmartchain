@@ -2,7 +2,7 @@ package tendermint
 
 import (
 	"github.com/klyed/hivesmartchain/logging"
-	"github.com/tendermint/tendermint/libs/log"
+	"github.com/klyed/tendermint/libs/log"
 )
 
 type tendermintLogger struct {

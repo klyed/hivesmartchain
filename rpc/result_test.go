@@ -10,7 +10,7 @@ import (
 	"github.com/klyed/hivesmartchain/acm"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	tmTypes "github.com/tendermint/tendermint/types"
+	tmTypes "github.com/klyed/tendermint/types"
 )
 
 func TestResultListAccounts(t *testing.T) {

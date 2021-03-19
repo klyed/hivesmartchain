@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/btcsuite/btcd/btcec"
-	tmCrypto "github.com/tendermint/tendermint/crypto"
-	tmEd25519 "github.com/tendermint/tendermint/crypto/ed25519"
-	tmSecp256k1 "github.com/tendermint/tendermint/crypto/secp256k1"
+	tmCrypto "github.com/klyed/tendermint/crypto"
+	tmEd25519 "github.com/klyed/tendermint/crypto/ed25519"
+	tmSecp256k1 "github.com/klyed/tendermint/crypto/secp256k1"
 )
 
 func PublicKeyFromTendermintPubKey(pubKey tmCrypto.PubKey) (*PublicKey, error) {
@@ -54,7 +54,7 @@ func (sig Signature) TendermintSignature() []byte {
 		if err != nil {
 			return nil
 		}
-		// https://github.com/tendermint/tendermint/blob/master/crypto/secp256k1/secp256k1_nocgo.go#L62
+		// https://github.com/klyed/tendermint/blob/master/crypto/secp256k1/secp256k1_nocgo.go#L62
 		r := sig.R.Bytes()
 		s := sig.S.Bytes()
 		data := make([]byte, 64)

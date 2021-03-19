@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/klyed/hivesmartchain/encoding"
-	"github.com/tendermint/tendermint/p2p"
+	"github.com/klyed/tendermint/p2p"
 
 	"github.com/klyed/hivesmartchain/acm"
 	"github.com/klyed/hivesmartchain/acm/acmstate"

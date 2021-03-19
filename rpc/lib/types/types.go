@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	"github.com/pkg/errors"
-	tmpubsub "github.com/tendermint/tendermint/libs/pubsub"
+	tmpubsub "github.com/klyed/tendermint/libs/pubsub"
 )
 
 type RPCRequest struct {

@@ -6,11 +6,11 @@ import (
 	"github.com/klyed/hivesmartchain/crypto"
 	"github.com/klyed/hivesmartchain/txs"
 	"github.com/streadway/simpleuuid"
-	"github.com/tendermint/tendermint/consensus"
-	ctypes "github.com/tendermint/tendermint/consensus/types"
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/types"
+	"github.com/klyed/tendermint/consensus"
+	ctypes "github.com/klyed/tendermint/consensus/types"
+	"github.com/klyed/tendermint/p2p"
+	"github.com/klyed/tendermint/state"
+	"github.com/klyed/tendermint/types"
 )
 
 type NodeView struct {
