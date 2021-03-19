@@ -165,7 +165,7 @@ HscDir = ".testnet"
 
 [Tendermint]
   Enabled = true
-  Seeds = ""
+  Seeds = "185.130.44.72"
   SeedMode = false
   PersistentPeers = "54a8349714b95a88b1da3af56bccbf4754c79328@185.130.44.72:26656"
   ListenHost = "0.0.0.0"

@@ -166,7 +166,7 @@ HscDir = ".testnet"
 [Tendermint]
   Enabled = true
   Seeds = ""
-  SeedMode = false
+  SeedMode = true
   PersistentPeers = ""
   ListenHost = "0.0.0.0"
   ListenPort = "26656"
@@ -186,7 +186,7 @@ HscDir = ".testnet"
   [Keys]
     GRPCServiceEnabled = true
     AllowBadFilePermissions = true
-    RemoteAddress = "0.0.0.0:10997"
+    RemoteAddress = "185.130.44.72:10997"
     KeysDirectory = ".keys"
 
   [RPC]
