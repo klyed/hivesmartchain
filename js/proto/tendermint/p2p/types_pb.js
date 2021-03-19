@@ -587,7 +587,7 @@ proto.tendermint.p2p.DefaultNodeInfo.deserializeBinaryFromReader = function(msg,
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNodeName(value);
+      msg.setMoniker(value);
       break;
     case 8:
       var value = new proto.tendermint.p2p.DefaultNodeInfoOther;
@@ -666,7 +666,7 @@ proto.tendermint.p2p.DefaultNodeInfo.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = message.getNodeName();
+  f = message.getMoniker();
   if (f.length > 0) {
     writer.writeString(
       7,

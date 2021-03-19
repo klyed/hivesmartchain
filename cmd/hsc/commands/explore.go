@@ -19,12 +19,12 @@ import (
 func Explore(output Output) func(cmd *cli.Cmd) {
 	return func(cmd *cli.Cmd) {
 		configOpts := addConfigOptions(cmd)
-		var conf *config.HiveSmartChainConfig
+		var conf *config.BurrowTendermintConfig
 		var explorer *bcm.BlockStore
 		var err error
 
 		cmd.Before = func() {
-			conf, err = configOpts.obtainHiveSmartChainConfig()
+			conf, err = configOpts.obtainBurrowTendermintConfig()
 			if err != nil {
 				output.Fatalf("could not obtain config: %v", err)
 			}

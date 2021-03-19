@@ -20,7 +20,7 @@ const (
 // HiveSmartChain's view on Tendermint's config. Since we operate as a Tendermint harness not all configuration values
 // are applicable, we may not allow some values to specified, or we may not allow some to be set independently.
 // So this serves as a layer of indirection over Tendermint's real config that we derive from ours.
-type HiveSmartChainTendermintConfig struct {
+type BurrowTendermintConfig struct {
 	Enabled bool
 	// Initial peers we connect to for peer exchange
 	Seeds string
@@ -35,7 +35,7 @@ type HiveSmartChainTendermintConfig struct {
 	// Set true for strict address routability rules
 	// Set false for private or local networks
 	AddrBookStrict bool
-	NodeName       string
+	Moniker        string
 	// Only accept connections from registered peers
 	IdentifyPeers bool
 	// Peers ID or address this node is authorize to sync with
@@ -46,13 +46,13 @@ type HiveSmartChainTendermintConfig struct {
 	CreateEmptyBlocks string
 }
 
-func DefaultHiveSmartChainTendermintConfig() *HiveSmartChainTendermintConfig {
+func DefaultBurrowTendermintConfig() *BurrowTendermintConfig {
 	tmDefaultConfig := tmConfig.DefaultConfig()
 	url, err := url.ParseRequestURI(tmDefaultConfig.P2P.ListenAddress)
 	if err != nil {
 		return nil
 	}
-	return &HiveSmartChainTendermintConfig{
+	return &BurrowTendermintConfig{
 		Enabled:           true,
 		ListenHost:        url.Hostname(),
 		ListenPort:        url.Port(),
@@ -61,7 +61,7 @@ func DefaultHiveSmartChainTendermintConfig() *HiveSmartChainTendermintConfig {
 	}
 }
 
-func (btc *HiveSmartChainTendermintConfig) Config(rootDir string, timeoutFactor float64) (*tmConfig.Config, error) {
+func (btc *BurrowTendermintConfig) Config(rootDir string, timeoutFactor float64) (*tmConfig.Config, error) {
 	conf := tmConfig.DefaultConfig()
 	// We expose Tendermint config as required, but try to give fewer levers to pull where possible
 	if btc != nil {
@@ -122,7 +122,7 @@ func (btc *HiveSmartChainTendermintConfig) Config(rootDir string, timeoutFactor 
 	return conf, nil
 }
 
-func (btc *HiveSmartChainTendermintConfig) DefaultAuthorizedPeersProvider() abci.AuthorizedPeers {
+func (btc *BurrowTendermintConfig) DefaultAuthorizedPeersProvider() abci.AuthorizedPeers {
 	authorizedPeers := abci.NewPeerLists()
 
 	authorizedPeersAddrOrID := strings.Split(btc.AuthorizedPeers, ",")
@@ -146,6 +146,6 @@ func scaleTimeout(factor float64, timeout time.Duration) time.Duration {
 	return time.Duration(math.Round(factor * float64(timeout)))
 }
 
-func (btc *HiveSmartChainTendermintConfig) ListenAddress() string {
+func (btc *BurrowTendermintConfig) ListenAddress() string {
 	return net.JoinHostPort(btc.ListenHost, btc.ListenPort)
 }

@@ -29,7 +29,7 @@ import (
 
 func TestGovernance(t *testing.T) {
 	genesisAccounts := integration.MakePrivateAccounts("mysecret", 10) // make keys
-	genesisConfigs := make([]*config.HiveSmartChainConfig, len(genesisAccounts))
+	genesisConfigs := make([]*config.BurrowTendermintConfig, len(genesisAccounts))
 	genesisKernels := make([]*core.Kernel, len(genesisAccounts))
 	genesisDoc := integration.TestGenesisDoc(genesisAccounts, 0)
 	genesisDoc.Accounts[4].Permissions = permission.NewAccountPermissions(permission.Send | permission.Call)

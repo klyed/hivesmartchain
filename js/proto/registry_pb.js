@@ -112,7 +112,7 @@ proto.registry.NodeIdentity.deserializeBinaryFromReader = function(msg, reader) 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNodeName(value);
+      msg.setMoniker(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -155,7 +155,7 @@ proto.registry.NodeIdentity.prototype.serializeBinary = function() {
  */
 proto.registry.NodeIdentity.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNodeName();
+  f = message.getMoniker();
   if (f.length > 0) {
     writer.writeString(
       1,

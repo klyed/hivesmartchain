@@ -14,28 +14,28 @@ import (
 	tmConfig "github.com/tendermint/tendermint/config"
 )
 
-const DefaultHiveSmartChainConfigTOMLFileName = "hsc.toml"
-const DefaultHiveSmartChainConfigEnvironmentVariable = "HSC_CONFIG_JSON"
+const DefaultBurrowTendermintConfigTOMLFileName = "hsc.toml"
+const DefaultBurrowTendermintConfigEnvironmentVariable = "HSC_CONFIG_JSON"
 const DefaultGenesisDocJSONFileName = "genesis.json"
 
-type HiveSmartChainConfig struct {
+type BurrowTendermintConfig struct {
 	// Set on startup
 	ValidatorAddress *crypto.Address `json:",omitempty" toml:",omitempty"`
 	Passphrase       *string         `json:",omitempty" toml:",omitempty"`
 	// From config file
 	HscDir     string
-	GenesisDoc *genesis.GenesisDoc                        `json:",omitempty" toml:",omitempty"`
-	Tendermint *tendermint.HiveSmartChainTendermintConfig `json:",omitempty" toml:",omitempty"`
-	Execution  *execution.ExecutionConfig                 `json:",omitempty" toml:",omitempty"`
-	Keys       *keys.KeysConfig                           `json:",omitempty" toml:",omitempty"`
-	RPC        *rpc.RPCConfig                             `json:",omitempty" toml:",omitempty"`
-	Logging    *logconfig.LoggingConfig                   `json:",omitempty" toml:",omitempty"`
+	GenesisDoc *genesis.GenesisDoc                `json:",omitempty" toml:",omitempty"`
+	Tendermint *tendermint.BurrowTendermintConfig `json:",omitempty" toml:",omitempty"`
+	Execution  *execution.ExecutionConfig         `json:",omitempty" toml:",omitempty"`
+	Keys       *keys.KeysConfig                   `json:",omitempty" toml:",omitempty"`
+	RPC        *rpc.RPCConfig                     `json:",omitempty" toml:",omitempty"`
+	Logging    *logconfig.LoggingConfig           `json:",omitempty" toml:",omitempty"`
 }
 
-func DefaultHiveSmartChainConfig() *HiveSmartChainConfig {
-	return &HiveSmartChainConfig{
+func DefaultBurrowTendermintConfig() *BurrowTendermintConfig {
+	return &BurrowTendermintConfig{
 		HscDir:     ".hivesmartchain",
-		Tendermint: tendermint.DefaultHiveSmartChainTendermintConfig(),
+		Tendermint: tendermint.DefaultBurrowTendermintConfig(),
 		Keys:       keys.DefaultKeysConfig(),
 		RPC:        rpc.DefaultRPCConfig(),
 		Execution:  execution.DefaultExecutionConfig(),
@@ -43,7 +43,7 @@ func DefaultHiveSmartChainConfig() *HiveSmartChainConfig {
 	}
 }
 
-func (conf *HiveSmartChainConfig) Verify() error {
+func (conf *BurrowTendermintConfig) Verify() error {
 	conf.P2P.AddrBookStrict = false
 	if conf.ValidatorAddress == nil {
 		return fmt.Errorf("could not finalise address - please provide one in config or via --account-address")
@@ -51,14 +51,14 @@ func (conf *HiveSmartChainConfig) Verify() error {
 	return nil
 }
 
-func (conf *HiveSmartChainConfig) TendermintConfig() (*tmConfig.Config, error) {
+func (conf *BurrowTendermintConfig) TendermintConfig() (*tmConfig.Config, error) {
 	return conf.Tendermint.Config(conf.HscDir, conf.Execution.TimeoutFactor)
 }
 
-func (conf *HiveSmartChainConfig) JSONString() string {
+func (conf *BurrowTendermintConfig) JSONString() string {
 	return source.JSONString(conf)
 }
 
-func (conf *HiveSmartChainConfig) TOMLString() string {
+func (conf *BurrowTendermintConfig) TOMLString() string {
 	return source.TOMLString(conf)
 }

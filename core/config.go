@@ -53,7 +53,7 @@ func (kern *Kernel) LoadExecutionOptionsFromConfig(conf *execution.ExecutionConf
 }
 
 // LoadTendermintFromConfig loads our consensus engine into the kernel
-func (kern *Kernel) LoadTendermintFromConfig(conf *config.HiveSmartChainConfig, privVal tmTypes.PrivValidator) (err error) {
+func (kern *Kernel) LoadTendermintFromConfig(conf *config.BurrowTendermintConfig, privVal tmTypes.PrivValidator) (err error) {
 	if conf.Tendermint == nil || !conf.Tendermint.Enabled {
 		return nil
 	}
@@ -96,7 +96,7 @@ func (kern *Kernel) LoadTendermintFromConfig(conf *config.HiveSmartChainConfig, 
 }
 
 // LoadKernelFromConfig builds and returns a Kernel based solely on the supplied configuration
-func LoadKernelFromConfig(conf *config.HiveSmartChainConfig) (*Kernel, error) {
+func LoadKernelFromConfig(conf *config.BurrowTendermintConfig) (*Kernel, error) {
 	kern, err := NewKernel(conf.HscDir)
 	if err != nil {
 		return nil, fmt.Errorf("could not create initial kernel: %v", err)

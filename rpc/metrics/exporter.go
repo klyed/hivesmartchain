@@ -29,7 +29,7 @@ type Exporter struct {
 	service                      InfoService
 	datum                        *Datum
 	chainID                      string
-	validatorNodeName            string
+	validatorMoniker             string
 	blockSampleSize              uint64
 	txPerBlockHistogramBuilder   HistogramBuilder
 	timePerBlockHistogramBuilder HistogramBuilder
@@ -72,7 +72,7 @@ func NewExporter(service InfoService, blockSampleSize int, logger *logging.Logge
 		datum:                        &Datum{},
 		service:                      service,
 		chainID:                      chainStatus.NodeInfo.Network,
-		validatorMoniker:            chainStatus.NodeInfo.Moniker,
+		validatorMoniker:             chainStatus.NodeInfo.Moniker,
 		blockSampleSize:              uint64(blockSampleSize),
 		txPerBlockHistogramBuilder:   makeHistogramBuilder(identity),
 		timePerBlockHistogramBuilder: makeHistogramBuilder(significantFiguresRounder(significantFiguresForSeconds)),
@@ -101,35 +101,35 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 		prometheus.CounterValue,
 		e.datum.LatestBlockHeight,
 		e.chainID,
-		e.validatorNodeName,
+		e.validatorMoniker,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		UnconfirmedTransactions,
 		prometheus.GaugeValue,
 		e.datum.UnconfirmedTxs,
 		e.chainID,
-		e.validatorNodeName,
+		e.validatorMoniker,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		TotalPeers,
 		prometheus.GaugeValue,
 		e.datum.TotalPeers,
 		e.chainID,
-		e.validatorNodeName,
+		e.validatorMoniker,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		InboundPeers,
 		prometheus.GaugeValue,
 		e.datum.InboundPeers,
 		e.chainID,
-		e.validatorNodeName,
+		e.validatorMoniker,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		OutboundPeers,
 		prometheus.GaugeValue,
 		e.datum.OutboundPeers,
 		e.chainID,
-		e.validatorNodeName,
+		e.validatorMoniker,
 	)
 	ch <- prometheus.MustNewConstHistogram(
 		TxPerBlock,
@@ -137,7 +137,7 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 		e.datum.TotalTxs,
 		e.datum.TxPerBlockBuckets,
 		e.chainID,
-		e.validatorNodeName,
+		e.validatorMoniker,
 	)
 	ch <- prometheus.MustNewConstHistogram(
 		TimePerBlock,
@@ -146,21 +146,21 @@ func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
 		e.datum.TotalTime,
 		e.datum.TimePerBlockBuckets,
 		e.chainID,
-		e.validatorNodeName,
+		e.validatorMoniker,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		Contracts,
 		prometheus.GaugeValue,
 		e.datum.AccountsWithCode,
 		e.chainID,
-		e.validatorNodeName,
+		e.validatorMoniker,
 	)
 	ch <- prometheus.MustNewConstMetric(
 		Users,
 		prometheus.GaugeValue,
 		e.datum.AccountsWithoutCode,
 		e.chainID,
-		e.validatorNodeName,
+		e.validatorMoniker,
 	)
 
 	e.logger.InfoMsg("All Metrics successfully collected")

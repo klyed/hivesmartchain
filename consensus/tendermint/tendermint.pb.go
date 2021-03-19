@@ -34,7 +34,7 @@ type NodeInfo struct {
 	Network              string                                          `protobuf:"bytes,3,opt,name=Network,proto3" json:"Network,omitempty"`
 	Version              string                                          `protobuf:"bytes,4,opt,name=Version,proto3" json:"Version,omitempty"`
 	Channels             github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,5,opt,name=Channels,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"Channels"`
-	NodeName             string                                          `protobuf:"bytes,6,opt,name=NodeName,proto3" json:"NodeName,omitempty"`
+	Moniker              string                                          `protobuf:"bytes,6,opt,name=Moniker,proto3" json:"Moniker,omitempty"`
 	RPCAddress           string                                          `protobuf:"bytes,7,opt,name=RPCAddress,proto3" json:"RPCAddress,omitempty"`
 	TxIndex              string                                          `protobuf:"bytes,8,opt,name=TxIndex,proto3" json:"TxIndex,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
@@ -92,7 +92,7 @@ func (m *NodeInfo) GetVersion() string {
 	return ""
 }
 
-func (m *NodeInfo) GetNodeName() string {
+func (m *NodeInfo) GetMoniker() string {
 	if m != nil {
 		return m.Moniker
 	}
@@ -488,7 +488,7 @@ func (m *NodeInfo) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 6:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeName", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Moniker", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {

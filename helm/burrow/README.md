@@ -80,7 +80,7 @@ The following table lists the configurable parameters of the HiveSmartChain char
 | `livenessProbe.timeoutSeconds` | retry after | `1` |
 | `livenessProbe.periodSeconds` | check every | `30` |
 | `nodeSelector` | node labels for pod assignment | `{}` |
-| `organization` | name of the organization running these nodes (used in the peer's nodename) | `""` |
+| `organization` | name of the organization running these nodes (used in the peer's moniker) | `""` |
 | `persistence.enabled` | enable pvc for the chain data | `true` |
 | `persistence.size` | size of the chain data pvc | `"80Gi"` |
 | `persistence.storageClass` | storage class for the chain data pvc | `"standard"` |

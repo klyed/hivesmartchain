@@ -8,8 +8,8 @@ import * as jspb from "google-protobuf";
 import * as gogoproto_gogo_pb from "./gogoproto/gogo_pb";
 
 export class NodeIdentity extends jspb.Message { 
-    getNodeName(): string;
-    setNodeName(value: string): NodeIdentity;
+    getMoniker(): string;
+    setMoniker(value: string): NodeIdentity;
 
     getNetworkaddress(): string;
     setNetworkaddress(value: string): NodeIdentity;

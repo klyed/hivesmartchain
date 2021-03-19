@@ -27,7 +27,7 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 
 		// formulate first to enable better visibility for the tx input
 		cmd.Command("formulate", "formulate a tx", func(cmd *cli.Cmd) {
-			conf, err := configOpts.obtainHiveSmartChainConfig()
+			conf, err := configOpts.obtainBurrowTendermintConfig()
 			if err != nil {
 				output.Fatalf("could not set up config: %v", err)
 			}
@@ -124,8 +124,8 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 				sourceOpt := cmd.StringOpt("source", "", "Address to send from, if not set config is used")
 				nodeKeyOpt := cmd.StringOpt("node-key", "", "File containing the nodeKey to use, default config")
 				networkOpt := cmd.StringOpt("network", "", "Publically reachable host IP")
-				nodenameOpt := cmd.StringOpt("nodename", "", "Human readable node ID")
-				cmd.Spec += "[--source=<address>] [--node-key=<file>] [--network=<address>] [--nodename=<name>]"
+				monikerOpt := cmd.StringOpt("moniker", "", "Human readable node ID")
+				cmd.Spec += "[--source=<address>] [--node-key=<file>] [--network=<address>] [--moniker=<name>]"
 
 				cmd.Action = func() {
 
@@ -137,7 +137,7 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 					id := &def.Identify{
 						Source:     jobs.FirstOf(*sourceOpt, address),
 						NodeKey:    jobs.FirstOf(*nodeKeyOpt, tmConf.NodeKeyFile()),
-						Moniker:   *nodenameOpt,
+						Moniker:    *monikerOpt,
 						NetAddress: jobs.FirstOf(*networkOpt, conf.Tendermint.ListenHost),
 					}
 
@@ -158,7 +158,7 @@ func Tx(output Output) func(cmd *cli.Cmd) {
 		})
 
 		cmd.Command("commit", "read and send a tx to mempool", func(cmd *cli.Cmd) {
-			conf, err := configOpts.obtainHiveSmartChainConfig()
+			conf, err := configOpts.obtainBurrowTendermintConfig()
 			if err != nil {
 				output.Fatalf("could not set up config: %v", err)
 			}

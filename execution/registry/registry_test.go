@@ -12,7 +12,7 @@ import (
 
 func TestEncodeProtobuf(t *testing.T) {
 	entry := &NodeIdentity{
-		Moniker:         "test",
+		Moniker:          "test",
 		TendermintNodeID: crypto.Address{},
 		ValidatorPublicKey: &crypto.PublicKey{
 			CurveType: crypto.CurveTypeEd25519,

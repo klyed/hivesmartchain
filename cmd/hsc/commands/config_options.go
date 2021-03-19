@@ -17,7 +17,7 @@ type configOptions struct {
 	accountIndexOpt    *int
 	initAddressOpt     *string
 	initPassphraseOpt  *string
-	initNodeNameOpt    *string
+	initMonikerOpt     *string
 	externalAddressOpt *string
 	grpcAddressOpt     *string
 }
@@ -39,7 +39,7 @@ var genesisFileOption = cli.StringOpt{
 }
 
 func addConfigOptions(cmd *cli.Cmd) *configOptions {
-	spec := "[--nodename=<human readable nodename>] " +
+	spec := "[--moniker=<human readable moniker>] " +
 		"[--index=<index of account in GenesisDoc> " +
 		"|--validator=<index of validator in GenesisDoc> " +
 		"|--address=<address of signing key>] " +
@@ -76,9 +76,9 @@ func addConfigOptions(cmd *cli.Cmd) *configOptions {
 			EnvVar: "HSC_PASSPHRASE",
 		}),
 
-		initNodeNameOpt: cmd.String(cli.StringOpt{
-			Name:   "m nodename",
-			Desc:   "An optional human-readable nodename to identify this node amongst Tendermint peers in logs and status queries",
+		initMonikerOpt: cmd.String(cli.StringOpt{
+			Name:   "m moniker",
+			Desc:   "An optional human-readable moniker to identify this node amongst Tendermint peers in logs and status queries",
 			EnvVar: "HSC_NODE_MONIKER",
 		}),
 
@@ -100,7 +100,7 @@ func addConfigOptions(cmd *cli.Cmd) *configOptions {
 	}
 }
 
-func (opts *configOptions) obtainHiveSmartChainConfig() (*config.HiveSmartChainConfig, error) {
+func (opts *configOptions) obtainBurrowTendermintConfig() (*config.BurrowTendermintConfig, error) {
 	conf, err := obtainDefaultConfig(*opts.configFileOpt, *opts.genesisFileOpt)
 	if err != nil {
 		return nil, err
@@ -113,17 +113,17 @@ func (opts *configOptions) obtainHiveSmartChainConfig() (*config.HiveSmartChainC
 	if *opts.initPassphraseOpt != "" {
 		conf.Passphrase = opts.initPassphraseOpt
 	}
-	if *opts.initNodeNameOpt == "" {
+	if *opts.initMonikerOpt == "" {
 		chainIDHeader := ""
 		if conf.GenesisDoc != nil && conf.GenesisDoc.ChainID() != "" {
 			chainIDHeader = conf.GenesisDoc.ChainID() + "_"
 		}
 		if conf.ValidatorAddress != nil {
-			// Set a default nodename... since we can at this stage of config completion and it is required for start
+			// Set a default moniker... since we can at this stage of config completion and it is required for start
 			conf.Tendermint.Moniker = fmt.Sprintf("%sNode_%s", chainIDHeader, conf.ValidatorAddress)
 		}
 	} else {
-		conf.Tendermint.Moniker = *opts.initNodeNameOpt
+		conf.Tendermint.Moniker = *opts.initMonikerOpt
 	}
 	if *opts.externalAddressOpt != "" {
 		conf.Tendermint.ExternalAddress = *opts.externalAddressOpt
@@ -145,7 +145,8 @@ func (opts *configOptions) obtainHiveSmartChainConfig() (*config.HiveSmartChainC
 // 	3. genesis validators (by index)
 // 	4. config
 // 	5. genesis validator (if only one)
-func accountAddress(conf *config.HiveSmartChainConfig, addressIn string, accIndex, valIndex int) (*crypto.Address, error) {
+
+func accountAddress(conf *config.BurrowTendermintConfig, addressIn string, accIndex, valIndex int) (*crypto.Address, error) {
 	if addressIn != "" {
 		address, err := crypto.AddressFromHexString(addressIn)
 		if err != nil {

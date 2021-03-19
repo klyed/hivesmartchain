@@ -136,7 +136,7 @@ proto.tendermint.NodeInfo.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNodeName(value);
+      msg.setMoniker(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -210,7 +210,7 @@ proto.tendermint.NodeInfo.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getNodeName();
+  f = message.getMoniker();
   if (f.length > 0) {
     writer.writeString(
       6,

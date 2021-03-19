@@ -356,7 +356,7 @@ bin/helm:
 	curl https://get.helm.sh/helm-v3.0.2-$(ARCH).tar.gz | tar xvzO $(ARCH)/helm > bin/helm && chmod +x bin/helm
 
 
-// TODO: reinstate
+# TODO: reinstate
 
 .PHONY: helm_deps
 helm_deps: bin/helm

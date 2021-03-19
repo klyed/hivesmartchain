@@ -122,7 +122,7 @@ func infoService() *constInfo {
 	return &constInfo{
 		ResultStatus: &rpc.ResultStatus{
 			NodeInfo: &tendermint.NodeInfo{
-				Network:  "TestChain",
+				Network: "TestChain",
 				Moniker: "TestNode",
 			},
 			SyncInfo: &bcm.SyncInfo{
