@@ -175,10 +175,11 @@ HscDir = ".testnet"
   Moniker =  "HIVE SMART CHAIN WITNESS SERVER"
   IdentifyPeers = true
   AuthorizedPeers = ""
-  CreateEmptyBlocks = "1s"
-
+  CreateEmptyBlocks = "3s"
+  TxIndex = true
+  
 [Execution]
-  TimeoutFactor = 0.1
+  TimeoutFactor = 0.33
   CallStackMaxDepth = 0
   DataStackInitialCapacity = 1024
   DataStackMaxDepth = 0

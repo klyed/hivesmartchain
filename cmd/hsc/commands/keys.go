@@ -61,8 +61,7 @@ func Keys(output Output) func(cmd *cli.Cmd) {
 			}
 
 			cmd.Action = func() {
-				badPerm := true
-				conf.Keys.AllowBadFilePermissions = badPerm //Original was: *badPerm   Changed to true to enable windows compiling
+				conf.Keys.AllowBadFilePermissions = *badPerm //Original was: *badPerm   Changed to true to enable windows compiling
 
 				if *keysDir != "" {
 					conf.Keys.KeysDirectory = *keysDir

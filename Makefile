@@ -208,7 +208,7 @@ yarn_install:
 
 .PHONY: test_js
 test_js:
-	@cd ${HSC_TS_PATH} && yarn test
+	@cd ${HSC_TS_PATH} && yarn test.sh
 
 .PHONY: publish_js
 publish_js:

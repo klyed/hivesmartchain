@@ -15,9 +15,9 @@
 # USAGE
 # source test_runner.sh
 
-script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+script_dir="$( cd "$( dirname "${BASH_SOURCE}" )" && pwd )"
 
-export hsc_bin=${hsc_bin:-hsc}
+export hsc_bin=${hsc_bin:-hsc} #${hsc_bin:-hsc}
 export solc_bin=${solc_bin:-solc}
 export solang_bin=${solang_bin:-solang}
 
@@ -67,9 +67,9 @@ test_setup(){
 
   echo
   echo "Using binaries:"
-  echo "  $(type ${solc_bin}) (version: $(${solc_bin} --version))"
-  echo "  $(type ${solang_bin}) (version: $(${solang_bin} --version))"
-  echo "  $(type ${hsc_bin}) (version: $(${hsc_bin} --version))"
+  echo "  $(type ${solc_bin}) (version: $(./${solc_bin} --version))"
+  echo "  $(type ${solang_bin}) (version: $(./${solang_bin} --version))"
+  echo "  $(type ${hsc_bin}) (version: $(./${hsc_bin} --version))"
   echo
   # start test chain
   HSC_ADDRESS="$HSC_HOST:$HSC_GRPC_PORT"
@@ -118,4 +118,3 @@ test_teardown(){
    fi
   exit ${test_exit}
 }
-

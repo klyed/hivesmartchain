@@ -33,7 +33,7 @@ perform_tests(){
   apps=$1*/deploy.yaml
 
   # Run all jobs in parallel with mempool signing
-  deploy_cmd="${hsc_bin} deploy --jobs=100 --chain=$HSC_HOST:$HSC_GRPC_PORT --keys=$HSC_HOST:$HSC_GRPC_PORT \
+  deploy_cmd="./${hsc_bin} deploy --jobs=100 --chain=$HSC_HOST:$HSC_GRPC_PORT --keys=$HSC_HOST:$HSC_GRPC_PORT \
    --address $key1 --mempool-signing --set key2_addr=$key2_addr --set addr2_pub=$key2_pub --set key1=$key1 --set key2=$key2 --proposal-create $apps"
   [[ "$debug" == true ]] && deploy_cmd="$deploy_cmd --debug"
   echo "executing deploy with command line:"
