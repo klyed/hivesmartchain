@@ -11,7 +11,7 @@ import (
 	"github.com/klyed/hivesmartchain/keys"
 	"github.com/klyed/hivesmartchain/logging/logconfig"
 	"github.com/klyed/hivesmartchain/rpc"
-	tmConfig "github.com/klyed/tendermint/config"
+	tmConfig "github.com/tendermint/tendermint/config"
 )
 
 const DefaultBurrowConfigTOMLFileName = "hsc.toml"
@@ -24,12 +24,12 @@ type BurrowConfig struct {
 	Passphrase       *string         `json:",omitempty" toml:",omitempty"`
 	// From config file
 	HscDir     string
-	GenesisDoc *genesis.GenesisDoc                `json:",omitempty" toml:",omitempty"`
-	Tendermint *tendermint.BurrowConfig `json:",omitempty" toml:",omitempty"`
-	Execution  *execution.ExecutionConfig         `json:",omitempty" toml:",omitempty"`
-	Keys       *keys.KeysConfig                   `json:",omitempty" toml:",omitempty"`
-	RPC        *rpc.RPCConfig                     `json:",omitempty" toml:",omitempty"`
-	Logging    *logconfig.LoggingConfig           `json:",omitempty" toml:",omitempty"`
+	GenesisDoc *genesis.GenesisDoc        `json:",omitempty" toml:",omitempty"`
+	Tendermint *tendermint.BurrowConfig   `json:",omitempty" toml:",omitempty"`
+	Execution  *execution.ExecutionConfig `json:",omitempty" toml:",omitempty"`
+	Keys       *keys.KeysConfig           `json:",omitempty" toml:",omitempty"`
+	RPC        *rpc.RPCConfig             `json:",omitempty" toml:",omitempty"`
+	Logging    *logconfig.LoggingConfig   `json:",omitempty" toml:",omitempty"`
 }
 
 func DefaultBurrowConfig() *BurrowConfig {

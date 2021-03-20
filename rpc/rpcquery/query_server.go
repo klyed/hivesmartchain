@@ -20,8 +20,8 @@ import (
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/rpc"
 	"github.com/klyed/hivesmartchain/txs/payload"
-	tmproto "github.com/klyed/tendermint/proto/tendermint/types"
-	tmtypes "github.com/klyed/tendermint/types"
+	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
+	tmtypes "github.com/tendermint/tendermint/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

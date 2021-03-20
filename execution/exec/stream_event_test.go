@@ -11,7 +11,7 @@ import (
 	"github.com/klyed/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	tmproto "github.com/klyed/tendermint/proto/tendermint/types"
+	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )
 
 var genesisDoc, accounts, _ = genesis.NewDeterministicGenesis(345234523).GenesisDoc(10, 0)

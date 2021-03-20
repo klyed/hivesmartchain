@@ -3,7 +3,7 @@ package storage
 import (
 	"bytes"
 
-	dbm "github.com/klyed/tm-db"
+	dbm "github.com/tendermint/tm-db"
 	hex "github.com/tmthrgd/go-hex"
 )
 

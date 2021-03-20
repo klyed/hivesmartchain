@@ -10,7 +10,7 @@ import (
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/logging/structure"
 	"github.com/klyed/hivesmartchain/txs"
-	"github.com/klyed/tendermint/abci/types"
+	"github.com/tendermint/tendermint/abci/types"
 )
 
 // Attempt to execute a transaction using ABCI conventions and codes

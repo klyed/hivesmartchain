@@ -460,7 +460,7 @@ Hotfix release for 0.23.1
 - Release our mempool signing lock once transactions have been CheckTx'd' to massively increase throughput.
 
 ### Added
-- Upgraded to Tendermint [0.22.8](https://github.com/klyed/tendermint/compare/v0.22.4...v0.22.8) (from 0.22.4).
+- Upgraded to Tendermint [0.22.8](https://github.com/tendermint/tendermint/compare/v0.22.4...v0.22.8) (from 0.22.4).
 - Support mempool signing for BroadcastTxAsync.
 - Reload log file (e.g. for logrotate) on SIGHUP and dump capture logs on SIGUSR1 and on shutdown (e.g. for debug).
 - File logger accepts {{.Timestamp}} in file names to generate a log file per run.
@@ -617,7 +617,7 @@ By doing this we can resolve some issues with users of the v0 RPC without making
 a breaking API change.
 
 ## [0.16.2] - 2017-04-20
-This release finalises our accession to the Hyperledger project and updates our root package namespace to github.com/hyperledger/hsc.
+This release finalises our accession to the Hyperledger project and updates our root package namespace togithub.com/hyperledger/hsc.
 
 It also includes a bug fix for rpc/V0 so that BroadcastTx can accept any transaction type and various pieces of internal clean-up.
 

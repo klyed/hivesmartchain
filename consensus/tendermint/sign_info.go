@@ -9,10 +9,10 @@ import (
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/klyed/hivesmartchain/binary"
-	"github.com/klyed/tendermint/libs/protoio"
-	tmproto "github.com/klyed/tendermint/proto/tendermint/types"
-	"github.com/klyed/tendermint/types"
-	tmtime "github.com/klyed/tendermint/types/time"
+	"github.com/tendermint/tendermint/libs/protoio"
+	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
+	"github.com/tendermint/tendermint/types"
+	tmtime "github.com/tendermint/tendermint/types/time"
 )
 
 // TODO: type ?

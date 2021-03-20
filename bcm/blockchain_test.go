@@ -9,7 +9,7 @@ import (
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	dbm "github.com/klyed/tm-db"
+	dbm "github.com/tendermint/tm-db"
 )
 
 func TestLoadOrNewBlockchain(t *testing.T) {

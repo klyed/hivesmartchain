@@ -8,8 +8,8 @@ builds:
   ldflags:
   - -extldflags "-static"
   - -s -w
-  - -X github.com/klyed/hivesmartchain/project.commit={{.Commit}}
-  - -X github.com/klyed/hivesmartchain/project.date={{.Date}}
+  - -Xgithub.com/klyed/hivesmartchain/project.commit={{.Commit}}
+  - -Xgithub.com/klyed/hivesmartchain/project.date={{.Date}}
   goos:
   - darwin
   - linux

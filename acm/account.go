@@ -21,8 +21,8 @@ var GlobalPermissionsAddress = crypto.Address(binary.Zero160)
 func NewAccount(pubKey *crypto.PublicKey) *Account {
 	return &Account{
 		NativeName: "",
-		Address:   pubKey.GetAddress(),
-		PublicKey: pubKey,
+		Address:    pubKey.GetAddress(),
+		PublicKey:  pubKey,
 	}
 }
 
@@ -74,9 +74,9 @@ func (acc *Account) Code() []byte {
 // Creates an otherwise zeroed Account from an Addressable and returns it as MutableAccount
 func FromAddressable(addressable crypto.Addressable) *Account {
 	return &Account{
-		NativeName:			 "",
-		Address:   addressable.GetAddress(),
-		PublicKey: addressable.GetPublicKey(),
+		NativeName: "",
+		Address:    addressable.GetAddress(),
+		PublicKey:  addressable.GetPublicKey(),
 		// Since nil slices and maps compare differently to empty ones
 		EVMCode: Bytecode{},
 		Permissions: permission.AccountPermissions{

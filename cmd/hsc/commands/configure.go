@@ -20,8 +20,8 @@ import (
 	"github.com/klyed/hivesmartchain/logging/logconfig"
 	"github.com/klyed/hivesmartchain/logging/logconfig/presets"
 	"github.com/klyed/hivesmartchain/rpc"
-	tmjson "github.com/klyed/tendermint/libs/json"
-	dbm "github.com/klyed/tm-db"
+	tmjson "github.com/tendermint/tendermint/libs/json"
+	dbm "github.com/tendermint/tm-db"
 )
 
 // Configure generates hsc configuration(s)

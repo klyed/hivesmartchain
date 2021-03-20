@@ -7,7 +7,7 @@ import (
 	"github.com/go-kit/kit/log"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/stretchr/testify/require"
-	"github.com/klyed/tendermint/abci/types"
+	"github.com/tendermint/tendermint/abci/types"
 )
 
 func TestWithEvents(t *testing.T) {

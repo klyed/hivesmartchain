@@ -1,4 +1,4 @@
-package main
+package bridges
 
 import (
 	"flag"
@@ -14,16 +14,20 @@ import (
 	"github.com/klyed/hiverpc-go/types"
 )
 
-func main() {
-	if err := run(); err != nil {
+func bridges() {
+	if err := Run(); err != nil {
 		log.Fatalln("Error:", err)
 	}
 }
 
-func run() (err error) {
+func Run() (err error) {
 	// Process flags.
-	flagAddress := flag.String("rpc_endpoint", "https://api.hive-roller.com", "steemd RPC endpoint address")
-	flagReconnect := flag.Bool("reconnect", false, "enable auto-reconnect mode")
+	var flag = String(
+		{"rpc_endpoint", "https://api.hive-roller.com"},
+		{"reconnect":  1},
+	)
+	//flagAddress := flag.Array("rpc_endpoint", "https://api.hive-roller.com", "true")
+	//flagReconnect := flag.Bool("reconnect", true, "enable auto-reconnect mode")
 	flag.Parse()
 
 	var (

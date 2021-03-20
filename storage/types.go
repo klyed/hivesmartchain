@@ -1,7 +1,7 @@
 package storage
 
 import (
-	dbm "github.com/klyed/tm-db"
+	dbm "github.com/tendermint/tm-db"
 )
 
 type KVIterator = dbm.Iterator

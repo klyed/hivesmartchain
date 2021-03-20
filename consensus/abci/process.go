@@ -8,9 +8,9 @@ import (
 	"github.com/klyed/hivesmartchain/bridges"
 	"github.com/klyed/hivesmartchain/execution"
 	"github.com/klyed/hivesmartchain/txs"
-	"github.com/klyed/tendermint/abci/types"
-	"github.com/klyed/tendermint/mempool"
-	tmTypes "github.com/klyed/tendermint/types"
+	"github.com/tendermint/tendermint/abci/types"
+	"github.com/tendermint/tendermint/mempool"
+	tmTypes "github.com/tendermint/tendermint/types"
 	"sync"
 	"time"
 )

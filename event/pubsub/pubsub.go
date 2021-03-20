@@ -21,7 +21,7 @@ import (
 	"github.com/klyed/hivesmartchain/event/query"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/logging/structure"
-	"github.com/klyed/tendermint/libs/service"
+	"github.com/tendermint/tendermint/libs/service"
 )
 
 type operation int

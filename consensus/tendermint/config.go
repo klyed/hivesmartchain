@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/klyed/hivesmartchain/consensus/abci"
-	tmConfig "github.com/klyed/tendermint/config"
+	tmConfig "github.com/tendermint/tendermint/config"
 )
 
 const (

@@ -115,11 +115,11 @@ func (*Envelope) XXX_MessageName() string {
 // Signatory contains signature and one or both of Address and PublicKey to identify the signer
 type Signatory struct {
 	Address              *hsccrypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address,omitempty"`
-	PublicKey            *crypto.PublicKey                               `protobuf:"bytes,2,opt,name=PublicKey,proto3" json:"PublicKey,omitempty"`
-	Signature            *crypto.Signature                               `protobuf:"bytes,4,opt,name=Signature,proto3" json:"Signature,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
-	XXX_unrecognized     []byte                                          `json:"-"`
-	XXX_sizecache        int32                                           `json:"-"`
+	PublicKey            *crypto.PublicKey  `protobuf:"bytes,2,opt,name=PublicKey,proto3" json:"PublicKey,omitempty"`
+	Signature            *crypto.Signature  `protobuf:"bytes,4,opt,name=Signature,proto3" json:"Signature,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
+	XXX_unrecognized     []byte             `json:"-"`
+	XXX_sizecache        int32              `json:"-"`
 }
 
 func (m *Signatory) Reset()         { *m = Signatory{} }
@@ -179,9 +179,9 @@ type Receipt struct {
 	CreatesContract bool `protobuf:"varint,3,opt,name=CreatesContract,proto3" json:"CreatesContract,omitempty"`
 	// The address of the contract being called
 	ContractAddress      hsccrypto.Address `protobuf:"bytes,4,opt,name=ContractAddress,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"ContractAddress"`
-	XXX_NoUnkeyedLiteral struct{}                                       `json:"-"`
-	XXX_unrecognized     []byte                                         `json:"-"`
-	XXX_sizecache        int32                                          `json:"-"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
 }
 
 func (m *Receipt) Reset()         { *m = Receipt{} }

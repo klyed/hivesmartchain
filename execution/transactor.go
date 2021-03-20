@@ -18,10 +18,10 @@ import (
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/logging/structure"
 	"github.com/klyed/hivesmartchain/txs"
-	abciTypes "github.com/klyed/tendermint/abci/types"
-	"github.com/klyed/tendermint/mempool"
-	"github.com/klyed/tendermint/p2p"
-	tmTypes "github.com/klyed/tendermint/types"
+	abciTypes "github.com/tendermint/tendermint/abci/types"
+	"github.com/tendermint/tendermint/mempool"
+	"github.com/tendermint/tendermint/p2p"
+	tmTypes "github.com/tendermint/tendermint/types"
 )
 
 const (

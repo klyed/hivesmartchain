@@ -30,11 +30,11 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type Validator struct {
 	Address              *hsccrypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address,omitempty"`
-	PublicKey            *crypto.PublicKey                               `protobuf:"bytes,2,opt,name=PublicKey,proto3" json:"PublicKey,omitempty"`
-	Power                uint64                                          `protobuf:"varint,3,opt,name=Power,proto3" json:"Power,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
-	XXX_unrecognized     []byte                                          `json:"-"`
-	XXX_sizecache        int32                                           `json:"-"`
+	PublicKey            *crypto.PublicKey  `protobuf:"bytes,2,opt,name=PublicKey,proto3" json:"PublicKey,omitempty"`
+	Power                uint64             `protobuf:"varint,3,opt,name=Power,proto3" json:"Power,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
+	XXX_unrecognized     []byte             `json:"-"`
+	XXX_sizecache        int32              `json:"-"`
 }
 
 func (m *Validator) Reset()      { *m = Validator{} }

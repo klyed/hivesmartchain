@@ -19,10 +19,10 @@ import (
 	"github.com/klyed/hivesmartchain/execution/state"
 	"github.com/klyed/hivesmartchain/genesis"
 	"github.com/stretchr/testify/require"
-	sm "github.com/klyed/tendermint/state"
-	"github.com/klyed/tendermint/store"
-	"github.com/klyed/tendermint/types"
-	dbm "github.com/klyed/tm-db"
+	sm "github.com/tendermint/tendermint/state"
+	"github.com/tendermint/tendermint/store"
+	"github.com/tendermint/tendermint/types"
+	dbm "github.com/tendermint/tm-db"
 )
 
 // This serves as a testbed for looking at non-deterministic hsc instances capture from the wild

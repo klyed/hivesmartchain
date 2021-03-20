@@ -23,8 +23,8 @@ import (
 	"github.com/klyed/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	tmcore "github.com/klyed/tendermint/rpc/core"
-	"github.com/klyed/tendermint/rpc/jsonrpc/types"
+	tmcore "github.com/tendermint/tendermint/rpc/core"
+	"github.com/tendermint/tendermint/rpc/jsonrpc/types"
 )
 
 func TestGovernance(t *testing.T) {
@@ -241,16 +241,16 @@ func TestGovernance(t *testing.T) {
 	// goroutine 2181 [running]:
 	// runtime/debug.Stack(0x12786c0, 0xc000085d70, 0xc000085c50)
 	// /home/sean/go1.12.1/src/runtime/debug/stack.go:24 +0x9d
-	// github.com/klyed/hivesmartchain/vendor/github.com/klyed/tendermint/libs/db.(*GoLevelDB).Get(0xc005c5b318, 0xc01fd71840, 0x5, 0x8, 0x5, 0x8, 0x5)
-	// /home/sean/go/src/github.com/klyed/hivesmartchain/vendor/github.com/klyed/tendermint/libs/db/go_level_db.go:57 +0xaf
-	// github.com/klyed/hivesmartchain/vendor/github.com/klyed/tendermint/blockchain.(*BlockStore).LoadSeenCommit(0xc00bfd6120, 0x12, 0xc002b85c90)
-	// /home/sean/go/src/github.com/klyed/hivesmartchain/vendor/github.com/klyed/tendermint/blockchain/store.go:128 +0xf2
-	// github.com/klyed/hivesmartchain/vendor/github.com/klyed/tendermint/consensus.(*ConsensusState).LoadCommit(0xc002b85c00, 0x12, 0x0)
-	// /home/sean/go/src/github.com/klyed/hivesmartchain/vendor/github.com/klyed/tendermint/consensus/state.go:273 +0xb2
-	// github.com/klyed/hivesmartchain/vendor/github.com/klyed/tendermint/consensus.(*ConsensusReactor).queryMaj23Routine(0xc0008ec680, 0x12ad1a0, 0xc010f79800, 0xc009119520)
-	// /home/sean/go/src/github.com/klyed/hivesmartchain/vendor/github.com/klyed/tendermint/consensus/reactor.go:789 +0x291
-	// created by github.com/klyed/hivesmartchain/vendor/github.com/klyed/tendermint/consensus.(*ConsensusReactor).AddPeer
-	// /home/sean/go/src/github.com/klyed/hivesmartchain/vendor/github.com/klyed/tendermint/consensus/reactor.go:171 +0x23a
+	//github.com/klyed/hivesmartchain/vendor/github.com/tendermint/tendermint/libs/db.(*GoLevelDB).Get(0xc005c5b318, 0xc01fd71840, 0x5, 0x8, 0x5, 0x8, 0x5)
+	// /home/sean/go/src/github.com/klyed/hivesmartchain/vendor/github.com/tendermint/tendermint/libs/db/go_level_db.go:57 +0xaf
+	//github.com/klyed/hivesmartchain/vendor/github.com/tendermint/tendermint/blockchain.(*BlockStore).LoadSeenCommit(0xc00bfd6120, 0x12, 0xc002b85c90)
+	// /home/sean/go/src/github.com/klyed/hivesmartchain/vendor/github.com/tendermint/tendermint/blockchain/store.go:128 +0xf2
+	//github.com/klyed/hivesmartchain/vendor/github.com/tendermint/tendermint/consensus.(*ConsensusState).LoadCommit(0xc002b85c00, 0x12, 0x0)
+	// /home/sean/go/src/github.com/klyed/hivesmartchain/vendor/github.com/tendermint/tendermint/consensus/state.go:273 +0xb2
+	//github.com/klyed/hivesmartchain/vendor/github.com/tendermint/tendermint/consensus.(*ConsensusReactor).queryMaj23Routine(0xc0008ec680, 0x12ad1a0, 0xc010f79800, 0xc009119520)
+	// /home/sean/go/src/github.com/klyed/hivesmartchain/vendor/github.com/tendermint/tendermint/consensus/reactor.go:789 +0x291
+	// created bygithub.com/klyed/hivesmartchain/vendor/github.com/tendermint/tendermint/consensus.(*ConsensusReactor).AddPeer
+	// /home/sean/go/src/github.com/klyed/hivesmartchain/vendor/github.com/tendermint/tendermint/consensus/reactor.go:171 +0x23a
 
 	time.Sleep(20 * time.Second)
 }

@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"time"
 
+	bridgehive "github.com/klyed/hiverpc-go"
 	"github.com/klyed/hivesmartchain/bcm"
 	"github.com/klyed/hivesmartchain/consensus/abci"
 	"github.com/klyed/hivesmartchain/execution"
@@ -23,10 +24,9 @@ import (
 	"github.com/klyed/hivesmartchain/rpc/rpctransact"
 	"github.com/klyed/hivesmartchain/rpc/web3"
 	"github.com/klyed/hivesmartchain/txs"
-	"github.com/klyed/tendermint/p2p"
-	"github.com/klyed/tendermint/version"
+	"github.com/tendermint/tendermint/p2p"
+	"github.com/tendermint/tendermint/version"
 	hex "github.com/tmthrgd/go-hex"
-	bridgehive "github.com/klyed/hiverpc-go"
 )
 
 const (

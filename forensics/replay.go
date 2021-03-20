@@ -24,10 +24,10 @@ import (
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/txs"
 	"github.com/pkg/errors"
-	sm "github.com/klyed/tendermint/state"
-	"github.com/klyed/tendermint/store"
-	"github.com/klyed/tendermint/types"
-	dbm "github.com/klyed/tm-db"
+	sm "github.com/tendermint/tendermint/state"
+	"github.com/tendermint/tendermint/store"
+	"github.com/tendermint/tendermint/types"
+	dbm "github.com/tendermint/tm-db"
 	"github.com/xlab/treeprint"
 )
 

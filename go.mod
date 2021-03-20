@@ -40,8 +40,8 @@ require (
 	github.com/streadway/simpleuuid v0.0.0-20130420165545-6617b501e485
 	github.com/stretchr/testify v1.7.0
 	github.com/syndtr/goleveldb v1.0.1-0.20200815110645-5c35d600f0ca
-	github.com/klyed/tendermint v0.34.8
-	github.com/klyed/tm-db v0.6.4
+	github.com/tendermint/tendermint v0.34.8
+	github.com/tendermint/tm-db v0.6.4
 	github.com/test-go/testify v1.1.4
 	github.com/tmthrgd/atomics v0.0.0-20190904060638-dc7a5fcc7e0d // indirect
 	github.com/tmthrgd/go-bitset v0.0.0-20190904054048-394d9a556c05
@@ -55,6 +55,7 @@ require (
 	golang.org/x/crypto v0.0.0-20210317152858-513c2a44f670
 	golang.org/x/net v0.0.0-20210316092652-d523dce5a7f4
 	google.golang.org/grpc v1.36.0
+	gopkg.in/tomb.v2 v2.0.0-20161208151619-d5d1b5820637 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 )
 

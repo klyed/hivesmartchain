@@ -35,8 +35,8 @@ import (
 	"github.com/klyed/hivesmartchain/txs/payload"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	tmproto "github.com/klyed/tendermint/proto/tendermint/types"
-	dbm "github.com/klyed/tm-db"
+	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
+	dbm "github.com/tendermint/tm-db"
 	hex "github.com/tmthrgd/go-hex"
 	"golang.org/x/crypto/ripemd160"
 )

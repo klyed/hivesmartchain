@@ -13,9 +13,9 @@ import (
 	"github.com/klyed/hivesmartchain/logging/logconfig"
 	"github.com/klyed/hivesmartchain/logging/structure"
 	"github.com/klyed/hivesmartchain/project"
-	tmConfig "github.com/klyed/tendermint/config"
-	"github.com/klyed/tendermint/node"
-	tmTypes "github.com/klyed/tendermint/types"
+	tmConfig "github.com/tendermint/tendermint/config"
+	"github.com/tendermint/tendermint/node"
+	tmTypes "github.com/tendermint/tendermint/types"
 )
 
 // LoadKeysFromConfig sets the keyClient & keyStore based on the given config

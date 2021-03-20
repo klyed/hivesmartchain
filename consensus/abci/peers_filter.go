@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/klyed/hivesmartchain/consensus/tendermint/codes"
-	abciTypes "github.com/klyed/tendermint/abci/types"
+	abciTypes "github.com/tendermint/tendermint/abci/types"
 )
 
 const (

@@ -5,7 +5,7 @@ import (
 
 	"github.com/klyed/hivesmartchain/event/query"
 	"github.com/stretchr/testify/require"
-	tmproto "github.com/klyed/tendermint/proto/tendermint/types"
+	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )
 
 func TestBlockExecution_Marshal(t *testing.T) {

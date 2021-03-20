@@ -5,7 +5,7 @@ import (
 	"math/big"
 
 	"github.com/klyed/hivesmartchain/crypto"
-	"github.com/klyed/tendermint/types"
+	"github.com/tendermint/tendermint/types"
 )
 
 // Safety margin determined by Tendermint (see comment on source constant)

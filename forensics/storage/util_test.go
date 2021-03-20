@@ -6,7 +6,7 @@ import (
 
 	"github.com/klyed/hivesmartchain/storage"
 	"github.com/stretchr/testify/assert"
-	dbm "github.com/klyed/tm-db"
+	dbm "github.com/tendermint/tm-db"
 )
 
 func sendKVPair(ch chan<- KVPair, kvs []KVPair) {

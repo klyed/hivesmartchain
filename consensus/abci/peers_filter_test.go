@@ -8,8 +8,8 @@ import (
 
 	"github.com/klyed/hivesmartchain/consensus/tendermint/codes"
 	"github.com/stretchr/testify/assert"
-	"github.com/klyed/tendermint/abci/types"
-	abciTypes "github.com/klyed/tendermint/abci/types"
+	"github.com/tendermint/tendermint/abci/types"
+	abciTypes "github.com/tendermint/tendermint/abci/types"
 )
 
 const (

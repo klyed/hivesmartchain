@@ -143,7 +143,7 @@ Each of these considerations will be dealt with in more detail below.
 
 HiveSmartChain utilizes three different ports by default:
 
-* `Peer`: HiveSmartChain's peer port is used for P2P communication within the blockchain network as part of the consensus engine ([Tendermint](https://github.com/klyed/tendermint)) to perform bilateral gossiping communication.
+* `Peer`: HiveSmartChain's peer port is used for P2P communication within the blockchain network as part of the consensus engine ([Tendermint](https://github.com/tendermint/tendermint)) to perform bilateral gossiping communication.
 * `Info`: HiveSmartChain's info port is used for conducting remote procedures.
 * `GRPC`: HiveSmartChain's grpc port can be used by JavaScript libraries to interact with the chain over websockets.
 

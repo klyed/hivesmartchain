@@ -16,7 +16,7 @@ import (
 	"github.com/klyed/hivesmartchain/rpc"
 	"github.com/klyed/hivesmartchain/rpc/lib/jsonrpc"
 
-	tmjson "github.com/klyed/tendermint/libs/json"
+	tmjson "github.com/tendermint/tendermint/libs/json"
 
 	"github.com/klyed/hivesmartchain/integration"
 	"github.com/klyed/hivesmartchain/txs/payload"
@@ -32,7 +32,7 @@ import (
 	"github.com/klyed/hivesmartchain/txs"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	ctypes "github.com/klyed/tendermint/consensus/types"
+	ctypes "github.com/tendermint/tendermint/consensus/types"
 )
 
 const timeout = 5 * time.Second

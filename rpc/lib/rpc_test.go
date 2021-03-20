@@ -20,7 +20,7 @@ import (
 	"github.com/klyed/hivesmartchain/rpc/lib/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	cmn "github.com/klyed/tendermint/libs/bytes"
+	cmn "github.com/tendermint/tendermint/libs/bytes"
 )
 
 // Client and Server should work over tcp or unix sockets

@@ -6,7 +6,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/klyed/tendermint/version"
+	"github.com/tendermint/tendermint/version"
 
 	"github.com/klyed/hivesmartchain/binary"
 	"github.com/klyed/hivesmartchain/consensus/abci"
@@ -14,13 +14,13 @@ import (
 	"github.com/klyed/hivesmartchain/genesis"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/logging/structure"
-	"github.com/klyed/tendermint/config"
-	"github.com/klyed/tendermint/crypto/ed25519"
-	"github.com/klyed/tendermint/node"
-	"github.com/klyed/tendermint/p2p"
-	"github.com/klyed/tendermint/proxy"
-	tmTypes "github.com/klyed/tendermint/types"
-	dbm "github.com/klyed/tm-db"
+	"github.com/tendermint/tendermint/config"
+	"github.com/tendermint/tendermint/crypto/ed25519"
+	"github.com/tendermint/tendermint/node"
+	"github.com/tendermint/tendermint/p2p"
+	"github.com/tendermint/tendermint/proxy"
+	tmTypes "github.com/tendermint/tendermint/types"
+	dbm "github.com/tendermint/tm-db"
 )
 
 func init() {

@@ -6,7 +6,7 @@ import (
 	"sync/atomic"
 
 	"github.com/cosmos/iavl"
-	dbm "github.com/klyed/tm-db"
+	dbm "github.com/tendermint/tm-db"
 	"github.com/xlab/treeprint"
 )
 

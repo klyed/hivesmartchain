@@ -12,7 +12,7 @@ import (
 
 	cli "github.com/jawher/mow.cli"
 	"github.com/klyed/hivesmartchain/txs"
-	dbm "github.com/klyed/tm-db"
+	dbm "github.com/tendermint/tm-db"
 )
 
 // Explore chain state(s)

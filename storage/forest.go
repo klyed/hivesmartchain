@@ -6,7 +6,7 @@ import (
 	"github.com/golang/protobuf/proto"
 
 	lru "github.com/hashicorp/golang-lru"
-	dbm "github.com/klyed/tm-db"
+	dbm "github.com/tendermint/tm-db"
 	"github.com/xlab/treeprint"
 )
 

@@ -10,11 +10,11 @@ import (
 	"time"
 
 	"github.com/klyed/hivesmartchain/encoding"
-	"github.com/klyed/tendermint/types"
+	"github.com/tendermint/tendermint/types"
 
 	"github.com/klyed/hivesmartchain/genesis"
 	"github.com/klyed/hivesmartchain/logging"
-	dbm "github.com/klyed/tm-db"
+	dbm "github.com/tendermint/tm-db"
 )
 
 var stateKey = []byte("BlockchainState")

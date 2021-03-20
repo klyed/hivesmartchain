@@ -53,7 +53,7 @@ fmt:
 # lint installs golint and prints recommendations for coding style.
 lint:
 	@echo "Running lint checks."
-	go get -u github.com/golang/lint/golint
+	go get -ugithub.com/golang/lint/golint
 	@for file in $(shell go list -f "{{.Dir}}" ./...); do \
 		echo; \
 		golint --set_exit_status $${file}; \
@@ -79,7 +79,7 @@ PROTO_GEN_TS_PATH = ${HSC_TS_PATH}/proto
 NODE_BIN = ${HSC_TS_PATH}/node_modules/.bin
 
 # To access Tendermint bundled protobuf files from go module cache
-TENDERMINT_MOD?=github.com/klyed/tendermint
+TENDERMINT_MOD?=github.com/tendermint/tendermint
 TENDERMINT_VERSION?=$(shell go list -m -f '{{ .Version }}' $(TENDERMINT_MOD))
 TENDERMINT_SRC?=$(shell go env GOMODCACHE)/$(TENDERMINT_MOD)@$(TENDERMINT_VERSION)
 TENDERMINT_PROTO?=$(TENDERMINT_SRC)/proto
@@ -109,7 +109,7 @@ protobuf: $(PROTO_GO_FILES) $(PROTO_TS_FILES) fix
 
 .PHONY: protobuf_deps
 protobuf_deps:
-	@go get -u github.com/gogo/protobuf/protoc-gen-gogo
+	@go get -ugithub.com/gogo/protobuf/protoc-gen-gogo
 	@cd ${HSC_TS_PATH} && yarn install --only=dev
 
 .PHONY: clean_protobuf
@@ -122,25 +122,25 @@ clean_protobuf:
 
 .PHONY: peg_deps
 peg_deps:
-	go get -u github.com/pointlander/peg
+	go get -ugithub.com/pointlander/peg
 
 # regenerate the parser
 .PHONY: peg
 peg:
 	peg event/query/query.peg
 
-### Building github.com/klyed/hivesmartchain
+### Buildinggithub.com/klyed/hivesmartchain
 
 # Output commit_hash but only if we have the git repo (e.g. not in docker build
 .PHONY: commit_hash
 commit_hash:
 	@git status &> /dev/null && scripts/commit_hash.sh > commit_hash.txt || true
 
-# build all targets in github.com/klyed/hivesmartchain
+# build all targets ingithub.com/klyed/hivesmartchain
 .PHONY: build
 build:	check build_hsc build_hsc_debug
 
-# build all targets in github.com/klyed/hivesmartchain with checks for race conditions
+# build all targets ingithub.com/klyed/hivesmartchain with checks for race conditions
 .PHONY: build_race
 build_race:	check build_race_db
 
@@ -148,8 +148,8 @@ build_race:	check build_race_db
 .PHONY: build_hsc
 build_hsc: commit_hash
 	go build $(HSC_BUILD_FLAGS) -ldflags "-extldflags '-static' \
-	-X github.com/klyed/hivesmartchain/project.commit=$(shell cat commit_hash.txt) \
-	-X github.com/klyed/hivesmartchain/project.date=$(shell date '+%Y-%m-%d')" \
+	-Xgithub.com/klyed/hivesmartchain/project.commit=$(shell cat commit_hash.txt) \
+	-Xgithub.com/klyed/hivesmartchain/project.date=$(shell date '+%Y-%m-%d')" \
 	-o ${REPO}/bin/hsc$(HSC_BUILD_SUFFIX) ./cmd/hsc
 
 # With the sqlite tag - enabling Vent sqlite adapter support, but building a CGO binary
@@ -176,14 +176,14 @@ install: build_hsc
 build_race_db:
 	go build -race -o ${REPO}/bin/hsc./cmd/hsc
 
-### Build docker images for github.com/klyed/hivesmartchain
+### Build docker images forgithub.com/klyed/hivesmartchain
 
 # build docker image for hsc
 .PHONY: docker_build
 docker_build: check commit_hash
 	@scripts/build_tool.sh
 
-### Testing github.com/klyed/hivesmartchain
+### Testinggithub.com/klyed/hivesmartchain
 
 # Solidity fixtures
 .PHONY: solidity

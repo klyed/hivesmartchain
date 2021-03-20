@@ -10,7 +10,7 @@ import (
 
 	"github.com/klyed/hivesmartchain/integration"
 
-	"github.com/klyed/tendermint/crypto/tmhash"
+	"github.com/tendermint/tendermint/crypto/tmhash"
 
 	"github.com/klyed/hivesmartchain/acm"
 	"github.com/klyed/hivesmartchain/event/query"

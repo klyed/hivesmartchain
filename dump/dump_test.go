@@ -17,7 +17,7 @@ import (
 	"github.com/klyed/hivesmartchain/execution/state"
 	"github.com/stretchr/testify/require"
 	"github.com/syndtr/goleveldb/leveldb/opt"
-	dbm "github.com/klyed/tm-db"
+	dbm "github.com/tendermint/tm-db"
 )
 
 // The tests in this package are quite a good starting point for investigating the inadequacies of IAVL...

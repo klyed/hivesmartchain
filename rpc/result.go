@@ -13,10 +13,10 @@ import (
 	"github.com/klyed/hivesmartchain/execution/registry"
 	"github.com/klyed/hivesmartchain/genesis"
 	"github.com/klyed/hivesmartchain/txs"
-	ctypes "github.com/klyed/tendermint/consensus/types"
-	tmjson "github.com/klyed/tendermint/libs/json"
-	core_types "github.com/klyed/tendermint/rpc/core/types"
-	tmTypes "github.com/klyed/tendermint/types"
+	ctypes "github.com/tendermint/tendermint/consensus/types"
+	tmjson "github.com/tendermint/tendermint/libs/json"
+	core_types "github.com/tendermint/tendermint/rpc/core/types"
+	tmTypes "github.com/tendermint/tendermint/types"
 )
 
 type ResultStorage struct {

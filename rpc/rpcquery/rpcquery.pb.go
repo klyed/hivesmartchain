@@ -20,7 +20,7 @@ import (
 	registry "github.com/klyed/hivesmartchain/execution/registry"
 	_ "github.com/klyed/hivesmartchain/rpc"
 	payload "github.com/klyed/hivesmartchain/txs/payload"
-	_ "github.com/klyed/tendermint/proto/tendermint/types"
+	_ "github.com/tendermint/tendermint/proto/tendermint/types"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

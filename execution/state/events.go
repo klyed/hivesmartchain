@@ -16,7 +16,7 @@ func (ws *writeState) AddBlock(be *exec.BlockExecution) error {
 	// Tendermint will always produce another block. If we change the AppHash on empty blocks then we will continue
 	// creating empty blocks even if we have been configure to not do so.
 	// TODO: we would prefer not to do this and instead store sequential monotonic blocks, once this:
-	// https://github.com/klyed/tendermint/issues/1909 is resolved we should be able to suppress empty blocks
+	// https://github.com/tendermint/tendermint/issues/1909 is resolved we should be able to suppress empty blocks
 	// even when the AppHash changes
 	if len(be.TxExecutions) == 0 {
 		return nil
