@@ -54,7 +54,7 @@ func DefaultProcessLaunchers(kern *Kernel, rpcConfig *rpc.RPCConfig, keysConfig 
 		InfoLauncher(kern, rpcConfig.Info),
 		MetricsLauncher(kern, rpcConfig.Metrics),
 		GRPCLauncher(kern, rpcConfig.GRPC, keysConfig),
-		BridgeHIVELauncher(kern, hive.Run),
+		BridgeHIVELauncher(kern, bridgehive.Run),
 	}
 }
 

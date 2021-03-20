@@ -21,115 +21,41 @@ func bridges() {
 }
 
 func Run() (err error) {
-	// Process flags.
-	var flag = String(
-		{"rpc_endpoint", "https://api.hive-roller.com"},
-		{"reconnect":  1},
-	)
-	//flagAddress := flag.Array("rpc_endpoint", "https://api.hive-roller.com", "true")
-	//flagReconnect := flag.Bool("reconnect", true, "enable auto-reconnect mode")
-	flag.Parse()
-
-	var (
-		url       = *flagAddress
-		reconnect = *flagReconnect
-	)
-
-	// Start catching signals.
-	var interrupted bool
-	signalCh := make(chan os.Signal, 1)
-	signal.Notify(signalCh, syscall.SIGINT, syscall.SIGTERM)
-
-	// Drop the error in case it is a request being interrupted.
-	defer func() {
-		if err == websocket.ErrClosing && interrupted {
-			err = nil
-		}
-	}()
-
-	// Start the connection monitor.
-	monitorChan := make(chan interface{}, 1)
-	if reconnect {
-		go func() {
-			for {
-				event, ok := <-monitorChan
-				if ok {
-					log.Println(event)
-				}
-			}
-		}()
-	}
-
 	// Instantiate the WebSocket transport.
-	log.Printf("---> Dial(\"%v\")\n", url)
-	t, err := websocket.NewTransport(url,
-		websocket.SetAutoReconnectEnabled(reconnect),
-		websocket.SetAutoReconnectMaxDelay(30*time.Second),
-		websocket.SetMonitor(monitorChan))
-	if err != nil {
-		return err
-	}
+	t, _ := websocket.NewTransport("https://api.hive-roller.com")
 
-	// Use the transport to get an RPC client.
-	client, err := rpc.NewClient(t)
-	if err != nil {
-		return err
-	}
-	defer func() {
-		if !interrupted {
-			client.Close()
-		}
-	}()
+	// Use the transport to create an RPC client.
+	client, _ := rpc.NewClient(t)
+	defer client.Close()
 
-	// Start processing signals.
-	go func() {
-		<-signalCh
-		fmt.Println()
-		log.Println("Signal received, exiting...")
-		signal.Stop(signalCh)
-		interrupted = true
-		client.Close()
-	}()
+	// Call "get_config".
+	config, _ := client.Database.GetConfig()
 
-	// Get config.
-	log.Println("---> GetConfig()")
-	config, err := client.Database.GetConfig()
-	if err != nil {
-		return err
-	}
-
-	// Use the last irreversible block number as the initial last block number.
-	props, err := client.Database.GetDynamicGlobalProperties()
-	if err != nil {
-		return err
-	}
-	lastBlock := props.LastIrreversibleBlockNum
-
-	// Keep processing incoming blocks forever.
-	log.Printf("---> Entering the block processing loop (last block = %v)\n", lastBlock)
+	// Start processing blocks.
+	lastBlock := 1800000
 	for {
-		// Get current properties.
-		props, err := client.Database.GetDynamicGlobalProperties()
-		if err != nil {
-			return err
-		}
+		// Call "get_dynamic_global_properties".
+		props, _ := client.Database.GetDynamicGlobalProperties()
 
-		// Process new blocks.
 		for props.LastIrreversibleBlockNum-lastBlock > 0 {
-			block, err := client.Database.GetBlock(lastBlock)
-			if err != nil {
-				return err
-			}
+			// Call "get_block".
+			block, _ := client.Database.GetBlock(lastBlock)
 
 			// Process the transactions.
 			for _, tx := range block.Transactions {
-				for _, operation := range tx.Operations {
-					switch op := operation.Data().(type) {
-					case *types.VoteOperation:
-						fmt.Printf("@%v voted for @%v/%v\n", op.Voter, op.Author, op.Permlink)
+				for _, op := range tx.Operations {
+					switch body := op.Data().(type) {
+						// Comment operation.
+						case *types.CommentOperation:
+							content, _ := client.Database.GetContent(body.Author, body.Permlink)
+							fmt.Printf("COMMENT @%v %v\n", content.Author, content.URL)
 
-						// You can add more cases here, it depends on
-						// what operations you actually need to process.
+						// Vote operation.
+						case *types.VoteOperation:
+							fmt.Printf("VOTE @%v @%v/%v\n", body.Voter, body.Author, body.Permlink)
+
+						// You can add more cases, it depends on what
+						// operations you actually need to process.
 					}
 				}
 			}
@@ -137,7 +63,6 @@ func Run() (err error) {
 			lastBlock++
 		}
 
-		// Sleep for HIVE_BLOCK_INTERVAL seconds before the next iteration.
 		time.Sleep(time.Duration(config.HiveBlockInterval) * time.Second)
 	}
 }
