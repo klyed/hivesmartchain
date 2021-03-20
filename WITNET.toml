@@ -167,14 +167,14 @@ HscDir = ".testnet"
   Enabled = true
   Seeds = ""
   SeedMode = false
-  PersistentPeers = "3657293d98a8a983602b9fb751d1f81261386de0@185.130.44.72:26656"
+  PersistentPeers = "10d495fefe5b1779e476edb8aad692c4ed9f0a34@185.130.44.72:26656"
   ListenHost = "0.0.0.0"
   ListenPort = "26656"
   ExternalAddress = "185.130.44.165:26656"
   AddrBookStrict = false
   Moniker =  "HIVE SMART CHAIN WITNESS SERVER"
   IdentifyPeers = true
-  AuthorizedPeers = "0.0.0.0"
+  AuthorizedPeers = ""
   CreateEmptyBlocks = "5s"
   MaxNumPeers = 50
 

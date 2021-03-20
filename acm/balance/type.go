@@ -10,7 +10,7 @@ const (
 
 var nameFromType = map[Type]string{
 	TypeNative: "HIVE",
-	TypePower:  "Power",
+	TypePower:  "Bound HIVE",
 	TypePegged: "HBD",
 }
 

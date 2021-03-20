@@ -13,7 +13,7 @@ import (
 	proto "github.com/gogo/protobuf/proto"
 	golang_proto "github.com/golang/protobuf/proto"
 	crypto "github.com/klyed/hivesmartchain/crypto"
-	github_com_klyed_hivesmartchain_crypto "github.com/klyed/hivesmartchain/crypto"
+	hsccrypto "github.com/klyed/hivesmartchain/crypto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -29,7 +29,7 @@ var _ = math.Inf
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type Validator struct {
-	Address              *github_com_klyed_hivesmartchain_crypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address,omitempty"`
+	Address              *hsccrypto.Address `protobuf:"bytes,1,opt,name=Address,proto3,customtype=github.com/klyed/hivesmartchain/crypto.Address" json:"Address,omitempty"`
 	PublicKey            *crypto.PublicKey                               `protobuf:"bytes,2,opt,name=PublicKey,proto3" json:"PublicKey,omitempty"`
 	Power                uint64                                          `protobuf:"varint,3,opt,name=Power,proto3" json:"Power,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}                                        `json:"-"`
@@ -263,7 +263,7 @@ func (m *Validator) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_klyed_hivesmartchain_crypto.Address
+			var v hsccrypto.Address
 			m.Address = &v
 			if err := m.Address.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err

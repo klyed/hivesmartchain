@@ -1,4 +1,4 @@
-package bridges
+package main
 
 import (
 	"flag"
@@ -10,6 +10,8 @@ import (
 	"time"
 
 	"github.com/klyed/hiverpc-go"
+	"github.com/klyed/hiverpc-go/transports/websocket"
+	"github.com/klyed/hiverpc-go/types"
 )
 
 func main() {
@@ -20,10 +22,7 @@ func main() {
 
 func run() (err error) {
 	// Process flags.
-
-	log.Printf("STARTING HIVE BRIDGE", url)
-
-	flagAddress := flag.String("http_endpoint", "https://api.hive-roller.com", "hived RPC endpoint address")
+	flagAddress := flag.String("rpc_endpoint", "https://api.hive-roller.com", "steemd RPC endpoint address")
 	flagReconnect := flag.Bool("reconnect", false, "enable auto-reconnect mode")
 	flag.Parse()
 

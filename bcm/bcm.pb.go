@@ -12,11 +12,11 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
-	github_com_gogo_protobuf_types "github.com/gogo/protobuf/types"
+	protobuftypes "github.com/gogo/protobuf/types"
 	golang_proto "github.com/golang/protobuf/proto"
 	_ "github.com/golang/protobuf/ptypes/duration"
 	_ "github.com/golang/protobuf/ptypes/timestamp"
-	github_com_klyed_hivesmartchain_binary "github.com/klyed/hivesmartchain/binary"
+	hscbinary "github.com/klyed/hivesmartchain/binary"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -34,8 +34,8 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type SyncInfo struct {
 	LatestBlockHeight uint64                                          `protobuf:"varint,1,opt,name=LatestBlockHeight,proto3" json:"LatestBlockHeight,omitempty"`
-	LatestBlockHash   github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,2,opt,name=LatestBlockHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"LatestBlockHash"`
-	LatestAppHash     github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,3,opt,name=LatestAppHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"LatestAppHash"`
+	LatestBlockHash   hscbinary.HexBytes `protobuf:"bytes,2,opt,name=LatestBlockHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"LatestBlockHash"`
+	LatestAppHash     hscbinary.HexBytes `protobuf:"bytes,3,opt,name=LatestAppHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"LatestAppHash"`
 	// Timestamp of block as set by the block proposer
 	LatestBlockTime time.Time `protobuf:"bytes,4,opt,name=LatestBlockTime,proto3,stdtime" json:"LatestBlockTime"`
 	// Time at which we committed the last block
@@ -109,10 +109,10 @@ func (*SyncInfo) XXX_MessageName() string {
 }
 
 type PersistedState struct {
-	AppHashAfterLastBlock github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,1,opt,name=AppHashAfterLastBlock,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"AppHashAfterLastBlock"`
+	AppHashAfterLastBlock hscbinary.HexBytes `protobuf:"bytes,1,opt,name=AppHashAfterLastBlock,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"AppHashAfterLastBlock"`
 	LastBlockTime         time.Time                                       `protobuf:"bytes,2,opt,name=LastBlockTime,proto3,stdtime" json:"LastBlockTime"`
 	LastBlockHeight       uint64                                          `protobuf:"varint,3,opt,name=LastBlockHeight,proto3" json:"LastBlockHeight,omitempty"`
-	GenesisHash           github_com_klyed_hivesmartchain_binary.HexBytes `protobuf:"bytes,4,opt,name=GenesisHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"GenesisHash"`
+	GenesisHash           hscbinary.HexBytes `protobuf:"bytes,4,opt,name=GenesisHash,proto3,customtype=github.com/klyed/hivesmartchain/binary.HexBytes" json:"GenesisHash"`
 	XXX_NoUnkeyedLiteral  struct{}                                        `json:"-"`
 	XXX_unrecognized      []byte                                          `json:"-"`
 	XXX_sizecache         int32                                           `json:"-"`
@@ -229,7 +229,7 @@ func (m *SyncInfo) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i -= len(m.XXX_unrecognized)
 		copy(dAtA[i:], m.XXX_unrecognized)
 	}
-	n1, err1 := github_com_gogo_protobuf_types.StdDurationMarshalTo(m.LatestBlockDuration, dAtA[i-github_com_gogo_protobuf_types.SizeOfStdDuration(m.LatestBlockDuration):])
+	n1, err1 := protobuftypes.StdDurationMarshalTo(m.LatestBlockDuration, dAtA[i-protobuftypes.SizeOfStdDuration(m.LatestBlockDuration):])
 	if err1 != nil {
 		return 0, err1
 	}
@@ -237,7 +237,7 @@ func (m *SyncInfo) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i = encodeVarintBcm(dAtA, i, uint64(n1))
 	i--
 	dAtA[i] = 0x32
-	n2, err2 := github_com_gogo_protobuf_types.StdTimeMarshalTo(m.LatestBlockSeenTime, dAtA[i-github_com_gogo_protobuf_types.SizeOfStdTime(m.LatestBlockSeenTime):])
+	n2, err2 := protobuftypes.StdTimeMarshalTo(m.LatestBlockSeenTime, dAtA[i-protobuftypes.SizeOfStdTime(m.LatestBlockSeenTime):])
 	if err2 != nil {
 		return 0, err2
 	}
@@ -245,7 +245,7 @@ func (m *SyncInfo) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i = encodeVarintBcm(dAtA, i, uint64(n2))
 	i--
 	dAtA[i] = 0x2a
-	n3, err3 := github_com_gogo_protobuf_types.StdTimeMarshalTo(m.LatestBlockTime, dAtA[i-github_com_gogo_protobuf_types.SizeOfStdTime(m.LatestBlockTime):])
+	n3, err3 := protobuftypes.StdTimeMarshalTo(m.LatestBlockTime, dAtA[i-protobuftypes.SizeOfStdTime(m.LatestBlockTime):])
 	if err3 != nil {
 		return 0, err3
 	}
@@ -320,7 +320,7 @@ func (m *PersistedState) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x18
 	}
-	n4, err4 := github_com_gogo_protobuf_types.StdTimeMarshalTo(m.LastBlockTime, dAtA[i-github_com_gogo_protobuf_types.SizeOfStdTime(m.LastBlockTime):])
+	n4, err4 := protobuftypes.StdTimeMarshalTo(m.LastBlockTime, dAtA[i-protobuftypes.SizeOfStdTime(m.LastBlockTime):])
 	if err4 != nil {
 		return 0, err4
 	}
@@ -365,11 +365,11 @@ func (m *SyncInfo) Size() (n int) {
 	n += 1 + l + sovBcm(uint64(l))
 	l = m.LatestAppHash.Size()
 	n += 1 + l + sovBcm(uint64(l))
-	l = github_com_gogo_protobuf_types.SizeOfStdTime(m.LatestBlockTime)
+	l = protobuftypes.SizeOfStdTime(m.LatestBlockTime)
 	n += 1 + l + sovBcm(uint64(l))
-	l = github_com_gogo_protobuf_types.SizeOfStdTime(m.LatestBlockSeenTime)
+	l = protobuftypes.SizeOfStdTime(m.LatestBlockSeenTime)
 	n += 1 + l + sovBcm(uint64(l))
-	l = github_com_gogo_protobuf_types.SizeOfStdDuration(m.LatestBlockDuration)
+	l = protobuftypes.SizeOfStdDuration(m.LatestBlockDuration)
 	n += 1 + l + sovBcm(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -385,7 +385,7 @@ func (m *PersistedState) Size() (n int) {
 	_ = l
 	l = m.AppHashAfterLastBlock.Size()
 	n += 1 + l + sovBcm(uint64(l))
-	l = github_com_gogo_protobuf_types.SizeOfStdTime(m.LastBlockTime)
+	l = protobuftypes.SizeOfStdTime(m.LastBlockTime)
 	n += 1 + l + sovBcm(uint64(l))
 	if m.LastBlockHeight != 0 {
 		n += 1 + sovBcm(uint64(m.LastBlockHeight))
@@ -547,7 +547,7 @@ func (m *SyncInfo) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := github_com_gogo_protobuf_types.StdTimeUnmarshal(&m.LatestBlockTime, dAtA[iNdEx:postIndex]); err != nil {
+			if err := protobuftypes.StdTimeUnmarshal(&m.LatestBlockTime, dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -580,7 +580,7 @@ func (m *SyncInfo) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := github_com_gogo_protobuf_types.StdTimeUnmarshal(&m.LatestBlockSeenTime, dAtA[iNdEx:postIndex]); err != nil {
+			if err := protobuftypes.StdTimeUnmarshal(&m.LatestBlockSeenTime, dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -613,7 +613,7 @@ func (m *SyncInfo) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := github_com_gogo_protobuf_types.StdDurationUnmarshal(&m.LatestBlockDuration, dAtA[iNdEx:postIndex]); err != nil {
+			if err := protobuftypes.StdDurationUnmarshal(&m.LatestBlockDuration, dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -730,7 +730,7 @@ func (m *PersistedState) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if err := github_com_gogo_protobuf_types.StdTimeUnmarshal(&m.LastBlockTime, dAtA[iNdEx:postIndex]); err != nil {
+			if err := protobuftypes.StdTimeUnmarshal(&m.LastBlockTime, dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

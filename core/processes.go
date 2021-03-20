@@ -26,6 +26,7 @@ import (
 	"github.com/klyed/tendermint/p2p"
 	"github.com/klyed/tendermint/version"
 	hex "github.com/tmthrgd/go-hex"
+	bridgehive "github.com/klyed/hiverpc-go"
 )
 
 const (
@@ -38,9 +39,10 @@ const (
 	InfoProcessName        = "rpcConfig/info"
 	GRPCProcessName        = "rpcConfig/GRPC"
 	MetricsProcessName     = "rpcConfig/metrics"
+	BridgeHIVEProcessName  = "Bridge"
 )
 
-func DefaultProcessLaunchers(kern *Kernel, rpcConfig *rpc.RPCConfig, keysConfig *keys.KeysConfig) []process.Launcher {
+func DefaultProcessLaunchers(kern *Kernel, rpcConfig *rpc.RPCConfig, keysConfig *keys.KeysConfig, hive *bridgehive) []process.Launcher {
 	// Run announcer after Tendermint so it can get some details
 	return []process.Launcher{
 		ProfileLauncher(kern, rpcConfig.Profiler),
@@ -52,6 +54,7 @@ func DefaultProcessLaunchers(kern *Kernel, rpcConfig *rpc.RPCConfig, keysConfig 
 		InfoLauncher(kern, rpcConfig.Info),
 		MetricsLauncher(kern, rpcConfig.Metrics),
 		GRPCLauncher(kern, rpcConfig.GRPC, keysConfig),
+		BridgeHIVELauncher(kern, hive.Run),
 	}
 }
 
@@ -337,6 +340,24 @@ func GRPCLauncher(kern *Kernel, conf *rpc.ServerConfig, keyConfig *keys.KeysConf
 				// listener is closed for us
 				return nil
 			}), nil
+		},
+	}
+}
+
+func BridgeHIVELauncher(kern *Kernel) process.Launcher {
+	return process.Launcher{
+		Name:    BridgeHIVEProcessName,
+		Enabled: true,
+		Launch: func() (process.Process, error) {
+			listener, err := process.ListenerFromAddress(conf.ListenAddress())
+			if err != nil {
+				return nil, err
+			}
+			err = kern.registerListener(MetricsProcessName, listener)
+			if err != nil {
+				return nil, err
+			}
+			return listener, nil
 		},
 	}
 }

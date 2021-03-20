@@ -174,7 +174,7 @@ HscDir = ".testnet"
   AddrBookStrict = false
   Moniker =  "HIVE SMART CHAIN SEED SERVER"
   IdentifyPeers = true
-  AuthorizedPeers = "0.0.0.0"
+  AuthorizedPeers = ""
   CreateEmptyBlocks = "5s"
   MaxNumPeers = 50
 
