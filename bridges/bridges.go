@@ -34,14 +34,14 @@ func Run() (err error) {
 			for _, tx := range block.Transactions {
 				for _, op := range tx.Operations {
 					switch body := op.Data().(type) {
-						// Comment operation.
-						case *types.CommentOperation:
-							content, _ := client.Database.GetContent(body.Author, body.Permlink)
-							fmt.Printf("COMMENT @%v %v\n", content.Author, content.URL)
+					// Comment operation.
+					case *types.CommentOperation:
+						content, _ := client.Database.GetContent(body.Author, body.Permlink)
+						fmt.Printf("COMMENT @%v %v\n", content.Author, content.URL)
 
-						// Vote operation.
-						case *types.VoteOperation:
-							fmt.Printf("VOTE @%v @%v/%v\n", body.Voter, body.Author, body.Permlink)
+					// Vote operation.
+					case *types.VoteOperation:
+						fmt.Printf("VOTE @%v @%v/%v\n", body.Voter, body.Author, body.Permlink)
 
 						// You can add more cases, it depends on what
 						// operations you actually need to process.
