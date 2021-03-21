@@ -179,7 +179,7 @@ HscDir = ".testnet"
   MaxNumPeers = 50
 
 [Execution]
-  TimeoutFactor = 0.33
+  TimeoutFactor = 0.1
   CallStackMaxDepth = 0
   DataStackInitialCapacity = 1024
   DataStackMaxDepth = 0
