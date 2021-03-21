@@ -175,7 +175,7 @@ HscDir = ".testnet"
   Moniker =  "SeedServer"
   IdentifyPeers = true
   AuthorizedPeers = ""
-  CreateEmptyBlocks = "3s"
+  CreateEmptyBlocks = "1s"
   MaxNumPeers = 50
 
   [Execution]
