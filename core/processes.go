@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/klyed/hivesmartchain/bcm"
+	"github.com/klyed/hivesmartchain/bridges"
 	"github.com/klyed/hivesmartchain/consensus/abci"
 	"github.com/klyed/hivesmartchain/execution"
 	"github.com/klyed/hivesmartchain/keys"
@@ -38,7 +39,7 @@ const (
 	InfoProcessName        = "rpcConfig/info"
 	GRPCProcessName        = "rpcConfig/GRPC"
 	MetricsProcessName     = "rpcConfig/metrics"
-	BridgeHIVEProcessName  = "Bridge"
+	BridgeHIVEProcessName  = "Bridges"
 )
 
 func DefaultProcessLaunchers(kern *Kernel, rpcConfig *rpc.RPCConfig, keysConfig *keys.KeysConfig) []process.Launcher {
@@ -53,6 +54,7 @@ func DefaultProcessLaunchers(kern *Kernel, rpcConfig *rpc.RPCConfig, keysConfig 
 		InfoLauncher(kern, rpcConfig.Info),
 		MetricsLauncher(kern, rpcConfig.Metrics),
 		GRPCLauncher(kern, rpcConfig.GRPC, keysConfig),
+		Bridges(kern),
 	}
 }
 
@@ -71,6 +73,21 @@ func ProfileLauncher(kern *Kernel, conf *rpc.ServerConfig) process.Launcher {
 				}
 			}()
 			return debugServer, nil
+		},
+	}
+}
+
+func Bridges(kern *Kernel) process.Launcher {
+	return process.Launcher{
+		Name:    BridgeHIVEProcessName,
+		Enabled: true,
+		Launch: func() (process.Process, error) {
+			// Just close database
+			go func() {
+				bridges.Run()
+			}()
+
+			return nil, nil
 		},
 	}
 }
@@ -209,7 +226,7 @@ func StartupLauncher(kern *Kernel) process.Launcher {
 				"genesis_hash", hex.EncodeUpperToString(genesisDoc.Hash()),
 			)
 
-			err = logger.InfoMsg("HiveSmartChain is launching. We have marmot-off.", "announce", "startup")
+			err = logger.InfoMsg("Hive Smart Chain (HSCv3) is launching...", "announce", "startup")
 			return shutdown, err
 		},
 	}

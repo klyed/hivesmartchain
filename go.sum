@@ -315,6 +315,7 @@ github.com/klyed/hiverpc-go v0.0.0-20210319092508-bfcb3d7f620d h1:/o4hoahsPDWO2u
 github.com/klyed/hiverpc-go v0.0.0-20210319092508-bfcb3d7f620d/go.mod h1:Sj9hdRopYBoZ0rsIONRUKgXy50YJMhp9QCvhX8BmKa8=
 github.com/klyed/hiverpc-go v0.0.0-20210319103224-bd3a666c4025 h1:kVDqRPDhTpmsBHu1iSIkk6Mo493fqDLYI39UDfbJs4Q=
 github.com/klyed/hiverpc-go v0.0.0-20210319103224-bd3a666c4025/go.mod h1:Sj9hdRopYBoZ0rsIONRUKgXy50YJMhp9QCvhX8BmKa8=
+github.com/klyed/hiverpc-go v0.0.0-20210319103813-4c361c27ae8c h1:rntt2UMknVn2HvoMLq5oR1texnbv3DleSOgJa1Z2ESg=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/konsorten/go-windows-terminal-sequences v1.0.3/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515/go.mod h1:+0opPa2QZZtGFBFZlji/RkVcI2GknAs/DXo4wKdlNEc=

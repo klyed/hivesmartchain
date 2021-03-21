@@ -1,223 +1,225 @@
 HscDir = ".testnet"
 
 [GenesisDoc]
-  GenesisTime = 2021-03-18T09:32:42Z
-  ChainName = "HSCv3"
-  ChainID = "420"
-  [GenesisDoc.Params]
-    ProposalThreshold = 1
-  [GenesisDoc.GlobalPermissions]
-    [GenesisDoc.GlobalPermissions.Base]
-      Perms = "send | call | createContract | createAccount | bond | name | proposal | input | batch | hasBase | hasRole"
-      SetBit = "root | send | call | createContract | createAccount | bond | name | proposal | input | batch | identify | hasBase | setBase | unsetBase | setGlobal | hasRole | addRole | removeRole"
+GenesisTime = 2021-03-18T09:32:42Z
+ChainName = "HSCv3"
+ChainID = "420"
+[GenesisDoc.Params]
+ProposalThreshold = 1
+[GenesisDoc.GlobalPermissions]
+[GenesisDoc.GlobalPermissions.Base]
+Perms = "send | call | createContract | createAccount | bond | name | proposal | input | batch | hasBase | hasRole"
+SetBit = "root | send | call | createContract | createAccount | bond | name | proposal | input | batch | identify | hasBase | setBase | unsetBase | setGlobal | hasRole | addRole | removeRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "0EAFE809AA10D24E31E362C20BED09C884BDE336"
-    Amount = 9999999999
-    Name = "Validator_0"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"B80035E1E4F5DE9CE54D84CBF8B9F42F9B2F4FD0256C0A5646474ABCDAD46E61\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-      Perms = "send | call | name | proposal | input | hasRole | bond"
-      SetBit = "send | call | name | proposal | input | hasRole | bond"
+[[GenesisDoc.Accounts]]
+Address = "0EAFE809AA10D24E31E362C20BED09C884BDE336"
+Amount = 9999999999
+Power = 99999
+Pegged = 99999
+Name = "Validator_0"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"B80035E1E4F5DE9CE54D84CBF8B9F42F9B2F4FD0256C0A5646474ABCDAD46E61\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole | bond"
+SetBit = "send | call | name | proposal | input | hasRole | bond"
 
-  [[GenesisDoc.Accounts]]
-    Address = "A8F452BDE08747AEAF29723CD94618EC0FC8C91D"
-    Amount = 9999999999
-    Name = "Validator_1"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5E3A36537D89FFED5F435708F43C7F48030327FA834D00735F87646C834B06DD\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-      Perms = "send | call | name | proposal | input | hasRole | bond"
-      SetBit = "send | call | name | proposal | input | hasRole | bond"
+[[GenesisDoc.Accounts]]
+Address = "A8F452BDE08747AEAF29723CD94618EC0FC8C91D"
+Amount = 9999999999
+Name = "Validator_1"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5E3A36537D89FFED5F435708F43C7F48030327FA834D00735F87646C834B06DD\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole | bond"
+SetBit = "send | call | name | proposal | input | hasRole | bond"
 
-  [[GenesisDoc.Accounts]]
-    Address = "D0243FEF063E1CEB950673E593020B9ADA7C84B1"
-    Amount = 99999999999999
-    Name = "Root_0"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"82E6DE6829F68D16FB15478B81CA5911E63CF3FDD254E51F748CD3F021EF7896\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "root | send | call | createContract | createAccount | bond | name | proposal | input | batch | identify | hasBase | setBase | unsetBase | setGlobal | hasRole | addRole | removeRole"
-        SetBit = "root | send | call | createContract | createAccount | bond | name | proposal | input | batch | identify | hasBase | setBase | unsetBase | setGlobal | hasRole | addRole | removeRole"
+[[GenesisDoc.Accounts]]
+Address = "D0243FEF063E1CEB950673E593020B9ADA7C84B1"
+Amount = 99999999999999
+Name = "Root_0"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"82E6DE6829F68D16FB15478B81CA5911E63CF3FDD254E51F748CD3F021EF7896\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "root | send | call | createContract | createAccount | bond | name | proposal | input | batch | identify | hasBase | setBase | unsetBase | setGlobal | hasRole | addRole | removeRole"
+SetBit = "root | send | call | createContract | createAccount | bond | name | proposal | input | batch | identify | hasBase | setBase | unsetBase | setGlobal | hasRole | addRole | removeRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "6DFBB2FD32E828C53FD0C0B1359EC121460FABA6"
-    Amount = 9999999999
-    Name = "Participant_0"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"FAF15DA263B6ECE7A6109BB2CCE3014F28A5369010C74BA4BBA0A0D1D4BF26F8\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "send | call | name | proposal | input | hasRole"
-        SetBit = "send | call | name | proposal | input | hasRole"
+[[GenesisDoc.Accounts]]
+Address = "6DFBB2FD32E828C53FD0C0B1359EC121460FABA6"
+Amount = 9999999999
+Name = "Participant_0"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"FAF15DA263B6ECE7A6109BB2CCE3014F28A5369010C74BA4BBA0A0D1D4BF26F8\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole"
+SetBit = "send | call | name | proposal | input | hasRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "17E393AEBDDF15884530906815321F73C7F2DC5D"
-    Amount = 9999999999
-    Name = "Participant_1"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5CE6B7A7C45E8870060453EBCED9C5743D040275C896AF372AC36FC17C601054\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "send | call | name | proposal | input | hasRole"
-        SetBit = "send | call | name | proposal | input | hasRole"
+[[GenesisDoc.Accounts]]
+Address = "17E393AEBDDF15884530906815321F73C7F2DC5D"
+Amount = 9999999999
+Name = "Participant_1"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5CE6B7A7C45E8870060453EBCED9C5743D040275C896AF372AC36FC17C601054\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole"
+SetBit = "send | call | name | proposal | input | hasRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "D4B5286A2C70DFE8501FDAA17B56A542F43FF6ED"
-    Amount = 9999999999
-    Name = "Participant_2"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"EE0E82A8802A1399294CFD12F7C59CDCEF51213335E5BFD0BA95FD686DF8D73F\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "send | call | name | proposal | input | hasRole"
-        SetBit = "send | call | name | proposal | input | hasRole"
+[[GenesisDoc.Accounts]]
+Address = "D4B5286A2C70DFE8501FDAA17B56A542F43FF6ED"
+Amount = 9999999999
+Name = "Participant_2"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"EE0E82A8802A1399294CFD12F7C59CDCEF51213335E5BFD0BA95FD686DF8D73F\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole"
+SetBit = "send | call | name | proposal | input | hasRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "A5E312920396003D20C77E9DD7E27F74514332F7"
-    Amount = 9999999999
-    Name = "Participant_3"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"D54C0DB5309C52D5287BB3053A86AC03227FE4493C47289F14C20FB3F27EFD93\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "send | call | name | proposal | input | hasRole"
-        SetBit = "send | call | name | proposal | input | hasRole"
+[[GenesisDoc.Accounts]]
+Address = "A5E312920396003D20C77E9DD7E27F74514332F7"
+Amount = 9999999999
+Name = "Participant_3"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"D54C0DB5309C52D5287BB3053A86AC03227FE4493C47289F14C20FB3F27EFD93\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole"
+SetBit = "send | call | name | proposal | input | hasRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "F40E4DD4218ACC0447F973FAC5E4A928CD612D3E"
-    Amount = 9999999999
-    Name = "Participant_4"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"2159EDFD28038521292F2889181DDD32D7A0EAFAD6206CC130C4E9DB2EA47450\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "send | call | name | proposal | input | hasRole"
-        SetBit = "send | call | name | proposal | input | hasRole"
+[[GenesisDoc.Accounts]]
+Address = "F40E4DD4218ACC0447F973FAC5E4A928CD612D3E"
+Amount = 9999999999
+Name = "Participant_4"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"2159EDFD28038521292F2889181DDD32D7A0EAFAD6206CC130C4E9DB2EA47450\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole"
+SetBit = "send | call | name | proposal | input | hasRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "0240D03BF4B91F408E5EB7A0B69EEE06464F3EC6"
-    Amount = 9999999999
-    Name = "Participant_5"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"20362E01ED73536D20C9A91ED74CE2D2829AD92E4BCD3DB53AEB86702DF71E7C\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "send | call | name | proposal | input | hasRole"
-        SetBit = "send | call | name | proposal | input | hasRole"
+[[GenesisDoc.Accounts]]
+Address = "0240D03BF4B91F408E5EB7A0B69EEE06464F3EC6"
+Amount = 9999999999
+Name = "Participant_5"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"20362E01ED73536D20C9A91ED74CE2D2829AD92E4BCD3DB53AEB86702DF71E7C\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole"
+SetBit = "send | call | name | proposal | input | hasRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "5881E8136D9C38A8B223CEC698EB1845735687A4"
-    Amount = 9999999999
-    Name = "Participant_6"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"3217832C193F38C5D0C94AC9CC535F7E54C57E6E79BF7FAFF495F023B945CC62\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "send | call | name | proposal | input | hasRole"
-        SetBit = "send | call | name | proposal | input | hasRole"
+[[GenesisDoc.Accounts]]
+Address = "5881E8136D9C38A8B223CEC698EB1845735687A4"
+Amount = 9999999999
+Name = "Participant_6"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"3217832C193F38C5D0C94AC9CC535F7E54C57E6E79BF7FAFF495F023B945CC62\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole"
+SetBit = "send | call | name | proposal | input | hasRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "848703A5C2D3EDE8BC66EE027611F7817E68C9A6"
-    Amount = 9999999999
-    Name = "Participant_7"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"6FFD675A7806DDBF7DE0F04FAD1EFE4D67F5F3F673ECC169C68A863D92D484D6\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "send | call | name | proposal | input | hasRole"
-        SetBit = "send | call | name | proposal | input | hasRole"
+[[GenesisDoc.Accounts]]
+Address = "848703A5C2D3EDE8BC66EE027611F7817E68C9A6"
+Amount = 9999999999
+Name = "Participant_7"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"6FFD675A7806DDBF7DE0F04FAD1EFE4D67F5F3F673ECC169C68A863D92D484D6\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole"
+SetBit = "send | call | name | proposal | input | hasRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "A39BDCD35A3E810C4DEDE62984D32C8649035B07"
-    Amount = 9999999999
-    Name = "Participant_8"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"18CBA75124B1EE2021585B2BACF8B5AB1618337F2847D9BBD955679301C35FC7\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "send | call | name | proposal | input | hasRole"
-        SetBit = "send | call | name | proposal | input | hasRole"
+[[GenesisDoc.Accounts]]
+Address = "A39BDCD35A3E810C4DEDE62984D32C8649035B07"
+Amount = 9999999999
+Name = "Participant_8"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"18CBA75124B1EE2021585B2BACF8B5AB1618337F2847D9BBD955679301C35FC7\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole"
+SetBit = "send | call | name | proposal | input | hasRole"
 
-  [[GenesisDoc.Accounts]]
-    Address = "563E209CC81C5849BD566D8BCDBED00FBB92C66D"
-    Amount = 9999999999
-    Name = "Participant_9"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"EEE6500DF91E5F5E61934E2D205F5FF212666F975C4389CF93CA85438E5A10D2\"}"
-    [GenesisDoc.Accounts.Permissions]
-      [GenesisDoc.Accounts.Permissions.Base]
-        Perms = "send | call | name | proposal | input | hasRole"
-        SetBit = "send | call | name | proposal | input | hasRole"
+[[GenesisDoc.Accounts]]
+Address = "563E209CC81C5849BD566D8BCDBED00FBB92C66D"
+Amount = 9999999999
+Name = "Participant_9"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"EEE6500DF91E5F5E61934E2D205F5FF212666F975C4389CF93CA85438E5A10D2\"}"
+[GenesisDoc.Accounts.Permissions]
+[GenesisDoc.Accounts.Permissions.Base]
+Perms = "send | call | name | proposal | input | hasRole"
+SetBit = "send | call | name | proposal | input | hasRole"
 
-  [[GenesisDoc.Validators]]
-    Address = "0EAFE809AA10D24E31E362C20BED09C884BDE336"
-    Amount = 9999999998
-    Name = "Validator_0"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"B80035E1E4F5DE9CE54D84CBF8B9F42F9B2F4FD0256C0A5646474ABCDAD46E61\"}"
+[[GenesisDoc.Validators]]
+Address = "0EAFE809AA10D24E31E362C20BED09C884BDE336"
+Amount = 9999999998
+Name = "Validator_0"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"B80035E1E4F5DE9CE54D84CBF8B9F42F9B2F4FD0256C0A5646474ABCDAD46E61\"}"
 
-    [[GenesisDoc.Validators.UnbondTo]]
-      Address = "0EAFE809AA10D24E31E362C20BED09C884BDE336"
-      Amount = 9999999998
-      PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"B80035E1E4F5DE9CE54D84CBF8B9F42F9B2F4FD0256C0A5646474ABCDAD46E61\"}"
+[[GenesisDoc.Validators.UnbondTo]]
+Address = "0EAFE809AA10D24E31E362C20BED09C884BDE336"
+Amount = 9999999998
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"B80035E1E4F5DE9CE54D84CBF8B9F42F9B2F4FD0256C0A5646474ABCDAD46E61\"}"
 
-  [[GenesisDoc.Validators]]
-    Address = "A8F452BDE08747AEAF29723CD94618EC0FC8C91D"
-    Amount = 9999999998
-    Name = "Validator_1"
-    PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5E3A36537D89FFED5F435708F43C7F48030327FA834D00735F87646C834B06DD\"}"
+[[GenesisDoc.Validators]]
+Address = "A8F452BDE08747AEAF29723CD94618EC0FC8C91D"
+Amount = 9999999998
+Name = "Validator_1"
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5E3A36537D89FFED5F435708F43C7F48030327FA834D00735F87646C834B06DD\"}"
 
-    [[GenesisDoc.Validators.UnbondTo]]
-      Address = "A8F452BDE08747AEAF29723CD94618EC0FC8C91D"
-      Amount = 9999999998
-      PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5E3A36537D89FFED5F435708F43C7F48030327FA834D00735F87646C834B06DD\"}"
+[[GenesisDoc.Validators.UnbondTo]]
+Address = "A8F452BDE08747AEAF29723CD94618EC0FC8C91D"
+Amount = 9999999998
+PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5E3A36537D89FFED5F435708F43C7F48030327FA834D00735F87646C834B06DD\"}"
 
 [Tendermint]
-  Enabled = true
-  Seeds = ""
-  SeedMode = false
-  PersistentPeers = "89c540f43a5b3de4bd559cf478fdf7a71eae6c07@206.45.142.209:26656, 0a7e3f6cdcf2d5d0829238ada209d9c8d481a067@185.130.44.165:26656"
-  ListenHost = "0.0.0.0"
-  ListenPort = "26656"
-  ExternalAddress = "185.130.44.72:26656"
-  AddrBookStrict = false
-  Moniker =  "SeedServer"
-  IdentifyPeers = true
-  AuthorizedPeers = ""
-  CreateEmptyBlocks = "1s"
-  MaxNumPeers = 50
+Enabled = true
+Seeds = ""
+SeedMode = false
+PersistentPeers = "89c540f43a5b3de4bd559cf478fdf7a71eae6c07@206.45.142.209:26656, 0a7e3f6cdcf2d5d0829238ada209d9c8d481a067@185.130.44.165:26656"
+ListenHost = "0.0.0.0"
+ListenPort = "26656"
+ExternalAddress = "185.130.44.72:26656"
+AddrBookStrict = false
+Moniker =  "SeedServer"
+IdentifyPeers = true
+AuthorizedPeers = ""
+CreateEmptyBlocks = "1s"
+MaxNumPeers = 50
 
-  [Execution]
-    TimeoutFactor = 0.1
-    CallStackMaxDepth = 0
-    DataStackInitialCapacity = 1024
-    DataStackMaxDepth = 0
+[Execution]
+TimeoutFactor = 0.1
+CallStackMaxDepth = 0
+DataStackInitialCapacity = 1024
+DataStackMaxDepth = 0
 
-  [Keys]
-    GRPCServiceEnabled = false
-    AllowBadFilePermissions = true
-    RemoteAddress = ""
-    KeysDirectory = ".keys"
+[Keys]
+GRPCServiceEnabled = false
+AllowBadFilePermissions = true
+RemoteAddress = ""
+KeysDirectory = ".keys"
 
-  [RPC]
-    [RPC.Info]
-      Enabled = true
-      ListenHost = "0.0.0.0"
-      ListenPort = "26658"
-    [RPC.Profiler]
-      Enabled = true
-      ListenHost = "0.0.0.0"
-      ListenPort = "6060"
-    [RPC.GRPC]
-      Enabled = true
-      ListenHost = "0.0.0.0"
-      ListenPort = "10997"
-    [RPC.Metrics]
-      Enabled = true
-      ListenHost = "0.0.0.0"
-      ListenPort = "9102"
-      MetricsPath = "/metrics"
-      BlockSampleSize = 100
-    [RPC.Web3]
-      Enabled = true
-      ListenHost = "0.0.0.0"
-      ListenPort = "26660"
+[RPC]
+[RPC.Info]
+Enabled = true
+ListenHost = "0.0.0.0"
+ListenPort = "26658"
+[RPC.Profiler]
+Enabled = true
+ListenHost = "0.0.0.0"
+ListenPort = "6060"
+[RPC.GRPC]
+Enabled = true
+ListenHost = "0.0.0.0"
+ListenPort = "10997"
+[RPC.Metrics]
+Enabled = true
+ListenHost = "0.0.0.0"
+ListenPort = "9102"
+MetricsPath = "/metrics"
+BlockSampleSize = 100
+[RPC.Web3]
+Enabled = true
+ListenHost = "0.0.0.0"
+ListenPort = "26660"
 
-  [Logging]
-    Trace = false
-    NonBlocking = false
-    [Logging.RootSink]
-      [Logging.RootSink.Output]
-        OutputType = "stdout"
-        Format = "json"
+[Logging]
+Trace = false
+NonBlocking = false
+[Logging.RootSink]
+[Logging.RootSink.Output]
+OutputType = "stdout"
+Format = "json"
