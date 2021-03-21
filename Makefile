@@ -148,8 +148,8 @@ build_race:	check build_race_db
 .PHONY: build_hsc
 build_hsc: commit_hash
 	go build $(HSC_BUILD_FLAGS) -ldflags "-extldflags '-static' \
-	-Xgithub.com/klyed/hivesmartchain/project.commit=$(shell cat commit_hash.txt) \
-	-Xgithub.com/klyed/hivesmartchain/project.date=$(shell date '+%Y-%m-%d')" \
+	-X github.com/klyed/hivesmartchain/project.commit=$(shell cat commit_hash.txt) \
+	-X github.com/klyed/hivesmartchain/project.date=$(shell date '+%Y-%m-%d')" \
 	-o ${REPO}/bin/hsc$(HSC_BUILD_SUFFIX) ./cmd/hsc
 
 # With the sqlite tag - enabling Vent sqlite adapter support, but building a CGO binary
@@ -169,7 +169,7 @@ build_hsc_debug:
 .PHONY: install
 install: build_hsc
 	mkdir -p ${BIN_PATH}
-	install ${REPO}/bin/hsc${BIN_PATH}/hsc
+	install ${REPO}/bin/hsc ${BIN_PATH}/hsc
 
 # build hsc with checks for race conditions
 .PHONY: build_race_db

@@ -5,7 +5,6 @@ import (
 	"crypto/sha256"
 	"fmt"
 	"github.com/klyed/hivesmartchain/bcm"
-	"github.com/klyed/hivesmartchain/bridges"
 	"github.com/klyed/hivesmartchain/execution"
 	"github.com/klyed/hivesmartchain/txs"
 	"github.com/tendermint/tendermint/abci/types"
@@ -27,7 +26,6 @@ type Process struct {
 	panic        func(error)
 	commitNeeded bool
 	txDecoder    txs.Decoder
-	bridges      bridges.Run
 	shutdownOnce sync.Once
 }
 

@@ -1,12 +1,7 @@
 package bridges
 
 import (
-	"flag"
 	"fmt"
-	"log"
-	"os"
-	"os/signal"
-	"syscall"
 	"time"
 
 	"github.com/klyed/hiverpc-go"
@@ -14,15 +9,9 @@ import (
 	"github.com/klyed/hiverpc-go/types"
 )
 
-func bridges() {
-	if err := Run(); err != nil {
-		log.Fatalln("Error:", err)
-	}
-}
-
 func Run() (err error) {
 	// Instantiate the WebSocket transport.
-	t, _ := websocket.NewTransport("https://api.hive-roller.com")
+	t, _ := websocket.NewTransport([]string{"https://api.hive-roller.com"})
 
 	// Use the transport to create an RPC client.
 	client, _ := rpc.NewClient(t)
@@ -32,7 +21,7 @@ func Run() (err error) {
 	config, _ := client.Database.GetConfig()
 
 	// Start processing blocks.
-	lastBlock := 1800000
+	lastBlock := uint32(1800000)
 	for {
 		// Call "get_dynamic_global_properties".
 		props, _ := client.Database.GetDynamicGlobalProperties()

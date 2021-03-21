@@ -83,7 +83,7 @@ func TestIdentify(t *testing.T) {
 	require.Contains(t, addrs, accounts[1].GetAddress())
 
 	// re-register node with different moniker
-	configs[1].Tendermint.Moniker =  "foobar"
+	configs[1].Tendermint.Moniker = "foobar"
 	node = nodeFromConf(t,
 		configs[1],
 		configs[1].Tendermint.ListenHost,
@@ -112,7 +112,7 @@ func nodeFromConf(t *testing.T, conf *config.BurrowConfig, host string, val cryp
 	addr, err := crypto.AddressFromHexString(string(nodeKey.ID()))
 	require.NoError(t, err)
 	return &registry.NodeIdentity{
-		Moniker:           conf.Tendermint.Moniker,
+		Moniker:            conf.Tendermint.Moniker,
 		NetworkAddress:     host,
 		TendermintNodeID:   addr,
 		ValidatorPublicKey: val.GetPublicKey(),
