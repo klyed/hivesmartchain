@@ -62,13 +62,15 @@ func Startbridge() (err error) {
 		websocket.SetAutoReconnectMaxDelay(30*time.Second),
 		websocket.SetMonitor(monitorChan))
 	if err != nil {
-		return err
+		log.Println(err)
+		//return err
 	}
 
 	// Use the transport to get an RPC client.
 	client, err := rpc.NewClient(t)
 	if err != nil {
-		return err
+		log.Println(err)
+		//return err
 	}
 	defer func() {
 		if !interrupted {
@@ -90,13 +92,13 @@ func Startbridge() (err error) {
 	log.Println("---> GetConfig()")
 	config, err := client.Database.GetConfig()
 	if err != nil {
-		return err
+		log.Println(err)
 	}
 
 	// Use the last irreversible block number as the initial last block number.
 	props, err := client.Database.GetDynamicGlobalProperties()
 	if err != nil {
-		return err
+		log.Println(err)
 	}
 	lastBlock := props.LastIrreversibleBlockNum
 
@@ -106,14 +108,14 @@ func Startbridge() (err error) {
 		// Get current properties.
 		props, err := client.Database.GetDynamicGlobalProperties()
 		if err != nil {
-			return err
+			log.Println(err)
 		}
 
 		// Process new blocks.
 		for props.LastIrreversibleBlockNum-lastBlock > 0 {
 			block, err := client.Database.GetBlock(lastBlock)
 			if err != nil {
-				return err
+				log.Println(err)
 			}
 
 			// Process the transactions.
@@ -123,9 +125,9 @@ func Startbridge() (err error) {
 					case *types.VoteOperation:
 						fmt.Printf("@\"%v\"voted for @\"%v\"/\"%v\"\n", op.Voter, op.Author, op.Permlink)
 
-					case *types.CustomJSONOperation:
-						//content, _ := client.Database.GetContent(body.Author, body.Permlink)
-						fmt.Printf("OPERATION \"%v\"\n", op)
+					//case *types.CustomJSONOperation:
+					//content, _ := client.Database.GetContent(body.Author, body.Permlink)
+					//fmt.Printf("OPERATION \"%v\"\n", op)
 
 					// Vote operation.
 					case *types.TransferOperation:
