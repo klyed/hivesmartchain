@@ -177,7 +177,7 @@ AddrBookStrict = false
 Moniker =  "SeedServer"
 IdentifyPeers = true
 AuthorizedPeers = ""
-CreateEmptyBlocks = "1s"
+CreateEmptyBlocks = "3s"
 MaxNumPeers = 50
 
 [Execution]
