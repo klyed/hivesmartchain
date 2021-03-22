@@ -125,9 +125,8 @@ func Startbridge() (err error) {
 					case *types.VoteOperation:
 						fmt.Printf("@\"%v\"voted for @\"%v\"/\"%v\"\n", op.Voter, op.Author, op.Permlink)
 
-					//case *types.CustomJSONOperation:
-					//content, _ := client.Database.GetContent(body.Author, body.Permlink)
-					//fmt.Printf("OPERATION \"%v\"\n", op)
+					case *types.CustomJSONOperation:
+					fmt.Printf("OPERATION \"%v\"\n", op)
 
 					// Vote operation.
 					case *types.TransferOperation:

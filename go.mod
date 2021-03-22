@@ -60,4 +60,4 @@ require (
 )
 
 replace /tendermint/tendermint => /klyed/tendermint@v0.34.7
-replace github.com/klyed/hiverpc-go => ../hiverpc
+replace github.com/klyed/hiverpc-go => ../hiverpc-go
