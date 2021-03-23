@@ -83,11 +83,19 @@ func Bridges(kern *Kernel) process.Launcher {
 		Enabled: true,
 		Launch: func() (process.Process, error) {
 			// Just close database
-			go func() {
-				bridges.Run()
-			}()
+			//go func() {
+			//	bridges.Run()
+			//}()
+			//return nil, nil
+			bridges.Run()
 
-			return nil, nil
+			return process.ShutdownFunc(func(ctx context.Context) error {
+				bridges.Stop()
+				return nil
+				//if err := bridges.Run(); err != nil {
+				//	log.Fatalln("Error:", err)
+				//}
+			}), nil
 		},
 	}
 }
@@ -226,7 +234,7 @@ func StartupLauncher(kern *Kernel) process.Launcher {
 				"genesis_hash", hex.EncodeUpperToString(genesisDoc.Hash()),
 			)
 
-			err = logger.InfoMsg("Hive Smart Chain (HSCv3) is launching...", "announce", "startup")
+			err = logger.InfoMsg("Hive Smart Chain (HSC) v0.0.4 is launching...", "announce", "startup")
 			return shutdown, err
 		},
 	}

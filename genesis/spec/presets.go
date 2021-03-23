@@ -13,53 +13,55 @@ import (
 func FullAccount(name string) GenesisSpec {
 	// Inheriting from the arbitrary figures used by monax tool for now
 	amount := uint64(0)
-	Power := uint64(9999999999)
+	power := uint64(0)
+	pegged := uint64(0)
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
-			Name:        name,
-			Amounts:     balance.New().Native(amount).Power(Power),
+			Name:         name,
+			Amounts:		 balance.New().Native(amount).Power(power).Pegged(pegged),
 			Permissions: []string{permission.AllString},
-		},
-		},
+		}},
 	}
 }
 
 func RootAccount(name string) GenesisSpec {
 	// Inheriting from the arbitrary figures used by monax tool for now
 	amount := uint64(0)
+	power := uint64(0)
+	pegged := uint64(0)
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
 			Name:        name,
-			Amounts:     balance.New().Native(amount),
+			Amounts:		 balance.New().Native(amount).Power(power).Pegged(pegged),
 			Permissions: []string{permission.AllString},
-		},
-		},
+		}},
 	}
 }
 
 func ParticipantAccount(name string) GenesisSpec {
 	// Inheriting from the arbitrary figures used by monax tool for now
 	amount := uint64(0)
+	power := uint64(0)
+	pegged := uint64(0)
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
-			Name:    name,
-			Amounts: balance.New().Native(amount),
-			Permissions: []string{permission.SendString, permission.CallString, permission.NameString,
-				permission.HasRoleString, permission.ProposalString, permission.InputString},
+			Name:        name,
+			Amounts:		 balance.New().Native(amount).Power(power).Pegged(pegged),
+			Permissions: []string{permission.SendString, permission.CallString, permission.NameString,permission.HasRoleString, permission.ProposalString, permission.InputString},
 		}},
 	}
 }
 
 func DeveloperAccount(name string) GenesisSpec {
 	// Inheriting from the arbitrary figures used by monax tool for now
-	amount := uint64(9999999999)
+	amount := uint64(0)
+	power := uint64(0)
+	pegged := uint64(0)
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
-			Name:    name,
-			Amounts: balance.New().Native(amount),
-			Permissions: []string{permission.SendString, permission.CallString, permission.CreateContractString,
-				permission.CreateAccountString, permission.NameString, permission.HasRoleString,
-				permission.RemoveRoleString, permission.ProposalString, permission.InputString},
+			Name:        name,
+			Amounts:		 balance.New().Native(amount).Power(power).Pegged(pegged),
+			Permissions: []string{permission.SendString, permission.CallString, permission.CreateContractString, permission.CreateAccountString, permission.NameString, permission.HasRoleString, permission.RemoveRoleString, permission.ProposalString, permission.InputString},
 		}},
 	}
 }
@@ -67,11 +69,12 @@ func DeveloperAccount(name string) GenesisSpec {
 func ValidatorAccount(name string) GenesisSpec {
 	// Inheriting from the arbitrary figures used by monax tool for now
 	amount := uint64(0)
-	Power := uint64(500)
+	power := uint64(0)
+	pegged := uint64(0)
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
 			Name:        name,
-			Amounts:     balance.New().Native(amount).Power(Power),
+			Amounts:		 balance.New().Native(amount).Power(power).Pegged(pegged),
 			Permissions: []string{permission.BondString},
 		}},
 	}

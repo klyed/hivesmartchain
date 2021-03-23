@@ -25,7 +25,7 @@ import (
 
 func init() {
 	// Tendermint now sets this dynamically in it's build... we could also automate setting it
-	version.TMCoreSemVer = "0.34.3"
+	version.TMCoreSemVer = "0.0.4"
 }
 
 // Serves as a wrapper around the Tendermint node's closeable resources (database connections)
@@ -102,7 +102,7 @@ func DeriveGenesisDoc(hscGenesisDoc *genesis.GenesisDoc, appHash []byte) *tmType
 	consensusParams.Block.TimeIotaMs = 1
 
 	return &tmTypes.GenesisDoc{
-		ChainID:         hscGenesisDoc.ChainID(),
+		ChainID:         "69",
 		GenesisTime:     hscGenesisDoc.GenesisTime,
 		Validators:      validators,
 		AppHash:         appHash,

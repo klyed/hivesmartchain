@@ -15,8 +15,12 @@ import (
 
 func Run() {
 	if err := Startbridge(); err != nil {
-		log.Fatalln("Error:", err)
+		log.Fatalln("HIVEOP: Error:", err)
 	}
+}
+
+func Stop() {
+	log.Fatalln("HIVEOP: Stopping...")
 }
 
 func Startbridge() (err error) {
@@ -56,7 +60,7 @@ func Startbridge() (err error) {
 	}
 
 	// Instantiate the WebSocket transport.
-	log.Printf("---> Dial(\"%v\")\n", url)
+	log.Printf("HIVEOP: Connecting to HIVE Over WebSockets: (\"%v\")\n", url)
 	t, err := websocket.NewTransport(url,
 		websocket.SetAutoReconnectEnabled(reconnect),
 		websocket.SetAutoReconnectMaxDelay(30*time.Second),
@@ -82,14 +86,14 @@ func Startbridge() (err error) {
 	go func() {
 		<-signalCh
 		fmt.Println()
-		log.Println("Signal received, exiting...")
+		log.Println("HIVEOP: Signal received, exiting...")
 		signal.Stop(signalCh)
 		interrupted = true
 		client.Close()
 	}()
 
 	// Get config.
-	log.Println("---> GetConfig()")
+	log.Println("HIVEOP: GetConfig()")
 	config, err := client.Database.GetConfig()
 	if err != nil {
 		log.Println(err)
@@ -100,10 +104,10 @@ func Startbridge() (err error) {
 	if err != nil {
 		log.Println(err)
 	}
-	lastBlock := props.LastIrreversibleBlockNum
+	lastBlock := uint32(props.HeadBlockNumber)
 
 	// Keep processing incoming blocks forever.
-	log.Printf("---> Entering the block processing loop (last block = %v)\n", lastBlock)
+	log.Printf("HIVEOP: Starting HIVE Block Processing Bridge (last block = %v)\n", lastBlock)
 	for {
 		// Get current properties.
 		props, err := client.Database.GetDynamicGlobalProperties()
@@ -112,7 +116,7 @@ func Startbridge() (err error) {
 		}
 
 		// Process new blocks.
-		for props.LastIrreversibleBlockNum-lastBlock > 0 {
+		for uint32(props.HeadBlockNumber)-lastBlock > 0 {
 			block, err := client.Database.GetBlock(lastBlock)
 			if err != nil {
 				log.Println(err)
@@ -121,19 +125,25 @@ func Startbridge() (err error) {
 			// Process the transactions.
 			for _, tx := range block.Transactions {
 				for _, operation := range tx.Operations {
+					//Uncomment line below to watch all ops
+					//fmt.Printf("HIVEOP: operation:\n %v", operation)
 					switch op := operation.Data().(type) {
-					case *types.VoteOperation:
-						fmt.Printf("@\"%v\"voted for @\"%v\"/\"%v\"\n", op.Voter, op.Author, op.Permlink)
+					//case *types.VoteOperation:
+					//	fmt.Printf("HIVEOP: @\"%v\"voted for @\"%v\"/\"%v\" \n", op.Voter, op.Author, op.Permlink)
 
-					case *types.CustomJSONOperation:
-					fmt.Printf("OPERATION \"%v\"\n", op)
+					//case *types.CustomOperation:
+					//fmt.Printf("HIVEOP: tranfer:\n %v \n%v", tx)
 
-					// Vote operation.
 					case *types.TransferOperation:
-						fmt.Printf("OPERATION \"%v\"\n", op)
+						fmt.Printf("HIVEOP: Transfer:\n %v", op)
 
-						// You can add more cases, it depends on what
-						// operations you actually need to process.
+					//case *types.CustomJSONOperation:
+					//	fmt.Printf("HIVEOP: custom_json:\n %v", op)
+
+						// Vote operation.
+						//case *types.TransferOperation:
+						//	fmt.Printf("HIVEOP: tranfer:\n %v", op)
+
 						// You can add more cases here, it depends on
 						// what operations you actually need to process.
 					}
@@ -147,6 +157,11 @@ func Startbridge() (err error) {
 		time.Sleep(time.Duration(config.HiveBlockInterval) * time.Second)
 	}
 }
+
+//func HiveBlock() {
+//	//fmt Printf("HIVEOP: HIVE Block Height on Side Chain: %v", lastBlock)
+//	return lastBlock
+//}
 
 /*
 package bridges

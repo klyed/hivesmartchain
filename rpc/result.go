@@ -75,7 +75,7 @@ func (b *Block) UnmarshalJSON(data []byte) (err error) {
 
 type ResultChainId struct {
 	ChainName   string
-	ChainId     string
+	ChainID     string
 	GenesisHash binary.HexBytes
 }
 

@@ -87,6 +87,9 @@ func (ctx *GovernanceContext) UpdateAccount(account *acm.Account, update *spec.T
 			return ev, err
 		}
 	}
+	if update.Balances().HasPegged() {
+		account.Balance = update.Balances().GetPegged(0)
+	}
 	if update.Code != nil {
 		account.EVMCode = *update.Code
 		if err != nil {

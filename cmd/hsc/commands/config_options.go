@@ -114,13 +114,14 @@ func (opts *configOptions) obtainBurrowConfig() (*config.BurrowConfig, error) {
 		conf.Passphrase = opts.initPassphraseOpt
 	}
 	if *opts.initMonikerOpt == "" {
-		chainIDHeader := ""
+		//chainIDHeader := ""
 		if conf.GenesisDoc != nil && conf.GenesisDoc.ChainID() != "" {
-			chainIDHeader = conf.GenesisDoc.ChainID() + "_"
+			chainIDHeader := conf.GenesisDoc.ChainID()
+			fmt.Sprintf("%s", chainIDHeader)
 		}
 		if conf.ValidatorAddress != nil {
 			// Set a default moniker... since we can at this stage of config completion and it is required for start
-			conf.Tendermint.Moniker = fmt.Sprintf("%sNode_%s", chainIDHeader, conf.ValidatorAddress)
+			conf.Tendermint.Moniker = fmt.Sprintf("%s", conf.Tendermint.Moniker)
 		}
 	} else {
 		conf.Tendermint.Moniker = *opts.initMonikerOpt

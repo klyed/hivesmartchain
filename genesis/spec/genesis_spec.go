@@ -16,6 +16,7 @@ import (
 
 const DefaultAmount uint64 = 0
 const DefaultPower uint64 = 0
+const DefaultPegged uint64 = 0
 
 // A GenesisSpec is schematic representation of a genesis state, that is it is a template
 // for a GenesisDoc excluding that which needs to be instantiated at the point of genesis
@@ -46,7 +47,7 @@ func (gs *GenesisSpec) GenesisDoc(keyClient keys.KeyClient, curve crypto.CurveTy
 	}
 
 	if gs.ChainName == "" {
-		genesisDoc.ChainName = fmt.Sprintf("HiveSmartChainChain_%X", gs.ShortHash())
+		genesisDoc.ChainName = fmt.Sprintf("HSC")
 	} else {
 		genesisDoc.ChainName = gs.ChainName
 	}

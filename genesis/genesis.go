@@ -117,7 +117,7 @@ func (genesisDoc *GenesisDoc) ShortHash() []byte {
 
 func (genesisDoc *GenesisDoc) ChainID() string {
 	if genesisDoc.chainID == "" {
-		genesisDoc.chainID = fmt.Sprintf("%s-%X", genesisDoc.ChainName, genesisDoc.ShortHash())
+		genesisDoc.chainID = fmt.Sprintf("%v", genesisDoc.chainID)
 	}
 	return genesisDoc.chainID
 }
