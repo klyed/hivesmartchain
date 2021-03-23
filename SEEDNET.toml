@@ -3,7 +3,7 @@ HscDir = ".testnet"
 [GenesisDoc]
 GenesisTime = 2021-03-18T09:32:42Z
 ChainName = "HSC"
-chainID = "666"
+ChainID = "666"
 [GenesisDoc.Params]
 ProposalThreshold = 1
 [GenesisDoc.GlobalPermissions]
@@ -13,10 +13,10 @@ SetBit = "root | send | call | createContract | createAccount | bond | name | pr
 
 [[GenesisDoc.Accounts]]
 Address = "0EAFE809AA10D24E31E362C20BED09C884BDE336"
-Amount = 0
-Power = 99999
+Amount = 9999999
+Power = 0
 Pegged = 0
-Name = "Validator_0"
+Name = "klye"
 PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"B80035E1E4F5DE9CE54D84CBF8B9F42F9B2F4FD0256C0A5646474ABCDAD46E61\"}"
 [GenesisDoc.Accounts.Permissions]
 [GenesisDoc.Accounts.Permissions.Base]
@@ -25,10 +25,10 @@ SetBit = "send | call | name | proposal | input | hasRole | bond"
 
 [[GenesisDoc.Accounts]]
 Address = "A8F452BDE08747AEAF29723CD94618EC0FC8C91D"
-Amount = 0
-Power = 99999
+Amount = 9999999
+Power = 0
 Pegged = 0
-Name = "Validator_1"
+Name = "testdummy"
 PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5E3A36537D89FFED5F435708F43C7F48030327FA834D00735F87646C834B06DD\"}"
 [GenesisDoc.Accounts.Permissions]
 [GenesisDoc.Accounts.Permissions.Base]
@@ -37,10 +37,10 @@ SetBit = "send | call | name | proposal | input | hasRole | bond"
 
 [[GenesisDoc.Accounts]]
 Address = "D0243FEF063E1CEB950673E593020B9ADA7C84B1"
-Amount = 0
-Power = 99999
-Pegged = 0
-Name = "Root_0"
+Amount = 9999999
+Power = 9999999
+Pegged = 9999999
+Name = "hive.smart.chain"
 PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"82E6DE6829F68D16FB15478B81CA5911E63CF3FDD254E51F748CD3F021EF7896\"}"
 [GenesisDoc.Accounts.Permissions]
 [GenesisDoc.Accounts.Permissions.Base]
@@ -52,7 +52,7 @@ Address = "6DFBB2FD32E828C53FD0C0B1359EC121460FABA6"
 Amount = 0
 Power = 0
 Pegged = 0
-Name = "Participant_0"
+Name = "jenkem"
 PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"FAF15DA263B6ECE7A6109BB2CCE3014F28A5369010C74BA4BBA0A0D1D4BF26F8\"}"
 [GenesisDoc.Accounts.Permissions]
 [GenesisDoc.Accounts.Permissions.Base]
@@ -85,30 +85,28 @@ SetBit = "send | call | name | proposal | input | hasRole"
 
 [[GenesisDoc.Validators]]
 Address = "0EAFE809AA10D24E31E362C20BED09C884BDE336"
-Amount = 0
+Amount = 9999999
 Power = 0
 Pegged = 0
-Name = "Validator_0"
 PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"B80035E1E4F5DE9CE54D84CBF8B9F42F9B2F4FD0256C0A5646474ABCDAD46E61\"}"
 
 [[GenesisDoc.Validators.UnbondTo]]
 Address = "0EAFE809AA10D24E31E362C20BED09C884BDE336"
-Amount = 0
+Amount = 9999999
 Power = 0
 Pegged = 0
 PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"B80035E1E4F5DE9CE54D84CBF8B9F42F9B2F4FD0256C0A5646474ABCDAD46E61\"}"
 
 [[GenesisDoc.Validators]]
 Address = "A8F452BDE08747AEAF29723CD94618EC0FC8C91D"
-Amount = 0
+Amount = 9999999
 Power = 0
 Pegged = 0
-Name = "Validator_1"
 PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5E3A36537D89FFED5F435708F43C7F48030327FA834D00735F87646C834B06DD\"}"
 
 [[GenesisDoc.Validators.UnbondTo]]
 Address = "A8F452BDE08747AEAF29723CD94618EC0FC8C91D"
-Amount = 0
+Amount = 9999999
 Power = 0
 Pegged = 0
 PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5E3A36537D89FFED5F435708F43C7F48030327FA834D00735F87646C834B06DD\"}"
