@@ -134,8 +134,9 @@ func Startbridge() (err error) {
 					//case *types.CustomOperation:
 					//fmt.Printf("HIVEOP: tranfer:\n %v \n%v", tx)
 
-					case *types.TransferOperation:
-						fmt.Printf("HIVEOP: Transfer:\n %v", op)
+					case *types.UnknownOperation:
+						fmt.Printf("HIVEOP: Unknown:\n %v \v %v", op.Data())
+						//return op
 
 					//case *types.CustomJSONOperation:
 					//	fmt.Printf("HIVEOP: custom_json:\n %v", op)

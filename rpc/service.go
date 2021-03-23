@@ -100,7 +100,7 @@ func (s *Service) StatusWithin(blockTimeWithin, blockSeenTimeWithin string) (*Re
 func (s *Service) ChainIdentifiers() (*ResultChainId, error) {
 	return &ResultChainId{
 		ChainName:   s.blockchain.GenesisDoc().ChainName,
-		ChainId:     s.blockchain.ChainID(),
+		ChainID:     s.blockchain.ChainID(),
 		GenesisHash: s.blockchain.GenesisHash(),
 	}, nil
 }

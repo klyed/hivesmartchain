@@ -3,7 +3,7 @@ HscDir = ".testnet"
 [GenesisDoc]
 GenesisTime = 2021-03-18T09:32:42Z
 ChainName = "HSC"
-ChainID = "666"
+chainID = "666"
 [GenesisDoc.Params]
 ProposalThreshold = 1
 [GenesisDoc.GlobalPermissions]

@@ -21,7 +21,7 @@ import (
 // How many bytes to take from the front of the GenesisDoc hash to append
 // to the ChainName to form the ChainID. The idea is to avoid some classes
 // of replay attack between chains with the same name.
-const ShortHashSuffixBytes = 3
+const ShortHashSuffixBytes = 0
 
 //------------------------------------------------------------
 // core types for a genesis definition
@@ -45,7 +45,7 @@ type Validator struct {
 	UnbondTo []BasicAccount
 }
 
-const DefaultProposalThreshold uint64 = 3
+const DefaultProposalThreshold uint64 = 1
 
 var DefaultPermissionsAccount = PermissionsAccount(permission.DefaultAccountPermissions)
 
@@ -56,6 +56,8 @@ type params struct {
 type GenesisDoc struct {
 	GenesisTime       time.Time
 	ChainName         string
+	// Ordinarily we derive this from the genesis hash but to support explicit Ethereum ChainID it may be set
+	ChainID           string `json:",omitempty" toml:",omitempty"`
 	AppHash           binary.HexBytes `json:",omitempty" toml:",omitempty"`
 	Params            params          `json:",omitempty" toml:",omitempty"`
 	Salt              []byte          `json:",omitempty" toml:",omitempty"`
@@ -64,7 +66,6 @@ type GenesisDoc struct {
 	Validators        []Validator
 	// memo
 	hash    []byte
-	chainID string
 }
 
 func (genesisDoc *GenesisDoc) GlobalPermissionsAccount() *acm.Account {
@@ -77,7 +78,7 @@ func PermissionsAccount(globalPerms permission.AccountPermissions) *acm.Account 
 
 	return &acm.Account{
 		Address:     acm.GlobalPermissionsAddress,
-		Balance:     1337,
+		Balance:     0,
 		Permissions: globalPerms,
 	}
 }
@@ -115,11 +116,11 @@ func (genesisDoc *GenesisDoc) ShortHash() []byte {
 	return genesisDoc.Hash()[:ShortHashSuffixBytes]
 }
 
-func (genesisDoc *GenesisDoc) ChainID() string {
-	if genesisDoc.chainID == "" {
-		genesisDoc.chainID = fmt.Sprintf("%v", genesisDoc.chainID)
+func (genesisDoc *GenesisDoc) GetChainID() string {
+	if genesisDoc.ChainID == "" {
+		genesisDoc.ChainID = fmt.Sprintf("%v", genesisDoc.ChainID)
 	}
-	return genesisDoc.chainID
+	return genesisDoc.ChainID
 }
 
 //------------------------------------------------------------

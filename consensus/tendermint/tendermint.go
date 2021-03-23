@@ -102,7 +102,7 @@ func DeriveGenesisDoc(hscGenesisDoc *genesis.GenesisDoc, appHash []byte) *tmType
 	consensusParams.Block.TimeIotaMs = 1
 
 	return &tmTypes.GenesisDoc{
-		ChainID:         "69",
+		ChainID:         hscGenesisDoc.GetChainID(),
 		GenesisTime:     hscGenesisDoc.GenesisTime,
 		Validators:      validators,
 		AppHash:         appHash,
