@@ -13,7 +13,7 @@ type LocalKeyClient struct {
 	keys.KeyClient
 }
 
-var keysTimeout = 5 * time.Second
+var keysTimeout = 3 * time.Second
 
 // Returns an initialized key client to a docker container
 // running the keys server

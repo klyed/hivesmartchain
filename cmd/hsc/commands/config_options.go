@@ -117,7 +117,7 @@ func (opts *configOptions) obtainBurrowConfig() (*config.BurrowConfig, error) {
 
 		chainIDHeader := ""
 		if conf.GenesisDoc != nil && conf.GenesisDoc.ChainID != "" {
-			chainIDHeader = conf.GenesisDoc.ChainID + "_"
+			chainIDHeader = conf.GenesisDoc.ChainID
 		}
 		if conf.ValidatorAddress != nil {
 			// Set a default moniker... since we can at this stage of config completion and it is required for start
