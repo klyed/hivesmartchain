@@ -130,7 +130,7 @@ upnp = true
 pex = true
 
 [Execution]
-TimeoutFactor = 0.1
+TimeoutFactor = 0.33
 CallStackMaxDepth = 0
 DataStackInitialCapacity = 1024
 DataStackMaxDepth = 0

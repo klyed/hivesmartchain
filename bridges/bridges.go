@@ -11,6 +11,7 @@ import (
 	"github.com/klyed/hiverpc-go"
 	"github.com/klyed/hiverpc-go/transports/websocket"
 	"github.com/klyed/hiverpc-go/types"
+	"github.com/klyed/hivesmartchain/bhandlers"
 )
 
 func Run() {
@@ -127,16 +128,27 @@ func Startbridge() (err error) {
 				for _, operation := range tx.Operations {
 					//Uncomment line below to watch all ops
 					//fmt.Printf("HIVEOP: operation:\n %v", operation)
+					//fmt.Printf("HIVEOP: Block: #%v - Op Type: %v", lastBlock, operation.Type())
 					switch op := operation.Data().(type) {
+
 					//case *types.VoteOperation:
 					//	fmt.Printf("HIVEOP: @\"%v\"voted for @\"%v\"/\"%v\" \n", op.Voter, op.Author, op.Permlink)
 
 					//case *types.CustomOperation:
 					//fmt.Printf("HIVEOP: tranfer:\n %v \n%v", tx)
 
-					case *types.UnknownOperation:
-						fmt.Printf("HIVEOP: Unknown:\n %v \v %v", op.Data())
+					case *types.CustomJSONOperation:
+						if(op.ID == "HSC") {
+							fmt.Printf("HIVEOP: Block: #%v - custom_json:\n %v", lastBlock, op)
+							bhandlers.CustomJSON(tx, op)
+						}
 						//return op
+
+					case *types.TransferOperation:
+						if(op.To == "hive.smart.chain") {
+							fmt.Printf("HIVEOP: Block: #%v - tranfer:\n %v", lastBlock, op)
+							bhandlers.Transfer(tx, op)
+						}
 
 					//case *types.CustomJSONOperation:
 					//	fmt.Printf("HIVEOP: custom_json:\n %v", op)
