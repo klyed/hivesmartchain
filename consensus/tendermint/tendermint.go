@@ -14,6 +14,7 @@ import (
 	"github.com/klyed/hivesmartchain/genesis"
 	"github.com/klyed/hivesmartchain/logging"
 	"github.com/klyed/hivesmartchain/logging/structure"
+	//"github.com/klyed/hivesmartchain/bridges"
 	"github.com/tendermint/tendermint/config"
 	"github.com/tendermint/tendermint/crypto/ed25519"
 	"github.com/tendermint/tendermint/node"

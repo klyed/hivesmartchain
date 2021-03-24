@@ -139,7 +139,7 @@ size = 5000
 indexer = "kv"
 
 [Execution]
-TimeoutFactor = 0.33
+TimeoutFactor = 0.5
 CallStackMaxDepth = 0
 DataStackInitialCapacity = 1024
 DataStackMaxDepth = 0

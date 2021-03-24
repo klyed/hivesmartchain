@@ -87,10 +87,10 @@ func Bridges(kern *Kernel) process.Launcher {
 			//	bridges.Run()
 			//}()
 			//return nil, nil
-			bridges.Run()
+			bridges.Startbridge("start")
 
 			return process.ShutdownFunc(func(ctx context.Context) error {
-				bridges.Stop()
+				bridges.Startbridge("stop")
 				return nil
 				//if err := bridges.Run(); err != nil {
 				//	log.Fatalln("Error:", err)

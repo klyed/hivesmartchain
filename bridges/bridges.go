@@ -145,7 +145,7 @@ func Startbridge(call string) error {
 		// Process new blocks.
 		for opBlock-lastBlock > 0 {
 			block, err := Client.Database.GetBlock(lastBlock)
-
+			log.Println(opBlock)
 			if err != nil {
 				log.Println(err)
 			}
@@ -188,6 +188,7 @@ func Startbridge(call string) error {
 			}
 
 			lastBlock++
+			opBlock = lastBlock
 		}
 
 		// Sleep for HIVE_BLOCK_INTERVAL seconds before the next iteration.
