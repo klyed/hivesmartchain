@@ -1,0 +1,24 @@
+
+TenderMint RPC docs
+https://docs.tendermint.com/master/rpc/#/Info/net_info
+
+Agoric Business contracts JS
+https://agoric.com/
+
+Crypto kitties on Burrow:
+https://www.devprovider.com/hyperledger-burrow-blockchain-pet-shop-dapp/
+
+Burrow Docs:
+https://github.com/silasdavis/burrow/blob/develop/docs/tutorials/6-seed-nodes.md
+
+go.pkg for Burrow @v31.1:
+https://pkg.go.dev/github.com/hyperledger/burrow@v0.31.1/bcm
+
+steem-go for RPC function harvesting:
+https://github.com/asuleymanov/steem-go
+
+Burrow issues on github:
+https://github.com/hyperledger/burrow/issues/167
+
+Hyperledger Besu:
+https://besu.hyperledger.org/en/stable/HowTo/

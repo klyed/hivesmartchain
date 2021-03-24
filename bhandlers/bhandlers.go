@@ -7,15 +7,15 @@ import (
 	"github.com/klyed/hiverpc-go/types"
 )
 
-func CustomJSON(tx *types.Transaction, op *types.CustomJSONOperation) (int, error) {
-  sender := op.RequiredAuths
+func CustomJSON(block uint32, tx *types.Transaction, op *types.CustomJSONOperation) (int, error) {
+  sender := op.RequiredAuths[0]
   json := op.JSON
-  action := []string{json}
+  action := []interface{}{json}
 
   return fmt.Printf("HIVE --(custom_json)-> HSC: Sender: %v - Action: %v - Method: %v)\n", sender, action)
 }
 
-func Transfer(tx *types.Transaction, op *types.TransferOperation) (int, error) {
+func Transfer(block uint32, tx *types.Transaction, op *types.TransferOperation) (int, error) {
   sender := op.From
   //receiver := op.To
   amount := op.Amount

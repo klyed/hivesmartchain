@@ -14,17 +14,33 @@ import (
 	"github.com/klyed/hivesmartchain/bhandlers"
 )
 
+var (
+	aliasList = []string{"hive.smart.chain", "hive.side.chain", "hsc"}
+	opBlock = uint32(0)
+)
+
 func Run() {
-	if err := Startbridge(); err != nil {
-		log.Fatalln("HIVEOP: Error:", err)
-	}
+	Startbridge("start")
+	defer Startbridge("close")
+	//if err != nil {
+	//		log.Fatalln("HIVEOP: Error: %v", err)
+			 //return nil, err
+	//}
+	return
 }
 
 func Stop() {
 	log.Fatalln("HIVEOP: Stopping...")
 }
 
-func Startbridge() (err error) {
+func OpBlock() uint32 {
+	//if OpBlock != nil {
+		return opBlock
+	//}
+	//return nil
+}
+
+func Startbridge(call string) error {
 	// Process flags.
 	//flagAddress := []string{"rpc_endpoint", "ws://185.130.44.165:8090", "steemd RPC endpoint address"}
 	//flagReconnect := flag.Bool("reconnect", false, "enable auto-reconnect mode")
@@ -40,12 +56,7 @@ func Startbridge() (err error) {
 	signalCh := make(chan os.Signal, 1)
 	signal.Notify(signalCh, syscall.SIGINT, syscall.SIGTERM)
 
-	// Drop the error in case it is a request being interrupted.
-	defer func() {
-		if err == websocket.ErrClosing && interrupted {
-			err = nil
-		}
-	}()
+
 
 	// Start the connection monitor.
 	monitorChan := make(chan interface{}, 1)
@@ -72,14 +83,16 @@ func Startbridge() (err error) {
 	}
 
 	// Use the transport to get an RPC client.
-	client, err := rpc.NewClient(t)
+	Client, err := rpc.NewClient(t)
 	if err != nil {
 		log.Println(err)
-		//return err
+		Client.Close()
+		Client, err = rpc.NewClient(t)
+		//return Client, err
 	}
 	defer func() {
 		if !interrupted {
-			client.Close()
+			Client.Close()
 		}
 	}()
 
@@ -90,18 +103,31 @@ func Startbridge() (err error) {
 		log.Println("HIVEOP: Signal received, exiting...")
 		signal.Stop(signalCh)
 		interrupted = true
-		client.Close()
+		Client.Close()
+	}()
+
+	// Drop the error in case it is a request being interrupted.
+	defer func() {
+		if call == "stop" {
+			interrupted = true
+			<-signalCh
+			fmt.Println()
+			log.Println("HIVEOP: Signal received, exiting...")
+			signal.Stop(signalCh)
+			interrupted = true
+			Client.Close()
+		}
 	}()
 
 	// Get config.
 	log.Println("HIVEOP: GetConfig()")
-	config, err := client.Database.GetConfig()
+	config, err := Client.Database.GetConfig()
 	if err != nil {
 		log.Println(err)
 	}
 
 	// Use the last irreversible block number as the initial last block number.
-	props, err := client.Database.GetDynamicGlobalProperties()
+	props, err := Client.Database.GetDynamicGlobalProperties()
 	if err != nil {
 		log.Println(err)
 	}
@@ -111,14 +137,15 @@ func Startbridge() (err error) {
 	log.Printf("HIVEOP: Starting HIVE Block Processing Bridge (last block = %v)\n", lastBlock)
 	for {
 		// Get current properties.
-		props, err := client.Database.GetDynamicGlobalProperties()
+		props, err := Client.Database.GetDynamicGlobalProperties()
 		if err != nil {
 			log.Println(err)
 		}
-
+		opBlock = uint32(props.HeadBlockNumber)
 		// Process new blocks.
-		for uint32(props.HeadBlockNumber)-lastBlock > 0 {
-			block, err := client.Database.GetBlock(lastBlock)
+		for opBlock-lastBlock > 0 {
+			block, err := Client.Database.GetBlock(lastBlock)
+
 			if err != nil {
 				log.Println(err)
 			}
@@ -130,24 +157,21 @@ func Startbridge() (err error) {
 					//fmt.Printf("HIVEOP: operation:\n %v", operation)
 					//fmt.Printf("HIVEOP: Block: #%v - Op Type: %v", lastBlock, operation.Type())
 					switch op := operation.Data().(type) {
-
 					//case *types.VoteOperation:
-					//	fmt.Printf("HIVEOP: @\"%v\"voted for @\"%v\"/\"%v\" \n", op.Voter, op.Author, op.Permlink)
-
+					//fmt.Printf("HIVEOP: @\"%v\"voted for @\"%v\"/\"%v\" \n", op.Voter, op.Author, op.Permlink)
 					//case *types.CustomOperation:
 					//fmt.Printf("HIVEOP: tranfer:\n %v \n%v", tx)
-
 					case *types.CustomJSONOperation:
 						if(op.ID == "HSC") {
-							fmt.Printf("HIVEOP: Block: #%v - custom_json:\n %v", lastBlock, op)
-							bhandlers.CustomJSON(tx, op)
+							//fmt.Printf("HIVEOP: Block: #%v - custom_json:\n %v", lastBlock, op)
+							bhandlers.CustomJSON(lastBlock, tx, op)
 						}
 						//return op
 
 					case *types.TransferOperation:
 						if(op.To == "hive.smart.chain") {
-							fmt.Printf("HIVEOP: Block: #%v - tranfer:\n %v", lastBlock, op)
-							bhandlers.Transfer(tx, op)
+							//fmt.Printf("HIVEOP: Block: #%v - tranfer:\n %v", lastBlock, op)
+							bhandlers.Transfer(lastBlock, tx, op)
 						}
 
 					//case *types.CustomJSONOperation:

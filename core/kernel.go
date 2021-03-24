@@ -21,6 +21,7 @@ import (
 	"github.com/klyed/hivesmartchain/crypto"
 	"github.com/klyed/hivesmartchain/dump"
 	"github.com/klyed/hivesmartchain/rpc/web3"
+	//bridges "github.com/klyed/hiverpc-go"
 
 	// GRPC Codec
 	_ "github.com/klyed/hivesmartchain/encoding"
@@ -69,6 +70,7 @@ type Kernel struct {
 	keyClient      keys.KeyClient
 	keyStore       *keys.FilesystemKeyStore
 	info           string
+	//Hive           *bridges.Hive
 	processes      map[string]process.Process
 	listeners      map[string]net.Listener
 	timeoutFactor  float64
