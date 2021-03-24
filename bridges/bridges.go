@@ -164,14 +164,22 @@ func Startbridge(call string) error {
 					case *types.CustomJSONOperation:
 						if(op.ID == "HSC") {
 							//fmt.Printf("HIVEOP: Block: #%v - custom_json:\n %v", lastBlock, op)
-							bhandlers.CustomJSON(lastBlock, tx, op)
+							handler, err := bhandlers.CustomJSON(lastBlock, tx, op)
+							if err != nil {
+								log.Println(err)
+							}
+							log.Println(handler)
 						}
 						//return op
 
 					case *types.TransferOperation:
 						if(op.To == "hive.smart.chain") {
 							//fmt.Printf("HIVEOP: Block: #%v - tranfer:\n %v", lastBlock, op)
-							bhandlers.Transfer(lastBlock, tx, op)
+							handler, err :=  bhandlers.Transfer(lastBlock, tx, op)
+							if err != nil {
+								log.Println(err)
+							}
+							log.Println(handler)
 						}
 
 					//case *types.CustomJSONOperation:
