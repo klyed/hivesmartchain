@@ -54,10 +54,10 @@ type params struct {
 }
 
 type GenesisDoc struct {
-	GenesisTime       time.Time
-	ChainName         string
+	GenesisTime time.Time
+	ChainName   string
 	// Ordinarily we derive this from the genesis hash but to support explicit Ethereum ChainID it may be set
-	ChainID           string `json:",omitempty" toml:",omitempty"`
+	ChainID           string          `json:",omitempty" toml:",omitempty"`
 	AppHash           binary.HexBytes `json:",omitempty" toml:",omitempty"`
 	Params            params          `json:",omitempty" toml:",omitempty"`
 	Salt              []byte          `json:",omitempty" toml:",omitempty"`
@@ -65,7 +65,7 @@ type GenesisDoc struct {
 	Accounts          []Account
 	Validators        []Validator
 	// memo
-	hash    []byte
+	hash []byte
 }
 
 func (genesisDoc *GenesisDoc) GlobalPermissionsAccount() *acm.Account {

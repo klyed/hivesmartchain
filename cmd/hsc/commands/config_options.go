@@ -125,14 +125,14 @@ func (opts *configOptions) obtainBurrowConfig() (*config.BurrowConfig, error) {
 		}
 
 		/*
-		chainIDHeader := "69"
-		if conf.GenesisDoc != nil && conf.GenesisDoc.ChainID() != "" {
-			chainIDHeader = fmt.Sprintf("%s", chainIDHeader)
-		}
-		if conf.ValidatorAddress != nil {
-			// Set a default moniker... since we can at this stage of config completion and it is required for start
-			conf.Tendermint.Moniker = fmt.Sprintf("%s", conf.Tendermint.Moniker)
-		}
+			chainIDHeader := "69"
+			if conf.GenesisDoc != nil && conf.GenesisDoc.ChainID() != "" {
+				chainIDHeader = fmt.Sprintf("%s", chainIDHeader)
+			}
+			if conf.ValidatorAddress != nil {
+				// Set a default moniker... since we can at this stage of config completion and it is required for start
+				conf.Tendermint.Moniker = fmt.Sprintf("%s", conf.Tendermint.Moniker)
+			}
 		*/
 	} else {
 		conf.Tendermint.Moniker = *opts.initMonikerOpt

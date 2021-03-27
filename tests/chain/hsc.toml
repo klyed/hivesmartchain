@@ -40,7 +40,7 @@ HiveSmartChainDir = ".hsc"
   [RPC.GRPC]
     Enabled = true
     ListenHost = "127.0.0.1"
-    ListenPort = "20997"
+    ListenPort = "10997"
   [RPC.Metrics]
     Enabled = false
     ListenHost = "127.0.0.1"

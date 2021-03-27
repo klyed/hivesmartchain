@@ -20,7 +20,7 @@ trap "rm -rf $tmp_dir" EXIT
 cd $tmp_dir
 rm -rf .hsc genesis.json hsc.toml hsc.log
 
-hsc_bin=${hsc_bin:-hsc}
+hsc_bin=${hsc_bin:-/mnt/c/users/klye/projects/hivesmartchain/bin/hsc}
 
 title="Creating new chain..."
 echo -e "\n${title//?/-}\n${title}\n${title//?/-}\n"

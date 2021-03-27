@@ -2,6 +2,11 @@ package bridges
 
 import (
 	"fmt"
+	"reflect"
+
+	//"github.com/klyed/hiverpc-go/interfaces"
+
+	//"github.com/klyed/hivesmartchain/process"
 	"log"
 	"os"
 	"os/signal"
@@ -14,110 +19,117 @@ import (
 	"github.com/klyed/hivesmartchain/bhandlers"
 )
 
+
+type HiveConfig struct {
+	Protocol                string
+	RemoteAddress           string
+	KeysDirectory           string
+}
+
 var (
-	aliasList = []string{"hive.smart.chain", "hive.side.chain", "hsc"}
-	opBlock = uint32(0)
+	//aliasList = []string{"hive.smart.chain", "hive.side.chain", "hsc"}
+	opBlock   = uint32(0)
+	Client    = reflect.Func
 )
 
-func Run() {
-	Startbridge("start")
-	defer Startbridge("close")
-	//if err != nil {
-	//		log.Fatalln("HIVEOP: Error: %v", err)
-			 //return nil, err
-	//}
-	return
+type HiveBridge interface {
+	Startbridge(call string, interrupted bool, reconnect bool) error
 }
 
-func Stop() {
-	log.Fatalln("HIVEOP: Stopping...")
-}
 
-func OpBlock() uint32 {
+func HiveBlock() uint32 {
 	//if OpBlock != nil {
-		return opBlock
+	return opBlock
 	//}
 	//return nil
 }
 
-func Startbridge(call string) error {
-	// Process flags.
-	//flagAddress := []string{"rpc_endpoint", "ws://185.130.44.165:8090", "steemd RPC endpoint address"}
-	//flagReconnect := flag.Bool("reconnect", false, "enable auto-reconnect mode")
-	//flag.Parse()
+func Startbridge(call string, interrupted bool, reconnect bool) error {
 
 	var (
 		url       = []string{"ws://185.130.44.165:8090"}
-		reconnect = true
+		//reconnect = true
+		signalCh  = make(chan os.Signal, 1)
+		monitorChan = make(chan interface{}, 1)
+		t, wserr         = websocket.NewTransport(url,
+			websocket.SetAutoReconnectEnabled(reconnect),
+			websocket.SetAutoReconnectMaxDelay(30*time.Second),
+			websocket.SetMonitor(monitorChan))
+		Client, clienterr = rpc.NewClient(t)
 	)
+	if call == "start" {
+		// Start catching signals.
+		//signalCh := make(chan os.Signal, 1)
+		signal.Notify(signalCh, syscall.SIGINT, syscall.SIGTERM)
 
-	// Start catching signals.
-	var interrupted bool
-	signalCh := make(chan os.Signal, 1)
-	signal.Notify(signalCh, syscall.SIGINT, syscall.SIGTERM)
-
-
-
-	// Start the connection monitor.
-	monitorChan := make(chan interface{}, 1)
-	if reconnect {
-		go func() {
-			for {
-				event, ok := <-monitorChan
-				if ok {
-					log.Println(event)
+		// Start the connection monitor.
+		//monitorChan := make(chan interface{}, 1)
+		if reconnect != false {
+			go func() {
+				for {
+					event, ok := <-monitorChan
+					if ok {
+						log.Println(event)
+					}
 				}
-			}
-		}()
-	}
-
-	// Instantiate the WebSocket transport.
-	log.Printf("HIVEOP: Connecting to HIVE Over WebSockets: (\"%v\")\n", url)
-	t, err := websocket.NewTransport(url,
-		websocket.SetAutoReconnectEnabled(reconnect),
-		websocket.SetAutoReconnectMaxDelay(30*time.Second),
-		websocket.SetMonitor(monitorChan))
-	if err != nil {
-		log.Println(err)
-		//return err
-	}
-
-	// Use the transport to get an RPC client.
-	Client, err := rpc.NewClient(t)
-	if err != nil {
-		log.Println(err)
-		Client.Close()
-		Client, err = rpc.NewClient(t)
-		//return Client, err
-	}
-	defer func() {
-		if !interrupted {
-			Client.Close()
+			}()
 		}
-	}()
+
+		// Instantiate the WebSocket transport.
+		log.Printf("HIVEOP: Connecting to HIVE Over WebSockets: (\"%v\")\n", url)
+		/*
+		t, err := websocket.NewTransport(url,
+			websocket.SetAutoReconnectEnabled(reconnect),
+			websocket.SetAutoReconnectMaxDelay(30*time.Second),
+			websocket.SetMonitor(monitorChan))
+		*/
+
+		if wserr != nil {
+			log.Println(wserr)
+			//return err
+		}
+
+		// Use the transport to get an RPC client.
+		//client, err := rpc.NewClient(t)
+		if clienterr != nil {
+			log.Println(clienterr)
+			Client.Close()
+			Client, clienterr = rpc.NewClient(t)
+		}
+		defer func() {
+			if !interrupted {
+				Client.Close()
+			}
+			Client.Close()
+		}()
 
 	// Start processing signals.
-	go func() {
-		<-signalCh
-		fmt.Println()
-		log.Println("HIVEOP: Signal received, exiting...")
-		signal.Stop(signalCh)
-		interrupted = true
-		Client.Close()
-	}()
-
-	// Drop the error in case it is a request being interrupted.
-	defer func() {
-		if call == "stop" {
-			interrupted = true
+	/*
+		go func() {
 			<-signalCh
 			fmt.Println()
 			log.Println("HIVEOP: Signal received, exiting...")
 			signal.Stop(signalCh)
 			interrupted = true
 			Client.Close()
+		}()
+	*/
+
+	// Drop the error in case it is a request being interrupted.
+		//return Client, nil
+	}
+	if call == "stop" {
+		interrupted = true
+		<-signalCh
+		fmt.Println()
+		log.Println("HIVEOP: Signal received, exiting...")
+		signal.Stop(signalCh)
+		Client.Close()
+		if Client.Close() != nil {
+			log.Println(Client.Close())
 		}
-	}()
+		//return Client, nil
+	}
 
 	// Get config.
 	log.Println("HIVEOP: GetConfig()")
@@ -131,7 +143,10 @@ func Startbridge(call string) error {
 	if err != nil {
 		log.Println(err)
 	}
+	//Latest Actual Block
 	lastBlock := uint32(props.HeadBlockNumber)
+	//Latest "Safe" Block
+	//lastBlock := uint32(props.LastIrreversibleBlockNum)
 
 	// Keep processing incoming blocks forever.
 	log.Printf("HIVEOP: Starting HIVE Block Processing Bridge (last block = %v)\n", lastBlock)
@@ -145,12 +160,13 @@ func Startbridge(call string) error {
 		// Process new blocks.
 		for opBlock-lastBlock > 0 {
 			block, err := Client.Database.GetBlock(lastBlock)
-			log.Println(opBlock)
+			//log.Println(opBlock)
 			if err != nil {
 				log.Println(err)
 			}
 
 			// Process the transactions.
+			log.Println(HiveBlock())
 			for _, tx := range block.Transactions {
 				for _, operation := range tx.Operations {
 					//Uncomment line below to watch all ops
@@ -160,37 +176,40 @@ func Startbridge(call string) error {
 					//case *types.VoteOperation:
 					//fmt.Printf("HIVEOP: @\"%v\"voted for @\"%v\"/\"%v\" \n", op.Voter, op.Author, op.Permlink)
 					//case *types.CustomOperation:
-					//fmt.Printf("HIVEOP: tranfer:\n %v \n%v", tx)
+					//fmt.Printf("HIVEOP: transfer:\n %v \n%v", tx)
 					case *types.CustomJSONOperation:
-						if(op.ID == "HSC") {
+						if op.ID == "HSC" {
 							//fmt.Printf("HIVEOP: Block: #%v - custom_json:\n %v", lastBlock, op)
 							handler, err := bhandlers.CustomJSON(lastBlock, tx, op)
+							fmt.Printf("HIVEOP: custom_json:\n %v", handler)
 							if err != nil {
 								log.Println(err)
 							}
-							log.Println(handler)
+							//return Client, nil
 						}
 						//return op
 
 					case *types.TransferOperation:
-						if(op.To == "hive.smart.chain") {
-							//fmt.Printf("HIVEOP: Block: #%v - tranfer:\n %v", lastBlock, op)
-							handler, err :=  bhandlers.Transfer(lastBlock, tx, op)
+						if op.To == "hive.smart.chain" {
+							//fmt.Printf("HIVEOP: Block: #%v - transfer:\n %v", lastBlock, op)
+							handler, err := bhandlers.Transfer(lastBlock, tx, op)
+							fmt.Printf("HIVEOP: transfer:\n %v", handler)
 							if err != nil {
 								log.Println(err)
 							}
-							log.Println(handler)
+							//return Client, nil
 						}
 
-					//case *types.CustomJSONOperation:
-					//	fmt.Printf("HIVEOP: custom_json:\n %v", op)
+						//case *types.CustomJSONOperation:
+						//	fmt.Printf("HIVEOP: custom_json:\n %v", op)
 
 						// Vote operation.
 						//case *types.TransferOperation:
-						//	fmt.Printf("HIVEOP: tranfer:\n %v", op)
+						//	fmt.Printf("HIVEOP: transfer:\n %v", op)
 
 						// You can add more cases here, it depends on
 						// what operations you actually need to process.
+
 					}
 				}
 			}
@@ -203,6 +222,11 @@ func Startbridge(call string) error {
 		time.Sleep(time.Duration(config.HiveBlockInterval) * time.Second)
 	}
 }
+
+//func Stop() {
+//	close(Client)
+//}
+
 
 //func HiveBlock() {
 //	//fmt Printf("HIVEOP: HIVE Block Height on Side Chain: %v", lastBlock)

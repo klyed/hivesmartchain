@@ -7,6 +7,7 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/klyed/hivesmartchain/bridges"
 	"net"
 	_ "net/http/pprof"
 	"os"
@@ -70,7 +71,7 @@ type Kernel struct {
 	keyClient      keys.KeyClient
 	keyStore       *keys.FilesystemKeyStore
 	info           string
-	//Hive           *bridges.Hive
+	Hive           *bridges.HiveBridge
 	processes      map[string]process.Process
 	listeners      map[string]net.Listener
 	timeoutFactor  float64

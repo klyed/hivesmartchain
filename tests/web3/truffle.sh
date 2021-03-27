@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
-chain=$(mktemp -d)
+chain=$(mkdir -d)
 cd $chain
-$hsc_bin spec -v1 -d2 | $hsc_bin configure -s- --curve-type secp256k1 > hsc.toml
-$hsc_bin start &> /dev/null &
+
+$hscadd = "./bin/hsc"
+
+$hscadd spec -v1 -d2 | $hscadd -c -s- --curve-type secp256k1 > hsc.toml
+$hscadd start &> /dev/null &
 hsc_pid=$!
 
-contracts=$(mktemp -d)
+contracts=$(mkdir -d)
 cd $contracts
 
 function finish {
@@ -16,8 +19,8 @@ function finish {
 }
 trap finish EXIT
 
-npm install -g truffle
-truffle unbox metacoin
+#npm install -g truffle
+#sudo npx run truffle unbox metacoin
 
 cat << EOF > truffle-config.js
 module.exports = {
@@ -30,4 +33,4 @@ module.exports = {
   }
 };
 EOF
-truffle test --network hsc
+sudo npx run truffle test --network hsc

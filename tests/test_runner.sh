@@ -17,13 +17,13 @@
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE}" )" && pwd )"
 
-export hsc_bin=${hsc_bin:-hsc} #${hsc_bin:-hsc}
-export solc_bin=${solc_bin:-solc}
-export solang_bin=${solang_bin:-solang}
+export hsc_bin="./bin/hsc" #${hsc_bin:-hsc} :-/mnt/c/users/klye/projects/hivesmartchain/bin/hsc
+export solc_bin="./bin/solc" #:-/mnt/c/users/klye/projects/hivesmartchain/tests/scripts/deps/solang/solang-linux
+export solang_bin="./bin/solang" #:-/mnt/c/users/klye/projects/hivesmartchain/tests/scripts/deps/solc/solc
 
 # If false we will not try to start HiveSmartChain and expect them to be running
 export boot=${boot:-true}
-export debug=${debug:-false}
+export debug=${debug:-true}
 export clean=${clean:-true}
 
 export test_exit=0
@@ -39,11 +39,11 @@ fi
 
 # Ports etc must match those in hsc.toml
 export HSC_HOST=127.0.0.1
-export HSC_GRPC_PORT=20123
+export HSC_GRPC_PORT=10997
 
 
 export chain_dir="$script_dir/chain"
-export hsc_root="$chain_dir/.hsc"
+export hsc_root="$chain_dir/.testnet"
 
 # Temporary logs
 export hsc_log="$chain_dir/hsc.log"

@@ -31,7 +31,7 @@ func DefaultExecutionConfig() *ExecutionConfig {
 	return &ExecutionConfig{
 		CallStackMaxDepth:        0, // Unlimited by default
 		DataStackInitialCapacity: evm.DataStackInitialCapacity,
-		DataStackMaxDepth:        0, // Unlimited by default
+		DataStackMaxDepth:        0,   // Unlimited by default
 		TimeoutFactor:            0.1, //0.33
 	}
 }

@@ -17,8 +17,8 @@ func FullAccount(name string) GenesisSpec {
 	pegged := uint64(0)
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
-			Name:         name,
-			Amounts:		 balance.New().Native(amount).Power(power).Pegged(pegged),
+			Name:        name,
+			Amounts:     balance.New().Native(amount).Power(power).Pegged(pegged),
 			Permissions: []string{permission.AllString},
 		}},
 	}
@@ -32,7 +32,7 @@ func RootAccount(name string) GenesisSpec {
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
 			Name:        name,
-			Amounts:		 balance.New().Native(amount).Power(power).Pegged(pegged),
+			Amounts:     balance.New().Native(amount).Power(power).Pegged(pegged),
 			Permissions: []string{permission.AllString},
 		}},
 	}
@@ -46,8 +46,8 @@ func ParticipantAccount(name string) GenesisSpec {
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
 			Name:        name,
-			Amounts:		 balance.New().Native(amount).Power(power).Pegged(pegged),
-			Permissions: []string{permission.SendString, permission.CallString, permission.NameString,permission.HasRoleString, permission.ProposalString, permission.InputString},
+			Amounts:     balance.New().Native(amount).Power(power).Pegged(pegged),
+			Permissions: []string{permission.SendString, permission.CallString, permission.NameString, permission.HasRoleString, permission.ProposalString, permission.InputString},
 		}},
 	}
 }
@@ -60,7 +60,7 @@ func DeveloperAccount(name string) GenesisSpec {
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
 			Name:        name,
-			Amounts:		 balance.New().Native(amount).Power(power).Pegged(pegged),
+			Amounts:     balance.New().Native(amount).Power(power).Pegged(pegged),
 			Permissions: []string{permission.SendString, permission.CallString, permission.CreateContractString, permission.CreateAccountString, permission.NameString, permission.HasRoleString, permission.RemoveRoleString, permission.ProposalString, permission.InputString},
 		}},
 	}
@@ -74,7 +74,7 @@ func ValidatorAccount(name string) GenesisSpec {
 	return GenesisSpec{
 		Accounts: []TemplateAccount{{
 			Name:        name,
-			Amounts:		 balance.New().Native(amount).Power(power).Pegged(pegged),
+			Amounts:     balance.New().Native(amount).Power(power).Pegged(pegged),
 			Permissions: []string{permission.BondString},
 		}},
 	}

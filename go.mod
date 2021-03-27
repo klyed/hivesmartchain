@@ -25,8 +25,8 @@ require (
 	github.com/imdario/mergo v0.3.12
 	github.com/jawher/mow.cli v1.2.0
 	github.com/jmoiron/sqlx v1.3.1
+	github.com/klyed/hiverpc-go v0.0.0-20210327163344-5fab5bedd549
 	github.com/lib/pq v1.10.0
-	github.com/klyed/hiverpc-go v0.0.0
 	github.com/mattn/go-sqlite3 v1.14.6
 	github.com/monax/relic v2.0.0+incompatible
 	github.com/perlin-network/life v0.0.0-20191203030451-05c0e0f7eaea
@@ -60,4 +60,5 @@ require (
 )
 
 replace /tendermint/tendermint => /klyed/tendermint@v0.34.7
+
 replace github.com/klyed/hiverpc-go => ../hiverpc-go

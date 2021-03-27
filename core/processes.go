@@ -82,20 +82,33 @@ func Bridges(kern *Kernel) process.Launcher {
 		Name:    BridgeHIVEProcessName,
 		Enabled: true,
 		Launch: func() (process.Process, error) {
-			// Just close database
-			//go func() {
-			//	bridges.Run()
-			//}()
-			//return nil, nil
-			bridges.Startbridge("start")
-
-			return process.ShutdownFunc(func(ctx context.Context) error {
-				bridges.Startbridge("stop")
-				return nil
-				//if err := bridges.Run(); err != nil {
-				//	log.Fatalln("Error:", err)
-				//}
+			var HIVE = bridges.Startbridge("start", false, true)
+			/*
+				hive := &bridges.func{
+					"start",
+					false
+				}
+			*/
+			defer func() {
+				HIVE = bridges.Startbridge("stop", true, false)
+			}()
+			return process.ShutdownFunc(func(ctx context.Context) (error) {
+				HIVE = bridges.Startbridge("stop", true, false)
+				//bridges.Startbridge("stop", true, false) error
+				return HIVE
 			}), nil
+			//return HiveServer, err
+			/*
+				kern.Logger.InfoMsg(bridges.Startbridge("start"), err)
+				return process.ShutdownFunc(func(ctx context.Context) error {
+					bridges.Startbridge("stop")
+					return nil
+					//if err := bridges.Startbridge("stop"); err != nil {
+					//	log.Fatalln("Error:", err)
+					//}
+				}), nil
+			*/
+			//return bridges.Startbridge
 		},
 	}
 }
