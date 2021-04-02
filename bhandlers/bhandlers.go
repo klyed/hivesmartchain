@@ -10,7 +10,9 @@ import (
 	//"log"
 	"strings"
 	//"github.com/klyed/hivesmartchain/execution"
-	"github.com/klyed/hiverpc-go/types"
+	//"github.com/klyed/hive-go"
+	//"github.com/klyed/hive-go/transactions"
+	types"github.com/klyed/hive-go/types"
 	//"error"
 )
 

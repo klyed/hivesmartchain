@@ -92,7 +92,7 @@ func Bridges(kern *Kernel) process.Launcher {
 			defer func() {
 				HIVE = bridges.Startbridge("stop", true, false)
 			}()
-			return process.ShutdownFunc(func(ctx context.Context) (error) {
+			return process.ShutdownFunc(func(ctx context.Context) error {
 				HIVE = bridges.Startbridge("stop", true, false)
 				//bridges.Startbridge("stop", true, false) error
 				return HIVE

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"reflect"
 
-	//"github.com/klyed/hiverpc-go/interfaces"
+	//"github.com/klyed/hive-go/interfaces"
 
 	//"github.com/klyed/hivesmartchain/process"
 	"log"
@@ -13,29 +13,32 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/klyed/hiverpc-go"
-	"github.com/klyed/hiverpc-go/transports/websocket"
-	"github.com/klyed/hiverpc-go/types"
+	//tx "github.com/klyed/hive-go/encoding/transaction"
+	client "github.com/klyed/hive-go"
+	"github.com/klyed/hive-go/types"
+	//"github.com/klyed/hive-go/api/"
+	//"github.com/klyed/hive-go/transports/"
+	//"github.com/klyed/hive-go/transports/http"
+	"github.com/klyed/hive-go/transports/websocket"
+	//websocket "github.com/klyed/hive-go/transports/websocket"
 	"github.com/klyed/hivesmartchain/bhandlers"
 )
 
-
 type HiveConfig struct {
-	Protocol                string
-	RemoteAddress           string
-	KeysDirectory           string
+	Protocol      string
+	RemoteAddress string
+	KeysDirectory string
 }
 
 var (
 	//aliasList = []string{"hive.smart.chain", "hive.side.chain", "hsc"}
-	opBlock   = uint32(0)
-	Client    = reflect.Func
+	opBlock = uint32(0)
+	Client  = reflect.Func
 )
 
 type HiveBridge interface {
 	Startbridge(call string, interrupted bool, reconnect bool) error
 }
-
 
 func HiveBlock() uint32 {
 	//if OpBlock != nil {
@@ -47,15 +50,15 @@ func HiveBlock() uint32 {
 func Startbridge(call string, interrupted bool, reconnect bool) error {
 
 	var (
-		url       = []string{"ws://185.130.44.165:8090"}
+		url = "ws://185.130.44.165:8090"
 		//reconnect = true
-		signalCh  = make(chan os.Signal, 1)
+		signalCh    = make(chan os.Signal, 1)
 		monitorChan = make(chan interface{}, 1)
-		t, wserr         = websocket.NewTransport(url,
+		t, wserr    = websocket.NewTransport(url,
 			websocket.SetAutoReconnectEnabled(reconnect),
 			websocket.SetAutoReconnectMaxDelay(30*time.Second),
 			websocket.SetMonitor(monitorChan))
-		Client, clienterr = rpc.NewClient(t)
+		Client, clienterr = client.NewClient(t)
 	)
 	if call == "start" {
 		// Start catching signals.
@@ -78,10 +81,10 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 		// Instantiate the WebSocket transport.
 		log.Printf("HIVEOP: Connecting to HIVE Over WebSockets: (\"%v\")\n", url)
 		/*
-		t, err := websocket.NewTransport(url,
-			websocket.SetAutoReconnectEnabled(reconnect),
-			websocket.SetAutoReconnectMaxDelay(30*time.Second),
-			websocket.SetMonitor(monitorChan))
+			t, err := websocket.NewTransport(url,
+				websocket.SetAutoReconnectEnabled(reconnect),
+				websocket.SetAutoReconnectMaxDelay(30*time.Second),
+				websocket.SetMonitor(monitorChan))
 		*/
 
 		if wserr != nil {
@@ -94,7 +97,7 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 		if clienterr != nil {
 			log.Println(clienterr)
 			Client.Close()
-			Client, clienterr = rpc.NewClient(t)
+			Client, clienterr = client.NewClient(t)
 		}
 		defer func() {
 			if !interrupted {
@@ -103,19 +106,19 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 			Client.Close()
 		}()
 
-	// Start processing signals.
-	/*
-		go func() {
-			<-signalCh
-			fmt.Println()
-			log.Println("HIVEOP: Signal received, exiting...")
-			signal.Stop(signalCh)
-			interrupted = true
-			Client.Close()
-		}()
-	*/
+		// Start processing signals.
+		/*
+			go func() {
+				<-signalCh
+				fmt.Println()
+				log.Println("HIVEOP: Signal received, exiting...")
+				signal.Stop(signalCh)
+				interrupted = true
+				Client.Close()
+			}()
+		*/
 
-	// Drop the error in case it is a request being interrupted.
+		// Drop the error in case it is a request being interrupted.
 		//return Client, nil
 	}
 	if call == "stop" {
@@ -219,14 +222,13 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 		}
 
 		// Sleep for HIVE_BLOCK_INTERVAL seconds before the next iteration.
-		time.Sleep(time.Duration(config.HiveBlockInterval) * time.Second)
+		time.Sleep(time.Duration(3) * time.Second)
 	}
 }
 
 //func Stop() {
 //	close(Client)
 //}
-
 
 //func HiveBlock() {
 //	//fmt Printf("HIVEOP: HIVE Block Height on Side Chain: %v", lastBlock)
@@ -239,9 +241,9 @@ package bridges
 import (
 	"fmt"
 	"time"
-	"github.com/klyed/hiverpc-go"
-	"github.com/klyed/hiverpc-go/transports/websocket"
-	"github.com/klyed/hiverpc-go/types"
+	"github.com/klyed/hive-go"
+	"github.com/klyed/hive-go/transports/websocket"
+	"github.com/klyed/hive-go/types"
 )
 
 func Run() {

@@ -8,8 +8,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/klyed/hiverpc-go"
-	"github.com/klyed/hiverpc-go/transports/websocket"
-	"github.com/klyed/hiverpc-go/types"
+	"github.com/klyed/hive-go"
+	"github.com/klyed/hive-go/transports/websocket"
+	"github.com/klyed/hive-go/types"
 	"github.com/klyed/hivesmartchain/bhandlers"
 )
