@@ -53,8 +53,8 @@ require (
 
 replace /tendermint/tendermint => /klyed/tendermint@v0.34.7
 
-replace /steem-go/rpc@v0.10.0 => /klyed/hive-go@v0.4.0
+replace /steem-go/rpc@v0.10.0 => ./hive-go
 
-replace /steem-go/rpc-codec@v0.0.0 => /klyed/hive-go@v0.4.0
+replace /steem-go/rpc-codec@v0.0.0 => ./hive-go
 
-replace /klyed/hiverpc-go@v0.0.0-20210327163344-5fab5bedd549 => /klyed/hive-go@v0.4.0
+replace /klyed/hiverpc-go => ./hive-go

@@ -3,24 +3,14 @@ package bridges
 import (
 	"fmt"
 	"reflect"
-
-	//"github.com/klyed/hive-go/interfaces"
-
-	//"github.com/klyed/hivesmartchain/process"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
-
-	//tx "github.com/klyed/hive-go/encoding/transaction"
 	client "github.com/klyed/hive-go"
 	"github.com/klyed/hive-go/types"
-	//"github.com/klyed/hive-go/api/"
-	//"github.com/klyed/hive-go/transports/"
-	//"github.com/klyed/hive-go/transports/http"
 	"github.com/klyed/hive-go/transports/websocket"
-	//websocket "github.com/klyed/hive-go/transports/websocket"
 	"github.com/klyed/hivesmartchain/bhandlers"
 )
 

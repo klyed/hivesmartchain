@@ -181,10 +181,6 @@ github.com/go-sql-driver/mysql v1.5.0 h1:ozyZYNQW3x3HtqT1jira07DN2PArx2v7/mN66gG
 github.com/go-sql-driver/mysql v1.5.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
 github.com/go-stack/stack v1.8.0 h1:5SgMzNM5HxrEjV0ww2lTmX6E2Izsfxas4+YHWRs3Lsk=
 github.com/go-stack/stack v1.8.0/go.mod h1:v0f6uXyyMGvRgIKkXu+yp6POWl0qKG85gN/melR3HDY=
-github.com/go-steem/rpc v0.10.0 h1:m4fslpsD8U95qu9e5FpesDh1qziB/5D9nc+EwvHNNTw=
-github.com/go-steem/rpc v0.10.0/go.mod h1:mA43PKPPgJtrpMzYlFDEOHrvG02M76PPygW5JWJo4yk=
-github.com/go-steem/rpc-codec v0.0.0-20160525231637-30a413fc99f7 h1:NjFeEjne7RIqc4TQuvEKs/wLY/I0SwPXWBqzWNwVOMg=
-github.com/go-steem/rpc-codec v0.0.0-20160525231637-30a413fc99f7/go.mod h1:OmV9fj3qfRu5zbY16kBAXoRX1UrU3TnJ+/7Gt63JsxY=
 github.com/gogo/gateway v1.1.0/go.mod h1:S7rR8FRQyG3QFESeSv4l2WnsyzlCLG0CzBbUUo/mbic=
 github.com/gogo/googleapis v1.1.0/go.mod h1:gf4bu3Q80BeJ6H1S1vYPm8/ELATdvryBaNFGgqEef3s=
 github.com/gogo/protobuf v1.1.1/go.mod h1:r8qH/GZQm5c6nD/R0oafs1akxWv10x8SbQlK7atdtwQ=
@@ -324,12 +320,6 @@ github.com/kisielk/errcheck v1.2.0/go.mod h1:/BMXB+zMLi60iA8Vv6Ksmxu/1UDYcXs4uQL
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/kkdai/bstream v0.0.0-20161212061736-f391b8402d23/go.mod h1:J+Gs4SYgM6CZQHDETBtE9HaSEkGmuNXF86RwHhHUvq4=
-github.com/klyed/hive-go v0.4.0 h1:PzF3zFs7iRKNvhUvFW5DPJKK23Z1QqMSBZajyxNSvSY=
-github.com/klyed/hive-go v0.4.0/go.mod h1:6nCIVe4YoT1ABJ2/XW9p+sFGIUCLY4ZXksxnVfdu+7Y=
-github.com/klyed/hiverpc-go v0.0.0-20210327163344-5fab5bedd549 h1:aFCFeANX7kQmy220+wd9e/t4WVd3le1IAYDPE5ha7BU=
-github.com/klyed/hiverpc-go v0.0.0-20210327163344-5fab5bedd549/go.mod h1:Pvp77DCXWBg//5BZf2QjJgRP611Xa5VZPxWLlaBhQ/Y=
-github.com/klyed/hivesmartchain v0.0.0-20210327202532-eb77a8b5c479 h1:7StFyJn/TinXnD9XVs33tm/stDHIOaIul1gur0tp08o=
-github.com/klyed/hivesmartchain v0.0.0-20210327202532-eb77a8b5c479/go.mod h1:jhgHmiZnUkiCR5buiQl2Gfnj9PLBfKM3VDtaWYqub9A=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/konsorten/go-windows-terminal-sequences v1.0.3 h1:CE8S1cTafDpPvMhIxNJKvHsGVBgn1xWYf1NbHQhywc8=
 github.com/konsorten/go-windows-terminal-sequences v1.0.3/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
