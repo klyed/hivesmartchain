@@ -12,6 +12,7 @@ import (
 	"github.com/klyed/hive-go/types"
 	"github.com/klyed/hive-go/transports/websocket"
 	"github.com/klyed/hivesmartchain/bhandlers"
+	tx "github.com/klyed/hive-go/transactions"
 )
 
 type HiveConfig struct {
