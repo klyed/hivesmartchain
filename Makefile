@@ -148,9 +148,7 @@ build_race:	check build_race_db
 .PHONY: build_hsc
 build_hsc: commit_hash
 	go install
-	go build $(HSC_BUILD_FLAGS) -ldflags "-extldflags '-static' \
-	-X github.com/klyed/hivesmartchain/project.commit=$(shell cat commit_hash.txt) \
-	-X github.com/klyed/hivesmartchain/project.date=$(shell date '+%Y-%m-%d')" \
+	go build $(HSC_BUILD_FLAGS) \
 	-o ${REPO}/bin/hsc$(HSC_BUILD_SUFFIX) ./cmd/hsc
 
 # With the sqlite tag - enabling Vent sqlite adapter support, but building a CGO binary
