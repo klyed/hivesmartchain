@@ -127,9 +127,9 @@ PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"82E6DE6829F68D16FB15478B
 
 [Tendermint]
 Enabled = true
-Seeds = "436779f23c72b65e72511fbd5bf669c520f2bd02@206.45.142.209:26656"
-SeedMode = true
-PersistentPeers = "436779f23c72b65e72511fbd5bf669c520f2bd02@206.45.142.209:26656"
+Seeds = "ac91caf64a9bb06479cb7770321c5c3d2bd93e6b@185.130.44.72:26656"
+SeedMode = false
+PersistentPeers = "366f23374c6632dd4fd024070cc41f3cb6673e24@206.45.142.209:26656, ac91caf64a9bb06479cb7770321c5c3d2bd93e6b@185.130.44.72:26656"
 ListenHost = "0.0.0.0"
 ListenPort = "26656"
 ExternalAddress = "185.130.44.165:26656"
