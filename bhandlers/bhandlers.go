@@ -8,11 +8,11 @@ import (
 	//"encoding/hex"
 	"encoding/json"
 	//"log"
-	"strings"
+	//"strings"
 	//"github.com/klyed/hivesmartchain/execution"
-	//"github.com/klyed/hive-go"
-	//"github.com/klyed/hive-go/transactions"
-	types "github.com/klyed/hive-go/types"
+	//"github.com/klyed/hiverpc-go"
+	//"github.com/klyed/hiverpc-go/transactions"
+	types "github.com/klyed/hiverpc-go/types"
 	//"error"
 )
 
@@ -70,6 +70,7 @@ func Curl(id string, sender string, action string, method string, params map[str
 	//data := Payload{
 	// fill struct
 	//}
+	fmt.Printf("\n\n\nparams: %v\n\n\n", params)
 	payloadBytes, err := json.Marshal(params)
 	if err != nil {
 		// handle err
@@ -113,10 +114,10 @@ func Transfer(block uint32, tx *types.Transaction, op *types.TransferOperation) 
 	sender := op.From
 	//receiver := op.To
 	amount := op.Amount
-	amountsplit := strings.Fields(amount)
-	value := amountsplit[0]
-	coin := amountsplit[1]
+	//amountsplit := strings.Fields(amount)
+	//value := amountsplit[0]
+	//coin := amountsplit[1]
 	//memo := op.Memo
-	return fmt.Printf("HIVE --(transfer)-> HSC: Sender: %v - Amount: %v or %v %v)", sender, amount, value, coin)
+	return fmt.Printf("HIVE --(transfer)-> HSC: Sender: %v - Amount: %v or %v %v)", sender, amount)
 	//return response, error
 }

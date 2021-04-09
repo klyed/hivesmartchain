@@ -27,7 +27,8 @@ require (
 	github.com/imdario/mergo v0.3.12
 	github.com/jawher/mow.cli v1.2.0
 	github.com/jmoiron/sqlx v1.3.1
-	github.com/klyed/hive-go v0.4.0 // indirect
+	github.com/klyed/hiverpc-go v0.4.0
+	github.com/klyed/hiverpc-go v0.0.0-20210327202451-e52d2874dd6e
 	github.com/lib/pq v1.10.0
 	github.com/mattn/go-sqlite3 v1.14.6
 	github.com/monax/relic v2.0.0+incompatible
@@ -37,6 +38,7 @@ require (
 	github.com/prometheus/client_golang v1.9.0
 	github.com/prometheus/client_model v0.2.0
 	github.com/prometheus/common v0.19.0
+	github.com/sourcegraph/jsonrpc2 v0.0.0-20210201082850-366fbb520750 // indirect
 	github.com/spf13/viper v1.7.1
 	github.com/streadway/simpleuuid v0.0.0-20130420165545-6617b501e485
 	github.com/stretchr/testify v1.7.0
@@ -53,7 +55,7 @@ require (
 	github.com/tmthrgd/go-popcount v0.0.0-20190904054823-afb1ace8b04f // indirect
 	github.com/xeipuuv/gojsonschema v1.2.0
 	github.com/xlab/treeprint v1.1.0
-	golang.org/x/crypto v0.0.0-20210317152858-513c2a44f670
+	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2
 	golang.org/x/net v0.0.0-20210316092652-d523dce5a7f4
 	google.golang.org/grpc v1.36.0
 	gopkg.in/tomb.v2 v2.0.0-20161208151619-d5d1b5820637 // indirect
@@ -62,10 +64,12 @@ require (
 
 //replace /tendermint/tendermint => /klyed/tendermint@v0.34.7
 
-replace /steem-go/rpc@v0.10.0 => ./hive-go
+replace /steem-go/rpc@v0.10.0 => ./hiverpc-go
 
-replace /steem-go/rpc-codec@v0.0.0 => ./hive-go
+replace /steem-go/rpc-codec@v0.0.0 => ./hiverpc-go
 
-replace /klyed/hiverpc-go => ./hive-go
+replace /klyed/hiverpc-go => ./hiverpc-go
 
-replace /go-steem => ./hive-go
+replace /go-steem => ./hiverpc-go
+
+replace github.com/klyed/hiverpc-go => ../hiverpc-go

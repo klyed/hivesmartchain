@@ -8,11 +8,10 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
-	client "github.com/klyed/hive-go"
-	"github.com/klyed/hive-go/types"
-	"github.com/klyed/hive-go/transports/websocket"
+	client "github.com/klyed/hiverpc-go"
+	"github.com/klyed/hiverpc-go/types"
+	"github.com/klyed/hiverpc-go/transports/websocket"
 	"github.com/klyed/hivesmartchain/bhandlers"
-	tx "github.com/klyed/hive-go/transactions"
 )
 
 type HiveConfig struct {
@@ -41,15 +40,15 @@ func HiveBlock() uint32 {
 func Startbridge(call string, interrupted bool, reconnect bool) error {
 
 	var (
-		url = "ws://185.130.44.165:8090"
+		url = []string{"ws://185.130.44.165:8090"}
 		//reconnect = true
 		signalCh    = make(chan os.Signal, 1)
 		monitorChan = make(chan interface{}, 1)
-		t, wserr    = websocket.NewTransport(url,
+		t, err    = websocket.NewTransport(url,
 			websocket.SetAutoReconnectEnabled(reconnect),
 			websocket.SetAutoReconnectMaxDelay(30*time.Second),
 			websocket.SetMonitor(monitorChan))
-		Client, clienterr = client.NewClient(t)
+	  	Client, clienterr = client.NewClient(t)
 	)
 	if call == "start" {
 		// Start catching signals.
@@ -71,20 +70,20 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 
 		// Instantiate the WebSocket transport.
 		log.Printf("HIVEOP: Connecting to HIVE Over WebSockets: (\"%v\")\n", url)
-		/*
+/*
 			t, err := websocket.NewTransport(url,
 				websocket.SetAutoReconnectEnabled(reconnect),
 				websocket.SetAutoReconnectMaxDelay(30*time.Second),
 				websocket.SetMonitor(monitorChan))
-		*/
+*/
 
-		if wserr != nil {
-			log.Println(wserr)
+		//if wserr != nil {
+		//	log.Println(wserr)
 			//return err
-		}
+		//}
 
 		// Use the transport to get an RPC client.
-		//client, err := rpc.NewClient(t)
+		//Client, err := client.NewClient(url)
 		if clienterr != nil {
 			log.Println(clienterr)
 			Client.Close()
@@ -126,11 +125,11 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 	}
 
 	// Get config.
-	log.Println("HIVEOP: GetConfig()")
-	config, err := Client.Database.GetConfig()
-	if err != nil {
-		log.Println(err)
-	}
+	//log.Println("HIVEOP: GetConfig()")
+	//config, err := Client.API.GetConfig()
+	//if err != nil {
+	//	log.Println(err)
+	//}
 
 	// Use the last irreversible block number as the initial last block number.
 	props, err := Client.Database.GetDynamicGlobalProperties()
@@ -139,6 +138,7 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 	}
 	//Latest Actual Block
 	lastBlock := uint32(props.HeadBlockNumber)
+	log.Printf("HIVEOP: LAST BLOCK (last block = %v)\n", lastBlock)
 	//Latest "Safe" Block
 	//lastBlock := uint32(props.LastIrreversibleBlockNum)
 
@@ -232,9 +232,9 @@ package bridges
 import (
 	"fmt"
 	"time"
-	"github.com/klyed/hive-go"
-	"github.com/klyed/hive-go/transports/websocket"
-	"github.com/klyed/hive-go/types"
+	"github.com/klyed/hiverpc-go"
+	"github.com/klyed/hiverpc-go/transports/websocket"
+	"github.com/klyed/hiverpc-go/types"
 )
 
 func Run() {
