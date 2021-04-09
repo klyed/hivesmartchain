@@ -35,8 +35,8 @@ export GO111MODULE=on
 .PHONY: check
 check:
 	@echo "Checking code for formatting style compliance."
-	@gofmt -l -d $(shell go list -f "{{.Dir}}" ./...)
-	@gofmt -l $(shell go list -f "{{.Dir}}" ./...) | read && echo && echo "Your marmot has found a problem with the formatting style of the code." 1>&2 && exit 1 || true
+	@gofmt -l -d -w $(shell go list -f "{{.Dir}}" ./...)
+	@gofmt -l -w $(shell go list -f "{{.Dir}}" ./...) | read && echo && echo "Your marmot has found a problem with the formatting style of the code." 1>&2 && exit 1 || true
 
 # Just fix it
 .PHONY: fix

@@ -365,7 +365,7 @@ func (s *Service) ConsensusState() (*ResultConsensusState, error) {
 		}
 		peerStates[i] = core_types.PeerStateInfo{
 			// Peer basic info.
-			NodeAddress: p2p.IDAddressString(peer.ID(), netAddress.String()),
+			NodeAddress: netAddress.String(),
 			// Peer consensus state.
 			PeerState: peerStateJSON,
 		}

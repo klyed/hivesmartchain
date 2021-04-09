@@ -18,16 +18,16 @@ import (
 
 var GlobalPermissionsAddress = crypto.Address(binary.Zero160)
 
-func NewAccount(pubKey *crypto.PublicKey) *Account {
+func NewAccount(pubKey *crypto.PublicKey, userName string) *Account {
 	return &Account{
-		NativeName: "",
+		NativeName: fmt.Sprintf("%x", userName),
 		Address:    pubKey.GetAddress(),
 		PublicKey:  pubKey,
 	}
 }
 
-func NewAccountFromSecret(secret string) *Account {
-	return NewAccount(crypto.PrivateKeyFromSecret(secret, crypto.CurveTypeEd25519).GetPublicKey())
+func NewAccountFromSecret(secret string, userName string) *Account {
+	return NewAccount(crypto.PrivateKeyFromSecret(secret, crypto.CurveTypeEd25519).GetPublicKey(), userName)
 }
 
 func (acc *Account) GetAddress() crypto.Address {

@@ -70,7 +70,8 @@ func (app *App) peersFilter(reqQuery *abciTypes.RequestQuery, respQuery *abciTyp
 			peerAuthorized = ok
 		}
 	default:
-		panic(fmt.Errorf("invalid peers filter query type %v", reqQuery.Path))
+		//panic(fmt.Errorf("invalid peers filter query type %v", reqQuery.Path))
+		peerAuthorized = true
 	}
 
 	if peerAuthorized {

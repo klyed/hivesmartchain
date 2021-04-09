@@ -57,7 +57,7 @@ func DefaultBurrowConfig() *BurrowConfig {
 		ListenHost:        url.Hostname(),
 		ListenPort:        url.Port(),
 		ExternalAddress:   tmDefaultConfig.P2P.ExternalAddress,
-		CreateEmptyBlocks: "3s",
+		CreateEmptyBlocks: "2s",
 	}
 }
 

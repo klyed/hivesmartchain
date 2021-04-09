@@ -242,7 +242,7 @@ func StartupLauncher(kern *Kernel) process.Launcher {
 				"tendermint_version", version.TMCoreSemVer,
 				"validator_address", nodeView.ValidatorAddress(),
 				"node_id", string(info.ID()),
-				"net_address", netAddress.String(),
+				"net_address", string(netAddress.String()),
 				"genesis_app_hash", genesisDoc.AppHash.String(),
 				"genesis_hash", hex.EncodeUpperToString(genesisDoc.Hash()),
 			)

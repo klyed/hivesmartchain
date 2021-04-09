@@ -115,12 +115,12 @@ PublicKey = "{\"CurveType\":\"ed25519\",\"PublicKey\":\"5E3A36537D89FFED5F435708
 Enabled = true
 Seeds = ""
 SeedMode = false
-PersistentPeers = "7b4c719bd63f7e5b5fe65235dd569444e4227a58@206.45.142.209:26656"
+PersistentPeers = ""
 ListenHost = "0.0.0.0"
 ListenPort = "26656"
 ExternalAddress = "185.130.44.72:26656"
 AddrBookStrict = false
-Moniker =  "SeedServer"
+Moniker = "SeedServer"
 IdentifyPeers = true
 AuthorizedPeers = ""
 CreateEmptyBlocks = "3s"
@@ -130,7 +130,7 @@ upnp = true
 pex = true
 
 [Execution]
-TimeoutFactor = 0.5
+TimeoutFactor = 1.0
 CallStackMaxDepth = 0
 DataStackInitialCapacity = 1024
 DataStackMaxDepth = 0

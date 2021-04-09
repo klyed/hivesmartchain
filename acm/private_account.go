@@ -4,10 +4,8 @@
 package acm
 
 import (
-	"fmt"
-
 	"encoding/json"
-
+	"fmt"
 	"github.com/klyed/hivesmartchain/crypto"
 )
 
@@ -58,9 +56,9 @@ func (pa *PrivateAccount) String() string {
 }
 
 type ConcretePrivateAccount struct {
-	Address    crypto.Address
-	PublicKey  crypto.PublicKey
 	PrivateKey crypto.PrivateKey
+	PublicKey  crypto.PublicKey
+	Address    crypto.Address
 }
 
 func (cpa *ConcretePrivateAccount) String() string {

@@ -2,16 +2,16 @@ package bridges
 
 import (
 	"fmt"
-	"reflect"
+	client "github.com/klyed/hiverpc-go"
+	"github.com/klyed/hiverpc-go/transports/websocket"
+	"github.com/klyed/hiverpc-go/types"
+	"github.com/klyed/hivesmartchain/bhandlers"
 	"log"
 	"os"
 	"os/signal"
+	"reflect"
 	"syscall"
 	"time"
-	client "github.com/klyed/hiverpc-go"
-	"github.com/klyed/hiverpc-go/types"
-	"github.com/klyed/hiverpc-go/transports/websocket"
-	"github.com/klyed/hivesmartchain/bhandlers"
 )
 
 type HiveConfig struct {
@@ -44,11 +44,11 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 		//reconnect = true
 		signalCh    = make(chan os.Signal, 1)
 		monitorChan = make(chan interface{}, 1)
-		t, err    = websocket.NewTransport(url,
+		t, err      = websocket.NewTransport(url,
 			websocket.SetAutoReconnectEnabled(reconnect),
 			websocket.SetAutoReconnectMaxDelay(30*time.Second),
 			websocket.SetMonitor(monitorChan))
-	  	Client, clienterr = client.NewClient(t)
+		Client, clienterr = client.NewClient(t)
 	)
 	if call == "start" {
 		// Start catching signals.
@@ -70,30 +70,30 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 
 		// Instantiate the WebSocket transport.
 		log.Printf("HIVEOP: Connecting to HIVE Over WebSockets: (\"%v\")\n", url)
-/*
+		/*
 			t, err := websocket.NewTransport(url,
 				websocket.SetAutoReconnectEnabled(reconnect),
 				websocket.SetAutoReconnectMaxDelay(30*time.Second),
 				websocket.SetMonitor(monitorChan))
-*/
+		*/
 
 		//if wserr != nil {
 		//	log.Println(wserr)
-			//return err
+		//return err
 		//}
 
 		// Use the transport to get an RPC client.
 		//Client, err := client.NewClient(url)
 		if clienterr != nil {
-			log.Println(clienterr)
-			Client.Close()
-			Client, clienterr = client.NewClient(t)
+			log.Println("Shit fucked up: %s", clienterr)
+			Client.Done()
+			//Client, clienterr = client.NewClient(t)
 		}
 		defer func() {
-			if !interrupted {
-				Client.Close()
-			}
-			Client.Close()
+			//if !interrupted {
+			//	Client.Close()
+			//}
+			Client.Done()
 		}()
 
 		// Start processing signals.
@@ -117,9 +117,9 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 		fmt.Println()
 		log.Println("HIVEOP: Signal received, exiting...")
 		signal.Stop(signalCh)
-		Client.Close()
-		if Client.Close() != nil {
-			log.Println(Client.Close())
+		Client.Done()
+		if Client.Done() != nil {
+			log.Println(Client.Done())
 		}
 		//return Client, nil
 	}
@@ -147,13 +147,17 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 	for {
 		// Get current properties.
 		props, err := Client.Database.GetDynamicGlobalProperties()
+		time.Sleep(time.Duration(2) * time.Second)
 		if err != nil {
 			log.Println(err)
 		}
 		opBlock = uint32(props.HeadBlockNumber)
 		// Process new blocks.
 		for opBlock-lastBlock > 0 {
+
 			block, err := Client.Database.GetBlock(lastBlock)
+			lastBlock++
+
 			//log.Println(opBlock)
 			if err != nil {
 				log.Println(err)
@@ -173,12 +177,9 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 					//fmt.Printf("HIVEOP: transfer:\n %v \n%v", tx)
 					case *types.CustomJSONOperation:
 						if op.ID == "HSC" {
-							//fmt.Printf("HIVEOP: Block: #%v - custom_json:\n %v", lastBlock, op)
-							handler, err := bhandlers.CustomJSON(lastBlock, tx, op)
-							fmt.Printf("HIVEOP: custom_json:\n %v", handler)
-							if err != nil {
-								log.Println(err)
-							}
+							//fmt.Printf("HIVEOP: Block: #%X - custom_json:\n %X", lastBlock, op)
+
+							fmt.Printf("\n\nHIVEOP: custom_json:\n%q\n", bhandlers.CustomJSON(lastBlock, tx, op))
 							//return Client, nil
 						}
 						//return op
@@ -186,11 +187,8 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 					case *types.TransferOperation:
 						if op.To == "hive.smart.chain" {
 							//fmt.Printf("HIVEOP: Block: #%v - transfer:\n %v", lastBlock, op)
-							handler, err := bhandlers.Transfer(lastBlock, tx, op)
-							fmt.Printf("HIVEOP: transfer:\n %v", handler)
-							if err != nil {
-								log.Println(err)
-							}
+
+							fmt.Printf("\n\nHIVEOP: transfer:\n%q\n", bhandlers.Transfer(lastBlock, tx, op))
 							//return Client, nil
 						}
 
@@ -208,12 +206,12 @@ func Startbridge(call string, interrupted bool, reconnect bool) error {
 				}
 			}
 
-			lastBlock++
-			opBlock = lastBlock
+			//lastBlock++
+			//opBlock = lastBlock
 		}
 
 		// Sleep for HIVE_BLOCK_INTERVAL seconds before the next iteration.
-		time.Sleep(time.Duration(3) * time.Second)
+		//time.Sleep(time.Duration(2.9) * time.Second)
 	}
 }
 

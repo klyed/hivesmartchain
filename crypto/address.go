@@ -17,16 +17,20 @@ type Addressable interface {
 	GetAddress() Address
 	// Public key from which the Address is derived
 	GetPublicKey() *PublicKey
+	// Username on HIVE attatched to account
+	//GetUserName() UserNameInterface
 }
 
 func NewAddressable(publicKey *PublicKey) Addressable {
 	return &memoizedAddressable{
-		address:   publicKey.GetAddress(),
+		userName:  "",
 		publicKey: publicKey,
+		address:   publicKey.GetAddress(),
 	}
 }
 
 type memoizedAddressable struct {
+	userName  string
 	publicKey *PublicKey
 	address   Address
 }
@@ -37,6 +41,10 @@ func (a *memoizedAddressable) GetPublicKey() *PublicKey {
 
 func (a *memoizedAddressable) GetAddress() Address {
 	return a.address
+}
+
+func (a *memoizedAddressable) GetUserName() string {
+	return a.userName
 }
 
 type Address binary.Word160

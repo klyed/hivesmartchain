@@ -324,10 +324,10 @@ github.com/kisielk/errcheck v1.2.0/go.mod h1:/BMXB+zMLi60iA8Vv6Ksmxu/1UDYcXs4uQL
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/kkdai/bstream v0.0.0-20161212061736-f391b8402d23/go.mod h1:J+Gs4SYgM6CZQHDETBtE9HaSEkGmuNXF86RwHhHUvq4=
-github.com/klyed/hiverpc-go v0.4.0 h1:PzF3zFs7iRKNvhUvFW5DPJKK23Z1QqMSBZajyxNSvSY=
-github.com/klyed/hiverpc-go v0.4.0/go.mod h1:6nCIVe4YoT1ABJ2/XW9p+sFGIUCLY4ZXksxnVfdu+7Y=
 github.com/klyed/hiverpc-go v0.0.0-20210327202451-e52d2874dd6e h1:ZfVS9Pa6ayboxtQd2L1Xov9wyH4Jp+S/llTUWU2G/7I=
 github.com/klyed/hiverpc-go v0.0.0-20210327202451-e52d2874dd6e/go.mod h1:Pvp77DCXWBg//5BZf2QjJgRP611Xa5VZPxWLlaBhQ/Y=
+github.com/klyed/hiverpc-go v0.4.0 h1:PzF3zFs7iRKNvhUvFW5DPJKK23Z1QqMSBZajyxNSvSY=
+github.com/klyed/hiverpc-go v0.4.0/go.mod h1:6nCIVe4YoT1ABJ2/XW9p+sFGIUCLY4ZXksxnVfdu+7Y=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/konsorten/go-windows-terminal-sequences v1.0.3 h1:CE8S1cTafDpPvMhIxNJKvHsGVBgn1xWYf1NbHQhywc8=
 github.com/konsorten/go-windows-terminal-sequences v1.0.3/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
@@ -630,6 +630,7 @@ golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897/go.mod h1:LzIPMQfyMNhhGPh
 golang.org/x/crypto v0.0.0-20201117144127-c1f2f97bffc9/go.mod h1:jdWPYTVW3xRLrWPugEBEK3UY2ZEsg3UU495nc5E+M+I=
 golang.org/x/crypto v0.0.0-20210317152858-513c2a44f670 h1:gzMM0EjIYiRmJI3+jBdFuoynZlpxa2JQZsolKu09BXo=
 golang.org/x/crypto v0.0.0-20210317152858-513c2a44f670/go.mod h1:T9bdIzuCu7OtxOm1hfPfRQxPLYneinmdGuTeoZ9dtd4=
+golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2 h1:It14KIkyBFYkHkwZ7k45minvA9aorojkyjGk9KJ5B/w=
 golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2/go.mod h1:T9bdIzuCu7OtxOm1hfPfRQxPLYneinmdGuTeoZ9dtd4=
 golang.org/x/exp v0.0.0-20190121172915-509febef88a4/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=
 golang.org/x/exp v0.0.0-20190306152737-a1d7652674e8/go.mod h1:CJ0aWSM057203Lf6IL+f9T1iT9GByDxfZKAQTCR3kQA=

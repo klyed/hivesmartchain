@@ -26,7 +26,7 @@ type Validators interface {
 
 const (
 	TendermintValidatorDelayInBlocks     = 2
-	HiveSmartChainValidatorDelayInBlocks = 1
+	HiveSmartChainValidatorDelayInBlocks = 2
 )
 
 type App struct {
