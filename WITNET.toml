@@ -5,7 +5,7 @@ GenesisTime = 2021-03-18T09:32:42Z
 ChainName = "HSC"
 ChainID = "666"
 [GenesisDoc.Params]
-ProposalThreshold = 1
+ProposalThreshold = 2
 [GenesisDoc.GlobalPermissions]
 [GenesisDoc.GlobalPermissions.Base]
 Perms = "send | call | createContract | createAccount | bond | name | proposal | input | batch | hasBase | hasRole"
